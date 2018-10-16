@@ -106,6 +106,18 @@ class Common extends Controller{
             'logincar'=>array(
                 'user_id' =>'number',
             ),
+            'join_us'=>array(
+                'user_id' =>'number',
+            ),
+            'link_us'=>array(
+                'user_id' =>'number',
+            ),
+            'service'=>array(
+                'user_id' =>'number',
+            ),
+            'website'=>array(
+                'user_id' =>'number',
+            ),
         ),
         'Newcar' => array(
             'index'=>array(
@@ -127,6 +139,17 @@ class Common extends Controller{
         ),
         'News' => array(
             'index'=>array(
+                'user_id' =>'number',
+            ),
+        ),
+        'Shop' => array(
+            'index'=>array(
+                'user_id' =>'number',
+            ),
+            'shop_list'=>array(
+                'user_id' =>'number',
+            ),
+            'shop_info'=>array(
                 'user_id' =>'number',
             ),
         ),

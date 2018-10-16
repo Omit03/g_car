@@ -25,9 +25,12 @@ class Change  extends Common
 
         $er_car = $this->er_car($city_id);
 
+        $brand = $this->brand();//品牌
+
         //dump( $er_car);die;
 
         $this->assign('er_car',$er_car);
+        $this->assign('brand',$brand);
 
         return $this->fetch();
 

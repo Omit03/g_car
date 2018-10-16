@@ -15,7 +15,7 @@
 	
 	</style>
 	<body style="background:#f8f8f8">		
-	<!--<div class="header"></div>-->
+	<div class="header">{include file="public/header"}</div>
 	<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">向阳二手车 >></a><a href=""> 店铺首页</a></div>
 	<div class="storeH">
 		<div class="wrap">
@@ -25,9 +25,9 @@
 			</p>
 			<div class="gj_clear"></div>
 			<ul class="shop_nav gj_clear">
-				<li class="active"><a href="shop_index.html">店铺首页</a></li>
-				<li><a href="shop_list.html">在售车源</a></li>
-				<li><a href="shop_info.html">公司信息</a></li>
+				<li class="active"><a href="{:url('shop/index')}">店铺首页</a></li>
+				<li><a href="{:url('shop/shop_list')}">在售车源</a></li>
+				<li><a href="{:url('shop/shop_info')}">公司信息</a></li>
 			</ul>
 		</div>
 		
@@ -41,14 +41,20 @@
 						<li class="">
 							<h3>品牌<b>全部</b></h3>
 							<div class="classify">
-								<a href="" class="active" >不限</a><a href="">奥迪 </a><a href="">大众 </a><a href="">奔驰 </a><a href="">福特 </a><a href="">丰田 </a><a href="">马自达 						</a><a href="">本田 </a> <a href="">宝马 </a>
+								<a href="" class="active" >不限</a>
+								{volist name="brand" id="vol"}
+								<a href="">{$vol.name}</a>
+								{/volist}
 							</div>
 						</li>
 						<li class="">
 							<h3>价格<b>全部</b></h3>
 						<div class="classify">
-							<a href="" class="active" >不限</a><a href="">奥迪 </a><a href="">宝马 </a><a href="">奔驰 </a><a href="">大众 </a><a href="">奥迪 </a><a href="">宝马 </a>
-						<a href="">奔驰 </a><a href="">大众 </a>  <a href=""></a></div>
+							<a href="" class="active" >不限</a>
+							{volist name="price" id="vo"}
+							<a href="">{$vo.name}</a>
+							{/volist}
+						</div>
 						</li>
 						<li class="">				
 							<h3>级别<b>全部</b></h3>
@@ -144,7 +150,7 @@
 			<div class="btn_buy">我要买车</div>
 		</div>
 	</div>		
-	<div class="footer"></div>
+	<div class="footer">{include file="public/footer"}</div>
 	
 	</body>
 	<script>
