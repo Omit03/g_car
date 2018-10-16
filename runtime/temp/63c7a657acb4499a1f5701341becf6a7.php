@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539599632;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539600728;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1536026634;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539654336;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539654336;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
 <!DOCTYPE html>
 <html>
 

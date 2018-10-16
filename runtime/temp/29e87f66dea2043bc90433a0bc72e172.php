@@ -1,22 +1,21 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\index\logincar.html";i:1539654336;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539654336;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\index\newcar.html";i:1539654336;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539655726;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8"/>
 		<title></title>
 	</head>
+	 <link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	
+	<script src="/static/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
-	<style>
+	<style>	
 	</style>
-
-	<body>	
-		<div class="full_wid">
-			<div class="header">
-			<div class="site_nav">
+<body>	
+<div class="header">
+	<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
 		<div class="fright">
@@ -71,7 +70,7 @@
 	<div class="nav gj_clear">
 		<ul class="wrap">
 			<li class="active"><a href="index.html">首页</a></li>
-			<li ><a href="<?php echo url('index/newCar'); ?>" class="sec_li">新车</a></li>
+			<li ><a href="<?php echo url('index/newcar'); ?>" class="sec_li">新车</a></li>
 			<li><a href="<?php echo url('index/carlist'); ?>">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
 			<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
@@ -151,75 +150,206 @@ $(window).on('scroll',function(){
 
 </script>
 
-			</div>
-			<div class="login_bg">
-				<div class="login_tab" >
-					<div class="login_sure">
-						<ul class="login_type">
-							<li class="active" onclick="set('bd0',1,2)">手机号快捷登录</li>
-							<b>|</b>
-							<li onclick="set('bd0',2,2)">账号密码登录</li>
-						</ul>
-						<div class="login_phone" id="conbd01">
-							<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
-							<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="text" placeholder="请输入密码"/></div>
-							<div class="border login_ver"><img src="/static/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
-							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
-							<p class="login_btn mtp40">立即登录</p>
-							<p class="regist_btn">免费注册</p>
-						</div>
-						<div class="login_phone" id="conbd02" style="display: none;">
-							<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
-							<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="text" placeholder="请输入密码"/></div>
-							<div class="border login_ver"><img src="/static/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
-							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
-							<p class="login_btn mtp40">立即登录</p>
-							<p class="regist_btn">免费注册</p>
-						</div>
-					</div>
-					
-					<div class="login_other">
-						<img src="/static/img/ewm.png" alt="" class="app_down" width="225"/>
-						<p class="textCenter">扫描下载</p>
-						<div><img src="/static/img/qq.png" alt="" />QQ登录</div>
-						<div><img src="/static/img/wx.png" alt="" />微信登录</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer"></div>
-		<div class="fixedRight">
-			<ul class="right_sider">
-				<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
-					<div class="gj_sidecon_desc "></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
-				<div class="gj_sidecon_desc"></div></li>
-				<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
-				<div class="gj_sidecon_desc"></div></li>
-				<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
+</div>
+<div class="banner1"><img src="/static/img/xinche.png" alt="" /></div>
+<div class="newcar gj_clear">
+    <div class="category">
+   		<div class="classify p_r">
+   			 <div class="brand_new fleft oh">
+   			 	<h2>品牌</h2>
+   			 	<ul>
+   			 		<li><a href=""><img src="/static/img/aodi.png" alt="" /><p>奥迪</p></a></li>
+				   	<li><a href=""><img src="/static/img/benci.png" alt="" /><p>奔驰</p></a></li>
+				   	<li><a href=""><img src="/static/img/lekesasi.png" alt="" /><p>雷克萨斯</p></a></li>
+				   	<li><a href=""><img src="/static/img/baoma.png" alt="" /><p>宝马</p></a></li>
 				
+				   	<li><a href=""><img src="/static/img/mazida.png" alt="" /><p>马自达</p></a></li>
+				   	<li><a href=""><img src="/static/img/bentian.png" alt="" /><p>本田</p></a></li>
+				   	<li><a href=""><img src="/static/img/haima.png" alt="" /><p>海马</p></a></li>
+				   	<li><a href=""><img src="/static/img/fengtian.png" alt="" /><p>丰田</p></a></li>
+				   	<li><a href=""><img src="/static/img/xuetielong.png" alt="" /><p>雪铁龙</p></a></li>
+   			 	</ul>
+   			 </div>
+   			 <div class="price_new fleft oh">
+   			 	<h2>首付</h2>
+   			 	<ul>
+   			 		<li><a href="">分期购</a></li>
+   			 		<li><a href="" class="coloryel">一成购新车</a></li>
+   			 		<li><a href="">1万以内</a></li>
+   			 		<li><a href="">1-2万</a></li>
+   			 		<li><a href="">2-3万</a></li>
+   			 		<li><a href="">4-5万</a></li>
+   			 		<li><a href="">3-4万</a></li>
+                    <li><a href="">5万以上</a></li>
+   			 	</ul>
+
+   			 	
+   			 </div>
+   			 <div class="type_new fleft oh">
+   			 	<h2>车型</h2>
+   			 	<ul>
+   			 		<li><a href=""><img src="/static/img/weixiaoxing.png" alt="" /><p>微小型车</p></a></li>
+   			 		<li><a href=""><img src="/static/img/zhongxing.png" alt="" /><p>中型车</p></a></li>
+   			 		<li><a href=""><img src="/static/img/paoche.png" alt="" /><p>跑车</p></a></li>
+   			 		<li><a href=""><img src="/static/img/zhongdaxing.png" alt="" /><p>中大型车</p></a></li>
+   			 		<li><a href=""><img src="/static/img/suv.png" alt="" /><p>SUV</p></a></li>
+   			 		
+   			 		<li><a href=""><img src="/static/img/mpv.png" alt="" /><p>MPV</p></a></li>
+   			 	</ul>
+   			 </div>			 
+   			<a href="" class="coloryel more_lok">MORE>></a>
+   		</div>	
+   </div>
+	<div class="wrap">
+	    <div class="news_tit">
+	        <h2>爆款新车</h2>	
+	        <p class="small_tit">Explosive car</p>
+	    </div>
+	   <div class="gj_clear">
+		    <div class="img_fac">
+			 <div class="more_slt">
+			 	<div class="gj_clear">
+			 		<a href="">5-8万</a>
+			 		<a href="">5-8万</a>
+				 	<a href="">20-30万</a>
+				 	<a href="">5-8万</a>
+				 	<a href="">5-8万</a>
+				 	<a href="">SUV</a>
+				 	<a href="">MPV</a>	
+				 	<a href="">宝马</a>
+				 	<a href="">宝马5系</a>
+				 	<a href="">20-30万</a>
+			 	</div>
+			 	
+			<p><a href="">查看更多>></a></p>		 	
+			 	
+			 </div>
+		   </div>
+		    <div class="first_public">
+		    	<ul class="md50">
+		    		<li>
+		    			<a href="newCarDetails.html">
+			    			<h3>奔驰A4L 2017款 plus 40 TFSI进取型进取型进取型</h3>
+							<div class="fleft car_img"><img src="/static/img/car11.png" alt="" /></div>
+							<div class="fright car_public">
+								<h4>首付4.27万</h4>
+								<span>新车发售</span>
+							</div>
+							
+						</a>
+		    		</li>
+		    		<li>
+		    			<a href="">
+			    			<h3>奔驰A4L 2017款 plus 40 TFSI进取型进取型进取型</h3>
+							<div class="fleft car_img"><img src="/static/img/car11.png" alt="" /></div>
+							<div class="fright car_public">
+								<h4>首付4.27万</h4>
+								<span>新车发售</span>
+							</div>
+						</a>
+		    		</li>
+		    		<li>
+		    			<a href="">
+			    			<h3>奔驰A4L 2017款 plus 40 TFSI进取型进取型进取型</h3>
+							<div class="fleft car_img"><img src="/static/img/car11.png" alt="" /></div>
+							<div class="fright car_public">
+								<h4>首付4.27万</h4>
+								<span>新车发售</span>
+							</div>
+						</a>
+		    		</li>
+		    	</ul>
+		    </div>
+	    </div>
+	     <div class="news_tit">
+	        <h2>热门推荐</h2>	
+	        <p class="small_tit">Popular recommendation</p>
+	    </div>
+	    <div class="gj_clear">
+	    	<ul class="list ptp15 new_list">
+				<li class="items5">
+					<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="" class="car_desc">
+						<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+						<p><span class="pay_first">首付<b>55</b>万</span> <span class="padlt20">月供5555元</span> </p>
+				
+					</a>
+					<img src="/static/img/baokuan.png" alt="" class="hot" />
+				</li>
+				<li class="items5">
+					<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="" class="car_desc">
+						<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+						<p><span class="pay_first">首付<b>55</b>万</span> <span class="padlt20">月供5555元</span> </p>
+				
+					</a>
+				</li>
+				<li class="items5">
+					<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="" class="car_desc">
+						<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+						<p><span class="pay_first">首付<b>55</b>万</span> <span class="padlt20">月供5555元</span> </p>
+				
+					</a>
+				</li>
+				<li class="items5">
+					<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="" class="car_desc">
+						<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+						<p><span class="pay_first">首付<b>55</b>万</span> <span class="padlt20">月供5555元</span> </p>
+				
+					</a>
+				</li><li class="items5">
+					<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="" class="car_desc">
+						<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+						<p><span class="pay_first">首付<b>55</b>万</span> <span class="padlt20">月供5555元</span> </p>
+				
+					</a>
+				</li>
+				<li class="items5">
+					<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="" class="car_desc">
+						<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+						<p><span class="pay_first">首付<b>55</b>万</span> <span class="padlt20">月供5555元</span> </p>
+				
+					</a>
+				</li>
+				<li class="items5">
+					<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="" class="car_desc">
+						<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+						<p><span class="pay_first">首付<b>55</b>万</span> <span class="padlt20">月供5555元</span> </p>
+				
+					</a>
+				</li>
 			</ul>
+			<div class="more_l">查看更多</div>
+	    </div>
+		<h2 class="newc_t">
+			轻松四步  新车开回家
+		</h2>
+		<ul class="step oh">
+			<li><img src="/static/img/yuyue.png" alt="" /><p>在线预约</p></li>
+			<li><img src="/static/img/jiantou00.png" alt="" /></li>
+			<li><img src="/static/img/xieyi.png" alt="" /><p>签订协议</p></li>
+			<li><img src="/static/img/jiantou00.png" alt="" /></li>
+			<li><img src="/static/img/zhifu.png" alt="" /><p>支付费用</p></li>
+			<li><img src="/static/img/jiantou00.png" alt="" /></li>
+			<li><img src="/static/img/kaiche.png" alt="" /><p>坐等新车</p></li>
+		
 		</div>
-		<div class="footer">
-			
+	<div class="adv_img">
+		<h2>想开什么车 ？管家车易站应有尽有.</h2>
+		<div class="buy_ipt">
+			<input type="text" placeholder="请输入手机号"/>
+			<div class="btn_buy">我要买车</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -320,117 +450,21 @@ $(window).on('scroll',function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
 </script>
-		</div>
-	</body>
-	<!--
-	<div class="wrap">
-		<div class="company_info gj_clear">
-			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
-			<div class="basic_info">
-				<div>
-					<a href="">关于我们</a>
-					<a href="">联系我们</a>
-					<a href="">服务保障</a>
-					<a href="">网站地图</a>
-				</div>
-				<p>
-					版权所有：河南管家车销售有限公司 <br /> 
-				 工信备案：豫ICP备17046554号 <br /> 
-				  CopyRight © 2015-2018 ww
-				</p>
-			</div>
-			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
-			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
-			<div class="contact_way">
-				<p>免费咨询、建议、投诉 <br />
-				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
-				 每天9：00-21：00(法定节假日除外)
-				</p>		
-			</div>
-		</div>	
-		<div class="optimize_link">
-			<p class="link_tit">热门品牌：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
-		</div>
-		<div class="optimize_link">
-			<p class="link_tit ">热门车系：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
-		</div>
-		<div class="optimize_link gj_clear">
-			<p class="link_tit">友情链接：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
-		</div>
-	</div>
-<script>
-	$(".more_dwon").click(function(){
-		$(this).parents(".optimize_link").addClass("link_active")
-	})
-</script>-->
-	<!--<script>		-->
-		<!--$(function(){	-->
+</div>
 
-			<!--$(".login_type li").click(function(){-->
-			   <!--$(this).addClass('active').siblings('li').removeClass('active')-->
-			<!--})-->
-		      <!--$(".header").load("templates/header.html");-->
-		      <!--$(".footer").load("templates/footer.html")-->
-		<!--})-->
-<!--</script>-->
+</body>
+
+
+<script>
+  
+   window.onload=function()
+   {
+   	//  $(".header").load("templates/header.html");
+     // $(".footer").load("templates/footer.html");
+//   var sec=$('.wrap').html();
+//   console.log(sec);
+     
+   	
+   }
+</script>
 </html>

@@ -119,7 +119,7 @@ class Index  extends Common
     /*
      * 新车
      */
-    public function newCar(){
+    public function newcar(){
 
         return $this->fetch();
     }

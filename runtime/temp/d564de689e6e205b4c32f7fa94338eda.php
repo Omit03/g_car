@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\index\sell.html";i:1539607144;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\index\sell.html";i:1539654336;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
