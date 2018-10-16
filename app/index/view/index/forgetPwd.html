@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="__STATIC__/css/style.css" />
+	<link rel="stylesheet" href="__STATIC__/css/other.css" />
+	<script src="__STATIC__/js/jquery-1.11.0.min.js"></script>
+	
+	<script src="__STATIC__/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<style>
+.free_regist{background: #F28F1B;color: #fff;cursor: pointer;}
+.login_phone .agree{margin: 20px 0;text-align: left;color: #666;}
+.login_phone .agree a{color: #333;font-size: 18px;}
+.login_phone>div>img.showPwd{width: 27px;height:19px;}
+#inputId{width: 300px;}
+	</style>
+	<body>	
+		<div class="full_wid">
+			<div class="header">			
+			</div>
+			<div class="login_bg">
+				<div class="login_tab">
+					<div class="login_sure">
+						<ul class="login_type">
+							<li class="active">快速注册</li>
+							<b>|</b>
+							<li>已注册可直接<a href="" class="coloryel ft16">登录</a></li>
+						</ul>
+						<div class="login_phone">
+							<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
+							<div class="border login_ver"><img src="__STATIC__/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
+							<div class="border"><img src="__STATIC__/img/mm.png" alt="" height="35" /><input type="password" placeholder="请输入密码" id="inputId"/><img src="__STATIC__/img/buxians.png" width="27" height="19" class="showPwd"/></div>
+							<p class="ptp15 agree"><input type="checkbox" name="" id="" value="" />我已经阅读并同意<a href="">《管家车易站条款》</a></p>
+						
+							<p class="regist_btn free_regist">免费注册</p>
+						</div>
+						
+					</div>
+					
+					<div class="login_other">
+						<img src="__STATIC__/img/ewm.png" alt="" class="app_down" width="225"/>
+						<p class="textCenter">扫描下载</p>
+						<div><img src="__STATIC__/img/qq.png" alt="" />QQ登录</div>
+						<div><img src="__STATIC__/img/wx.png" alt="" />微信登录</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer"></div>
+		
+	</body>
+	<script>		
+		$(function(){	
+			var input=document.getElementById("inputId");
+			$(".showPwd").click(function(){
+				 if($(".showPwd").attr("src")=='__STATIC__/img/buxians.png'){ 
+				 	$(".showPwd").attr("src",'__STATIC__/img/xians.png');	 	
+			       	input.type='text';
+			     }else{
+			     	$(".showPwd").attr("src",'__STATIC__/img/buxians.png');
+			      input.type='password';
+			     }
+			})
+		     
+			 
+		      $(".header").load("templates/header.html");
+		      $(".footer").load("templates/footer.html")
+		})
+</script>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="__STATIC__/css/style.css" />
+	<link rel="stylesheet" href="__STATIC__/css/other.css" />
+	<script src="__STATIC__/js/jquery-1.11.0.min.js"></script>
+	
+	<script src="__STATIC__/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<style>
+	</style>
+
+	<body>	
+		<div class="full_wid">
+			<div class="header">
+			{include file="public/header"}
+			</div>
+			<div class="login_bg">
+				<div class="login_tab" >
+					<div class="login_sure">
+						<ul class="login_type">
+							<li class="active" onclick="set('bd0',1,2)">手机号快捷登录</li>
+							<b>|</b>
+							<li onclick="set('bd0',2,2)">账号密码登录</li>
+						</ul>
+						<div class="login_phone" id="conbd01">
+							<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
+							<div class="border"><img src="__STATIC__/img/mm.png" alt="" height="35" /><input type="text" placeholder="请输入密码"/></div>
+							<div class="border login_ver"><img src="__STATIC__/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
+							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
+							<p class="login_btn mtp40">立即登录</p>
+							<p class="regist_btn">免费注册</p>
+						</div>
+						<div class="login_phone" id="conbd02" style="display: none;">
+							<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
+							<div class="border"><img src="__STATIC__/img/mm.png" alt="" height="35" /><input type="text" placeholder="请输入密码"/></div>
+							<div class="border login_ver"><img src="__STATIC__/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
+							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
+							<p class="login_btn mtp40">立即登录</p>
+							<p class="regist_btn">免费注册</p>
+						</div>
+					</div>
+					
+					<div class="login_other">
+						<img src="__STATIC__/img/ewm.png" alt="" class="app_down" width="225"/>
+						<p class="textCenter">扫描下载</p>
+						<div><img src="__STATIC__/img/qq.png" alt="" />QQ登录</div>
+						<div><img src="__STATIC__/img/wx.png" alt="" />微信登录</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer"></div>
+		<div class="fixedRight">
+			<ul class="right_sider">
+				<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
+					<div class="gj_sidecon_desc "></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
+				<div class="gj_sidecon_desc"></div></li>
+				<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
+				<div class="gj_sidecon_desc"></div></li>
+				<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="footer">
+			{include file="public/footer"}
+		</div>
+	</body>
+	<!--{include file="public/footer"}-->
+	<!--<script>		-->
+		<!--$(function(){	-->
+
+			<!--$(".login_type li").click(function(){-->
+			   <!--$(this).addClass('active').siblings('li').removeClass('active')-->
+			<!--})-->
+		      <!--$(".header").load("templates/header.html");-->
+		      <!--$(".footer").load("templates/footer.html")-->
+		<!--})-->
+<!--</script>-->
+</html>
