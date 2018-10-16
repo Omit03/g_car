@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539658402;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539668666;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539658402;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539682504;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -92,7 +92,7 @@
 	<div class="header">
 		<div class="site_nav">
 	<div class="site_nav_bd">
-		<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
+		<div class="fleft">你好，欢迎来到管家车易站！请<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a></div>
 		<div class="fright">
 			<ul class="site_nav_menu">
 				<li><a href=""><img src="img/shouye.png" alt="" />首页</a></li>
@@ -149,7 +149,7 @@
 			<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
 			<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
-			<li><a href="<?php echo url('index/change'); ?>">置换</a></li>
+			<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 			<li><a href="<?php echo url('index/news'); ?>">新闻资讯</a></li>
 			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
 			<li><a href="<?php echo url('index/logincar'); ?>">登录/注册</a></li>

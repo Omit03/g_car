@@ -12,7 +12,7 @@
 
 	</style>
 	<body>
-		<div class="header"></div>
+		<div class="header">{include file="public/header"}</div>
 		<div class="full_wid">			
 			<div class="banner chang_ban">
 				<div class="wrap">
@@ -65,54 +65,23 @@
 				<div class="flex_center title_er"><h2 class="tit_erjie">新车推荐</h2></div>
 				<div class="car_list">
 					<ul class="list">
+                         {volist name="er_car" id="val" offset="1" length="8"}
 						<li class="items">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+							<a href="" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
 							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
+								<h3> {$val.name}</h3>
+								<p><span class="car_price"><b>{$val.new_car_price}</b>万</span><span class="car_sui">新车含税{$val.price}万</span></p>
+								<p><span>{$val.car_cardtime}上牌</span> <span class="padlt20">{$val.car_mileage}万公里</span> </p>
 								<div class="che_ordered">立即预约</div>
 							</a>
 						</li>
-						<li class="items">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<li class="items">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<li class="items">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<li class="items">
-							<a href="" class="car_img flex_center" title=""><img src="" alt="" title=""/></a>
-							<a href="" class="car_desc" title="">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
+						{/volist}
 					</ul>
 				</div>
 			</div>
+		</div>
+		<div class="footer">
+			{include file="public/footer"}
 		</div>
 	</body>
 	<script>		

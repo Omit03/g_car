@@ -15,7 +15,7 @@
 	</style>
 	<body>
 		<div class="border">			
-			<div class="header"></div>
+			<div class="header">{include file="public/header"}</div>
 		</div>
 		<div class="full_wid">
 			<div class="banner sell_ban">
@@ -214,6 +214,9 @@
 			
 		</div>
 		<div class="mask"></div>
+		<div class="footer">
+			{include file="public/footer"}
+		</div>
 	</body>
 	<script>
 		lay('#version').html('-v'+ laydate.v);

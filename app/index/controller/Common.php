@@ -120,6 +120,11 @@ class Common extends Controller{
                 'user_id' =>'number',
             ),
         ),
+        'Change' => array(
+            'index'=>array(
+                'user_id' =>'number',
+            ),
+        ),
 
         'User' => array(
             'register'=>array(
