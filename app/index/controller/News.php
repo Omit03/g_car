@@ -26,9 +26,12 @@ class News extends Common
 
         $er_car = $this->er_car($city_id);
 
+        $new_car = $this->new_car($city_id); //新车
+
         //dump( $er_car);die;
 
         $this->assign('er_car',$er_car);
+        $this->assign('new_car',$new_car);
 
         return $this->fetch();
 

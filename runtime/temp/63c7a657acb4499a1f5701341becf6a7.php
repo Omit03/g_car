@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539658402;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539682504;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539658402;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539685822;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -150,7 +150,7 @@
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
 			<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
 			<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
-			<li><a href="<?php echo url('index/news'); ?>">新闻资讯</a></li>
+			<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
 			<li><a href="<?php echo url('index/logincar'); ?>">登录/注册</a></li>
 		</ul>
