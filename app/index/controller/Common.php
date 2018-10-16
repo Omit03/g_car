@@ -94,6 +94,9 @@ class Common extends Controller{
             'carlist'=>array(
                 'user_id' =>'number',
             ),
+            'change'=>array(
+                'user_id' =>'number',
+            ),
             'news'=>array(
                 'user_id' =>'number',
             ),
@@ -101,6 +104,19 @@ class Common extends Controller{
                 'user_id' =>'number',
             ),
             'logincar'=>array(
+                'user_id' =>'number',
+            ),
+        ),
+        'Newcar' => array(
+            'index'=>array(
+                'user_id' =>'number',
+            ),
+            'newcardetails'=>array(
+                'id' =>'number',
+            ),
+        ),
+        'Twocar' => array(
+            'index'=>array(
                 'user_id' =>'number',
             ),
         ),
@@ -887,9 +903,10 @@ class Common extends Controller{
     }
 
     /*
-     * 获取二手车推荐
+     * 获取city_id
      */
-    public function er_car(){
+
+    public function city_id(){
 
         $ip = $this->request->ip();
 
@@ -897,7 +914,14 @@ class Common extends Controller{
 
         $city_id = $this->get_city($city['data']['city']);
 
-        $er_car=Db::table("rele_car")->field("pu_id,cartype_id,price,car_cardtime,car_mileage,img_300")->where("status=1 and up_under=1 and city_id=$city_id")->order("create_time desc")->limit(10)->select();
+        return $city_id;
+    }
+    /*
+     * 获取二手车推荐
+     */
+    public function er_car($city_id){
+
+        $er_car=Db::table("rele_car")->field("pu_id,cartype_id,price,car_cardtime,car_mileage,img_300")->where("status=1 and up_under=1 and city_id=$city_id")->order("create_time desc")->limit(20)->select();
         foreach ($er_car as $k => $val) {
             $er_car[$k]['name']=$this->get_carname($val['cartype_id']);
             $er_car[$k]['img_url']=$this->get_carimg($val['img_300'],1);
@@ -913,4 +937,78 @@ class Common extends Controller{
 
         return $er_car;
     }
+
+    /*
+     * 获取新车
+     */
+    public function new_car($city_id){
+
+        $new_car=Db::table("new_car")->field("id,brand_id,sys_id,cartype_id,price,img_300,pay10_s2,pay10_y2,pay10_n2")->where("is_tj=1 and status=1 and city_id=".$city_id)->order("create_time desc")->limit(20)->select();
+        foreach ($new_car as $key => $val) {
+            $new_car[$key]['img_url']=$this->get_carimg($val['img_300'],2);
+            $new_car[$key]['name']=$this->get_carname($val['cartype_id']);
+            $new_car[$key]['pay10_s2']=$val['pay10_s2'];
+            $new_car[$key]['pay10_y2']=$val['pay10_y2'];
+            unset($new_car[$key]['img_300']);
+        }
+
+        return $new_car;
+
+     }
+
+     /*
+      * 获取零首付 推荐
+      */
+    public function car_zero($city_id){
+
+        $car_zero=Db::table("l_car")->field("id,cartype_id,price,img_300,pay0_s2,pay0_y2,pay0_n2")->where("is_tj=1 and status=1 and city_id=$city_id")->order("create_time desc")->limit(5)->select();
+        foreach ($car_zero as $key => $val) {
+            $car_zero[$key]['img_url']=$this->get_carimg($val['img_300'],2);
+            $car_zero[$key]['name']=$this->get_carname($val['cartype_id']);
+            $car_zero[$key]['pay10_s2']=$car_zero[$key]['pay0_s2'];
+            $car_zero[$key]['pay10_y2']=$car_zero[$key]['pay0_y2'];
+            $car_zero[$key]['pay10_n2']=$car_zero[$key]['pay0_n2'];
+            unset($car_zero[$key]['img_300']);
+            unset($car_zero[$key]['cartype_id']);
+            unset($car_zero[$key]['pay0_s2']);
+            unset($car_zero[$key]['pay0_y2']);
+            unset($car_zero[$key]['pay0_n2']);
+        }
+
+        return $car_zero;
+    }
+    /*
+     * 获取品牌
+     */
+    public function brand(){
+
+        $brand=Db::table("car_brand")->field("id,img_id,name")->where("id in (1,9,10,19,20,22)")->select();
+        foreach ($brand as $key => $val) {
+            $brand[$key]['img_url']=$this->get_carimg($val['img_id'],3);
+            unset($brand[$key]["img_id"]);
+        }
+
+        return $brand;
+    }
+
+    /*
+     * 价格
+     */
+    public function price(){
+
+        $price=Db::table("price_range")->field("price_id as id,name")->order("level asc")->limit(4)->select();
+
+        return $price;
+    }
+
+    /*
+     * 级别
+     */
+    public function subface()
+    {
+        $subface=Db::table("subface")->field("face_id as id,name,img")->order("level asc")->limit(5)->select();
+
+        return $subface;
+    }
+
 }

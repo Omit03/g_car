@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="107a576e-849f-426b-9ad2-69819e34de0c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/car.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/car.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Common.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/view/index/new_car.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/index/newcar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index/view/index/carList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index/view/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index/view/index/newCarDetails.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index/view/index/newcar.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index/view/public/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/public/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201810/16.log" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/log/201810/16.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/63c7a657acb4499a1f5701341becf6a7.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/63c7a657acb4499a1f5701341becf6a7.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/a3dadd9198548dccc66b76acf6316e8c.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/a3dadd9198548dccc66b76acf6316e8c.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/a504d0d3793c3b76ae95fa29f6058a90.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/a504d0d3793c3b76ae95fa29f6058a90.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/c4e08fc27cc79095966f61dffaf51a21.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/c4e08fc27cc79095966f61dffaf51a21.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/d564de689e6e205b4c32f7fa94338eda.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/d564de689e6e205b4c32f7fa94338eda.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/ef764c7946a7844f52c9022668b0bd91.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/ef764c7946a7844f52c9022668b0bd91.php" afterDir="false" />
     </list>
@@ -31,26 +36,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="1" />
-          <entry key="php" value="3" />
+          <entry key="css" value="1" />
+          <entry key="html" value="9" />
+          <entry key="php" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="1" />
-          <entry key="PHP" value="3" />
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="9" />
+          <entry key="PHP" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="2" />
-          <entry key="php" value="2" />
+          <entry key="html" value="928" />
+          <entry key="php" value="719" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2" />
-          <entry key="PHP" value="2" />
+          <entry key="HTML" value="928" />
+          <entry key="PHP" value="719" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.php.new.class">
+        <counts>
+          <entry key="PHP Class.type" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -58,47 +70,48 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/controller/Index.php">
+        <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="123" column="30" lean-forward="true" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="30" />
+            <state relative-caret-position="266">
+              <caret line="921" column="20" selection-start-line="921" selection-start-column="20" selection-end-line="921" selection-end-column="20" />
               <folding>
-                <element signature="e#145#3992#0#PHP" />
-                <element signature="e#4661#4889#0#PHP" />
-                <element signature="e#4920#4983#0#PHP" />
-                <element signature="e#5013#5074#0#PHP" />
-                <element signature="e#5108#5176#0#PHP" />
-                <element signature="e#5377#10677#0#PHP" />
-                <element signature="e#10716#11806#0#PHP" />
-                <element signature="e#11855#12674#0#PHP" />
-                <element signature="e#12718#13896#0#PHP" />
-                <element signature="e#13902#13915#0#PHP" />
-                <element signature="e#13920#14374#0#PHP" />
-                <element signature="e#14380#14403#0#PHP" />
-                <element signature="e#14408#15470#0#PHP" />
+                <element signature="e#606#1077#1#PHP" />
+                <element signature="e#1258#1729#1#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/view/public/header.html">
+        <entry file="file://$PROJECT_DIR$/app/index/controller/Newcar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="55" column="39" lean-forward="true" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="45" />
+            <state relative-caret-position="190">
+              <caret line="27" selection-start-line="27" selection-end-line="43" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index/controller/Index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="93" column="40" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="40" />
+              <folding>
+                <element signature="e#2440#7740#0#PHP" />
+                <element signature="e#7779#8869#0#PHP" />
+                <element signature="e#8918#9737#0#PHP" />
+                <element signature="e#10983#11437#0#PHP" />
+                <element signature="e#11471#12533#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
+        <entry file="file://$PROJECT_DIR$/app/index/view/index/sell.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
-              <folding>
-                <element signature="e#606#1077#1#PHP" />
-                <element signature="e#1258#1729#1#PHP" />
-              </folding>
+            <state relative-caret-position="404">
+              <caret line="265" column="54" lean-forward="true" selection-start-line="265" selection-start-column="54" selection-end-line="265" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -108,6 +121,18 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>newcar</find>
+      <find>公司新闻</find>
+      <find>brand</find>
+      <find>city_id</find>
+      <find>first_public</find>
+      <find>md50</find>
+      <find>foo</find>
+      <find>ios</find>
+      <find>er</find>
+      <find>app_brand_ios</find>
+      <find>er_car</find>
+      <find>volist</find>
+      <find>footer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,9 +141,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/app/index/view/index/index.html" />
+        <option value="$PROJECT_DIR$/app/index/view/newcar/index.html" />
+        <option value="$PROJECT_DIR$/app/index/controller/Newcar.php" />
         <option value="$PROJECT_DIR$/app/index/view/public/header.html" />
-        <option value="$PROJECT_DIR$/app/index/controller/Index.php" />
         <option value="$PROJECT_DIR$/app/index/controller/Common.php" />
+        <option value="$PROJECT_DIR$/app/index/controller/Twocar.php" />
+        <option value="$PROJECT_DIR$/app/index/view/twocar/index.html" />
+        <option value="$PROJECT_DIR$/app/index/controller/Index.php" />
+        <option value="$PROJECT_DIR$/app/index/view/index/sell.html" />
       </list>
     </option>
   </component>
@@ -144,10 +175,13 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="171" />
-    <option name="y" value="238" />
-    <option name="width" value="1898" />
-    <option name="height" value="917" />
+    <option name="x" value="-9" />
+    <option name="y" value="6" />
+    <option name="width" value="1858" />
+    <option name="height" value="1015" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -160,34 +194,29 @@
           <expand>
             <path>
               <item name="car" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="car" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
               <item name="car" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
               <item name="car" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="car" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
               <item name="car" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="car" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
               <item name="car" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
@@ -195,6 +224,7 @@
             </path>
             <path>
               <item name="car" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
               <item name="car" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
@@ -202,6 +232,7 @@
             </path>
             <path>
               <item name="car" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
               <item name="car" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
@@ -210,11 +241,12 @@
             </path>
             <path>
               <item name="car" type="b2602c69:ProjectViewProjectNode" />
+              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
               <item name="car" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="twocar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -224,8 +256,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new_api" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -249,36 +283,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1539654823739</updated>
-      <workItem from="1539654826121" duration="1041000" />
+      <workItem from="1539654826121" duration="18599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1041000" />
+    <option name="totallyTimeSpent" value="18599000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="171" y="238" width="1898" height="917" extended-state="0" />
+    <frame x="-9" y="6" width="1858" height="1015" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14363438" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14460512" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,43 +325,80 @@
     <entry file="file://$PROJECT_DIR$/app/admin/controller/Index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/controller/Index.php">
+    <entry file="file://$PROJECT_DIR$/public/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/view/newcar/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="123" column="30" lean-forward="true" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="30" />
-          <folding>
-            <element signature="e#145#3992#0#PHP" />
-            <element signature="e#4661#4889#0#PHP" />
-            <element signature="e#4920#4983#0#PHP" />
-            <element signature="e#5013#5074#0#PHP" />
-            <element signature="e#5108#5176#0#PHP" />
-            <element signature="e#5377#10677#0#PHP" />
-            <element signature="e#10716#11806#0#PHP" />
-            <element signature="e#11855#12674#0#PHP" />
-            <element signature="e#12718#13896#0#PHP" />
-            <element signature="e#13902#13915#0#PHP" />
-            <element signature="e#13920#14374#0#PHP" />
-            <element signature="e#14380#14403#0#PHP" />
-            <element signature="e#14408#15470#0#PHP" />
-          </folding>
+        <state relative-caret-position="456">
+          <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index/view/public/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="55" column="39" lean-forward="true" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="45" />
+        <state relative-caret-position="38">
+          <caret line="2" column="137" selection-start-line="2" selection-start-column="137" selection-end-line="2" selection-end-column="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/view/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="506" selection-start-line="506" selection-end-line="508" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/controller/Twocar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/view/twocar/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="265" column="65" selection-start-line="265" selection-start-column="65" selection-end-line="265" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+        <state relative-caret-position="266">
+          <caret line="921" column="20" selection-start-line="921" selection-start-column="20" selection-end-line="921" selection-end-column="20" />
           <folding>
             <element signature="e#606#1077#1#PHP" />
             <element signature="e#1258#1729#1#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/controller/Newcar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="27" selection-start-line="27" selection-end-line="43" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="93" column="40" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="40" />
+          <folding>
+            <element signature="e#2440#7740#0#PHP" />
+            <element signature="e#7779#8869#0#PHP" />
+            <element signature="e#8918#9737#0#PHP" />
+            <element signature="e#10983#11437#0#PHP" />
+            <element signature="e#11471#12533#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/view/index/sell.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="265" column="54" lean-forward="true" selection-start-line="265" selection-start-column="54" selection-end-line="265" selection-end-column="54" />
         </state>
       </provider>
     </entry>

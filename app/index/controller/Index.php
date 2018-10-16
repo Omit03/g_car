@@ -8,69 +8,26 @@ class Index  extends Common
 {
     public function index(){
 
-        $ip = $this->request->ip();
-
-        $city = $this->get_area('61.163.128.204');//暂时写死
-
-        $city_id = $this->get_city($city['data']['city']);
+       $city_id = $this->city_id();
         //banner
         $banner=Db::table("home_car_app")->where("city_id=".$city_id)->order("sort asc")->select();
-        //echo M("home_car_app")->getlastsql();
+
         foreach ($banner as $key => $val) {
             $banner[$key]['img_url']=$this->get_carimg($val['img'],1);
         }
-        //获取筛选模块 推荐品牌，，车龄，里程数，级别
-        $brand=Db::table("car_brand")->field("id,img_id,name")->where("id in (1,9,10,19,20,22)")->select();
-        foreach ($brand as $key => $val) {
-            $brand[$key]['img_url']=$this->get_carimg($val['img_id'],3);
-            unset($brand[$key]["img_id"]);
-        }
-         //价格
-        $price=Db::table("price_range")->field("price_id as id,name")->order("level asc")->limit(4)->select();
-        //级别
-        $subface=Db::table("subface")->field("face_id as id,name")->order("level asc")->limit(5)->select();
 
-       // dump($subface);die;
-        /*
-         * 新车
-         */
-        $new_car=Db::table("new_car")->field("id,brand_id,sys_id,cartype_id,price,img_300,pay10_s2,pay10_y2,pay10_n2")->where("is_tj=1 and status=1 and city_id=".$city_id)->order("create_time desc")->limit(20)->select();
-        foreach ($new_car as $key => $val) {
-            $new_car[$key]['img_url']=$this->get_carimg($val['img_300'],2);
-            $new_car[$key]['name']=$this->get_carname($val['cartype_id']);
-            $new_car[$key]['pay10_s2']=$val['pay10_s2'];
-            $new_car[$key]['pay10_y2']=$val['pay10_y2'];
-            unset($new_car[$key]['img_300']);
-        }
-        //二手
+        $brand=$this->brand();//获取筛选模块 推荐品牌
 
-        $er_car=Db::table("rele_car")->field("pu_id,cartype_id,price,car_cardtime,car_mileage,img_300")->where("status=1 and up_under=1 and city_id=$city_id")->order("create_time desc")->limit(20)->select();
-        foreach ($er_car as $k => $val) {
-            $er_car[$k]['name']=$this->get_carname($val['cartype_id']);
-            $er_car[$k]['img_url']=$this->get_carimg($val['img_300'],1);
-            $er_car[$k]['car_mileage']=$val['car_mileage'];
-            //unset($er_car[$k]['cartype_id']);
-            unset($er_car[$k]['img_300']);
-            //获取 新车的价格
-//            $new_car_prince=M("param")->field("id,info_1")->where("cartype_id=".$val['pu_id'])->find();
-//            $car_new[$k]['new_car_price']=$new_car_prince['info_1']; //表内并有字段 报错
-            $new_car_prince=Db::table("param")->field("id,price")->where("id=".$val['pu_id'])->find();//id换成 info_1 换成price
-            $er_car[$k]['new_car_price']=$new_car_prince['price'];
-        }
-        //零首付
-        $car_zero=Db::table("l_car")->field("id,cartype_id,price,img_300,pay0_s2,pay0_y2,pay0_n2")->where("is_tj=1 and status=1 and city_id=$city_id")->order("create_time desc")->limit(5)->select();
-        foreach ($car_zero as $key => $val) {
-            $car_zero[$key]['img_url']=$this->get_carimg($val['img_300'],2);
-            $car_zero[$key]['name']=$this->get_carname($val['cartype_id']);
-            $car_zero[$key]['pay10_s2']=$car_zero[$key]['pay0_s2'];
-            $car_zero[$key]['pay10_y2']=$car_zero[$key]['pay0_y2'];
-            $car_zero[$key]['pay10_n2']=$car_zero[$key]['pay0_n2'];
-            unset($car_zero[$key]['img_300']);
-            unset($car_zero[$key]['cartype_id']);
-            unset($car_zero[$key]['pay0_s2']);
-            unset($car_zero[$key]['pay0_y2']);
-            unset($car_zero[$key]['pay0_n2']);
-        }
+        $price=$this->price(); //价格
+
+        $subface=$this->subface();//级别
+
+        $new_car = $this->new_car($city_id); //新车
+
+        $er_car = $this->er_car($city_id);//二手
+
+        $car_zero = $this->car_zero($city_id);//零首付
+
 
         $this->assign('banner',$banner);
         $this->assign('brand',$brand);
@@ -96,14 +53,6 @@ class Index  extends Common
     }
 
     /*
-     * 登录 展示
-     */
-    public function logincar(){
-
-        return $this->fetch();
-    }
-
-    /*
      * 测试代码
     */
     public function test(){
@@ -120,6 +69,7 @@ class Index  extends Common
      * 新车
      */
     public function newcar(){
+
 
         return $this->fetch();
     }
@@ -139,7 +89,9 @@ class Index  extends Common
 
         $res = $this->app_brand_ios();//A b c  按车型排序
 
-        $er_car = $this->er_car();
+        $city_id = $this->city_id();
+
+        $er_car = $this->er_car($city_id);
 
         $this->assign('res',$res);
         $this->assign('er_car',$er_car);
@@ -165,6 +117,14 @@ class Index  extends Common
      * app 下载
      */
     public function appdownload(){
+
+        return $this->fetch();
+    }
+
+    /*
+     * 登录 展示
+     */
+    public function logincar(){
 
         return $this->fetch();
     }

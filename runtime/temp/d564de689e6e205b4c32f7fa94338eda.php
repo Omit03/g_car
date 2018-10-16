@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\index\sell.html";i:1539654336;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\index\sell.html";i:1539680769;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -263,7 +263,7 @@
 		
 		
 		// $(".header").load("templates/header.html");
-		// $(".footer").load("templates/footer.html");
+		 $(".footer").load("public/footer.html");
 		$.ajax({
 			type:"get",
 			url:"js/model/allCity.js",

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539654336;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539654336;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539658402;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539668666;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -145,8 +145,8 @@
 	<div class="nav gj_clear">
 		<ul class="wrap">
 			<li class="active"><a href="index.html">首页</a></li>
-			<li ><a href="<?php echo url('index/newCar'); ?>" class="sec_li">新车</a></li>
-			<li><a href="<?php echo url('index/carlist'); ?>">二手车</a></li>
+			<li ><a href="<?php echo url('newcar/index'); ?>" class="sec_li">新车</a></li>
+			<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
 			<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
 			<li><a href="<?php echo url('index/change'); ?>">置换</a></li>
@@ -396,7 +396,7 @@ $(window).on('scroll',function(){
 					<div class="oh home_new_nav">
 						<ul>
 							<li class="active" onclick="set('bd0',1,5)" id="bd01">公司新闻</li>
-							<li onclick="set('bd0',2,5)" id="bd02">行业新闻</li>
+							<li onclick="set('bd0',2,5)" id="bd02"> 行业新闻</li>
 							<li onclick="set('bd0',3,5)" id="bd03">媒体报道</li>
 							<li onclick="set('bd0',4,5)" id="bd04">特色活动</li>
 							<li onclick="set('bd0',5,5)" id="bd05">新车资讯</li>
@@ -406,21 +406,21 @@ $(window).on('scroll',function(){
 					<div class="home_news_cont" id="conbd01">
 						<div class="left_big new_imgs">
 							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV</p>
+							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV123</p>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 ......</p>
+								<p class="hid">郑州二手保时捷718 2016款 123......</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<p class="hid">123郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+								<a href="">郑州二手日产奇骏管家车易站asda</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
@@ -449,12 +449,12 @@ $(window).on('scroll',function(){
 					<div class="home_news_cont" id="conbd02" style="display: none;">
 						<div class="left_big new_imgs">
 							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV</p>
+							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUVddd444</p>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 ......</p>
+								<p class="hid">郑州二手保时捷718 2016款44 ......</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
@@ -469,7 +469,7 @@ $(window).on('scroll',function(){
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+								<a href="">郑州二手日产奇骏管家车易4444站</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
@@ -478,7 +478,7 @@ $(window).on('scroll',function(){
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+								<a href="">郑州二手日产奇骏管家车易444站</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
@@ -492,33 +492,33 @@ $(window).on('scroll',function(){
 					<div class="home_news_cont" id="conbd03" style="display: none;">
 						<div class="left_big new_imgs">
 							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV</p>
+							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV5555</p>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 ......</p>
+								<p class="hid">郑州二手保时捷718 2016款 55......</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<p class="hid">5555郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+								<a href="">郑州二手日产奇骏管家车易站555</a>
+							</li>
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
+								<a href="">郑州二手日产奇骏管家车易站555</a>
+							</li>
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
+								<a href="">郑州二手日产奇骏管家车易站55</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+								<a href="">郑州二手日产奇骏管家车易站5</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
@@ -535,12 +535,12 @@ $(window).on('scroll',function(){
 					<div class="home_news_cont" id="conbd04" style="display: none;">
 						<div class="left_big new_imgs">
 							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV</p>
+							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV777</p>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 ......</p>
+								<p class="hid">郑州二手保时捷718 2016款 ......777</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
@@ -549,10 +549,10 @@ $(window).on('scroll',function(){
 						</div>
 						<ul class="news_txt_desc">
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+								<a href="">郑州二手日产奇骏管家车易站7777</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+								<a href="">郑州二手日产奇骏管家车易站777</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
@@ -578,12 +578,12 @@ $(window).on('scroll',function(){
 					<div class="home_news_cont" id="conbd05" style="display: none;">
 						<div class="left_big new_imgs">
 							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV</p>
+							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV888</p>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 ......</p>
+								<p class="hid">郑州二手保时捷718 2016款 ......888</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
@@ -592,7 +592,7 @@ $(window).on('scroll',function(){
 						</div>
 						<ul class="news_txt_desc">
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+								<a href="">郑州二手日产奇骏管家车易站88888</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
@@ -613,7 +613,7 @@ $(window).on('scroll',function(){
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
 							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+								<a href="">郑州二手日产奇骏管家车易站999</a>
 							</li>
 
 						</ul>
