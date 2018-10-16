@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\index\logincar.html";i:1539654336;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539685822;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\index\logincar.html";i:1539688788;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539685822;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,10 +13,9 @@
 	<style>
 	</style>
 
-	<body>	
-		<div class="full_wid">
-			<div class="header">
-			<div class="site_nav">
+	<body>
+	<div class="header">
+	<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！请<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a></div>
 		<div class="fright">
@@ -151,7 +150,9 @@ $(window).on('scroll',function(){
 
 </script>
 
-			</div>
+	</div>
+		<div class="full_wid">
+
 			<div class="login_bg">
 				<div class="login_tab" >
 					<div class="login_sure">
