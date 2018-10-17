@@ -794,6 +794,15 @@ class Common extends Controller{
         }
     }
 
+    //获取所有车龄
+    public function get_car_allage(){
+
+        $car_age=Db::table('cheling')->select();
+
+        return $car_age;
+
+    }
+
     //获取排放标准
     public function get_blowdown($id){
         $blowdown=Db::table('p_bzhun')->where("id=$id")->find();

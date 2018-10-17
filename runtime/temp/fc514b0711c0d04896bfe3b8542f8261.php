@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\change\index.html";i:1539685404;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539685822;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539654336;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\change\index.html";i:1539689569;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539690764;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -76,6 +76,7 @@
 			<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
 			<li><a href="<?php echo url('index/logincar'); ?>">登录/注册</a></li>
+			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
 		</ul>
 	</div>
 </div>
@@ -222,10 +223,10 @@ $(window).on('scroll',function(){
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
 			<div class="basic_info">
 				<div>
-					<a href="">关于我们</a>
-					<a href="">联系我们</a>
-					<a href="">服务保障</a>
-					<a href="">网站地图</a>
+					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
+					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
+					<a href="<?php echo url('index/service'); ?>">服务保障</a>
+					<a href="<?php echo url('index/website'); ?>">网站地图</a>
 				</div>
 				<p>
 					版权所有：河南管家车销售有限公司 <br /> 
@@ -245,71 +246,25 @@ $(window).on('scroll',function(){
 		<div class="optimize_link">
 			<p class="link_tit">热门品牌：</p>
 			<span class="more_dwon"></span>
-			<a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
+			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+			<a href=""><?php echo $vol['name']; ?></a>
+			<?php endforeach; endif; else: echo "" ;endif; ?>
+
 		</div>
 		<div class="optimize_link">
-			<p class="link_tit ">热门车系：</p>
+			<p class="link_tit ">热门车系123：</p>
 			<span class="more_dwon"></span>
 			<a href="">大众</a>
 			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
+
 		</div>
 		<div class="optimize_link gj_clear">
-			<p class="link_tit">友情链接：</p>
+			<p class="link_tit">友情链接123：</p>
 			<span class="more_dwon"></span>
 			<a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a><a href="">大众</a><a href="">大众</a>
-			<a href="">大众</a>
+
+
+
 		</div>
 	</div>
 <script>

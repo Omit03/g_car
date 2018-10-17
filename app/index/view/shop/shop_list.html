@@ -14,8 +14,8 @@
 	<style>
 
 	</style>
-	<body style="background:#f8f8f8">		
-
+	<body style="background:#f8f8f8">
+	<div class="header">{include file="public/header"}</div>
 	<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">向阳二手车 >></a><a href=""> 店铺首页</a></div>
 	<div class="storeH">
 		<div class="wrap">
@@ -36,52 +36,44 @@
 		<div class="wrap">
 			<div class="oh">
 				<div class="brandLeft">
+
 					<ul>
-						<li class="p_r"><h3>品牌<b>全部</b></h3>
+						<li class="">
+							<h3>品牌<b>全部</b></h3>
 							<div class="classify">
-								<a href="" class="active" >不限</a><a href="">奥迪 </a><a href="">大众 </a><a href="">奔驰 </a><a href="">福特 </a>
-								<a href="">丰田 </a><a href="">马自达 </a><a href="">本田 </a> <a href="">宝马 </a>
-							</div>
-							<!--所有品牌列表-->
-							<div class="sale_all_list p_r fn_hide">
-								<b></b>
-								<ul class="gj_clear">
-									<li class="gj_clear"><strong>A</strong><span>
-										<a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a>
-										<a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a>
-										<a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a>
-										<a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a>
-										<a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a>
-									</span>
-									</li>
-									<li class="gj_clear"><strong>B</strong><span><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a></span></li>
-									<li class="gj_clear"><strong>C</strong><span><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a></span></li>
-									<li class="gj_clear"><strong>D</strong><span><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a></span></li>
-									<li class="gj_clear"><strong>E</strong><span><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a><a href="">奔驰</a></span></li>
-								</ul>
+								<a href="" class="active" >不限</a>
+								{volist name="brand" id="vol"}
+								<a href="">{$vol.name}</a>
+								{/volist}
 							</div>
 						</li>
-						<li>
-							<h3>价格</h3>
+						<li class="">
+							<h3>价格<b>全部</b></h3>
 							<div class="classify">
-								<a href="" class="active" >不限</a><a href="">奥迪 </a><a href="">宝马 </a><a href="">奔驰 </a><a href="">大众 </a>
-								<a href="">奥迪 </a><a href="">宝马 </a><a href="">奔驰 </a><a href="">大众 </a>  <a href=""></a>
+								<a href="" class="active" >不限</a>
+								{volist name="price" id="vo"}
+								<a href="">{$vo.name}</a>
+								{/volist}
+							</div>
+						</li>
+						<li class="">
+							<h3>级别<b>全部</b></h3>
+							<div class="classify">
+								<a href="" class="active" >不限</a>
+								{volist name="subface" id="vol"}<a href="{$vol.id}">{$vol.name}</a>{/volist}
 							</div>
 						</li>
 						<li>
-							<h3>级别</h3>
-						<div class="classify">
-						<a href="" class="active" >不限</a><a href="">奥迪 </a><a href="">宝马 </a><a href="">奔驰 </a><a href="">大众 </a><a href="">奥迪 </a><a href="">宝马 </a>
-						<a href="">奔驰 </a><a href="">大众 </a>  <a href=""></a></div>
-						</li>
-						<li>
-							<h3>车龄 </h3>
+							<h3>车龄 <b>全部</b></h3>
 							<div class="classify">
-								<a href="" class="active" >不限</a><a href="">1年内 </a><a href="">1-3年 </a><a href="">3-5年 </a><a href="">大众 </a> <a href=""></a>
+								<a href="" class="active" >不限</a>
+								{volist name="age" id="vol"}<a href="">{$vol.cheling}</a>{/volist}
 							</div>
 						</li>
 					</ul>
-					
+
+
+
 				</div>
 				<!--右侧车源以及筛选-->			
 				<div class="listImg">
@@ -100,12 +92,9 @@
 					</div>
 					<div class="gj_clear">
 						<ul class="store_list gj_clear">
-							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
-							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
-							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
-							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
-							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
-							
+                            {volist name="er_car" id="vol" offset="1" length="10" }
+							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>{$vol.name}</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
+                            {/volist}
 						</ul>
 						<div class="page">
 							<a href="">首页</a><a href="">1</a><a href="" class="active">2</a><a href="">...</a><a href="">9</a><a href="">尾页</a>
@@ -122,8 +111,8 @@
 			<input type="text" placeholder="请输入手机号"/>
 			<div class="btn_buy">我要买车</div>
 		</div>
-	</div>	
-	<div class="footer"></div>
+	</div>
+	<div class="footer">{include file="public/footer"}</div>
 	
 	</body>
 	<script>
@@ -136,8 +125,8 @@
 				$(this).css("border","none")
 			})
 		})
-	   $(".header").load("templates/header.html");
-	   $(".footer").load("templates/footer.html");
+	   // $(".header").load("templates/header.html");
+	   // $(".footer").load("templates/footer.html");
 	
 	</script>
 	

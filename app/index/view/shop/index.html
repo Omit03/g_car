@@ -59,13 +59,15 @@
 						<li class="">				
 							<h3>级别<b>全部</b></h3>
 							<div class="classify">
-							<a href="" class="active" >不限</a><a href="">奥迪 </a><a href="">宝马 </a><a href="">奔驰 </a><a href="">大众 </a><a href="">奥迪 </a><a href="">宝马 </a>
-							<a href="">奔驰 </a><a href="">大众 </a>  <a href=""></a></div>
+							<a href="" class="active" >不限</a>
+								{volist name="subface" id="vol"}<a href="{$vol.id}">{$vol.name}</a>{/volist}
+							</div>
 						</li>
 						<li>
 							<h3>车龄 <b>全部</b></h3>
 							<div class="classify">
-								<a href="" class="active" >不限</a><a href="">1年内 </a><a href="">1-3年 </a><a href="">3-5年 </a><a href="">大众 </a> <a href=""></a>
+								<a href="" class="active" >不限</a>
+								{volist name="age" id="vol"}<a href="">{$vol.cheling}</a>{/volist}
 							</div>
 						</li>
 					</ul>
@@ -80,15 +82,17 @@
 			<div class="shop_recom"><h2>最新车源</h2><b></b></div>	
 			<div class="gj_clear">
 		    	<ul class="list ptp15 new_list">
+					{volist name="new_car" id="val" offset="1" length="10"}
 					<li class="items5">
-						<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+						<a href="" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
 						<a href="" class="car_desc">
-							<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-							<p><span class="pay_first">首付<b>55</b>万</span> <span class="padlt20">月供5555元</span> </p>
+							<h3>{$val.name}</h3>
+							<p><span class="pay_first">首付<b>{$val.pay10_s2}</b>万</span> <span class="padlt20">月供{$val.pay10_y2}元</span> </p>
 					
 						</a>
 						<img src="__STATIC__/img/newgoods.png" alt="" class="hot" />
-					</li>			
+					</li>
+					{/volist}
 				</ul>
 				<a href="" class="more_l">查看更多车型</a>
 		   </div>				

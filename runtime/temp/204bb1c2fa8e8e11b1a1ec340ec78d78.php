@@ -1,21 +1,22 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\index\logincar.html";i:1539689569;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539690764;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\shop\shop_list.html";i:1539741149;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539695003;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 	</head>
+	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
+	<link rel="stylesheet" href="/static/css/iconfont.css">
+	<link rel="stylesheet" href="/static/css/swiper.min.css" />
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	
-	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="js/gjsilde.min.js" type="text/javascript" charset="utf-8"></script>-->
 	<style>
-	</style>
 
-	<body>
-	<div class="header">
-	<div class="site_nav">
+	</style>
+	<body style="background:#f8f8f8">
+	<div class="header"><div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！请<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a></div>
 		<div class="fright">
@@ -79,6 +80,7 @@
 			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
 			<li><a href="<?php echo url('index/logincar'); ?>">登录/注册</a></li>
 			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
+			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
 		</ul>
 	</div>
 </div>
@@ -150,78 +152,107 @@ $(window).on('scroll',function(){
 })
 
 </script>
-
-	</div>
-		<div class="full_wid">
-
-			<div class="login_bg">
-				<div class="login_tab" >
-					<div class="login_sure">
-						<ul class="login_type">
-							<li class="active" onclick="set('bd0',1,2)">手机号快捷登录</li>
-							<b>|</b>
-							<li onclick="set('bd0',2,2)">账号密码登录</li>
-						</ul>
-						<div class="login_phone" id="conbd01">
-							<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
-							<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="text" placeholder="请输入密码"/></div>
-							<div class="border login_ver"><img src="/static/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
-							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
-							<p class="login_btn mtp40">立即登录</p>
-							<p class="regist_btn">免费注册</p>
-						</div>
-						<div class="login_phone" id="conbd02" style="display: none;">
-							<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
-							<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="text" placeholder="请输入密码"/></div>
-							<div class="border login_ver"><img src="/static/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
-							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
-							<p class="login_btn mtp40">立即登录</p>
-							<p class="regist_btn">免费注册</p>
-						</div>
-					</div>
-					
-					<div class="login_other">
-						<img src="/static/img/ewm.png" alt="" class="app_down" width="225"/>
-						<p class="textCenter">扫描下载</p>
-						<div><img src="/static/img/qq.png" alt="" />QQ登录</div>
-						<div><img src="/static/img/wx.png" alt="" />微信登录</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer"></div>
-		<div class="fixedRight">
-			<ul class="right_sider">
-				<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
-					<div class="gj_sidecon_desc "></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
-				<div class="gj_sidecon_desc"></div></li>
-				<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
-				<div class="gj_sidecon_desc"></div></li>
-				<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				
+</div>
+	<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">向阳二手车 >></a><a href=""> 店铺首页</a></div>
+	<div class="storeH">
+		<div class="wrap">
+			<h1 class="textCenter"><span>郑州管家二手车<b>优选商家</b></span></h1>
+			<p class="fright phone">
+				  <i class="icon iconfont icon-msnui-telephone"></i>  15638886114
+			</p>
+			<div class="gj_clear"></div>
+			<ul class="shop_nav gj_clear">
+				<li class="active"><a href="<?php echo url('shop/index'); ?>">店铺首页</a></li>
+				<li ><a href="<?php echo url('shop/shop_list'); ?>">在售车源</a></li>
+				<li><a href="<?php echo url('shop/shop_info'); ?>">公司信息</a></li>
 			</ul>
 		</div>
-		<div class="footer">
-			
+		
+	</div>
+	<div class="bgfa">
+		<div class="wrap">
+			<div class="oh">
+				<div class="brandLeft">
+
+					<ul>
+						<li class="">
+							<h3>品牌<b>全部</b></h3>
+							<div class="classify">
+								<a href="" class="active" >不限</a>
+								<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+								<a href=""><?php echo $vol['name']; ?></a>
+								<?php endforeach; endif; else: echo "" ;endif; ?>
+							</div>
+						</li>
+						<li class="">
+							<h3>价格<b>全部</b></h3>
+							<div class="classify">
+								<a href="" class="active" >不限</a>
+								<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+								<a href=""><?php echo $vo['name']; ?></a>
+								<?php endforeach; endif; else: echo "" ;endif; ?>
+							</div>
+						</li>
+						<li class="">
+							<h3>级别<b>全部</b></h3>
+							<div class="classify">
+								<a href="" class="active" >不限</a>
+								<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href="<?php echo $vol['id']; ?>"><?php echo $vol['name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+							</div>
+						</li>
+						<li>
+							<h3>车龄 <b>全部</b></h3>
+							<div class="classify">
+								<a href="" class="active" >不限</a>
+								<?php if(is_array($age) || $age instanceof \think\Collection || $age instanceof \think\Paginator): $i = 0; $__LIST__ = $age;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href=""><?php echo $vol['cheling']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+							</div>
+						</li>
+					</ul>
+
+
+
+				</div>
+				<!--右侧车源以及筛选-->			
+				<div class="listImg">
+					<div class="gj_clear">
+						<ul  class="sort_s">
+							<li class=""><a href="">默认排序</a></li>
+							<li class=""><a href="">价格<b class="actives"></b><i></i></a></li>
+							<li class=""><a href="">车龄<b></b><i class="actives"></i></a></li>
+							<li class=""><a href="">级别<b></b><i></i></a></li>
+							<li class=""><a href="">里程<b></b><i></i></a></li>
+						</ul>
+						<div class="search_box">
+							<input type="text" value=""/>
+							<a href="">搜索</a>
+						</div>
+					</div>
+					<div class="gj_clear">
+						<ul class="store_list gj_clear">
+							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
+							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
+							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
+							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
+							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
+							
+						</ul>
+						<div class="page">
+							<a href="">首页</a><a href="">1</a><a href="" class="active">2</a><a href="">...</a><a href="">9</a><a href="">尾页</a>
+						</div>
+					</div>
+				</div>
+			</div>
+					
+		</div>	
+	</div>
+	<div class="adv_img">
+		<h2>想开什么车 ？管家车易站应有尽有.</h2>
+		<div class="buy_ipt">
+			<input type="text" placeholder="请输入手机号"/>
+			<div class="btn_buy">我要买车</div>
+		</div>
+	</div>
+	<div class="footer">
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -275,72 +306,23 @@ $(window).on('scroll',function(){
 	$(".more_dwon").click(function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script>
-		</div>
+</script></div>
+	
 	</body>
-	<!--
-	<div class="wrap">
-		<div class="company_info gj_clear">
-			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
-			<div class="basic_info">
-				<div>
-					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
-					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
-					<a href="<?php echo url('index/service'); ?>">服务保障</a>
-					<a href="<?php echo url('index/website'); ?>">网站地图</a>
-				</div>
-				<p>
-					版权所有：河南管家车销售有限公司 <br /> 
-				 工信备案：豫ICP备17046554号 <br /> 
-				  CopyRight © 2015-2018 ww
-				</p>
-			</div>
-			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
-			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
-			<div class="contact_way">
-				<p>免费咨询、建议、投诉 <br />
-				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
-				 每天9：00-21：00(法定节假日除外)
-				</p>		
-			</div>
-		</div>	
-		<div class="optimize_link">
-			<p class="link_tit">热门品牌：</p>
-			<span class="more_dwon"></span>
-			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-			<a href=""><?php echo $vol['name']; ?></a>
-			<?php endforeach; endif; else: echo "" ;endif; ?>
-
-		</div>
-		<div class="optimize_link">
-			<p class="link_tit ">热门车系123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-			<a href="">大众</a>
-
-		</div>
-		<div class="optimize_link gj_clear">
-			<p class="link_tit">友情链接123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-
-
-
-		</div>
-	</div>
-<script>
-	$(".more_dwon").click(function(){
-		$(this).parents(".optimize_link").addClass("link_active")
-	})
-</script>-->
-	<!--<script>		-->
-		<!--$(function(){	-->
-
-			<!--$(".login_type li").click(function(){-->
-			   <!--$(this).addClass('active').siblings('li').removeClass('active')-->
-			<!--})-->
-		      <!--$(".header").load("templates/header.html");-->
-		      <!--$(".footer").load("templates/footer.html")-->
-		<!--})-->
-<!--</script>-->
+	<script>
+		$(function(){
+			$(".brandLeft li.p_r").hover(function(){
+				$(this).find('.sale_all_list').show();
+				$(this).css("border","1px solid #ff802c")
+			},function(){
+				$(this).find('.sale_all_list').hide();
+				$(this).css("border","none")
+			})
+		})
+	   // $(".header").load("templates/header.html");
+	   // $(".footer").load("templates/footer.html");
+	
+	</script>
+	
 </html>
+ 
