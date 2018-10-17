@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"G:\xampp\htdocs\car\public/../app/index\view\user\person_order.html";i:1539759455;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539758056;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"G:\xampp\htdocs\car\public/../app/index\view\user\person_order.html";i:1539764667;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539758056;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -6,8 +6,8 @@
 		<title></title>
 	</head>
 	<link rel="icon" type="image/x-icon" href="favicon.png">
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/other.css" />
+	<link rel="stylesheet" href="/static/css/style.css" />
+	<link rel="stylesheet" href="/static/css/other.css" />
 
 	<style>
 	
@@ -157,9 +157,9 @@ $(window).on('scroll',function(){
 				<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
 				<div class="fright">
 					<ul class="site_nav_menu">
-						<li><a href=""><img src="img/home1.png" alt="" />首页</a></li>
-						<li><a href=""><img src="img/sell2.png" alt="" />我要买车</a></li>
-						<li><a href=""><img src="img/sell1.png" alt="" />我要买车</a></li>
+						<li><a href=""><img src="/static/img/home1.png" alt="" />首页</a></li>
+						<li><a href=""><img src="/static/img/sell2.png" alt="" />我要买车</a></li>
+						<li><a href=""><img src="/static/img/sell1.png" alt="" />我要买车</a></li>
 						<li><a href=""><img src="" alt="" />网站导航</a></li>
 					</ul>					
 				</div>
@@ -171,7 +171,7 @@ $(window).on('scroll',function(){
 				<div class="person_center">
 					<div class="person_left">
 						<div class="person_info">
-							<div class="user_avatar"><img src="img/yhtx.png" alt="" /></div>
+							<div class="user_avatar"><img src="/static/img/yhtx.png" alt="" /></div>
 							<p class="uphone">15362352625</p>
 							<p>向阳二手车一号店</p>							
 						</div>
@@ -200,51 +200,19 @@ $(window).on('scroll',function(){
 							</ul>
 						</h1>
 						<ul class="p_list">
+							<?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 							<li class="item">
-								<div class="car_img"><img src="img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								<div class="car_img"><img src="<?php echo $vol['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3><?php echo $vol['name']; ?></h3>
+									<p><?php echo $vol['car_mileage']; ?>万公里 | <?php echo $vol['car_cardtime']; ?> | <?php echo $vol['shop_name']; ?></p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice"><?php echo $vol['price']; ?>万</span></div>
 								</div>
 								<div class="order_res">
 									<p>预约时间：2018-07-27  15:00</p>
 									<span class="order_des">详 情</span>
 								</div>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="order_res">
-									<p>预约时间：2018-07-27  15:00</p>
-									<span class="order_des">详 情</span>
-								</div>
-								
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="order_res">
-									<p>预约时间：2018-07-27  15:00</p>
-									<span class="order_des">详 情</span>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="order_res">
-									<p>预约时间：2018-07-27  15:00</p>
-									<span class="order_des">详 情</span>
-								</div>
-							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 					</div>	
 				</div>
@@ -309,10 +277,10 @@ $(window).on('scroll',function(){
 		</div>
 		
 	</body>
-	<script src="js/jquery-1.11.0.min.js"></script>
-	<script src="js/laydate.js"></script>
-	<script src="js/imgUp.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/laydate.js"></script>
+	<script src="/static/js/imgUp.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<script>		
 		$(function(){		
 			$(".sel_status li").each(function(){
@@ -331,7 +299,7 @@ $(window).on('scroll',function(){
 			})
 			
 			//加载公用头部和底部
-		    $(".header").load("templates/header.html");
+		   // $(".header").load("templates/header.html");
 //		    $(".footer").load("templates/footer.html");
 
 			

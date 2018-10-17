@@ -63,51 +63,19 @@
 							</ul>
 						</h1>
 						<ul class="p_list">
+							{volist name="list" id="vol"}
 							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								<div class="car_img"><img src="{$vol.img_url}" alt="" /></div>
+								<div class="car_desc"><h3>{$vol.name}</h3>
+									<p>{$vol.car_mileage}万公里 | {$vol.car_cardtime} | {$vol.shop_name}</p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice">{$vol.price}万</span></div>
 								</div>
 								<div class="order_res">
 									<p>预约时间：2018-07-27  15:00</p>
 									<span class="order_des">详 情</span>
 								</div>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="order_res">
-									<p>预约时间：2018-07-27  15:00</p>
-									<span class="order_des">详 情</span>
-								</div>
-								
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="order_res">
-									<p>预约时间：2018-07-27  15:00</p>
-									<span class="order_des">详 情</span>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="order_res">
-									<p>预约时间：2018-07-27  15:00</p>
-									<span class="order_des">详 情</span>
-								</div>
-							</li>
+							{/volist}
 						</ul>
 					</div>	
 				</div>

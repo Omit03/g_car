@@ -56,19 +56,19 @@
 						<h1 class="borbt"><span class="release">意见反馈</span></h1>
 						<h2 class="step"></h2>
 						<div class="upLoad_form">
-							<ul class="motify_ipt">								
-								<li><span class="my_form_tit">姓名：</span>
-									<div class="fleft myform_ipt"><input type="password" placeholder="请输入您的姓名"/></div>
-								</li>								
-								<li><span class="my_form_tit">手机号：</span>
-									<div class="fleft myform_ipt"><input type="password" placeholder="请输入您的手机号" /></div>
-								</li>
-								<li><span class="my_form_tit">详细描述：</span>
-									<div class="fleft "><textarea name="" rows="" cols="" class="store_desc" placeholder="请用10-400字以内描述您所遇到的问题"></textarea></div>
-								</li>
-							</ul>								
-							<p class="sub_btn pwd_submit">提交</p>
-						</div>
+
+							<form action="{:url('user/person_feedback')}" method="post">
+								<ul class="motify_ipt">
+									<li><span class="my_form_tit">姓名：</span><div class="fleft myform_ipt"><input type="name" name="name" placeholder="请输入您的姓名"/></div></li>
+									<li><span class="my_form_tit">手机号：</span>
+										<div class="fleft myform_ipt"><input type="phone" name="phone" placeholder="请输入您的手机号" /></div>
+									</li>
+									<li><span class="my_form_tit">详细描述：</span>
+										<div class="fleft "><textarea name="con" rows="" cols="" class="store_desc" placeholder="请用10-400字以内描述您所遇到的问题"></textarea></div>
+									</li>
+									<p class="sub_btn pwd_submit"><input type="submit" value="提交" /></p>
+									</ul>
+							</form>
 					</div>
 				</div>
 				
@@ -92,5 +92,6 @@
 
 			
 	})
+
 </script>
 </html>

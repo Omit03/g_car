@@ -1,30 +1,22 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\twocar\car_compare.html";i:1539754526;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539695003;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:73:"G:\xampp\htdocs\car\public/../app/index\view\user\person_opportunity.html";i:1539758780;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539758056;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8"/>
 		<title></title>
 	</head>
+	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	<script src="/static/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>		
+	<link rel="stylesheet" href="/static/css/iconfont.css" />
 	<style>
-	.compared_cont{padding-right: 65px;}
-	.compared_cont table{border: 1px solid #ddd;font-size: 16px;background: #fff;}
-	.compared_cont  .compare_img .compare_title{vertical-align: top;} 
-	.compared_cont table td{border-left: 1px solid #ccd3e4;border-top: 1px solid #ccd3e4;text-align: center;padding: 10px;width: 190px;}
-	.compared_cont .compare_title{width: 184px;vertical-align: middle;}
-	.car_img_comp img{margin: 20px;}
-	.table_title{padding: 20px;}
-	.table_title p{margin-top: 15px;}
-	.table_title p img{margin-right: 4px;}
-	.table_title h2{text-align: left;font-size: 18px;font-weight: bold;}
-	.add_carxing{ width: 20px;padding-top: 8px;text-align: center;margin:0 auto;font-size: 16px;color: #fff;}
-	.add_btn_wrap{ position: fixed;width: 35px;height:98px;background: #F28F1B;top: 369px;left: 50%;margin: -44px 0 0 495px;}
+	.proce_res b{font-weight: lighter;color:#ff802c;}
+	.processing_res {float: left;width: 200px;margin-top: 54px;}
+	.proce_status+div{margin-top: 10px;margin-left: 10px;cursor: pointer;}
 	</style>
-	<body>		
-		<div class="header"><div class="site_nav">
+	<body>
+	<div class="header">
+		<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！请<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a></div>
 		<div class="fright">
@@ -86,7 +78,7 @@
 			<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 			<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-			<li><a href="<?php echo url('index/logincar'); ?>">登录/注册</a></li>
+			<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
 			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
 			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
 		</ul>
@@ -160,165 +152,102 @@ $(window).on('scroll',function(){
 })
 
 </script>
-</div>
-		<div class="full_wid">
-			<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">郑州二手车 >></a><a href=""> 车型对比</a></div>
-			<div class="compared_cont wrap">
-				<div class="add_btn_wrap">
-					<div class="add_carxing">添加车型</div>
+
+	</div>
+		<div class="site_nav">
+			<div class="site_nav_bd">
+				<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
+				<div class="fright">
+					<ul class="site_nav_menu">
+						<li><a href=""><img src="/static/img/home1.png" alt="" />首页</a></li>
+						<li><a href=""><img src="/static/img/sell2.png" alt="" />我要买车</a></li>
+						<li><a href=""><img src="/static/img/sell1.png" alt="" />我要买车</a></li>
+						<li><a href=""><img src="" alt="" />网站导航</a></li>
+					</ul>					
 				</div>
-				<table border="1">
-					<tr class="compare_img">
-						<td class="compare_title">
-							<div class="table_title">
-								<h2>车源选择</h2>
-								<p class="flex_center"><img src="/static/img/img_checked.png" alt="" />看看相同项</p>
-								<p class="flex_center"><img src="/static/img/img_uncheck.png" alt="" />隐藏不同项</p>
-								<p class="flex_center"><img src="/static/img/biao.png" alt="" />标配<img src="/static/img/xuan.png" alt="" />选配<img src="/static/img/wu.png" alt="" />无</p>							
-							</div>
-						</td>
-						<td class="car_img_comp"><div><img src="/static/img/nocar.png" alt="" /></div></td>
-						<td class="car_img_comp"><img src="/static/img/nocar.png" alt="" /></td>
-					    <td class="car_img_comp"><img src="/static/img/nocar.png" alt="" /></td>
-						<td class="car_img_comp"><img src="/static/img/nocar.png" alt="" /></td>
-					</tr>
-					<tr>
-						<td class="compare_title">基本信息</td>
-						<td>奔驰A4L 2017款 plus 40 TFSI 进取型A4L 2017款 plus 40 TFSI 进取</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">车源地</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">上牌时间</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">现售价</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">新车价</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">原车用途</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">车辆类别</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">颜色</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">行驶里程</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">变速箱</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">能源</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">排放标准</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">座位数</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">过户</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">按揭</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">强险有效期</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">年审有效期</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">保养情况</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td class="compare_title">车主描述</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</table>
 			</div>
 		</div>
-		<div class="footer">
+		<div class="borbt"><div class="header"></div></div>
+		<div class="full_wid">			
+			<div class="wrap ">	
+				<div class="person_center">
+					<div class="person_left">
+						<div class="person_info">
+							<div class="user_avatar"><img src="/static/img/yhtx.png" alt="" /></div>
+							<p class="uphone">15362352625</p>
+							<p>向阳二手车一号店</p>							
+						</div>
+						<div class="tab_choose">
+							<ul>
+								<li class=""><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class="active"><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_feedback.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_order.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="person_right">
+						<h1 class="borbt"><span class="release">我的预约 </span>
+							<div class="fright ptp15 proce_res">共<b>23</b>条 | 已处理<b>22</b>条 | 未处理<b>1</b>条</div>
+						</h1>
+						<ul class="p_list">
+							<li class="item">
+								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
+								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
+									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
+									<p>预约时间：2018-06-13</p>
+								</div>
+								<div class="processing_res">
+									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
+									<div class="c_proce">点击处理</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
+								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
+									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
+									<p>预约时间：2018-06-13</p>
+								</div>
+								<div class="processing_res">
+									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
+									<div class="c_proce">点击处理</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
+								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
+									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
+									<p>预约时间：2018-06-13</p>
+								</div>
+								<div class="processing_res">
+									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
+									<div class="c_proce">点击处理</div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
+								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
+									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
+									<p>预约时间：2018-06-13</p>
+								</div>
+								<div class="processing_res">
+									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
+									<div class="c_proce">点击处理</div>
+								</div>
+							</li>
+						</ul>
+					</div>	
+				</div>
+			</div>
+		</div>
+	<div class="footer">
+		
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -372,22 +301,37 @@ $(window).on('scroll',function(){
 	$(".more_dwon").click(function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script></div>
+</script>
+	</div>
+		
 	</body>
+	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<script>		
 		$(function(){		
+			$(".sel_status li").each(function(){
+				var that=$(this);
+				$(that).click(function(){
+				var status=$(this).attr("data-status");
+					if(status==1){
+						$(this).attr("data-status",0);
+						$(this).removeClass("active")
+					}else{
+						$(this).attr("data-status",1);
+						$(this).addClass("active").siblings().removeClass("active")
+					}
+				
+			})
+			})
+			
+			//加载公用头部和底部
 		    $(".header").load("templates/header.html");
-		    $(".footer").load("templates/footer.html");
-		    $(".add_carxing").click(function(){
-		    	$(".compared_cont table tr").append("<td></td>");
-		    	$(".compare_img td").addClass("car_img_comp");
-		    	$(".car_img_comp").html('<img src="/static/img/nocar.png" alt="" />')
-		    	var len=$(".compare_img td").length
-		    	if(len>=7){
-		    		$(".add_btn_wrap").hide()
-		    	}
-		    })
-		 
-		})
+//		    $(".footer").load("templates/footer.html");
+
+			$(".c_proce").click(function(){
+				$(this).hide()
+				$(this).prev('.proce_status').find('img').attr('src','/static/img/deal.png')
+			})
+	})
 </script>
 </html>

@@ -99,23 +99,151 @@ class User  extends Common {
         $this->assign('brand',$brand);
         return $this->fetch();
 
-    }    /*
-     * 展示登录
+    }
+    /*
+     * 意见反馈
      */
     public function person_feedback(){
 
+        /*接收参数*/
+       if($this->request->isPost()){
+           $data = $this->params;
+
+       }
         $brand = $this->brand();//品牌
 
         $this->assign('brand',$brand);
         return $this->fetch();
 
-    }    /*
-     * 展示登录
+    }
+    /*
+     * 展示我的预约
+     * my_appointment
+     * 我的预约
+     * http://39.106.67.47/new_api/User/newapi/my_appointment
+     * user_id
+     * type 代表类型 如新车//type类型1.新车，2.二手车，3.0首付
+     * page
+     * page_size
      */
+
     public function person_order(){
 
+        /*接收参数*/
+        $user_id   = input('param.user_id');
+        $type = input('param.type');
+        $page   = input('param.page');
+        $page_size    = input('param.page_size');
+
+        $user_id   = 5;
+        $type = 2;
+        $page   = 1;
+        $page_size    = 10;
+        $type=$type?$type:1;
+        $min_num=($page-1)*$page_size;
+        //type类型1.新车，2.二手车，3.0首付
+        $list=array();
+        if($type==1){
+            //查询预约信息
+            $appointmen=Db::table("my_appointment")->field("id,cheid,create_time")->where("userid=$user_id and type=1")->select();
+            if(!$appointmen){
+                $appointmen=array();
+            }
+            $newcar_info=Db::table("new_car_consult3")->field("id,car_id as cheid,create_time")->where("user_id=$user_id and car_id!= ''")->select();
+            if(!$newcar_info){
+                $newcar_info=array();
+            }
+            $appointmen=array_merge($appointmen,$newcar_info);
+
+            foreach ($appointmen as $key => $val) {
+                //新车
+                $car_info=Db::table("new_car")->field("id,name,cartype_id,price,can_price,pay30_s2,img_300")->where("id=".$val['cheid'])->select();
+                foreach ($car_info as $k => $v) {
+                    $res['name']=$this->get_carname($v['cartype_id']);
+                    $res['img_url']=$this->get_carimg($v['img_300'],2);
+                    $res['create_time']=substr($val['create_time'], 0, 16);
+                    $res['id']=$v['id'];
+                    $res['price']=$v['price'];
+                    $res['can_price']=$v['can_price'];
+                    $res['pay30_s2']=$v['pay30_s2'];
+                    $list[]=$res;
+                }
+                $list=array_slice($list,$min_num,$page_size);
+
+            }
+
+        }elseif($type==2){
+            //查询预约信息
+            $appointmen=Db::table("my_appointment")->field("id,cheid,create_time")->where("userid=$user_id and type=2")->select();
+            if(!$appointmen){
+                $appointmen=array();
+            }
+            //获取二手车预约信息
+            $relecar_info=Db::table("bespeak_car")->field("bespeak_id as id,pu_id as cheid,create_time")->where("user_id=$user_id and pu_id != ''")->select();
+            if(!$relecar_info){
+                $relecar_info=array();
+            }
+            $appointmen=array_merge($appointmen,$relecar_info);
+
+            foreach ($appointmen as $key => $val) {
+                //二手车
+                $where['pu_id'] = $val['cheid'];
+
+                $field = 'a.pu_id,a.name_li,a.cartype_id,a.price,a.car_cardtime,a.car_mileage,a.img_300,b.shop_name';
+
+                $join = [['user_shop b','b.user_id = a.user_id']];
+
+                $car_info = Db::table('rele_car')->alias('a')->join($join)->field($field)->where($where)->select();
+
+                foreach ($car_info as $k => $v) {
+
+                    $res['name']=$this->get_carname($v['cartype_id']);
+                    $res['img_url']=$this->get_carimg($v['img_300'],1);
+                    $res['create_time']=substr($val['create_time'], 0, 16);
+                    $res['car_mileage']=$v['car_mileage'];
+                    $res['pu_id']=$v['pu_id'];
+                    $res['price']=$v['price'];
+                    $res['car_cardtime']=$v['car_cardtime'];
+                    $res['shop_name']=$v['shop_name'];
+                    $list[]=$res;
+                }
+            }
+            $list=array_slice($list,$min_num,$page_size);
+            //print_r($list);die;
+        }elseif($type==3){
+            //查询预约信息
+            $appointmen=Db::table("my_appointment")->field("id,cheid,create_time")->where("userid=$user_id and type=3")->select();
+            if(!$appointmen){
+                $appointmen=array();
+            }
+            $lcar_info=Db::table("l_car_consult")->field("id,car_id as cheid,create_time")->where("user_id=$user_id and car_id!= ''")->select();
+            if(!$lcar_info){
+                $lcar_info=array();
+            }
+            $appointmen=array_merge($appointmen,$lcar_info);
+            foreach ($appointmen as $key => $val) {
+                //0首付
+                $car_info=Db::table("l_car")->field("id,name,cartype_id,price,can_price,img_300")->where("id=".$val['cheid'])->select();
+                foreach ($car_info as $k => $v) {
+                    $res['name']=$this->get_carname($v['cartype_id']);
+                    $res['img_url']=$this->get_carimg($v['img_300'],2);
+                    $res['create_time']=substr($val['create_time'], 0, 16);
+                    $res['id']=$v['id'];
+                    $res['price']=$v['price'];
+                    $res['can_price']=$v['can_price'];
+                    $list[]=$res;
+                }
+            }
+
+
+            $list=array_slice($list,$min_num,$page_size);
+
+        }
+
+       // dump($list);die;
         $brand = $this->brand();//品牌
 
+        $this->assign('list',$list);
         $this->assign('brand',$brand);
         return $this->fetch();
 
@@ -610,139 +738,6 @@ class User  extends Common {
 //        $info['door_photo']=str_replace("http://www.gj2car.com/Uploads/relecar/","",$door_photo);
 //        $info['shop_licence']=str_replace("http://www.gj2car.com/Uploads/relecar/","",$shop_licence);
 //        $info['create_time']=time();
-
-    }
-
-    /*
-     *my_appointment
-     * 我的预约
-     * http://39.106.67.47/new_api/User/newapi/my_appointment
-     * user_id
-     * type 代表类型 如新车//type类型1.新车，2.二手车，3.0首付
-     * page
-     * page_size
-     */
-
-    public function my_appointment(){
-
-        /*接收参数*/
-        $user_id   = input('param.user_id');
-        $type = input('param.type');
-        $page   = input('param.page');
-        $page_size    = input('param.page_size');
-
-        $type=$type?$type:1;
-        //type类型1.新车，2.二手车，3.0首付
-        $list=array();
-        if($type==1){
-            //查询预约信息
-            $appointmen=Db::table("my_appointment")->field("id,cheid,create_time")->where("userid=$user_id and type=1")->select();
-            if(!$appointmen){
-                $appointmen=array();
-            }
-            $newcar_info=Db::table("new_car_consult3")->field("id,car_id as cheid,create_time")->where("user_id=$user_id and car_id!= ''")->select();
-            if(!$newcar_info){
-                $newcar_info=array();
-            }
-            $appointmen=array_merge($appointmen,$newcar_info);
-
-            foreach ($appointmen as $key => $val) {
-                //新车
-                $car_info=Db::table("new_car")->field("id,name,cartype_id,price,can_price,pay30_s2,img_300")->where("id=".$val['cheid'])->select();
-                foreach ($car_info as $k => $v) {
-                    $res['name']=$this->get_carname($v['cartype_id']);
-                    $res['img_url']=$this->get_carimg($v['img_300'],2);
-                    $res['create_time']=substr($val['create_time'], 0, 16);
-                    $res['id']=$v['id'];
-                    $res['price']=$v['price'];
-                    $res['can_price']=$v['can_price'];
-                    $res['pay30_s2']=$v['pay30_s2'];
-                    $list[]=$res;
-                }
-                $list=array_slice($list,$min_num,$page_size);
-
-            }
-
-        }elseif($type==2){
-            //查询预约信息
-            $appointmen=Db::table("my_appointment")->field("id,cheid,create_time")->where("userid=$user_id and type=2")->select();
-            if(!$appointmen){
-                $appointmen=array();
-            }
-            //获取二手车预约信息
-            $relecar_info=Db::table("bespeak_car")->field("bespeak_id as id,pu_id as cheid,create_time")->where("user_id=$user_id and pu_id != ''")->select();
-            if(!$relecar_info){
-                $relecar_info=array();
-            }
-            $appointmen=array_merge($appointmen,$relecar_info);
-
-            foreach ($appointmen as $key => $val) {
-                //二手车
-               // dump($val['cheid']);die;
-                $car_info=Db::table("rele_car")->table('rele_car as  a')->join('user_shop as b on b.user_id = a.user_id')->field("a.pu_id,a.name_li,a.cartype_id,a.price,a.car_cardtime,a.car_mileage,a.img_300")->where("pu_id=".$val['cheid'])->select();
-                dump($car_info);die;
-                foreach ($car_info as $k => $v) {
-                    dump($car_info);die;
-                    $res['name']=$this->get_carname($v['cartype_id']);
-                    $res['img_url']=$this->get_carimg($v['img_300'],1);
-                    $res['create_time']=substr($val['create_time'], 0, 16);
-                    $res['car_mileage']=$v['car_mileage'];
-                    $res['pu_id']=$v['pu_id'];
-                    $res['price']=$v['price'];
-                    $res['car_cardtime']=$v['car_cardtime'];
-                    $res['shop_name']=$v['shop_name'];
-                    $list[]=$res;
-                }
-            }
-            $list=array_slice($list,$min_num,$page_size);
-            //print_r($list);die;
-        }elseif($type==3){
-            //查询预约信息
-            $appointmen=Db::table("my_appointment")->field("id,cheid,create_time")->where("userid=$user_id and type=3")->select();
-            if(!$appointmen){
-                $appointmen=array();
-            }
-            $lcar_info=Db::table("l_car_consult")->field("id,car_id as cheid,create_time")->where("user_id=$user_id and car_id!= ''")->select();
-            if(!$lcar_info){
-                $lcar_info=array();
-            }
-            $appointmen=array_merge($appointmen,$lcar_info);
-            foreach ($appointmen as $key => $val) {
-                //0首付
-                $car_info=Db::table("l_car")->field("id,name,cartype_id,price,can_price,img_300")->where("id=".$val['cheid'])->select();
-                foreach ($car_info as $k => $v) {
-                    $res['name']=$this->get_carname($v['cartype_id']);
-                    $res['img_url']=$this->get_carimg($v['img_300'],2);
-                    $res['create_time']=substr($val['create_time'], 0, 16);
-                    $res['id']=$v['id'];
-                    $res['price']=$v['price'];
-                    $res['can_price']=$v['can_price'];
-                    $list[]=$res;
-                }
-            }
-
-
-            $list=array_slice($list,$min_num,$page_size);
-
-        }
-
-//        if($list){
-//            $data = array (
-//                'code'   => 200,
-//                'result' => '获取成功',
-//                'body'=>$list
-//            );
-//        }else{
-//            $data = array (
-//                'code'   => 201,
-//                'result' => '没有数据',
-//                'body'=>array()
-//            );
-//        }
-        dump($list);
-       // $this->ajaxReturn($data);exit();
-
-
 
     }
 
