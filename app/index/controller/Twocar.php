@@ -40,4 +40,14 @@ class Twocar extends Common
 
         return $this->fetch();
     }
+    
+    /*
+     * 车型对比
+     */
+    public function car_compare(){
+
+        $brand = $this->brand();//品牌
+        $this->assign('brand',$brand);
+        return $this->fetch();
+    }
 }

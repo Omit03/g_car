@@ -90,10 +90,10 @@
 							<a href="">搜索</a>
 						</div>
 					</div>
-					<div class="gj_clear">
+					<div class="gj_clear" >
 						<ul class="store_list gj_clear">
                             {volist name="er_car" id="vol" offset="1" length="10" }
-							<li class="items"><a href="" class="car_img flex_center"><img src="" alt="" /></a><a href="" class="car_desc"><h3>{$vol.name}</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
+							<li class="items"><a href="" class="car_img flex_center"><img src="{$vol.img_url}" alt="" /></a><a href="" class="car_desc"><h3>{$vol.name}</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
                             {/volist}
 						</ul>
 						<div class="page">

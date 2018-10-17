@@ -14,7 +14,7 @@
 	<body>
         <div class="full_wid">
 			<div class="header">
-				
+				{include file="public/header"}
 			</div>			
 			<div class="news_bg"></div>
 			<div class="wrap oh">
@@ -43,51 +43,17 @@
 			    </div>
 			    <div class="car_list marbtp10 ">
 				    <ul class="list">
+						{volist name="er_car" id="val" offset="1" length="10"}
 						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+							<a href="" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
 							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
+								<h3>{$val.name}</h3>
+								<p><span class="car_price"><b>{$val.new_car_price}</b>万</span><span class="car_sui">新车含税{$val.price}万</span></p>
+								<p><span>{$val.car_cardtime}上牌</span> <span class="padlt20">{$val.car_mileage}万公里</span> </p>
 								<div class="che_ordered">立即预约</div>
 							</a>
 						</li>
-						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
+						{/volist}
 					</ul>
 			    </div>
 			    <div class="tit_er">
@@ -96,51 +62,23 @@
 			    </div>
 			    <div class="car_list marbtp10 ">
 				   <ul class="list">
-						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
+					   {volist name="new_car" id="val" offset="1" length="10"}
+					   <li class="items5">
+						   <a href="zeroCar.html" class="flex_around" target="_blank">
+							   <a href="" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
+							   <a href="" class="car_desc">
+								   <h3>{$val.name}</h3>
+								   <p class="valign ptp15">
+									   <span class="pay_first plt10">首付<b class="">{$val.pay10_s2}</b>万</span>
+									   <span class="pay_month">月供{$val.pay10_y2}元</span>
+									   <span class="pay_month">月供{$val.pay10_n2}元</span>
+								   </p>
+								   <div class="che_ordered">立即预约</div>
+							   </a>
+
+						   </a>
+					   </li>
+					   {/volist}
 						
 					</ul>
 			    </div>
@@ -176,11 +114,14 @@
 					
 				</ul>
 		</div>
+			<div class="footer">
+				{include file="public/footer"}
+			</div>
 	</body>
 	<script>		
 		$(function(){			 
-		   $(".header").load("templates/header.html");
-		    $(".footer").load("templates/footer.html")
+		   // $(".header").load("templates/header.html");
+		   //  $(".footer").load("templates/footer.html")
 		})
 </script>
 </html>

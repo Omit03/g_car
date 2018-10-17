@@ -18,7 +18,7 @@ class News extends Common
         $this->redirect('index/index');
     }
     /*
-     * 置换首页
+     * 新闻首页
      */
     public function index(){
 
@@ -37,6 +37,25 @@ class News extends Common
 
         return $this->fetch();
 
+    }
 
+    /*
+     * 新闻详情
+     */
+    public function newsdetails(){
+
+        $city_id = $this->city_id();
+
+        $er_car = $this->er_car($city_id);
+
+        $new_car = $this->new_car($city_id); //新车
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('er_car',$er_car);
+        $this->assign('new_car',$new_car);
+        $this->assign('brand',$brand);
+
+        return $this->fetch();
     }
 }

@@ -20,7 +20,10 @@
 		.avatar span{margin-top: 50px;}
 		.editCont .sub_btn{margin-left:120px;width: 275px;}
 	</style>
-	<body>	
+	<body>
+	<div class="header">
+		{include file="public/header"}
+	</div>
 		<div class="site_nav">
 			<div class="site_nav_bd">
 				<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
@@ -112,8 +115,10 @@
 					</div>	
 				</div>
 			</div>
-		</div>	
-		<div class="footer"></div>
+		</div>
+	<div class="footer">
+		{include file="public/footer"}
+	</div>
 		
 	</body>
 	<script src="__STATIC__/js/jquery-1.11.0.min.js"></script>

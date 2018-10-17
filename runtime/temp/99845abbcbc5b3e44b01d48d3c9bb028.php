@@ -1,22 +1,21 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\shop\shop_list.html";i:1539744129;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539695003;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"G:\xampp\htdocs\car\public/../app/index\view\news\newsdetails.html";i:1539746366;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539695003;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css">
-	<link rel="stylesheet" href="/static/css/swiper.min.css" />
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	<!--<script src="js/gjsilde.min.js" type="text/javascript" charset="utf-8"></script>-->
+
 	<style>
 
 	</style>
-	<body style="background:#f8f8f8">
-	<div class="header"><div class="site_nav">
+	<body>
+        <div class="full_wid">
+			<div class="header">
+				<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！请<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a></div>
 		<div class="fright">
@@ -152,104 +151,108 @@ $(window).on('scroll',function(){
 })
 
 </script>
-</div>
-	<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">向阳二手车 >></a><a href=""> 店铺首页</a></div>
-	<div class="storeH">
-		<div class="wrap">
-			<h1 class="textCenter"><span>郑州管家二手车<b>优选商家</b></span></h1>
-			<p class="fright phone">
-				  <i class="icon iconfont icon-msnui-telephone"></i>  15638886114
-			</p>
-			<div class="gj_clear"></div>
-			<ul class="shop_nav gj_clear">
-				<li class="active"><a href="<?php echo url('shop/index'); ?>">店铺首页</a></li>
-				<li ><a href="<?php echo url('shop/shop_list'); ?>">在售车源</a></li>
-				<li><a href="<?php echo url('shop/shop_info'); ?>">公司信息</a></li>
-			</ul>
-		</div>
-		
-	</div>
-	<div class="bgfa">
-		<div class="wrap">
-			<div class="oh">
-				<div class="brandLeft">
 
-					<ul>
-						<li class="">
-							<h3>品牌<b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-								<a href=""><?php echo $vol['name']; ?></a>
-								<?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-						<li class="">
-							<h3>价格<b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-								<a href=""><?php echo $vo['name']; ?></a>
-								<?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-						<li class="">
-							<h3>级别<b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href="<?php echo $vol['id']; ?>"><?php echo $vol['name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-						<li>
-							<h3>车龄 <b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($age) || $age instanceof \think\Collection || $age instanceof \think\Paginator): $i = 0; $__LIST__ = $age;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href=""><?php echo $vol['cheling']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-					</ul>
-
-
-
-				</div>
-				<!--右侧车源以及筛选-->			
-				<div class="listImg">
-					<div class="gj_clear">
-						<ul  class="sort_s">
-							<li class=""><a href="">默认排序</a></li>
-							<li class=""><a href="">价格<b class="actives"></b><i></i></a></li>
-							<li class=""><a href="">车龄<b></b><i class="actives"></i></a></li>
-							<li class=""><a href="">级别<b></b><i></i></a></li>
-							<li class=""><a href="">里程<b></b><i></i></a></li>
-						</ul>
-						<div class="search_box">
-							<input type="text" value=""/>
-							<a href="">搜索</a>
-						</div>
-					</div>
-					<div class="gj_clear" >
-						<ul class="store_list gj_clear">
-                            <?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,1,10, true) : $er_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-							<li class="items"><a href="" class="car_img flex_center"><img src="<?php echo $vol['img_url']; ?>" alt="" /></a><a href="" class="car_desc"><h3><?php echo $vol['name']; ?></h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
-                            <?php endforeach; endif; else: echo "" ;endif; ?>
-						</ul>
-						<div class="page">
-							<a href="">首页</a><a href="">1</a><a href="" class="active">2</a><a href="">...</a><a href="">9</a><a href="">尾页</a>
-						</div>
+			</div>			
+			<div class="news_bg"></div>
+			<div class="wrap oh">
+				 <div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">二手车新闻资讯 >></a><a href=""> 公司新闻</a></div>
+				<div class=" news_con">
+					<h1>10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h1>
+					<p class="new_time">时间：2018-06-07  来源：管家车易站</p>
+					<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，和国产版完全不是一回事，双门版轿跑单门的开合角度和尺寸都会很大，配合无框车窗，上下车很方便，整车颜值不是一般国产车能比的了的。其次这款宝马3系轿跑车虽然和国内版搭载同一型号发动机，但是因为发动机输出和底盘支撑挑选都偏向于运动模式，整车驾驶过程中给人一种十分稳健的感觉，喜欢入门级运动座驾的客户可以来试驾下。</p>
+					<p class="new_img"><img src="img/img_406.png" alt="" /></p>
+					<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，和国产版完全不是一回事，双门版轿跑单门的开合角度和尺寸都会很大，配合无框车窗，上下车很方便，整车颜值不是一般国产车能比的了的。其次这款宝马3系轿跑车虽然和国内版搭载同一型号发动机，但是因为发动机输出和底盘支撑挑选都偏向于运动模式，整车驾驶过程中给人一种十分稳健的感觉，喜欢入门级运动座驾的客户可以来试驾下。</p>
+					<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，和国产版完全不是一回事，双门版轿跑单门的开合角度和尺寸都会很大，配合无框车窗，上下车很方便，整车颜值不是一般国产车能比的了的。其次这款宝马3系轿跑车虽然和国内版搭载同一型号发动机，但是因为发动机输出和底盘支撑挑选都偏向于运动模式，整车驾驶过程中给人一种十分稳健的感觉，喜欢入门级运动座驾的客户可以来试驾下。</p>
+					<p class="textCenter"> 点击上述链接可以查看详细信息，或者在平台选择您感兴趣的车辆信息</p>
+					<p class="textRight">-----责任编辑：管家车易站08</p>
+					<div class="page_news">
+				    	<a href=""><div class="news_t">郑州二手起亚佳乐 管家车易站 管家车易站</div> </a>
+				    	<a href="" >上一篇</a><a href="">下一篇</a>
+				    	<a href=""><div class="news_t">郑州二手起亚佳乐 管家车易站 管家车易站 </div></a>
 					</div>
 				</div>
+				
 			</div>
+			<div class="wrap news_car_recom">
+				<div class="tit_er">
+			        <div class="line_tit"></div>			        
+			        <h2 class="color tit_con">热门二手车</h2>	       
+			    </div>
+			    <div class="car_list marbtp10 ">
+				    <ul class="list">
+						<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,1,10, true) : $er_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+						<li class="items5">
+							<a href="" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
+							<a href="" class="car_desc">
+								<h3><?php echo $val['name']; ?></h3>
+								<p><span class="car_price"><b><?php echo $val['new_car_price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $val['price']; ?>万</span></p>
+								<p><span><?php echo $val['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $val['car_mileage']; ?>万公里</span> </p>
+								<div class="che_ordered">立即预约</div>
+							</a>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
+			    </div>
+			    <div class="tit_er">
+			        <div class="line_tit"></div>			        
+			        <h2 class="color tit_con">热门新车</h2>	       
+			    </div>
+			    <div class="car_list marbtp10 ">
+				   <ul class="list">
+					   <?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($new_car) ? array_slice($new_car,1,10, true) : $new_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+					   <li class="items5">
+						   <a href="zeroCar.html" class="flex_around" target="_blank">
+							   <a href="" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
+							   <a href="" class="car_desc">
+								   <h3><?php echo $val['name']; ?></h3>
+								   <p class="valign ptp15">
+									   <span class="pay_first plt10">首付<b class=""><?php echo $val['pay10_s2']; ?></b>万</span>
+									   <span class="pay_month">月供<?php echo $val['pay10_y2']; ?>元</span>
+									   <span class="pay_month">月供<?php echo $val['pay10_n2']; ?>元</span>
+								   </p>
+								   <div class="che_ordered">立即预约</div>
+							   </a>
+
+						   </a>
+					   </li>
+					   <?php endforeach; endif; else: echo "" ;endif; ?>
+						
+					</ul>
+			    </div>
+			</div>
+		    <div class="footer mtp40"></div>
+		    <div class="fixedRight">
+				<ul class="right_sider">
+					<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
+						<div class="gj_sidecon_desc "></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
+					<div class="gj_sidecon_desc"></div></li>
+					<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
+					<div class="gj_sidecon_desc"></div></li>
+					<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
 					
-		</div>	
-	</div>
-	<div class="adv_img">
-		<h2>想开什么车 ？管家车易站应有尽有.</h2>
-		<div class="buy_ipt">
-			<input type="text" placeholder="请输入手机号"/>
-			<div class="btn_buy">我要买车</div>
+				</ul>
 		</div>
-	</div>
-	<div class="footer">
+			<div class="footer">
+				
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -303,23 +306,13 @@ $(window).on('scroll',function(){
 	$(".more_dwon").click(function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script></div>
-	
+</script>
+			</div>
 	</body>
-	<script>
-		$(function(){
-			$(".brandLeft li.p_r").hover(function(){
-				$(this).find('.sale_all_list').show();
-				$(this).css("border","1px solid #ff802c")
-			},function(){
-				$(this).find('.sale_all_list').hide();
-				$(this).css("border","none")
-			})
+	<script>		
+		$(function(){			 
+		   // $(".header").load("templates/header.html");
+		   //  $(".footer").load("templates/footer.html")
 		})
-	   // $(".header").load("templates/header.html");
-	   // $(".footer").load("templates/footer.html");
-	
-	</script>
-	
+</script>
 </html>
- 

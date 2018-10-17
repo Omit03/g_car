@@ -1,22 +1,25 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\shop\shop_list.html";i:1539744129;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539695003;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"G:\xampp\htdocs\car\public/../app/index\view\shop\add_comment.html";i:1539755078;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539758056;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8"/>
 		<title></title>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
+	 <link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css">
-	<link rel="stylesheet" href="/static/css/swiper.min.css" />
+
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	<!--<script src="js/gjsilde.min.js" type="text/javascript" charset="utf-8"></script>-->
-	<style>
+	<script src="/static/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<style>	
+		.tagScore{display: none;}
 
 	</style>
-	<body style="background:#f8f8f8">
-	<div class="header"><div class="site_nav">
+
+<body>
+
+<div class="header"><div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！请<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a></div>
 		<div class="fright">
@@ -78,7 +81,7 @@
 			<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 			<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-			<li><a href="<?php echo url('index/logincar'); ?>">登录/注册</a></li>
+			<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
 			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
 			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
 		</ul>
@@ -153,103 +156,112 @@ $(window).on('scroll',function(){
 
 </script>
 </div>
-	<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">向阳二手车 >></a><a href=""> 店铺首页</a></div>
-	<div class="storeH">
-		<div class="wrap">
-			<h1 class="textCenter"><span>郑州管家二手车<b>优选商家</b></span></h1>
-			<p class="fright phone">
-				  <i class="icon iconfont icon-msnui-telephone"></i>  15638886114
-			</p>
-			<div class="gj_clear"></div>
-			<ul class="shop_nav gj_clear">
-				<li class="active"><a href="<?php echo url('shop/index'); ?>">店铺首页</a></li>
-				<li ><a href="<?php echo url('shop/shop_list'); ?>">在售车源</a></li>
-				<li><a href="<?php echo url('shop/shop_info'); ?>">公司信息</a></li>
-			</ul>
-		</div>
-		
-	</div>
-	<div class="bgfa">
-		<div class="wrap">
-			<div class="oh">
-				<div class="brandLeft">
-
-					<ul>
-						<li class="">
-							<h3>品牌<b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-								<a href=""><?php echo $vol['name']; ?></a>
-								<?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-						<li class="">
-							<h3>价格<b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-								<a href=""><?php echo $vo['name']; ?></a>
-								<?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-						<li class="">
-							<h3>级别<b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href="<?php echo $vol['id']; ?>"><?php echo $vol['name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-						<li>
-							<h3>车龄 <b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($age) || $age instanceof \think\Collection || $age instanceof \think\Paginator): $i = 0; $__LIST__ = $age;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href=""><?php echo $vol['cheling']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-					</ul>
-
-
-
+<div class="full_wid">
+	<div class="wrap">
+		<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">郑州二手车 >></a><a href=""> 发表店铺评论 </a></div>
+		<div class="add_com">
+			<div class="fright store_score">
+				<h2>向阳二手车金水区店</h2>
+				<div class="score_res oh">
+					<b class="f_score">5.0</b>
+					<div class="score_value fleft"><span class=""><em data_value="2"></em></span></div><!--分数-->			
 				</div>
-				<!--右侧车源以及筛选-->			
-				<div class="listImg">
-					<div class="gj_clear">
-						<ul  class="sort_s">
-							<li class=""><a href="">默认排序</a></li>
-							<li class=""><a href="">价格<b class="actives"></b><i></i></a></li>
-							<li class=""><a href="">车龄<b></b><i class="actives"></i></a></li>
-							<li class=""><a href="">级别<b></b><i></i></a></li>
-							<li class=""><a href="">里程<b></b><i></i></a></li>
-						</ul>
-						<div class="search_box">
-							<input type="text" value=""/>
-							<a href="">搜索</a>
+				<p>店铺环境：5分</p>
+				<p>服务态度：5分</p>
+				<p>商家专业：5分</p>
+				
+			</div>
+			<h1>店铺评分</h1>
+			<h2>向阳二手车金水区店</h2>
+			<div class="score_cont gj_clear">
+				<!--打分-->
+				<div class="comment_score"><span>总体服务:</span>
+					<div class="mark_score star_img">
+						<div class="empty_star">
+							<span class="star" data-value='20' score_vlaue='1'></span>
+							<span class="star" data-value='40' score_vlaue='2'></span>
+							<span class="star" data-value='60' score_vlaue='3'></span>
+							<span class="star" data-value='80' score_vlaue='4'></span>
+							<span class="star" data-value='100' score_vlaue='5'></span>
 						</div>
+						<div class="full_star"></div>
+						<input class="totalTag tagScore" type="hidden" value="1"></input>
 					</div>
-					<div class="gj_clear" >
-						<ul class="store_list gj_clear">
-                            <?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,1,10, true) : $er_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-							<li class="items"><a href="" class="car_img flex_center"><img src="<?php echo $vol['img_url']; ?>" alt="" /></a><a href="" class="car_desc"><h3><?php echo $vol['name']; ?></h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
-                            <?php endforeach; endif; else: echo "" ;endif; ?>
-						</ul>
-						<div class="page">
-							<a href="">首页</a><a href="">1</a><a href="" class="active">2</a><a href="">...</a><a href="">9</a><a href="">尾页</a>
+					
+				</div>
+				<div class="comment_score"><span>车源真实:</span>
+					<div class="mark_score smile_img">
+						<div class="empty_star">
+							<span class="star" data-value='20' score_vlaue='1'></span>
+							<span class="star" data-value='40' score_vlaue='2'></span>
+							<span class="star" data-value='60' score_vlaue='3'></span>
+							<span class="star" data-value='80' score_vlaue='4'></span>
+							<span class="star" data-value='100' score_vlaue='5'></span>
 						</div>
+						<div class="full_star"></div>	
+						<input class="carTag tagScore" type="hidden"></input>
 					</div>
+				</div>
+				<div class="comment_score"><span>服务态度:</span>
+					<div class="mark_score smile_img">
+						<div class="empty_star">
+							<span class="star" data-value='20' score_vlaue='1'></span>
+							<span class="star" data-value='40' score_vlaue='2'></span>
+							<span class="star" data-value='60' score_vlaue='3'></span>
+							<span class="star" data-value='80' score_vlaue='4'></span>
+							<span class="star" data-value='100' score_vlaue='5'></span>
+						</div>
+						<div class="full_star"></div>
+						<input class="serviceTag tagScore" type="hidden"></input>
+					</div>
+				</div>
+				<div class="comment_score"><span>商家专业:</span>
+					<div class="mark_score smile_img">
+						<div class="empty_star">
+							<span class="star" data-value='20' score_vlaue='1'></span>
+							<span class="star" data-value='40' score_vlaue='2'></span>
+							<span class="star" data-value='60' score_vlaue='3'></span>
+							<span class="star" data-value='80' score_vlaue='4'></span>
+							<span class="star" data-value='100' score_vlaue='5'></span>
+						</div>
+						<div class="full_star"></div>	
+						<input class="dealerTag tagScore" type="hidden"></input>
+					</div>
+				</div>
+				<!--多选-->
+				<div class="tag_list">
+					<span class="active" tag_check='1' tag_value="1"> 服务热情</span>
+					<span tag_check='0'  tag_value="2">店面干净</span>
+					<span tag_check='0'  tag_value="3">价格给力</span>
+					<span tag_check='0'  tag_value="4">服务耐心</span>
 				</div>
 			</div>
-					
-		</div>	
-	</div>
-	<div class="adv_img">
-		<h2>想开什么车 ？管家车易站应有尽有.</h2>
-		<div class="buy_ipt">
-			<input type="text" placeholder="请输入手机号"/>
-			<div class="btn_buy">我要买车</div>
-		</div>
-	</div>
-	<div class="footer">
+	      
+	     	<h2>评价</h2>
+	        <div class="textareabox p_r">
+	        	<textarea class="form_textarea" data-length="500" id="information"  data-toggle="textarea" 
+	        		placeholder="服务是否专业、价格是否合理，写下您的意见吧~"></textarea>
+	        		<span class="limit_num">
+	        			至少10字
+	        		</span>
+	        </div>
+	        <h2>购车阶段</h2>
+	        <ul class="buy_step oh">
+	        	<li><input type="checkbox" class="checked"/><b></b><span>未联系</span></li>
+	        	<li><input type="checkbox" /><b></b><span>未购车</span></li>
+	        	<li><input type="checkbox" /><b></b><span>未到店</span></li>
+	        </ul>
+			<div class="add_btn">发表评论</div>
+			<p>
+				欢迎您为商家进行点评和打分，与万千买家分享您的购车体验！<br />
+				您的点评和打分将成为其他买家的参考依据，并影响该商家评价。<br />
+				请您根据真实的购车体验，客观地发布本人的评价。如您发布的点评并非本人的真实体验，则将被视为违规。
+			</p>
+		</div>			
+	</div>	
+</div>
+
+<div class="footer">
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -304,22 +316,63 @@ $(window).on('scroll',function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
 </script></div>
+
+</body>
+<script>
+	$(function(){
+     $(".header").load("templates/header.html");
+     $(".footer").load("templates/footer.html");
+//	显示分
+	var score=$(".score_value em").attr("data_value");
+	var f_score=score*20;
+	$(".score_value em").css('width',f_score+'%');
+  //打分
+    $(".empty_star .star").click(function(){
+    	var l_score=$(this).attr('data-value');
+    	var score_res=$(this).attr('score_vlaue');
+    	$(this).parents(".mark_score ").find(".tagScore").val(score_res);
+    	console.log(score_res)
+    	$(this).parents(".mark_score ").find(".full_star").css("width",l_score+'%')
+    })
+//  多选
+    $(".tag_list span").click(function () {	
+	    if ($(this).hasClass("active")) {
+	            $(this).removeClass("active");
+	            $(this).attr("tag_check", 0);
+	       }else{
+	       	    $(this).addClass("active");
+	            $(this).attr("tag_check", 1);
+	       }
+	});
+//	评价
+$("#information").keyup(function () {
+    ChangeInfo(this);
+});
+
+var lengthLimit = 10;//点评内容字数最少限制
+function ChangeInfo(obj) {
+    var len = $(obj).val().length;
+    if (len >= 500) {
+        $(obj).val($(obj).val().substring(0, 500));       
+    }
+    if (len < lengthLimit) {
+        $(".limit_num").html("您还差<em>" + (lengthLimit - len) + "</em>字");
+    }
+    else {
+        if (len > 10) {
+            $(".limit_num").html("<em>" + len + "</em>/500");
+        }
+    }
+   } 
+   
+   
+   
+   
+   
+	})
 	
-	</body>
-	<script>
-		$(function(){
-			$(".brandLeft li.p_r").hover(function(){
-				$(this).find('.sale_all_list').show();
-				$(this).css("border","1px solid #ff802c")
-			},function(){
-				$(this).find('.sale_all_list').hide();
-				$(this).css("border","none")
-			})
-		})
-	   // $(".header").load("templates/header.html");
-	   // $(".footer").load("templates/footer.html");
-	
-	</script>
-	
+
+</script>
 </html>
- 
+
+

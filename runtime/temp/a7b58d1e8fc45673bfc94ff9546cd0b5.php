@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\twocar\index.html";i:1539689569;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539690764;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\twocar\index.html";i:1539689569;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539695003;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -78,6 +78,7 @@
 			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
 			<li><a href="<?php echo url('index/logincar'); ?>">登录/注册</a></li>
 			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
+			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
 		</ul>
 	</div>
 </div>

@@ -44,6 +44,10 @@ class Shop extends Common
         return $this->fetch();
     }
 
+    /*
+     * 在售车源
+     */
+
     public function shop_list(){
 
 
@@ -68,6 +72,10 @@ class Shop extends Common
         return $this->fetch();
     }
 
+    /*
+     * 公司信息
+     */
+
     public function shop_info(){
 
         $brand = $this->brand();//品牌
@@ -82,4 +90,17 @@ class Shop extends Common
 
         return $this->fetch();
     }
+
+    /*
+     * 公司评论
+     */
+    public function add_comment(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }
+
 }

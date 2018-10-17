@@ -1,22 +1,29 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\shop\shop_list.html";i:1539744129;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539695003;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"G:\xampp\htdocs\car\public/../app/index\view\user\person_info.html";i:1539758826;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539758056;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8"/>
 		<title></title>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
+		<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css">
-	<link rel="stylesheet" href="/static/css/swiper.min.css" />
-	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	<!--<script src="js/gjsilde.min.js" type="text/javascript" charset="utf-8"></script>-->
+	<link rel="stylesheet" href="/static/css/iconfont.css" />
+	<link rel="stylesheet" href="/static/js/theme/default/laydate.css" />	
 	<style>
-
+		.tab_info li{float: left;margin-left: 60px;font-size: 20px;margin-top: 40px;cursor: pointer;}
+		.tab_info .active{color: #FF802C;}
+		.editCont{margin-top: 44px;margin-left: 50px;}
+		.info_base .ipt{width:400px;height: 50px;line-height: 50px ;}
+		.info_base .ipt input{background: #fcfcfc;width: 275px;height: 35px;line-height: 35px;border: 1px solid #ababab;}
+		.info_base .ipt input[type='radio']{width: 18px;height:18px;margin-right:5px;}
+		.info_base span{display: block;float: left;width:125px;text-align: right;padding-right: 20px;font-size: 18px;}
+		.avatar span{margin-top: 50px;}
+		.editCont .sub_btn{margin-left:120px;width: 275px;}
 	</style>
-	<body style="background:#f8f8f8">
-	<div class="header"><div class="site_nav">
+	<body>
+	<div class="header">
+		<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！请<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a></div>
 		<div class="fright">
@@ -78,7 +85,7 @@
 			<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 			<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-			<li><a href="<?php echo url('index/logincar'); ?>">登录/注册</a></li>
+			<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
 			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
 			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
 		</ul>
@@ -152,104 +159,102 @@ $(window).on('scroll',function(){
 })
 
 </script>
-</div>
-	<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">向阳二手车 >></a><a href=""> 店铺首页</a></div>
-	<div class="storeH">
-		<div class="wrap">
-			<h1 class="textCenter"><span>郑州管家二手车<b>优选商家</b></span></h1>
-			<p class="fright phone">
-				  <i class="icon iconfont icon-msnui-telephone"></i>  15638886114
-			</p>
-			<div class="gj_clear"></div>
-			<ul class="shop_nav gj_clear">
-				<li class="active"><a href="<?php echo url('shop/index'); ?>">店铺首页</a></li>
-				<li ><a href="<?php echo url('shop/shop_list'); ?>">在售车源</a></li>
-				<li><a href="<?php echo url('shop/shop_info'); ?>">公司信息</a></li>
-			</ul>
-		</div>
-		
+
 	</div>
-	<div class="bgfa">
-		<div class="wrap">
-			<div class="oh">
-				<div class="brandLeft">
-
-					<ul>
-						<li class="">
-							<h3>品牌<b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-								<a href=""><?php echo $vol['name']; ?></a>
-								<?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-						<li class="">
-							<h3>价格<b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-								<a href=""><?php echo $vo['name']; ?></a>
-								<?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-						<li class="">
-							<h3>级别<b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href="<?php echo $vol['id']; ?>"><?php echo $vol['name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-						<li>
-							<h3>车龄 <b>全部</b></h3>
-							<div class="classify">
-								<a href="" class="active" >不限</a>
-								<?php if(is_array($age) || $age instanceof \think\Collection || $age instanceof \think\Paginator): $i = 0; $__LIST__ = $age;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href=""><?php echo $vol['cheling']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
-							</div>
-						</li>
-					</ul>
-
-
-
-				</div>
-				<!--右侧车源以及筛选-->			
-				<div class="listImg">
-					<div class="gj_clear">
-						<ul  class="sort_s">
-							<li class=""><a href="">默认排序</a></li>
-							<li class=""><a href="">价格<b class="actives"></b><i></i></a></li>
-							<li class=""><a href="">车龄<b></b><i class="actives"></i></a></li>
-							<li class=""><a href="">级别<b></b><i></i></a></li>
-							<li class=""><a href="">里程<b></b><i></i></a></li>
-						</ul>
-						<div class="search_box">
-							<input type="text" value=""/>
-							<a href="">搜索</a>
-						</div>
-					</div>
-					<div class="gj_clear" >
-						<ul class="store_list gj_clear">
-                            <?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,1,10, true) : $er_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-							<li class="items"><a href="" class="car_img flex_center"><img src="<?php echo $vol['img_url']; ?>" alt="" /></a><a href="" class="car_desc"><h3><?php echo $vol['name']; ?></h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
-                            <?php endforeach; endif; else: echo "" ;endif; ?>
-						</ul>
-						<div class="page">
-							<a href="">首页</a><a href="">1</a><a href="" class="active">2</a><a href="">...</a><a href="">9</a><a href="">尾页</a>
-						</div>
-					</div>
+		<div class="site_nav">
+			<div class="site_nav_bd">
+				<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
+				<div class="fright">
+					<ul class="site_nav_menu">
+						<li><a href=""><img src="/static/img/home1.png" alt="" />首页</a></li>
+						<li><a href=""><img src="/static/img/sell2.png" alt="" />我要买车</a></li>
+						<li><a href=""><img src="/static/img/sell1.png" alt="" />我要买车</a></li>
+						<li><a href=""><img src="" alt="" />网站导航</a></li>
+					</ul>					
 				</div>
 			</div>
-					
-		</div>	
-	</div>
-	<div class="adv_img">
-		<h2>想开什么车 ？管家车易站应有尽有.</h2>
-		<div class="buy_ipt">
-			<input type="text" placeholder="请输入手机号"/>
-			<div class="btn_buy">我要买车</div>
 		</div>
-	</div>
+		<div class="borbt"><div class="header"></div></div>
+		<div class="full_wid">			
+			<div class="wrap ">	
+				<div class="person_center">
+					<div class="person_left">
+						<div class="person_info">
+							<div class="user_avatar"><img src="/static/img/yhtx.png" alt="" /></div>
+							<p class="uphone">15362352625</p>
+							<p>向阳二手车一号店</p>							
+						</div>
+						<div class="tab_choose">
+							<ul>
+								<li class=""><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class="active"><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_feedback.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_order.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="person_right">
+						<h1 class="borbt"><span class="release">个人资料</span></h1>
+						<ul class="tab_info gj_clear">
+							<li class="active">基本信息</li>
+							<li>绑定设置</li>
+							<li>修改密码</li>
+						</ul>
+						<div class="editCont">
+							<div class="info_base info_ipt">
+								
+								<div class="avatar"><span>头像: </span><img src="/static/img/yhtx.png" alt="" /> </div>
+								<div class="ipt"><span>昵称：</span><input type="text" placeholder="管家车易站"/></div>
+								<div  class="ipt"><span>所在地：</span><input type="text" placeholder="管家车易站"/></div>
+								<div class="ipt"><span>性别：</span><input type="radio" name="sex"/>男&emsp;<input type="radio" name="sex"/>女</div>
+								<div class="ipt"><span>出生年月：</span><input type="text" placeholder="" id="year"/></div>
+								<p class="sub_btn submit">修改</p>
+							</div>
+							<div style="display: none;" class="info_ipt">
+								<div class="upLoad_form">
+							<ul class="motify_ipt">
+								<li><span class="my_form_tit">手机号：</span><p class="uphone">1536232514</p></li>
+								<li><span class="my_form_tit">新手机号：</span>
+									<div class="fleft myform_ipt"><input type="password" placeholder="请输入您新绑定的手机号"/></div>
+								</li>
+								<li><span class="my_form_tit">验证码：</span>
+									<div class="fleft myform_ipt"><input type="text" placeholder="请输入您的验证码"/><span class="getcode">获取验证码</span></div>
+								</li>
+							</ul>								
+							<p class="sub_btn pwd_submit">提交</p>
+						</div>
+							</div>
+							<div style="display: none;" class="motifypwd info_ipt">
+								<div class="upLoad_form">
+									<ul class="motify_ipt">
+										<li><span class="my_form_tit">手机号：</span><p class="uphone">1536232514</p></li>
+										
+										<li><span class="my_form_tit">原密码：</span>
+											<div class="fleft myform_ipt"><input type="password" placeholder="请输入您的验证码"/></div>
+										</li>
+										<li><span class="my_form_tit">新密码：</span>
+											<div class="fleft myform_ipt"><input type="password"  placeholder="请输入您新绑定的手机号"/><span class="getcode">获取验证码</span></div>
+										</li>
+										<li><span class="my_form_tit">确认密码：</span>
+											<div class="fleft myform_ipt"><input type="password" placeholder="请输入您的验证码" /></div>
+										</li>
+									</ul>								
+									<p class="sub_btn pwd_submit">提交</p>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
 	<div class="footer">
+		
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -303,23 +308,22 @@ $(window).on('scroll',function(){
 	$(".more_dwon").click(function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script></div>
-	
+</script>
+	</div>
+		
 	</body>
-	<script>
-		$(function(){
-			$(".brandLeft li.p_r").hover(function(){
-				$(this).find('.sale_all_list').show();
-				$(this).css("border","1px solid #ff802c")
-			},function(){
-				$(this).find('.sale_all_list').hide();
-				$(this).css("border","none")
-			})
+	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/laydate.js"></script>
+	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script>		
+		$(function(){			
+		$(".uphone").text($(".uphone").text().substring(0, 3) + "****" + $(".uphone").text().substring(7, 11));
+		$(".tab_info li").click(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+			var i=$(this).index();
+			$(".info_ipt").eq(i).show().siblings().hide()
 		})
-	   // $(".header").load("templates/header.html");
-	   // $(".footer").load("templates/footer.html");
-	
-	</script>
-	
+			
+	})
+</script>
 </html>
- 

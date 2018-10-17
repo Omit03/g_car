@@ -131,6 +131,9 @@ class Common extends Controller{
             'index'=>array(
                 'user_id' =>'number',
             ),
+            'car_compare'=>array(
+                'user_id' =>'number',
+            ),
         ),
         'Change' => array(
             'index'=>array(
@@ -139,6 +142,9 @@ class Common extends Controller{
         ),
         'News' => array(
             'index'=>array(
+                'user_id' =>'number',
+            ),
+            'newsdetails'=>array(
                 'user_id' =>'number',
             ),
         ),
@@ -152,14 +158,49 @@ class Common extends Controller{
             'shop_info'=>array(
                 'user_id' =>'number',
             ),
+            'add_comment'=>array(
+                'user_id' =>'number',
+            ),
         ),
 
         'User' => array(
+            'car_login'=>array(
+                'user_id' =>'number',
+            ),
+            'person_manage'=>array(
+                'user_id' =>'number',
+            ),
+            'person_release'=>array(
+                'user_id' =>'number',
+            ),
+            'person_public'=>array(
+                'user_id' =>'number',
+            ),
+            'person_busenter'=>array(
+                'user_id' =>'number',
+            ),
+            'person_opportunity'=>array(
+                'user_id' =>'number',
+            ),
+            'person_info'=>array(
+                'user_id' =>'number',
+            ),
+            'person_collect'=>array(
+                'user_id' =>'number',
+            ),
+            'person_history'=>array(
+                'user_id' =>'number',
+            ),
+            'person_feedback'=>array(
+                'user_id' =>'number',
+            ),
+            'person_order'=>array(
+                'user_id' =>'number',
+            ),
             'register'=>array(
                 'user_phone'  =>'require|number',
                 'user_pwd'  =>'require|length:32',
                 'code'  =>'require|length:6',
-
             ),
             'login' => array(
                 'user_phone' =>'require',//两种方式 有正则就用数组形式，没有就用下面也行

@@ -7,6 +7,123 @@ use logs\newLog;
 
 class User  extends Common {
 
+
+    /*
+     * 展示登录
+     */
+    public function car_login(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }    /*
+     * 展示登录
+     */
+    public function person_manage(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }    /*
+     * 展示登录
+     */
+    public function person_release(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }    /*
+     * 展示登录
+     */
+    public function person_public(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }    /*
+     * 展示登录
+     */
+    public function person_busenter(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }    /*
+     * 展示登录
+     */
+    public function person_opportunity(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }
+    /*
+     * 展示登录
+     */
+    public function person_info(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }    /*
+     * 展示登录
+     */
+    public function person_collect(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }    /*
+     * 展示登录
+     */
+    public function person_history(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }    /*
+     * 展示登录
+     */
+    public function person_feedback(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }    /*
+     * 展示登录
+     */
+    public function person_order(){
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }
+    /*
+     * 登录
+     */
+
     public function login(){
 
         /* 接收参数*/

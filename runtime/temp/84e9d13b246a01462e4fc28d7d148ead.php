@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\shop\index.html";i:1539740559;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539695003;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\shop\index.html";i:1539755273;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539695003;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -284,6 +284,111 @@ $(window).on('scroll',function(){
 		</div>
 		
 	</div>
+	<div class="full_wid">
+		<div class="wrap">
+			<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">郑州二手车 >></a><a href=""> 发表店铺评论 </a></div>
+			<div class="add_com">
+				<div class="fright store_score">
+					<h2>向阳二手车金水区店</h2>
+					<div class="score_res oh">
+						<b class="f_score">5.0</b>
+						<div class="score_value fleft"><span class=""><em data_value="2"></em></span></div><!--分数-->
+					</div>
+					<p>店铺环境：5分</p>
+					<p>服务态度：5分</p>
+					<p>商家专业：5分</p>
+
+				</div>
+				<h1>店铺评分</h1>
+				<h2>向阳二手车金水区店</h2>
+				<div class="score_cont gj_clear">
+					<!--打分-->
+					<div class="comment_score"><span>总体服务:</span>
+						<div class="mark_score star_img">
+							<div class="empty_star">
+								<span class="star" data-value='20' score_vlaue='1'></span>
+								<span class="star" data-value='40' score_vlaue='2'></span>
+								<span class="star" data-value='60' score_vlaue='3'></span>
+								<span class="star" data-value='80' score_vlaue='4'></span>
+								<span class="star" data-value='100' score_vlaue='5'></span>
+							</div>
+							<div class="full_star"></div>
+							<input class="totalTag tagScore" type="hidden" value="1"></input>
+						</div>
+
+					</div>
+					<div class="comment_score"><span>车源真实:</span>
+						<div class="mark_score smile_img">
+							<div class="empty_star">
+								<span class="star" data-value='20' score_vlaue='1'></span>
+								<span class="star" data-value='40' score_vlaue='2'></span>
+								<span class="star" data-value='60' score_vlaue='3'></span>
+								<span class="star" data-value='80' score_vlaue='4'></span>
+								<span class="star" data-value='100' score_vlaue='5'></span>
+							</div>
+							<div class="full_star"></div>
+							<input class="carTag tagScore" type="hidden"></input>
+						</div>
+					</div>
+					<div class="comment_score"><span>服务态度:</span>
+						<div class="mark_score smile_img">
+							<div class="empty_star">
+								<span class="star" data-value='20' score_vlaue='1'></span>
+								<span class="star" data-value='40' score_vlaue='2'></span>
+								<span class="star" data-value='60' score_vlaue='3'></span>
+								<span class="star" data-value='80' score_vlaue='4'></span>
+								<span class="star" data-value='100' score_vlaue='5'></span>
+							</div>
+							<div class="full_star"></div>
+							<input class="serviceTag tagScore" type="hidden"></input>
+						</div>
+					</div>
+					<div class="comment_score"><span>商家专业:</span>
+						<div class="mark_score smile_img">
+							<div class="empty_star">
+								<span class="star" data-value='20' score_vlaue='1'></span>
+								<span class="star" data-value='40' score_vlaue='2'></span>
+								<span class="star" data-value='60' score_vlaue='3'></span>
+								<span class="star" data-value='80' score_vlaue='4'></span>
+								<span class="star" data-value='100' score_vlaue='5'></span>
+							</div>
+							<div class="full_star"></div>
+							<input class="dealerTag tagScore" type="hidden"></input>
+						</div>
+					</div>
+					<!--多选-->
+					<div class="tag_list">
+						<span class="active" tag_check='1' tag_value="1"> 服务热情</span>
+						<span tag_check='0'  tag_value="2">店面干净</span>
+						<span tag_check='0'  tag_value="3">价格给力</span>
+						<span tag_check='0'  tag_value="4">服务耐心</span>
+					</div>
+				</div>
+
+				<h2>评价</h2>
+				<div class="textareabox p_r">
+	        	<textarea class="form_textarea" data-length="500" id="information"  data-toggle="textarea"
+						  placeholder="服务是否专业、价格是否合理，写下您的意见吧~"></textarea>
+					<span class="limit_num">
+	        			至少10字
+	        		</span>
+				</div>
+				<h2>购车阶段</h2>
+				<ul class="buy_step oh">
+					<li><input type="checkbox" class="checked"/><b></b><span>未联系</span></li>
+					<li><input type="checkbox" /><b></b><span>未购车</span></li>
+					<li><input type="checkbox" /><b></b><span>未到店</span></li>
+				</ul>
+				<div class="add_btn">发表评论</div>
+				<p>
+					欢迎您为商家进行点评和打分，与万千买家分享您的购车体验！<br />
+					您的点评和打分将成为其他买家的参考依据，并影响该商家评价。<br />
+					请您根据真实的购车体验，客观地发布本人的评价。如您发布的点评并非本人的真实体验，则将被视为违规。
+				</p>
+			</div>
+		</div>
+	</div>
+
 	<div class="adv_img">
 		<h2>想开什么车 ？管家车易站应有尽有.</h2>
 		<div class="buy_ipt">
