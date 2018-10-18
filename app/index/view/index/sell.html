@@ -44,8 +44,8 @@
 						<ul class="list">
 							{volist name = "er_car" id ="val"}
 							<li class="items">
-								<a href="" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
-								<a href="" class="car_desc">
+								<a href="{:url('index/details')}?cheid={$val.pu_id}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
+								<a href="{:url('index/details')}?cheid={$val.pu_id}" class="car_desc">
 									<h3>{$val.name}</h3>
 									<p><span class="car_price"><b>{$val.price}</b>万</span>
 									<span class="car_sui">新车含税{$val.new_car_price}万</span>

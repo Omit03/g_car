@@ -1173,6 +1173,7 @@ class Common extends Controller{
             $arr['pay_20y']=$pay_20y=ceil($infos['price']*0.8/36*10000);
             $arr['pay_20n']=36;
         }
+       // dump($arr);die;
         return $arr;
     }
 

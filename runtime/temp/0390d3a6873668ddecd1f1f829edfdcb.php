@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539861950;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539864035;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -304,8 +304,8 @@ $(window).on('scroll',function(){
 						<a href="">
 						<?php if(is_array($sys_cars) || $sys_cars instanceof \think\Collection || $sys_cars instanceof \think\Paginator): $i = 0; $__LIST__ = $sys_cars;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
+							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $vol['pu_id']; ?>" class="car_img flex_center"><img src="<?php echo $vol['img_url']; ?>" alt="" /></a>
+							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $vol['pu_id']; ?>" class="car_desc">
 								<h3><?php echo $vol['name']; ?></h3>
 								<p><span class="car_price"><b><?php echo $vol['price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $vol['news_price']; ?>万</span></p>
 								<p><span><?php echo $vol['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $vol['car_mileage']; ?>万公里</span> </p>

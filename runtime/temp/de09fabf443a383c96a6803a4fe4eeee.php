@@ -1,18 +1,19 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\join_us.html";i:1539691283;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"G:\xampp\htdocs\car\public/../app/index\view\index\appdownload.html";i:1539689569;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"/>
+		<meta charset="utf-8" />
 		<title></title>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
-	<link rel="stylesheet" href="/static/css/other.css" />	
+	<link rel="stylesheet" href="/static/css/other.css" />
+	<script src="js/jquery-1.11.0.min.js"></script>
 	<style>
 
 	</style>
 	<body>	
-		<div class="header"><div class="site_nav">
+		<div class="header">
+			<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
@@ -152,36 +153,94 @@ $(window).on('scroll',function(){
 })
 
 </script>
-</div>
+
+		</div>
 		<div class="full_wid">			
-			<div class="wrap ">	
-				<div class="person_center">
-					<div class="person_left user">					
-						<div class="tab_choose">
-						<ul>
-								<h2 class="top_tit">管家车易站</h2>
-								<li class="active"><a href="join_us.html"><img src="/static/img/jiaoru.png" alt="" /></b>加入我们</a></li>
-								<li class=""><a href="link_us.html"><img src="/static/img/lainxi.png" alt="" /></b>联系我们</a></li>
-								<li class=""><a href="service.html"><img src="/static/img/fuwu.png" alt="" /></b>服务保障</a></li>
-								<li class=""><a href="website.html"><img src="/static/img/ditu.png" alt="" /></b>网站地图</a></li>
-								
-							</ul>
+			<div class="app_bga flex_center">
+				<div class="wrap">
+					<div class="app_bgacon">
+						<img src="/static/img/wenzi2.png" alt="" class="" width="406"/>
+						<img src="/static/img/wenzi1.png" alt="" class="" width="385"/>					
+						<div class="fleft">
+							<img src="/static/img/wenzi3.png" alt="" width=""/>
+							<div>
+								<img src="/static/img/dd.png" alt="" width="106"/>
+								<img src="/static/img/dd1.png" alt="" width="28"/>
+								<img src="/static/img/dd1.png" alt="" width="28"/>
+								<img src="/static/img/dd1.png" alt="" width="28"/>
+							</div>
+						</div>
+						<div class="fleft">
+						 	<img src="/static/img/ewmdown.png" alt="" width="160"/>
 						</div>
 					</div>
-					<div class="person_right">
-						<h1 class="borbt"><span class="release">加入我们</span></h1>
-						<h2 class="step">管家车易站平台</h2>
-						<p class="about">
-						  联系电话：0371-53375515 <br />
-工作地址：郑州市金水区花园路国基路 居易国际广场4号楼1122 （地铁2号线 沙门A口旁）
-							
-						</p>
+				</div>				
+			</div>	
+			<div class="app_bgb flex_center">
+				<div class="wrap flex_center">
+					<img src="/static/img/app_b.png" alt="" width="412"/>
+					<div class="fright app_bgbcon marlt86">
+						<p class="app_fp1">优质车源  精心挑选保驾护航</p><br />
+					    <p class="app_fp2">打造二手车放心品牌</p>
 					</div>
-				</div>
-				
+					
+				</div>			
 			</div>
-		</div>	
+			<div class="app_bgc flex_center">
+				<div class="wrap flex_center">				
+					<div class="fleft app_bgccon ">
+						<p class="app_fp1">登录注册 方便快捷</p><br />
+					    <p class="app_fp2">打造全新的用户体验</p>
+					</div>					
+				   <img src="/static/img/app_c.png" alt=""  width="217" class="marlt270"/>
+			    </div>
+			</div>		    			   
+		    <div class="app_bgd flex_center">
+				<div class="wrap flex_center">
+					<img src="/static/img/app_d.png" alt="" width="726" class="fleft"/>
+					<div class="fright app_bgdcon marlt90">
+						<p class="app_fp1">优化搜索 精准定位</p>
+						<br />
+					    <p class="app_fp2"> 操作简单方便流程清晰</p>
+					</div>
+				</div>				
+			</div>
+		</div>
+		<div class="footer mtp40">	
+			
+		</div>
+		<div class="fixedRight">
+			<ul class="right_sider">
+				<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
+					<div class="gj_sidecon_desc "></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
+				<div class="gj_sidecon_desc"></div></li>
+				<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
+				<div class="gj_sidecon_desc"></div></li>
+				<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				
+			</ul>
+		</div>
 		<div class="footer">
+			
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -235,15 +294,13 @@ $(window).on('scroll',function(){
 	$(".more_dwon").click(function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script></div>
-		
-		<div class="mask1"></div>
+</script>
+		</div>
 	</body>
-	<script src="/static/js/jquery-1.11.0.min.js"></script>
 	<script>		
-		$(function(){	
-		   // $(".footer").load("templates/footer.html");
-   		//    $(".header").load("templates/header.html");
-	})
+		$(function(){			 
+		   // $(".header").load("templates/header.html");
+           // $(".footer").load("templates/footer.html");
+		})
 </script>
 </html>

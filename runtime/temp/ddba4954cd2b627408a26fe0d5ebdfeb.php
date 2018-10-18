@@ -1,18 +1,21 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\join_us.html";i:1539691283;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html";i:1539689569;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
 		<title></title>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
+	 <link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
-	<link rel="stylesheet" href="/static/css/other.css" />	
-	<style>
-
+	<link rel="stylesheet" href="/static/css/other.css" />
+	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<style>	
 	</style>
-	<body>	
-		<div class="header"><div class="site_nav">
+<body>	
+<div class="header">
+	<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
@@ -152,36 +155,127 @@ $(window).on('scroll',function(){
 })
 
 </script>
+
 </div>
-		<div class="full_wid">			
-			<div class="wrap ">	
-				<div class="person_center">
-					<div class="person_left user">					
-						<div class="tab_choose">
-						<ul>
-								<h2 class="top_tit">管家车易站</h2>
-								<li class="active"><a href="join_us.html"><img src="/static/img/jiaoru.png" alt="" /></b>加入我们</a></li>
-								<li class=""><a href="link_us.html"><img src="/static/img/lainxi.png" alt="" /></b>联系我们</a></li>
-								<li class=""><a href="service.html"><img src="/static/img/fuwu.png" alt="" /></b>服务保障</a></li>
-								<li class=""><a href="website.html"><img src="/static/img/ditu.png" alt="" /></b>网站地图</a></li>
-								
-							</ul>
-						</div>
-					</div>
-					<div class="person_right">
-						<h1 class="borbt"><span class="release">加入我们</span></h1>
-						<h2 class="step">管家车易站平台</h2>
-						<p class="about">
-						  联系电话：0371-53375515 <br />
-工作地址：郑州市金水区花园路国基路 居易国际广场4号楼1122 （地铁2号线 沙门A口旁）
+<div class="banner1"><img src="/static/img/xinche.png" alt="" /></div>
+<div class="newcar gj_clear">
+    <div class="category">
+   		<div class="classify p_r">
+   			 <div class="brand_new fleft oh">
+   			 	<h2>品牌</h2>
+   			 	<ul>
+					<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+
+   			 		<li><a href=""><img src="<?php echo $val['img_url']; ?>" alt="" /><p><?php echo $val['name']; ?></p></a></li>
+				    <?php endforeach; endif; else: echo "" ;endif; ?>
+   			 	</ul>
+   			 </div>
+   			 <div class="price_new fleft oh">
+   			 	<h2>首付</h2>
+   			 	<ul>
+   			 		<li><a href="">分期购</a></li>
+   			 		<li><a href="" class="coloryel">一成购新车</a></li>
+					<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+   			 		<li><a href=""><?php echo $val['name']; ?></a></li>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
+
+   			 	</ul>
+
+   			 	
+   			 </div>
+   			 <div class="type_new fleft oh">
+   			 	<h2>车型</h2>
+   			 	<ul>
+					<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+   			 		<li><a href=""><img src="/static/img/<?php echo $val['img']; ?>" alt=""  width="100" height="100"/><p><?php echo $val['name']; ?></p></a></li>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
+   			 	</ul>
+   			 </div>			 
+   			<a href="" class="coloryel more_lok">MORE>></a>
+   		</div>	
+   </div>
+	<div class="wrap">
+	    <div class="news_tit">
+	        <h2>爆款新车</h2>	
+	        <p class="small_tit">Explosive car</p>
+	    </div>
+	   <div class="gj_clear">
+		    <div class="img_fac">
+			 <div class="more_slt">
+			 	<div class="gj_clear">
+			 		<a href="">5-8万</a>
+			 		<a href="">5-8万</a>
+				 	<a href="">20-30万</a>
+				 	<a href="">5-8万</a>
+			 	</div>
+			 	
+			<p><a href="">查看更多>></a></p>		 	
+			 	
+			 </div>
+		   </div>
+		    <div class="first_public">
+		    	<ul class="md50">
+					<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($new_car) ? array_slice($new_car,10,10, true) : $new_car->slice(10,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+		    		<li>
+						<a href="<?php echo url('newcar/newCarDetails'); ?>">
+
+						<h3><?php echo $vol['name']; ?></h3>
+							<div class="fleft car_img"><img src="<?php echo $vol['img_url']; ?>" alt="" /></div>
+							<div class="fright car_public">
+								<h4>首付<?php echo $vol['pay10_s2']; ?>万</h4>
+								<span>新车发售</span>
+							</div>
 							
-						</p>
-					</div>
-				</div>
+						</a>
+		    		</li>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
+		    	</ul>
+		    </div>
+	    </div>
+	     <div class="news_tit">
+	        <h2>热门推荐</h2>	
+	        <p class="small_tit">Popular recommendation</p>
+	    </div>
+	    <div class="gj_clear">
+	    	<ul class="list ptp15 new_list">
+				<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($new_car) ? array_slice($new_car,2,7, true) : $new_car->slice(2,7, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+				<li class="items5">
+					<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="" class="car_desc">
+						<h3><?php echo $vol['name']; ?></h3>
+						<p><span class="pay_first">首付<b><?php echo $vol['pay10_s2']; ?></b>万</span> <span class="padlt20">月供<?php echo $vol['pay10_y2']; ?>元</span> </p>
 				
-			</div>
-		</div>	
-		<div class="footer">
+					</a>
+					<img src="<?php echo $vol['img_url']; ?>" alt="" class="hot" />
+				</li>
+				<?php endforeach; endif; else: echo "" ;endif; ?>
+			</ul>
+			<div class="more_l">查看更多</div>
+	    </div>
+		<h2 class="newc_t">
+			轻松四步  新车开回家
+		</h2>
+		<ul class="step oh">
+			<li><img src="/static/img/yuyue.png" alt="" /><p>在线预约</p></li>
+			<li><img src="/static/img/jiantou00.png" alt="" /></li>
+			<li><img src="/static/img/xieyi.png" alt="" /><p>签订协议</p></li>
+			<li><img src="/static/img/jiantou00.png" alt="" /></li>
+			<li><img src="/static/img/zhifu.png" alt="" /><p>支付费用</p></li>
+			<li><img src="/static/img/jiantou00.png" alt="" /></li>
+			<li><img src="/static/img/kaiche.png" alt="" /><p>坐等新车</p></li>
+		
+		</div>
+	<div class="adv_img">
+		<h2>想开什么车 ？管家车易站应有尽有.</h2>
+		<div class="buy_ipt">
+			<input type="text" placeholder="请输入手机号"/>
+			<div class="btn_buy">我要买车</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -235,15 +329,22 @@ $(window).on('scroll',function(){
 	$(".more_dwon").click(function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script></div>
-		
-		<div class="mask1"></div>
-	</body>
-	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	<script>		
-		$(function(){	
-		   // $(".footer").load("templates/footer.html");
-   		//    $(".header").load("templates/header.html");
-	})
+</script>
+</div>
+
+</body>
+
+
+<script>
+  
+   window.onload=function()
+   {
+   	//  $(".header").load("templates/header.html");
+     // $(".footer").load("templates/footer.html");
+  var sec=$('.wrap').html();
+  console.log(sec);
+     
+   	
+   }
 </script>
 </html>

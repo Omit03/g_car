@@ -250,7 +250,7 @@ class Index  extends Common
 
         //点评
         $remark=Db::table("remark")->field("id,user_id,content,create_time,all_score")->where("shop_id",$shopinfo['shop_id'])->order("create_time desc")->find();
-
+       // dump($remark);die;
         if (empty($remark)){
 
             $remark['create_time']=substr($remark['create_time'], 0, 10)?substr($remark['create_time'], 0, 10):"";

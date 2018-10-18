@@ -228,15 +228,14 @@
                            {volist name="er_car" id="vo" offset="1" length="8"}
 
 							<li class="items5">
-								<a href="{:url('index/details')}?cheid={$vo.pu_id}">
-								<a href="" class="car_img flex_center"><img src="{$vo.img_url}" alt="" /></a>
-								<a href="" class="car_desc">
-									<h3>{$vo.name}</h3>
+
+								<a href="{:url('index/details')}?cheid={$vo.pu_id}" class="car_img flex_center"><img src="{$vo.img_url}" alt="" /></a>
+								<a href="{:url('index/details')}?cheid={$vo.pu_id}" class="car_desc">
+									<h3>{$vo.pu_id}{$vo.name}</h3>
 									<p><span class="car_price"><b>{$vo.new_car_price}</b>万</span><span class="car_sui">新车含税{$vo.price}万</span></p>
 									<p><span>{$vo.car_cardtime}上牌</span> <span class="padlt20">{$vo.car_mileage}万公里</span> </p>
-									<div class="che_ordered">立即预约</div>
-								</a>
-								</a>
+									<div class="che_ordered">立即预约</div></a>
+
 							</li>
 
                            {/volist}
@@ -270,8 +269,8 @@
 					 <ul class="list ptp15">
 						 {volist name="er_car" id="vo" offset="12" length="1"}
 						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="{$vo.img_url}" alt="" /></a>
-							<a href="" class="car_desc">
+							<a href="{:url('index/details')}?cheid={$vo.pu_id}" class="car_img flex_center"><img src="{$vo.img_url}" alt="" /></a>
+							<a href="{:url('index/details')}?cheid={$vo.pu_id}" class="car_desc">
 								<h3>{$vo.name}</h3>
 								<p><span class="car_price"><b>{$vo.new_car_price}</b>万</span><span class="car_sui">新车含税{$vo.price}万</span></p>
 								<p><span>{$vo.car_cardtime}上牌</span> <span class="padlt20">{$vo.car_mileage}万公里</span> </p>

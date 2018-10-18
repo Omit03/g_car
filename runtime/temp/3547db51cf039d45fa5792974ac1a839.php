@@ -1,18 +1,20 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\join_us.html";i:1539691283;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\shop\shop_info.html";i:1539740859;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"/>
+		<meta charset="utf-8" />
 		<title></title>
 	</head>
 	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
-	<link rel="stylesheet" href="/static/css/other.css" />	
+	<link rel="stylesheet" href="/static/css/other.css" />
+	<link rel="stylesheet" href="/static/css/iconfont.css">
+	<link rel="stylesheet" href="/static/css/swiper.min.css" />
 	<style>
-
+	
 	</style>
-	<body>	
-		<div class="header"><div class="site_nav">
+	<body style="background:#f8f8f8">
+	<div class="header"><div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
@@ -153,35 +155,58 @@ $(window).on('scroll',function(){
 
 </script>
 </div>
-		<div class="full_wid">			
-			<div class="wrap ">	
-				<div class="person_center">
-					<div class="person_left user">					
-						<div class="tab_choose">
-						<ul>
-								<h2 class="top_tit">管家车易站</h2>
-								<li class="active"><a href="join_us.html"><img src="/static/img/jiaoru.png" alt="" /></b>加入我们</a></li>
-								<li class=""><a href="link_us.html"><img src="/static/img/lainxi.png" alt="" /></b>联系我们</a></li>
-								<li class=""><a href="service.html"><img src="/static/img/fuwu.png" alt="" /></b>服务保障</a></li>
-								<li class=""><a href="website.html"><img src="/static/img/ditu.png" alt="" /></b>网站地图</a></li>
-								
-							</ul>
-						</div>
-					</div>
-					<div class="person_right">
-						<h1 class="borbt"><span class="release">加入我们</span></h1>
-						<h2 class="step">管家车易站平台</h2>
-						<p class="about">
-						  联系电话：0371-53375515 <br />
-工作地址：郑州市金水区花园路国基路 居易国际广场4号楼1122 （地铁2号线 沙门A口旁）
-							
-						</p>
-					</div>
-				</div>
-				
+	<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">向阳二手车 >></a><a href=""> 店铺首页</a></div>
+	<div class="storeH">
+		<div class="wrap">
+			<h1 class="textCenter"><span>郑州管家二手车<b>优选商家</b></span></h1>
+			<p class="fright phone">
+				  <i class="icon iconfont icon-msnui-telephone"></i>  15638886114
+			</p>
+			<div class="gj_clear"></div>
+			<ul class="shop_nav gj_clear">
+				<li><a href="<?php echo url('shop/index'); ?>">店铺首页</a></li>
+				<li><a href="<?php echo url('shop/shop_list'); ?>">在售车源</a></li>
+				<li ><a href="<?php echo url('shop/shop_info'); ?>">公司信息</a></li>
+			</ul>
+		</div>
+		
+	</div>
+	<div class="wrap">
+		<div class="store_info">
+			<h1><span>郑州管家二手车</span></h1>
+			<p class="store_on">营业时间： 9：00-18：00 <i>|</i>联系电话： 15638886114 <i>|</i>在售车辆： <b>1735辆</b></p>
+			<h2>服务内容</h2>
+			<div class="store_service">				
+				<p><img src="/static/img/sda.png" alt="" />车辆置换</p><p><img src="/static/img/sda.png" alt="" />价格评估</p><p><img src="/static/img/sda.png" alt="" />代办过户</p>
+				<p><img src="/static/img/sda.png" alt="" />代办验车</p><p><img src="/static/img/sda.png" alt="" />代办上牌</p><p><img src="/static/img/sda.png" alt="" />代办转籍</p>
+				<p><img src="/static/img/sda.png" alt="" />代办保险</p><p><img src="/static/img/sda.png" alt="" />补办手续</p><p><img src="/static/img/sda.png" alt="" />代办转籍</p>
+				<p><img src="/static/img/sda.png" alt="" />分期贷款</p>
 			</div>
-		</div>	
-		<div class="footer">
+		</div>
+		<h2 class="tit_line"><b></b>公司简介</h2>
+		<div class="store_intro">
+			河南管家二手名车是中原一家以二手车收售、评估、售后服务、客户服务、为一体的二手车综合服务公司，并为购车客户提供过户，检测、上牌、保险、私人专属定制等一站式服务。向阳二手名车现营业，中高端车型全面涵盖，其主营品牌有：奔驰、宝马、奥迪、保时捷、、大众、丰田等，5万-300万各种品牌名车。向阳二手名车广场所有在售车辆需经过134项精益化检测由国家注册评估师鉴定，质量保证领先于二手车行业；我们秉承“客户至上、服务至上”的企业经营理念，保证所销售的车辆非泡水车、火烧车、事故车等，并都是法律上合法车辆，给每位来向阳二手车购车的客户提供一个“放心买，安心用”的购车环境。
+		</div>
+		<h2 class="tit_line"><b></b>公司位置</h2>
+		<div class="store_map">
+		<div class="map" style="display: block">
+            <a style="height: 0px; line-height: 0px; width: 0px; overflow: hidden;" name="map"></a>
+            <div style="border: 0pt none; overflow: hidden; position: relative; top: 0pt; left: 0pt; width: 1200px; height: 580px; z-index: 0; background-color: rgb(235, 234, 232); cursor: default; margin: 0 auto" id="allmap">
+            </div>
+        </div>
+
+
+		</div>
+	</div>
+	
+	<div class="adv_img">
+		<h2>想开什么车 ？管家车易站应有尽有.</h2>
+		<div class="buy_ipt">
+			<input type="text" placeholder="请输入手机号"/>
+			<div class="btn_buy">我要买车</div>
+		</div>
+	</div>		
+	<div class="footer">
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -236,14 +261,40 @@ $(window).on('scroll',function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
 </script></div>
-		
-		<div class="mask1"></div>
+	
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	<script>		
-		$(function(){	
-		   // $(".footer").load("templates/footer.html");
-   		//    $(".header").load("templates/header.html");
-	})
-</script>
+	<script src="/static/js/gjsilde.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type='text/javascript' src='//api.map.baidu.com/api?v=2.0&ak=bfUXDs4Q9hypXBR1yN0A4fGPbxMrhriF'></script>
+	<script type='text/javascript'>
+		var map = new BMap.Map('allmap');
+	    var point = new BMap.Point(113.689018,34.824333);
+		map.centerAndZoom(point, 15);
+		map.enableScrollWheelZoom(true);//可拖拽
+		var marker = new BMap.Marker(point);//标记
+		map.addOverlay(marker);        
+		marker.setLabel(new BMap.Label('向阳二手车', { offset: new BMap.Size(-20, -20) }));
+		var mapType = new BMap.MapTypeControl()
+		map.addControl(mapType);
+		var overViewOpen = new BMap.OverviewMapControl({isOpen:true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
+		map.addControl(overViewOpen);
+		map.addControl(new BMap.NavigationControl());
+
+	</script>
+
+	<script>
+	   $(".header").load("templates/header.html");
+	   $(".footer").load("templates/footer.html");
+	   //	显示分
+	   function showStar(elem){
+	   	var score=$(elem).find("em").attr("data_value");
+		var f_score=score*20;
+		$(elem).find("em").css('width',f_score+'%');
+	   }
+	   showStar(".value1");showStar(".value2");showStar(".value3");
+	   showStar(".user_markscore");
+
+	</script>
+	
 </html>
+ 

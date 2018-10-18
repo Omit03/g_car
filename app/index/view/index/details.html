@@ -163,8 +163,8 @@
 						<a href="">
 						{volist name="sys_cars" id="vol"}
 						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
+							<a href="{:url('index/details')}?cheid={$vol.pu_id}" class="car_img flex_center"><img src="{$vol.img_url}" alt="" /></a>
+							<a href="{:url('index/details')}?cheid={$vol.pu_id}" class="car_desc">
 								<h3>{$vol.name}</h3>
 								<p><span class="car_price"><b>{$vol.price}</b>万</span><span class="car_sui">新车含税{$vol.news_price}万</span></p>
 								<p><span>{$vol.car_cardtime}上牌</span> <span class="padlt20">{$vol.car_mileage}万公里</span> </p>
