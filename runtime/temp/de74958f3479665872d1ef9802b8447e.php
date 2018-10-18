@@ -1,28 +1,22 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:73:"G:\xampp\htdocs\car\public/../app/index\view\user\person_opportunity.html";i:1539758780;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_collect.html";i:1539758674;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539758056;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
 		<title></title>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
+		<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css" />
+	
 	<style>
-	.proce_res b{font-weight: lighter;color:#ff802c;}
-	.processing_res {float: left;width: 200px;margin-top: 54px;}
-	.proce_status+div{margin-top: 10px;margin-left: 10px;cursor: pointer;}
+
 	</style>
 	<body>
 	<div class="header">
 		<div class="site_nav">
 	<div class="site_nav_bd">
-		<div class="fleft">你好，欢迎来到管家车易站！
-			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
-			<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a>
-			<?php else: ?>
-			<?php echo \think\Session::get('phone'); endif; ?></div>
+		<div class="fleft">你好，欢迎来到管家车易站！请<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a></div>
 		<div class="fright">
 			<ul class="site_nav_menu">
 				<li><a href=""><img src="img/shouye.png" alt="" />首页</a></li>
@@ -187,9 +181,9 @@ $(window).on('scroll',function(){
 								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class="active"><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class="active"><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_feedback.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_order.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
@@ -197,122 +191,66 @@ $(window).on('scroll',function(){
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">我的预约 </span>
-							<div class="fright ptp15 proce_res">共<b>23</b>条 | 已处理<b>22</b>条 | 未处理<b>1</b>条</div>
+						<h1 class="borbt"><span class="release">我的收藏</span>
+							<ul class="fright sel_status">
+								<li class="active" data-status='1'><b></b><span>全部</span></li>
+								<li data-status='0'><b></b><span>新车</span></li>
+								<li data-status='0'><b></b><span>二手车</span></li>
+								<li data-status='0'><b></b><span>0首付</span></li>
+							</ul>
 						</h1>
-						<ul class="p_list">
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
+						<h2 class="step"></h2>
+						 <ul class="list browse_car">
+							<li class="items4">
+								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+								<a href="javascript:;" class="car_desc">
+									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
+									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+								</a>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
+							<li class="items4">
+								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+								<a href="javascript:;" class="car_desc">
+									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
+									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+								</a>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
+							<li class="items4">
+								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+								<a href="javascript:;" class="car_desc">
+									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
+									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+								</a>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
+							<li class="items4">
+								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+								<a href="javascript:;" class="car_desc">
+									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
+									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
+									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+								</a>
 							</li>
 						</ul>
-					</div>	
+					</div>
 				</div>
-			</div>
-		</div>
-	<div class="footer">
-		
-	<div class="wrap">
-		<div class="company_info gj_clear">
-			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
-			<div class="basic_info">
-				<div>
-					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
-					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
-					<a href="<?php echo url('index/service'); ?>">服务保障</a>
-					<a href="<?php echo url('index/website'); ?>">网站地图</a>
-				</div>
-				<p>
-					版权所有：河南管家车销售有限公司 <br /> 
-				 工信备案：豫ICP备17046554号 <br /> 
-				  CopyRight © 2015-2018 ww
-				</p>
-			</div>
-			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
-			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
-			<div class="contact_way">
-				<p>免费咨询、建议、投诉 <br />
-				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
-				 每天9：00-21：00(法定节假日除外)
-				</p>		
+				
 			</div>
 		</div>	
-		<div class="optimize_link">
-			<p class="link_tit">热门品牌：</p>
-			<span class="more_dwon"></span>
-			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-			<a href=""><?php echo $vol['name']; ?></a>
-			<?php endforeach; endif; else: echo "" ;endif; ?>
-
-		</div>
-		<div class="optimize_link">
-			<p class="link_tit ">热门车系123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-			<a href="">大众</a>
-
-		</div>
-		<div class="optimize_link gj_clear">
-			<p class="link_tit">友情链接123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-
-
-
-		</div>
-	</div>
-<script>
-	$(".more_dwon").click(function(){
-		$(this).parents(".optimize_link").addClass("link_active")
-	})
-</script>
-	</div>
+		<div class="footer"></div>
 		
+		<div class="mask1"></div>
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<script>		
-		$(function(){		
+		$(function(){			
+
+//			手机号隐藏中间4位
+			$(".uphone").text($(".uphone").text().substring(0, 3) + "****" + $(".uphone").text().substring(7, 11));
+			//加载公用头部和底部
+
 			$(".sel_status li").each(function(){
 				var that=$(this);
 				$(that).click(function(){
@@ -325,17 +263,14 @@ $(window).on('scroll',function(){
 						$(this).addClass("active").siblings().removeClass("active")
 					}
 				
-			})
+				})
 			})
 			
 			//加载公用头部和底部
 		    $(".header").load("templates/header.html");
 //		    $(".footer").load("templates/footer.html");
 
-			$(".c_proce").click(function(){
-				$(this).hide()
-				$(this).prev('.proce_status').find('img').attr('src','/static/img/deal.png')
-			})
+			
 	})
 </script>
 </html>

@@ -1,18 +1,16 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:73:"G:\xampp\htdocs\car\public/../app/index\view\user\person_opportunity.html";i:1539758780;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\user\person_public.html";i:1539758771;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
 		<title></title>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
 	<link rel="stylesheet" href="/static/css/iconfont.css" />
+	<link rel="stylesheet" href="/static/js/theme/default/laydate.css" />	
 	<style>
-	.proce_res b{font-weight: lighter;color:#ff802c;}
-	.processing_res {float: left;width: 200px;margin-top: 54px;}
-	.proce_status+div{margin-top: 10px;margin-left: 10px;cursor: pointer;}
+	
 	</style>
 	<body>
 	<div class="header">
@@ -185,9 +183,9 @@ $(window).on('scroll',function(){
 							<ul>
 								<li class=""><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class="active"><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class="active"><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
@@ -197,52 +195,62 @@ $(window).on('scroll',function(){
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">我的预约 </span>
-							<div class="fright ptp15 proce_res">共<b>23</b>条 | 已处理<b>22</b>条 | 未处理<b>1</b>条</div>
+						<h1 class="borbt"><span class="release">发布过的</span>
+							<ul class="fright sel_status">
+								<li class="active" data-status='1'><b></b><span>全部</span></li>
+								<li data-status='0'><b></b><span>审核中</span></li>
+								<li data-status='0'><b></b><span>发布成功</span></li>
+								<li data-status='0'><b></b><span>发布失败</span></li>
+								<li data-status='0'><b></b><span>已下架</span></li>
+							</ul>
 						</h1>
 						<ul class="p_list">
 							<li class="item">
 								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
 								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
+									<p>8.1万公里 | 2012-03 | 郑州</p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
 								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
+								<div class="car_status"><img src="/static/img/shenhez .png" alt="" /></div>
+								
+							</li>
+							<li class="item">
+								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
+								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
+									<p>8.1万公里 | 2012-03 | 郑州</p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								</div>
+								<div class="car_status"><img src="/static/img/xiajia.png" alt="" /></div>
+								<div class="car_res">
+									<p class="bgorg">编辑</p>
+									<p class="bgorg">上架</p>
+									<p class="bgred">删除</p>
 								</div>
 							</li>
 							<li class="item">
 								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
 								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
+									<p>8.1万公里 | 2012-03 | 郑州</p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
 								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
+								<div class="car_status"><img src="/static/img/fabuchengg.png" alt="" /></div>
+								<div class="car_res">
+									<p class="bgorg">查看原因</p>
+									<p class="bgorg">编辑</p>
+									<p class="bgred">删除</p>
 								</div>
 							</li>
 							<li class="item">
 								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
 								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
+									<p>8.1万公里 | 2012-03 | 郑州</p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
 								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
+								<div class="car_status"><img src="/static/img/fabuchengg.png" alt="" /></div>
+								<div class="car_res">
+									<p class="bgorg martp20">下架</p>
+									<p class="bgbor">商家推荐</p>
+									
 								</div>
 							</li>
 						</ul>
@@ -310,6 +318,8 @@ $(window).on('scroll',function(){
 		
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/laydate.js"></script>
+	<script src="/static/js/imgUp.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<script>		
 		$(function(){		
@@ -332,10 +342,7 @@ $(window).on('scroll',function(){
 		    $(".header").load("templates/header.html");
 //		    $(".footer").load("templates/footer.html");
 
-			$(".c_proce").click(function(){
-				$(this).hide()
-				$(this).prev('.proce_status').find('img').attr('src','/static/img/deal.png')
-			})
+			
 	})
 </script>
 </html>

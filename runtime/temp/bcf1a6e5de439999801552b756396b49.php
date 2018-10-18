@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:73:"G:\xampp\htdocs\car\public/../app/index\view\user\person_opportunity.html";i:1539758780;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\service.html";i:1539691489;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539758056;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,22 +7,14 @@
 	</head>
 	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
-	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css" />
+	<link rel="stylesheet" href="/static/css/other.css" />	
 	<style>
-	.proce_res b{font-weight: lighter;color:#ff802c;}
-	.processing_res {float: left;width: 200px;margin-top: 54px;}
-	.proce_status+div{margin-top: 10px;margin-left: 10px;cursor: pointer;}
+	
 	</style>
 	<body>
-	<div class="header">
-		<div class="site_nav">
+	<div class="header"><div class="site_nav">
 	<div class="site_nav_bd">
-		<div class="fleft">你好，欢迎来到管家车易站！
-			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
-			<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a>
-			<?php else: ?>
-			<?php echo \think\Session::get('phone'); endif; ?></div>
+		<div class="fleft">你好，欢迎来到管家车易站！请<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a></div>
 		<div class="fright">
 			<ul class="site_nav_menu">
 				<li><a href=""><img src="img/shouye.png" alt="" />首页</a></li>
@@ -156,8 +148,7 @@ $(window).on('scroll',function(){
 })
 
 </script>
-
-	</div>
+</div>
 		<div class="site_nav">
 			<div class="site_nav_bd">
 				<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
@@ -175,83 +166,42 @@ $(window).on('scroll',function(){
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
-					<div class="person_left">
-						<div class="person_info">
-							<div class="user_avatar"><img src="/static/img/yhtx.png" alt="" /></div>
-							<p class="uphone">15362352625</p>
-							<p>向阳二手车一号店</p>							
-						</div>
+					<div class="person_left user">					
 						<div class="tab_choose">
 							<ul>
-								<li class=""><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class="active"><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_feedback.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_order.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
+								<h2 class="top_tit">管家车易站</h2>
+								<li class=""><a href="join_us.html"><img src="/static/img/jiaoru.png" alt="" /></b>加入我们</a></li>
+								<li class=""><a href="link_us.html"><img src="/static/img/lainxi.png" alt="" /></b>联系我们</a></li>
+								<li class="active"><a href="service.html"><img src="/static/img/fuwu.png" alt="" /></b>服务保障</a></li>
+								<li class=""><a href="website.html"><img src="/static/img/ditu.png" alt="" /></b>网站地图</a></li>
+								
 							</ul>
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">我的预约 </span>
-							<div class="fright ptp15 proce_res">共<b>23</b>条 | 已处理<b>22</b>条 | 未处理<b>1</b>条</div>
-						</h1>
-						<ul class="p_list">
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
+						<h1 class="borbt"><span class="release">服务保障</span></h1>
+						<h2 class="step">管家车易站</h2>
+						<ul class="service_info">
+							<li><b></b>在合同有效期内，用户通过管家车易站获取管家车易站商家的用户代码和管理账户，享受相应的管家车易站商家的服务。</li>
+							<li><b></b>管家车易站商家服务的内容、功能及所含信息的许可使用权、知识产权等全部权利均归管家车易站拥有，未经管家车易站书面许可不得以任何方式使用,用户许可河南兴友汽车销售有限公司有权利就任何主体侵权而单独提起诉讼，并获得全部赔偿。 </li>
+							<li><b></b>用户根据用户代码和密码，登陆“管家车易站”的管理账户，可以使用“发布车源”服务等服务和管家车易站陆续开通的其他服务。</li>
+							<li><b></b>用户应当遵守国家有关法律法规，不得损害公共利益和他人的合法权益，不得损害管家车易站的商誉。</li>
+							<li><b></b>用户应当提供真实、有效、合法、准确的公司注册信息和产品信息，以便用户及时与网友取得联系，获取购车意向，用户因产品信息不真实、不完整等，造成的所有损失由用户承担，因此给管家车易站造成的损害，由用户向管家车易站足额赔偿。</li>
+						<li><b></b>用户应当提供真实、有效、合法、准确的公司注册信息和产品信息，以便用户及时与网友取得联系，获取购车意向，用户因产品信息不真实、不完整等，造成的所有损失由用户承担，因此给管家车易站造成的损害，由用户向管家车易站足额赔偿。</li>
+					    <li><b></b>车辆信息在管家车易站站发布后，由用户独立承担车辆保管责任，并确保信息发布期间车辆不会因使用、保管发生车况非正常变化或导致车辆价值贬损的情形。如发生前述情形，用户应及时告知管家车易站，并配合管家车易站对该等车辆展示信息进行变更或删除。</li>
+					     <li><b></b>用户发布的车源，用户应严格审核相关手续、证明，并按国家规定办理车辆过户等手续，提供完整、规范的服务。
+如在车辆交易过程中出现任何问题，由车辆交易双方自行协商解决，并独自承担相关法律责任。</li>
+  						<li><b></b>    车辆线下交易意向和行为是用户与消费者双方关系，如发生汽车买卖纠纷、质量投诉、举报维权等情况，由用户直接
+负责与消费者解决，与管家车易站无关。如由此导致管家车易站遭受投诉举报、工商处罚、媒体曝光等负面影响，亦由
+用户直接负责处理，管家车易站将保留追究用户法律及经济赔偿的权利。</li>
 						</ul>
-					</div>	
+					</div>
 				</div>
+				
 			</div>
 		</div>
-	<div class="footer">
-		
+		<div class="footer">
+			
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -306,36 +256,15 @@ $(window).on('scroll',function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
 </script>
-	</div>
+		</div>
 		
+		<div class="mask1"></div>
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<script>		
-		$(function(){		
-			$(".sel_status li").each(function(){
-				var that=$(this);
-				$(that).click(function(){
-				var status=$(this).attr("data-status");
-					if(status==1){
-						$(this).attr("data-status",0);
-						$(this).removeClass("active")
-					}else{
-						$(this).attr("data-status",1);
-						$(this).addClass("active").siblings().removeClass("active")
-					}
-				
-			})
-			})
-			
-			//加载公用头部和底部
-		    $(".header").load("templates/header.html");
-//		    $(".footer").load("templates/footer.html");
-
-			$(".c_proce").click(function(){
-				$(this).hide()
-				$(this).prev('.proce_status').find('img').attr('src','/static/img/deal.png')
-			})
+		$(function(){	
+		   // $(".footer").load("templates/footer.html");
+   		//    $(".header").load("templates/header.html");
 	})
 </script>
 </html>

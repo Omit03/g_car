@@ -1,23 +1,164 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539850806;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 	</head>
-	<link rel="stylesheet" href="__STATIC__/css/style.css" />
-	<link rel="stylesheet" href="__STATIC__/css/other.css" />
-	<link rel="stylesheet" href="__STATIC__/css/swiper.min.css" />
-	<script src="__STATIC__/js/jquery-1.11.0.min.js"></script>
-	<script src="__STATIC__/js/jqueryPhoto.js"></script>	
-	<script src="__STATIC__/js/gjsilde.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="__STATIC__/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="/static/css/style.css" />
+	<link rel="stylesheet" href="/static/css/other.css" />
+	<link rel="stylesheet" href="/static/css/swiper.min.css" />
+	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/jqueryPhoto.js"></script>	
+	<script src="/static/js/gjsilde.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
 
 	<style>
 		
 	</style>
 	<body>
 		<div class="border">				
-			<div class="header">{include file="public/header"}</div>
+			<div class="header"><div class="site_nav">
+	<div class="site_nav_bd">
+		<div class="fleft">你好，欢迎来到管家车易站！
+			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
+			<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a>
+			<?php else: ?>
+			<?php echo \think\Session::get('phone'); endif; ?></div>
+		<div class="fright">
+			<ul class="site_nav_menu">
+				<li><a href=""><img src="img/shouye.png" alt="" />首页</a></li>
+				<li class="sec_li"><a href=""><img src="img/maic.png" alt="" />我要买车</a></li>
+				<li><a href=""><img src="img/maic.png" alt="" />我要卖车</a></li>
+				<li><a href=""><img src="img/xiazai.png" alt="" />APP下载</a></li>
+				<li><a href=""><img src="img/wangahn.png" alt="" />网站导航</a></li>
+			</ul>					
+		</div>
+	</div>
+</div>
+<div class="fn_show gj_clear header_show">
+	<div class="wrap gj_clear marginbt">
+		<div class="logo">
+	 		  <h1> <a href="http://www.gj2car.com">二手车交易市场</a></h1>
+		</div>
+		<div class="city_current">
+			<div class="address"><span>郑州</span><b class="icon1"></b></div>
+			<div class="white-line"></div>
+			<div class="city"  style="display: none;" >
+				<ol>
+				</ol>
+			</div>
+		</div>
+		<div class="search gj_clear">
+	        <div class="search_tab">
+	            <a href="javascript:;" class="s_old active" id="">二手车</a>
+	            <a href="javascript:;" class="s_new">新车</a>
+	            <a href="javascript:;" class="s_zero">零首付</a>
+	        </div>
+	        <div class="ipt_cont">
+	        	  <div class="search_ipts">
+		        	 <input type="text"  name="txtNewcar" autocomplete="off" placeholder="请输入喜欢的品牌或车型" />
+		        	 <a class="search_btn">搜索</a>
+		        </div>
+		       	<div class="fn_hide search_ipts">
+		        	 <input type="text"  name="txtNewcar" autocomplete="off" placeholder="请输入喜欢的品牌或车型" />
+		        	 <a class="search_btn">搜索</a>
+		        </div>
+		      	<div class="fn_hide search_ipts">
+		      	  	 <input type="text"  name="txtzerocar" autocomplete="off" placeholder="请输入喜欢的品牌或车型" />
+		        	 <a class="search_btn" >搜索</a>
+		        </div>
+	       
+	        </div>
+	       <!-- 搜索历史记录 -->
+	        <div id="history_list" class="search_list" style="display:none;"></div>
+	    </div>
+	</div>
+	<div class="nav gj_clear">
+		<ul class="wrap">
+			<li class="active"><a href="index.html">首页</a></li>
+			<li ><a href="<?php echo url('newcar/index'); ?>" class="sec_li">新车</a></li>
+			<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
+		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
+			<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
+			<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
+			<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
+			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
+			<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
+			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
+			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
+		</ul>
+	</div>
+</div>
+<div class="fn_hide gj_clear header_hide borbt">
+	<div class="wrap" >
+		<div class="logo" >
+		   <h1 style=""> 
+		   <a href="http://www.gj2car.com">二手车交易市场</a>
+		   </h1>
+		</div>
+		<div class="city_current">
+			<div class="address"><span>郑州</span><b class="icon1"></b></div>
+			<div class="white-line"></div>
+			<div class="city"  style="display: none;" >
+				<ol>
+				</ol>
+			</div>
+		</div>
+		<div class="header_tel">
+			<img src="img/phone1.png" alt="" height="17"/>
+			0371-53375515
+		</div>
+		<div class="nav">
+			<ul>
+				<li class="active"><a href="index.html">首页</a></li>
+				<li><a href="carList.html">二手车</a></li>
+				<li><a href="newCar.html">新车</a></li>
+				<!--<li><a href="zeroCar.html">零首付</a></li>-->
+				<li><a href="sell.html">卖车</a></li>
+				<li><a href="change.html">置换</a></li>
+				<li><a href="News.html">新闻资讯</a></li>
+				<li><a href="appDownLoad.html">APP下载</a></li>
+				<li><a href="appDownLoad.html">登录/注册</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+<script>
+	
+	function tab(a,b,c){
+	    $(a).on("click",c,function(){
+	        $(this).addClass('active').siblings().removeClass('active');
+	        $(b).eq($(this).index()).show().siblings().hide();
+	    })
+	}
+//	$('.wrap li').click(function(){
+//		
+//		$(this).addClass('active').siblings().removeClass('active')
+//	})
+tab(".search_tab",".ipt_cont .search_ipts","a");
+$(window).on('scroll',function(){
+	var bH=$("body").outerHeight();
+	var wH=$(window).innerHeight();
+	
+	var wsH=$(window).scrollTop();  
+	var sH=$(".header .fn_show").height();
+//	console.log(bH+'页面高度---页面可用高度'+wH+'-----滚动高度'+wsH+'-----页面头部高度'+sH)
+//	console.log(bH-wH)
+	if(wsH+50>sH){
+		$(".header .header_hide").css('display','block');
+		$(".header .header_show").css('display','none');
+		$(".header").addClass('fixedTop')
+	}else{
+		$(".header .header_hide").css('display','none');
+		$(".header .header_show").css('display','block');
+		$(".header").removeClass('fixedTop')
+	}
+	
+})
+
+</script>
+</div>
 		</div>
 		<div class="breadnav">你的位置:<a href="">首页</a>>><a href="">二手车</a></div>
 		<div class="full_wid">
@@ -31,13 +172,13 @@
 						<span id="nextTop" class="btn next"></span>
 						<div id="picBox" class="picBox">
 							<ul class="cf">
-								<li> <a href="javascript:;"><img src="__STATIC__/img/83293306.jpg" alt=""></a></li>
+								<li> <a href="javascript:;"><img src="/static/img/83293306.jpg" alt=""></a></li>
 								
 							</ul>
 						</div>
 						<div id="listBox" class="listBox">
 							<ul class="cf">
-								<li class="on"><i class="arr2"></i><img src="__STATIC__/img/83293792.jpg" alt=""></li>
+								<li class="on"><i class="arr2"></i><img src="/static/img/83293792.jpg" alt=""></li>
 								
 							</ul>
 						</div>
@@ -45,15 +186,15 @@
 					</div>	
 		        	<div class="detail_desc">
 		        		<div class="detail_info">
-		        			<h1>{$carinfo.car_name}</h1>
-		        			<div class="desc_price"><span class="price">￥{$carinfo.price}万</span><span class="price_save">比新车省24.33元 </span><span class="price_note">含过户费</span></div>
+		        			<h1><?php echo $carinfo['car_name']; ?></h1>
+		        			<div class="desc_price"><span class="price">￥<?php echo $carinfo['price']; ?>万</span><span class="price_save">比新车省24.33元 </span><span class="price_note">含过户费</span></div>
 		        			<div class="signal">管家车易站，专业的二手车买卖平台</div>
 		        		</div>
-		        		<img src="__STATIC__/img/dianpu.png" alt="" class="sure_shop"/>
+		        		<img src="/static/img/dianpu.png" alt="" class="sure_shop"/>
 		        		<div class="stages"><span>分期购<b>低至1-3成</b></span><span>首付<b>1.40万</b></span><span>月供 <b>1906元</b></span><a href="" class="stages_go">分期购车＞</a></div>
 		        		<ul class="detail_assort flex_around">
 		        			<li>
-		        				<p>{$carinfo.car_cardtime}</p>
+		        				<p><?php echo $carinfo['car_cardtime']; ?></p>
 		        				<span>上牌时间</span>
 		        			</li>
 		        			<li>
@@ -61,24 +202,24 @@
 		        				<span>表显里程</span>
 		        			</li>
 		        			<li>
-		        				<p>{$carinfo.blowdown}</p>
+		        				<p><?php echo $carinfo['blowdown']; ?></p>
 		        				<span>排放标准</span>
 		        			</li>
 		        			<li>
-		        				<p>{$carinfo.output} </p>
+		        				<p><?php echo $carinfo['output']; ?> </p>
 		        				<span>排量</span>
 		        			</li>
 		        			<li>
-		        				<p>{$carinfo.gearbox}</p>
+		        				<p><?php echo $carinfo['gearbox']; ?></p>
 		        				<span>变速箱</span>
 		        			</li>
 		        		</ul>
 		        		<div class="car_results">
 		        			<p class="lowerPrice">询问底价</p>
 		        			<ul class="btn_box">
-			        			<li><img src="__STATIC__/img/collect.png" alt="" /><p>收藏</p></li>
-			        			<li><img src="__STATIC__/img/PK.png" alt="" /><p>加入PK</p></li>
-			        			<li><img src="__STATIC__/img/share.png" alt="" /><p>分享</p></li>
+			        			<li><img src="/static/img/collect.png" alt="" /><p>收藏</p></li>
+			        			<li><img src="/static/img/PK.png" alt="" /><p>加入PK</p></li>
+			        			<li><img src="/static/img/share.png" alt="" /><p>分享</p></li>
 			        		</ul>
 	        		</div>
 	        	</div>
@@ -113,7 +254,7 @@
 	        	</ul>
 	        	<p class="more_config">查看更多配置</p>
 	        	<div class="flex_center marbt30"><h2 class="tit_erjie">车主自述</h2></div>
-	        	<p class="user_say">{$carinfo.car_desc}</p>
+	        	<p class="user_say"></p>
 				<div class="flex_center marbt30"><h2 class="tit_erjie">车源图片<b>(以实地看车为准)</b></h2></div>
 				<div class="piclist">
 					<ul>
@@ -125,11 +266,11 @@
 				</div>
 				<div class="flex_center marbt30"><h2 class="tit_erjie">店铺信息</h2></div>
 				<ul class="detail_shop_info">
-					<li><div class="fleft flex_center "><img src="__STATIC__/img/shop_img.png" alt=""  height="83"/></div>
+					<li><div class="fleft flex_center "><img src="/static/img/shop_img.png" alt=""  height="83"/></div>
 						<div class="fleft ">
 							<h3>向阳二手车</h3>
-							<p><img src="__STATIC__/img/dianh.png" alt="" height="20">电话：</p>
-							<p><img src="__STATIC__/img/dingw.png" alt="" height="20" />地址：</p>
+							<p><img src="/static/img/dianh.png" alt="" height="20">电话：</p>
+							<p><img src="/static/img/dingw.png" alt="" height="20" />地址：</p>
 						</div>
 					</li>
 					<li >
@@ -145,8 +286,8 @@
 					</li>
 					<li>
 						<div class="fleft marlt48">
-							<p><img src="__STATIC__/img/rez.png" alt="" height="30"/>管家车易站认证店铺</p>
-							<p><img src="__STATIC__/img/che.png" alt="" height="30" />在售车源：1808台</p>
+							<p><img src="/static/img/rez.png" alt="" height="30"/>管家车易站认证店铺</p>
+							<p><img src="/static/img/che.png" alt="" height="30" />在售车源：1808台</p>
 						
 						</div>
 						<div class="fleft">
@@ -215,22 +356,22 @@
 					<a class="arrow-right" href="#"></a>
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<a target="_blank"><img src="__STATIC__/img/b1.jpg" alt=""></a>
+							<a target="_blank"><img src="/static/img/b1.jpg" alt=""></a>
 						</div>
 						<div class="swiper-slide">
-							<a target="_blank"><img src="__STATIC__/img/b2.jpg" alt=""></a>
+							<a target="_blank"><img src="/static/img/b2.jpg" alt=""></a>
 						</div>
 						<div class="swiper-slide">
-							<a target="_blank"><img src="__STATIC__/img/b3.jpg" alt=""></a>
+							<a target="_blank"><img src="/static/img/b3.jpg" alt=""></a>
 						</div>
 						<div class="swiper-slide">
-							<a target="_blank"><img src="__STATIC__/img/b4.jpg" alt=""></a>
+							<a target="_blank"><img src="/static/img/b4.jpg" alt=""></a>
 						</div>
 						<div class="swiper-slide">
-							<a target="_blank"><img src="__STATIC__/img/b5.jpg" alt=""></a>
+							<a target="_blank"><img src="/static/img/b5.jpg" alt=""></a>
 						</div>
 						<div class="swiper-slide">
-							<a target="_blank"><img src="__STATIC__/img/b6.jpg" alt=""></a>
+							<a target="_blank"><img src="/static/img/b6.jpg" alt=""></a>
 						</div>
 					</div>
 				</div>
@@ -241,22 +382,22 @@
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide active-nav">
-							<div class="silde_img"><img src="__STATIC__/img/s1.jpg" alt=""></div>
+							<div class="silde_img"><img src="/static/img/s1.jpg" alt=""></div>
 						</div>
 						<div class="swiper-slide">
-							<div class="silde_img"><img src="__STATIC__/img/s2.jpg" alt=""></div>
+							<div class="silde_img"><img src="/static/img/s2.jpg" alt=""></div>
 						</div>
 						<div class="swiper-slide">
-							<div class="silde_img"><img src="__STATIC__/img/s3.jpg" alt=""></div>
+							<div class="silde_img"><img src="/static/img/s3.jpg" alt=""></div>
 						</div>
 						<div class="swiper-slide">
-							<div class="silde_img"><img src="__STATIC__/img/s4.jpg" alt=""></div>
+							<div class="silde_img"><img src="/static/img/s4.jpg" alt=""></div>
 						</div>
 						<div class="swiper-slide">
-							<div class="silde_img"><img src="__STATIC__/img/s5.jpg" alt=""></div>
+							<div class="silde_img"><img src="/static/img/s5.jpg" alt=""></div>
 						</div>
 						<div class="swiper-slide slide6">
-							<div class="silde_img"><img src="__STATIC__/img/s6.jpg" alt=""></div>
+							<div class="silde_img"><img src="/static/img/s6.jpg" alt=""></div>
 						</div>
 					</div>
 				</div>
@@ -278,17 +419,17 @@
 				<a href="">分期购车</a>
 			</div>
 			<ul class="btn_box oh">
-    			<li><img src="__STATIC__/img/collect.png" alt="" /><p>收藏</p></li>
-    			<li><img src="__STATIC__/img/PK.png" alt="" /><p>加入PK</p></li>
-    			<li><img src="__STATIC__/img/share.png" alt="" /><p>分享</p></li>
+    			<li><img src="/static/img/collect.png" alt="" /><p>收藏</p></li>
+    			<li><img src="/static/img/PK.png" alt="" /><p>加入PK</p></li>
+    			<li><img src="/static/img/share.png" alt="" /><p>分享</p></li>
     		</ul>
-    		<div class="del"><img src="__STATIC__/img/del1.png" alt="" height="16"/></div>
+    		<div class="del"><img src="/static/img/del1.png" alt="" height="16"/></div>
   		</div>
   </div>
   
   <!--更多车辆信息配置-->
   	<div class="carConfig">
-  		<h2>汽车配置<div class="del"><img src="__STATIC__/img/del1.png" alt="" height="16"/></div></h2>
+  		<h2>汽车配置<div class="del"><img src="/static/img/del1.png" alt="" height="16"/></div></h2>
   		<h3>奥迪A4L 2018款 30周年年型 40 TFSI 运动型</h3>
   		<div class="configBox">
   			<ul class="config_tit1">
@@ -599,7 +740,61 @@
   		</div>
   	</div>
 		<div class="footer">
-			{include file="public/footer"}
+			
+	<div class="wrap">
+		<div class="company_info gj_clear">
+			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
+			<div class="basic_info">
+				<div>
+					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
+					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
+					<a href="<?php echo url('index/service'); ?>">服务保障</a>
+					<a href="<?php echo url('index/website'); ?>">网站地图</a>
+				</div>
+				<p>
+					版权所有：河南管家车销售有限公司 <br /> 
+				 工信备案：豫ICP备17046554号 <br /> 
+				  CopyRight © 2015-2018 ww
+				</p>
+			</div>
+			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
+			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
+			<div class="contact_way">
+				<p>免费咨询、建议、投诉 <br />
+				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
+				 每天9：00-21：00(法定节假日除外)
+				</p>		
+			</div>
+		</div>	
+		<div class="optimize_link">
+			<p class="link_tit">热门品牌：</p>
+			<span class="more_dwon"></span>
+			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+			<a href=""><?php echo $vol['name']; ?></a>
+			<?php endforeach; endif; else: echo "" ;endif; ?>
+
+		</div>
+		<div class="optimize_link">
+			<p class="link_tit ">热门车系123：</p>
+			<span class="more_dwon"></span>
+			<a href="">大众</a>
+			<a href="">大众</a>
+
+		</div>
+		<div class="optimize_link gj_clear">
+			<p class="link_tit">友情链接123：</p>
+			<span class="more_dwon"></span>
+			<a href="">大众</a>
+
+
+
+		</div>
+	</div>
+<script>
+	$(".more_dwon").click(function(){
+		$(this).parents(".optimize_link").addClass("link_active")
+	})
+</script>
 		</div>
  <!--蒙版--> 	
   	<div class="mask"></div>

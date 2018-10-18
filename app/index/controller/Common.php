@@ -118,6 +118,9 @@ class Common extends Controller{
             'website'=>array(
                 'user_id' =>'number',
             ),
+            'details'=>array(
+                'user_id' =>'number',
+            ),
         ),
         'Newcar' => array(
             'index'=>array(
@@ -203,8 +206,8 @@ class Common extends Controller{
                 'code'  =>'require|length:6',
             ),
             'login' => array(
-                'user_phone' =>'require',//两种方式 有正则就用数组形式，没有就用下面也行
-                'user_pwd'  =>'require|length:32',
+                'user_phone' =>'number',//两种方式 有正则就用数组形式，没有就用下面也行
+                'user_pwd'  =>'number',
             ),
 
             'upload_head_img' => array(
@@ -284,6 +287,10 @@ class Common extends Controller{
             ),
             'rele_car_detail' => array(
                 'cheid' =>['require'],
+
+            ),
+            'asd' => array(
+                'cheid' =>'',
 
             ),
 
@@ -1092,6 +1099,28 @@ class Common extends Controller{
         $subface=Db::table("subface")->field("face_id as id,name,img")->order("level asc")->limit(5)->select();
 
         return $subface;
+    }
+
+    /*
+     * salt 盐值
+     */
+    public function randStr($len=6,$format='ALL') {
+        switch($format) {
+            case 'ALL':
+                $chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'; break;
+            case 'CHAR':
+                $chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; break;
+            case 'NUMBER':
+                $chars='0123456789'; break;
+            default :
+                $chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                break;
+        }
+        mt_srand((double)microtime()*1000000*getmypid());
+        $password="";
+        while(strlen($password)<$len)
+            $password.=substr($chars,(mt_rand()%strlen($chars)),1);
+        return $password;
     }
 
 }

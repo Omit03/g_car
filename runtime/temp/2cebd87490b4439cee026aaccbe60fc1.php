@@ -1,22 +1,21 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:73:"G:\xampp\htdocs\car\public/../app/index\view\user\person_opportunity.html";i:1539758780;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html";i:1539827394;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"/>
+		<meta charset="utf-8" />
 		<title></title>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css" />
+	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	
+	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<style>
-	.proce_res b{font-weight: lighter;color:#ff802c;}
-	.processing_res {float: left;width: 200px;margin-top: 54px;}
-	.proce_status+div{margin-top: 10px;margin-left: 10px;cursor: pointer;}
 	</style>
+
 	<body>
 	<div class="header">
-		<div class="site_nav">
+	<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
@@ -158,100 +157,77 @@ $(window).on('scroll',function(){
 </script>
 
 	</div>
-		<div class="site_nav">
-			<div class="site_nav_bd">
-				<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
-				<div class="fright">
-					<ul class="site_nav_menu">
-						<li><a href=""><img src="/static/img/home1.png" alt="" />首页</a></li>
-						<li><a href=""><img src="/static/img/sell2.png" alt="" />我要买车</a></li>
-						<li><a href=""><img src="/static/img/sell1.png" alt="" />我要买车</a></li>
-						<li><a href=""><img src="" alt="" />网站导航</a></li>
-					</ul>					
-				</div>
-			</div>
-		</div>
-		<div class="borbt"><div class="header"></div></div>
-		<div class="full_wid">			
-			<div class="wrap ">	
-				<div class="person_center">
-					<div class="person_left">
-						<div class="person_info">
-							<div class="user_avatar"><img src="/static/img/yhtx.png" alt="" /></div>
-							<p class="uphone">15362352625</p>
-							<p>向阳二手车一号店</p>							
+		<div class="full_wid">
+
+			<div class="login_bg">
+				<div class="login_tab" >
+					<div class="login_sure">
+						<ul class="login_type">
+							<li class="active" onclick="set('bd0',1,2)">手机号快捷登录</li>
+							<b>|</b>
+							<li onclick="set('bd0',2,2)">账号密码登录</li>
+						</ul>
+						<div class="login_phone" id="conbd01">
+							<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
+							<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="text" placeholder="请输入密码"/></div>
+							<div class="border login_ver"><img src="/static/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
+							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
+							<p class="login_btn mtp40">立即登录</p>
+							<p class="regist_btn">免费注册</p>
 						</div>
-						<div class="tab_choose">
-							<ul>
-								<li class=""><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class="active"><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_feedback.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_order.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
-							</ul>
+						<div class="login_phone" id="conbd02" style="display: none;">
+							<form action="<?php echo url('user/login'); ?>" method="post">
+							<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="user_phone" name="user_phone" placeholder="请输入个人或商家手机号"/></div>
+							<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="user_pwd" name="user_pwd" placeholder="请输入密码"/></div>
+							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
+							<p class="login_btn mtp40"><input type="submit" value="立即登录" /></p>
+							<p class="regist_btn">免费注册</p>
+							</form>
 						</div>
 					</div>
-					<div class="person_right">
-						<h1 class="borbt"><span class="release">我的预约 </span>
-							<div class="fright ptp15 proce_res">共<b>23</b>条 | 已处理<b>22</b>条 | 未处理<b>1</b>条</div>
-						</h1>
-						<ul class="p_list">
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-						</ul>
-					</div>	
+					
+					<div class="login_other">
+						<img src="/static/img/ewm.png" alt="" class="app_down" width="225"/>
+						<p class="textCenter">扫描下载</p>
+						<div><img src="/static/img/qq.png" alt="" />QQ登录</div>
+						<div><img src="/static/img/wx.png" alt="" />微信登录</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	<div class="footer">
-		
+		<div class="footer"></div>
+		<div class="fixedRight">
+			<ul class="right_sider">
+				<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
+					<div class="gj_sidecon_desc "></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
+				<div class="gj_sidecon_desc"></div></li>
+				<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
+				<div class="gj_sidecon_desc"></div></li>
+				<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
+					<div class="gj_sidecon_desc"></div>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="footer">
+			
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -306,36 +282,71 @@ $(window).on('scroll',function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
 </script>
-	</div>
-		
+		</div>
 	</body>
-	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
-	<script>		
-		$(function(){		
-			$(".sel_status li").each(function(){
-				var that=$(this);
-				$(that).click(function(){
-				var status=$(this).attr("data-status");
-					if(status==1){
-						$(this).attr("data-status",0);
-						$(this).removeClass("active")
-					}else{
-						$(this).attr("data-status",1);
-						$(this).addClass("active").siblings().removeClass("active")
-					}
-				
-			})
-			})
-			
-			//加载公用头部和底部
-		    $(".header").load("templates/header.html");
-//		    $(".footer").load("templates/footer.html");
+	<!--
+	<div class="wrap">
+		<div class="company_info gj_clear">
+			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
+			<div class="basic_info">
+				<div>
+					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
+					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
+					<a href="<?php echo url('index/service'); ?>">服务保障</a>
+					<a href="<?php echo url('index/website'); ?>">网站地图</a>
+				</div>
+				<p>
+					版权所有：河南管家车销售有限公司 <br /> 
+				 工信备案：豫ICP备17046554号 <br /> 
+				  CopyRight © 2015-2018 ww
+				</p>
+			</div>
+			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
+			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
+			<div class="contact_way">
+				<p>免费咨询、建议、投诉 <br />
+				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
+				 每天9：00-21：00(法定节假日除外)
+				</p>		
+			</div>
+		</div>	
+		<div class="optimize_link">
+			<p class="link_tit">热门品牌：</p>
+			<span class="more_dwon"></span>
+			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+			<a href=""><?php echo $vol['name']; ?></a>
+			<?php endforeach; endif; else: echo "" ;endif; ?>
 
-			$(".c_proce").click(function(){
-				$(this).hide()
-				$(this).prev('.proce_status').find('img').attr('src','/static/img/deal.png')
-			})
+		</div>
+		<div class="optimize_link">
+			<p class="link_tit ">热门车系123：</p>
+			<span class="more_dwon"></span>
+			<a href="">大众</a>
+			<a href="">大众</a>
+
+		</div>
+		<div class="optimize_link gj_clear">
+			<p class="link_tit">友情链接123：</p>
+			<span class="more_dwon"></span>
+			<a href="">大众</a>
+
+
+
+		</div>
+	</div>
+<script>
+	$(".more_dwon").click(function(){
+		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script>
+</script>-->
+	<!--<script>		-->
+		<!--$(function(){	-->
+
+			<!--$(".login_type li").click(function(){-->
+			   <!--$(this).addClass('active').siblings('li').removeClass('active')-->
+			<!--})-->
+		      <!--$(".header").load("templates/header.html");-->
+		      <!--$(".footer").load("templates/footer.html")-->
+		<!--})-->
+<!--</script>-->
 </html>

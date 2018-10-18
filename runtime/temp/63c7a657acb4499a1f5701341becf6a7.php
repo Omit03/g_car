@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539848023;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -6,13 +7,13 @@
 		<title></title>
 	</head>
 	<link rel="icon" type="image/x-icon" href="favicon.png">
-	<link rel="stylesheet" href="__STATIC__/css/style.css" />
-	<link rel="stylesheet" href="__STATIC__/css/other.css" />
-	<link rel="stylesheet" href="__STATIC__/css/swiper.min.css" />
-	<script src="__STATIC__/js/jquery-1.11.0.min.js"></script>
-	<script src="__STATIC__/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="__STATIC__/js/gjsilde.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="__STATIC__/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="/static/css/style.css" />
+	<link rel="stylesheet" href="/static/css/other.css" />
+	<link rel="stylesheet" href="/static/css/swiper.min.css" />
+	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/gjsilde.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<style>
 		.tool_tip .iocn_s8-inner {
 			width: 480px;
@@ -89,7 +90,147 @@
 
 	<body>
 	<div class="header">
-		{include file="public/header"}
+		<div class="site_nav">
+	<div class="site_nav_bd">
+		<div class="fleft">你好，欢迎来到管家车易站！
+			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
+			<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a>
+			<?php else: ?>
+			<?php echo \think\Session::get('phone'); endif; ?></div>
+		<div class="fright">
+			<ul class="site_nav_menu">
+				<li><a href=""><img src="img/shouye.png" alt="" />首页</a></li>
+				<li class="sec_li"><a href=""><img src="img/maic.png" alt="" />我要买车</a></li>
+				<li><a href=""><img src="img/maic.png" alt="" />我要卖车</a></li>
+				<li><a href=""><img src="img/xiazai.png" alt="" />APP下载</a></li>
+				<li><a href=""><img src="img/wangahn.png" alt="" />网站导航</a></li>
+			</ul>					
+		</div>
+	</div>
+</div>
+<div class="fn_show gj_clear header_show">
+	<div class="wrap gj_clear marginbt">
+		<div class="logo">
+	 		  <h1> <a href="http://www.gj2car.com">二手车交易市场</a></h1>
+		</div>
+		<div class="city_current">
+			<div class="address"><span>郑州</span><b class="icon1"></b></div>
+			<div class="white-line"></div>
+			<div class="city"  style="display: none;" >
+				<ol>
+				</ol>
+			</div>
+		</div>
+		<div class="search gj_clear">
+	        <div class="search_tab">
+	            <a href="javascript:;" class="s_old active" id="">二手车</a>
+	            <a href="javascript:;" class="s_new">新车</a>
+	            <a href="javascript:;" class="s_zero">零首付</a>
+	        </div>
+	        <div class="ipt_cont">
+	        	  <div class="search_ipts">
+		        	 <input type="text"  name="txtNewcar" autocomplete="off" placeholder="请输入喜欢的品牌或车型" />
+		        	 <a class="search_btn">搜索</a>
+		        </div>
+		       	<div class="fn_hide search_ipts">
+		        	 <input type="text"  name="txtNewcar" autocomplete="off" placeholder="请输入喜欢的品牌或车型" />
+		        	 <a class="search_btn">搜索</a>
+		        </div>
+		      	<div class="fn_hide search_ipts">
+		      	  	 <input type="text"  name="txtzerocar" autocomplete="off" placeholder="请输入喜欢的品牌或车型" />
+		        	 <a class="search_btn" >搜索</a>
+		        </div>
+	       
+	        </div>
+	       <!-- 搜索历史记录 -->
+	        <div id="history_list" class="search_list" style="display:none;"></div>
+	    </div>
+	</div>
+	<div class="nav gj_clear">
+		<ul class="wrap">
+			<li class="active"><a href="index.html">首页</a></li>
+			<li ><a href="<?php echo url('newcar/index'); ?>" class="sec_li">新车</a></li>
+			<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
+		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
+			<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
+			<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
+			<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
+			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
+			<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
+			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
+			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
+		</ul>
+	</div>
+</div>
+<div class="fn_hide gj_clear header_hide borbt">
+	<div class="wrap" >
+		<div class="logo" >
+		   <h1 style=""> 
+		   <a href="http://www.gj2car.com">二手车交易市场</a>
+		   </h1>
+		</div>
+		<div class="city_current">
+			<div class="address"><span>郑州</span><b class="icon1"></b></div>
+			<div class="white-line"></div>
+			<div class="city"  style="display: none;" >
+				<ol>
+				</ol>
+			</div>
+		</div>
+		<div class="header_tel">
+			<img src="img/phone1.png" alt="" height="17"/>
+			0371-53375515
+		</div>
+		<div class="nav">
+			<ul>
+				<li class="active"><a href="index.html">首页</a></li>
+				<li><a href="carList.html">二手车</a></li>
+				<li><a href="newCar.html">新车</a></li>
+				<!--<li><a href="zeroCar.html">零首付</a></li>-->
+				<li><a href="sell.html">卖车</a></li>
+				<li><a href="change.html">置换</a></li>
+				<li><a href="News.html">新闻资讯</a></li>
+				<li><a href="appDownLoad.html">APP下载</a></li>
+				<li><a href="appDownLoad.html">登录/注册</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+<script>
+	
+	function tab(a,b,c){
+	    $(a).on("click",c,function(){
+	        $(this).addClass('active').siblings().removeClass('active');
+	        $(b).eq($(this).index()).show().siblings().hide();
+	    })
+	}
+//	$('.wrap li').click(function(){
+//		
+//		$(this).addClass('active').siblings().removeClass('active')
+//	})
+tab(".search_tab",".ipt_cont .search_ipts","a");
+$(window).on('scroll',function(){
+	var bH=$("body").outerHeight();
+	var wH=$(window).innerHeight();
+	
+	var wsH=$(window).scrollTop();  
+	var sH=$(".header .fn_show").height();
+//	console.log(bH+'页面高度---页面可用高度'+wH+'-----滚动高度'+wsH+'-----页面头部高度'+sH)
+//	console.log(bH-wH)
+	if(wsH+50>sH){
+		$(".header .header_hide").css('display','block');
+		$(".header .header_show").css('display','none');
+		$(".header").addClass('fixedTop')
+	}else{
+		$(".header .header_hide").css('display','none');
+		$(".header .header_show").css('display','block');
+		$(".header").removeClass('fixedTop')
+	}
+	
+})
+
+</script>
+
 	</div>
 
 		<div class="header"></div>
@@ -100,11 +241,11 @@
 				<a class="arrow-right arrow" href="#"></a>
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
-                        {volist name="banner" id = "val"}
+                        <?php if(is_array($banner) || $banner instanceof \think\Collection || $banner instanceof \think\Paginator): $i = 0; $__LIST__ = $banner;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 						<div class="swiper-slide">
-							<a href=""><img src="{$val.img_url}"></a>
+							<a href=""><img src="<?php echo $val['img_url']; ?>"></a>
 						</div>
-						{/volist}
+						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</div>
 				</div>
 				<div class="pagination"></div>
@@ -117,35 +258,35 @@
 					</ul>
 					<div class="home_sel_con">
 						<ul class="sel_newcar_brand oh ">
-							{volist name="brand" id = "val"}
+							<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href=""><img src="{$val.img_url}" alt="">
-									<p>{$val.name}</p>
+								<a href=""><img src="<?php echo $val['img_url']; ?>" alt="">
+									<p><?php echo $val['name']; ?></p>
 								</a>
 							</li>
-							{/volist}
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 						<ul class="sel_newcar_type oh mtp40">
 							<li class="active">
 								<a href=""> 分期购</a>
 							</li>
-							{volist name="price" id = "val"}
+							<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="active">
-								<a href="">{$val.name} </a>
+								<a href=""><?php echo $val['name']; ?> </a>
 							</li>
-							{/volist}
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 						<ul class="sel_newcar_type oh mtp40">
 							<li class="active">
 								<a href=""> 车型</a>
 							</li>
-							{volist name="subface" id = "val"}
+							<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="active">
-								<a href=""> {$val.name}</a>
+								<a href=""> <?php echo $val['name']; ?></a>
 							</li>
-							{/volist}
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 							<li class="active fright">
-								<a href="" class="moretype"><img src="__STATIC__/img/quanbu.png" alt="" width="23">更多车型</a>
+								<a href="" class="moretype"><img src="/static/img/quanbu.png" alt="" width="23">更多车型</a>
 							</li>
 						</ul>
 					</div>
@@ -175,22 +316,22 @@
 					<div class="recom_new_con">
 						<ul class="recom_tit_img ">
 							<li class="car_left">
-								<a href=""><img class='lazy-load' data-original="__STATIC__/img/xinchel.png" alt="" titlt='' /></a>
+								<a href=""><img class='lazy-load' data-original="/static/img/xinchel.png" alt="" titlt='' /></a>
 							</li>
-							{volist name="new_car" id="vl"}
+							<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0; $__LIST__ = $new_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
 							<li>
 								<a href="" class="flex_around" target="_blank">
-									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='{$vl.img_url}'/>
+									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='<?php echo $vl['img_url']; ?>'/>
 								</span>
-									<h3 class="text_overflow">{$vl.name}</h3>
+									<h3 class="text_overflow"><?php echo $vl['name']; ?></h3>
 									<p class="valign ptp15">
-										<span class="pay_first plt10">首付<b class="">{$vl.pay10_s2}</b>万</span>
-										<span class="pay_month">月供{$vl.pay10_y2}元</span>
-										<span class="pay_month">{$vl.pay10_n2}期</span>
+										<span class="pay_first plt10">首付<b class=""><?php echo $vl['pay10_s2']; ?></b>万</span>
+										<span class="pay_month">月供<?php echo $vl['pay10_y2']; ?>元</span>
+										<span class="pay_month"><?php echo $vl['pay10_n2']; ?>期</span>
 									</p>
 								</a>
 							</li>
-                            {/volist}
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 					</div>
 				</div>
@@ -208,22 +349,22 @@
 					<div class="recom_new_con">
 						<ul class="recom_tit_img">
 							<li class="car_left">
-								<a href=""><img class='lazy-load' data-original="__STATIC__/img/group1.png" alt="" titlt='' /></a>
+								<a href=""><img class='lazy-load' data-original="/static/img/group1.png" alt="" titlt='' /></a>
 							</li>
-							{volist name="er_car" id="val"}
+							<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0; $__LIST__ = $er_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href="{:url('index/details')}?cheid={$val.pu_id}" class="flex_around">
-									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='{$val.img_url}'/>
+								<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>" class="flex_around">
+									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
 								</span>
-									<h3 class="text_overflow">{$val.name}</h3>
-									<p class="mile">{$val.car_cardtime} | {$val.car_mileage}万公里</p>
+									<h3 class="text_overflow"><?php echo $val['name']; ?></h3>
+									<p class="mile"><?php echo $val['car_cardtime']; ?> | <?php echo $val['car_mileage']; ?>万公里</p>
 									<p class="valign">
-										<span class="pay_first plt10"><b class="">{$val.price}</b></span>
-										<span class="sure"><img src="__STATIC__/img/pinpairz.png" alt=""/></span>
+										<span class="pay_first plt10"><b class=""><?php echo $val['price']; ?></b></span>
+										<span class="sure"><img src="/static/img/pinpairz.png" alt=""/></span>
 									</p>
 								</a>
 							</li>
-							{/volist}
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 					</div>
 				</div>
@@ -236,22 +377,22 @@
 					<div class="recom_new_con">
 						<ul class="recom_tit_img ">
 							<li class="car_left">
-								<a href=""><img class='lazy-load' data-original="__STATIC__/img/lingshouful.png" src="__STATIC__/img/lingshouful.png" alt="" titlt='' /></a>
+								<a href=""><img class='lazy-load' data-original="/static/img/lingshouful.png" src="/static/img/lingshouful.png" alt="" titlt='' /></a>
 							</li>
-							{volist name="car_zero" id="val"}
+							<?php if(is_array($car_zero) || $car_zero instanceof \think\Collection || $car_zero instanceof \think\Paginator): $i = 0; $__LIST__ = $car_zero;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
 								<a href="zeroCar.html" class="flex_around" target="_blank">
-									<span class="car_img"><img class='lazy-load' data-original="__STATIC__/img/car11.png" alt="" titlt='' src='{$val.img_url}'/>
+									<span class="car_img"><img class='lazy-load' data-original="/static/img/car11.png" alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
 								</span>
-									<h3 class="text_overflow">{$val.name}</h3>
+									<h3 class="text_overflow"><?php echo $val['name']; ?></h3>
 									<p class="valign ptp15">
-										<span class="pay_first plt10">首付<b class="">{$val.pay10_s2}</b>万</span>
-										<span class="pay_month">月供{$val.pay10_y2}元</span>
-										<span class="pay_month">月供{$val.pay10_n2}元</span>
+										<span class="pay_first plt10">首付<b class=""><?php echo $val['pay10_s2']; ?></b>万</span>
+										<span class="pay_month">月供<?php echo $val['pay10_y2']; ?>元</span>
+										<span class="pay_month">月供<?php echo $val['pay10_n2']; ?>元</span>
 									</p>
 								</a>
 							</li>
-						     {/volist}
+						     <?php endforeach; endif; else: echo "" ;endif; ?>
 
 						</ul>
 					</div>
@@ -270,42 +411,42 @@
 					</div>
 					<div class="home_news_cont" id="conbd01">
 						<div class="left_big new_imgs">
-							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV123</p>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid">郑州二手保时捷718 2016款 123......</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid">123郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站asda</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
 
@@ -313,42 +454,42 @@
 					</div>
 					<div class="home_news_cont" id="conbd02" style="display: none;">
 						<div class="left_big new_imgs">
-							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUVddd444</p>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid">郑州二手保时捷718 2016款44 ......</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易4444站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易444站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
 
@@ -356,42 +497,42 @@
 					</div>
 					<div class="home_news_cont" id="conbd03" style="display: none;">
 						<div class="left_big new_imgs">
-							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV5555</p>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid">郑州二手保时捷718 2016款 55......</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid">5555郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站555</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站555</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站55</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站5</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
 
@@ -399,42 +540,42 @@
 					</div>
 					<div class="home_news_cont" id="conbd04" style="display: none;">
 						<div class="left_big new_imgs">
-							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV777</p>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid">郑州二手保时捷718 2016款 ......777</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站7777</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站777</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
 
@@ -442,42 +583,42 @@
 					</div>
 					<div class="home_news_cont" id="conbd05" style="display: none;">
 						<div class="left_big new_imgs">
-							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV888</p>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid">郑州二手保时捷718 2016款 ......888</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站88888</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
 								<a href="">郑州二手日产奇骏管家车易站999</a>
 							</li>
 
@@ -489,7 +630,7 @@
 			</div>
 			<div class="home_make_car">
 				<div class="wrap">
-					<img src="__STATIC__/img/rez.png" alt="" />
+					<img src="/static/img/rez.png" alt="" />
 					<div class="form_make">
 						<div class="ipt"><input type="text" placeholder="请输入手机号" /></div>
 						<!--<div class="ipt"><input type="text" placeholder="请输入验证码"/></div>-->
@@ -499,13 +640,67 @@
 			</div>
 			<!--<div class="home_advbg flex_center">
 				<div class="wrap">
-					<img src="__STATIC__/img/biaoyu.png" alt="" />
+					<img src="/static/img/biaoyu.png" alt="" />
 					<a href="" class="buycar">我要买车</a><a href="" class="sellcar">我要卖车</a>					
 				</div>
 			</div>		-->
 		</div>
 		<div class="footer">
-			{include file="public/footer"}
+			
+	<div class="wrap">
+		<div class="company_info gj_clear">
+			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
+			<div class="basic_info">
+				<div>
+					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
+					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
+					<a href="<?php echo url('index/service'); ?>">服务保障</a>
+					<a href="<?php echo url('index/website'); ?>">网站地图</a>
+				</div>
+				<p>
+					版权所有：河南管家车销售有限公司 <br /> 
+				 工信备案：豫ICP备17046554号 <br /> 
+				  CopyRight © 2015-2018 ww
+				</p>
+			</div>
+			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
+			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
+			<div class="contact_way">
+				<p>免费咨询、建议、投诉 <br />
+				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
+				 每天9：00-21：00(法定节假日除外)
+				</p>		
+			</div>
+		</div>	
+		<div class="optimize_link">
+			<p class="link_tit">热门品牌：</p>
+			<span class="more_dwon"></span>
+			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+			<a href=""><?php echo $vol['name']; ?></a>
+			<?php endforeach; endif; else: echo "" ;endif; ?>
+
+		</div>
+		<div class="optimize_link">
+			<p class="link_tit ">热门车系123：</p>
+			<span class="more_dwon"></span>
+			<a href="">大众</a>
+			<a href="">大众</a>
+
+		</div>
+		<div class="optimize_link gj_clear">
+			<p class="link_tit">友情链接123：</p>
+			<span class="more_dwon"></span>
+			<a href="">大众</a>
+
+
+
+		</div>
+	</div>
+<script>
+	$(".more_dwon").click(function(){
+		$(this).parents(".optimize_link").addClass("link_active")
+	})
+</script>
 		</div>
 		<div class="fixedRight">
 			<ul class="right_sider">
@@ -614,14 +809,14 @@
 					<div class="gj_side_contnet iocn_s5">
 						<p></p>
 					</div>
-					<div class="gj_sidecon_desc tool_tip" style="display: none;"><img src="__STATIC__/img/gzh.png" alt="" /></div>
+					<div class="gj_sidecon_desc tool_tip" style="display: none;"><img src="/static/img/gzh.png" alt="" /></div>
 				</li>
 				<!--6-->
 				<li>
 					<div class="gj_side_contnet iocn_s6">
 						<p></p>
 					</div>
-					<div class="gj_sidecon_desc tool_tip" style="display: none;"><img src="__STATIC__/img/appdn.png" alt="" /></div>
+					<div class="gj_sidecon_desc tool_tip" style="display: none;"><img src="/static/img/appdn.png" alt="" /></div>
 				</li>
 				<!--7-->
 				<li>
@@ -629,7 +824,7 @@
 						<p></p>
 					</div>
 					<div class=" tool_tip" style="display: none;">
-						<img src="__STATIC__/img/dianhua.png" alt="" />
+						<img src="/static/img/dianhua.png" alt="" />
 					</div>
 				</li>
 				<!--8-->
@@ -669,7 +864,7 @@
 
 			</ul>
 		</div>
-		<script src="__STATIC__/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 	<script>
 		$(function() {
@@ -729,7 +924,7 @@
 			//			图片懒加载
 
 			$(".full_wid img").lazyload({
-				//               placeholder:"__STATIC__/img/loading.gif",
+				//               placeholder:"/static/img/loading.gif",
 				effect: "fadeIn", //渐现，show(直接显示),fadeIn(淡入),slideDown(下拉)
 				failure_limit: 2 //加载2张可见区域外的图片,lazyload默认在找到第一张不在可见区域里的图片时则不再继续加载,但当HTML容器混乱的时候可能出现可见区域内图片并没加载出来的情况
 			});
@@ -741,7 +936,7 @@
 			//				zIndex:"999",//
 			//				spinner:"spinner7",//可选值 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 对应有7种效果
 			//				bgColor:"", //加载时的背景颜色
-			//				imagePath:"__STATIC__/img/loading.gif" //自定义的加载图片，见demo8.html
+			//				imagePath:"/static/img/loading.gif" //自定义的加载图片，见demo8.html
 			//			});
 			//			车型介绍里面车品牌名称两行省略
 

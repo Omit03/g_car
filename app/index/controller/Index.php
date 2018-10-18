@@ -175,6 +175,116 @@ class Index  extends Common
 
         return $this->fetch();
     }
+    
+    /*
+     * 新车详情
+     */
+    public function details(){
+
+        $data = $this->params;
+
+        $cheid=$data['cheid'];
+
+        //获取车辆信息
+        $carinfo=Db::table("rele_car")->field("pu_id,user_id,brand_id,sys_id,cartype_id,price,car_mileage,car_age,output,gearbox,car_cardtime,blowdown,subface_img,img_512,car_desc,pay20_s2,pay20_y2,pay20_n2,city_id")->where("pu_id=$cheid")->find();
+        //echo M("rele_car")->getlastsql();
+
+        $carinfo['brand_name']=Db::table("car_brand")->where("id=".$carinfo['brand_id']." and level=1")->value('name');
+        $carinfo['sys_name']=Db::table("car_brand")->where("id=".$carinfo['sys_id']." and level=3")->value('name');
+        $carinfo['img_url']=$this->get_carimgs($carinfo['subface_img'],1);
+        $carinfo['img_512']=$this->get_carimgs($carinfo['img_512'],1);
+        $carinfo['gearbox']=$this->get_gearbox($carinfo['gearbox']);
+        $carinfo['output']=$this->get_output($carinfo['output']);
+        $carinfo['car_age']=$this->get_car_age($carinfo['car_age']);
+        //$carinfo['color']=get_color($carinfo['color']);
+        $carinfo['blowdown']=$this->get_blowdown($carinfo['blowdown']);
+        $pay20_s2=$carinfo['pay20_s2']?$carinfo['pay20_s2']:"--";
+        $pay20_y2=$carinfo['pay20_y2']?$carinfo['pay20_y2']:"--";
+        $carinfo['pay20_n2']=$carinfo['pay20_n2']?$carinfo['pay20_n2']:"36";
+        if($carinfo['pay20_s2']!=0){
+            $carinfo['pay20_s2']=$carinfo['pay20_s2'];
+        }else{
+            $carinfo['pay20_s2']="--";
+        }
+        if($carinfo['pay20_y2']!=0){
+            $carinfo['pay20_y2']=$carinfo['pay20_y2'];
+        }else{
+            $carinfo['pay20_y2']="--";
+        }
+        $carinfo['car_mileage']=$carinfo['car_mileage'];
+        //获取新车价格参数
+//        $new_price=Db::table("param")->field('id,info_1')->where("cartype_id=$cheid")->find();
+//        $carinfo['new_price']=$new_price['info_1']?$new_price['info_1']:"";
+        //info_1 找不到  把表换成param6  cartype_id 两表都没有 换成了 id
+        $new_price=Db::table("param6")->field('id,info_1')->where("id",$cheid)->find();
+        $carinfo['new_price']=$new_price['info_1']?$new_price['info_1']:"";
+        //获取品牌，厂商，名字
+        $carinfo['car_name']=$this->get_carname($carinfo['cartype_id']);
+
+        //获取店铺的详情
+        $shopinfo=Db::table("user_shop")->field("shop_id,shop_name,mimg,shop_address,shop_phone,qid,latitude as lat,longitude as lng")->where("user_id=".$carinfo['user_id'])->find();
+
+        //获取店铺de平均评分
+        $remark_info=Db::table("remark")->field("id,all_score")->where("shop_id",$shopinfo['shop_id'])->select();
+        $all_score="";
+
+        foreach ($remark_info as $k => $v) {
+            $all_score.=$v['all_score'];
+           // $all_score+=$v['all_score'];
+        }
+        $user_num=count($remark_info);
+
+        $all_score = intval($all_score);
+
+        $user_num = intval($user_num);
+
+        if(empty($user_num)){
+
+            $user_num = 1;
+        }
+
+        $num=number_format($all_score/$user_num,1);
+        $shopinfo['all_score']=$num?$num:0;
+        $shopinfo['user_num']=$user_num?$user_num:0;
+        $shopinfo['img_url']=$this->get_carimg($shopinfo['mimg']);
+
+        //点评
+        $remark=Db::table("remark")->field("id,user_id,content,create_time,all_score")->where("shop_id",$shopinfo['shop_id'])->order("create_time desc")->find();
+
+
+
+
+        if (empty($remark)){
+
+            $remark['create_time']=substr($remark['create_time'], 0, 10)?substr($remark['create_time'], 0, 10):"";
+            //获取用户的信息
+            $userinfo=Db::table("user")->field("user_id,nickname,header_pic,phone")->where("user_id=".$remark['user_id'])->find();
+            if($userinfo['header_pic']){
+                $header_pic=$this->get_carimg($userinfo['header_pic']);
+            }else{
+                $header_pic="";
+            }
+            $remark['header_pic']=$header_pic?$header_pic:"";
+            $remark['nickname']=$userinfo['nickname']?$userinfo['nickname']:($userinfo['phone']?$userinfo['phone']:"");
+            $remark['user_id']=$userinfo['user_id']?$userinfo['user_id']:"";
+            unset($carinfo['subface_img']);
+            unset($carinfo['user_id']);
+        }
+
+            $carinfo = $carinfo?$carinfo:array();
+            $shopinfo = $shopinfo?$shopinfo:array();
+            $remark = $remark?$remark:array();
+
+        $brand = $this->brand();//品牌
+        $this->assign('brand',$brand);
+        $this->assign('carinfo',$carinfo);
+        $this->assign('shopinfo',$shopinfo);
+        $this->assign('remark',$remark);
+        $this->assign('platform_phone','0371-53375515');
+        return $this->fetch();
+    }
+
+
 
 
     /*

@@ -4,6 +4,7 @@ namespace app\index\controller;
 
 use think\Db;
 use logs\newLog;
+use think\Session;
 
 class User  extends Common {
 
@@ -89,8 +90,9 @@ class User  extends Common {
         $this->assign('brand',$brand);
         return $this->fetch();
 
-    }    /*
-     * 展示登录
+    }
+    /*
+     * 浏览记录
      */
     public function person_history(){
 
@@ -107,7 +109,24 @@ class User  extends Common {
 
         /*接收参数*/
        if($this->request->isPost()){
-           $data = $this->params;
+
+           $data =  $this->params;
+
+           $res = Db::table('advises')->insert(['name'=>$data['name'],'telephone'=>$data['phone'],'content'=>$data['con'],'create_date'=>time()]);
+
+           if ($res){
+
+               $this->success('意见反馈已收到','user/person_feedback');
+
+               //$this->return_msg(200,'意见反馈已收到 谢谢');
+
+           }else{
+
+               $this->error('失败');
+
+               //$this->return_msg(400,'失败');
+           }
+
 
        }
         $brand = $this->brand();//品牌
@@ -261,7 +280,6 @@ class User  extends Common {
 
         $this->check_username($data['user_phone']);
 
-
         $user_name_type = 'phone';
 
         switch ($user_name_type){
@@ -272,13 +290,15 @@ class User  extends Common {
 
                 $where['phone'] = $data['user_phone'];
 
-                $db_res = Db::table('user')->field('user_id,phone,password,nickname,header_pic,sex,birthday,qq_token,weixin_token')->where($where)->find();
+                $db_res = Db::table('user')->field('user_id,token,salt,phone,password,nickname,header_pic,sex,birthday,qq_token,weixin_token')->where($where)->find();
 
                 break;
 
         }
 
-        if ($db_res['password'] !== $data['user_pwd']){
+        $pwd = md5($data['user_pwd'].$db_res['salt']);
+
+        if ($db_res['password'] !== $pwd){
 
             $this->return_msg(400,'用户名或者密码不正确');
 
@@ -290,9 +310,13 @@ class User  extends Common {
 
             $log ->reclog("登录者 : ".$db_res['phone']);
 
-             unset($db_res['login_password']); //密码永不返回
+            Session::set('user_id',$db_res['user_id']);
 
-             $this->return_msg(200,$db_res);
+            Session::set('phone',$db_res['phone']);
+
+            unset($db_res['login_password']); //密码永不返回
+
+            $this->redirect('user/person_manage');
         }
 
     }
@@ -304,6 +328,13 @@ class User  extends Common {
      * @user_pwd
      * code
      * @token/9ba62c26993ad3aa1ec94ba0616fd0cf
+     * 大致规则如下
+     * salt 值 二十六字符加数字
+     * sos 默认是888888
+     * password md5($password.$salt)
+     * token md5(888888.$salt)
+     * create_time=date('Y-m-d H:i:s',time())
+     * login_type=1;1手机号，2 微信 ，3 qq
      */
 
     public function register(){
@@ -662,28 +693,9 @@ class User  extends Common {
         }
     }
 
-    /*
-     * 意见反馈
-     */
 
-    public function gift_action(){
 
-        /*接收参数*/
 
-        $data =  $this->params;
-
-        $res = Db::table('advises')->insert(['name'=>$data['name'],'telephone'=>$data['telephone'],'content'=>$data['content'],'create_date'=>time()]);
-
-        if ($res){
-
-            $this->return_msg(200,'成功');
-
-        }else{
-
-            $this->return_msg(400,'失败');
-        }
-
-    }
     /*
      * 商家入驻
      * http://39.106.67.47/new_api/User/newapi/business_entry
@@ -842,6 +854,11 @@ class User  extends Common {
     }
 
 
+    public function asd(){
+
+        dump($this->randStr());
+
+    }
 
 
 }

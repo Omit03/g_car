@@ -1,28 +1,31 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:73:"G:\xampp\htdocs\car\public/../app/index\view\user\person_opportunity.html";i:1539758780;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"G:\xampp\htdocs\car\public/../app/index\view\user\person_info.html";i:1539758826;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539758056;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
 		<title></title>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
+		<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
 	<link rel="stylesheet" href="/static/css/iconfont.css" />
+	<link rel="stylesheet" href="/static/js/theme/default/laydate.css" />	
 	<style>
-	.proce_res b{font-weight: lighter;color:#ff802c;}
-	.processing_res {float: left;width: 200px;margin-top: 54px;}
-	.proce_status+div{margin-top: 10px;margin-left: 10px;cursor: pointer;}
+		.tab_info li{float: left;margin-left: 60px;font-size: 20px;margin-top: 40px;cursor: pointer;}
+		.tab_info .active{color: #FF802C;}
+		.editCont{margin-top: 44px;margin-left: 50px;}
+		.info_base .ipt{width:400px;height: 50px;line-height: 50px ;}
+		.info_base .ipt input{background: #fcfcfc;width: 275px;height: 35px;line-height: 35px;border: 1px solid #ababab;}
+		.info_base .ipt input[type='radio']{width: 18px;height:18px;margin-right:5px;}
+		.info_base span{display: block;float: left;width:125px;text-align: right;padding-right: 20px;font-size: 18px;}
+		.avatar span{margin-top: 50px;}
+		.editCont .sub_btn{margin-left:120px;width: 275px;}
 	</style>
 	<body>
 	<div class="header">
 		<div class="site_nav">
 	<div class="site_nav_bd">
-		<div class="fleft">你好，欢迎来到管家车易站！
-			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
-			<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a>
-			<?php else: ?>
-			<?php echo \think\Session::get('phone'); endif; ?></div>
+		<div class="fleft">你好，欢迎来到管家车易站！请<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a></div>
 		<div class="fright">
 			<ul class="site_nav_menu">
 				<li><a href=""><img src="img/shouye.png" alt="" />首页</a></li>
@@ -187,8 +190,8 @@ $(window).on('scroll',function(){
 								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class="active"><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class="active"><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_feedback.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
@@ -197,55 +200,55 @@ $(window).on('scroll',function(){
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">我的预约 </span>
-							<div class="fright ptp15 proce_res">共<b>23</b>条 | 已处理<b>22</b>条 | 未处理<b>1</b>条</div>
-						</h1>
-						<ul class="p_list">
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p class=""><img src="/static/img/sdianhua.png" alt="" />1588888888</p>
-									<p>预约时间：2018-06-13</p>
-								</div>
-								<div class="processing_res">
-									<p class="proce_status"><img src="/static/img/undeal.png" alt="" /></p>
-									<div class="c_proce">点击处理</div>
-								</div>
-							</li>
+						<h1 class="borbt"><span class="release">个人资料</span></h1>
+						<ul class="tab_info gj_clear">
+							<li class="active">基本信息</li>
+							<li>绑定设置</li>
+							<li>修改密码</li>
 						</ul>
+						<div class="editCont">
+							<div class="info_base info_ipt">
+								
+								<div class="avatar"><span>头像: </span><img src="/static/img/yhtx.png" alt="" /> </div>
+								<div class="ipt"><span>昵称：</span><input type="text" placeholder="管家车易站"/></div>
+								<div  class="ipt"><span>所在地：</span><input type="text" placeholder="管家车易站"/></div>
+								<div class="ipt"><span>性别：</span><input type="radio" name="sex"/>男&emsp;<input type="radio" name="sex"/>女</div>
+								<div class="ipt"><span>出生年月：</span><input type="text" placeholder="" id="year"/></div>
+								<p class="sub_btn submit">修改</p>
+							</div>
+							<div style="display: none;" class="info_ipt">
+								<div class="upLoad_form">
+							<ul class="motify_ipt">
+								<li><span class="my_form_tit">手机号：</span><p class="uphone">1536232514</p></li>
+								<li><span class="my_form_tit">新手机号：</span>
+									<div class="fleft myform_ipt"><input type="password" placeholder="请输入您新绑定的手机号"/></div>
+								</li>
+								<li><span class="my_form_tit">验证码：</span>
+									<div class="fleft myform_ipt"><input type="text" placeholder="请输入您的验证码"/><span class="getcode">获取验证码</span></div>
+								</li>
+							</ul>								
+							<p class="sub_btn pwd_submit">提交</p>
+						</div>
+							</div>
+							<div style="display: none;" class="motifypwd info_ipt">
+								<div class="upLoad_form">
+									<ul class="motify_ipt">
+										<li><span class="my_form_tit">手机号：</span><p class="uphone">1536232514</p></li>
+										
+										<li><span class="my_form_tit">原密码：</span>
+											<div class="fleft myform_ipt"><input type="password" placeholder="请输入您的验证码"/></div>
+										</li>
+										<li><span class="my_form_tit">新密码：</span>
+											<div class="fleft myform_ipt"><input type="password"  placeholder="请输入您新绑定的手机号"/><span class="getcode">获取验证码</span></div>
+										</li>
+										<li><span class="my_form_tit">确认密码：</span>
+											<div class="fleft myform_ipt"><input type="password" placeholder="请输入您的验证码" /></div>
+										</li>
+									</ul>								
+									<p class="sub_btn pwd_submit">提交</p>
+								</div>
+							</div>
+						</div>
 					</div>	
 				</div>
 			</div>
@@ -310,32 +313,17 @@ $(window).on('scroll',function(){
 		
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/laydate.js"></script>
 	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<script>		
-		$(function(){		
-			$(".sel_status li").each(function(){
-				var that=$(this);
-				$(that).click(function(){
-				var status=$(this).attr("data-status");
-					if(status==1){
-						$(this).attr("data-status",0);
-						$(this).removeClass("active")
-					}else{
-						$(this).attr("data-status",1);
-						$(this).addClass("active").siblings().removeClass("active")
-					}
-				
-			})
-			})
+		$(function(){			
+		$(".uphone").text($(".uphone").text().substring(0, 3) + "****" + $(".uphone").text().substring(7, 11));
+		$(".tab_info li").click(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+			var i=$(this).index();
+			$(".info_ipt").eq(i).show().siblings().hide()
+		})
 			
-			//加载公用头部和底部
-		    $(".header").load("templates/header.html");
-//		    $(".footer").load("templates/footer.html");
-
-			$(".c_proce").click(function(){
-				$(this).hide()
-				$(this).prev('.proce_status').find('img').attr('src','/static/img/deal.png')
-			})
 	})
 </script>
 </html>
