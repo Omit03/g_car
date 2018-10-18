@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539850806;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539858280;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -191,14 +191,14 @@ $(window).on('scroll',function(){
 		        			<div class="signal">管家车易站，专业的二手车买卖平台</div>
 		        		</div>
 		        		<img src="/static/img/dianpu.png" alt="" class="sure_shop"/>
-		        		<div class="stages"><span>分期购<b>低至1-3成</b></span><span>首付<b>1.40万</b></span><span>月供 <b>1906元</b></span><a href="" class="stages_go">分期购车＞</a></div>
+		        		<div class="stages"><span>分期购<b>20%</b></span><span>首付<b><?php echo $carinfo['pay20_s2']; ?>万</b></span><span>月供 <b><?php echo $carinfo['pay20_s2']; ?>元</b></span><span>期数 <b><?php echo $carinfo['pay20_n2']; ?>期</b></span><a href="" class="stages_go">分期购车＞</a></div>
 		        		<ul class="detail_assort flex_around">
 		        			<li>
 		        				<p><?php echo $carinfo['car_cardtime']; ?></p>
 		        				<span>上牌时间</span>
 		        			</li>
 		        			<li>
-		        				<p>5万公里 </p>
+		        				<p><?php echo $carinfo['car_mileage']; ?>万公里 </p>
 		        				<span>表显里程</span>
 		        			</li>
 		        			<li>
@@ -230,15 +230,10 @@ $(window).on('scroll',function(){
 	        			<h3>基本配置</h3>
 	        			<div>
 	        				<p>使用性质</p><span>非运营</span>
-	        				<p>使用性质</p><span>非运营</span>
-	        				<p>使用性质</p><span>非运营</span>
-	        				<p>使用性质</p><span>非运营</span>
 	        			</div>
 	        		</li>
 	        		<li><h3>外观参数</h3>
 	        			<div>
-	        				<p>使用性质</p><span>非运营</span>
-	        				<p>使用性质</p><span>非运营</span>
 	        				<p>使用性质</p><span>非运营</span>
 	        				<p>使用性质</p><span>非运营</span>
 	        			</div>
@@ -247,35 +242,34 @@ $(window).on('scroll',function(){
 	        			<div>
 	        				<p>使用性质</p><span>非运营</span>
 	        				<p>使用性质</p><span>非运营</span>
-	        				<p>使用性质</p><span>非运营</span>
-	        				<p>使用性质</p><span>非运营</span>
 	        			</div>
 	        		</li>
 	        	</ul>
 	        	<p class="more_config">查看更多配置</p>
 	        	<div class="flex_center marbt30"><h2 class="tit_erjie">车主自述</h2></div>
-	        	<p class="user_say"></p>
+	        	<p class="user_say"><?php echo $carinfo['car_desc']; ?></p>
 				<div class="flex_center marbt30"><h2 class="tit_erjie">车源图片<b>(以实地看车为准)</b></h2></div>
 				<div class="piclist">
 					<ul>
-						<li><img src="" alt="" height="390"/></li>
-						<li><img src="" alt="" height="390"/></li>
-						<li><img src="" alt="" height="390"/></li>
-						<li><img src="" alt="" height="390"/></li>											
+						<?php if(is_array($carinfo['img_512']) || $carinfo['img_512'] instanceof \think\Collection || $carinfo['img_512'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carinfo['img_512'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+
+						<li><img src="<?php echo $vol; ?>" alt="" height="390"/></li>
+
+						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</ul>
 				</div>
 				<div class="flex_center marbt30"><h2 class="tit_erjie">店铺信息</h2></div>
 				<ul class="detail_shop_info">
 					<li><div class="fleft flex_center "><img src="/static/img/shop_img.png" alt=""  height="83"/></div>
 						<div class="fleft ">
-							<h3>向阳二手车</h3>
-							<p><img src="/static/img/dianh.png" alt="" height="20">电话：</p>
-							<p><img src="/static/img/dingw.png" alt="" height="20" />地址：</p>
+							<h3><?php echo $shopinfo['shop_name']; ?></h3>
+							<p><img src="/static/img/dianh.png" alt="" height="20">电话：<?php echo $shopinfo['shop_phone']; ?></p>
+							<p><img src="/static/img/dingw.png" alt="" height="20" />地址：<?php echo $shopinfo['shop_address']; ?></p>
 						</div>
 					</li>
 					<li >
 						<div class="fleft marlt32">
-							<p class="score"><b>4.5分</b></p>
+							<p class="score"><b><?php echo $shopinfo['all_score']; ?>分</b></p>
 							<p>店铺环境：5.0分</p>
 							<p>服务态度：5.0分</p>
 							<p>车源真实：5.0分</p>
@@ -295,35 +289,25 @@ $(window).on('scroll',function(){
 						</div>
 					</li>
 				</ul>
-				<div class="car_list">
-					<ul class="list">
-						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>			
-					</ul>
-				</div>
 				<div class="tit_er">
 			        <div class="line_tit"></div>			        
 			        <h2 class="color tit_con">同系推荐</h2>	       
 			    </div>
 				<div class="car_list">
 					<ul class="list">
+						<a href="">
+						<?php if(is_array($sys_cars) || $sys_cars instanceof \think\Collection || $sys_cars instanceof \think\Paginator): $i = 0; $__LIST__ = $sys_cars;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 						<li class="items5">
 							<a href="" class="car_img flex_center"><img src="" alt="" /></a>
 							<a href="" class="car_desc">
-								<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-								<p><span class="car_price"><b>2066</b>万</span><span class="car_sui">新车含税13.86万</span></p>
-								<p><span>2015年8月10日上牌</span> <span class="padlt20">4万公里</span> </p>
+								<h3><?php echo $vol['name']; ?></h3>
+								<p><span class="car_price"><b><?php echo $vol['price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $vol['news_price']; ?>万</span></p>
+								<p><span><?php echo $vol['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $vol['car_mileage']; ?>万公里</span> </p>
 								<div class="che_ordered">立即预约</div>
 							</a>
 						</li>
-					
+					    <?php endforeach; endif; else: echo "" ;endif; ?>
+						</a>
 					</ul>
 				</div>
 			</div>
@@ -335,7 +319,7 @@ $(window).on('scroll',function(){
     <div class="wrap_bt">
     	<div class="wrap oh flex_center">
     		<div class="car_descInfo">
-    			<h4 class="hid">奥迪 A4L 2016款 2.0T 自动 35TFSI迪 A4L 2016款 2.0T 自动 35TFSI ... </h4>
+    			<h4 class="hid">底部奥迪 A4L 2016款 2.0T 自动 35TFSI迪 A4L 2016款 2.0T 自动 35TFSI ... </h4>
     			<p>2017-11 <b>|</b>5万公里<b>|</b>国5(国5) <b>|</b>郑州</p>
     		</div>
     		<div class="car_descPri">
@@ -355,24 +339,13 @@ $(window).on('scroll',function(){
 					<a class="arrow-left" href="#"></a>
 					<a class="arrow-right" href="#"></a>
 					<div class="swiper-wrapper">
+						<?php if(is_array($carinfo['img_url']) || $carinfo['img_url'] instanceof \think\Collection || $carinfo['img_url'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carinfo['img_url'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 						<div class="swiper-slide">
-							<a target="_blank"><img src="/static/img/b1.jpg" alt=""></a>
+
+							<a target="_blank"><img src="<?php echo $vol; ?>" alt=""></a>
+
 						</div>
-						<div class="swiper-slide">
-							<a target="_blank"><img src="/static/img/b2.jpg" alt=""></a>
-						</div>
-						<div class="swiper-slide">
-							<a target="_blank"><img src="/static/img/b3.jpg" alt=""></a>
-						</div>
-						<div class="swiper-slide">
-							<a target="_blank"><img src="/static/img/b4.jpg" alt=""></a>
-						</div>
-						<div class="swiper-slide">
-							<a target="_blank"><img src="/static/img/b5.jpg" alt=""></a>
-						</div>
-						<div class="swiper-slide">
-							<a target="_blank"><img src="/static/img/b6.jpg" alt=""></a>
-						</div>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</div>
 				</div>
 			</div>
@@ -381,33 +354,20 @@ $(window).on('scroll',function(){
 				<a class="arrow-right" href="#"></a>
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
+						<?php if(is_array($carinfo['img_url']) || $carinfo['img_url'] instanceof \think\Collection || $carinfo['img_url'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carinfo['img_url'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 						<div class="swiper-slide active-nav">
-							<div class="silde_img"><img src="/static/img/s1.jpg" alt=""></div>
+							<div class="silde_img"><img src="<?php echo $vol; ?>" alt=""></div>
 						</div>
-						<div class="swiper-slide">
-							<div class="silde_img"><img src="/static/img/s2.jpg" alt=""></div>
-						</div>
-						<div class="swiper-slide">
-							<div class="silde_img"><img src="/static/img/s3.jpg" alt=""></div>
-						</div>
-						<div class="swiper-slide">
-							<div class="silde_img"><img src="/static/img/s4.jpg" alt=""></div>
-						</div>
-						<div class="swiper-slide">
-							<div class="silde_img"><img src="/static/img/s5.jpg" alt=""></div>
-						</div>
-						<div class="swiper-slide slide6">
-							<div class="silde_img"><img src="/static/img/s6.jpg" alt=""></div>
-						</div>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</div>
 				</div>
 			</div>
 		</div>
   		<div class="silde_info">
-  			<h2>奥迪A4L 2016款 35 TFSI 典藏版S line豪华型</h2>
-  			<p class="info_car">2016年-11月 | 1.6万公里 | 国4(国5) | 郑州</p>
+  			<h2><?php echo $carinfo['car_name']; ?></h2>
+  			<p class="info_car"><?php echo $carinfo['car_cardtime']; ?> | <?php echo $carinfo['car_mileage']; ?>万公里 | <?php echo $carinfo['blowdown']; ?> | 郑州</p>
   			<div class="tag flex_center"><span>准新车</span><span>店铺认证</span></div>
-  			<div class="info_price"><b>￥33.80万&nbsp;</b>比新车省：75.29万</div>
+  			<div class="info_price"><b>￥<?php echo $carinfo['price']; ?>万&nbsp;</b>比新车省：75.29万</div>
   			<div class="car_form">
   				<div class="ipt ipt_phone"><input type="text" placeholder="请输入手机号"/><span class="getcode">获取验证码</span></div>
   				<div class="ipt"><input type="text" placeholder="请输入短信验证码"/></div>

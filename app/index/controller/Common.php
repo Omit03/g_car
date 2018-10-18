@@ -1123,4 +1123,33 @@ class Common extends Controller{
         return $password;
     }
 
+    //获取二手车的首付以及月供
+    public function get_rele_car_fenqi($pu_id){
+        //查询数据
+        $infos=Db::table("rele_car")->field("pu_id,car_cardtime,price")->where("pu_id=".$pu_id)->find();
+        $time=$this->change_time($infos['car_cardtime']);
+        $data1=time()-$time;
+        $data2=365*24*60*60*10;
+        if($data1 < $data2 && $infos['price']>3 ){
+            //计算首付，月供
+            $arr['pay_20s']=$pay_20s=round($infos['price']*0.2,1);
+            $arr['pay_20y']=$pay_20y=ceil($infos['price']*0.8/36*10000);
+            $arr['pay_20n']=36;
+        }
+        return $arr;
+    }
+
+    //时间转换为时间戳
+    public function change_time($date){
+        $aa1=explode('年', $date);
+        $year1=$aa1[0];
+        $aaa1=explode('月', $aa1['1']);
+        $month1=$aaa1[0];
+        $aaaa1=explode('日', $aaa1['1']);
+        $day1=$aaaa1[0];
+        $time=$year1."-".$month1."-".$day1;
+        $res=strtotime($time);
+        return $res;
+    }
+
 }
