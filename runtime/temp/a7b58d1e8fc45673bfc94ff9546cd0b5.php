@@ -1,19 +1,160 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\twocar\index.html";i:1539862239;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 	</head>
-	<link rel="stylesheet" href="__STATIC__/css/style.css" />
-	<link rel="stylesheet" href="__STATIC__/css/other.css" />
-	<script src="__STATIC__/js/jquery-1.11.0.min.js"></script>
-	<script src="__STATIC__/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>		
+	<link rel="stylesheet" href="/static/css/style.css" />
+	<link rel="stylesheet" href="/static/css/other.css" />
+	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>		
 	<style>
 
 	</style>
 	<body>		
 		<div class="header">
-			{include file="public/header"}
+			<div class="site_nav">
+	<div class="site_nav_bd">
+		<div class="fleft">你好，欢迎来到管家车易站！
+			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
+			<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a>
+			<?php else: ?>
+			<?php echo \think\Session::get('phone'); endif; ?></div>
+		<div class="fright">
+			<ul class="site_nav_menu">
+				<li><a href=""><img src="img/shouye.png" alt="" />首页</a></li>
+				<li class="sec_li"><a href=""><img src="img/maic.png" alt="" />我要买车</a></li>
+				<li><a href=""><img src="img/maic.png" alt="" />我要卖车</a></li>
+				<li><a href=""><img src="img/xiazai.png" alt="" />APP下载</a></li>
+				<li><a href=""><img src="img/wangahn.png" alt="" />网站导航</a></li>
+			</ul>					
+		</div>
+	</div>
+</div>
+<div class="fn_show gj_clear header_show">
+	<div class="wrap gj_clear marginbt">
+		<div class="logo">
+	 		  <h1> <a href="http://www.gj2car.com">二手车交易市场</a></h1>
+		</div>
+		<div class="city_current">
+			<div class="address"><span>郑州</span><b class="icon1"></b></div>
+			<div class="white-line"></div>
+			<div class="city"  style="display: none;" >
+				<ol>
+				</ol>
+			</div>
+		</div>
+		<div class="search gj_clear">
+	        <div class="search_tab">
+	            <a href="javascript:;" class="s_old active" id="">二手车</a>
+	            <a href="javascript:;" class="s_new">新车</a>
+	            <a href="javascript:;" class="s_zero">零首付</a>
+	        </div>
+	        <div class="ipt_cont">
+	        	  <div class="search_ipts">
+		        	 <input type="text"  name="txtNewcar" autocomplete="off" placeholder="请输入喜欢的品牌或车型" />
+		        	 <a class="search_btn">搜索</a>
+		        </div>
+		       	<div class="fn_hide search_ipts">
+		        	 <input type="text"  name="txtNewcar" autocomplete="off" placeholder="请输入喜欢的品牌或车型" />
+		        	 <a class="search_btn">搜索</a>
+		        </div>
+		      	<div class="fn_hide search_ipts">
+		      	  	 <input type="text"  name="txtzerocar" autocomplete="off" placeholder="请输入喜欢的品牌或车型" />
+		        	 <a class="search_btn" >搜索</a>
+		        </div>
+	       
+	        </div>
+	       <!-- 搜索历史记录 -->
+	        <div id="history_list" class="search_list" style="display:none;"></div>
+	    </div>
+	</div>
+	<div class="nav gj_clear">
+		<ul class="wrap">
+			<li class="active"><a href="index.html">首页</a></li>
+			<li ><a href="<?php echo url('newcar/index'); ?>" class="sec_li">新车</a></li>
+			<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
+		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
+			<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
+			<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
+			<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
+			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
+			<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
+			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
+			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
+		</ul>
+	</div>
+</div>
+<div class="fn_hide gj_clear header_hide borbt">
+	<div class="wrap" >
+		<div class="logo" >
+		   <h1 style=""> 
+		   <a href="http://www.gj2car.com">二手车交易市场</a>
+		   </h1>
+		</div>
+		<div class="city_current">
+			<div class="address"><span>郑州</span><b class="icon1"></b></div>
+			<div class="white-line"></div>
+			<div class="city"  style="display: none;" >
+				<ol>
+				</ol>
+			</div>
+		</div>
+		<div class="header_tel">
+			<img src="img/phone1.png" alt="" height="17"/>
+			0371-53375515
+		</div>
+		<div class="nav">
+			<ul>
+				<li class="active"><a href="index.html">首页</a></li>
+				<li><a href="carList.html">二手车</a></li>
+				<li><a href="newCar.html">新车</a></li>
+				<!--<li><a href="zeroCar.html">零首付</a></li>-->
+				<li><a href="sell.html">卖车</a></li>
+				<li><a href="change.html">置换</a></li>
+				<li><a href="News.html">新闻资讯</a></li>
+				<li><a href="appDownLoad.html">APP下载</a></li>
+				<li><a href="appDownLoad.html">登录/注册</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+<script>
+	
+	function tab(a,b,c){
+	    $(a).on("click",c,function(){
+	        $(this).addClass('active').siblings().removeClass('active');
+	        $(b).eq($(this).index()).show().siblings().hide();
+	    })
+	}
+//	$('.wrap li').click(function(){
+//		
+//		$(this).addClass('active').siblings().removeClass('active')
+//	})
+tab(".search_tab",".ipt_cont .search_ipts","a");
+$(window).on('scroll',function(){
+	var bH=$("body").outerHeight();
+	var wH=$(window).innerHeight();
+	
+	var wsH=$(window).scrollTop();  
+	var sH=$(".header .fn_show").height();
+//	console.log(bH+'页面高度---页面可用高度'+wH+'-----滚动高度'+wsH+'-----页面头部高度'+sH)
+//	console.log(bH-wH)
+	if(wsH+50>sH){
+		$(".header .header_hide").css('display','block');
+		$(".header .header_show").css('display','none');
+		$(".header").addClass('fixedTop')
+	}else{
+		$(".header .header_hide").css('display','none');
+		$(".header .header_show").css('display','block');
+		$(".header").removeClass('fixedTop')
+	}
+	
+})
+
+</script>
+
 		</div>
 		<div class="full_wid">
 			<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">二手车 >></a></div>
@@ -23,25 +164,25 @@
 						<div class="list_brand  slide_up list_item gj_clear">
 							<div class="list_title">品牌</div>
 							<div class="screening-margin gj_clear">							
-								<div class="list_car_brand list_detail_sel">{volist name="brand" id="vol"}<a href="{$vol.id}">{$vol.name}</a>{/volist}</div>
-								<span class="more">更多品牌<i><img src="__STATIC__/img/down1.png" alt="" width="12"/></i></span>
+								<div class="list_car_brand list_detail_sel"><?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href="<?php echo $vol['id']; ?>"><?php echo $vol['name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?></div>
+								<span class="more">更多品牌<i><img src="/static/img/down1.png" alt="" width="12"/></i></span>
 							</div>
 						</div>
 						<div class="slide_down sel_box_more all_brandshow">
-							<span class="more">收起<i><img src="__STATIC__/img/down1.png" alt="" width="12"/></i></span>
+							<span class="more">收起<i><img src="/static/img/down1.png" alt="" width="12"/></i></span>
 							<div class="brand-more">
-								   {volist name="ABC" id="vol"}
+								   <?php if(is_array($ABC) || $ABC instanceof \think\Collection || $ABC instanceof \think\Paginator): $i = 0; $__LIST__ = $ABC;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 			                       <dl class='zimu'>
-							<dt>{$vol.initial}</dt>
-									   {volist name="vol['list']" id="vo"}
+							<dt><?php echo $vol['initial']; ?></dt>
+									   <?php if(is_array($vol['list']) || $vol['list'] instanceof \think\Collection || $vol['list'] instanceof \think\Paginator): $i = 0; $__LIST__ = $vol['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 							<dd class='firstname'>
 
-								<a href="{$vo.id}" title=''>{$vo.name}</a>
+								<a href="<?php echo $vo['id']; ?>" title=''><?php echo $vo['name']; ?></a>
 
 															</dd>
-									   {/volist}
+									   <?php endforeach; endif; else: echo "" ;endif; ?>
 							</dl>
-                                   {/volist}
+                                   <?php endforeach; endif; else: echo "" ;endif; ?>
 			
 			                </div>
 						</div>
@@ -49,11 +190,11 @@
 							<div class="list_title">车系</div>
 							<div class="screening-margin">							
 								<div class=" list_detail_sel"><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a><a href="">大众</a></div>
-							    <span class="more">更多<i><img src="__STATIC__/img/down1.png" alt="" width="12"/></i></span>
+							    <span class="more">更多<i><img src="/static/img/down1.png" alt="" width="12"/></i></span>
 							</div>
 						</div>
 						<div class="slide_down all_series sel_box_more">
-							<span class="more">收起<i><img src="__STATIC__/img/down1.png" alt="" width="12"/></i></span>
+							<span class="more">收起<i><img src="/static/img/down1.png" alt="" width="12"/></i></span>
 							<div class="series_box">
 								<dl>
 									<dt>微型车</dt>
@@ -77,9 +218,9 @@
 							<div class="list_title">价格</div>
 							<div class="screening-margin gj_clear">							
 								<div class="list_detail_sel">
-									{volist name="price" id="vo"}
-									<a href="">{$vo.name}</a>
-									{/volist}
+									<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+									<a href=""><?php echo $vo['name']; ?></a>
+									<?php endforeach; endif; else: echo "" ;endif; ?>
 								</div>
 								<div class="price_handle">
 									<div class="box"><input type="text" />万</div><em>-</em><div class="box"><input type="text" />万</div><a href="javascript:;" class="sure">确定</a>
@@ -91,9 +232,9 @@
 							<div class="list_title">级别</div>
 							<div class="screening-margin gj_clear">							
 								<div class="list_detail_sel">
-									{volist name="subface" id="vo"}
-									<a href="" class="active">{$vo.name}</a>
-								    {/volist}
+									<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+									<a href="" class="active"><?php echo $vo['name']; ?></a>
+								    <?php endforeach; endif; else: echo "" ;endif; ?>
 								</div>
 								<!--<span class="more">多选<i>+</i></span>-->
 							</div>
@@ -215,31 +356,29 @@
 							<li><a href="">里程最短</a></li>
 						</ul>
 						<ul class="check_item flex_center">
-							<li class="checked"><img src="__STATIC__/img/img_checked.png" alt="" width=""/>准新车</li>
-							<li><img src="__STATIC__/img/img_uncheck.png" alt="" />七日内上新</li>
-							<li><img src="__STATIC__/img/img_uncheck.png" alt="" />质保</li>
+							<li class="checked"><img src="/static/img/img_checked.png" alt="" width=""/>准新车</li>
+							<li><img src="/static/img/img_uncheck.png" alt="" />七日内上新</li>
+							<li><img src="/static/img/img_uncheck.png" alt="" />质保</li>
 							
 						</ul>
-						<!--<span class="more">更多<i><img src="__STATIC__/img/down1.png" alt="" /></i></span>-->
+						<!--<span class="more">更多<i><img src="/static/img/down1.png" alt="" /></i></span>-->
 					</div>
 					<div class="marbt30 carList_info">
 						 <ul class="list">
 
-                           {volist name="er_car" id="vo" offset="1" length="8"}
-
+                           <?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,1,8, true) : $er_car->slice(1,8, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+							 <a href="<?php echo url('index/details'); ?>?cheid=<?php echo $vo['pu_id']; ?>">
 							<li class="items5">
-								<a href="{:url('index/details')}?cheid={$vo.pu_id}">
-								<a href="" class="car_img flex_center"><img src="{$vo.img_url}" alt="" /></a>
+								<a href="" class="car_img flex_center"><img src="<?php echo $vo['img_url']; ?>" alt="" /></a>
 								<a href="" class="car_desc">
-									<h3>{$vo.name}</h3>
-									<p><span class="car_price"><b>{$vo.new_car_price}</b>万</span><span class="car_sui">新车含税{$vo.price}万</span></p>
-									<p><span>{$vo.car_cardtime}上牌</span> <span class="padlt20">{$vo.car_mileage}万公里</span> </p>
+									<h3><?php echo $vo['name']; ?></h3>
+									<p><span class="car_price"><b><?php echo $vo['new_car_price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $vo['price']; ?>万</span></p>
+									<p><span><?php echo $vo['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $vo['car_mileage']; ?>万公里</span> </p>
 									<div class="che_ordered">立即预约</div>
 								</a>
-								</a>
 							</li>
-
-                           {/volist}
+							 </a>
+                           <?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 					</div>
 					
@@ -249,42 +388,96 @@
 						<h2 class="er_service">二手车服务</h2>
 						<ul class="">
 							<li>
-								<img src="__STATIC__/img/car111.png" alt="" />
+								<img src="/static/img/car111.png" alt="" />
 								<p>车辆评估</p>
 							</li>
 							<li>
-								<img src="__STATIC__/img/car222.png" alt="" />
+								<img src="/static/img/car222.png" alt="" />
 								<p>高价卖车</p>
 							</li>
 							<li>
-								<img src="__STATIC__/img/car333.png" alt="" />
+								<img src="/static/img/car333.png" alt="" />
 								<p>免费置换</p>
 							</li>
 							<li>
-								<img src="__STATIC__/img/car444.png" alt="" />
+								<img src="/static/img/car444.png" alt="" />
 								<p>帮买好车</p>
 							</li>
 						</ul>
 					</div>
 					<h2 class="youlike">猜你喜欢</h2>
 					 <ul class="list ptp15">
-						 {volist name="er_car" id="vo" offset="12" length="1"}
+						 <?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,12,1, true) : $er_car->slice(12,1, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="{$vo.img_url}" alt="" /></a>
+							<a href="" class="car_img flex_center"><img src="<?php echo $vo['img_url']; ?>" alt="" /></a>
 							<a href="" class="car_desc">
-								<h3>{$vo.name}</h3>
-								<p><span class="car_price"><b>{$vo.new_car_price}</b>万</span><span class="car_sui">新车含税{$vo.price}万</span></p>
-								<p><span>{$vo.car_cardtime}上牌</span> <span class="padlt20">{$vo.car_mileage}万公里</span> </p>
+								<h3><?php echo $vo['name']; ?></h3>
+								<p><span class="car_price"><b><?php echo $vo['new_car_price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $vo['price']; ?>万</span></p>
+								<p><span><?php echo $vo['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $vo['car_mileage']; ?>万公里</span> </p>
 								<div class="che_ordered">立即预约</div>
 							</a>
 						</li>
-						 {/volist}
+						 <?php endforeach; endif; else: echo "" ;endif; ?>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<!--<div class="footer">-->
-			<!--{include file="public/footer"}-->
+			<!--
+	<div class="wrap">
+		<div class="company_info gj_clear">
+			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
+			<div class="basic_info">
+				<div>
+					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
+					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
+					<a href="<?php echo url('index/service'); ?>">服务保障</a>
+					<a href="<?php echo url('index/website'); ?>">网站地图</a>
+				</div>
+				<p>
+					版权所有：河南管家车销售有限公司 <br /> 
+				 工信备案：豫ICP备17046554号 <br /> 
+				  CopyRight © 2015-2018 ww
+				</p>
+			</div>
+			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
+			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
+			<div class="contact_way">
+				<p>免费咨询、建议、投诉 <br />
+				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
+				 每天9：00-21：00(法定节假日除外)
+				</p>		
+			</div>
+		</div>	
+		<div class="optimize_link">
+			<p class="link_tit">热门品牌：</p>
+			<span class="more_dwon"></span>
+			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+			<a href=""><?php echo $vol['name']; ?></a>
+			<?php endforeach; endif; else: echo "" ;endif; ?>
+
+		</div>
+		<div class="optimize_link">
+			<p class="link_tit ">热门车系123：</p>
+			<span class="more_dwon"></span>
+			<a href="">大众</a>
+			<a href="">大众</a>
+
+		</div>
+		<div class="optimize_link gj_clear">
+			<p class="link_tit">友情链接123：</p>
+			<span class="more_dwon"></span>
+			<a href="">大众</a>
+
+
+
+		</div>
+	</div>
+<script>
+	$(".more_dwon").click(function(){
+		$(this).parents(".optimize_link").addClass("link_active")
+	})
+</script>-->
 		<!--</div>-->
 	</body>
 	<script>		
@@ -293,10 +486,10 @@
 		    // $(".header").load("templates/header.html");
 		    // $(".footer").load("templates/footer.html");
 		    $('.check_item img').click(function(){
-                    if($(this).attr('src') == '__STATIC__/img/img_checked.png'){
-                        $(this).attr('src','__STATIC__/img/img_uncheck.png')
+                    if($(this).attr('src') == '/static/img/img_checked.png'){
+                        $(this).attr('src','/static/img/img_uncheck.png')
                     }else{
-                        $(this).attr('src','__STATIC__/img/img_checked.png')
+                        $(this).attr('src','/static/img/img_checked.png')
                     }
 
                 })

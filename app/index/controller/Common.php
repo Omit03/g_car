@@ -121,6 +121,9 @@ class Common extends Controller{
             'details'=>array(
                 'user_id' =>'number',
             ),
+            'asd'=>array(
+                'user_id' =>'number',
+            ),
         ),
         'Newcar' => array(
             'index'=>array(
@@ -1123,6 +1126,40 @@ class Common extends Controller{
         return $password;
     }
 
+    /*
+       *http://39.106.67.47/new_api/User/shop/get_carparam
+       * 获取具体参数配置
+       * 车id
+       * type 1 新车 2 二手 3 零首付
+       *
+       */
+    public function get_carparam($cheid,$type){
+
+
+        //验证车辆是否存在
+        if($type==1){
+            $carinfo=Db::table("new_car")->where("id=$cheid")->find();
+        }elseif($type==2){
+            $carinfo=Db::table("rele_car")->where("pu_id=$cheid")->find();
+        }elseif ($type==3) {
+            $carinfo=Db::table("l_car")->where("id=$cheid")->find();
+        }
+        if(!$carinfo){
+            $data = array (
+                'code'   => 204,
+                'result' => '车辆信息错误'
+            );
+            return 'c参数有误';
+
+        }
+        //查找配置参数
+        $param=$this->paramss($cheid,$type);
+
+        return $param;
+
+    }
+
+
     //获取二手车的首付以及月供
     public function get_rele_car_fenqi($pu_id){
         //查询数据
@@ -1150,6 +1187,250 @@ class Common extends Controller{
         $time=$year1."-".$month1."-".$day1;
         $res=strtotime($time);
         return $res;
+    }
+
+    /**
+     * [param 详情参数]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function paramss($cheid,$type=2)
+    {
+        $join = [['rele_param b','b.param_id=a.id']];
+
+        //查找配置参数
+        $res=Db::table("param")->alias('a')->join($join)->where("b.pu_id=$cheid and b.type=$type")->field("a.*")->find();
+        if($res){
+            // 基本信息
+            // 基本信息
+            $info = array(
+                array( 'name' => '车型名称', 'content' => $res['car_name'], 'is_dot' => 2, ),
+                array( 'name' => '厂商指导价(元)', 'content' => $res['price'], 'is_dot' => 2,  ),
+                array( 'name' => '厂商', 'content' => $res['firm'], 'is_dot' => 2, ),
+                array( 'name' => '级别', 'content' => $res['subface'], 'is_dot' => 2, ),
+                array( 'name' => '能源类型', 'content' => $res['fuel'], 'is_dot' => 2, ),
+                array( 'name' => '上市时间', 'content' => $res['shangshi'], 'is_dot' => 2, ),
+                array( 'name' => '工信部纯电续驶里程(km)', 'content' => $res['oil_wear1'], 'is_dot' => 2, ),
+                array( 'name' => '最大功率(kW)', 'content' => $res['max_kw'], 'is_dot' => 2, ),
+                array( 'name' => '最大扭矩(N·m)', 'content' => $res['max_nm'], 'is_dot' => 2, ),
+                array( 'name' => '发动机', 'content' => $res['motor'], 'is_dot' => 2, ),
+                array( 'name' => '变速箱', 'content' => $res['gearbox'], 'is_dot' => 2, ),
+                array( 'name' => '长*宽*高(mm)', 'content' => $res['size'], 'is_dot' => 2, ),
+                array( 'name' => '车身结构', 'content' => $res['bodywork'], 'is_dot' => 2, ),
+                array( 'name' => '最高车速(km/h)', 'content' => $res['max_speed'], 'is_dot' => 2, ),
+                array( 'name' => '官方0-100km/h加速(s)', 'content' => $res['speed1'], 'is_dot' => 2, ),
+                array( 'name' => '实测0-100km/h加速(s)', 'content' => $res['speed2'], 'is_dot' => 2, ),
+                array( 'name' => '实测100-0km/h制动(m)', 'content' => $res['speed3'], 'is_dot' => 2, ),
+                array( 'name' => '实测油耗(L/100km)	', 'content' => $res['oil_wear2'], 'is_dot' => 2, ),
+                array( 'name' => '整车质保', 'content' => $res['zhibao'], 'is_dot' => 2, ),
+            );
+            $car_body = array(
+                array( 'name' => '长度(mm)', 'content' => $res['length1'], 'is_dot' => 2, ),
+                array( 'name' => '宽度(mm)', 'content' => $res['width1'], 'is_dot' => 2,  ),
+                array( 'name' => '高度(mm)', 'content' => $res['height1'], 'is_dot' => 2, ),
+                array( 'name' => '轴距(mm)', 'content' => $res['cszj'], 'is_dot' => 2, ),
+                array( 'name' => '前轮距(mm)', 'content' => $res['csqlj'], 'is_dot' => 2, ),
+                array( 'name' => '后轮距(mm)', 'content' => $res['cshlj'], 'is_dot' => 2, ),
+                array( 'name' => '最小离地间隙(mm)', 'content' => $res['zxldjju'], 'is_dot' => 2, ),
+                array( 'name' => '车身结构', 'content' => $res['csjgou'], 'is_dot' => 2, ),
+                array( 'name' => '车门数(个)', 'content' => $res['cmshu'], 'is_dot' => 2, ),
+                array( 'name' => '座位数(个)', 'content' => $res['zwshu'], 'is_dot' => 2, ),
+                array( 'name' => '油箱容积(L)', 'content' => $res['yxiangrj'], 'is_dot' => 2, ),
+                array( 'name' => '行李厢容积(L)', 'content' => $res['xlxiangrj'], 'is_dot' => 2, ),
+                array( 'name' => '整备质量(kg)', 'content' => $res['zbzl'], 'is_dot' => 2, ),
+            );
+            $base = array(
+                array( 'name' => '发动机型号', 'content' => $res['fdjxh'], 'is_dot' => 2, ),
+                array( 'name' => '排量(mL)', 'content' => $res['pliang'], 'is_dot' => 2,  ),
+                array( 'name' => '排量(L)', 'content' => $res['pliang1'], 'is_dot' => 2, ),
+                array( 'name' => '进气形式', 'content' => $res['jqxings'], 'is_dot' => 2, ),
+                array( 'name' => '气缸排列形式', 'content' => $res['qgplxings'], 'is_dot' => 2, ),
+                array( 'name' => '气缸数(个)', 'content' => $res['qgshu'], 'is_dot' => 2, ),
+                array( 'name' => '每缸气门数(个)', 'content' => $res['qmshu'], 'is_dot' => 2, ),
+                array( 'name' => '压缩比	', 'content' => $res['ysuob'], 'is_dot' => 2, ),
+                array( 'name' => '配气机构', 'content' => $res['pqjgou'], 'is_dot' => 2, ),
+                array( 'name' => '缸径(mm)', 'content' => $res['gjing'], 'is_dot' => 2, ),
+                array( 'name' => '行程(mm)', 'content' => $res['xcheng'], 'is_dot' => 2, ),
+                array( 'name' => '最大马力(Ps)', 'content' => $res['zdml'], 'is_dot' => 2, ),
+                array( 'name' => '最大功率(kW)	', 'content' => $res['zdgl'], 'is_dot' => 2, ),
+                array( 'name' => '最大功率转速(rpm)', 'content' => $res['rpm'], 'is_dot' => 2, ),
+                array( 'name' => '最大扭矩(N·m)', 'content' => $res['maxnj'], 'is_dot' => 2, ),
+                array( 'name' => '最大扭矩转速(rpm)	', 'content' => $res['maxnjzs'], 'is_dot' => 2, ),
+                array( 'name' => '发动机特有技术	', 'content' => $res['tyjshu'], 'is_dot' => 2, ),
+                array( 'name' => '燃料形式', 'content' => $res['rljshu'], 'is_dot' => 2, ),
+                array( 'name' => '燃油标号', 'content' => $res['rybiaoh'], 'is_dot' => 2, ),
+                array( 'name' => '供油方式	', 'content' => $res['gyfshi'], 'is_dot' => 2, ),
+                array( 'name' => '缸盖材料	', 'content' => $res['ggcliao'], 'is_dot' => 2, ),
+                array( 'name' => '缸体材料', 'content' => $res['gtcliao'], 'is_dot' => 2, ),
+                array( 'name' => '环保标准', 'content' => $res['hbbiaoz'], 'is_dot' => 2, ),
+            );
+            $gearbox = array(
+                array( 'name' => '挡位个数', 'content' => $res['dweigs'], 'is_dot' => 2, ),
+                array( 'name' => '变速箱类型', 'content' => $res['bsxleix'], 'is_dot' => 2,  ),
+                array( 'name' => '简称', 'content' => $res['jiancheng'], 'is_dot' => 2, ),
+            );
+            $dpfxiang = array(
+                array( 'name' => '驱动方式', 'content' => $res['qdfshi'], 'is_dot' => 2, ),
+                array( 'name' => '前悬架类型', 'content' => $res['qxuanjlx'], 'is_dot' => 2,  ),
+                array( 'name' => '后悬架类型', 'content' => $res['hxuanglx'], 'is_dot' => 2, ),
+                array( 'name' => '助力类型', 'content' => $res['zhullx'], 'is_dot' => 2, ),
+                array( 'name' => '车体结构', 'content' => $res['ctijg'], 'is_dot' => 2, ),
+            );
+            $clzhid = array(
+                array( 'name' => '前制动器类型', 'content' => $res['qzdqilx'], 'is_dot' => 2, ),
+                array( 'name' => '后制动器类型', 'content' => $res['hzdqilx'], 'is_dot' => 2,  ),
+                array( 'name' => '驻车制动类型', 'content' => $res['zhuczdlx'], 'is_dot' => 2, ),
+                array( 'name' => '前轮胎规格	', 'content' => $res['qluntgg'], 'is_dot' => 2, ),
+                array( 'name' => '后轮胎规格', 'content' => $res['hluntgg'], 'is_dot' => 2, ),
+                array( 'name' => '备胎规格', 'content' => $res['beitgg'], 'is_dot' => 2, )
+            );
+            $safe_base = array(
+                array( 'name' => '主/副驾驶座安全气囊', 'content' => $res['zfqnang'], 'is_dot' => 2, ),
+                array( 'name' => '前/后排侧气囊', 'content' => $res['qhcqnang'], 'is_dot' => 2,  ),
+                array( 'name' => '前/后排头部气囊(气帘)', 'content' => $res['qhptqnang'], 'is_dot' => 1, ),
+                array( 'name' => '膝部气囊', 'content' => $res['xbqnang'], 'is_dot' => 2, ),
+                array( 'name' => '胎压监测装置', 'content' => $res['tyjczzhi'], 'is_dot' => 1, ),
+                array( 'name' => '零胎压继续行驶', 'content' => $res['ltyjxxshi'], 'is_dot' => 1, ),
+                array( 'name' => '安全带未系提示', 'content' => $res['aqdwjtshi'], 'is_dot' => 1, ),
+                array( 'name' => 'ISOFIX儿童座椅接口	', 'content' => $res['etzyjiek'], 'is_dot' => 2, ),
+                array( 'name' => 'ABS防抱死	', 'content' => $res['abs'], 'is_dot' => 1, ),
+                array( 'name' => '制动力分配(EBD/CBC等)	', 'content' => $res['zdlfpei'], 'is_dot' => 1, ),
+                array( 'name' => '刹车辅助(EBA/BAS/BA等)', 'content' => $res['scfzhu'], 'is_dot' => 1, ),
+                array( 'name' => '牵引力控制(ASR/TCS/TRC等)	', 'content' => $res['qylkzhi'], 'is_dot' => 2, ),
+                array( 'name' => '车身稳定控制(ESC/ESP/DSC等)', 'content' => $res['cswdkzhi'], 'is_dot' => 1, ),
+                array( 'name' => '并线辅助', 'content' => $res['bxfzhu'], 'is_dot' => 1, ),
+                array( 'name' => '车道偏离预警系统', 'content' => $res['cdplyjxtong'], 'is_dot' => 1, ),
+                array( 'name' => '主动刹车/主动安全系统	', 'content' => $res['zdsche'], 'is_dot' => 1, ),
+                array( 'name' => '夜视系统', 'content' => $res['ysxtong'], 'is_dot' => 2, )
+            );
+            $fzcz = array(
+                array( 'name' => '前/后驻车雷达', 'content' => $res['qhzclda'], 'is_dot' => 2, ),
+                array( 'name' => '倒车视频影像', 'content' => $res['dcspyxiang'], 'is_dot' => 2,  ),
+                array( 'name' => '全景摄像头', 'content' => $res['qjsxtou'], 'is_dot' => 1, ),
+                array( 'name' => '定速巡航', 'content' => $res['dsxhang'], 'is_dot' => 1, ),
+                array( 'name' => '自适应巡航', 'content' => $res['zsyxhang'], 'is_dot' => 2, ),
+                array( 'name' => '自动泊车入位', 'content' => $res['zdbche'], 'is_dot' => 1, ),
+                array( 'name' => '发动机启停技术', 'content' => $res['fdjqting'], 'is_dot' => 2, ),
+                array( 'name' => '上坡辅助', 'content' => $res['spfzhu'], 'is_dot' => 1, ),
+                array( 'name' => '自动驻车', 'content' => $res['zdzche'], 'is_dot' => 2, ),
+                array( 'name' => '陡坡缓降', 'content' => $res['dphjiang'], 'is_dot' => 2, ),
+                array( 'name' => '可变悬架', 'content' => $res['kbxgua'], 'is_dot' => 1, ),
+                array( 'name' => '空气悬架', 'content' => $res['kqxgua'], 'is_dot' => 1, ),
+                array( 'name' => '电磁感应悬架', 'content' => $res['dcgyxgua'], 'is_dot' => 1, ),
+                array( 'name' => '可变转向比', 'content' => $res['kbzxbi'], 'is_dot' => 1, ),
+                array( 'name' => '前桥限滑差速器/差速锁', 'content' => $res['qqxscssuo'], 'is_dot' => 1, ),
+                array( 'name' => '中央差速器锁止功能', 'content' => $res['zycsqszhi'], 'is_dot' => 1, ),
+                array( 'name' => '后桥限滑差速器/差速锁', 'content' => $res['hqcssuo'], 'is_dot' => 1, ),
+                array( 'name' => '整体主动转向系统', 'content' => $res['ztzdzxiang'], 'is_dot' => 1, ),
+            );
+            $wbfdpzhi = array(
+                array( 'name' => '电动天窗', 'content' => $res['ddtchuang'], 'is_dot' => 1, ),
+                array( 'name' => '全景天窗', 'content' => $res['qjtchuang'], 'is_dot' => 2,  ),
+                array( 'name' => '运动外观套件', 'content' => $res['ydwgtjian'], 'is_dot' => 1, ),
+                array( 'name' => '铝合金轮圈', 'content' => $res['lhjlquan'], 'is_dot' => 2, ),
+                array( 'name' => '电动吸合门', 'content' => $res['ddxhmen'], 'is_dot' => 2, ),
+                array( 'name' => '侧滑门', 'content' => $res['chmen'], 'is_dot' => 1, ),
+                array( 'name' => '电动后备厢', 'content' => $res['ddhbxiang'], 'is_dot' => 2, ),
+                array( 'name' => '发动机电子防盗', 'content' => $res['fdjdzfdao'], 'is_dot' => 2, ),
+                array( 'name' => '车内中控锁', 'content' => $res['cnzksuo'], 'is_dot' => 1, ),
+                array( 'name' => '遥控钥匙', 'content' => $res['ykyshi'], 'is_dot' => 2, ),
+                array( 'name' => '无钥匙启动系统', 'content' => $res['wysqd'], 'is_dot' => 2, ),
+                array( 'name' => '无钥匙进入系统', 'content' => $res['wysjru'], 'is_dot' => 2, ),
+            );
+            $nbbase = array(
+                array( 'name' => '皮质方向盘', 'content' => $res['pzfxpan'], 'is_dot' => 1, ),
+                array( 'name' => '方向盘调节', 'content' => $res['fxptjie'], 'is_dot' => 1,  ),
+                array( 'name' => '方向盘电动调节', 'content' => $res['fxpddtjie'], 'is_dot' => 1, ),
+                array( 'name' => '多功能方向盘', 'content' => $res['dgnfxpan'], 'is_dot' => 1, ),
+                array( 'name' => '方向盘换挡', 'content' => $res['fxphdang'], 'is_dot' => 1, ),
+                array( 'name' => '方向盘加热', 'content' => $res['fxpjre'], 'is_dot' => 1, ),
+                array( 'name' => '行车电脑显示屏', 'content' => $res['xcdnao'], 'is_dot' => 1, ),
+                array( 'name' => 'HUD抬头数字显示', 'content' => $res['hud'], 'is_dot' => 1, ),
+            );
+            $zybase = array(
+                array( 'name' => '座椅材质', 'content' => $res['zyczhi'], 'is_dot' => 1, ),
+                array( 'name' => '运动风格座椅', 'content' => $res['ydfgzyi'], 'is_dot' => 1,  ),
+                array( 'name' => '座椅高低调节', 'content' => $res['zygdtjie'], 'is_dot' => 1, ),
+                array( 'name' => '腰部支撑调节', 'content' => $res['ybzctjie'], 'is_dot' => 1, ),
+                array( 'name' => '肩部支撑调节', 'content' => $res['jbzctjie'], 'is_dot' => 1, ),
+                array( 'name' => '主/副驾驶座电动调节', 'content' => $res['zfjszdtj'], 'is_dot' => 1, ),
+                array( 'name' => '第二排靠背角度调节', 'content' => $res['depkbtjie'], 'is_dot' => 1, ),
+                array( 'name' => '第二排座椅移动', 'content' => $res['depzyydong'], 'is_dot' => 1, ),
+                array( 'name' => '后排座椅电动调节', 'content' => $res['hpzyddtjie'], 'is_dot' => 1, ),
+                array( 'name' => '电动座椅记忆', 'content' => $res['ddzyjyi'], 'is_dot' => 1, ),
+                array( 'name' => '前/后排座椅加热', 'content' => $res['qhpzyjre'], 'is_dot' => 1, ),
+                array( 'name' => '前/后排座椅通风', 'content' => $res['qhpzytfeng'], 'is_dot' => 1, ),
+                array( 'name' => '前/后排座椅按摩', 'content' => $res['qhpzyamo'], 'is_dot' => 1, ),
+                array( 'name' => '后排座椅放倒方式', 'content' => $res['hpzyfdfshi'], 'is_dot' => 1, ),
+                array( 'name' => '前/后中央扶手', 'content' => $res['qhzyfshou'], 'is_dot' => 1, ),
+                array( 'name' => '后排杯架', 'content' => $res['hpbjia'], 'is_dot' => 1,)
+            );
+            $dmtbase = array(
+                array( 'name' => 'GPS导航系统', 'content' => $res['gps'], 'is_dot' => 2, ),
+                array( 'name' => '定位互动服务', 'content' => $res['dwhdfwu'], 'is_dot' => 2,  ),
+                array( 'name' => '中控台彩色大屏', 'content' => $res['zktcsdping'], 'is_dot' => 2, ),
+                array( 'name' => '中控液晶屏分屏显示', 'content' => $res['zyyjfpxshi'], 'is_dot' => 2, ),
+                array( 'name' => '蓝牙/车载电话', 'content' => $res['lyczdhua'], 'is_dot' => 2, ),
+                array( 'name' => '车载电视', 'content' => $res['czdshi'], 'is_dot' => 2, ),
+                array( 'name' => '后排液晶屏', 'content' => $res['hpyjping'], 'is_dot' => 2, ),
+                array( 'name' => 'CD/DVD', 'content' => $res['cddvd'], 'is_dot' => 2, ),
+                array( 'name' => '扬声器品牌', 'content' => $res['ysqppai'], 'is_dot' => 2, ),
+                array( 'name' => '扬声器数量', 'content' => $res['ysqsliang'], 'is_dot' => 2, ),
+            );
+            $lightbase = array(
+                array( 'name' => '近光灯', 'content' => $res['jgdeng'], 'is_dot' => 2, ),
+                array( 'name' => 'LED日间行车灯', 'content' => $res['rjxcdeng'], 'is_dot' => 2,  ),
+                array( 'name' => '自动头灯', 'content' => $res['zdtdeng'], 'is_dot' => 2, ),
+                array( 'name' => '转向辅助灯', 'content' => $res['zxfzdeng'], 'is_dot' => 2, ),
+                array( 'name' => '转向头灯', 'content' => $res['zxtdeng'], 'is_dot' => 2, ),
+                array( 'name' => '前雾灯', 'content' => $res['qwdeng'], 'is_dot' => 2, ),
+                array( 'name' => '大灯高度可调', 'content' => $res['ddgdktiao'], 'is_dot' => 2, ),
+                array( 'name' => '大灯清洗装置', 'content' => $res['ddqxzzhi'], 'is_dot' => 2, ),
+                array( 'name' => '车内氛围灯', 'content' => $res['cnfwdeng'], 'is_dot' => 2, )
+            );
+            $blhsjing = array(
+                array( 'name' => '前/后电动车窗', 'content' => $res['qhddcchuang'], 'is_dot' => 2, ),
+                array( 'name' => '车窗防夹手功能', 'content' => $res['ccyjsjiang'], 'is_dot' => 2,  ),
+                array( 'name' => '防紫外线/隔热玻璃', 'content' => $res['fzwxian'], 'is_dot' => 2, ),
+                array( 'name' => '后视镜电动调节', 'content' => $res['hsjddtjie'], 'is_dot' => 2, ),
+                array( 'name' => '后视镜加热', 'content' => $res['hsjjre'], 'is_dot' => 2, ),
+                array( 'name' => '内/外后视镜自动防眩目', 'content' => $res['hsjfxmu'], 'is_dot' => 2, ),
+                array( 'name' => '后视镜电动折叠', 'content' => $res['hsjddzd'], 'is_dot' => 2, ),
+                array( 'name' => '后视镜记忆', 'content' => $res['hsjjyi'], 'is_dot' => 2, ),
+                array( 'name' => '后风挡遮阳帘', 'content' => $res['hfdzyang'], 'is_dot' => 2, ),
+                array( 'name' => '后排侧遮阳帘', 'content' => $res['hczylian'], 'is_dot' => 2, ),
+                array( 'name' => '后排侧隐私玻璃', 'content' => $res['hpysbli'], 'is_dot' => 2, ),
+                array( 'name' => '遮阳板化妆镜', 'content' => $res['zybhzjing'], 'is_dot' => 2, ),
+                array( 'name' => '后雨刷', 'content' => $res['hyshua'], 'is_dot' => 2, ),
+                array( 'name' => '感应雨刷', 'content' => $res['gyyshua'], 'is_dot' => 2, ),
+            );
+            $ktbxiang = array(
+                array( 'name' => '空调控制方式', 'content' => $res['ktkzfshi'], 'is_dot' => 2, ),
+                array( 'name' => '后排独立空调', 'content' => $res['hpdlktiao'], 'is_dot' => 2,  ),
+                array( 'name' => '后座出风口', 'content' => $res['hzcfkou'], 'is_dot' => 2, ),
+                array( 'name' => '温度分区控制', 'content' => $res['wdfqkxzhi'], 'is_dot' => 2, ),
+                array( 'name' => '车内空气调节/花粉过滤', 'content' => $res['cnkqtjie'], 'is_dot' => 2, ),
+                array( 'name' => '车载冰箱', 'content' => $res['czbxiang'], 'is_dot' => 2, )
+            );
+            $rr = array(
+                'info' => $info,
+                'car_body' => $car_body,
+                'base' => $base,
+                'gearbox' => $gearbox,
+                'dpfxiang' => $dpfxiang,
+                'clzhid' => $clzhid,
+                'safe_base' => $safe_base,
+                'fzcz' => $fzcz,
+                'wbfdpzhi' => $wbfdpzhi,
+                'nbbase' => $nbbase,
+                'zybase' => $zybase,
+                'dmtbase' => $dmtbase,
+                'lightbase' => $lightbase,
+                'blhsjing' => $blhsjing,
+                'ktbxiang' => $ktbxiang,
+            );
+        }
+        return $rr;
     }
 
 }

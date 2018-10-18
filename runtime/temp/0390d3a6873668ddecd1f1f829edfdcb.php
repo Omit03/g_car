@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539858280;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539861950;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -229,19 +229,25 @@ $(window).on('scroll',function(){
 	        		<li>
 	        			<h3>基本配置</h3>
 	        			<div>
-	        				<p>使用性质</p><span>非运营</span>
+	        				<p><?php echo $carparam['info']['0']['name']; ?></p><span><?php echo $carparam['info']['0']['content']; ?></span>
+	        				<p><?php echo $carparam['info']['3']['name']; ?></p><span><?php echo $carparam['info']['3']['content']; ?></span>
+	        				<p><?php echo $carparam['info']['4']['name']; ?></p><span><?php echo $carparam['info']['4']['content']; ?></span>
+
 	        			</div>
 	        		</li>
 	        		<li><h3>外观参数</h3>
 	        			<div>
-	        				<p>使用性质</p><span>非运营</span>
-	        				<p>使用性质</p><span>非运营</span>
+							<p><?php echo $carparam['car_body']['0']['name']; ?></p><span><?php echo $carparam['car_body']['0']['content']; ?></span>
+							<p><?php echo $carparam['car_body']['1']['name']; ?></p><span><?php echo $carparam['car_body']['1']['content']; ?></span>
+							<p><?php echo $carparam['car_body']['2']['name']; ?></p><span><?php echo $carparam['car_body']['2']['content']; ?></span>
+
 	        			</div>
 	        		</li>
 	        		<li><h3>发动机参数</h3>
 	        			<div>
-	        				<p>使用性质</p><span>非运营</span>
-	        				<p>使用性质</p><span>非运营</span>
+							<p><?php echo $carparam['base']['0']['name']; ?></p><span><?php echo $carparam['base']['0']['content']; ?></span>
+							<p><?php echo $carparam['base']['1']['name']; ?></p><span><?php echo $carparam['base']['1']['content']; ?></span>
+							<p><?php echo $carparam['base']['2']['name']; ?></p><span><?php echo $carparam['base']['2']['content']; ?></span>
 	        			</div>
 	        		</li>
 	        	</ul>
@@ -408,291 +414,115 @@ $(window).on('scroll',function(){
   				<div class="config_f con1">
   					<div class="config_tit2"><b></b><span>基本配置</span></div>
   					<ul class="">
+						<?php if(is_array($carparam['info']) || $carparam['info'] instanceof \think\Collection || $carparam['info'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carparam['info'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
   						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
+  							<p><?php echo $vol['name']; ?></p>
+  							<span><?php echo $vol['content']; ?></span>
   						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+  						<?php endforeach; endif; else: echo "" ;endif; ?>
   					</ul>
   				</div>
   				<div class="config_f con2">
   					<div class="config_tit2"><b></b><span>操控配置</span></div>
   					<ul class="">
+						<?php if(is_array($carparam['nbbase']) || $carparam['nbbase'] instanceof \think\Collection || $carparam['nbbase'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carparam['nbbase'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
   						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
+							<p><?php echo $vol['name']; ?></p>
+							<span><?php echo $vol['content']; ?></span>
   						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
   					</ul>
   				</div>
   				<div class="config_f con3">
   					<div class="config_tit2"><b></b><span>外部配置</span></div>
   					<ul class="">
+						<?php if(is_array($carparam['wbfdpzhi']) || $carparam['wbfdpzhi'] instanceof \think\Collection || $carparam['wbfdpzhi'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carparam['wbfdpzhi'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
   						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
+							<p><?php echo $vol['name']; ?></p>
+							<span><?php echo $vol['content']; ?></span>
   						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
   					</ul>
   				</div>
   				<div class="config_f con4">
   					<div class="config_tit2"><b></b><span>变速箱/底盘/车轮配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+
+						<?php if(is_array($carparam['gearbox']) || $carparam['gearbox'] instanceof \think\Collection || $carparam['gearbox'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carparam['gearbox'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+						<li>
+							<p><?php echo $vol['name']; ?></p>
+							<span><?php echo $vol['content']; ?></span>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+
   					</ul>
   				</div>
   				<div class="config_f con5">
   					<div class="config_tit2"><b></b><span>高科技配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						<?php if(is_array($carparam['fzcz']) || $carparam['fzcz'] instanceof \think\Collection || $carparam['fzcz'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carparam['fzcz'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+						<li>
+							<p><?php echo $vol['name']; ?></p>
+							<span><?php echo $vol['content']; ?></span>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
   					</ul>
   				</div>
   				<div class="config_f con6">
   					<div class="config_tit2"><b></b><span>灯光配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						<?php if(is_array($carparam['lightbase']) || $carparam['lightbase'] instanceof \think\Collection || $carparam['lightbase'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carparam['lightbase'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+						<li>
+							<p><?php echo $vol['name']; ?></p>
+							<span><?php echo $vol['content']; ?></span>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
   					</ul>
   				</div>
   				<div class="config_f con7">
   					<div class="config_tit2"><b></b><span>发动机配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						<?php if(is_array($carparam['base']) || $carparam['base'] instanceof \think\Collection || $carparam['base'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carparam['base'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+						<li>
+							<p><?php echo $vol['name']; ?></p>
+							<span><?php echo $vol['content']; ?></span>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+
   					</ul>
   				</div>
   				<div class="config_f con8">
   					<div class="config_tit2"><b></b><span>多媒体配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					</ul>
+						<?php if(is_array($carparam['dmtbase']) || $carparam['dmtbase'] instanceof \think\Collection || $carparam['dmtbase'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carparam['dmtbase'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+						<li>
+							<p><?php echo $vol['name']; ?></p>
+							<span><?php echo $vol['content']; ?></span>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+
+					</ul>
   				</div>
   				<div class="config_f con9">
-  					<div class="config_tit2"><b></b><span>安全配资</span></div>
+  					<div class="config_tit2"><b></b><span>安全配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						<?php if(is_array($carparam['safe_base']) || $carparam['safe_base'] instanceof \think\Collection || $carparam['safe_base'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carparam['safe_base'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+						<li>
+							<p><?php echo $vol['name']; ?></p>
+							<span><?php echo $vol['content']; ?></span>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
   					</ul>
   				</div>
   				<div class="config_f con10">
   					<div class="config_tit2"><b></b><span>车身配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						<?php if(is_array($carparam['clzhid']) || $carparam['clzhid'] instanceof \think\Collection || $carparam['clzhid'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carparam['clzhid'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+						<li>
+							<p><?php echo $vol['name']; ?></p>
+							<span><?php echo $vol['content']; ?></span>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
   					</ul>
   				</div>
   				

@@ -311,10 +311,20 @@ class Index  extends Common
             }
         }
 
-            $sys_cars=$sys_cars ? $sys_cars : array();
-            $carinfo = $carinfo?$carinfo:array();
-            $shopinfo = $shopinfo?$shopinfo:array();
-            $remark = $remark?$remark:array();
+
+        $carparam = $this->get_carparam($cheid,2);
+
+        $sys_cars=$sys_cars ? $sys_cars : array();
+
+        $carinfo = $carinfo?$carinfo:array();
+
+        $shopinfo = $shopinfo?$shopinfo:array();
+
+        $remark = $remark?$remark:array();
+
+        $carparam = $carparam?$carparam:array();
+
+       // dump($carparam);die;
 
         $brand = $this->brand();//品牌
         $this->assign('brand',$brand);
@@ -322,6 +332,7 @@ class Index  extends Common
         $this->assign('shopinfo',$shopinfo);
         $this->assign('remark',$remark);
         $this->assign('sys_cars',$sys_cars);
+        $this->assign('carparam',$carparam);
         $this->assign('platform_phone','0371-53375515');
         return $this->fetch();
     }
@@ -631,36 +642,14 @@ class Index  extends Common
     }
 
     /*
-     *同系车
+     *http://39.106.67.47/new_api/User/shop/get_carparam
+     * 获取具体参数配置
+     * 车id
+     * type 1 新车 2 二手 3 零首付
+     *
      */
-    public function asd()
-    {
-        //查询车辆信息
-        $res=M("rele_car")->field("pu_id,sys_id,price,city_id")->where("pu_id=".$data['pu_id'])->find();
-        // 相关车系
-        $sys_cars= M('rele_car')
-            ->field('rele_car.pu_id,rele_car.user_id,rele_car.cartype_id,rele_car.price,rele_car.news_price,rele_car.car_mileage,rele_car.car_cardtime,rele_car.img_300')
-            ->where("sys_id=".$res['sys_id']." and pu_id not in (".$res['pu_id'].") and status=1 and city_id=".$res['city_id'])
-            ->join('user on user.user_id = rele_car.user_id')
-            ->order('rele_car.update_time desc')
-            ->limit(6)
-            ->select();
-        if($sys_cars){
-            foreach ($sys_cars as $key => $val) {
-                $sys_cars[$key]['news_price'] = $val['news_price'] == 0.00 ? "未知" : $val['news_price'].'万';
-                // 通过cartype_id查车系名和车型名称
-                $sys_cars[$key]['name'] = get_carname($val['cartype_id']);
-                $sys_cars[$key]['img_url'] = get_carimg(explode(',',$val['img_300'])[0],1);
-                unset($sys_cars[$key]['img_300']);
-                unset($sys_cars[$key]['cartype_id']);
-                //获取汽车的首付
-                $pay=D("Index")->get_rele_car_fenqi($val['pu_id']);
-                $sys_cars[$key]['pay_20s']=$pay['pay_20s']?$pay['pay_20s']:'';
-                $sys_cars[$key]['pay_20y']=$pay['pay_20y']?$pay['pay_20y']:'';
-                $sys_cars[$key]['pay_20n']=$pay['pay_20n']?$pay['pay_20n']:'';
-            }
-        }
-        $res['sys_cars']=$sys_cars ? $sys_cars : array();
+    public function asd(){
+
 
     }
 

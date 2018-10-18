@@ -88,19 +88,25 @@
 	        		<li>
 	        			<h3>基本配置</h3>
 	        			<div>
-	        				<p>使用性质</p><span>非运营</span>
+	        				<p>{$carparam.info['0']['name']}</p><span>{$carparam.info['0']['content']}</span>
+	        				<p>{$carparam.info['3']['name']}</p><span>{$carparam.info['3']['content']}</span>
+	        				<p>{$carparam.info['4']['name']}</p><span>{$carparam.info['4']['content']}</span>
+
 	        			</div>
 	        		</li>
 	        		<li><h3>外观参数</h3>
 	        			<div>
-	        				<p>使用性质</p><span>非运营</span>
-	        				<p>使用性质</p><span>非运营</span>
+							<p>{$carparam.car_body['0']['name']}</p><span>{$carparam.car_body['0']['content']}</span>
+							<p>{$carparam.car_body['1']['name']}</p><span>{$carparam.car_body['1']['content']}</span>
+							<p>{$carparam.car_body['2']['name']}</p><span>{$carparam.car_body['2']['content']}</span>
+
 	        			</div>
 	        		</li>
 	        		<li><h3>发动机参数</h3>
 	        			<div>
-	        				<p>使用性质</p><span>非运营</span>
-	        				<p>使用性质</p><span>非运营</span>
+							<p>{$carparam.base['0']['name']}</p><span>{$carparam.base['0']['content']}</span>
+							<p>{$carparam.base['1']['name']}</p><span>{$carparam.base['1']['content']}</span>
+							<p>{$carparam.base['2']['name']}</p><span>{$carparam.base['2']['content']}</span>
 	        			</div>
 	        		</li>
 	        	</ul>
@@ -267,291 +273,115 @@
   				<div class="config_f con1">
   					<div class="config_tit2"><b></b><span>基本配置</span></div>
   					<ul class="">
+						{volist name="carparam['info']" id="vol"}
   						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
+  							<p>{$vol.name}</p>
+  							<span>{$vol.content}</span>
   						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+  						{/volist}
   					</ul>
   				</div>
   				<div class="config_f con2">
   					<div class="config_tit2"><b></b><span>操控配置</span></div>
   					<ul class="">
+						{volist name="carparam['nbbase']" id="vol"}
   						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
+							<p>{$vol.name}</p>
+							<span>{$vol.content}</span>
   						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						{/volist}
   					</ul>
   				</div>
   				<div class="config_f con3">
   					<div class="config_tit2"><b></b><span>外部配置</span></div>
   					<ul class="">
+						{volist name="carparam['wbfdpzhi']" id="vol"}
   						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
+							<p>{$vol.name}</p>
+							<span>{$vol.content}</span>
   						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						{/volist}
   					</ul>
   				</div>
   				<div class="config_f con4">
   					<div class="config_tit2"><b></b><span>变速箱/底盘/车轮配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+
+						{volist name="carparam['gearbox']" id="vol"}
+						<li>
+							<p>{$vol.name}</p>
+							<span>{$vol.content}</span>
+						</li>
+						{/volist}
+
   					</ul>
   				</div>
   				<div class="config_f con5">
   					<div class="config_tit2"><b></b><span>高科技配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						{volist name="carparam['fzcz']" id="vol"}
+						<li>
+							<p>{$vol.name}</p>
+							<span>{$vol.content}</span>
+						</li>
+						{/volist}
   					</ul>
   				</div>
   				<div class="config_f con6">
   					<div class="config_tit2"><b></b><span>灯光配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						{volist name="carparam['lightbase']" id="vol"}
+						<li>
+							<p>{$vol.name}</p>
+							<span>{$vol.content}</span>
+						</li>
+						{/volist}
   					</ul>
   				</div>
   				<div class="config_f con7">
   					<div class="config_tit2"><b></b><span>发动机配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						{volist name="carparam['base']" id="vol"}
+						<li>
+							<p>{$vol.name}</p>
+							<span>{$vol.content}</span>
+						</li>
+						{/volist}
+
   					</ul>
   				</div>
   				<div class="config_f con8">
   					<div class="config_tit2"><b></b><span>多媒体配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					</ul>
+						{volist name="carparam['dmtbase']" id="vol"}
+						<li>
+							<p>{$vol.name}</p>
+							<span>{$vol.content}</span>
+						</li>
+						{/volist}
+
+					</ul>
   				</div>
   				<div class="config_f con9">
-  					<div class="config_tit2"><b></b><span>安全配资</span></div>
+  					<div class="config_tit2"><b></b><span>安全配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						{volist name="carparam['safe_base']" id="vol"}
+						<li>
+							<p>{$vol.name}</p>
+							<span>{$vol.content}</span>
+						</li>
+						{/volist}
   					</ul>
   				</div>
   				<div class="config_f con10">
   					<div class="config_tit2"><b></b><span>车身配置</span></div>
   					<ul class="">
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  					    <li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
-  						<li>
-  							<p>车身结构</p>
-  							<span>四门5座三厢轿车</span>
-  						</li>
+						{volist name="carparam['clzhid']" id="vol"}
+						<li>
+							<p>{$vol.name}</p>
+							<span>{$vol.content}</span>
+						</li>
+						{/volist}
   					</ul>
   				</div>
   				
