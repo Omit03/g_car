@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539865643;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539865905;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -172,14 +172,17 @@ $(window).on('scroll',function(){
 						<span id="nextTop" class="btn next"></span>
 						<div id="picBox" class="picBox">
 							<ul class="cf">
-								<li> <a href="javascript:;"><img src="/static/img/83293306.jpg" alt=""></a></li>
-								
+
+								<?php if(is_array($carinfo['img_url']) || $carinfo['img_url'] instanceof \think\Collection || $carinfo['img_url'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carinfo['img_url'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+								<li> <a href="javascript:;"><img src="<?php echo $vol; ?>" alt=""></a></li>
+								<?php endforeach; endif; else: echo "" ;endif; ?>
 							</ul>
 						</div>
 						<div id="listBox" class="listBox">
 							<ul class="cf">
-								<li class="on"><i class="arr2"></i><img src="/static/img/83293792.jpg" alt=""></li>
-								
+								<?php if(is_array($carinfo['img_url']) || $carinfo['img_url'] instanceof \think\Collection || $carinfo['img_url'] instanceof \think\Paginator): $i = 0; $__LIST__ = $carinfo['img_url'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+								<li class="on"><i class="arr2"></i><img src="<?php echo $vol; ?>" alt=""></li>
+								<?php endforeach; endif; else: echo "" ;endif; ?>
 							</ul>
 						</div>
 						<div class="clear"></div>

@@ -31,14 +31,17 @@
 						<span id="nextTop" class="btn next"></span>
 						<div id="picBox" class="picBox">
 							<ul class="cf">
-								<li> <a href="javascript:;"><img src="__STATIC__/img/83293306.jpg" alt=""></a></li>
-								
+
+								{volist name="carinfo.img_url" id="vol"}
+								<li> <a href="javascript:;"><img src="{$vol}" alt=""></a></li>
+								{/volist}
 							</ul>
 						</div>
 						<div id="listBox" class="listBox">
 							<ul class="cf">
-								<li class="on"><i class="arr2"></i><img src="__STATIC__/img/83293792.jpg" alt=""></li>
-								
+								{volist name="carinfo.img_url" id="vol"}
+								<li class="on"><i class="arr2"></i><img src="{$vol}" alt=""></li>
+								{/volist}
 							</ul>
 						</div>
 						<div class="clear"></div>
