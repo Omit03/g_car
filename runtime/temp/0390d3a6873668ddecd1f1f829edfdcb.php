@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539864035;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539865643;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -396,7 +396,7 @@ $(window).on('scroll',function(){
   <!--更多车辆信息配置-->
   	<div class="carConfig">
   		<h2>汽车配置<div class="del"><img src="/static/img/del1.png" alt="" height="16"/></div></h2>
-  		<h3>奥迪A4L 2018款 30周年年型 40 TFSI 运动型</h3>
+  		<h3><?php echo $carinfo['car_name']; ?></h3>
   		<div class="configBox">
   			<ul class="config_tit1">
   				<li class="con1 active"><b></b><span>基本配置</span></li>
