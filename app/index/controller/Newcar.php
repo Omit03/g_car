@@ -35,6 +35,7 @@ class Newcar extends Common
 
         $new_car = $this->new_car($city_id); //新车
 
+       // dump($new_car);die;
 
         $this->assign('brand',$brand);
         $this->assign('price',$price);

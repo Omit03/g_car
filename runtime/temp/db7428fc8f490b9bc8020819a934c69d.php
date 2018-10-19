@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\news\index.html";i:1539864898;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\news\index.html";i:1539934156;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -370,9 +370,9 @@ $(window).on('scroll',function(){
 				   <ul class="list">
 					   <?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($new_car) ? array_slice($new_car,1,10, true) : $new_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 						<li class="items5">
-							<a href="zeroCar.html" class="flex_around" target="_blank">
-							<a href="" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
-							<a href="" class="car_desc">
+							<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $val['brand_id']; ?>&sys_id=<?php echo $val['sys_id']; ?>&cartype_id=<?php echo $val['cartype_id']; ?>&id=<?php echo $val['id']; ?>" class="flex_around" target="_blank">
+							<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $val['brand_id']; ?>&sys_id=<?php echo $val['sys_id']; ?>&cartype_id=<?php echo $val['cartype_id']; ?>&id=<?php echo $val['id']; ?>" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
+							<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $val['brand_id']; ?>&sys_id=<?php echo $val['sys_id']; ?>&cartype_id=<?php echo $val['cartype_id']; ?>&id=<?php echo $val['id']; ?>" class="car_desc">
 								<h3><?php echo $val['name']; ?></h3>
 								<p class="valign ptp15">
 									<span class="pay_first plt10">首付<b class=""><?php echo $val['pay10_s2']; ?></b>万</span>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html";i:1539689569;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html";i:1539934014;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -217,7 +217,7 @@ $(window).on('scroll',function(){
 		    	<ul class="md50">
 					<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($new_car) ? array_slice($new_car,10,10, true) : $new_car->slice(10,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 		    		<li>
-						<a href="<?php echo url('newcar/newCarDetails'); ?>">
+						<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vol['brand_id']; ?>&sys_id=<?php echo $vol['sys_id']; ?>&cartype_id=<?php echo $vol['cartype_id']; ?>&id=<?php echo $vol['id']; ?>">
 
 						<h3><?php echo $vol['name']; ?></h3>
 							<div class="fleft car_img"><img src="<?php echo $vol['img_url']; ?>" alt="" /></div>
@@ -240,13 +240,13 @@ $(window).on('scroll',function(){
 	    	<ul class="list ptp15 new_list">
 				<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($new_car) ? array_slice($new_car,2,7, true) : $new_car->slice(2,7, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 				<li class="items5">
-					<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-					<a href="" class="car_desc">
+					<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vol['brand_id']; ?>&sys_id=<?php echo $vol['sys_id']; ?>&cartype_id=<?php echo $vol['cartype_id']; ?>&id=<?php echo $vol['id']; ?>" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vol['brand_id']; ?>&sys_id=<?php echo $vol['sys_id']; ?>&cartype_id=<?php echo $vol['cartype_id']; ?>&id=<?php echo $vol['id']; ?>" class="car_desc">
 						<h3><?php echo $vol['name']; ?></h3>
 						<p><span class="pay_first">首付<b><?php echo $vol['pay10_s2']; ?></b>万</span> <span class="padlt20">月供<?php echo $vol['pay10_y2']; ?>元</span> </p>
 				
 					</a>
-					<img src="<?php echo $vol['img_url']; ?>" alt="" class="hot" />
+					<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vol['brand_id']; ?>&sys_id=<?php echo $vol['sys_id']; ?>&cartype_id=<?php echo $vol['cartype_id']; ?>&id=<?php echo $vol['id']; ?>" > <img src="<?php echo $vol['img_url']; ?>" alt="" class="hot" /></a>
 				</li>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
 			</ul>

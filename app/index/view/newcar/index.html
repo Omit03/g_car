@@ -76,7 +76,7 @@
 		    	<ul class="md50">
 					{volist name="new_car" id="vol" offset="10" length="10"}
 		    		<li>
-						<a href="{:url('newcar/newCarDetails')}">
+						<a href="{:url('newcar/newcardetails')}?brand_id={$vol.brand_id}&sys_id={$vol.sys_id}&cartype_id={$vol.cartype_id}&id={$vol.id}">
 
 						<h3>{$vol.name}</h3>
 							<div class="fleft car_img"><img src="{$vol.img_url}" alt="" /></div>
@@ -99,13 +99,13 @@
 	    	<ul class="list ptp15 new_list">
 				{volist name="new_car" id="vol" offset="2" length="7"}
 				<li class="items5">
-					<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-					<a href="" class="car_desc">
+					<a href="{:url('newcar/newcardetails')}?brand_id={$vol.brand_id}&sys_id={$vol.sys_id}&cartype_id={$vol.cartype_id}&id={$vol.id}" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="{:url('newcar/newcardetails')}?brand_id={$vol.brand_id}&sys_id={$vol.sys_id}&cartype_id={$vol.cartype_id}&id={$vol.id}" class="car_desc">
 						<h3>{$vol.name}</h3>
 						<p><span class="pay_first">首付<b>{$vol.pay10_s2}</b>万</span> <span class="padlt20">月供{$vol.pay10_y2}元</span> </p>
 				
 					</a>
-					<img src="{$vol.img_url}" alt="" class="hot" />
+					<a href="{:url('newcar/newcardetails')}?brand_id={$vol.brand_id}&sys_id={$vol.sys_id}&cartype_id={$vol.cartype_id}&id={$vol.id}" > <img src="{$vol.img_url}" alt="" class="hot" /></a>
 				</li>
 				{/volist}
 			</ul>
