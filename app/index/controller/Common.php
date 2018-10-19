@@ -145,6 +145,9 @@ class Common extends Controller{
             ),
         ),
         'Zerocar' => array(
+            'index'=>array(
+                'user_id' =>'number',
+            ),
             'zerocardetails'=>array(
                 'cheid' =>'number',
             ),

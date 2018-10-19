@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\join_us.html";i:1539691283;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"G:\xampp\htdocs\car\public/../app/index\view\user\person_feedback.html";i:1539768537;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,12 +7,13 @@
 	</head>
 	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
-	<link rel="stylesheet" href="/static/css/other.css" />	
+	<link rel="stylesheet" href="/static/css/other.css" />
 	<style>
-
+	
 	</style>
-	<body>	
-		<div class="header"><div class="site_nav">
+	<body>
+	<div class="header">
+		<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
@@ -152,36 +153,70 @@ $(window).on('scroll',function(){
 })
 
 </script>
-</div>
+
+	</div>
+		<div class="site_nav">
+			<div class="site_nav_bd">
+				<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
+				<div class="fright">
+					<ul class="site_nav_menu">
+						<li><a href=""><img src="/static/img/home1.png" alt="" />首页</a></li>
+						<li><a href=""><img src="/static/img/sell2.png" alt="" />我要买车</a></li>
+						<li><a href=""><img src="/static/img/sell1.png" alt="" />我要买车</a></li>
+						<li><a href=""><img src="" alt="" />网站导航</a></li>
+					</ul>					
+				</div>
+			</div>
+		</div>
+		<div class="borbt"><div class="header"></div></div>
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
-					<div class="person_left user">					
+					<div class="person_left">
+						<div class="person_info">
+							<div class="user_avatar"><img src="/static/img/yhtx.png" alt="" /></div>
+							<p class="uphone">15362352625</p>
+							<p>向阳二手车一号店</p>							
+						</div>
 						<div class="tab_choose">
-						<ul>
-								<h2 class="top_tit">管家车易站</h2>
-								<li class="active"><a href="join_us.html"><img src="/static/img/jiaoru.png" alt="" /></b>加入我们</a></li>
-								<li class=""><a href="link_us.html"><img src="/static/img/lainxi.png" alt="" /></b>联系我们</a></li>
-								<li class=""><a href="service.html"><img src="/static/img/fuwu.png" alt="" /></b>服务保障</a></li>
-								<li class=""><a href="website.html"><img src="/static/img/ditu.png" alt="" /></b>网站地图</a></li>
-								
+							<ul>
+								<li class=""><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class="active"><a href="person_feedback.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_order.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">加入我们</span></h1>
-						<h2 class="step">管家车易站平台</h2>
-						<p class="about">
-						  联系电话：0371-53375515 <br />
-工作地址：郑州市金水区花园路国基路 居易国际广场4号楼1122 （地铁2号线 沙门A口旁）
-							
-						</p>
+						<h1 class="borbt"><span class="release">意见反馈</span></h1>
+						<h2 class="step"></h2>
+						<div class="upLoad_form">
+
+							<form action="<?php echo url('user/person_feedback'); ?>" method="post">
+								<ul class="motify_ipt">
+									<li><span class="my_form_tit">姓名：</span><div class="fleft myform_ipt"><input type="name" name="name" placeholder="请输入您的姓名"/></div></li>
+									<li><span class="my_form_tit">手机号：</span>
+										<div class="fleft myform_ipt"><input type="phone" name="phone" placeholder="请输入您的手机号" /></div>
+									</li>
+									<li><span class="my_form_tit">详细描述：</span>
+										<div class="fleft "><textarea name="con" rows="" cols="" class="store_desc" placeholder="请用10-400字以内描述您所遇到的问题"></textarea></div>
+									</li>
+									<p class="sub_btn pwd_submit"><input type="submit" value="提交" /></p>
+									</ul>
+							</form>
 					</div>
 				</div>
 				
 			</div>
-		</div>	
-		<div class="footer">
+		</div>
+	<div class="footer">
+		
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -235,15 +270,23 @@ $(window).on('scroll',function(){
 	$(".more_dwon").click(function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script></div>
+</script>
+	</div>
 		
 		<div class="mask1"></div>
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
 	<script>		
-		$(function(){	
-		   // $(".footer").load("templates/footer.html");
-   		//    $(".header").load("templates/header.html");
+		$(function(){			
+
+//			手机号隐藏中间4位
+			$(".uphone").text($(".uphone").text().substring(0, 3) + "****" + $(".uphone").text().substring(7, 11));
+			//加载公用头部和底部
+		    $(".header").load("templates/header.html");
+//		    $(".footer").load("templates/footer.html");
+
+			
 	})
+
 </script>
 </html>

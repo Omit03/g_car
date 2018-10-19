@@ -20,6 +20,11 @@ class Zerocar  extends Common
         $this->redirect('index/index');
     }
 
+    public function index()
+    {
+        return $this->fetch();
+    }
+
     /*
     * O首付详情 和 推荐车源
     * http://39.106.67.47/new_api/User/Homepage/l_car_detail
