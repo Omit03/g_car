@@ -144,6 +144,11 @@ class Common extends Controller{
                 'user_id' =>'number',
             ),
         ),
+        'Zerocar' => array(
+            'zerocardetails'=>array(
+                'cheid' =>'number',
+            ),
+        ),
         'Change' => array(
             'index'=>array(
                 'user_id' =>'number',
@@ -781,6 +786,24 @@ class Common extends Controller{
 
         return $car_age;
 
+    }
+    //获取进气方式
+    function get_inlet_air($id){
+        $inlet_air=Db::table('jinqi')->where("id=$id")->find();
+        if($inlet_air){
+            return $inlet_air['jinqi'];
+        }else{
+            return "参数错误";
+        }
+    }
+    //获取燃料
+    function get_fuel($id){
+        $fuel=Db::table('nengyuan')->where("id=$id")->find();
+        if($fuel){
+            return $fuel['nengyuan'];
+        }else{
+            return "参数错误";
+        }
     }
 
     //获取排放标准

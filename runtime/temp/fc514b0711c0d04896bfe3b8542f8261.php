@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\change\index.html";i:1539863771;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\change\index.html";i:1539863771;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,7 +17,7 @@
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
-			<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('index/logincar'); ?>" class="coloryel">【注册】</a>
+			<a href="<?php echo url('user/car_login'); ?>" class="coloryel">【登录】</a>,免费<a href="<?php echo url('user/car_login'); ?>" class="coloryel">【注册】</a>
 			<?php else: ?>
 			<?php echo \think\Session::get('phone'); endif; ?></div>
 		<div class="fright">
@@ -71,7 +71,7 @@
 	</div>
 	<div class="nav gj_clear">
 		<ul class="wrap">
-			<li class="active"><a href="index.html">首页</a></li>
+			<li class="active"><a href="<?php echo url('index/index'); ?>">首页</a></li>
 			<li ><a href="<?php echo url('newcar/index'); ?>" class="sec_li">新车</a></li>
 			<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -106,15 +106,15 @@
 		</div>
 		<div class="nav">
 			<ul>
-				<li class="active"><a href="index.html">首页</a></li>
-				<li><a href="carList.html">二手车</a></li>
-				<li><a href="newCar.html">新车</a></li>
+				<li class="active"><a href="<?php echo url('index/index'); ?>">首页</a></li>
+				<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
+				<li><a href="<?php echo url('newcar/index'); ?>">新车</a></li>
 				<!--<li><a href="zeroCar.html">零首付</a></li>-->
-				<li><a href="sell.html">卖车</a></li>
-				<li><a href="change.html">置换</a></li>
-				<li><a href="News.html">新闻资讯</a></li>
-				<li><a href="appDownLoad.html">APP下载</a></li>
-				<li><a href="appDownLoad.html">登录/注册</a></li>
+				<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
+				<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
+				<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
+				<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
+				<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
 			</ul>
 		</div>
 	</div>

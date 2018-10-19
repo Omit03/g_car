@@ -65,6 +65,7 @@
 						<ul class="p_list">
 							{volist name="list" id="vol"}
 							<li class="item">
+								<a href="{:url('index/details')}?cheid={$vol.pu_id}">
 								<div class="car_img"><img src="{$vol.img_url}" alt="" /></div>
 								<div class="car_desc"><h3>{$vol.name}</h3>
 									<p>{$vol.car_mileage}万公里 | {$vol.car_cardtime} | {$vol.shop_name}</p>
@@ -74,6 +75,7 @@
 									<p>预约时间：2018-07-27  15:00</p>
 									<span class="order_des">详 情</span>
 								</div>
+								</a>
 							</li>
 							{/volist}
 						</ul>

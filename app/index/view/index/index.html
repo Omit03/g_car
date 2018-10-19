@@ -240,7 +240,7 @@
 							</li>
 							{volist name="car_zero" id="val"}
 							<li>
-								<a href="zeroCar.html" class="flex_around" target="_blank">
+								<a href="{:url('zerocar/zerocardetails')}?cheid={$val.id}" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load' data-original="__STATIC__/img/car11.png" alt="" titlt='' src='{$val.img_url}'/>
 								</span>
 									<h3 class="text_overflow">{$val.name}</h3>
