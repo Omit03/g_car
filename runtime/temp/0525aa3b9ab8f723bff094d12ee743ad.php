@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:72:"G:\xampp\htdocs\car\public/../app/index\view\zerocar\zerocardetails.html";i:1539942015;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539934592;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:72:"G:\xampp\htdocs\car\public/../app/index\view\zerocar\zerocardetails.html";i:1539944004;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -86,7 +86,7 @@
 	</div>
 	<div class="nav gj_clear">
 		<ul class="wrap">
-			<li class="active"><a href="index.html">首页</a></li>
+			<li class="active"><a href="<?php echo url('index/index'); ?>">首页</a></li>
 			<li ><a href="<?php echo url('newcar/index'); ?>" class="sec_li">新车</a></li>
 			<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -121,15 +121,15 @@
 		</div>
 		<div class="nav">
 			<ul>
-				<li class="active"><a href="index.html">首页</a></li>
-				<li><a href="carList.html">二手车</a></li>
-				<li><a href="newCar.html">新车</a></li>
+				<li class="active"><a href="<?php echo url('index/index'); ?>">首页</a></li>
+				<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
+				<li><a href="<?php echo url('newcar/index'); ?>">新车</a></li>
 				<!--<li><a href="zeroCar.html">零首付</a></li>-->
-				<li><a href="sell.html">卖车</a></li>
-				<li><a href="change.html">置换</a></li>
-				<li><a href="News.html">新闻资讯</a></li>
-				<li><a href="appDownLoad.html">APP下载</a></li>
-				<li><a href="appDownLoad.html">登录/注册</a></li>
+				<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
+				<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
+				<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
+				<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
+				<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
 			</ul>
 		</div>
 	</div>
@@ -391,15 +391,15 @@ $(window).on('scroll',function(){
     <!--</div>-->
   <!--公共底部样式-->
     <!--<div class="footer"></div>-->
-  <!--底部固定悬浮-->
+  <!--底部123固定悬浮-->
     <div class="wrap_bt">
     	<div class="wrap oh flex_center">
     		<div class="car_descInfo">
-    			<h4 class="hid">奥迪 A4L 2016款 2.0T 自动 35TFSI迪 A4L 2016款 2.0T 自动 35TFSI ... </h4>
-    			<p>2017-11 <b>|</b>5万公里<b>|</b>国5(国5) <b>|</b>郑州</p>
+    			<h4 class="hid"><?php echo $carinfo['car_name']; ?></h4>
+    			<!--<p>2017-11 <b>|</b>5万公里<b>|</b>国5(国5) <b>|</b>郑州</p>-->
     		</div>
     		<div class="car_descPri">
-    			<b>￥33.80万 </b>比新车省：72.32万
+    			<b>￥<?php echo $carinfo['price']; ?>万 </b>比新车省：万
     		</div>
     		<div class="car_descOrder flex_center">
     			<input type="text" placeholder="请输入手机号"/>

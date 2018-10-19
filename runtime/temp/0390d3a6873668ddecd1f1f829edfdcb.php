@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539865905;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1539943264;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -324,15 +324,15 @@ $(window).on('scroll',function(){
     </div>
   <!--公共底部样式-->
     <!--<div class="footer"></div>-->
-  <!--底部固定悬浮-->
+  <!--底部123固定悬浮-->
     <div class="wrap_bt">
     	<div class="wrap oh flex_center">
     		<div class="car_descInfo">
-    			<h4 class="hid">底部奥迪 A4L 2016款 2.0T 自动 35TFSI迪 A4L 2016款 2.0T 自动 35TFSI ... </h4>
-    			<p>2017-11 <b>|</b>5万公里<b>|</b>国5(国5) <b>|</b>郑州</p>
+    			<h4 class="hid"><?php echo $carinfo['car_name']; ?> </h4>
+    			<p><?php echo $carinfo['car_cardtime']; ?> <b>|</b><?php echo $carinfo['car_mileage']; ?>万公里<b>|</b><?php echo $carinfo['blowdown']; ?> <b>|</b>郑州</p>
     		</div>
     		<div class="car_descPri">
-    			<b>￥33.80万 </b>比新车省：72.32万
+    			<b>￥<?php echo $carinfo['price']; ?>万 </b>比新车省：万
     		</div>
     		<div class="car_descOrder flex_center">
     			<input type="text" placeholder="请输入手机号"/>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"G:\xampp\htdocs\car\public/../app/index\view\newcar\newcardetails.html";i:1539932850;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"G:\xampp\htdocs\car\public/../app/index\view\newcar\newcardetails.html";i:1539942972;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -381,11 +381,11 @@ $(window).on('scroll',function(){
     <div class="wrap_bt">
     	<div class="wrap oh flex_center">
     		<div class="car_descInfo">
-    			<h4 class="hid">123奥迪 A4L 2016款 2.0T 自动 35TFSI迪 A4L 2016款 2.0T 自动 35TFSI ... </h4>
-    			<p>2017-11 <b>|</b>5万公里<b>|</b>国5(国5) <b>|</b>郑州</p>
+    			<h4 class="hid"><?php echo $newcar_info['name']; ?> </h4>
+    			<!--<p>2017-11 <b>|</b>5万公里<b>|</b>国5(国5) <b>|</b>郑州</p>-->
     		</div>
     		<div class="car_descPri">
-    			<b>￥33.80万 </b>比新车省：72.32万
+    			<b>￥<?php echo $newcar_info['price']; ?>万 </b>
     		</div>
     		<div class="car_descOrder flex_center">
     			<input type="text" placeholder="请输入手机号"/>
