@@ -130,6 +130,9 @@ class Common extends Controller{
                 'user_id' =>'number',
             ),
             'newcardetails'=>array(
+                'brand_id' =>'number',
+                'sys_id' =>'number',
+                'cartype_id' =>'number',
                 'id' =>'number',
             ),
         ),
@@ -630,61 +633,6 @@ class Common extends Controller{
     }
 
     /*
-     * 检测是否是高级权限
-     */
-
-    public function check_auth($username){
-
-        $res_phone = Db::name('hr_admin') ->where('phone',$username)->find();
-
-        if (!$res_phone){
-
-            $this->return_msg(400,'用户非高级管理员');
-        }
-
-    }
-
-    /*
-     * 积分审批 用户增加总分
-     */
-    public function add_total($bp_id,$user_id){
-
-        $dd = Db::name('hr_bp')->where('id',$bp_id)->field('is_value')->find();
-
-        $user = Db::name('hr_user')->where('id',$user_id)->field('voucher')->find();
-
-        $tol = $dd['is_value'] + $user['voucher'];
-
-        $add = Db::name('hr_user')->where('id',$user_id)->setField('voucher',$tol);
-
-        if (!$add){
-
-            $this->return_msg(400,'总分增加失败');
-
-        }
-    }
-
-    /*
-     * 修改用户总分
-     */
-    public function minus_total($user_phone,$is_value){
-
-        $user = Db::name('hr_user')->where('phone',$user_phone)->field('voucher')->find();
-
-        $tol = $user['voucher'] - $is_value;
-
-        $minus = Db::name('hr_user')->where('phone',$user_phone)->setField('voucher',$tol);
-
-        if (!$minus){
-
-            $this->return_msg(400,'总分减少失败');
-
-        }else{
-            return $res = $tol;
-        }
-    }
-
-    /*
      * 积分分页
      * 分页逻辑
      */
@@ -739,25 +687,6 @@ class Common extends Controller{
         header('Content-Disposition: attachment;filename="表单数据.xlsx"');//下载下来的表格名
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         $PHPWriter->save("php://output"); //表示在$path路径下面生成demo.xlsx文件
-
-    }
-
-    /*
-     * 根据用户id 查找用户名 和 所属部门
-     */
-    public function return_userinfo($user_id){
-
-        $where['is_del'] = 0;
-
-        $where['id'] = $user_id;
-
-        $field = 'login_name,dept_name';
-
-        $join = [['hr_dept d','a.depart_name = d.dept_id']];
-
-        $userinfo = Db::name('hr_user')->alias('a')->join($join)->field($field)->where($where)->find();
-
-        return $userinfo;
 
     }
 
@@ -1432,6 +1361,33 @@ class Common extends Controller{
             );
         }
         return $rr;
+    }
+
+    //去重
+    //$arr->传入数组   $key->判断的key值
+    public function array_unset_tt($arr,$key){
+        //建立一个目标数组
+        $res = array();
+        foreach ($arr as $value) {
+            //查看有没有重复项
+
+            if(isset($res[$value[$key]])){
+                //有：销毁
+
+                unset($value[$key]);
+
+            }else{
+
+                $res[$value[$key]] = $value;
+            }
+        }
+        return $res;
+    }
+
+    //获取厂商
+    function get_firm($sys_id){
+        $firm=Db::table("car_brand")->where("id=$sys_id")->value("upid");
+        return $firm;
     }
 
 }

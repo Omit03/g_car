@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539848023;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539924579;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539843130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -320,7 +320,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0; $__LIST__ = $new_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href="" class="flex_around" target="_blank">
+								<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vl['brand_id']; ?>&sys_id=<?php echo $vl['sys_id']; ?>&cartype_id=<?php echo $vl['cartype_id']; ?>&id=<?php echo $vl['id']; ?>" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='<?php echo $vl['img_url']; ?>'/>
 								</span>
 									<h3 class="text_overflow"><?php echo $vl['name']; ?></h3>

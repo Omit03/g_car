@@ -179,7 +179,7 @@
 							</li>
 							{volist name="new_car" id="vl"}
 							<li>
-								<a href="" class="flex_around" target="_blank">
+								<a href="{:url('newcar/newcardetails')}?brand_id={$vl.brand_id}&sys_id={$vl.sys_id}&cartype_id={$vl.cartype_id}&id={$vl.id}" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='{$vl.img_url}'/>
 								</span>
 									<h3 class="text_overflow">{$vl.name}</h3>
