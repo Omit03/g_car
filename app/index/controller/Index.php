@@ -134,7 +134,7 @@ class Index  extends Common
                 $where.=" and sys_id=$sys_id ";
 
             }
-
+            //
             if ($data['chek']){
                 $where.=" and cartype_id=".$data['chek'];
                 //echo $where;
