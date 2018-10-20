@@ -27,42 +27,27 @@ class Common extends Controller{
         'Index' => array(
             //搜索
             'search_newcar'=>array(
-                'pp' =>'',
-                'key'  =>'',
-                'name'  =>'',
-                'pingpai'  =>'',
-                'cx'  =>'',
-                'chek'  =>'',
-                'jibie'  =>'',
-                'yg'  =>'',
-                'chs'  =>'',
-                'pailiang'  =>'',
-                'bsx'  =>'',
-                'jinqi'  =>'',
-                'ny'  =>'',
-                'px'  =>'',
-                'key_search'  =>'',
+//                'pp' =>'',
+//                'key'  =>'',
+//                'name'  =>'',
+//                'pingpai'  =>'',
+//                'cx'  =>'',
+//                'chek'  =>'',
+//                'jibie'  =>'',
+//                'yg'  =>'',
+//                'chs'  =>'',
+//                'pailiang'  =>'',
+//                'bsx'  =>'',
+//                'jinqi'  =>'',
+//                'ny'  =>'',
+//                'px'  =>'',
+//                'key_search'  =>'',
             ),
-            'search_oldcar'=>array(
-                'article_uid' =>['require'],
-                'article_title'  =>'require|chsDash'
+            'lots_cars'=>array(
+
             ),
-            'search_zerocar'=>array(
-                'pp' =>'',
-                'key'  =>'',
-                'name'  =>'',
-                'pingpai'  =>'',
-                'cx'  =>'',
-                'chek'  =>'',
-                'jibie'  =>'',
-                'yg'  =>'',
-                'chs'  =>'',
-                'pailiang'  =>'',
-                'bsx'  =>'',
-                'jinqi'  =>'',
-                'ny'  =>'',
-                'px'  =>'',
-                'key_search'  =>'',
+            'filter_list'=>array(
+
             ),
             'index'=>array(
                 'id' =>'',
@@ -752,6 +737,35 @@ class Common extends Controller{
         }
         return $img;
     }
+    //根据图片id获取图片路径
+    public function getimgpath($imgid,$thumb=0){
+
+        if($imgid){
+            $path = Db::table('img')->where(array('id'=>$imgid))->value('path');
+            if($thumb){
+                if(strripos($path,'x')){
+                    //显示成原图
+                    if(strripos($path,'.')){
+                        //取后缀名
+                        $houzhui = substr($path,strripos($path,'.'));
+
+                        $newname = substr($path, 0,strpos($path,'x'));
+
+                        $path = $newname.$houzhui;
+                    }
+                }
+            }
+            if(strpos($path, 'http')===0){
+
+            }else{
+                $path = 'http://101.200.62.25/new_api/'.ltrim($path,'.');
+                // $path = 'http://www.gj2car.com/'.ltrim($path,'.');
+            }
+        }else{
+            return false;
+        }
+        return $path;
+    }
 
     //获取变速箱
     public function get_gearbox($id){
@@ -1414,6 +1428,35 @@ class Common extends Controller{
     function get_firm($sys_id){
         $firm=Db::table("car_brand")->where("id=$sys_id")->value("upid");
         return $firm;
+    }
+
+    /**
+     * 新版公共分页sql
+     * 20171020
+     */
+    function CreateSql($TableName="",$Coll="",$WhereStr="",$WhereStr2="",$PageIndex="",$PageSize="",$OrderKey="",$OrderType="",$join="",$joinId="",$group="",$str=""){
+        $min 	= ($PageIndex - 1) * $PageSize;
+        $max 	= $PageSize;
+        $sql = "SELECT
+		{$Coll}
+			FROM
+				{$TableName}
+			{$join}
+			WHERE
+			{$joinId} IN (SELECT
+			{$joinId}
+		FROM
+			(SELECT
+			{$joinId}
+		FROM
+			{$TableName}
+		{$join}
+		WHERE
+			( 1=1  {$WhereStr}
+			) {$group} 	ORDER BY
+				{$OrderKey} {$OrderType}  LIMIT {$min},{$max}) as t) {$str}  ORDER BY {$OrderKey}  {$OrderType}
+		";
+        return $sql;
     }
 
 }

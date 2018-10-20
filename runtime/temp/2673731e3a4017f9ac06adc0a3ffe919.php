@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\news\index.html";i:1539934156;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"G:\xampp\htdocs\car\public/../app/index\view\index\lots_cars.html";i:1540014843;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -348,17 +348,7 @@ $(window).on('scroll',function(){
 			    </div>
 			    <div class="car_list marbtp10 ">
 				    <ul class="list">
-						<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,1,10, true) : $er_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-						<li class="items5">
-							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
-							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>" class="car_desc">
-								<h3><?php echo $val['name']; ?></h3>
-								<p><span class="car_price"><b><?php echo $val['new_car_price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $val['price']; ?>万</span></p>
-								<p><span><?php echo $val['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $val['car_mileage']; ?>万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<?php endforeach; endif; else: echo "" ;endif; ?>
+                    asdasdasdasdasd
 
 					</ul>
 			    </div>
@@ -368,23 +358,7 @@ $(window).on('scroll',function(){
 			    </div>
 			    <div class="car_list marbtp10 ">
 				   <ul class="list">
-					   <?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($new_car) ? array_slice($new_car,1,10, true) : $new_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-						<li class="items5">
-							<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $val['brand_id']; ?>&sys_id=<?php echo $val['sys_id']; ?>&cartype_id=<?php echo $val['cartype_id']; ?>&id=<?php echo $val['id']; ?>" class="flex_around" target="_blank">
-							<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $val['brand_id']; ?>&sys_id=<?php echo $val['sys_id']; ?>&cartype_id=<?php echo $val['cartype_id']; ?>&id=<?php echo $val['id']; ?>" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
-							<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $val['brand_id']; ?>&sys_id=<?php echo $val['sys_id']; ?>&cartype_id=<?php echo $val['cartype_id']; ?>&id=<?php echo $val['id']; ?>" class="car_desc">
-								<h3><?php echo $val['name']; ?></h3>
-								<p class="valign ptp15">
-									<span class="pay_first plt10">首付<b class=""><?php echo $val['pay10_s2']; ?></b>万</span>
-									<span class="pay_month">月供<?php echo $val['pay10_y2']; ?>元</span>
-									<span class="pay_month">月供<?php echo $val['pay10_n2']; ?>元</span>
-								</p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-
-							</a>
-						</li>
-					   <?php endforeach; endif; else: echo "" ;endif; ?>
+					   adddddddddddddddddddddd
 						
 					</ul>
 			    </div>
