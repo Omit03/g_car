@@ -215,22 +215,28 @@ class Index  extends Common
             if ($data['bsx']){
                 $where.=" and gearbox= ".$data['bsx'];
             }
-//            if ($data['pfbz']){
-//                $where.=" and blowdown= ".$data['pfbz'];
-//            }
-//
-//            if ($data['qd']){
-//                $where.=" and car_drive=".$data['qd'];
-//            }
-//            if ($data['cs']){
-//                $where.=" and car_body=".$data['cs'];
-//            }
-//            if ($data['ny']){
-//                $where.=" and fuel= ".$data['ny'];
-//            }
-//            if ($data['jinqi']){
-//                $where.=" and inlet_air= ".$data['jinqi'];
-//            }
+            //排放标准 OBD 京V 欧V 国V
+            if ($data['pfbz']){
+                $where.=" and blowdown= ".$data['pfbz'];
+            }
+
+            //驱动 前驱 后驱
+
+            if ($data['qd']){
+                $where.=" and car_drive=".$data['qd'];
+            }
+            //两厢 三箱 皮卡 旅行车
+            if ($data['cs']){
+                $where.=" and car_body=".$data['cs'];
+            }
+            //汽油 柴油 油漆混合
+            if ($data['ny']){
+                $where.=" and fuel= ".$data['ny'];
+            }
+            //
+            if ($data['jinqi']){
+                $where.=" and inlet_air= ".$data['jinqi'];
+            }
             if ($data['sy']){
                 switch($data['sy']){
                     case 1;
@@ -307,7 +313,7 @@ class Index  extends Common
 
                 }
             }
-            // 排序规则
+            // 排序规则  筛选 月供由高到低 由低到高  价格 高低
             if ($data['px']){
                 switch($data['px']){
                     case 1;
@@ -320,16 +326,16 @@ class Index  extends Common
                         $where.=" order by price  desc ";
                         break;
                     case 4;
-                        $where.=" order by pay30_y2  asc ";
+                        $where.=" order by pay30_y2  asc "; //月供由低到高
                         break;
                     case 5;
-                        $where.=" order by pay30_y2  desc ";
+                        $where.=" order by pay30_y2  desc ";//月供 由高到低
                         break;
                     case 6;
-                        $where.=" order by pay30_s2   asc ";
+                        $where.=" order by pay30_s2   asc ";//首付 由低到高
                         break;
                     case 7;
-                        $where.=" order by pay30_s2  desc ";
+                        $where.=" order by pay30_s2  desc ";//首付由高到低
                         break;
 
                 }
