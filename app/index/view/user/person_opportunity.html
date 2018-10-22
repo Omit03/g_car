@@ -17,27 +17,14 @@
 	<div class="header">
 		{include file="public/header"}
 	</div>
-		<div class="site_nav">
-			<div class="site_nav_bd">
-				<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
-				<div class="fright">
-					<ul class="site_nav_menu">
-						<li><a href=""><img src="__STATIC__/img/home1.png" alt="" />首页</a></li>
-						<li><a href=""><img src="__STATIC__/img/sell2.png" alt="" />我要买车</a></li>
-						<li><a href=""><img src="__STATIC__/img/sell1.png" alt="" />我要买车</a></li>
-						<li><a href=""><img src="" alt="" />网站导航</a></li>
-					</ul>					
-				</div>
-			</div>
-		</div>
-		<div class="borbt"><div class="header"></div></div>
+
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
 					<div class="person_left">
 						<div class="person_info">
 							<div class="user_avatar"><img src="__STATIC__/img/yhtx.png" alt="" /></div>
-							<p class="uphone">15362352625</p>
+							<p class="uphone">{$Think.session.phone}</p>
 							<p>向阳二手车一号店</p>							
 						</div>
 						<div class="tab_choose">

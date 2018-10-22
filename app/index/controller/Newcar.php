@@ -9,6 +9,7 @@
 namespace app\index\controller;
 
 use think\Db;
+use think\Session;
 
 class Newcar extends Common
 {
@@ -58,17 +59,34 @@ class Newcar extends Common
         $cartype_id = $data['cartype_id'];
         $cheid = $data['id'];
 
+        //获取新车浏览记录
+       $userid = Session::get('user_id');
+        if ($userid){
+
+            $wherehis['userid'] = $userid;
+            $wherehis['cheid'] = $cheid;
+            $wherehis['type'] = 1;
+
+            $res = Db::table('car_liulan_history')->where($wherehis)->find();
+
+            if (empty($res)){
+
+                Db::table('car_liulan_history')->insert(['userid'=>$userid,'brand_id'=>$brand_id,'type'=>1,'cheid'=>$cheid,'sys_id'=>$sys_id,'cartype_id'=>$cartype_id]);
+            }
+
+
+        }
+
+
+
         $firm_id=$this->get_firm($sys_id);
         //获取车辆的信息
         $newcar_info=Db::table("new_car")->field("id,img_ids,img_512,price,can_price,sale_num,pay10_s2,pay10_y2,pay10_n2,pay20_s2,pay20_y2,pay20_n2,pay30_s2,pay30_y2,pay30_n2,city_id")->where("brand_id=$brand_id and sys_id=$sys_id and cartype_id=$cartype_id")->find();
         if(!$newcar_info){
-            $data=array(
-                "code"=>204,
-                "result"=>"获取信息有误"
-            );
-            $this->ajaxReturn($data);exit();
+            echo '信息错误';
         }
         //图片
+
         $newcar_info['img_ids']=$this->get_carimgs($newcar_info['img_ids'],2);
         $newcar_info['img_512']=$this->get_carimgs($newcar_info['img_512'],2);
         //名称
@@ -80,13 +98,13 @@ class Newcar extends Common
         //经销商
         //获取所有的店铺
 
+
         $field = 'shop_id,shop_name,shop_phone,shop_address,latitude as lat,longitude as log';
 
 
         $where['is_fenghao'] = 2;
 
         $where['qid'] = 1;
-
 
         $join = [['user b','a.user_id=b.user_id']];
 

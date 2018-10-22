@@ -269,217 +269,134 @@
 						<a href="" class="look_more">查看更多></a>
 					</div>
 					<div class="home_news_cont" id="conbd01">
+
 						<div class="left_big new_imgs">
-							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV123</p>
+							<a href="{:url('news/newsdetails')}?id={$new1['0']['id']}&column={$new1['0']['news_column']}"> <img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<p class="hid">{$new1['0']['title']}</p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
+								<a href="{:url('news/newsdetails')}?id={$new1['1']['id']}">
 								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 123......</p>
+								<p class="hid">{$new1['1']['title']}</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
+								<a href="{:url('news/newsdetails')}?id={$new1['2']['id']}">
 								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
-								<p class="hid">123郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<p class="hid">{$new1['2']['title']}</p></a>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站asda</a>
+							{volist name="new1" id="vol"}
+							<li><span class="fright">{$vol.time}</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+								<a href="{:url('news/newsdetails')}?id={$vol.id}">{$vol.title}</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
+							{/volist}
 
 						</ul>
 					</div>
 					<div class="home_news_cont" id="conbd02" style="display: none;">
 						<div class="left_big new_imgs">
+							<a href="{:url('news/newsdetails')}?id={$new2['0']['id']}">
 							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUVddd444</p>
+								<p class="hid">{$new2['0']['title']}</p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
+								<a href="{:url('news/newsdetails')}?id={$new2['1']['id']}">
 								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款44 ......</p>
+								<p class="hid">{$new2['1']['title']}</p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
+								<a href="{:url('news/newsdetails')}?id={$new2['2']['id']}">
 								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<p class="hid">{$new2['2']['title']}</p></a>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+
+							{volist name="new2" id="vol"}
+							<li><span class="fright">{$vol.time}</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+								<a href="{:url('news/newsdetails')}?id={$vol.id}">{$vol.title}</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易4444站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易444站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
+							{/volist}
+
 
 						</ul>
 					</div>
 					<div class="home_news_cont" id="conbd03" style="display: none;">
 						<div class="left_big new_imgs">
-							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV5555</p>
+							<a href="{:url('news/newsdetails')}?id={$new3['0']['id']}"><img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<p class="hid">{$new3['0']['title']}</p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 55......</p>
+								<a href="{:url('news/newsdetails')}?id={$new3['1']['id']}"><img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<p class="hid">{$new3['1']['title']}</p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
-								<p class="hid">5555郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<a href="{:url('news/newsdetails')}?id={$new3['2']['id']}">	<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<p class="hid">{$new3['2']['title']}</p></a>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站555</a>
+
+							{volist name="new3" id="vol"}
+							<li><span class="fright">{$vol.time}</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+								<a href="{:url('news/newsdetails')}?id={$vol.id}">{$vol.title}</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站555</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站55</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站5</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
+							{/volist}
 
 						</ul>
 					</div>
 					<div class="home_news_cont" id="conbd04" style="display: none;">
 						<div class="left_big new_imgs">
-							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV777</p>
+							<a href="{:url('news/newsdetails')}?id={$new4['0']['id']}"><img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+								<p class="hid">{$new4['0']['title']}</p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 ......777</p>
+								<a href="{:url('news/newsdetails')}?id={$new4['1']['id']}"><img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<p class="hid">{$new4['1']['title']}</p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<a href="{:url('news/newsdetails')}?id={$new4['2']['id']}"></a> <img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<p class="hid">{$new4['2']['title']}</p></a>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站7777</a>
+
+							{volist name="new4" id="vol"}
+							<li><span class="fright">{$vol.time}</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+								<a href="{:url('news/newsdetails')}?id={$vol.id}">{$vol.title}</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站777</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
+							{/volist}
 
 						</ul>
 					</div>
 					<div class="home_news_cont" id="conbd05" style="display: none;">
 						<div class="left_big new_imgs">
-							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV888</p>
+							<a href="{:url('news/newsdetails')}?id={$new5['0']['id']}"> <img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<p class="hid">{$new5['0']['title']}</p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 ......888</p>
+								<a href="{:url('news/newsdetails')}?id={$new5['1']['id']}" > <img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<p class="hid">{$new5['1']['title']}</p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<a href="{:url('news/newsdetails')}?id={$new5['2']['id']}"> <img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<p class="hid">{$new5['2']['title']}</p></a>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站88888</a>
+
+							{volist name="new5" id="vol"}
+							<li><span class="fright">{$vol.time}</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
+								<a href="{:url('news/newsdetails')}?id={$vol.id}">{$vol.title}</a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站999</a>
-							</li>
+							{/volist}
+
 
 						</ul>
 					</div>

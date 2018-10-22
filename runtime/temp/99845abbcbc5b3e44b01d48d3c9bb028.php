@@ -1,20 +1,21 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\user\person_manage.html";i:1540198214;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"G:\xampp\htdocs\car\public/../app/index\view\news\newsdetails.html";i:1540193602;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"/>
+		<meta charset="utf-8" />
 		<title></title>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css" />
+	<script src="/static/js/jquery-1.11.0.min.js"></script>
+
 	<style>
 
 	</style>
 	<body>
-	<div class="header">
-		<div class="site_nav">
+        <div class="full_wid">
+			<div class="header">
+				<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
@@ -28,8 +29,7 @@
 				<li><a href=""><img src="img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href=""><img src="img/xiazai.png" alt="" />APP下载</a></li>
 				<li><a href=""><img src="img/wangahn.png" alt="" />网站导航</a></li>
-				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
-			</ul>
+			</ul>					
 		</div>
 	</div>
 </div>
@@ -81,7 +81,7 @@
 			<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 			<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-			<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li><?php endif; ?>
+			<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
 			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
 			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
 		</ul>
@@ -156,83 +156,105 @@ $(window).on('scroll',function(){
 
 </script>
 
-	</div>
-		<div class="full_wid">			
-			<div class="wrap ">	
-				<div class="person_center">
-					<div class="person_left">
-						<div class="person_info">
-							<div class="user_avatar"><img src="/static/img/yhtx.png" alt="" /></div>
-							<p class="uphone"><?php echo \think\Session::get('phone'); ?></p>
-							<p>向阳二手车一号店</p>							
-						</div>
-						<div class="tab_choose">
-							<ul>
-								<li class="active"><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_feedback.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_order.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="person_right">
-						<h1 class="borbt"><span class="release">店铺装修</span></h1>
-						<!--<h2 class="step">店铺装修</h2>-->
-						<div class="upLoad_form">
-							<ul class="storeInfo_ipt motify_ipt">
-								
-								<li><span class="my_form_tit">店铺名称：</span>
-									<div class="fleft myform_ipt"><input type="text" placeholder="请填写您的店铺名称"/></div>
-								</li>
-								<li><span class="my_form_tit">联系电话：</span>
-									<div class="fleft myform_ipt"><input type="text" placeholder="请填写您的联系电话" /></div>
-								</li>
-								<li><span class="my_form_tit">店铺地址：</span>
-									<div class="fleft myform_ipt"><input type="text" placeholder="请填写您店铺的详细地址"/></div>
-								</li>
-								<li><span class="my_form_tit">营业时间：</span>
-									<div class="fleft "><input type="text" placeholder="" class="startTiem"/>-<input type="text" placeholder="" class="endTiem"/></div>
-								</li>
-								<li><span class="my_form_tit">店铺描述：</span>
-									<div class="fleft ">
-										<textarea name="" rows="" cols="" class="store_desc" placeholder="请简要介绍您的店铺"></textarea>
-										
-									</div>
-								</li>
-								<li><span class="my_form_tit">上传门头：</span>
-									<div class="picture">
-										<div class='upload'>
-									      <!--  <div class="upLoadImg">
-										          <span class="center_img"><img class="imgg" id="" src="/assets/computer/images/img_406.png"></span>
-										       <b class="delete"><img src="/assets/computer/images/fancy_close.png" alt=""></b>
-										       </div>  -->
-										</div>
-								        <form id= "uploadForm" method='post' enctype='multipart/form-data'>
-								            <input id="file_inp" type="file" name="file" />						
-								            <div class="upLoad_pic">
-									            <img class="img_up" id="" src="/static/img/addimg.png" > 
-									            <span>点击上传图片</span>
-									        </div>
-								        </form>									        
-								    </div>
+			</div>			
+			<div class="news_bg"></div>
+			<div class="wrap oh">
+				 <div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">二手车新闻资讯 >></a><a href=""> 公司新闻</a></div>
+				<div class=" news_con">
+					<h1><?php echo $list['title']; ?></h1>
+					<p class="new_time">时间：<?php echo $list['time']; ?>  来源：<?php echo $list['stem_from']; ?> </p>
 
-								</li>
-							</ul>								
-							<p class="sub_btn pwd_submit">提交</p>
-						</div>
+					<p><?php echo $list['miaoshu']; ?></p>
+
+					<p class="textRight">-----责任编辑：管家车易站08</p>
+					<div class="page_news">
+				    	<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $next['id']; ?>"><div class="news_t"><?php echo $next['id']; ?><?php echo $next['title']; ?></div> </a>
+				    	<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $next['id']; ?>" >上一篇</a><a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $up['id']; ?>">下一篇</a>
+				    	<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $up['id']; ?>"><div class="news_t"><?php echo $up['title']; ?> </div></a>
 					</div>
 				</div>
 				
 			</div>
+			<div class="wrap news_car_recom">
+				<div class="tit_er">
+			        <div class="line_tit"></div>			        
+			        <h2 class="color tit_con">热门二手车</h2>	       
+			    </div>
+			    <div class="car_list marbtp10 ">
+				    <ul class="list">
+						<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,1,10, true) : $er_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+						<li class="items5">
+							<a href="" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
+							<a href="" class="car_desc">
+								<h3><?php echo $val['name']; ?></h3>
+								<p><span class="car_price"><b><?php echo $val['new_car_price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $val['price']; ?>万</span></p>
+								<p><span><?php echo $val['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $val['car_mileage']; ?>万公里</span> </p>
+								<div class="che_ordered">立即预约</div>
+							</a>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
+			    </div>
+			    <div class="tit_er">
+			        <div class="line_tit"></div>			        
+			        <h2 class="color tit_con">热门新车</h2>	       
+			    </div>
+			    <div class="car_list marbtp10 ">
+				   <ul class="list">
+					   <?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($new_car) ? array_slice($new_car,1,10, true) : $new_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+					   <li class="items5">
+						   <a href="zeroCar.html" class="flex_around" target="_blank">
+							   <a href="" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
+							   <a href="" class="car_desc">
+								   <h3><?php echo $val['name']; ?></h3>
+								   <p class="valign ptp15">
+									   <span class="pay_first plt10">首付<b class=""><?php echo $val['pay10_s2']; ?></b>万</span>
+									   <span class="pay_month">月供<?php echo $val['pay10_y2']; ?>元</span>
+									   <span class="pay_month">月供<?php echo $val['pay10_n2']; ?>元</span>
+								   </p>
+								   <div class="che_ordered">立即预约</div>
+							   </a>
+
+						   </a>
+					   </li>
+					   <?php endforeach; endif; else: echo "" ;endif; ?>
+						
+					</ul>
+			    </div>
+			</div>
+		    <div class="footer mtp40"></div>
+		    <div class="fixedRight">
+				<ul class="right_sider">
+					<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
+						<div class="gj_sidecon_desc "></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
+					<div class="gj_sidecon_desc"></div></li>
+					<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
+					<div class="gj_sidecon_desc"></div></li>
+					<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					
+				</ul>
 		</div>
-	<div class="footer">
-		
+			<div class="footer">
+				
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -287,18 +309,12 @@ $(window).on('scroll',function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
 </script>
-	</div>
-		<div class="mask1"></div>
+			</div>
 	</body>
-	<script src="/static/js/jquery-1.11.0.min.js"></script>
 	<script>		
-		$(function(){			
-
-			//加载公用头部和底部
-		    $(".header").load("templates/header.html");
-//		    $(".footer").load("templates/footer.html");
-
-			
-	})
+		$(function(){			 
+		   // $(".header").load("templates/header.html");
+		   //  $(".footer").load("templates/footer.html")
+		})
 </script>
 </html>

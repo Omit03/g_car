@@ -7,7 +7,7 @@
  */
 
 namespace app\index\controller;
-
+use think\Session;
 use think\Db;
 class Zerocar  extends Common
 {
@@ -34,6 +34,25 @@ class Zerocar  extends Common
         $data = $this->params;
 
         $cheid=$data['cheid'];
+
+        //获取新车浏览记录
+        $userid = Session::get('user_id');
+        if ($userid){
+
+            $wherehis['userid'] = $userid;
+            $wherehis['cheid'] = $cheid;
+            $wherehis['type'] = 3;
+
+
+            $res = Db::table('car_liulan_history')->where($wherehis)->find();
+
+            if (empty($res)){
+
+                Db::table('car_liulan_history')->insert(['userid'=>$userid,'type'=>3,'cheid'=>$cheid]);
+            }
+
+
+        }
         //获取车辆信息
         $carinfo=Db::table("l_car")->field("id,brand_id,firm_id,cartype_id,price,can_price,sale_num,img_ids,img_512,gearbox,inlet_air,fuel,output,pay0_s2,pay0_y2,pay0_n2,subface,city_id")->where("id=$cheid")->find();
         $carinfo['img_url']=$this->get_carimgs($carinfo['img_ids'],2);

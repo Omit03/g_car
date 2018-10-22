@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1539946552;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540196569;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -104,7 +104,8 @@
 				<li><a href=""><img src="img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href=""><img src="img/xiazai.png" alt="" />APP下载</a></li>
 				<li><a href=""><img src="img/wangahn.png" alt="" />网站导航</a></li>
-			</ul>					
+				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
+			</ul>
 		</div>
 	</div>
 </div>
@@ -156,7 +157,7 @@
 			<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 			<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 			<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-			<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
+			<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li><?php endif; ?>
 			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
 			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
 		</ul>
@@ -410,217 +411,134 @@ $(window).on('scroll',function(){
 						<a href="" class="look_more">查看更多></a>
 					</div>
 					<div class="home_news_cont" id="conbd01">
+
 						<div class="left_big new_imgs">
-							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV123</p>
+							<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new1['0']['id']; ?>&column=<?php echo $new1['0']['news_column']; ?>"> <img src="/static/img/ttop.png" alt="" height="280" width="340px" />
+							<p class="hid"><?php echo $new1['0']['title']; ?></p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new1['1']['id']; ?>">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 123......</p>
+								<p class="hid"><?php echo $new1['1']['title']; ?></p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new1['2']['id']; ?>">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">123郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<p class="hid"><?php echo $new1['2']['title']; ?></p></a>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站asda</a>
+							<?php if(is_array($new1) || $new1 instanceof \think\Collection || $new1 instanceof \think\Paginator): $i = 0; $__LIST__ = $new1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+							<li><span class="fright"><?php echo $vol['time']; ?></span><img src="/static/img/zhixina.png" alt="" height="12" />
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 
 						</ul>
 					</div>
 					<div class="home_news_cont" id="conbd02" style="display: none;">
 						<div class="left_big new_imgs">
+							<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new2['0']['id']; ?>">
 							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUVddd444</p>
+								<p class="hid"><?php echo $new2['0']['title']; ?></p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new2['1']['id']; ?>">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款44 ......</p>
+								<p class="hid"><?php echo $new2['1']['title']; ?></p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new2['2']['id']; ?>">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<p class="hid"><?php echo $new2['2']['title']; ?></p></a>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
+
+							<?php if(is_array($new2) || $new2 instanceof \think\Collection || $new2 instanceof \think\Paginator): $i = 0; $__LIST__ = $new2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+							<li><span class="fright"><?php echo $vol['time']; ?></span><img src="/static/img/zhixina.png" alt="" height="12" />
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易4444站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易444站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+
 
 						</ul>
 					</div>
 					<div class="home_news_cont" id="conbd03" style="display: none;">
 						<div class="left_big new_imgs">
-							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV5555</p>
+							<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new3['0']['id']; ?>"><img src="/static/img/ttop.png" alt="" height="280" width="340px" />
+							<p class="hid"><?php echo $new3['0']['title']; ?></p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 55......</p>
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new3['1']['id']; ?>"><img src="/static/img/ccbt.png" alt="" height="135" />
+								<p class="hid"><?php echo $new3['1']['title']; ?></p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">5555郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new3['2']['id']; ?>">	<img src="/static/img/ccbt.png" alt="" height="135" />
+								<p class="hid"><?php echo $new3['2']['title']; ?></p></a>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站555</a>
+
+							<?php if(is_array($new3) || $new3 instanceof \think\Collection || $new3 instanceof \think\Paginator): $i = 0; $__LIST__ = $new3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+							<li><span class="fright"><?php echo $vol['time']; ?></span><img src="/static/img/zhixina.png" alt="" height="12" />
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站555</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站55</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站5</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 
 						</ul>
 					</div>
 					<div class="home_news_cont" id="conbd04" style="display: none;">
 						<div class="left_big new_imgs">
-							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV777</p>
+							<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new4['0']['id']; ?>"><img src="/static/img/ttop.png" alt="" height="280" width="340px" />
+								<p class="hid"><?php echo $new4['0']['title']; ?></p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 ......777</p>
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new4['1']['id']; ?>"><img src="/static/img/ccbt.png" alt="" height="135" />
+								<p class="hid"><?php echo $new4['1']['title']; ?></p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new4['2']['id']; ?>"></a> <img src="/static/img/ccbt.png" alt="" height="135" />
+								<p class="hid"><?php echo $new4['2']['title']; ?></p></a>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站7777</a>
+
+							<?php if(is_array($new4) || $new4 instanceof \think\Collection || $new4 instanceof \think\Paginator): $i = 0; $__LIST__ = $new4;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+							<li><span class="fright"><?php echo $vol['time']; ?></span><img src="/static/img/zhixina.png" alt="" height="12" />
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站777</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 
 						</ul>
 					</div>
 					<div class="home_news_cont" id="conbd05" style="display: none;">
 						<div class="left_big new_imgs">
-							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
-							<p class="hid">这个宝马梦更好！3年5折中大型豪华SUV888</p>
+							<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new5['0']['id']; ?>"> <img src="/static/img/ttop.png" alt="" height="280" width="340px" />
+							<p class="hid"><?php echo $new5['0']['title']; ?></p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016款 ......888</p>
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new5['1']['id']; ?>" > <img src="/static/img/ccbt.png" alt="" height="135" />
+								<p class="hid"><?php echo $new5['1']['title']; ?></p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<img src="/static/img/ccbt.png" alt="" height="135" />
-								<p class="hid">郑州二手保时捷718 2016郑州二手保时捷718 201州二手保时捷718 201州二手保时捷718 2016款 .....</p>
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new5['2']['id']; ?>"> <img src="/static/img/ccbt.png" alt="" height="135" />
+								<p class="hid"><?php echo $new5['2']['title']; ?></p></a>
 							</div>
 						</div>
 						<ul class="news_txt_desc">
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站88888</a>
+
+							<?php if(is_array($new5) || $new5 instanceof \think\Collection || $new5 instanceof \think\Paginator): $i = 0; $__LIST__ = $new5;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+							<li><span class="fright"><?php echo $vol['time']; ?></span><img src="/static/img/zhixina.png" alt="" height="12" />
+								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
 							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站</a>
-							</li>
-							<li><span class="fright">2018-02-07</span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="">郑州二手日产奇骏管家车易站999</a>
-							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+
 
 						</ul>
 					</div>

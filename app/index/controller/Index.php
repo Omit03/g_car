@@ -4,6 +4,7 @@ use think\Request;
 use think\Loader;
 use think\Db;
 use think\Controller;
+use think\Session;
 class Index  extends Common
 {
     public function index(){
@@ -28,6 +29,12 @@ class Index  extends Common
 
         $car_zero = $this->car_zero($city_id);//零首付
 
+        $new1 = $this->new_list(1);//公司新闻
+        $new2 = $this->new_list(2);//行业新闻
+        $new3 = $this->new_list(3);//媒体报道
+        $new4 = $this->new_list(4);//特色活动
+        $new5 = $this->new_list(5);//新车资讯
+
 //        dump($new_car);
 
        // dump($car_zero);die;
@@ -39,6 +46,12 @@ class Index  extends Common
         $this->assign('new_car',$new_car);
         $this->assign('er_car',$er_car);
         $this->assign('car_zero',$car_zero);
+        $this->assign('new1',$new1);
+        $this->assign('new2',$new2);
+        $this->assign('new3',$new3);
+        $this->assign('new4',$new4);
+        $this->assign('new5',$new5);
+
 
         return $this->fetch();
     }
@@ -1233,13 +1246,32 @@ class Index  extends Common
     }
     
     /*
-     * 新车详情
+     * 二手车详情
      */
     public function details(){
 
         $data = $this->params;
 
         $cheid=$data['cheid'];
+
+        //获取新车浏览记录
+        $userid = Session::get('user_id');
+        if ($userid){
+
+            $wherehis['userid'] = $userid;
+            $wherehis['cheid'] = $cheid;
+            $wherehis['type'] = 2;
+
+            $res = Db::table('car_liulan_history')->where($wherehis)->find();
+
+//            dump($res);die;
+
+            if (empty($res)){
+
+                Db::table('car_liulan_history')->insert(['userid'=>$userid,'type'=>2,'cheid'=>$cheid]);
+            }
+
+        }
 
         //获取车辆信息
         $carinfo=Db::table("rele_car")->field("pu_id,user_id,brand_id,sys_id,cartype_id,price,car_mileage,car_age,output,gearbox,car_cardtime,blowdown,subface_img,img_512,car_desc,pay20_s2,pay20_y2,pay20_n2,city_id")->where("pu_id=$cheid")->find();
@@ -1432,27 +1464,7 @@ class Index  extends Common
      */
     public function pcnewindex(){
 
-        $type = input('param.type');
 
-        if (!empty($type)) {
-
-            $where['new_type'] = $type;
-
-        }
-
-        $where['is_del'] = 0;
-        $where['is_show'] = 1;
-
-        $list =  Db::table('car_pc_news')->where($where)->order('sort','desc')->select();
-
-        $data = array("data" => array());
-
-        if ($list) {
-
-            $data['data'] = $list;
-
-        }
-        echo json_encode($data);
 
     }
 
@@ -1508,12 +1520,10 @@ class Index  extends Common
 
     public function asd(){
 
-        //$field = 'rele_car.pu_id,rele_car.user_id,rele_car.cartype_id,rele_car.price,rele_car.news_price,rele_car.car_mileage,rele_car.car_cardtime,rele_car.img_300';
 
-        $data = $this->params;
+       $asd = $this->new_list(1);
 
-      return  $this->fetch();
-
+        dump($asd);
     }
 
 

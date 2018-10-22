@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_history.html";i:1539758826;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_history.html";i:1540198079;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -155,27 +155,14 @@ $(window).on('scroll',function(){
 </script>
 
 	</div>
-		<div class="site_nav">
-			<div class="site_nav_bd">
-				<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
-				<div class="fright">
-					<ul class="site_nav_menu">
-						<li><a href=""><img src="/static/img/home1.png" alt="" />首页</a></li>
-						<li><a href=""><img src="/static/img/sell2.png" alt="" />我要买车</a></li>
-						<li><a href=""><img src="/static/img/sell1.png" alt="" />我要买车</a></li>
-						<li><a href=""><img src="" alt="" />网站导航</a></li>
-					</ul>					
-				</div>
-			</div>
-		</div>
-		<div class="borbt"><div class="header"></div></div>
+
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
 					<div class="person_left">
 						<div class="person_info">
 							<div class="user_avatar"><img src="/static/img/yhtx.png" alt="" /></div>
-							<p class="uphone">15362352625</p>
+							<p class="uphone"><?php echo \think\Session::get('phone'); ?></p>
 							<p>向阳二手车一号店</p>							
 						</div>
 						<div class="tab_choose">

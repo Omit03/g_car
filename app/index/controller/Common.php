@@ -148,6 +148,7 @@ class Common extends Controller{
             ),
             'newsdetails'=>array(
                 'user_id' =>'number',
+                'id' =>'number',
             ),
         ),
         'Shop' => array(
@@ -167,6 +168,9 @@ class Common extends Controller{
 
         'User' => array(
             'car_login'=>array(
+                'user_id' =>'number',
+            ),
+            'car_logout'=>array(
                 'user_id' =>'number',
             ),
             'person_manage'=>array(
@@ -1458,5 +1462,22 @@ class Common extends Controller{
 		";
         return $sql;
     }
+
+    /*
+     * 新闻类列表
+     */
+    public function new_list($type){
+
+        $where['news_column'] = $type;
+
+        $where['status'] = 1;
+
+        $list =  Db::table('news')->field('id,title,time,miaoshu,news_column')->where($where)->select();
+
+        return $list;
+
+
+    }
+
 
 }

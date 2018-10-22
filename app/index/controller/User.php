@@ -19,7 +19,19 @@ class User  extends Common {
         $this->assign('brand',$brand);
         return $this->fetch();
 
-    }    /*
+    }
+
+    /*
+     * 退出
+     */
+    public function car_logout(){
+
+        Session::clear();
+
+        $this->redirect('index/index');
+    }
+
+    /*
      * 展示登录
      */
     public function person_manage(){
@@ -29,7 +41,8 @@ class User  extends Common {
         $this->assign('brand',$brand);
         return $this->fetch();
 
-    }    /*
+    }
+    /*
      * 展示登录
      */
     public function person_release(){

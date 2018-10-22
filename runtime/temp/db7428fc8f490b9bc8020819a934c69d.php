@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\news\index.html";i:1539934156;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\news\index.html";i:1540189978;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1539942352;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -169,174 +169,64 @@ $(window).on('scroll',function(){
 				</ul>
 				<div class="news_conlist">
 					<ul id="conbd01">
-						<li><a href="">
+						<?php if(is_array($new1) || $new1 instanceof \think\Collection || $new1 instanceof \think\Paginator): $i = 0; $__LIST__ = $new1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+						<li><a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $val['id']; ?>">
 							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
 							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
+								<h2 class="hid"><?php echo $val['title']; ?></h2>
+								<p>(管家车易站 选车导购)<?php echo $val['miaoshu']; ?> </p>
+								<p class="time"><?php echo $val['time']; ?></p>
 							</div>
 						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</ul>
 					<ul id="conbd02" style="display: none;">
-						<li><a href="">
+						<?php if(is_array($new2) || $new2 instanceof \think\Collection || $new2 instanceof \think\Paginator): $i = 0; $__LIST__ = $new2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+						<li><a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $val['id']; ?>">
 							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
 							<div class="news_text_desc ">
-								<h2 class="hid">210万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
+								<h2 class="hid"><?php echo $val['title']; ?></h2>
+								<p>(管家车易站 选车导购)<?php echo $val['miaoshu']; ?> </p>
+								<p class="time"><?php echo $val['time']; ?></p>
 							</div>
 						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</ul>
 					<ul id="conbd03" style="display: none;">
-						<li><a href="">
+						<?php if(is_array($new3) || $new3 instanceof \think\Collection || $new3 instanceof \think\Paginator): $i = 0; $__LIST__ = $new3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+						<li><a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $val['id']; ?>">
 							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
 							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
+								<h2 class="hid"><?php echo $val['title']; ?></h2>
+								<p>(管家车易站 选车导购)<?php echo $val['miaoshu']; ?> </p>
+								<p class="time"><?php echo $val['time']; ?></p>
 							</div>
 						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">310万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</ul>
 					<ul id="conbd04" style="display: none;">
-						<li><a href="">
+						<?php if(is_array($new4) || $new4 instanceof \think\Collection || $new4 instanceof \think\Paginator): $i = 0; $__LIST__ = $new4;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+						<li><a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $val['id']; ?>">
 							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
 							<div class="news_text_desc ">
-								<h2 class="hid">410万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
+								<h2 class="hid"><?php echo $val['title']; ?></h2>
+								<p>(管家车易站 选车导购)<?php echo $val['miaoshu']; ?> </p>
+								<p class="time"><?php echo $val['time']; ?></p>
 							</div>
 						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</ul>
 					<ul id="conbd05" style="display: none;">
-						<li><a href="">
+						<?php if(is_array($new5) || $new5 instanceof \think\Collection || $new5 instanceof \think\Paginator): $i = 0; $__LIST__ = $new5;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+						<li><a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $val['id']; ?>">
 							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
 							<div class="news_text_desc ">
-								<h2 class="hid">510万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
+								<h2 class="hid"><?php echo $val['title']; ?></h2>
+								<p>(管家车易站 选车导购)<?php echo $val['miaoshu']; ?> </p>
+								<p class="time"><?php echo $val['time']; ?></p>
 							</div>
 						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
-						<li><a href="">
-							<span class="news_listImg"><img src="/static/img/gds1.png" alt="" title="" height="167"/></span>
-							<div class="news_text_desc ">
-								<h2 class="hid">10万以上入手的郑州二手宝马3系 告诉你什么叫诠释低调的奢华</h2>
-								<p>(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车整车颜值不是一般国产车能比的了(管家车易站 选车导购) 很多人都说，二手宝马3系是进口双门轿跑版，整车颜值不是一般国产车能比的的其次这款宝马...</p>
-								<p class="time">2018/6/30</p>
-							</div>
-						</a></li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
 					</ul>
 				</div>
 				
