@@ -294,6 +294,10 @@ class Common extends Controller{
                 'cheid' =>['require'],
 
             ),
+            'sale_car' => array(
+                'phone' =>'number',
+
+            ),
             'asd' => array(
                 'cheid' =>'',
 
@@ -783,6 +787,44 @@ class Common extends Controller{
         }
     }
 
+    // 变速箱
+    function gearbox($id){
+        $arr = array(
+            array(
+                'id' => '1',
+                'name' => '手动'
+            ),
+            array(
+                'id' => '2',
+                'name' => '自动'
+            ),
+            array(
+                'id' => '3',
+                'name' => '手自一体'
+            ),
+            array(
+                'id' => '4',
+                'name' => '无级变速'
+            ),
+            array(
+                'id' => '5',
+                'name' => '双离合'
+            ),
+        );
+        if($id){
+            $name = '';
+            foreach ($arr as $key => $val) {
+                if($val['id'] == $id){
+                    $name = $val['name'];
+                }
+            }
+            // var_dump($name);
+            return $name;
+        }else{
+            return $arr;
+        }
+    }
+
     //获取排量
     public function get_output($id){
         $output=Db::table('pailiang')->where("id=$id")->find();
@@ -790,6 +832,43 @@ class Common extends Controller{
             return $output['pailiang'];
         }else{
             return "参数错误";
+        }
+    }
+    // 排量
+    function output($id){
+        $arr = array(
+            array(
+                'id' => '1',
+                'name' => '1.0升以下'
+            ),
+            array(
+                'id' => '2',
+                'name' => '1.1-1.5升'
+            ),
+            array(
+                'id' => '3',
+                'name' => '1.6-2.0升'
+            ),
+            array(
+                'id' => '4',
+                'name' => '2.1-3.0升'
+            ),
+            array(
+                'id' => '5',
+                'name' => '3.1升以上'
+            ),
+        );
+        if($id){
+            $name = '';
+            foreach ($arr as $key => $val) {
+                if($val['id'] == $id){
+                    $name = $val['name'];
+                }
+            }
+            // var_dump($name);
+            return $name;
+        }else{
+            return $arr;
         }
     }
     //获取车龄
@@ -801,6 +880,28 @@ class Common extends Controller{
             return "参数错误";
         }
     }
+    // 里程
+    function car_mileage(){
+        $arr = array(
+            array(
+                'id' => '1',
+                'name' => '1万公里内'
+            ),
+            array(
+                'id' => '2',
+                'name' => '3万公里内'
+            ),
+            array(
+                'id' => '3',
+                'name' => '5万公里内'
+            ),
+            array(
+                'id' => '4',
+                'name' => '10万公里内'
+            ),
+        );
+        return $arr;
+    }
 
     //获取所有车龄
     public function get_car_allage(){
@@ -811,7 +912,7 @@ class Common extends Controller{
 
     }
     //获取进气方式
-    function get_inlet_air($id){
+    public  function get_inlet_air($id){
         $inlet_air=Db::table('jinqi')->where("id=$id")->find();
         if($inlet_air){
             return $inlet_air['jinqi'];
@@ -820,12 +921,112 @@ class Common extends Controller{
         }
     }
     //获取燃料
-    function get_fuel($id){
+    public function get_fuel($id){
         $fuel=Db::table('nengyuan')->where("id=$id")->find();
         if($fuel){
             return $fuel['nengyuan'];
         }else{
             return "参数错误";
+        }
+    }
+    // 燃料
+    public function fuel($id){
+        $arr = array(
+            array(
+                'id' => '1',
+                'name' => '汽油'
+            ),
+            array(
+                'id' => '2',
+                'name' => '柴油'
+            ),
+            array(
+                'id' => '3',
+                'name' => '油气混合'
+            ),
+            array(
+                'id' => '4',
+                'name' => '油电混合'
+            ),
+            array(
+                'id' => '5',
+                'name' => '电力'
+            ),
+            array(
+                'id' => '6',
+                'name' => 'LPG'
+            ),
+            array(
+                'id' => '7',
+                'name' => 'CNG'
+            ),
+        );
+
+        if($id){
+            $name = '';
+            foreach ($arr as $key => $val) {
+                if($val['id'] == $id){
+                    $name = $val['name'];
+                }
+            }
+            // var_dump($name);
+            return $name;
+        }else{
+            return $arr;
+        }
+    }
+
+    // 排放标准
+    public function blowdown($id){
+        $arr = array(
+            array(
+                'id' => '1',
+                'name' => 'OBD'
+            ),
+            array(
+                'id' => '2',
+                'name' => '京5'
+            ),
+            array(
+                'id' => '3',
+                'name' => '欧5'
+            ),
+            array(
+                'id' => '4',
+                'name' => '欧4'
+            ),
+            array(
+                'id' => '5',
+                'name' => '欧3'
+            ),
+            array(
+                'id' => '6',
+                'name' => '国5'
+            ),
+            array(
+                'id' => '7',
+                'name' => '国4'
+            ),
+            array(
+                'id' => '8',
+                'name' => '国3'
+            ),
+            array(
+                'id' => '9',
+                'name' => '国2'
+            ),
+        );
+        if($id){
+            $name = '';
+            foreach ($arr as $key => $val) {
+                if($val['id'] == $id){
+                    $name = $val['name'];
+                }
+            }
+            // var_dump($name);
+            return $name;
+        }else{
+            return $arr;
         }
     }
 
@@ -836,6 +1037,100 @@ class Common extends Controller{
             return $blowdown['biaozhun'];
         }else{
             return "参数错误";
+        }
+    }
+    // 颜色
+    public function color(){
+        $res = Db::table('car_color1')->select();
+        foreach ($res as $key => $val) {
+            $res[$key]['img_url'] = "http://39.106.67.47/butler_car/".ltrim($val['img_url'],'.');
+        }
+        return $res;
+    }
+    // 驱动
+    public function car_drive($id){
+        $arr = array(
+            array(
+                'id' => '1',
+                'name' => '前驱'
+            ),
+            array(
+                'id' => '2',
+                'name' => '后驱'
+            ),
+            array(
+                'id' => '3',
+                'name' => '四驱'
+            ),
+        );
+        if($id){
+            $name = '';
+            foreach ($arr as $key => $val) {
+                if($val['id'] == $id){
+                    $name = $val['name'];
+                }
+            }
+            // var_dump($name);
+            return $name;
+        }else{
+            return $arr;
+        }
+    }
+    // 车身
+   public function car_body($id){
+        $arr = array(
+            array(
+                'id'=> '1',
+                'name'=> '两厢'
+            ),
+            array(
+                'id'=> '2',
+                'name'=> '三厢'
+            ),
+            array(
+                'id'=> '3',
+                'name'=> '旅行车'
+            ),
+            array(
+                'id'=> '4',
+                'name'=> '皮卡'
+            ),
+            array(
+                'id'=> '5',
+                'name'=> 'MPV'
+            ),
+            array(
+                'id'=> '6',
+                'name'=> '混型车'
+            ),
+            array(
+                'id'=> '7',
+                'name'=> '跑车'
+            ),
+            array(
+                'id'=> '8',
+                'name'=> '厢式车'
+            ),
+            array(
+                'id'=> '9',
+                'name'=> 'SUV'
+            ),
+            array(
+                'id'=> '10',
+                'name' => '其他'
+            ),
+        );
+        if($id){
+            $name = '';
+            foreach ($arr as $key => $val) {
+                if($val['id'] == $id){
+                    $name = $val['name'];
+                }
+            }
+            // var_dump($name);
+            return $name;
+        }else{
+            return $arr;
         }
     }
 
@@ -1142,13 +1437,18 @@ class Common extends Controller{
         $time=$this->change_time($infos['car_cardtime']);
         $data1=time()-$time;
         $data2=365*24*60*60*10;
+        //dump($data1);die;
         if($data1 < $data2 && $infos['price']>3 ){
             //计算首付，月供
             $arr['pay_20s']=$pay_20s=round($infos['price']*0.2,1);
             $arr['pay_20y']=$pay_20y=ceil($infos['price']*0.8/36*10000);
             $arr['pay_20n']=36;
         }
-       // dump($arr);die;
+
+        if (empty($arr)){
+
+            return $arr =array();
+        }
         return $arr;
     }
 

@@ -112,14 +112,14 @@
 			<div class="wrap home_sel">
 				<div class="home_left">
 					<ul class="home_sel_tit">
-						<li class="active"> 新车</li>
-						<li>二手车</li>
+						<li class="active"> 二手车</li>
+						<li>新车</li>
 					</ul>
 					<div class="home_sel_con">
 						<ul class="sel_newcar_brand oh ">
 							{volist name="brand" id = "val"}
 							<li>
-								<a href=""><img src="{$val.img_url}" alt="">
+								<a href="{:url('index/lots_cars')}?brand_id={$val.id}&page=1&sort=1"><img src="{$val.img_url}" alt="">
 									<p>{$val.name}</p>
 								</a>
 							</li>
@@ -131,7 +131,7 @@
 							</li>
 							{volist name="price" id = "val"}
 							<li class="active">
-								<a href="">{$val.name} </a>
+								<a href="{:url('index/lots_cars')}?price_range={$val.id}&page=1&sort=1">{$val.name} </a>
 							</li>
 							{/volist}
 						</ul>
@@ -141,7 +141,7 @@
 							</li>
 							{volist name="subface" id = "val"}
 							<li class="active">
-								<a href=""> {$val.name}</a>
+								<a href="{:url('index/lots_cars')}?car_age={$val.id}&page=1&sort=1"> {$val.name}</a>
 							</li>
 							{/volist}
 							<li class="active fright">

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html";i:1540283165;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\change\index.html";i:1539863771;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,14 +8,12 @@
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	
-	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<style>
-	</style>
 
+
+	</style>
 	<body>
-	<div class="header">
-	<div class="site_nav">
+		<div class="header"><div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
@@ -156,77 +154,73 @@ $(window).on('scroll',function(){
 })
 
 </script>
-
-	</div>
-		<div class="full_wid">
-
-			<div class="login_bg">
-				<div class="login_tab" >
-					<div class="login_sure">
-						<ul class="login_type">
-							<li class="active" onclick="set('bd0',1,2)">手机号快捷登录</li>
-							<b>|</b>
-							<li onclick="set('bd0',2,2)">账号密码登录</li>
-						</ul>
-						<div class="login_phone" id="conbd01">
-
-							<form action="<?php echo url('user/login'); ?>" method="post">
-								<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="user_phone" name="user_phone" placeholder="请输入个人或商家手机号"/></div>
-								<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="user_pwd" name="user_pwd" placeholder="请输入密码"/></div>
-								<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
-								<p class="login_btn mtp40"><input type="submit" value="立即登录" /></p>
-								<p class="regist_btn">免费注册</p>
-							</form>
-						</div>
-						<div class="login_phone" id="conbd02" style="display: none;">
-							<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
-							<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="text" placeholder="请输入密码"/></div>
-							<div class="border login_ver"><img src="/static/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
-							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
-							<p class="login_btn mtp40">立即登录</p>
-							<p class="regist_btn">免费注册</p>
-						</div>
+</div>
+		<div class="full_wid">			
+			<div class="banner chang_ban">
+				<div class="wrap">
+					<div class="change_user">
+						<span class="change_address">郑州<img src="/static/img/jtdown.png" alt="" /></span>
+						<div class="change_ipt"><input type="text" placeholder="请输入手机号"/>
+						<span class="chang_btn">我要置换</span>						
+						</div>	
+						<span class="sellcar_btn"><a href="">我要卖车</a></span>
 					</div>
-					
-					<div class="login_other">
-						<img src="/static/img/ewm.png" alt="" class="app_down" width="225"/>
-						<p class="textCenter">扫描下载</p>
-						<div><img src="/static/img/qq.png" alt="" />QQ登录</div>
-						<div><img src="/static/img/wx.png" alt="" />微信登录</div>
-					</div>
+					<div class="tip"><p class="agree">提交代表我同意<a href="">《个人信息保护声明》</a>，并接受合作商的来电服务</p></div>
+				</div>				
+			</div>
+			<div class="wrap">
+				<div class="breadnav">你的位置:<a href="">首页</a>>><a href="">置换</a></div>
+				<div class="flex_center title_er"><h2 class="tit_erjie">置换</h2><p class="small_tit">用旧车换新车，优惠开新车</p></div>
+				<div class="change_flow"><img src="/static/img/change_flow.png" alt="" /></div>
+				<div class="flex_center title_er"><h2 class="tit_erjie">选定意向新车</h2></div>
+				<div class="change_sel flex_center">
+					<span class="change_form_name">品牌车型</span>
+					<div class="selectcarnam flex_center">
+						<input type="text" placeholder="请选择您喜欢的车辆"/><span class="change_form_arrow"><img src="/static/img/jtdown1.png" alt="" /></span>
+					</div>									
+				</div>
+				<div class="change_recom">
+					<p class="tip">精品车辆推荐</p>
+					<ul class="flex_around">
+						<li>
+							<img src="/static/img/tuijian1.png" alt="" />
+							<p>奥迪系列</p>
+						</li>
+						<li>
+							<img src="/static/img/tuijian1.png" alt="" />
+							<p>奥迪系列</p>
+						</li>
+						<li>
+							<img src="/static/img/tuijian1.png" alt="" />
+							<p>奥迪系列</p>
+						</li>
+					</ul>
+				</div>
+				<div class="flex_center title_er"><h2 class="tit_erjie">旧车信息提交</h2></div>
+				<div class="change_form">
+					<div class="ipt"><label for="">旧车信息：</label><input type="text" placeholder="请选择您车辆的品牌"/></div>
+					<div class="ipt"><label for="">姓名：</label><input type="text" placeholder="请输入您的姓名"/></div>
+					<div class="ipt"><label for="">手机号：</label><input type="text" placeholder="请输入您的手机号"/></div>
+					<div class="ipt_code"><label for="">验证码:</label><input type="text" placeholder="请输入您获取到的验证码"/><span class="getcode">获取验证码</span></div>
+					<div class="sub">点击提交</div>
+				</div>
+				<div class="flex_center title_er"><h2 class="tit_erjie">新车推荐</h2></div>
+				<div class="car_list">
+					<ul class="list">
+                         <?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,1,8, true) : $er_car->slice(1,8, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+						<li class="items">
+							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
+							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>" class="car_desc">
+								<h3> <?php echo $val['name']; ?></h3>
+								<p><span class="car_price"><b><?php echo $val['new_car_price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $val['price']; ?>万</span></p>
+								<p><span><?php echo $val['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $val['car_mileage']; ?>万公里</span> </p>
+								<div class="che_ordered">立即预约</div>
+							</a>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
 				</div>
 			</div>
-		</div>
-		<div class="footer"></div>
-		<div class="fixedRight">
-			<ul class="right_sider">
-				<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
-					<div class="gj_sidecon_desc "></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
-				<div class="gj_sidecon_desc"></div></li>
-				<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
-				<div class="gj_sidecon_desc"></div></li>
-				<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				
-			</ul>
 		</div>
 		<div class="footer">
 			
@@ -286,69 +280,10 @@ $(window).on('scroll',function(){
 </script>
 		</div>
 	</body>
-	<!--
-	<div class="wrap">
-		<div class="company_info gj_clear">
-			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
-			<div class="basic_info">
-				<div>
-					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
-					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
-					<a href="<?php echo url('index/service'); ?>">服务保障</a>
-					<a href="<?php echo url('index/website'); ?>">网站地图</a>
-				</div>
-				<p>
-					版权所有：河南管家车销售有限公司 <br /> 
-				 工信备案：豫ICP备17046554号 <br /> 
-				  CopyRight © 2015-2018 ww
-				</p>
-			</div>
-			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
-			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
-			<div class="contact_way">
-				<p>免费咨询、建议、投诉 <br />
-				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
-				 每天9：00-21：00(法定节假日除外)
-				</p>		
-			</div>
-		</div>	
-		<div class="optimize_link">
-			<p class="link_tit">热门品牌：</p>
-			<span class="more_dwon"></span>
-			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-			<a href=""><?php echo $vol['name']; ?></a>
-			<?php endforeach; endif; else: echo "" ;endif; ?>
-
-		</div>
-		<div class="optimize_link">
-			<p class="link_tit ">热门车系123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-			<a href="">大众</a>
-
-		</div>
-		<div class="optimize_link gj_clear">
-			<p class="link_tit">友情链接123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-
-
-
-		</div>
-	</div>
-<script>
-	$(".more_dwon").click(function(){
-		$(this).parents(".optimize_link").addClass("link_active")
+	<script>		
+	$(function(){
+		// $(".header").load("templates/header.html");
+		// $(".footer").load("templates/footer.html")
 	})
-</script>-->
-	<!--<script>		-->
-		<!--$(function(){	-->
-
-			<!--$(".login_type li").click(function(){-->
-			   <!--$(this).addClass('active').siblings('li').removeClass('active')-->
-			<!--})-->
-		      <!--$(".header").load("templates/header.html");-->
-		      <!--$(".footer").load("templates/footer.html")-->
-		<!--})-->
-<!--</script>-->
+	</script>
 </html>

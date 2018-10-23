@@ -1049,6 +1049,40 @@ class User  extends Common {
 //        $this->ajaxReturn($data);
 
     }
+    /*
+     * 卖车接口
+     * http://39.106.67.47/new_api/User/Salecar/Sale
+     */
+
+    public function sale_car(){
+
+        $data = $this->params;
+
+        //  姓名
+        if (!empty($data['name'])){
+            $name = $data['name'];
+        }else{
+            $name = 0;
+        }
+
+
+        $phone = $data['phone']; //手机号码
+       // $code = $_POST['code']; //验证码
+       // $img_id = $_POST['img_id']; //图片文件
+
+        $res = 	Db::table('sale_car')->insert(['name'=>$name,'phone'=>$phone,'status'=>1,'create_time'=>time()]);
+
+        if($res){
+
+            $this->return_msg('200','成功');
+
+        }else{
+
+            $this->return_msg('400','失败');
+
+        }
+
+    }
 
 
     public function asd(){
@@ -1056,6 +1090,8 @@ class User  extends Common {
         dump($this->randStr());
 
     }
+
+
 
 
 }

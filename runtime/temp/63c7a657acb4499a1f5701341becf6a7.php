@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540255187;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540289659;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -254,14 +254,14 @@ $(window).on('scroll',function(){
 			<div class="wrap home_sel">
 				<div class="home_left">
 					<ul class="home_sel_tit">
-						<li class="active"> 新车</li>
-						<li>二手车</li>
+						<li class="active"> 二手车</li>
+						<li>新车</li>
 					</ul>
 					<div class="home_sel_con">
 						<ul class="sel_newcar_brand oh ">
 							<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href=""><img src="<?php echo $val['img_url']; ?>" alt="">
+								<a href="<?php echo url('index/lots_cars'); ?>?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><img src="<?php echo $val['img_url']; ?>" alt="">
 									<p><?php echo $val['name']; ?></p>
 								</a>
 							</li>
@@ -273,7 +273,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="active">
-								<a href=""><?php echo $val['name']; ?> </a>
+								<a href="<?php echo url('index/lots_cars'); ?>?price_range=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?> </a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
@@ -283,7 +283,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="active">
-								<a href=""> <?php echo $val['name']; ?></a>
+								<a href="<?php echo url('index/lots_cars'); ?>?subface=<?php echo $val['id']; ?>&page=1&sort=1"> <?php echo $val['name']; ?></a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 							<li class="active fright">

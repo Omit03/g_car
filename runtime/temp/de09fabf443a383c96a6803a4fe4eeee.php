@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html";i:1540283165;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"G:\xampp\htdocs\car\public/../app/index\view\index\appdownload.html";i:1539689569;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,15 +7,13 @@
 	</head>
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	
-	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-1.11.0.min.js"></script>
 	<style>
-	</style>
 
-	<body>
-	<div class="header">
-	<div class="site_nav">
+	</style>
+	<body>	
+		<div class="header">
+			<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
@@ -157,47 +155,61 @@ $(window).on('scroll',function(){
 
 </script>
 
-	</div>
-		<div class="full_wid">
-
-			<div class="login_bg">
-				<div class="login_tab" >
-					<div class="login_sure">
-						<ul class="login_type">
-							<li class="active" onclick="set('bd0',1,2)">手机号快捷登录</li>
-							<b>|</b>
-							<li onclick="set('bd0',2,2)">账号密码登录</li>
-						</ul>
-						<div class="login_phone" id="conbd01">
-
-							<form action="<?php echo url('user/login'); ?>" method="post">
-								<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="user_phone" name="user_phone" placeholder="请输入个人或商家手机号"/></div>
-								<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="user_pwd" name="user_pwd" placeholder="请输入密码"/></div>
-								<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
-								<p class="login_btn mtp40"><input type="submit" value="立即登录" /></p>
-								<p class="regist_btn">免费注册</p>
-							</form>
+		</div>
+		<div class="full_wid">			
+			<div class="app_bga flex_center">
+				<div class="wrap">
+					<div class="app_bgacon">
+						<img src="/static/img/wenzi2.png" alt="" class="" width="406"/>
+						<img src="/static/img/wenzi1.png" alt="" class="" width="385"/>					
+						<div class="fleft">
+							<img src="/static/img/wenzi3.png" alt="" width=""/>
+							<div>
+								<img src="/static/img/dd.png" alt="" width="106"/>
+								<img src="/static/img/dd1.png" alt="" width="28"/>
+								<img src="/static/img/dd1.png" alt="" width="28"/>
+								<img src="/static/img/dd1.png" alt="" width="28"/>
+							</div>
 						</div>
-						<div class="login_phone" id="conbd02" style="display: none;">
-							<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
-							<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="text" placeholder="请输入密码"/></div>
-							<div class="border login_ver"><img src="/static/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
-							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
-							<p class="login_btn mtp40">立即登录</p>
-							<p class="regist_btn">免费注册</p>
+						<div class="fleft">
+						 	<img src="/static/img/ewmdown.png" alt="" width="160"/>
 						</div>
+					</div>
+				</div>				
+			</div>	
+			<div class="app_bgb flex_center">
+				<div class="wrap flex_center">
+					<img src="/static/img/app_b.png" alt="" width="412"/>
+					<div class="fright app_bgbcon marlt86">
+						<p class="app_fp1">优质车源  精心挑选保驾护航</p><br />
+					    <p class="app_fp2">打造二手车放心品牌</p>
 					</div>
 					
-					<div class="login_other">
-						<img src="/static/img/ewm.png" alt="" class="app_down" width="225"/>
-						<p class="textCenter">扫描下载</p>
-						<div><img src="/static/img/qq.png" alt="" />QQ登录</div>
-						<div><img src="/static/img/wx.png" alt="" />微信登录</div>
+				</div>			
+			</div>
+			<div class="app_bgc flex_center">
+				<div class="wrap flex_center">				
+					<div class="fleft app_bgccon ">
+						<p class="app_fp1">登录注册 方便快捷</p><br />
+					    <p class="app_fp2">打造全新的用户体验</p>
+					</div>					
+				   <img src="/static/img/app_c.png" alt=""  width="217" class="marlt270"/>
+			    </div>
+			</div>		    			   
+		    <div class="app_bgd flex_center">
+				<div class="wrap flex_center">
+					<img src="/static/img/app_d.png" alt="" width="726" class="fleft"/>
+					<div class="fright app_bgdcon marlt90">
+						<p class="app_fp1">优化搜索 精准定位</p>
+						<br />
+					    <p class="app_fp2"> 操作简单方便流程清晰</p>
 					</div>
-				</div>
+				</div>				
 			</div>
 		</div>
-		<div class="footer"></div>
+		<div class="footer mtp40">	
+			
+		</div>
 		<div class="fixedRight">
 			<ul class="right_sider">
 				<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
@@ -286,69 +298,10 @@ $(window).on('scroll',function(){
 </script>
 		</div>
 	</body>
-	<!--
-	<div class="wrap">
-		<div class="company_info gj_clear">
-			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
-			<div class="basic_info">
-				<div>
-					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
-					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
-					<a href="<?php echo url('index/service'); ?>">服务保障</a>
-					<a href="<?php echo url('index/website'); ?>">网站地图</a>
-				</div>
-				<p>
-					版权所有：河南管家车销售有限公司 <br /> 
-				 工信备案：豫ICP备17046554号 <br /> 
-				  CopyRight © 2015-2018 ww
-				</p>
-			</div>
-			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
-			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
-			<div class="contact_way">
-				<p>免费咨询、建议、投诉 <br />
-				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
-				 每天9：00-21：00(法定节假日除外)
-				</p>		
-			</div>
-		</div>	
-		<div class="optimize_link">
-			<p class="link_tit">热门品牌：</p>
-			<span class="more_dwon"></span>
-			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-			<a href=""><?php echo $vol['name']; ?></a>
-			<?php endforeach; endif; else: echo "" ;endif; ?>
-
-		</div>
-		<div class="optimize_link">
-			<p class="link_tit ">热门车系123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-			<a href="">大众</a>
-
-		</div>
-		<div class="optimize_link gj_clear">
-			<p class="link_tit">友情链接123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-
-
-
-		</div>
-	</div>
-<script>
-	$(".more_dwon").click(function(){
-		$(this).parents(".optimize_link").addClass("link_active")
-	})
-</script>-->
-	<!--<script>		-->
-		<!--$(function(){	-->
-
-			<!--$(".login_type li").click(function(){-->
-			   <!--$(this).addClass('active').siblings('li').removeClass('active')-->
-			<!--})-->
-		      <!--$(".header").load("templates/header.html");-->
-		      <!--$(".footer").load("templates/footer.html")-->
-		<!--})-->
-<!--</script>-->
+	<script>		
+		$(function(){			 
+		   // $(".header").load("templates/header.html");
+           // $(".footer").load("templates/footer.html");
+		})
+</script>
 </html>

@@ -27,21 +27,22 @@
 							<li onclick="set('bd0',2,2)">账号密码登录</li>
 						</ul>
 						<div class="login_phone" id="conbd01">
+
+							<form action="{:url('user/login')}" method="post">
+								<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="user_phone" name="user_phone" placeholder="请输入个人或商家手机号"/></div>
+								<div class="border"><img src="__STATIC__/img/mm.png" alt="" height="35" /><input type="user_pwd" name="user_pwd" placeholder="请输入密码"/></div>
+								<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
+								<p class="login_btn mtp40"><input type="submit" value="立即登录" /></p>
+								<p class="regist_btn">免费注册</p>
+							</form>
+						</div>
+						<div class="login_phone" id="conbd02" style="display: none;">
 							<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="text" placeholder="请输入个人或商家手机号"/></div>
 							<div class="border"><img src="__STATIC__/img/mm.png" alt="" height="35" /><input type="text" placeholder="请输入密码"/></div>
 							<div class="border login_ver"><img src="__STATIC__/img/yzm.png" alt="" height="35"/><input type="text" placeholder="请输入验证码" /><span class="getcode">获取验证码</span></div>
 							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
 							<p class="login_btn mtp40">立即登录</p>
 							<p class="regist_btn">免费注册</p>
-						</div>
-						<div class="login_phone" id="conbd02" style="display: none;">
-							<form action="{:url('user/login')}" method="post">
-							<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="user_phone" name="user_phone" placeholder="请输入个人或商家手机号"/></div>
-							<div class="border"><img src="__STATIC__/img/mm.png" alt="" height="35" /><input type="user_pwd" name="user_pwd" placeholder="请输入密码"/></div>
-							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
-							<p class="login_btn mtp40"><input type="submit" value="立即登录" /></p>
-							<p class="regist_btn">免费注册</p>
-							</form>
 						</div>
 					</div>
 					
