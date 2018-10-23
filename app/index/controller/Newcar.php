@@ -71,7 +71,7 @@ class Newcar extends Common
 
             if (empty($res)){
 
-                Db::table('car_liulan_history')->insert(['userid'=>$userid,'brand_id'=>$brand_id,'type'=>1,'cheid'=>$cheid,'sys_id'=>$sys_id,'cartype_id'=>$cartype_id]);
+                Db::table('car_liulan_history')->insert(['userid'=>$userid,'brand_id'=>$brand_id,'type'=>1,'cheid'=>$cheid,'sys_id'=>$sys_id,'cartype_id'=>$cartype_id,'name'=>$data['name'],'price'=>$data['price'],'img'=>$data['img_url'],'shoufu'=>$data['shoufu'],'yuegong'=>$data['ygong']]);
             }
 
 

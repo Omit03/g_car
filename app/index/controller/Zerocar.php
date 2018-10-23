@@ -48,7 +48,7 @@ class Zerocar  extends Common
 
             if (empty($res)){
 
-                Db::table('car_liulan_history')->insert(['userid'=>$userid,'type'=>3,'cheid'=>$cheid]);
+                Db::table('car_liulan_history')->insert(['userid'=>$userid,'type'=>3,'cheid'=>$cheid,'price'=>$data['price'],'img'=>$data['img'],'name'=>$data['name'],'shoufu'=>$data['sf'],'yuegong'=>$data['yg']]);
             }
 
 

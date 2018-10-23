@@ -27,6 +27,8 @@ class Index  extends Common
 
         $er_car = $this->er_car($city_id);//二手
 
+
+
         $car_zero = $this->car_zero($city_id);//零首付
 
         $new1 = $this->new_list(1);//公司新闻
@@ -35,9 +37,9 @@ class Index  extends Common
         $new4 = $this->new_list(4);//特色活动
         $new5 = $this->new_list(5);//新车资讯
 
-//        dump($new_car);
-
-       // dump($car_zero);die;
+         //dump($new_car);die;
+        // dump($er_car);die;
+        // dump($car_zero);die;
 
         $this->assign('banner',$banner);
         $this->assign('brand',$brand);
@@ -1254,6 +1256,7 @@ class Index  extends Common
 
         $cheid=$data['cheid'];
 
+
         //获取新车浏览记录
         $userid = Session::get('user_id');
         if ($userid){
@@ -1264,15 +1267,12 @@ class Index  extends Common
 
             $res = Db::table('car_liulan_history')->where($wherehis)->find();
 
-//            dump($res);die;
-
             if (empty($res)){
 
-                Db::table('car_liulan_history')->insert(['userid'=>$userid,'type'=>2,'cheid'=>$cheid]);
+                Db::table('car_liulan_history')->insert(['userid'=>$userid,'type'=>2,'cheid'=>$cheid,'price'=>$data['price'],'img'=>$data['img'],'paitime'=>$data['time'],'name'=>$data['name'],'licheng'=>$data['mileage']]);
             }
 
         }
-
         //获取车辆信息
         $carinfo=Db::table("rele_car")->field("pu_id,user_id,brand_id,sys_id,cartype_id,price,car_mileage,car_age,output,gearbox,car_cardtime,blowdown,subface_img,img_512,car_desc,pay20_s2,pay20_y2,pay20_n2,city_id")->where("pu_id=$cheid")->find();
         //echo M("rele_car")->getlastsql();
@@ -1414,6 +1414,8 @@ class Index  extends Common
         $remark = $remark?$remark:array();
 
         $carparam = $carparam?$carparam:array();
+
+        //dump($carinfo);die;
 
         $brand = $this->brand();//品牌
         $this->assign('brand',$brand);

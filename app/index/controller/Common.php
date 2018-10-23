@@ -1479,5 +1479,16 @@ class Common extends Controller{
 
     }
 
+    /*
+     * 获取新车浏览记录
+     * 1 新车 2 二手车 3 零首付
+     */
+    public function car_history($type){
+
+        $res = Db::table('car_liulan_history')->where('type', $type)->limit(8)->select();
+
+        return $res;
+    }
+
 
 }

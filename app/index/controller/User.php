@@ -93,7 +93,8 @@ class User  extends Common {
         $this->assign('brand',$brand);
         return $this->fetch();
 
-    }    /*
+    }
+    /*
      * 展示登录
      */
     public function person_collect(){
@@ -109,9 +110,20 @@ class User  extends Common {
      */
     public function person_history(){
 
+        $newcar = $this->car_history(1);
+
+        $oldcar = $this->car_history(2);
+
+        $zerocar = $this->car_history(3);
+
         $brand = $this->brand();//品牌
 
+        $this->assign('newcar',$newcar);
+        $this->assign('oldcar',$oldcar);
+        $this->assign('zerocar',$zerocar);
+
         $this->assign('brand',$brand);
+
         return $this->fetch();
 
     }

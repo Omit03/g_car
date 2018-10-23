@@ -179,11 +179,12 @@
 							</li>
 							{volist name="new_car" id="vl"}
 							<li>
-								<a href="{:url('newcar/newcardetails')}?brand_id={$vl.brand_id}&sys_id={$vl.sys_id}&cartype_id={$vl.cartype_id}&id={$vl.id}" class="flex_around" target="_blank">
+								<a href="{:url('newcar/newcardetails')}?brand_id={$vl.brand_id}&sys_id={$vl.sys_id}&cartype_id={$vl.cartype_id}&id={$vl.id}&name={$vl.name}&img_url={$vl.img_url}&shoufu={$vl.pay10_s2}&ygong={$vl.pay10_y2}&price={$vl.price}" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='{$vl.img_url}'/>
 								</span>
 									<h3 class="text_overflow">{$vl.name}</h3>
 									<p class="valign ptp15">
+										<span class="pay_first plt10">价格{$vl.price}</span>
 										<span class="pay_first plt10">首付<b class="">{$vl.pay10_s2}</b>万</span>
 										<span class="pay_month">月供{$vl.pay10_y2}元</span>
 										<span class="pay_month">{$vl.pay10_n2}期</span>
@@ -212,7 +213,7 @@
 							</li>
 							{volist name="er_car" id="val"}
 							<li>
-								<a href="{:url('index/details')}?cheid={$val.pu_id}" class="flex_around">
+								<a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="flex_around">
 									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='{$val.img_url}'/>
 								</span>
 									<h3 class="text_overflow">{$val.name}</h3>
@@ -240,7 +241,7 @@
 							</li>
 							{volist name="car_zero" id="val"}
 							<li>
-								<a href="{:url('zerocar/zerocardetails')}?cheid={$val.id}" class="flex_around" target="_blank">
+								<a href="{:url('zerocar/zerocardetails')}?cheid={$val.id}&price={$val.price}&name={$val.name}&sf={$val.pay10_s2}&img={$val.img_url}&yg={$val.pay10_y2}" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load' data-original="__STATIC__/img/car11.png" alt="" titlt='' src='{$val.img_url}'/>
 								</span>
 									<h3 class="text_overflow">{$val.name}</h3>

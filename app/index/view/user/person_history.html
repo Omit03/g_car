@@ -42,46 +42,25 @@
 					<div class="person_right">
 						<h1 class="borbt"><span class="release">浏览记录</span>
 							<ul class="fright sel_status">
-								<li class="active" data-status='1'><b></b><span>全部</span></li>
-								<li data-status='0'><b></b><span>新车</span></li>
+								<!--<li class="active" data-status='1'><b></b><span>全部</span></li>-->
+								<li class="active" data-status='1'><b></b><span>新车</span></li>
 								<li data-status='0'><b></b><span>二手车</span></li>
 								<li data-status='0'><b></b><span>0首付</span></li>
 							</ul>
 						</h1>
 						<h2 class="step"></h2>
 						 <ul class="list browse_car">
+
+							{volist name="res" id="vol"}
 							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
+								<a href="" class="car_img flex_center"><img src="{$vol.img}" alt="" /></a>
+								<a href="" class="car_desc">
+									<h3>{$vol.name}</h3>
+									<p><span class="fisrt_pay">首付<b>{$vol.shoufu}</b>万</span><span class="padlt12">指导价{$vol.price}万</span></p>
 									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
 								</a>
 							</li>
-							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
-								</a>
-							</li>
-							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
-								</a>
-							</li>
-							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
-								</a>
-							</li>
+							 {/volist}
 						</ul>
 					</div>
 				</div>
