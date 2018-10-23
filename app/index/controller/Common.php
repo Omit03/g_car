@@ -194,6 +194,12 @@ class Common extends Controller{
             'person_collect'=>array(
                 'user_id' =>'number',
             ),
+            'collect_car'=>array(
+                'user_id' =>'number',
+            ),
+            'collect_del'=>array(
+                'user_id' =>'number',
+            ),
             'person_history'=>array(
                 'user_id' =>'number',
             ),
@@ -250,12 +256,8 @@ class Common extends Controller{
             ),
             'set_userinfo' => array(
                 // 'user_id' =>['require','number'],//两种方式 有正则就用数组形式，没有就用下面也行
-                'user_phone'  =>['require','number'], //手机号
-                'header_pic'  =>['require'], //手机号
-                'nickname'  =>['require'], //手机号
-                'address'  =>['require'], //手机号
-                'sex'  =>['require'], //手机号
-                'birthday'  =>['require'], //手机号
+                'user_phone'  =>'', //手机号
+
 
             ),
             'gift_action' => array(
@@ -1480,12 +1482,22 @@ class Common extends Controller{
     }
 
     /*
-     * 获取新车浏览记录
+     * 获取车浏览记录
      * 1 新车 2 二手车 3 零首付
      */
     public function car_history($type){
 
         $res = Db::table('car_liulan_history')->where('type', $type)->limit(8)->select();
+
+        return $res;
+    }
+    /*
+     * 获取收藏
+     * 1 新车 2 二手车 3 零首付
+     */
+    public function car_collect_list($type){
+
+        $res = Db::table('car_collect')->where('type', $type)->limit(8)->select();
 
         return $res;
     }

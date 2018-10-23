@@ -57,13 +57,14 @@
 						</ul>
 						<div class="editCont">
 							<div class="info_base info_ipt">
-								
-								<div class="avatar"><span>头像: </span><img src="__STATIC__/img/yhtx.png" alt="" /> </div>
-								<div class="ipt"><span>昵称：</span><input type="text" placeholder="管家车易站"/></div>
-								<div  class="ipt"><span>所在地：</span><input type="text" placeholder="管家车易站"/></div>
-								<div class="ipt"><span>性别：</span><input type="radio" name="sex"/>男&emsp;<input type="radio" name="sex"/>女</div>
-								<div class="ipt"><span>出生年月：</span><input type="text" placeholder="" id="year"/></div>
-								<p class="sub_btn submit">修改</p>
+								<form action="{:url('user/set_userinfo')}" enctype="multipart/form-data"  method="post">
+								<!--<div class="avatar"><span>头像: </span><img src="__STATIC__/img/yhtx.png" alt="" /><input type="file" name="header_pic"> </div>-->
+								<div class="ipt"><span>昵称：</span><input type="nickname"  name="nickname" placeholder="{$res.nickname}"/></div>
+								<div  class="ipt"><span>所在地：</span><input type="address" name="address" placeholder="{$res.address}"/></div>
+								<div class="ipt"><span>性别：</span><input type="radio1" placeholder="{$res.sex}" name="sex"/></div>
+								<div class="ipt"><span>出生年月：</span><input type="text" name="birthday" placeholder="{$res.birthday}" id="year"/></div>
+								<p class="sub_btn submit">修改<input type="submit" value="提交" /></p>
+								</form>
 							</div>
 							<div style="display: none;" class="info_ipt">
 								<div class="upLoad_form">

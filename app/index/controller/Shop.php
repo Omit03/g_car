@@ -62,7 +62,7 @@ class Shop extends Common
         $age = $this->get_car_allage();//车龄
 
         $er_car = $this->er_car($city_id); //二手车
-
+        //dump($er_car);die;
         $this->assign('brand',$brand);
         $this->assign('price',$price);
         $this->assign('subface',$subface);

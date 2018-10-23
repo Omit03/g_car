@@ -83,15 +83,18 @@
 			<div class="gj_clear">
 		    	<ul class="list ptp15 new_list">
 					{volist name="new_car" id="val" offset="1" length="10"}
+
 					<li class="items5">
-						<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
-						<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}" class="car_desc">
+
+						<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}&name={$val.name}&img_url={$val.img_url}&shoufu={$val.pay10_s2}&ygong={$val.pay10_y2}&price={$val.price}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
+						<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}&name={$val.name}&img_url={$val.img_url}&shoufu={$val.pay10_s2}&ygong={$val.pay10_y2}&price={$val.price}" class="car_desc">
 							<h3>{$val.name}</h3>
 							<p><span class="pay_first">首付<b>{$val.pay10_s2}</b>万</span> <span class="padlt20">月供{$val.pay10_y2}元</span> </p>
 					
 						</a>
 						<img src="__STATIC__/img/newgoods.png" alt="" class="hot" />
 					</li>
+
 					{/volist}
 				</ul>
 				<a href="" class="more_l">查看更多车型</a>
@@ -263,8 +266,8 @@
 	
 	</body>
 	<script>
-	   $(".header").load("templates/header.html");
-	   $(".footer").load("templates/footer.html");
+	   // $(".header").load("templates/header.html");
+	   // $(".footer").load("templates/footer.html");
 	   //	显示分
 	   function showStar(elem){
 	   	var score=$(elem).find("em").attr("data_value");

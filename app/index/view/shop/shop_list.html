@@ -92,8 +92,8 @@
 					</div>
 					<div class="gj_clear" >
 						<ul class="store_list gj_clear">
-                            {volist name="er_car" id="vol" offset="1" length="10" }
-							<li class="items"><a href="{:url('index/details')}?cheid={$vol.pu_id}" class="car_img flex_center"><img src="{$vol.img_url}" alt="" /></a><a href="{:url('index/details')}?cheid={$vol.pu_id}" class="car_desc"><h3>{$vol.name}</h3><div class="fleft"><p>里程：8.0公里</p><p>年份：2014</p></div><div class="fright car_money">¥<b>42.50</b>万</div>	</a></li>
+                            {volist name="er_car" id="val" offset="1" length="10" }
+							<li class="items"><a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /><a href="" class="car_desc"><h3>{$val.name}</h3><div class="fleft"><p>里程：{$val.car_mileage}公里</p><p>年份：{$val.car_cardtime}</p></div><div class="fright car_money">¥<b>{$val.price}</b>万</div>	</a></a></li>
                             {/volist}
 						</ul>
 						<div class="page">

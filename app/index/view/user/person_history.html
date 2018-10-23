@@ -50,7 +50,7 @@
 						</h1>
 						<h2 class="step"></h2>
 						 <ul class="list browse_car">
-
+                           {notempty name = "res"}
 							{volist name="res" id="vol"}
 							<li class="items4">
 								<a href="" class="car_img flex_center"><img src="{$vol.img}" alt="" /></a>
@@ -61,6 +61,7 @@
 								</a>
 							</li>
 							 {/volist}
+							 {/notempty}
 						</ul>
 					</div>
 				</div>

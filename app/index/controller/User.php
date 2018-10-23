@@ -8,7 +8,6 @@ use think\Session;
 
 class User  extends Common {
 
-
     /*
      * 展示登录
      */
@@ -84,25 +83,166 @@ class User  extends Common {
 
     }
     /*
-     * 展示登录
+     * 展示个人信息
      */
     public function person_info(){
+
+
+        $phone = Session::get('phone');
+
+        if ($phone){
+
+            $brand = $this->brand();//品牌
+
+            $res = Db::table('user')->where('phone',$phone)->find();
+
+            $this->assign('brand',$brand);
+
+            $this->assign('res',$res);
+            return $this->fetch();
+
+        }else{
+
+            $this->redirect('car_login');
+        }
+
+
+    }
+    /*
+     * 展示收藏
+     */
+    public function person_collect(){
+
+        $newcar = $this->car_collect_list(1);
+        $twocar = $this->car_collect_list(2);
+        $zerocar = $this->car_collect_list(3);
 
         $brand = $this->brand();//品牌
 
         $this->assign('brand',$brand);
+        $this->assign('newcar',$newcar);
+        $this->assign('twocar',$twocar);
+        $this->assign('zerocar',$zerocar);
         return $this->fetch();
 
     }
     /*
-     * 展示登录
+     * 收藏执行
      */
-    public function person_collect(){
+    public function collect_car(){
 
-        $brand = $this->brand();//品牌
+        $data =  $this->params;
 
-        $this->assign('brand',$brand);
-        return $this->fetch();
+        $userid = Session::get('user_id');
+
+
+        if ($userid){
+
+            $where['type'] = $data['type'];
+
+            $where['userid'] = $userid;
+
+            $where['cheid'] = $data['cheid'];
+
+            $info = Db::table('car_collect')->where($where)->find();
+
+
+            if ($info){
+
+                $this->return_msg(400,'已收藏');
+            }
+
+            if (empty($data['type'])){
+
+                $data['type'] = 0;
+            }
+            if (empty($data['cheid'])){
+                $data['cheid'] = 0;
+            }
+
+            if (empty($data['brand_id'])){
+                $data['brand_id'] = 0;
+            }
+            if (empty($data['sys_id'])){
+                $data['sys_id'] = 0;
+            }
+            if (empty($data['cartype_id'])){
+                $data['cartype_id'] = 0;
+            }
+            if (empty($data['img'])){
+                $data['img'] = 0;
+            }
+            if (empty($data['name'])){
+                $data['name'] = 0;
+            }
+            if (empty($data['price'])){
+                $data['price'] = 0;
+            }
+            if (empty($data['paitime'])){
+                $data['paitime'] = 0;
+            }
+            if (empty($data['licheng'])){
+                $data['licheng'] = 0;
+            }
+            if (empty($data['shoufu'])){
+                $data['shoufu'] = 0;
+            }
+            if (empty($data['yuegong'])){
+                $data['yuegong'] = 0;
+
+            }
+
+
+
+            $res = Db::table('car_collect')->insert([
+                'userid'=>$userid,
+                'type'=>$data['type'],
+                'type'=>$data['type'],
+                'cheid'=>$data['cheid'],
+                'brand_id'=>$data['brand_id'],
+                'sys_id'=>$data['sys_id'],
+                'cartype_id'=>$data['cartype_id'],
+                'img'=>$data['img'],
+                'name'=>$data['name'],
+                'price'=>$data['price'],
+                'paitime'=>$data['paitime'],
+                'licheng'=>$data['licheng'],
+                'shoufu'=>$data['shoufu'],
+                'yuegong'=>$data['yuegong'],
+                ]);
+
+
+        }else{
+
+
+            $this->return_msg(400,'未登录');
+        }
+
+
+        $this->return_msg(200,'收藏成功');
+
+
+
+
+    }
+
+    /*
+     * 收藏删除
+     */
+    public function collect_del(){
+
+        $data = $this->params;
+
+       $res = Db::table('car_collect')->where('id',$data['id'])->delete();
+
+        if ($res){
+
+            $this->return_msg(200,'删除成功');
+
+        }else{
+
+            $this->return_msg(400,'失败');
+        }
 
     }
     /*
@@ -698,24 +838,56 @@ class User  extends Common {
      */
     public function set_userinfo()
     {
-        /*接收参数*/
 
-        $data =  $this->params;
+       // if ($this->request->isPost()){
 
-        $this->check_exist($data['user_phone'],'phone',1); //检测用户是否存在
+            /*接收参数*/
 
-        $head_img_path = $this->upload_file($data['header_pic'],'head_img');
+            $data =  $this->params;
 
-        $res = Db::name('user')->where('phone',$data['user_phone'])->update(['header_pic'=>$head_img_path,'nickname'=>$data['nickname'],'address'=>$data['address'],'sex'=>$data['sex'],'birthday'=>$data['birthday'],]);
+            //dump($data['nickname']);die;
 
-        if ($res){
+            //$this->check_exist($data['user_phone'],'phone',1); //检测用户是否存在
 
-            $this->return_msg(200,'成功');
+            $phone = Session::get('phone');
 
-        }else{
 
-            $this->return_msg(400,'失败');
-        }
+            if ($data['nickname']){
+
+                $res = Db::table('user')->where('phone',$phone)->setField(['nickname'=>$data['nickname']]);
+            }
+            if ($data['address']){
+
+                $res = Db::table('user')->where('phone',$phone)->setField(['address'=>$data['address']]);
+            }
+            if ($data['sex']){
+
+                $res = Db::table('user')->where('phone',$phone)->setField(['sex'=>$data['sex']]);
+            }
+            if ($data['birthday']){
+
+                $res = Db::table('user')->where('phone',$phone)->setField(['birthday'=>$data['birthday']]);
+
+            }
+
+
+//        $head_img_path = $this->upload_file($data['header_pic'],'head_img');
+
+
+            if ($res){
+
+                $this->success('修改成功','person_info');
+
+            }else{
+
+                $this->error('失败');
+            }
+        //}
+
+
+
+
+
     }
 
 
