@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540289659;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540292434;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -283,7 +283,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="active">
-								<a href="<?php echo url('index/lots_cars'); ?>?subface=<?php echo $val['id']; ?>&page=1&sort=1"> <?php echo $val['name']; ?></a>
+								<a href="<?php echo url('index/lots_cars'); ?>?car_age=<?php echo $val['id']; ?>&page=1&sort=1"> <?php echo $val['name']; ?></a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 							<li class="active fright">

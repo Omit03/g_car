@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\twocar\index.html";i:1540296373;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\twocar\index.html";i:1540344470;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -251,7 +251,7 @@ $(window).on('scroll',function(){
 							              <dl class="menu menu4" style="display: none;" id="aselect2">
 							                <dd> <a rel="nofollow" href="#" data-for="hidden_r" data-valueid="0" class="preventdefault" title="不限二手车">不限</a> </dd>
 											  <?php if(is_array($age) || $age instanceof \think\Collection || $age instanceof \think\Paginator): $i = 0; $__LIST__ = $age;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-											  <dd> <a rel='nofollow' href="<?php echo url('index/lots_cars'); ?>?subface=<?php echo $val['id']; ?>&page=1&sort=1" data-for='hidden_r' data-valueid='' class='preventdefault' title=''><?php echo $val['cheling']; ?></a> </dd>
+											  <dd> <a rel='nofollow' href="<?php echo url('index/lots_cars'); ?>?age=<?php echo $val['id']; ?>&page=1&sort=1" data-for='hidden_r' data-valueid='' class='preventdefault' title=''><?php echo $val['cheling']; ?></a> </dd>
 											  <?php endforeach; endif; else: echo "" ;endif; ?>
 							              </dl>
 							            </div>
@@ -339,9 +339,9 @@ $(window).on('scroll',function(){
 							            <div data-toggle="select" class="select-menu" id="select6">
 							              <div class="menu-selected">颜色</div>
 							              <div class="menu menu7 radius menuCar07" style="display: none;" id="aselect6">
-							                <dd> <a rel="nofollow" href="<?php echo url('index/lots_cars'); ?>?color=<?php echo $val['id']; ?>&page=1&sort=1" data-for="hidden_c" data-valueid="0" class="preventdefault c0" title="不限二手车">不限</a> </dd>
+							                <dd> <a rel="nofollow" href="" data-for="hidden_c" data-valueid="0" class="preventdefault c0" title="不限二手车">不限</a> </dd>
 											  <?php if(is_array($color) || $color instanceof \think\Collection || $color instanceof \think\Paginator): $i = 0; $__LIST__ = $color;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-											  <dd> <a rel='nofollow' href="" data-for='hidden_c' data-valueid='' class='preventdefault c15' title=''><?php echo $val['name']; ?></a> </dd>
+											  <dd> <a rel='nofollow' href="<?php echo url('index/lots_cars'); ?>?color=<?php echo $val['id']; ?>&page=1&sort=1" data-for='hidden_c' data-valueid='' class='preventdefault c15' title=''><?php echo $val['name']; ?></a> </dd>
 							                <!--<dd> <a rel="nofollow" href="#" data-for="hidden_c" data-valueid="1" class="preventdefault c1" title="黑色二手车">黑色</a> </dd>-->
 											  <?php endforeach; endif; else: echo "" ;endif; ?>
 							              </div>
@@ -354,7 +354,7 @@ $(window).on('scroll',function(){
 
 							                <dd> <a rel="nofollow" href="" data-for="hidden_d" data-valueid="0" class="preventdefault" title="不限二手车">不限</a> </dd>
 											  <?php if(is_array($fuel) || $fuel instanceof \think\Collection || $fuel instanceof \think\Paginator): $i = 0; $__LIST__ = $fuel;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-											  <dd> <a rel='nofollow' href="" data-for='hidden_w' data-valueid='' class='preventdefault' title=''><?php echo $val['name']; ?></a> </dd>
+											  <dd> <a rel='nofollow' href="<?php echo url('index/lots_cars'); ?>?fuel=<?php echo $val['id']; ?>&page=1&sort=1" data-for='hidden_w' data-valueid='' class='preventdefault' title=''><?php echo $val['name']; ?></a> </dd>
 							                <!--<dd> <a rel="nofollow" href="#" data-for="hidden_d" data-valueid="1" class="preventdefault" title="汽油二手车">汽油</a> </dd>-->
 											  <?php endforeach; endif; else: echo "" ;endif; ?>
 							          
@@ -436,13 +436,13 @@ $(window).on('scroll',function(){
 					</div>
 					<h2 class="youlike">猜你喜欢</h2>
 					 <ul class="list ptp15">
-						 <?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,12,1, true) : $er_car->slice(12,1, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+						 <?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,12,1, true) : $er_car->slice(12,1, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 						<li class="items5">
-							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $vo['pu_id']; ?>" class="car_img flex_center"><img src="<?php echo $vo['img_url']; ?>" alt="" /></a>
-							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $vo['pu_id']; ?>" class="car_desc">
-								<h3><?php echo $vo['name']; ?></h3>
-								<p><span class="car_price"><b><?php echo $vo['new_car_price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $vo['price']; ?>万</span></p>
-								<p><span><?php echo $vo['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $vo['car_mileage']; ?>万公里</span> </p>
+							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
+							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>" class="car_desc">
+								<h3><?php echo $val['name']; ?></h3>
+								<p><span class="car_price"><b><?php echo $val['new_car_price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $val['price']; ?>万</span></p>
+								<p><span><?php echo $val['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $val['car_mileage']; ?>万公里</span> </p>
 								<div class="che_ordered">立即预约</div>
 							</a>
 						</li>

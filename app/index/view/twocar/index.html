@@ -109,7 +109,7 @@
 							              <dl class="menu menu4" style="display: none;" id="aselect2">
 							                <dd> <a rel="nofollow" href="#" data-for="hidden_r" data-valueid="0" class="preventdefault" title="不限二手车">不限</a> </dd>
 											  {volist name="age" id="val"}
-											  <dd> <a rel='nofollow' href="{:url('index/lots_cars')}?subface={$val.id}&page=1&sort=1" data-for='hidden_r' data-valueid='' class='preventdefault' title=''>{$val.cheling}</a> </dd>
+											  <dd> <a rel='nofollow' href="{:url('index/lots_cars')}?age={$val.id}&page=1&sort=1" data-for='hidden_r' data-valueid='' class='preventdefault' title=''>{$val.cheling}</a> </dd>
 											  {/volist}
 							              </dl>
 							            </div>
@@ -294,13 +294,13 @@
 					</div>
 					<h2 class="youlike">猜你喜欢</h2>
 					 <ul class="list ptp15">
-						 {volist name="er_car" id="vo" offset="12" length="1"}
+						 {volist name="er_car" id="val" offset="12" length="1"}
 						<li class="items5">
-							<a href="{:url('index/details')}?cheid={$vo.pu_id}" class="car_img flex_center"><img src="{$vo.img_url}" alt="" /></a>
-							<a href="{:url('index/details')}?cheid={$vo.pu_id}" class="car_desc">
-								<h3>{$vo.name}</h3>
-								<p><span class="car_price"><b>{$vo.new_car_price}</b>万</span><span class="car_sui">新车含税{$vo.price}万</span></p>
-								<p><span>{$vo.car_cardtime}上牌</span> <span class="padlt20">{$vo.car_mileage}万公里</span> </p>
+							<a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
+							<a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="car_desc">
+								<h3>{$val.name}</h3>
+								<p><span class="car_price"><b>{$val.new_car_price}</b>万</span><span class="car_sui">新车含税{$val.price}万</span></p>
+								<p><span>{$val.car_cardtime}上牌</span> <span class="padlt20">{$val.car_mileage}万公里</span> </p>
 								<div class="che_ordered">立即预约</div>
 							</a>
 						</li>

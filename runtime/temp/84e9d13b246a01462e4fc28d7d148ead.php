@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\shop\index.html";i:1540281314;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\shop\index.html";i:1540341906;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -184,8 +184,8 @@ $(window).on('scroll',function(){
 							<h3>品牌<b>全部</b></h3>
 							<div class="classify">
 								<a href="" class="active" >不限</a>
-								<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-								<a href=""><?php echo $vol['name']; ?></a>
+								<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+								<a href="<?php echo url('index/lots_cars'); ?>?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?></a>
 								<?php endforeach; endif; else: echo "" ;endif; ?>
 							</div>
 						</li>
@@ -193,8 +193,8 @@ $(window).on('scroll',function(){
 							<h3>价格<b>全部</b></h3>
 						<div class="classify">
 							<a href="" class="active" >不限</a>
-							<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-							<a href=""><?php echo $vo['name']; ?></a>
+							<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<a href="<?php echo url('index/lots_cars'); ?>?price_range=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?></a>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</div>
 						</li>
@@ -202,14 +202,14 @@ $(window).on('scroll',function(){
 							<h3>级别<b>全部</b></h3>
 							<div class="classify">
 							<a href="" class="active" >不限</a>
-								<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href="<?php echo $vol['id']; ?>"><?php echo $vol['name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+								<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><a href="<?php echo url('index/lots_cars'); ?>?car_age=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
 							</div>
 						</li>
 						<li>
 							<h3>车龄 <b>全部</b></h3>
 							<div class="classify">
 								<a href="" class="active" >不限</a>
-								<?php if(is_array($age) || $age instanceof \think\Collection || $age instanceof \think\Paginator): $i = 0; $__LIST__ = $age;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href=""><?php echo $vol['cheling']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+								<?php if(is_array($age) || $age instanceof \think\Collection || $age instanceof \think\Paginator): $i = 0; $__LIST__ = $age;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><a href="<?php echo url('index/lots_cars'); ?>?age=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['cheling']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
 							</div>
 						</li>
 					</ul>

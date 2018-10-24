@@ -67,6 +67,8 @@ class Newcar extends Common
             $wherehis['cheid'] = $cheid;
             $wherehis['type'] = 1;
 
+            //dump($data['name']);die;
+
             $res = Db::table('car_liulan_history')->where($wherehis)->find();
 
             if (empty($res)){
