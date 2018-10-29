@@ -395,13 +395,9 @@ option:hover {
     width: 200px;
     margin: 0 auto;
 }
-.search_ipts input{
-    height:30px;
-    border:1px solid #999;
-    padding-left:30px;
-}
 .wrap {
     margin: 0 auto;
+    width: 1200px;
 }
 
 .oh {
@@ -979,10 +975,9 @@ option:hover {
 
 .city_current {
     float: left;
-    margin-left: 109px;
-    position: absolute;
+    position: relative;
     background-color: rgba(0,0,0,0);
-    top: 45px;
+    top: 15px;
 }
 
 .address {
