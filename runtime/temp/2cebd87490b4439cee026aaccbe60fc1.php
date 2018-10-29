@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html";i:1540283165;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540629572;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540774757;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html";i:1540283165;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540793843;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,12 +24,12 @@
 			<?php echo \think\Session::get('phone'); endif; ?></div>
 		<div class="fright">
 			<ul class="site_nav_menu">
-				<li><a href=""><img src="img/shouye.png" alt="" />首页</a></li>
-				<li class="sec_li"><a href=""><img src="img/maic.png" alt="" />我要买车</a></li>
-				<li><a href=""><img src="img/maic.png" alt="" />我要卖车</a></li>
-				<li><a href=""><img src="img/xiazai.png" alt="" />APP下载</a></li>
-				<li><a href=""><img src="img/wangahn.png" alt="" />网站导航</a></li>
-				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/person_history'); ?>"><img src="img/wangahn.png" alt="" />会员中心</a></li><?php endif; if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
+				<li><a href="<?php echo url('index/index'); ?>"><img src="/static/img/shouye.png" alt="" />首页</a></li>
+				<li class="sec_li"><a href=""><img src="/static/img/maic.png" alt="" />我要买车</a></li>
+				<li><a href=""><img src="/static/img/maic.png" alt="" />我要卖车</a></li>
+				<li><a href="<?php echo url('index/appdownload'); ?>"><img src="/static/img/xiazai.png" alt="" />APP下载</a></li>
+				<li><a href=""><img src="/static/img/wangahn.png" alt="" />网站导航</a></li>
+				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/person_history'); ?>"><img src="/static/img/wangahn.png" alt="" />会员中心</a></li><?php endif; if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="/static/img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>
@@ -104,7 +104,7 @@
 			</div>
 		</div>
 		<div class="header_tel">
-			<img src="img/phone1.png" alt="" height="17"/>
+			<img src="/static/img/phone1.png" alt="" height="17"/>
 			0371-53375515
 		</div>
 		<div class="nav">
@@ -232,7 +232,7 @@ $(window).on('scroll',function(){
 			
 	<div class="wrap">
 		<div class="company_info gj_clear">
-			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
+			<div class="footer_logo"><img src="/static/img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
 			<div class="basic_info">
 				<div>
 					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
@@ -246,8 +246,8 @@ $(window).on('scroll',function(){
 				  CopyRight © 2015-2018 ww
 				</p>
 			</div>
-			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
-			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
+			<div class="QRcode"><img src="/static/img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
+			<div class="QRcode"><img src="/static/img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
 			<div class="contact_way">
 				<p>免费咨询、建议、投诉 <br />
 				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
@@ -289,7 +289,7 @@ $(window).on('scroll',function(){
 	<!--
 	<div class="wrap">
 		<div class="company_info gj_clear">
-			<div class="footer_logo"><img src="img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
+			<div class="footer_logo"><img src="/static/img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
 			<div class="basic_info">
 				<div>
 					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
@@ -303,8 +303,8 @@ $(window).on('scroll',function(){
 				  CopyRight © 2015-2018 ww
 				</p>
 			</div>
-			<div class="QRcode"><img src="img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
-			<div class="QRcode"><img src="img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
+			<div class="QRcode"><img src="/static/img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
+			<div class="QRcode"><img src="/static/img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
 			<div class="contact_way">
 				<p>免费咨询、建议、投诉 <br />
 				卖车热线（投诉建议）：<b>0371-53375515</b> <br />

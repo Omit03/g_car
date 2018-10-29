@@ -353,12 +353,16 @@ class Index  extends Common
 
         }
 
-
-       // dump($where);die;
-
         $ss = Db::table('new_car')->where($where)->limit(20)->select();
 
-        dump($ss);
+//            foreach ($ss as $k =>$val){
+//
+//
+//            }
+
+            dump($ss['0']['img_300']);
+
+        //dump($ss);
 
     }
 
