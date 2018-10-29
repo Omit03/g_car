@@ -20,7 +20,7 @@ return[
         // 用户名
         'username'        => 'root',
         // 密码
-        'password'        => '',
+        'password'        => 'root',
         'hostport'        => '3306',
 
         'url_domain_deploy'      => true,

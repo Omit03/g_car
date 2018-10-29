@@ -112,10 +112,44 @@
 			<div class="wrap home_sel">
 				<div class="home_left">
 					<ul class="home_sel_tit">
-						<li class="active"> 二手车</li>
-						<li>新车</li>
+						<li id="btn_new" class="active" onclick="btn_new()"> 二手车</li>
+						<li id="btn_old" onclick="btn_old()">新车</li>
 					</ul>
-					<div class="home_sel_con">
+					<div id="new_panel" class="home_sel_con">
+						<ul class="sel_newcar_brand oh ">
+							{volist name="brand" id = "val"}
+							<li>
+								<a href="{:url('index/lots_cars')}?brand_id={$val.id}&page=1&sort=1"><img src="{$val.img_url}" alt="">
+									<p>{$val.name}</p>
+								</a>
+							</li>
+							{/volist}
+						</ul>
+						<ul class="sel_newcar_type oh mtp40">
+							<li class="active">
+								<a href=""> 分期购</a>
+							</li>
+							{volist name="price" id = "val"}
+							<li class="active">
+								<a href="{:url('index/lots_cars')}?price_range={$val.id}&page=1&sort=1">{$val.name} </a>
+							</li>
+							{/volist}
+						</ul>
+						<ul class="sel_newcar_type oh mtp40">
+							<li class="active">
+								<a href=""> 车型</a>
+							</li>
+							{volist name="subface" id = "val"}
+							<li class="active">
+								<a href="{:url('index/lots_cars')}?car_age={$val.id}&page=1&sort=1"> {$val.name}</a>
+							</li>
+							{/volist}
+							<li class="active fright">
+								<a href="" class="moretype"><img src="__STATIC__/img/quanbu.png" alt="" width="23">更多车型</a>
+							</li>
+						</ul>
+					</div>
+					<div id="old_panel" class="home_sel_con" style="display: none;">
 						<ul class="sel_newcar_brand oh ">
 							{volist name="brand" id = "val"}
 							<li>
@@ -166,13 +200,13 @@
 					<div class="recom_new_tit oh marbt23">
 						<h2>推荐新车</h2>
 						<ul class="fleft">
-							<li class="active">分期购</li>
-							<li>一成购新</li>
-							<li>低月供</li>
-							<li>5万以下</li>
+							<li id="new_car_0" class="new_car_n active">分期购</li>
+							<li id="new_car_1" class="new_car_n">一成购新</li>
+							<li id="new_car_2" class="new_car_n">低月供</li>
+							<li id="new_car_3" class="new_car_n">5万以下</li>
 						</ul>
 					</div>
-					<div class="recom_new_con">
+					<div id="new_car_panel_0" class="recom_new_con">
 						<ul class="recom_tit_img ">
 							<li class="car_left">
 								<a href=""><img class='lazy-load' data-original="__STATIC__/img/xinchel.png" alt="" titlt='' /></a>
@@ -194,19 +228,85 @@
                             {/volist}
 						</ul>
 					</div>
+					<div id="new_car_panel_1" class="recom_new_con" style="display: none;">
+						<ul class="recom_tit_img ">
+							<li class="car_left">
+								<a href=""><img class='lazy-load' data-original="__STATIC__/img/xinchel.png" alt="" titlt='' /></a>
+							</li>
+							{volist name="new_car" id="vl"}
+							<li>
+								<a href="{:url('newcar/newcardetails')}?brand_id={$vl.brand_id}&sys_id={$vl.sys_id}&cartype_id={$vl.cartype_id}&id={$vl.id}&name={$vl.name}&img_url={$vl.img_url}&shoufu={$vl.pay10_s2}&ygong={$vl.pay10_y2}&price={$vl.price}" class="flex_around" target="_blank">
+									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='{$vl.img_url}'/>
+								</span>
+									<h3 class="text_overflow">{$vl.name}</h3>
+									<p class="valign ptp15">
+										<span class="pay_first plt10">价格{$vl.price}</span>
+										<span class="pay_first plt10">首付<b class="">{$vl.pay10_s2}</b>万</span>
+										<span class="pay_month">月供{$vl.pay10_y2}元</span>
+										<span class="pay_month">{$vl.pay10_n2}期</span>
+									</p>
+								</a>
+							</li>
+							{/volist}
+						</ul>
+					</div>
+					<div id="new_car_panel_2" class="recom_new_con" style="display: none;">
+						<ul class="recom_tit_img ">
+							<li class="car_left">
+								<a href=""><img class='lazy-load' data-original="__STATIC__/img/xinchel.png" alt="" titlt='' /></a>
+							</li>
+							{volist name="new_car" id="vl"}
+							<li>
+								<a href="{:url('newcar/newcardetails')}?brand_id={$vl.brand_id}&sys_id={$vl.sys_id}&cartype_id={$vl.cartype_id}&id={$vl.id}&name={$vl.name}&img_url={$vl.img_url}&shoufu={$vl.pay10_s2}&ygong={$vl.pay10_y2}&price={$vl.price}" class="flex_around" target="_blank">
+									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='{$vl.img_url}'/>
+								</span>
+									<h3 class="text_overflow">{$vl.name}</h3>
+									<p class="valign ptp15">
+										<span class="pay_first plt10">价格{$vl.price}</span>
+										<span class="pay_first plt10">首付<b class="">{$vl.pay10_s2}</b>万</span>
+										<span class="pay_month">月供{$vl.pay10_y2}元</span>
+										<span class="pay_month">{$vl.pay10_n2}期</span>
+									</p>
+								</a>
+							</li>
+							{/volist}
+						</ul>
+					</div>
+					<div id="new_car_panel_3" class="recom_new_con" style="display: none;">
+						<ul class="recom_tit_img ">
+							<li class="car_left">
+								<a href=""><img class='lazy-load' data-original="__STATIC__/img/xinchel.png" alt="" titlt='' /></a>
+							</li>
+							{volist name="new_car" id="vl"}
+							<li>
+								<a href="{:url('newcar/newcardetails')}?brand_id={$vl.brand_id}&sys_id={$vl.sys_id}&cartype_id={$vl.cartype_id}&id={$vl.id}&name={$vl.name}&img_url={$vl.img_url}&shoufu={$vl.pay10_s2}&ygong={$vl.pay10_y2}&price={$vl.price}" class="flex_around" target="_blank">
+									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='{$vl.img_url}'/>
+								</span>
+									<h3 class="text_overflow">{$vl.name}</h3>
+									<p class="valign ptp15">
+										<span class="pay_first plt10">价格{$vl.price}</span>
+										<span class="pay_first plt10">首付<b class="">{$vl.pay10_s2}</b>万</span>
+										<span class="pay_month">月供{$vl.pay10_y2}元</span>
+										<span class="pay_month">{$vl.pay10_n2}期</span>
+									</p>
+								</a>
+							</li>
+							{/volist}
+						</ul>
+					</div>
 				</div>
 				<!--推荐二手车-->
 				<div class="home_recom_car">
 					<div class="recom_new_tit oh marbt23">
 						<h2>推荐二手车</h2>
 						<ul class="fleft">
-							<li class="active">最近发布</li>
-							<li>价格最低</li>
-							<li>车龄最短</li>
-							<li>里程最短</li>
+							<li id="old_car_0" class="old_car_n active">最近发布</li>
+							<li id="old_car_1" class="old_car_n">价格最低</li>
+							<li id="old_car_2" class="old_car_n">车龄最短</li>
+							<li id="old_car_3" class="old_car_n">里程最短</li>
 						</ul>
 					</div>
-					<div class="recom_new_con">
+					<div id="old_car_panel_0" class="recom_new_con">
 						<ul class="recom_tit_img">
 							<li class="car_left">
 								<a href=""><img class='lazy-load' data-original="__STATIC__/img/group1.png" alt="" titlt='' /></a>
@@ -228,6 +328,70 @@
 						</ul>
 					</div>
 				</div>
+				<div id="old_car_panel_1" class="recom_new_con" style="display: none;">
+					<ul class="recom_tit_img">
+						<li class="car_left">
+							<a href=""><img class='lazy-load' data-original="__STATIC__/img/group1.png" alt="" titlt='' /></a>
+						</li>
+						{volist name="er_car" id="val"}
+						<li>
+							<a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="flex_around">
+									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='{$val.img_url}'/>
+								</span>
+								<h3 class="text_overflow">{$val.name}</h3>
+								<p class="mile">{$val.car_cardtime} | {$val.car_mileage}万公里</p>
+								<p class="valign">
+									<span class="pay_first plt10"><b class="">{$val.price}</b></span>
+									<span class="sure"><img src="__STATIC__/img/pinpairz.png" alt=""/></span>
+								</p>
+							</a>
+						</li>
+						{/volist}
+					</ul>
+				</div>
+			<div id="old_car_panel_2" class="recom_new_con" style="display: none;">
+				<ul class="recom_tit_img">
+					<li class="car_left">
+						<a href=""><img class='lazy-load' data-original="__STATIC__/img/group1.png" alt="" titlt='' /></a>
+					</li>
+					{volist name="er_car" id="val"}
+					<li>
+						<a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="flex_around">
+									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='{$val.img_url}'/>
+								</span>
+							<h3 class="text_overflow">{$val.name}</h3>
+							<p class="mile">{$val.car_cardtime} | {$val.car_mileage}万公里</p>
+							<p class="valign">
+								<span class="pay_first plt10"><b class="">{$val.price}</b></span>
+								<span class="sure"><img src="__STATIC__/img/pinpairz.png" alt=""/></span>
+							</p>
+						</a>
+					</li>
+					{/volist}
+				</ul>
+			</div>
+	<div id="old_car_panel_3" class="recom_new_con" style="display: none;">
+		<ul class="recom_tit_img">
+			<li class="car_left">
+				<a href=""><img class='lazy-load' data-original="__STATIC__/img/group1.png" alt="" titlt='' /></a>
+			</li>
+			{volist name="er_car" id="val"}
+			<li>
+				<a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="flex_around">
+												<span class="car_img"><img class='lazy-load' alt="" titlt='' src='{$val.img_url}'/>
+											</span>
+					<h3 class="text_overflow">{$val.name}</h3>
+					<p class="mile">{$val.car_cardtime} | {$val.car_mileage}万公里</p>
+					<p class="valign">
+						<span class="pay_first plt10"><b class="">{$val.price}</b></span>
+						<span class="sure"><img src="__STATIC__/img/pinpairz.png" alt=""/></span>
+					</p>
+				</a>
+			</li>
+			{/volist}
+		</ul>
+	</div>
+
 				<!--推荐零首付新车-->
 				<div class="home_recom_car">
 					<div class="recom_new_tit oh marbt23">
@@ -589,8 +753,32 @@
 		</div>
 		<script src="__STATIC__/js/common.js" type="text/javascript" charset="utf-8"></script>
 	</body>
+	<script type="text/javascript">
+		function btn_new() {
+            if ($('#btn_new').hasClass('active')){
+                return;
+            } else {
+                $('#btn_new').addClass('active');
+                $('#btn_old').removeClass();
+                $('#new_panel').css("display", 'block')
+                $('#old_panel').css("display", 'none')
+			}
+
+        }
+        function btn_old() {
+            if ($('#btn_old').hasClass('active')){
+                return;
+            } else {
+                $('#btn_old').addClass('active');
+                $('#btn_new').removeClass();
+                $('#new_panel').css("display", 'none')
+                $('#old_panel').css("display", 'block')
+            }
+        }
+	</script>
 	<script>
 		$(function() {
+            $($(".wrap li")[0]).addClass("active").siblings().removeClass("active");
 			//			新闻导航切换
 			$(".home_new_nav li").click(function() {
 				$(this).addClass("active").siblings().removeClass("active")
@@ -706,6 +894,41 @@
 			})
 			// $(".header").load("templates/header.html");
 			// $(".footer").load("templates/footer.html");
+
+            var arr_old = new Array();
+			$(".old_car_n").each(function (idx, e) {
+                arr_old.push(e);
+				e.onclick = function () {
+                    if ($("#old_car_" + idx).hasClass("active")){
+                        return;
+                    } else {
+                        for (var i = 0; i < arr_old.length; i++){
+                            $("#old_car_" + i).removeClass("active");
+                            $("#old_car_panel_" + i).css("display:none");
+                        }
+                        $("#old_car_" + idx).addClass("active");
+                        $("#old_car_panel_" + idx).css("display:block")
+
+                    }
+                }
+            });
+            var arr_new = new Array();
+            $(".new_car_n").each(function (idx, e) {
+                arr_new.push(e);
+                e.onclick = function () {
+                    if ($("#new_car_" + idx).hasClass("active")){
+                        return;
+                    } else {
+                        for (var i = 0; i < arr_new.length; i++){
+                            $("#new_car_" + i).removeClass("active");
+                            $("#new_car_panel_" + i).css("display:none");
+                        }
+                        $("#new_car_" + idx).addClass("active");
+                        $("#new_car_panel_" + idx).css("display:block")
+
+                    }
+                }
+            })
 
 		})
 	</script>

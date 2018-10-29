@@ -12,7 +12,7 @@
 /*选择二手 或新车*/
 .home_sel{position: relative;z-index: 3;height: 300px;margin-top: -64px; background-color: #fff; border: 1px solid #dfe3e3; border-top: 0; box-shadow:6px 4px 35px rgba(0,0,0,0.06); border-radius: 6px;  }
 .home_sel_tit{width:800px;height:52px;}
-.home_sel_tit li{ float: left;height:51px; line-height:51px;margin-left:60px;font-size:17px;}
+.home_sel_tit li{ float: left;height:51px; line-height:51px;margin-left:60px;font-size:17px;cursor: pointer;}
 .home_sel_tit li.active{border-bottom:2px solid #FF8402;font-weight:bold;}
 .home_sel_con{margin-top:25px;width:800px;height:235px;float: left;}
 .sel_newcar_brand li{width:75px;margin-left:37px; float: left;}
@@ -212,6 +212,7 @@ background-color:#686868;background-image: url(../img/newcebian.png);background-
 .login_phone .border input{width:200px;height: 53px;}
 .login_phone .login_ver .getcode{border-left:2px solid #E7E7E7;padding-left: 20px;font-size: 14px;margin-left: 30px;cursor: pointer;}
 .login_phone>p{width: 386px;height: 56px;line-height: 56px;text-align: center;font-size: 18px;margin:0 auto; }
+.btn_login_n{width: 386px;height: 56px;line-height: 56px;text-align: center;font-size: 18px;margin:0 auto;margin-top: 40px;text-indent: 0px}
 .login_btn{background: #F7BD01;border-radius: 3px;color: #fff}
 .forgetPwd{margin-left: 220px;}
 .login_other{width:225px;float: left;margin-top: 20px;}

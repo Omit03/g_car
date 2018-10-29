@@ -177,7 +177,8 @@
 		</div>
 	</body>
 	<script>		 
-		$(function(){			
+		$(function(){
+            $($(".wrap li")[5]).addClass("active").siblings().removeClass("active");
 			// $(".header").load("templates/header.html");
 		    // $(".footer").load("templates/footer.html");
 		    $(".news_tab_nav li").click(function(){
