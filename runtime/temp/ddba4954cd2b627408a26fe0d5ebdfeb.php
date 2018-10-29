@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html";i:1540817573;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540815190;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html";i:1540817802;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540815190;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -167,7 +167,7 @@ $(window).on('scroll',function(){
    			 	<ul>
 					<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 
-   			 		<li><a href=""><img src="<?php echo $val['img_url']; ?>" alt="" /><p><?php echo $val['name']; ?></p></a></li>
+   			 		<li><a href="<?php echo url('index/search_newcar'); ?>?brand=<?php echo $val['id']; ?>"><img src="<?php echo $val['img_url']; ?>" alt="" /><p><?php echo $val['name']; ?></p></a></li>
 				    <?php endforeach; endif; else: echo "" ;endif; ?>
    			 	</ul>
    			 </div>

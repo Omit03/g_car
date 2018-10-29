@@ -25,7 +25,7 @@
    			 	<ul>
 					{volist name="brand" id="val"}
 
-   			 		<li><a href=""><img src="{$val.img_url}" alt="" /><p>{$val.name}</p></a></li>
+   			 		<li><a href="{:url('index/search_newcar')}?brand={$val.id}"><img src="{$val.img_url}" alt="" /><p>{$val.name}</p></a></li>
 				    {/volist}
    			 	</ul>
    			 </div>
