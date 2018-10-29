@@ -1790,7 +1790,7 @@ class Common extends Controller{
     }
 
     //获取厂商
-    function get_firm($sys_id){
+    public function get_firm($sys_id){
         $firm=Db::table("car_brand")->where("id=$sys_id")->value("upid");
 
         return $firm;
@@ -1800,7 +1800,7 @@ class Common extends Controller{
      * 新版公共分页sql
      * 20171020
      */
-    function CreateSql($TableName="",$Coll="",$WhereStr="",$WhereStr2="",$PageIndex="",$PageSize="",$OrderKey="",$OrderType="",$join="",$joinId="",$group="",$str=""){
+    public function CreateSql($TableName="",$Coll="",$WhereStr="",$WhereStr2="",$PageIndex="",$PageSize="",$OrderKey="",$OrderType="",$join="",$joinId="",$group="",$str=""){
         $min 	= ($PageIndex - 1) * $PageSize;
         $max 	= $PageSize;
         $sql = "SELECT
@@ -1861,6 +1861,595 @@ class Common extends Controller{
 
         return $res;
     }
+
+    /**
+     * 二手车筛选
+     * [lots_car 筛选列表页面]
+     * @return [type] [description]
+     *
+     */
+
+    public function lots_two_cars($sort = 0){
+
+
+            //接受参数
+            $data = $this->params;
+
+
+            $data['sort'] = $sort;
+
+            if (!empty($data['user_id'])){
+
+                $user_id = $data['user_id'];
+            }
+
+            if (!empty($data['page'])){
+
+                $page = $data['page'];
+            }
+            if (empty($data['num'])){
+                $PageSize = 10;
+            }else{
+                $PageSize = $data['num'];
+            }
+            if (empty($data['page'])){
+
+                $PageIndex = 1;
+
+            }else{
+                $PageIndex = $data['page'];
+            }
+
+            if (!empty($data['brand_id'])){
+
+                $brand_id = $data['brand_id'];//品牌id
+            }
+            if (!empty($data['sys_id'])){
+
+                $sys_id = $data['sys_id'];//车系id
+            }
+            if (!empty($data['cartype_id'])){
+
+                $cartype_id = $data['cartype_id'];//车型id
+            }
+            if (!empty($data['price_range'])){
+
+                $price_range = $data['price_range'];//价格区间id
+            }
+
+            if (!empty($data['car_mileage'])){
+
+                $car_mileage = $data['car_mileage'];//里程区间id
+            }
+
+            if (!empty($data['car_age'])){
+
+                $car_age = $data['car_age'];//车龄id
+            }
+
+            if (!empty($data['subface'])){
+
+                $subface = $data['subface'];//级别id
+            }
+
+            if (!empty($data['output'])){
+
+                $output = $data['output'];//排量id
+            }
+            if (!empty($data['gearbox'])){
+
+                $gearbox = $data['gearbox'];//变速箱id
+            }
+
+            if (!empty($data['blowdown'])){
+
+                $blowdown = $data['blowdown'];//排放标准id
+            }
+
+            if (!empty($data['car_drive'])){
+
+                $car_drive = $data['car_drive'];//驱动id
+            }
+
+            if (!empty($data['car_body'])){
+
+                $car_body = $data['car_body'];//车身id
+            }
+            if (!empty($data['color'])){
+
+                $color = $data['color'];//颜色id
+            }
+            if (!empty($data['fuel'])){
+
+                $fuel = $data['fuel'];//燃料id
+            }
+            if (!empty($data['sort'])){
+
+                $sort = $data['sort'];//排序  1价格最低 2价格最高 3车龄最短 4车龄最长 5里程最多 6里程最少
+            }
+            if (!empty($data['search'])){
+
+                $search = $data['search'];
+            }
+
+            //获取城市id
+
+            $city_id = $this->city_id();
+
+            $WhereStr = "  and rele_car.status = 1 and rele_car.up_under = 1 and user.is_fenghao = 2 and rele_car.city_id=".$city_id;
+            if(!empty($data['user_id'])){
+                $WhereStr .= "  and rele_car.user_id = $user_id ";
+            }
+            if(!empty($data['brand_id'])){
+                $WhereStr .= "  and rele_car.brand_id = $brand_id ";
+            }
+
+            // dump($brand_id);die;
+            if(!empty($data['sys_id'])){
+                $WhereStr .= "  and rele_car.sys_id = $sys_id ";
+            }
+            if(!empty($data['cartype_id'])){
+                $WhereStr .= "  and rele_car.cartype_id = $cartype_id ";
+            }
+            if(!empty($data['fuel'])){
+                $WhereStr .= "  and rele_car.fuel = $fuel ";
+            }
+            if(!empty($data['color'])){
+                $WhereStr .= "  and rele_car.color = $color ";
+            }
+            if(!empty($data['car_body'])){
+                $WhereStr .= "  and rele_car.car_body = $car_body ";
+            }
+            if(!empty($data['car_drive'])){
+                $WhereStr .= "  and rele_car.car_drive = $car_drive ";
+            }
+            if(!empty($data['blowdown'])){
+                $WhereStr .= "  and rele_car.blowdown = $blowdown ";
+            }
+            if(!empty($data['gearbox'])){
+                $WhereStr .= "  and rele_car.gearbox = $gearbox ";
+            }
+            if(!empty($data['output'])){
+                $WhereStr .= "  and rele_car.output = $output ";
+            }
+            if(!empty($data['subface'])){
+                $WhereStr .= "  and rele_car.subface = $subface ";
+            }
+            if(!empty($data['car_age'])){
+                $WhereStr .= "  and rele_car.car_age = $car_age ";
+            }
+            if(!empty($data['search'])){
+                $WhereStr .= " and rele_car.name_li like '%".$search."%'";
+            }
+            if(!empty($data['price_range'])){
+                switch ($data['price_range']) {
+                    case '2':
+                        //3万内
+                        $WhereStr .= " and rele_car.price <= 3 ";
+                        break;
+                    case '3':
+                        //3-5万
+                        $WhereStr .= " and rele_car.price between 3 and 5 ";
+                        break;
+                    case '4':
+                        //5-8万
+                        $WhereStr .= " and rele_car.price between 5 and 8 ";
+                        break;
+                    case '5':
+                        //8-10万
+                        $WhereStr .= " and rele_car.price between 8 and 10 ";
+                        break;
+                    case '6':
+                        //10-15万
+                        $WhereStr .= " and rele_car.price between 10 and  15";
+                        break;
+                    case '7':
+                        //15-20万
+                        $WhereStr .= " and rele_car.price between 15 and 20 ";
+                        break;
+                    case '8':
+                        //20-30万
+                        $WhereStr .= " and rele_car.price between 20 and 30 ";
+                        break;
+                    case '9':
+                        //30-50万
+                        $WhereStr .= " and rele_car.price between 30 and 50 ";
+                        break;
+                    case '10':
+                        //5-8万
+                        $WhereStr .= " and rele_car.price between 50 and 100 ";
+                        break;
+                    case '11':
+                        //5-8万
+                        $WhereStr .= " and rele_car.price > 100 ";
+                        break;
+                    default:
+                        # code...
+                        break;
+                }
+            }
+            if(!empty($data['car_mileage'])){
+                switch ($car_mileage) {
+                    case '1':
+                        //1万公里内
+                        $WhereStr .= " and rele_car.car_mileage <= 1 ";
+                        break;
+                    case '2':
+                        //3万公里内
+                        $WhereStr .= " and rele_car.car_mileage between 1 and 3 ";
+                        break;
+                    case '3':
+                        //5万公里内
+                        $WhereStr .= " and rele_car.car_mileage between 3 and 5 ";
+                        break;
+                    case '4':
+                        //10万公里内
+                        $WhereStr .= " and rele_car.car_mileage between 5 and 10 ";
+                        break;
+                    default:
+                        # code...
+                        break;
+                }
+            }
+
+            if (!empty($data['sort'])) {
+
+                if ($data['sort'] == 1) {
+                    // 排序方式
+                    $OrderKey = "rele_car.price";
+                    $OrderType = "asc";
+                } elseif ($data['sort'] == 2) {
+                    // 排序方式
+                    $OrderKey = "rele_car.price";
+                    $OrderType = "desc";
+                } elseif ($data['sort'] == 3) {
+                    // 排序方式
+                    $OrderKey = "rele_car.car_age";
+                    $OrderType = "desc";
+                } elseif ($data['sort'] == 4) {
+                    // 排序方式
+                    $OrderKey = "rele_car.car_age";
+                    $OrderType = "asc";
+                } elseif ($data['sort'] == 5) {
+                    // 排序方式
+                    $OrderKey = "rele_car.car_mileage";
+                    $OrderType = "desc";
+                } elseif ($data['sort'] == 6) {
+                    // 排序方式
+                    $OrderKey = "rele_car.car_mileage";
+                    $OrderType = "asc";
+                } else {
+                    // 排序方式
+                    $OrderKey = "rele_car.create_time";
+                    $OrderType = "desc";
+                }
+            }
+            // 分类
+
+            if (!empty($data['type'])){
+
+                $type=$data['type'];
+                if($type){
+                    $WhereStr .= " and user_shop.is_yx = $type ";
+                    $join = "join user on user.user_id = rele_car.user_id join user_shop on user.user_id=user_shop.user_id";
+                }
+
+            }else{
+                $join = "join user on user.user_id = rele_car.user_id";
+            }
+
+            $joinid = "pu_id";
+            $Coll="rele_car.pu_id,rele_car.user_id,rele_car.cartype_id,rele_car.price,rele_car.name_li,rele_car.news_price,rele_car.car_mileage,rele_car.car_cardtime,rele_car.img_300";
+            $sql = $this->CreateSql($TableName="rele_car",$Coll,$WhereStr,$WhereStr,$PageIndex,$PageSize,$OrderKey,$OrderType,$join,$joinid);
+            //print_r($sql);
+//        $Model = M("rele_car");
+
+            $res = Db::query($sql);
+
+            if($res){
+                foreach ($res as $key => $val) {
+                    $res[$key]['news_price'] = $val['news_price']== 0.00 ? "未知" : $val['news_price'].'万';
+                    // 通过cartype_id查车系名和车型名称
+                    //$res[$key]['name'] = $this->get_carname($val['cartype_id']);查询名称不对 coll 内增加rele.car_name_li
+                    $res[$key]['img_url'] = $this->get_carimg(explode(',',$val['img_300'])[0],1);
+                    unset($res[$key]['img_300']);
+                    unset($res[$key]['cartype_id']);
+                    //获取汽车的首付
+                    //dump($val['pu_id']);die;
+                    $pay=$this->get_rele_car_fenqi($val['pu_id']);
+                    if (!empty($pay)){
+
+                        $res[$key]['pay_20s']=$pay['pay_20s']?$pay['pay_20s']:'';
+                        $res[$key]['pay_20y']=$pay['pay_20y']?$pay['pay_20y']:'';
+                        $res[$key]['pay_20n']=$pay['pay_20n']?$pay['pay_20n']:'';
+                    }
+
+                    //fenye
+                    //暂时注销
+                    //$count = Db::table('rele_car')->join($join)->where('1=1 '.$WhereStr)->count();
+                    //$res[$key]['page_num']=ceil($count/10);
+                    $res[$key]['page']=$PageIndex;
+                }
+            }
+
+
+
+            $res = $res ? $res : array();
+
+            return $res;
+
+        }
+
+    public function search_news_carlist($chx=0,$px = 0){
+
+        //接受参数
+        $data = $this->params;
+
+        $data['chs'] = $chx;//五万以下
+
+        $data['px'] = $px;//低月供
+
+        $where="1=1  ";
+        //模糊查找 如 大众 奥迪 朗逸
+        if(!empty($data['key'])){
+            $where.=" and name like '%".$data['key']."%'  ";
+        }
+
+        // dump($where);die;
+        //级别suv
+        if (!empty($data['subface'])){
+            $where.=" and subface=".$data['subface'];
+        }
+
+        if(!empty($data['name'])){
+            $where.=" order by id desc";
+        }
+        //
+        if (!empty($data['brand_id'])){
+            $where.=" and brand_id=".$data['brand_id'];
+        }
+
+        //汉字品牌  大众 奥迪
+        if (!empty($data['brand_name'])){
+
+            $where['name'] = $data['brand_name'];
+
+            $where['level'] = 3;
+
+            $bdata = Db::table('car_brand')->where($where)->select();
+
+            $sys_id=$bdata['id'];
+            $where.=" and sys_id=$sys_id ";
+
+        }
+        //
+        if (!empty($data['chek'])){
+            $where.=" and cartype_id=".$data['chek'];
+            //echo $where;
+        }
+        //具体价格
+        if(!empty($data['tprice'])){
+            $where.=" and price=".$data['tprice'] ;
+        }
+        if(!empty($data['sys_id'])){
+            $where.="and sys_id= ".$data['sys_id'];
+        }
+
+        //品牌 拼音
+        if(!empty($data['pinpai'])){
+
+            $where['level'] = 1;
+
+            $where['pin'] = $data['pinpai'];
+
+            $ppdata = Db::table('car_brand')->where($where)->select();
+
+            $bid = $ppdata['id'];
+
+            $where.=" and brand_id=$bid  ";
+        }
+        //车龄
+        if(!empty($data['cheling'])){
+            switch($data['cheling']){
+                case 1;
+                    $where.=" and car_age between 0 and 1";
+                    break;
+                case 2;
+                    $where.="  and car_age between 0 and 2";
+                    break;
+                case 3;
+                    $where.="  and car_age between 0 and 3";
+                    break;
+                case 4;
+                    $where.="  and car_age between 3 and 5";
+                    break;
+                case 5;
+                    $where.="  and car_age between 5 and 8";
+                    break;
+                case 6;
+                    $where.="  and car_age > 8";
+                    break;
+            }
+        }
+        //里程
+        if(!empty($data['licheng'])){
+            switch($data['licheng']){
+
+                case 2;
+                    $where.=" and  car_mileage <=2";
+                    break;
+                case 3;
+                    $where.=" and  car_mileage <=3";
+                    break;
+                case 4;
+                    $where.=" and car_mileage between 3 and 5";
+                    break;
+                case 5;
+                    $where.=" and car_mileage between 5 and 8";
+
+            }
+
+        }
+        //颜色
+        if (!empty($data['ys'])){
+            $where.="and color=".$data['ys'];
+        }
+
+        //排量
+
+        if (!empty($data['pailiang'])){
+            $where.=" and output=".$data['pailiang'];
+        }
+        //变速箱
+        if (!empty($data['bsx'])){
+            $where.=" and gearbox= ".$data['bsx'];
+        }
+        //排放标准 OBD 京V 欧V 国V
+        if (!empty($data['pfbz'])){
+            $where.=" and blowdown= ".$data['pfbz'];
+        }
+
+        //驱动 前驱 后驱
+
+        if (!empty($data['qd'])){
+            $where.=" and car_drive=".$data['qd'];
+        }
+        //两厢 三箱 皮卡 旅行车
+        if (!empty($data['cs'])){
+            $where.=" and car_body=".$data['cs'];
+        }
+        //汽油 柴油 油漆混合
+        if (!empty($data['ny'])){
+            $where.=" and fuel= ".$data['ny'];
+        }
+        // 进气方式
+        if (!empty($data['jinqi'])){
+            $where.=" and inlet_air= ".$data['jinqi'];
+        }
+        //百分之三十月供
+        if (!empty($data['sy'])){
+            switch($data['sy']){
+                case 1;
+                    $where.=" and pay30_s2 between 0 and 1";
+                    break;
+                case 2;
+                    $where.=" and pay30_s2 between 1 and 2 ";
+                    break;
+                case 3;
+                    $where.=" and pay30_s2 between 2 and 3";
+                    break;
+                case 4;
+                    $where.=" and pay30_s2 between 3 and 4 ";
+                    break;
+                case 5;
+                    $where.=" and pay30_s2 between 4 and 5";
+                    break;
+                case 6;
+                    $where.=" and pay30_s2 >5 ";
+                    break;
+            }
+        }
+
+        //百分之三十月供
+        if (!empty($data['yg'])){
+            switch($data['yg']){
+                case 1;
+                    $where.=" and pay30_y2 between 0 and 0.1";
+                    break;
+                case 2;
+                    $where.=" and pay30_y2 between 0.1 and 0.2 ";
+                    break;
+                case 3;
+                    $where.=" and pay30_y2 between 0.2 and 0.3";
+                    break;
+                case 4;
+                    $where.=" and pay30_y2 between 0.3 and 0.4 ";
+                    break;
+                case 5;
+                    $where.=" and pay30_y2 between 0.4 and 0.5";
+                    break;
+                case 6;
+                    $where.=" and pay30_y2 >0.5 ";
+                    break;
+
+
+            }
+        }
+
+        //价格级别
+        if (!empty($data['chs'])){
+            switch($data['chs']){
+                case 1;
+                    $where.=" and price <5";
+                    break;
+                case 2;
+                    $where.=" and price between 5 and 8 ";
+                    break;
+                case 3;
+                    $where.=" and price between 8 and 12";
+                    break;
+                case 4;
+                    $where.=" and price between 12 and 18 ";
+                    break;
+                case 5;
+                    $where.=" and price between 18 and 25";
+                    break;
+                case 6;
+                    $where.=" and price between 25 and 40";
+                    break;
+                case 7;
+                    $where.=" and price>40";
+                    break;
+
+            }
+        }
+        // 排序规则  筛选 月供由高到低 由低到高  价格 高低
+        if (!empty($data['px'])){
+            switch($data['px']){
+                case 1;
+                    $where.=" order by id  desc ";
+                    break;
+                case 2;
+                    $where.=" order by price  asc ";
+                    break;
+                case 3;
+                    $where.=" order by price  desc ";
+                    break;
+                case 4;
+                    $where.=" order by pay30_y2  asc "; //月供由低到高
+                    break;
+                case 5;
+                    $where.=" order by pay30_y2  desc ";//月供 由高到低
+                    break;
+                case 6;
+                    $where.=" order by pay30_s2   asc ";//首付 由低到高
+                    break;
+                case 7;
+                    $where.=" order by pay30_s2  desc ";//首付由高到低
+                    break;
+
+            }
+
+        }
+
+
+        $ss =  Db::query("select * from new_car where  '$where'");
+
+
+      //  $ss = Db::table('new_car')->where($where)->limit(20)->select();
+
+//            foreach ($ss as $k =>$val){
+//
+//
+//            }
+
+
+
+       // dump($ss['0']['img_300']);
+        return $ss;
+
+    }
+
 
 
 }

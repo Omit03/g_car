@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540292434;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540793843;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540292434;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540797540;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -100,8 +100,8 @@
 		<div class="fright">
 			<ul class="site_nav_menu">
 				<li><a href="<?php echo url('index/index'); ?>"><img src="/static/img/shouye.png" alt="" />首页</a></li>
-				<li class="sec_li"><a href=""><img src="/static/img/maic.png" alt="" />我要买车</a></li>
-				<li><a href=""><img src="/static/img/maic.png" alt="" />我要卖车</a></li>
+				<li class="sec_li"><a href="<?php echo url('twocar/index'); ?>"><img src="/static/img/maic.png" alt="" />我要买车</a></li>
+				<li><a href="<?php echo url('index/sell'); ?>"><img src="/static/img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href="<?php echo url('index/appdownload'); ?>"><img src="/static/img/xiazai.png" alt="" />APP下载</a></li>
 				<li><a href=""><img src="/static/img/wangahn.png" alt="" />网站导航</a></li>
 				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/person_history'); ?>"><img src="/static/img/wangahn.png" alt="" />会员中心</a></li><?php endif; if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="/static/img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
