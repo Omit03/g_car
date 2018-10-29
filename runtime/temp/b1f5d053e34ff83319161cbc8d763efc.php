@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"G:\xampp\htdocs\car\public/../app/index\view\user\person_feedback.html";i:1540198239;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"G:\xampp\htdocs\car\public/../app/index\view\user\person_feedback.html";i:1540198239;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540629572;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -27,7 +27,7 @@
 				<li><a href=""><img src="img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href=""><img src="img/xiazai.png" alt="" />APP下载</a></li>
 				<li><a href=""><img src="img/wangahn.png" alt="" />网站导航</a></li>
-				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
+				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/person_history'); ?>"><img src="img/wangahn.png" alt="" />会员中心</a></li><?php endif; if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>

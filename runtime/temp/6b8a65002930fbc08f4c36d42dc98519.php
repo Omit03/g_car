@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"G:\xampp\htdocs\car\public/../app/index\view\user\person_order.html";i:1540198186;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"G:\xampp\htdocs\car\public/../app/index\view\user\person_order.html";i:1540630516;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540629572;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,7 +28,7 @@
 				<li><a href=""><img src="img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href=""><img src="img/xiazai.png" alt="" />APP下载</a></li>
 				<li><a href=""><img src="img/wangahn.png" alt="" />网站导航</a></li>
-				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
+				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/person_history'); ?>"><img src="img/wangahn.png" alt="" />会员中心</a></li><?php endif; if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>
@@ -192,13 +192,13 @@ $(window).on('scroll',function(){
 							</ul>
 						</h1>
 						<ul class="p_list">
-							<?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+							<?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="item">
-								<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $vol['pu_id']; ?>">
-								<div class="car_img"><img src="<?php echo $vol['img_url']; ?>" alt="" /></div>
-								<div class="car_desc"><h3><?php echo $vol['name']; ?></h3>
-									<p><?php echo $vol['car_mileage']; ?>万公里 | <?php echo $vol['car_cardtime']; ?> | <?php echo $vol['shop_name']; ?></p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice"><?php echo $vol['price']; ?>万</span></div>
+								<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>">
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3><?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['car_cardtime']; ?> | <?php echo $val['shop_name']; ?></p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice"><?php echo $val['price']; ?>万</span></div>
 								</div>
 								<div class="order_res">
 									<p>预约时间：2018-07-27  15:00</p>

@@ -699,17 +699,23 @@ class Common extends Controller{
         $city=$arr[0];
         //获取city_id 123
         $city_id=Db::table('city')->field("id")->where("name like '%".$city."%'")->find();
+      //  dump( Db::table('city')->getLastSql());die;
 
         if(!$city_id){
             $city_id['id']=1;
         }
+
         return $city_id['id'];
     }
 
     //通过车型id查找车系名称，车型名称
     public function get_carname($cartype_id){
+
         $res = Db::table('car_brand')->field("name,upid")->where("id",$cartype_id)->find();
-        $res2 = Db::table('car_brand')->field("name")->where("id ",$res['upid'])->find();
+
+       // dump($res['upid']);die;
+        $res2 = Db::table('car_brand')->field("name")->where("id",$res['upid'])->find();
+
         return $res2['name'].' '.$res['name'];
     }
 
@@ -731,6 +737,59 @@ class Common extends Controller{
             $img=$url.$img;
         }
         return $img;
+    }
+    /**
+     * 筛选年代车辆
+     */
+    public function getcar_years($brand_id,$sys_id,$years){
+
+        //获取品牌  车系
+        $brand=Db::table("car_brand")->where("id=$brand_id")->value("name");
+
+        $sys=Db::table("car_brand")->where("id=$sys_id")->value("name");
+
+
+
+        //获取配置信息
+        $param_info=Db::table("param")->field("id,cartype,price,motor,jqxings")->where("brand='".$brand."' and sys='".$sys."' and years like '%".$years."%'")->select();
+
+       // dump( Db::table('param')->getLastSql());die;
+
+
+        foreach ($param_info as $k => $v) {
+            $arr=explode(" ", $v['motor']);
+            $param_info[$k]['motor']=$motor=$arr[0]." ".$v['jqxings']." ".$arr[1];
+            $param_info[$k]['brand_id']=$brand_id;
+            $param_info[$k]['sys_id']=$sys_id;
+
+
+            //是否存在在售车辆
+
+            $field = 'a.id,a.brand_id,a.sys_id,a.cartype_id';
+
+            $join = [['rele_param  b','pu_id=a.id']];
+
+            $new_car = Db::table('new_car')->alias('a')->join($join)->field($field)->where("param_id=".$v['id']." and type=1")->find();
+
+//           dump($new_car);
+//            dump( Db::table('param')->getLastSql());
+            //$new_car=Db::table("new_car")->table("new_car as a")->join("rele_param as b on b.pu_id=a.id")->field("a.id,a.brand_id,a.sys_id,a.cartype_id")->where("b.param_id=".$v['id']." and b.type=1")->find();
+            if($new_car){
+                $param_info[$k]['is_exist']=1;
+                $param_info[$k]['brand_id']=$new_car['brand_id'];
+                $param_info[$k]['sys_id']=$new_car['sys_id'];
+                $param_info[$k]['cartype_id']=$new_car['cartype_id'];
+            }else{
+                $param_info[$k]['is_exist']=0;
+                $param_info[$k]['brand_id']="";
+                $param_info[$k]['sys_id']="";
+                $param_info[$k]['cartype_id']="";
+            }
+            unset($param_info[$k]['jqxings']);
+        }
+
+
+        return $param_info;
     }
 
     //获取二手车图片
@@ -1733,6 +1792,7 @@ class Common extends Controller{
     //获取厂商
     function get_firm($sys_id){
         $firm=Db::table("car_brand")->where("id=$sys_id")->value("upid");
+
         return $firm;
     }
 

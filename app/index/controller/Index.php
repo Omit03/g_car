@@ -71,74 +71,67 @@ class Index  extends Common
         //接受参数
         $data = $this->params;
 
-      //  dump($data['key']);die;
-
-        if(empty($data['jibie']) && empty($data['jgid']) && empty($data['brand_id'])&& empty($data['chek']) && empty($data['cheling']) && empty($data['licheng']) && empty($data['ys']) && empty($data['px'])  && empty($data['pailiang']) && empty($data['bsx']) && empty($data['pfbz']) && empty($data['qd']) && empty($data['cs'])  && empty($data['ny'])&& empty($data['sy']) && empty($data['chs']) && empty($data['yg']) && empty($data['jinqi'])&& empty($data['px'])&& empty($pp)&& empty($cx)&& empty($key)&& empty($name) && empty($data['tprice'])&& empty($data['sys_id']) && empty($_GET['brand_name'])&& empty($data['pinpai'])&& empty($data['key'])){
-            $ss = "";
-
-            echo 1;
-            dump($ss);
-
-        }else{
-
-            $where="1=1  ";
+        $where="1=1  ";
             //模糊查找 如 大众 奥迪 朗逸
-            if($data['key']){
+        if(!empty($data['key'])){
                 $where.=" and name like '%".$data['key']."%'  ";
             }
 
-            //价格区间
-            if($data['jgid']){
+//            //价格区间
+//            if(!empty($data['jgid'])){
+//
+//                switch($data['jgid']){
+//
+//                    case 2;
+//                        $where.=" and price between 1 and 3";
+//                        break;
+//                    case 3;
+//                        $where.=" and  price between 3 and 5 ";
+//                        break;
+//                    case 4;
+//                        $where.=" and price between 5 and 8";
+//                        break;
+//                    case 5;
+//                        $where.=" and  price between 8 and 10";
+//                        break;
+//                    case 6;
+//                        $where.=" and price between 10 and 15";
+//                        break;
+//                    case 7;
+//                        $where.=" and price between 15 and 20";
+//                        break;
+//                    case 8;
+//                        $where.=" and price between 20 and 30";
+//                        break;
+//                    case 9;
+//                        $where.=" and price between 30 and 50";
+//                        break;
+//                    case 10;
+//                        $where.=" and price between 50 and 100";
+//                        break;
+//                    case 11;
+//                        $where.=" and price >100";
+//                        break;
+//                }
+//
+//            }
 
-                switch($data['jgid']){
-
-                    case 2;
-                        $where.=" and price between 1 and 3";
-                        break;
-                    case 3;
-                        $where.=" and  price between 3 and 5 ";
-                        break;
-                    case 4;
-                        $where.=" and price between 5 and 8";
-                        break;
-                    case 5;
-                        $where.=" and  price between 8 and 10";
-                        break;
-                    case 6;
-                        $where.=" and price between 10 and 15";
-                        break;
-                    case 7;
-                        $where.=" and price between 15 and 20";
-                        break;
-                    case 8;
-                        $where.=" and price between 20 and 30";
-                        break;
-                    case 9;
-                        $where.=" and price between 30 and 50";
-                        break;
-                    case 10;
-                        $where.=" and price between 50 and 100";
-                        break;
-                    case 11;
-                        $where.=" and price >100";
-                        break;
-                }
-
-            }
+           // dump($where);die;
             //级别suv
-            if ($data['jibie']){
-                $where.=" and subface=".$data['jibie'];
+            if (!empty($data['subface'])){
+                $where.=" and subface=".$data['subface'];
             }
-            if($data['name']){
+
+            if(!empty($data['name'])){
                 $where.=" order by id desc";
             }
             //
-            if ($data['brand_id']){
+            if (!empty($data['brand_id'])){
                 $where.=" and brand_id=".$data['brand_id'];
             }
 
             //汉字品牌  大众 奥迪
-            if ($data['brand_name']){
+            if (!empty($data['brand_name'])){
 
                 $where['name'] = $data['brand_name'];
 
@@ -151,19 +144,20 @@ class Index  extends Common
 
             }
             //
-            if ($data['chek']){
+            if (!empty($data['chek'])){
                 $where.=" and cartype_id=".$data['chek'];
                 //echo $where;
             }
-            if($data['tprice']){
+            //具体价格
+            if(!empty($data['tprice'])){
                 $where.=" and price=".$data['tprice'] ;
             }
-            if($data['sys_id']){
+            if(!empty($data['sys_id'])){
                 $where.="and sys_id= ".$data['sys_id'];
             }
 
             //品牌 拼音
-            if($data['pinpai']){
+            if(!empty($data['pinpai'])){
 
                 $where['level'] = 1;
 
@@ -176,7 +170,7 @@ class Index  extends Common
                 $where.=" and brand_id=$bid  ";
             }
             //车龄
-            if($data['cheling']){
+            if(!empty($data['cheling'])){
                 switch($data['cheling']){
                     case 1;
                         $where.=" and car_age between 0 and 1";
@@ -199,7 +193,7 @@ class Index  extends Common
                 }
             }
             //里程
-            if($data['licheng']){
+            if(!empty($data['licheng'])){
                 switch($data['licheng']){
 
                     case 2;
@@ -218,42 +212,43 @@ class Index  extends Common
 
             }
             //颜色
-            if ($data['ys']){
+            if (!empty($data['ys'])){
                 $where.="and color=".$data['ys'];
             }
 
             //排量
 
-            if ($data['pailiang']){
+            if (!empty($data['pailiang'])){
                 $where.=" and output=".$data['pailiang'];
             }
             //变速箱
-            if ($data['bsx']){
+            if (!empty($data['bsx'])){
                 $where.=" and gearbox= ".$data['bsx'];
             }
             //排放标准 OBD 京V 欧V 国V
-            if ($data['pfbz']){
+            if (!empty($data['pfbz'])){
                 $where.=" and blowdown= ".$data['pfbz'];
             }
 
             //驱动 前驱 后驱
 
-            if ($data['qd']){
+            if (!empty($data['qd'])){
                 $where.=" and car_drive=".$data['qd'];
             }
             //两厢 三箱 皮卡 旅行车
-            if ($data['cs']){
+            if (!empty($data['cs'])){
                 $where.=" and car_body=".$data['cs'];
             }
             //汽油 柴油 油漆混合
-            if ($data['ny']){
+            if (!empty($data['ny'])){
                 $where.=" and fuel= ".$data['ny'];
             }
-            //
-            if ($data['jinqi']){
+            // 进气方式
+            if (!empty($data['jinqi'])){
                 $where.=" and inlet_air= ".$data['jinqi'];
             }
-            if ($data['sy']){
+            //百分之三十月供
+            if (!empty($data['sy'])){
                 switch($data['sy']){
                     case 1;
                         $where.=" and pay30_s2 between 0 and 1";
@@ -276,7 +271,8 @@ class Index  extends Common
                 }
             }
 
-            if ($data['yg']){
+            //百分之三十月供
+            if (!empty($data['yg'])){
                 switch($data['yg']){
                     case 1;
                         $where.=" and pay30_y2 between 0 and 0.1";
@@ -301,9 +297,8 @@ class Index  extends Common
                 }
             }
 
-
             //价格级别
-            if ($data['chs']){
+            if (!empty($data['chs'])){
                 switch($data['chs']){
                     case 1;
                         $where.=" and price <5";
@@ -330,7 +325,7 @@ class Index  extends Common
                 }
             }
             // 排序规则  筛选 月供由高到低 由低到高  价格 高低
-            if ($data['px']){
+            if (!empty($data['px'])){
                 switch($data['px']){
                     case 1;
                         $where.=" order by id  desc ";
@@ -355,19 +350,15 @@ class Index  extends Common
                         break;
 
                 }
-            }
-
-            dump($where);
-
-            $ss = Db::table('new_car')->where($where)->select();
-
-
-
-            dump($ss);
-
-
 
         }
+
+
+       // dump($where);die;
+
+        $ss = Db::table('new_car')->where($where)->limit(20)->select();
+
+        dump($ss);
 
     }
 
@@ -591,7 +582,7 @@ class Index  extends Common
                         break;
                     case '3':
                         //5万公里内
-                        $WhereStr .= " and rele_car.car_mileage 3 and 5 ";
+                        $WhereStr .= " and rele_car.car_mileage between 3 and 5 ";
                         break;
                     case '4':
                         //10万公里内

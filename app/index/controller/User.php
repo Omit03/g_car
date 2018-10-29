@@ -113,6 +113,13 @@ class User  extends Common {
      */
     public function person_collect(){
 
+        $phone = Session::get('phone');
+
+        if(empty($phone)){
+
+            $this->success('请登录','user/car_login',1);
+        }
+
         $newcar = $this->car_collect_list(1);
         $twocar = $this->car_collect_list(2);
         $zerocar = $this->car_collect_list(3);
@@ -135,8 +142,12 @@ class User  extends Common {
 
         $userid = Session::get('user_id');
 
+        $phone = Session::get('phone');
 
-        if ($userid){
+        if(empty($phone)){
+
+            $this->success('请登录','user/car_login',1);
+        }
 
             $where['type'] = $data['type'];
 
@@ -192,8 +203,6 @@ class User  extends Common {
 
             }
 
-
-
             $res = Db::table('car_collect')->insert([
                 'userid'=>$userid,
                 'type'=>$data['type'],
@@ -211,18 +220,7 @@ class User  extends Common {
                 'yuegong'=>$data['yuegong'],
                 ]);
 
-
-        }else{
-
-
-            $this->return_msg(400,'未登录');
-        }
-
-
         $this->return_msg(200,'收藏成功');
-
-
-
 
     }
 
@@ -230,6 +228,13 @@ class User  extends Common {
      * 收藏删除
      */
     public function collect_del(){
+
+        $phone = Session::get('phone');
+
+        if(empty($phone)){
+
+            $this->success('请登录','user/car_login',1);
+        }
 
         $data = $this->params;
 
@@ -249,6 +254,13 @@ class User  extends Common {
      * 浏览记录
      */
     public function person_history(){
+
+        $phone = Session::get('phone');
+
+        if(empty($phone)){
+
+           $this->success('请登录','user/car_login',1);
+        }
 
         $newcar = $this->car_history(1);
 
@@ -886,12 +898,7 @@ class User  extends Common {
 
 
 
-
-
     }
-
-
-
 
     /*
      * 商家入驻
@@ -1084,13 +1091,255 @@ class User  extends Common {
 
     }
 
+    public function asd1()
+    {
 
-    public function asd(){
+        $data = $this->params;
+        $brand_id = $data['brand_id'];
+        $sys_id = $data['sys_id'];
+        $city = $data['city'];
 
-        dump($this->randStr());
+        $city_id=$this->get_city($city);
+
+
+        //二手车信息
+        $rele_car=Db::table("rele_car")->field("pu_id,cartype_id,price,car_cardtime,car_mileage,city_id,img_300")->where("brand_id=$brand_id and sys_id=$sys_id and city_id=$city_id")->order("create_time desc")->limit(10)->select();
+
+      //  dump( Db::table('rele_car')->getLastSql());
+
+
+        foreach ($rele_car as $k => $v) {
+            $rele_car[$k]['name']=$this->get_carname($v['cartype_id']);
+            $rele_car[$k]['car_cardtime']=substr($v['car_cardtime'], 0 , 7);
+            $rele_car[$k]['car_mileage']=$v['car_mileage']."万公里";
+            $rele_car[$k]['city'] = Db::table("city")->where("id=".$v['city_id'])->value("name");
+            $rele_car[$k]['img_url']=$this->get_carimg($v['img_300'],1);
+            unset($rele_car[$k]['cartype_id']);
+            unset($rele_car[$k]['city_id']);
+            unset($rele_car[$k]['img_300']);
+        }
+
+        dump($rele_car);
+
+        echo json_encode($rele_car);die;
+    }
+    /*
+     * 经销商
+     */
+    public function asd2()
+    {
+        $data = $this->params;
+        $brand_id = $data['brand_id'];
+        $sys_id = $data['sys_id'];
+        $city = $data['city'];
+
+
+        $city_id=$this->get_city($city);
+
+        $firm_id=$this->get_firm($sys_id);
+        //经销商
+        $newcar_shop=Db::table("user_shop")->field("shop_id,shop_name,shop_address,shop_phone,latitude as lat,longitude as log")->where("qid=1 and city_id=$city_id and business_range like '%".$firm_id."%'")->select();
+
+         dump( Db::table('user_shop')->getLastSql());
+
+         echo json_encode($newcar_shop);
+        dump($newcar_shop);die;
 
     }
 
+    /*
+     * 2018 2018
+     */
+
+    public function asd(){
+
+        $data = $this->params;
+
+        $brand_id = $data['brand_id'];
+        $sys_id = $data['sys_id'];
+
+        //print_r($data);die;
+        //获取车系的图片
+        $sys_info=Db::table("car_brand")->field("id,name,img_id")->where("id=$sys_id")->find();
+
+
+        if($sys_info['img_id']){
+            $sys_info['img_url']=$img_url=$this->get_carimg($sys_info['img_id'],3);
+        }else{
+            $sys_info['img_url']=$img_url="";
+        }
+        unset($sys_info['img_id']);
+
+        //获取配置信息
+        $sys_info['car_body']=$car_body=Db::table("param")->where("sys='".$sys_info['name']."'")->value("car_body");
+
+        $sys_info['min_output']=$min_output=Db::table("param")->where("sys='".$sys_info['name']."'")->min("pliang1");
+
+        $sys_info['max_output']=$max_output=Db::table("param")->where("sys='".$sys_info['name']."'")->max("pliang1");
+
+        $price=Db::table("param")->field("id,price")->where("sys='".$sys_info['name']."'")->select();
+
+        $a=0;
+        foreach ($price as $k => $v) {
+            $num=str_replace("万","",$v['price']);
+            if($num>$a){
+                $sys_info['max_price']=$max_price=$num."万";
+            }else{
+                $sys_info['min_price']=$min_price=$num."万";
+            }
+            $a=$num;
+        }
+
+       // dump(Db::table('rele_car')->getLastSql());
+        echo json_encode($sys_info);
+        dump($sys_info);die;
+
+
+    }
+
+    //品牌下二手车
+    public function getcar_rele(){
+
+        $brand_id = 19;
+        $sys_id = 848;
+        $city_id=$this->city_id();
+
+
+        //二手车信息
+        $rele_car=Db::table("rele_car")->field("pu_id,cartype_id,price,car_cardtime,car_mileage,city_id,img_300")->where("brand_id=$brand_id and sys_id=$sys_id and city_id=$city_id")->order("create_time desc")->limit(10)->select();
+        foreach ($rele_car as $k => $v) {
+            $rele_car[$k]['name']=$this->get_carname($v['cartype_id']);
+            $rele_car[$k]['car_cardtime']=substr($v['car_cardtime'], 0 , 7);
+            $rele_car[$k]['car_mileage']=$v['car_mileage']."万公里";
+            $rele_car[$k]['city']=Db::table("city")->where("id=".$v['city_id'])->value("name");
+            $rele_car[$k]['img_url']=$this->get_carimg($v['img_300'],1);
+            unset($rele_car[$k]['cartype_id']);
+            unset($rele_car[$k]['city_id']);
+
+            unset($rele_car[$k]['img_300']);
+        }
+
+
+        dump($rele_car);die;
+        if($rele_car){
+            $result=array(
+                "code"=>200,
+                "result" => "获取成功",
+                "body" => $rele_car
+            );
+        }else{
+            $result=array(
+                "code"=>201,
+                "result" => "暂时没有车源"
+            );
+        }
+    }
+
+    function get_area($ip = ''){
+        if($ip == ''){
+            $ip = GetIp();
+        }
+        $url = "http://ip.taobao.com/service/getIpInfo.php?ip={$ip}";
+        $ret = $this->https_request($url);
+        $arr = json_decode($ret,true);
+        return $arr;
+    }
+
+
+    public function https_request($url,$data = null){
+        $curl = curl_init();
+
+        curl_setopt($curl,CURLOPT_URL,$url);
+        curl_setopt($curl,CURLOPT_SSL_VERIFYPEER,false);
+        curl_setopt($curl,CURLOPT_SSL_VERIFYHOST,false);
+
+        if(!empty($data)){//如果有数据传入数据
+            curl_setopt($curl,CURLOPT_POST,1);//CURLOPT_POST 模拟post请求
+            curl_setopt($curl,CURLOPT_POSTFIELDS,$data);//传入数据
+        }
+
+        curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
+        $output = curl_exec($curl);
+        curl_close($curl);
+
+        return $output;
+    }
+
+    //车系下经销商
+    public function getcar_dealer(){
+
+        $brand_id = 19;
+        $sys_id = 848;
+        // $city = 郑州;
+
+        $city_id=$this->city_id();
+        $firm_id=$this->get_firm($sys_id);
+
+        //经销商
+        $newcar_shop=Db::table("user_shop")->field("shop_id,shop_name,shop_address,shop_phone,latitude as lat,longitude as log")->where("qid=1 and city_id=$city_id and business_range like '%".$firm_id."%'")->select();
+
+        dump($newcar_shop);
+    }
+
+    /**
+     *  新车车系
+     */
+    public function getcar_sys(){
+
+        $brand_id = 19;
+        $sys_id = 842;
+
+        //print_r($data);die;
+        //获取车系的图片
+        $sys_info=Db::table("car_brand")->field("id,name,img_id")->where("id=$sys_id")->find();
+
+        if($sys_info['img_id']){
+            $sys_info['img_url']=$img_url=$this->get_carimg($sys_info['img_id'],3);
+        }else{
+            $sys_info['img_url']=$img_url="";
+        }
+        unset($sys_info['img_id']);
+        //获取配置信息
+        $sys_info['car_body']=$car_body=Db::table("param")->where("sys='".$sys_info['name']."'")->value("car_body");
+        $sys_info['min_output']=$min_output=Db::table("param")->where("sys='".$sys_info['name']."'")->min("pliang1");
+
+        $sys_info['max_output']=$max_output=Db::table("param")->where("sys='".$sys_info['name']."'")->max("pliang1");
+        $price=Db::table("param")->field("id,price")->where("sys='".$sys_info['name']."'")->select();
+        $a=0;
+        foreach ($price as $k => $v) {
+            $num=str_replace("万","",$v['price']);
+            if($num>$a){
+                $sys_info['max_price']=$max_price=$num."万";
+            }else{
+                $sys_info['min_price']=$min_price=$num."万";
+            }
+            $a=$num;
+        }
+        // print_r($sys_info);die;
+        //获取车型
+        //所有的年代
+
+        //dump($sys_info);die;
+        $years=array();
+        $years_2018=$this->getcar_years($brand_id,$sys_id,"2018款");
+        $years_2017=$this->getcar_years($brand_id,$sys_id,"2017款");
+        if($years_2018){
+            $years[0]["year"]="2018款";
+            $years[0]["car_info"]=$years_2018?$years_2018:array();
+        }
+        if($years_2017){
+            if($years[0]){
+                $years[1]["year"]="2017款";
+                $years[1]["car_info"]=$years_2017?$years_2017:array();
+            }else{
+                $years[0]["year"]="2017款";
+                $years[0]["car_info"]=$years_2017?$years_2017:array();
+            }
+        }
+
+        dump($sys_info);
+        dump($years);die;
+    }
 
 
 

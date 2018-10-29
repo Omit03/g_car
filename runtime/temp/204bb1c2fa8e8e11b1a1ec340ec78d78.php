@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\shop\shop_list.html";i:1540281841;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540199091;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1539694062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\shop\shop_list.html";i:1540344864;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540775304;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540774757;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -25,12 +25,12 @@
 			<?php echo \think\Session::get('phone'); endif; ?></div>
 		<div class="fright">
 			<ul class="site_nav_menu">
-				<li><a href=""><img src="img/shouye.png" alt="" />首页</a></li>
+				<li><a href="<?php echo url('index/index'); ?>"><img src="img/shouye.png" alt="" />首页</a></li>
 				<li class="sec_li"><a href=""><img src="img/maic.png" alt="" />我要买车</a></li>
 				<li><a href=""><img src="img/maic.png" alt="" />我要卖车</a></li>
-				<li><a href=""><img src="img/xiazai.png" alt="" />APP下载</a></li>
+				<li><a href="<?php echo url('index/appdownload'); ?>"><img src="img/xiazai.png" alt="" />APP下载</a></li>
 				<li><a href=""><img src="img/wangahn.png" alt="" />网站导航</a></li>
-				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
+				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/person_history'); ?>"><img src="img/wangahn.png" alt="" />会员中心</a></li><?php endif; if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>
@@ -178,14 +178,13 @@ $(window).on('scroll',function(){
 		<div class="wrap">
 			<div class="oh">
 				<div class="brandLeft">
-
 					<ul>
 						<li class="">
 							<h3>品牌<b>全部</b></h3>
 							<div class="classify">
 								<a href="" class="active" >不限</a>
-								<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-								<a href=""><?php echo $vol['name']; ?></a>
+								<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+								<a href="<?php echo url('index/lots_cars'); ?>?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?></a>
 								<?php endforeach; endif; else: echo "" ;endif; ?>
 							</div>
 						</li>
@@ -193,8 +192,8 @@ $(window).on('scroll',function(){
 							<h3>价格<b>全部</b></h3>
 							<div class="classify">
 								<a href="" class="active" >不限</a>
-								<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-								<a href=""><?php echo $vo['name']; ?></a>
+								<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+								<a href="<?php echo url('index/lots_cars'); ?>?price_range=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?></a>
 								<?php endforeach; endif; else: echo "" ;endif; ?>
 							</div>
 						</li>
@@ -202,14 +201,14 @@ $(window).on('scroll',function(){
 							<h3>级别<b>全部</b></h3>
 							<div class="classify">
 								<a href="" class="active" >不限</a>
-								<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href="<?php echo $vol['id']; ?>"><?php echo $vol['name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+								<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><a href="<?php echo url('index/lots_cars'); ?>?car_age=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
 							</div>
 						</li>
 						<li>
 							<h3>车龄 <b>全部</b></h3>
 							<div class="classify">
 								<a href="" class="active" >不限</a>
-								<?php if(is_array($age) || $age instanceof \think\Collection || $age instanceof \think\Paginator): $i = 0; $__LIST__ = $age;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><a href=""><?php echo $vol['cheling']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+								<?php if(is_array($age) || $age instanceof \think\Collection || $age instanceof \think\Paginator): $i = 0; $__LIST__ = $age;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><a href="<?php echo url('index/lots_cars'); ?>?age=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['cheling']; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
 							</div>
 						</li>
 					</ul>
@@ -283,8 +282,8 @@ $(window).on('scroll',function(){
 		<div class="optimize_link">
 			<p class="link_tit">热门品牌：</p>
 			<span class="more_dwon"></span>
-			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
-			<a href=""><?php echo $vol['name']; ?></a>
+			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+			<a href="<?php echo url('index/lots_cars'); ?>?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?></a>
 			<?php endforeach; endif; else: echo "" ;endif; ?>
 
 		</div>

@@ -1,0 +1,3644 @@
+---------------------------------------------------------------
+[ 2018-10-26T08:42:51+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.344000s][吞吐率：2.91req/s] [内存消耗：2,397.73kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '796ed41a-9511-450f-ae1f-4ad2e54ea33c',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.068000s ]
+---------------------------------------------------------------
+[ 2018-10-26T08:43:16+08:00 ] 127.0.0.1 GET /carsyslist.php?sys_id=842&brand_id=19
+[ info ] www.hr.com:8083/carsyslist.php?sys_id=842&brand_id=19 [运行时间：0.022000s][吞吐率：45.45req/s] [内存消耗：1,127.83kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'carsyslist.php',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=kdbsic0jm157er91iqk4gjnpmm',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '842',
+  'brand_id' => '19',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T08:43:40+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.369000s][吞吐率：2.71req/s] [内存消耗：2,407.91kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '54fd9c5f-2859-4d2b-8485-0787ca7b8bd3',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T08:44:00+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.341000s][吞吐率：2.93req/s] [内存消耗：2,407.86kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '50548f8f-1c01-490d-b7d0-40ca20be4756',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T08:56:13+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.342000s][吞吐率：2.92req/s] [内存消耗：2,405.48kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'a5116674-4605-4026-8658-2532e04a44df',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T08:56:50+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.351000s][吞吐率：2.85req/s] [内存消耗：2,405.48kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'd55bccfb-4e81-44f1-9ae9-cfd04582c015',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.021000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:00:50+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.421000s][吞吐率：2.38req/s] [内存消耗：2,412.48kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '6b6714db-0297-4442-9a85-d91128eabda2',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.066000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:13:20+08:00 ] 127.0.0.1 GET /carsyslist.php?sys_id=842&brand_id=19
+[ info ] www.hr.com:8083/carsyslist.php?sys_id=842&brand_id=19 [运行时间：0.047000s][吞吐率：21.28req/s] [内存消耗：1,127.83kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'carsyslist.php',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=kdbsic0jm157er91iqk4gjnpmm',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '842',
+  'brand_id' => '19',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T09:13:42+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.422000s][吞吐率：2.37req/s] [内存消耗：2,412.48kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'd888b5d2-a2b3-4fca-8727-0b99a3397a7e',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.069000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:13:56+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.427000s][吞吐率：2.34req/s] [内存消耗：2,412.48kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '0a63ad16-4f9d-4b4c-8d7f-95e2b62e0e42',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.070000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.071000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:14:02+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.428000s][吞吐率：2.34req/s] [内存消耗：2,412.48kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '739477d9-b214-449d-9ba3-81649325a41f',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.021000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.071000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.066000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:27:34+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.433000s][吞吐率：2.31req/s] [内存消耗：2,459.02kb] [文件加载：50]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'ac220a49-5137-4c29-be23-ecc19405f930',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.066000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:27:54+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.420000s][吞吐率：2.38req/s] [内存消耗：2,412.50kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '98a85e87-b9d7-4ce5-8f78-1d1210858901',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.067000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:28:40+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.421000s][吞吐率：2.38req/s] [内存消耗：2,413.00kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '2364a63a-c094-4270-a094-721d5e78f153',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.065000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:28:48+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.421000s][吞吐率：2.38req/s] [内存消耗：2,413.00kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '384d88bd-0353-4d50-bdf9-89d6fb4b6c3e',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.070000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.070000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.067000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:35:04+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.404000s][吞吐率：2.48req/s] [内存消耗：2,414.24kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'b24db085-2222-4294-8c39-f882c5e0da53',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------726818092608837364382642',
+  'content-length' => '273',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '842',
+  'brand_id' => '19',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.065000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8840 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.066000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:35:14+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.435000s][吞吐率：2.30req/s] [内存消耗：2,485.96kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '2e75c44e-2ab6-420a-a8a6-19983d901d14',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------308533760377143225186782',
+  'content-length' => '273',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '842',
+  'brand_id' => '20',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=20 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奔驰' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=20 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奔驰' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.067000s ]
+[ error ] [8]未定义数组下标: 0[G:\xampp\htdocs\car\app\index\controller\User.php:1151]
+---------------------------------------------------------------
+[ 2018-10-26T09:35:47+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.425000s][吞吐率：2.35req/s] [内存消耗：2,400.57kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'b61ff5b5-ddb7-4794-a8d9-645a91079c95',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------917947290192262027989293',
+  'content-length' => '273',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '842',
+  'brand_id' => '20',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.021000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A1' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A1' ) [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=20 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奔驰' and sys='奥迪A1' and years like '%2018款%' ) [ RunTime:0.071000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=20 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=842 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奔驰' and sys='奥迪A1' and years like '%2017款%' ) [ RunTime:0.066000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:37:10+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.424000s][吞吐率：2.36req/s] [内存消耗：2,408.32kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'df9e9528-23ff-459c-b752-e9c27b9f66b3',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------268123469608111245505595',
+  'content-length' => '273',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '852',
+  'brand_id' => '19',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=852 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪S7' ) LIMIT 1 [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪S7' ) LIMIT 1 [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪S7' ) LIMIT 1 [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪S7' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=852 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪S7' and years like '%2018款%' ) [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8892 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=852 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪S7' and years like '%2017款%' ) [ RunTime:0.067000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:37:47+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.434000s][吞吐率：2.30req/s] [内存消耗：2,499.88kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '0b41f3d2-6a61-4f3c-9d77-2f8f737f42ed',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------453666308649444273845710',
+  'content-length' => '273',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '859',
+  'brand_id' => '19',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=859 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A4(进口)' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A4(进口)' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A4(进口)' ) LIMIT 1 [ RunTime:0.073000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A4(进口)' ) [ RunTime:0.070000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=859 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A4(进口)' and years like '%2018款%' ) [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=859 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A4(进口)' and years like '%2017款%' ) [ RunTime:0.070000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8961 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8962 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ error ] [8]未定义数组下标: 0[G:\xampp\htdocs\car\app\index\controller\User.php:1142]
+---------------------------------------------------------------
+[ 2018-10-26T09:39:35+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.429000s][吞吐率：2.33req/s] [内存消耗：2,413.18kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'aef01932-f62a-4fcc-956f-19557d8512b0',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------052015276720516386918756',
+  'content-length' => '273',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '859',
+  'brand_id' => '19',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=859 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪A4(进口)' ) LIMIT 1 [ RunTime:0.021000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪A4(进口)' ) LIMIT 1 [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪A4(进口)' ) LIMIT 1 [ RunTime:0.070000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪A4(进口)' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=859 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A4(进口)' and years like '%2018款%' ) [ RunTime:0.072000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=859 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪A4(进口)' and years like '%2017款%' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8961 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8962 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:40:22+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.437000s][吞吐率：2.29req/s] [内存消耗：2,463.58kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '9bb6e75a-2586-472f-9b41-db6e8878aef9',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------661986413322224079724363',
+  'content-length' => '273',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '843',
+  'brand_id' => '19',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=843 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='奥迪Q5' ) LIMIT 1 [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='奥迪Q5' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='奥迪Q5' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='奥迪Q5' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=843 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪Q5' and years like '%2018款%' ) [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8841 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8842 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=19 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=843 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='奥迪' and sys='奥迪Q5' and years like '%2017款%' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8898 and type=1 ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8899 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8900 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8901 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8902 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8978 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8979 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8980 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8981 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=8982 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:41:20+08:00 ] 127.0.0.1 GET /carsyslist.php?sys_id=842&brand_id=19
+[ info ] www.hr.com:8083/carsyslist.php?sys_id=842&brand_id=19 [运行时间：0.034000s][吞吐率：29.41req/s] [内存消耗：1,127.83kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'carsyslist.php',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=kdbsic0jm157er91iqk4gjnpmm',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '842',
+  'brand_id' => '19',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T10:14:48+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.441000s][吞吐率：2.27req/s] [内存消耗：2,472.95kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'e894d1af-db9e-4418-b7d7-8902a487b3a1',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------564620246101412726456799',
+  'content-length' => '273',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.024000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='昂科威' ) [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=22 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='别克' and sys='昂科威' and years like '%2018款%' ) [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10701 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10702 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10703 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10704 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10705 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10706 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10720 and type=1 ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=22 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype`,`price`,`motor`,`jqxings` FROM `param` WHERE  (  brand='别克' and sys='昂科威' and years like '%2017款%' ) [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10777 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10778 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10790 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10791 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10792 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10793 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10794 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10795 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10796 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`a`.`brand_id`,`a`.`sys_id`,`a`.`cartype_id` FROM `new_car` `a` INNER JOIN `rele_param` `` ON `pu_id`=`a`.`id` WHERE  (  param_id=10797 and type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:22:37+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.074000s][吞吐率：13.51req/s] [内存消耗：2,431.13kb] [文件加载：53]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '97227ddb-f9cb-45e2-8107-7e9ee97e2b21',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------496658288120183141871102',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ error ] [0]致命错误: Call to undefined function app\index\controller\M()[G:\xampp\htdocs\car\app\index\controller\User.php:1098]
+---------------------------------------------------------------
+[ 2018-10-26T10:23:16+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.051000s][吞吐率：19.61req/s] [内存消耗：2,350.42kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'c16d4814-d788-4acb-b0c1-00fa1071dc5d',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------063249824698159676335889',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_address`,`shop_phone`,latitude as lat,longitude as log FROM `user_shop` WHERE  (  qid=1 and city_id=1 and business_range like '%241%' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:24:24+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.057000s][吞吐率：17.54req/s] [内存消耗：2,352.18kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '69bef4d6-a3f4-4591-bed3-f3fd0f0c1ead',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------898938749771308384396855',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_address`,`shop_phone`,latitude as lat,longitude as log FROM `user_shop` WHERE  (  qid=1 and city_id=1 and business_range like '%241%' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:26:42+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.043000s][吞吐率：23.26req/s] [内存消耗：2,337.79kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'ce53de7c-becf-4ba7-8caf-59884007fb80',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------564039953755006223321072',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:33:13+08:00 ] 127.0.0.1 GET /carsyslist.php?sys_id=843&brand_id=19
+[ info ] www.hr.com:8083/carsyslist.php?sys_id=843&brand_id=19 [运行时间：0.035000s][吞吐率：28.57req/s] [内存消耗：1,127.83kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'carsyslist.php',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=kdbsic0jm157er91iqk4gjnpmm',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '843',
+  'brand_id' => '19',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T10:48:49+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.045000s][吞吐率：22.22req/s] [内存消耗：2,337.79kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'd59874c1-fdff-44c5-a451-406443ee879f',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------630462223590396574391789',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:49:15+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.058000s][吞吐率：17.24req/s] [内存消耗：2,352.74kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '35653532-ec35-41bb-89c3-6243b054836e',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------899171606814577891380263',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_address`,`shop_phone`,latitude as lat,longitude as log FROM `user_shop` WHERE  (  qid=1 and city_id=1 and business_range like '%241%' ) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:49:40+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.053000s][吞吐率：18.87req/s] [内存消耗：2,352.74kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'eef73464-9800-45f1-85a7-496a993fc24a',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------363603977418477496346324',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_address`,`shop_phone`,latitude as lat,longitude as log FROM `user_shop` WHERE  (  qid=1 and city_id=1 and business_range like '%241%' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:50:25+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.047000s][吞吐率：21.28req/s] [内存消耗：2,335.66kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '874b5ed1-18a8-4cae-916c-37047badc4c3',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------335756442759575829070240',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:56:29+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.062000s][吞吐率：16.13req/s] [内存消耗：2,352.18kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'e979576d-ab7a-46b9-b662-e5cb2ddc4bec',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------585441483388684578617621',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_address`,`shop_phone`,latitude as lat,longitude as log FROM `user_shop` WHERE  (  qid=1 and city_id=1 and business_range like '%241%' ) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:57:35+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.052000s][吞吐率：19.23req/s] [内存消耗：2,342.06kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'f87b9b92-da5f-4466-b781-bc00137335aa',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------507255638952185906532979',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:58:12+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.041000s][吞吐率：24.39req/s] [内存消耗：2,342.06kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'ade2af37-f0a1-4115-8dcb-42eac428342e',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------681095514631722341060292',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:58:40+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.049000s][吞吐率：20.41req/s] [内存消耗：2,342.13kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '724f5105-6e16-4ed1-8f32-d24b70c7d422',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------870945036386370620403853',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:05:55+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.059000s][吞吐率：16.95req/s] [内存消耗：2,352.18kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '509e5e76-af24-486d-99d6-efbd6eebcc66',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------948745226307460830961857',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_address`,`shop_phone`,latitude as lat,longitude as log FROM `user_shop` WHERE  (  qid=1 and city_id=1 and business_range like '%241%' ) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:06:10+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.049000s][吞吐率：20.41req/s] [内存消耗：2,352.43kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'd3d3f6b2-6189-4bf7-8eb8-2c4b437dc3a1',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------738676645330586223508666',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_address`,`shop_phone`,latitude as lat,longitude as log FROM `user_shop` WHERE  (  qid=1 and city_id=1 and business_range like '%241%' ) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:06:31+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.055000s][吞吐率：18.18req/s] [内存消耗：2,352.43kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'af55530e-c7ad-46d4-95b8-2afd454b4b3e',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------044954828161432568644584',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_address`,`shop_phone`,latitude as lat,longitude as log FROM `user_shop` WHERE  (  qid=1 and city_id=1 and business_range like '%241%' ) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:30:48+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.053000s][吞吐率：18.87req/s] [内存消耗：2,339.84kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '420d397f-3c3c-45a3-8836-f7aa4117ef5b',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------736472460208788770050432',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:31:31+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.045000s][吞吐率：22.22req/s] [内存消耗：2,340.84kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'c1a464fa-1dcb-42bf-bc77-e849fd997e0d',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------384211345327781554306572',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:31:38+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.047000s][吞吐率：21.28req/s] [内存消耗：2,363.04kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '7488403f-40f1-4121-af69-062aa0eb3479',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------293410169605516215803292',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.005000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:32:08+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.058000s][吞吐率：17.24req/s] [内存消耗：2,366.41kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '39af51c2-8c4e-49b3-99ed-0dbf607d502d',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------864000415254876534355961',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.005000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:32:46+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.061000s][吞吐率：16.39req/s] [内存消耗：2,366.41kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'e7a800c8-07bb-4efe-80a0-06f3fd072e0c',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------635282499027081313254594',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.006000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:32:57+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.052000s][吞吐率：19.23req/s] [内存消耗：2,366.41kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'df638f1b-6572-4aa7-bad2-4326c9005995',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------054026833415165782436021',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.006000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:45:51+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.068000s][吞吐率：14.71req/s] [内存消耗：2,368.90kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'f9fa8331-cc72-4162-97ab-a6f82b9ad8f6',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------067603726774463801291957',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:48:56+08:00 ] 127.0.0.1 GET /carsyslist.php?sys_id=944&brand_id=22&city=%E9%83%91%E5%B7%9E
+[ info ] www.hr.com:8083/carsyslist.php?sys_id=944&brand_id=22&city=%E9%83%91%E5%B7%9E [运行时间：0.044000s][吞吐率：22.73req/s] [内存消耗：1,128.02kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'carsyslist.php',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=kdbsic0jm157er91iqk4gjnpmm',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T12:34:40+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.058000s][吞吐率：17.24req/s] [内存消耗：2,369.75kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '771aa67d-123b-4209-af08-a4bd8ac1adff',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------931264299190031721843273',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id  ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T12:43:07+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.067000s][吞吐率：14.93req/s] [内存消耗：2,367.16kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '1b2e39e5-8812-4c56-9eea-11ad4fbb57a1',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------670521699750467337954159',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T12:46:52+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.058000s][吞吐率：17.24req/s] [内存消耗：2,369.75kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'b5344b32-f98b-40d8-8ab4-bb80647b5a3f',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------449081123887692774900876',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id  ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T12:47:06+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.064000s][吞吐率：15.63req/s] [内存消耗：2,370.92kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '71904eb9-8171-40ad-9485-d47790413335',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------967486386890091073082391',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T12:47:21+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.069000s][吞吐率：14.49req/s] [内存消耗：2,370.92kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'ea973a55-7521-4e4f-90c4-88e928114797',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------228189159480367740102294',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T12:56:33+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.067000s][吞吐率：14.93req/s] [内存消耗：2,368.16kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '01886f6c-8939-42ec-a129-d36e4ac54561',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------612571788000961927974743',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:08:21+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.066000s][吞吐率：15.15req/s] [内存消耗：2,369.33kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'fa8180b5-d4e0-4193-9c46-c6166b6ee2a8',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------405598455846274306695941',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:08:36+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.059000s][吞吐率：16.95req/s] [内存消耗：2,370.38kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '3babc25a-815c-4b18-b0ca-f5f26b9eb8eb',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------994779447225788151088523',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:08:50+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.054000s][吞吐率：18.52req/s] [内存消耗：2,369.33kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'a24590f7-3dd4-445d-8419-a975878059ed',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------691377761823743323192746',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:09:15+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.063000s][吞吐率：15.87req/s] [内存消耗：2,372.70kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'a2bc230f-4b70-4a87-86dc-1d6b872256e5',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------650018728093680307766045',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:12:30+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.065000s][吞吐率：15.38req/s] [内存消耗：2,372.75kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '3779e932-ea95-48ed-94d9-142fce0aee05',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------419479970411930067739668',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:22:10+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.068000s][吞吐率：14.71req/s] [内存消耗：2,431.59kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '63d232a0-d133-4240-abaf-2a4c4e88e311',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------704310024010863610930217',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12306' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12317' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12351' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12302' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12266' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12302' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12306' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12307' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12304' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:23:00+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.076000s][吞吐率：13.16req/s] [内存消耗：2,431.59kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '7450388a-9fdd-45f6-8690-f7efa07cd503',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------203056915771270397031542',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`city_id`,`img_300` FROM `rele_car` WHERE  (  brand_id=22 and sys_id=944 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 10 [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12352' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12306' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12317' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12351' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12302' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12266' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12302' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12306' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12307' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12304' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '944' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:24:24+08:00 ] 127.0.0.1 GET /carsyslist.php?sys_id=944&brand_id=22&city=%E9%83%91%E5%B7%9E
+[ info ] www.hr.com:8083/carsyslist.php?sys_id=944&brand_id=22&city=%E9%83%91%E5%B7%9E [运行时间：0.036000s][吞吐率：27.78req/s] [内存消耗：1,128.02kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'carsyslist.php',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=kdbsic0jm157er91iqk4gjnpmm',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T14:22:41+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.219000s][吞吐率：4.57req/s] [内存消耗：2,469.32kb] [文件加载：53]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '11a783a7-1499-46bb-b838-93d8f51c29d2',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------428175611268726989300792',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.024000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.064000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.065000s ]
+[ error ] [0]致命错误: Call to undefined function app\index\controller\M()[G:\xampp\htdocs\car\app\index\controller\User.php:1170]
+---------------------------------------------------------------
+[ 2018-10-26T14:23:00+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.281000s][吞吐率：3.56req/s] [内存消耗：2,395.06kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '5b6a420f-f3e8-4d03-9f8a-2763ae71c677',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------201637718168048734703966',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.025000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.071000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.069000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='昂科威' ) [ RunTime:0.068000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:23:24+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.276000s][吞吐率：3.62req/s] [内存消耗：2,395.02kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '39be30c6-bd62-456e-b03a-96f42124257a',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------949985274080335418657284',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.024000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.066000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='昂科威' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='昂科威' ) [ RunTime:0.068000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:24:40+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.046000s][吞吐率：21.74req/s] [内存消耗：2,338.30kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '6df00939-ea42-46cc-af7a-5d0374af6ea7',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------233264334377052096893199',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '944',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=944 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:29:19+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.058000s][吞吐率：17.24req/s] [内存消耗：2,338.30kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '3555c02e-e5e7-4439-9b27-3eb5673ab9b1',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------381500216743636402344339',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=945 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:29:36+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.040000s][吞吐率：25.00req/s] [内存消耗：2,336.17kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '8b414d41-c6d6-46d4-9e76-ae838d0162f9',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------747269621001726931169263',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=945 ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:30:17+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.081000s][吞吐率：12.35req/s] [内存消耗：2,374.40kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'e12cc9d6-24c5-4096-b4d6-6d57c0a4a853',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------603582908414247411981275',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=945 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.024000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:31:12+08:00 ] 127.0.0.1 GET /carsyslist.php?sys_id=945&brand_id=22&city=%E9%83%91%E5%B7%9E
+[ info ] www.hr.com:8083/carsyslist.php?sys_id=945&brand_id=22&city=%E9%83%91%E5%B7%9E [运行时间：0.019000s][吞吐率：52.63req/s] [内存消耗：1,128.02kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'carsyslist.php',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=kdbsic0jm157er91iqk4gjnpmm',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T14:31:16+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.073000s][吞吐率：13.70req/s] [内存消耗：2,374.40kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '299e2250-ef0d-412e-9f9c-6f1233ad9c0e',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------657866535874366870612615',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=945 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.024000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:31:39+08:00 ] 127.0.0.1 GET /carsyslist.php?sys_id=945&brand_id=22&city=%E9%83%91%E5%B7%9E
+[ info ] www.hr.com:8083/carsyslist.php?sys_id=945&brand_id=22&city=%E9%83%91%E5%B7%9E [运行时间：0.042000s][吞吐率：23.81req/s] [内存消耗：1,128.02kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'carsyslist.php',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=kdbsic0jm157er91iqk4gjnpmm',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T14:31:42+08:00 ] 127.0.0.1 GET /carsyslist.php?sys_id=945&brand_id=22&city=%E9%83%91%E5%B7%9E
+[ info ] www.hr.com:8083/carsyslist.php?sys_id=945&brand_id=22&city=%E9%83%91%E5%B7%9E [运行时间：0.035000s][吞吐率：28.57req/s] [内存消耗：1,128.02kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'carsyslist.php',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=kdbsic0jm157er91iqk4gjnpmm',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T14:38:13+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.089000s][吞吐率：11.24req/s] [内存消耗：2,374.40kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '762df79a-d5cc-4406-a09c-73fd84e6b8e1',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------495255938413694742618490',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=945 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.025000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:38:43+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.157000s][吞吐率：6.37req/s] [内存消耗：2,376.41kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '91147517-398b-436e-a56d-bda90b1d0670',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------527710067032385006389986',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=945 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.027000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.071000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:39:36+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.143000s][吞吐率：6.99req/s] [内存消耗：2,378.78kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '28109976-1a9d-427e-8347-8f58ba4f7db5',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------154496558470236902859149',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=945 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.024000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.067000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:53:59+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.293000s][吞吐率：3.41req/s] [内存消耗：2,411.63kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'c2a1e7e3-8e2b-47c5-9383-60da2aaaba89',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------131074219112094108251305',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=945 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.024000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.067000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='君越' ) [ RunTime:0.067000s ]
+---------------------------------------------------------------
+[ 2018-10-26T14:54:44+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.288000s][吞吐率：3.47req/s] [内存消耗：2,417.75kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'b0de7d1d-4be2-452f-9791-5f19f3180231',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------237487555885363612491157',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=945 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.025000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.068000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.070000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='君越' ) [ RunTime:0.070000s ]
+---------------------------------------------------------------
+[ 2018-10-26T15:05:35+08:00 ] 127.0.0.1 POST /index/user/asd
+[ info ] www.hr.com:8083/index/user/asd [运行时间：0.279000s][吞吐率：3.58req/s] [内存消耗：2,411.46kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'asd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'a1ce9d04-3289-4b13-9b69-3b801392de2f',
+  'user-agent' => 'PostmanRuntime/7.3.0',
+  'accept' => '*/*',
+  'host' => 'www.hr.com:8083',
+  'cookie' => 'PHPSESSID=obl95jgeqga5gstc8h0r8nf5r3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------335365636220519631540027',
+  'content-length' => '382',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'sys_id' => '945',
+  'brand_id' => '22',
+  'city' => '郑州',
+)
+[ info ] [ RUN ] app\index\controller\User->asd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`img_id` FROM `car_brand` WHERE  (  id=945 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `car_body` FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.025000s ]
+[ sql ] [ SQL ] SELECT MIN(pliang1) AS tp_min FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.065000s ]
+[ sql ] [ SQL ] SELECT MAX(pliang1) AS tp_max FROM `param` WHERE  (  sys='君越' ) LIMIT 1 [ RunTime:0.065000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  sys='君越' ) [ RunTime:0.066000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:29:14+08:00 ] 127.0.0.1 GET /
+[ info ] www.hr.com:8083/ [运行时间：0.426000s][吞吐率：2.35req/s] [内存消耗：2,899.77kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ G:\xampp\htdocs\car\app\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\index\index.html [ array (
+  0 => 'banner',
+  1 => 'brand',
+  2 => 'price',
+  3 => 'subface',
+  4 => 'new_car',
+  5 => 'er_car',
+  6 => 'car_zero',
+  7 => 'new1',
+  8 => 'new2',
+  9 => 'new3',
+  10 => 'new4',
+  11 => 'new5',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `home_car_app` [ RunTime:0.041000s ]
+[ sql ] [ SQL ] SELECT * FROM `home_car_app` WHERE  (  city_id=1 ) ORDER BY `sort` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `price_range` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT price_id as id,`name` FROM `price_range` ORDER BY `level` ASC LIMIT 4 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `subface` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT face_id as id,`name`,`img` FROM `subface` ORDER BY `level` ASC LIMIT 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`brand_id`,`sys_id`,`cartype_id`,`price`,`img_300`,`pay10_s2`,`pay10_y2`,`pay10_n2` FROM `new_car` WHERE  (  is_tj=1 and status=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 20 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26748' LIMIT 1 [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1853' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16298' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1211' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2658' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '427' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2720' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '8071' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '689' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15625' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1169' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15613' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1164' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15554' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1170' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15667' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1171' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '5781' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '582' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '5704' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '576' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12217' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '949' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12214' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '948' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16339' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1206' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12207' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '947' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16349' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1214' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16323' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1208' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12198' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '946' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`img_300` FROM `rele_car` WHERE  (  status=1 and up_under=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 20 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2652' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '436' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9541 ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6151' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '596' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9538 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2970' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '445' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9535 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6403' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9516 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6339' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '606' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9515 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9514 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6092' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '584' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9513 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6492' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '613' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9511 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '3015' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '424' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9510 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9508 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9507 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6415' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '607' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9506 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9505 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6406' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9504 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2726' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9503 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2720' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9502 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6402' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9501 ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6597' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '623' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9500 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6519' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '605' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9499 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9498 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `l_car` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype_id`,`price`,`img_300`,`pay0_s2`,`pay0_y2`,`pay0_n2` FROM `l_car` WHERE  (  is_tj=1 and status=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 5 [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26748' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1853' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16298' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1211' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2658' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '427' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2720' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `news` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '1'  AND `status` = 1 [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '2'  AND `status` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '3'  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '4'  AND `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '5'  AND `status` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-26T18:29:14+08:00 ] 127.0.0.1 GET /img/maic.png
+[ info ] www.hr.com:8083/img/maic.png [运行时间：0.018000s][吞吐率：55.56req/s] [内存消耗：1,125.90kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'img',
+    1 => 'maic.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=cvqtu1de01qsflfjbhpvnbs5pi',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T18:29:14+08:00 ] 127.0.0.1 GET /img/shouye.png
+[ info ] www.hr.com:8083/img/shouye.png [运行时间：0.027000s][吞吐率：37.04req/s] [内存消耗：1,125.91kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'img',
+    1 => 'shouye.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=cvqtu1de01qsflfjbhpvnbs5pi',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T18:29:14+08:00 ] 127.0.0.1 GET /img/wangahn.png
+[ info ] www.hr.com:8083/img/wangahn.png [运行时间：0.016000s][吞吐率：62.50req/s] [内存消耗：1,125.96kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'img',
+    1 => 'wangahn.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=cvqtu1de01qsflfjbhpvnbs5pi',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T18:29:14+08:00 ] 127.0.0.1 GET /img/xiazai.png
+[ info ] www.hr.com:8083/img/xiazai.png [运行时间：0.016000s][吞吐率：62.50req/s] [内存消耗：1,125.91kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'img',
+    1 => 'xiazai.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=cvqtu1de01qsflfjbhpvnbs5pi',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T18:29:14+08:00 ] 127.0.0.1 GET /img/phone1.png
+[ info ] www.hr.com:8083/img/phone1.png [运行时间：0.021000s][吞吐率：47.62req/s] [内存消耗：1,125.91kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'img',
+    1 => 'phone1.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=cvqtu1de01qsflfjbhpvnbs5pi',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T18:29:15+08:00 ] 127.0.0.1 GET /img/1024.png
+[ info ] www.hr.com:8083/img/1024.png [运行时间：0.020000s][吞吐率：50.00req/s] [内存消耗：1,125.90kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'img',
+    1 => '1024.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=cvqtu1de01qsflfjbhpvnbs5pi',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T18:29:15+08:00 ] 127.0.0.1 GET /img/ewmdown.png
+[ info ] www.hr.com:8083/img/ewmdown.png [运行时间：0.017000s][吞吐率：58.82req/s] [内存消耗：1,125.96kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'img',
+    1 => 'ewmdown.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=cvqtu1de01qsflfjbhpvnbs5pi',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T18:29:15+08:00 ] 127.0.0.1 GET /img/ewm_guanzhu.png
+[ info ] www.hr.com:8083/img/ewm_guanzhu.png [运行时间：0.021000s][吞吐率：47.62req/s] [内存消耗：1,126.01kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'img',
+    1 => 'ewm_guanzhu.png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=cvqtu1de01qsflfjbhpvnbs5pi',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-26T18:29:20+08:00 ] 127.0.0.1 GET /carsyslist.html
+[ info ] www.hr.com:8083/carsyslist.html [运行时间：0.034000s][吞吐率：29.41req/s] [内存消耗：1,126.60kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'carsyslist',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=cvqtu1de01qsflfjbhpvnbs5pi',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File

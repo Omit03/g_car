@@ -164,13 +164,13 @@
 				<div class="car_list">
 					<ul class="list">
 						<a href="">
-						{volist name="sys_cars" id="vol"}
+						{volist name="sys_cars" id="val" offset="1" length="8"}
 						<li class="items5">
-							<a href="{:url('index/details')}?cheid={$vol.pu_id}" class="car_img flex_center"><img src="{$vol.img_url}" alt="" /></a>
-							<a href="{:url('index/details')}?cheid={$vol.pu_id}" class="car_desc">
-								<h3>{$vol.name}</h3>
-								<p><span class="car_price"><b>{$vol.price}</b>万</span><span class="car_sui">新车含税{$vol.news_price}万</span></p>
-								<p><span>{$vol.car_cardtime}上牌</span> <span class="padlt20">{$vol.car_mileage}万公里</span> </p>
+							<a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
+							<a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="car_desc">
+								<h3>{$val.name}</h3>
+								<p><span class="car_price"><b>{$val.price}</b>万</span><span class="car_sui">新车含税{$val.news_price}万</span></p>
+								<p><span>{$val.car_cardtime}上牌</span> <span class="padlt20">{$val.car_mileage}万公里</span> </p>
 								<div class="che_ordered">立即预约</div>
 							</a>
 						</li>
