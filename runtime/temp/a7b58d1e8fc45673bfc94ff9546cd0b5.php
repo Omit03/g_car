@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\twocar\index.html";i:1540775212;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540797540;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\twocar\index.html";i:1540815190;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540862246;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -36,7 +36,7 @@
 <div class="fn_show gj_clear header_show">
 	<div class="wrap gj_clear marginbt">
 		<div class="logo">
-	 		  <h1> <a href="http://www.gj2car.com">二手车交易市场</a></h1>
+	 		  <h1> <a href="/index/index/index.html">二手车交易市场</a></h1>
 		</div>
 		<div class="city_current">
 			<div class="address"><span>郑州</span><b class="icon1"></b></div>
@@ -73,7 +73,7 @@
 	</div>
 	<div class="nav gj_clear">
 		<ul class="wrap">
-			<li class="active"><a href="<?php echo url('index/index'); ?>">首页</a></li>
+			<li><a href="<?php echo url('index/index'); ?>">首页</a></li>
 			<li ><a href="<?php echo url('newcar/index'); ?>" class="sec_li">新车</a></li>
 			<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -91,7 +91,7 @@
 	<div class="wrap" >
 		<div class="logo" >
 		   <h1 style=""> 
-		   <a href="http://www.gj2car.com">二手车交易市场</a>
+		   <a href="/index/index/index.html"></a>
 		   </h1>
 		</div>
 		<div class="city_current">
@@ -108,7 +108,7 @@
 		</div>
 		<div class="nav">
 			<ul>
-				<li class="active"><a href="<?php echo url('index/index'); ?>">首页</a></li>
+				<li><a href="<?php echo url('index/index'); ?>">首页</a></li>
 				<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
 				<li><a href="<?php echo url('newcar/index'); ?>">新车</a></li>
 				<!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -116,7 +116,7 @@
 				<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 				<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 				<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-				<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
+				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册1</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>
@@ -511,7 +511,7 @@ $(window).on('scroll',function(){
 	</body>
 	<script>		
 		$(function(){
-		
+            $($(".wrap li")[2]).addClass("active").siblings().removeClass("active");
 		    // $(".header").load("templates/header.html");
 		    // $(".footer").load("templates/footer.html");
 		    $('.check_item img').click(function(){

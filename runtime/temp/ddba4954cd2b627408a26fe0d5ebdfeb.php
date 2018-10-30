@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html";i:1540817802;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540815190;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html";i:1540862551;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540862246;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -117,7 +117,7 @@
 				<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 				<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 				<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-				<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
+				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册1</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>
@@ -216,7 +216,7 @@ $(window).on('scroll',function(){
 		   </div>
 		    <div class="first_public">
 		    	<ul class="md50">
-					<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($new_car) ? array_slice($new_car,10,10, true) : $new_car->slice(10,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+					<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0; $__LIST__ = $new_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 		    		<li>
 						<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $val['brand_id']; ?>&sys_id=<?php echo $val['sys_id']; ?>&cartype_id=<?php echo $val['cartype_id']; ?>&id=<?php echo $val['id']; ?>&name=<?php echo $val['name']; ?>&img_url=<?php echo $val['img_url']; ?>&shoufu=<?php echo $val['pay10_s2']; ?>&ygong=<?php echo $val['pay10_y2']; ?>&price=<?php echo $val['price']; ?>">
 

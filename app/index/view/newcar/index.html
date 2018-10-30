@@ -74,7 +74,7 @@
 		   </div>
 		    <div class="first_public">
 		    	<ul class="md50">
-					{volist name="new_car" id="val" offset="10" length="10"}
+					{volist name="new_car" id="val"}
 		    		<li>
 						<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}&name={$val.name}&img_url={$val.img_url}&shoufu={$val.pay10_s2}&ygong={$val.pay10_y2}&price={$val.price}">
 

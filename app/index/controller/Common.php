@@ -1365,7 +1365,7 @@ class Common extends Controller{
      */
     public function new_car($city_id){
 
-        $new_car=Db::table("new_car")->field("id,brand_id,sys_id,cartype_id,price,img_300,pay10_s2,pay10_y2,pay10_n2")->where("is_tj=1 and status=1 and city_id=".$city_id)->order("create_time desc")->limit(20)->select();
+        $new_car=Db::table("new_car")->field("id,brand_id,sys_id,cartype_id,price,img_300,pay10_s2,pay10_y2,pay10_n2")->where("is_tj=1 and status=1 and city_id=".$city_id)->order("create_time desc")->limit(4)->select();
         foreach ($new_car as $key => $val) {
             $new_car[$key]['img_url']=$this->get_carimg($val['img_300'],2);
             $new_car[$key]['name']=$this->get_carname($val['cartype_id']);

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\change\index.html";i:1540815190;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540815190;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\change\index.html";i:1540815190;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540862246;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -115,7 +115,7 @@
 				<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 				<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 				<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-				<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
+				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册1</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>

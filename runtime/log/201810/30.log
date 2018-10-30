@@ -1,0 +1,1526 @@
+---------------------------------------------------------------
+[ 2018-10-30T09:15:21+08:00 ] 127.0.0.1 GET /index/index/search_newcar.html?brand=22
+[ info ] www.hr.com:8083/index/index/search_newcar.html?brand=22 [运行时间：0.072000s][吞吐率：13.89req/s] [内存消耗：2,504.63kb] [文件加载：50]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'search_newcar',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+  'brand' => '22',
+)
+[ info ] [ RUN ] app\index\controller\Index->search_newcar[ G:\xampp\htdocs\car\app\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_car` WHERE  (  1=1   ) LIMIT 20 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-30T09:15:32+08:00 ] 127.0.0.1 GET /index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58
+[ info ] www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58 [运行时间：0.138000s][吞吐率：7.25req/s] [内存消耗：2,862.56kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'newcardetails',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+  'brand_id' => '98',
+  'sys_id' => '1851',
+  'cartype_id' => '26758',
+  'id' => '49',
+  'name' => '启辰T90 2017款 2.0L CVT智尚版',
+  'img_url' => 'http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg',
+  'shoufu' => '1.36',
+  'ygong' => '3412.33',
+  'price' => '13.58',
+)
+[ info ] [ RUN ] app\index\controller\Newcar->newcardetails[ G:\xampp\htdocs\car\app\index\controller\Newcar.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\newcar\newcardetails.html [ array (
+  0 => 'brand',
+  1 => 'shop_discount',
+  2 => 'newcar_info',
+  3 => 'shop',
+  4 => 'carparam',
+  5 => 'sys_cars',
+  6 => 'telephone',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_liulan_history` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `car_liulan_history` WHERE  `userid` = 52  AND `cheid` = 49  AND `type` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=1851 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_ids`,`img_512`,`price`,`can_price`,`sale_num`,`pay10_s2`,`pay10_y2`,`pay10_n2`,`pay20_s2`,`pay20_y2`,`pay20_n2`,`pay30_s2`,`pay30_y2`,`pay30_n2`,`city_id` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=1851 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=26758 ) LIMIT 1 [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_phone`,`shop_address`,latitude as lat,longitude as log FROM `user_shop` `a` INNER JOIN `user` `b` ON `a`.`user_id`=`b`.`user_id` WHERE  `is_fenghao` = 2  AND `qid` = 1 OR `business_range` LIKE '%$firm_id%' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=37 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=38 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=39 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_phone`,`shop_address`,latitude as lat,longitude as log FROM `user_shop` `a` INNER JOIN `user` `b` ON `a`.`user_id`=`b`.`user_id` WHERE  `is_fenghao` = 2  AND `qid` = 1 OR `business_range` LIKE '%$firm_id%' [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=37 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `can_price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=37 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=38 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `can_price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=38 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=39 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `can_price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=39 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_car` WHERE  (  id=49 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `a`.* FROM `param` `a` INNER JOIN `rele_param` `b` ON `b`.`param_id`=`a`.`id` WHERE  (  b.pu_id=49 and b.type=1 ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_car` WHERE  `sys_id` = 1851  AND `city_id` = 1 ORDER BY `id` DESC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26732' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26733' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26735' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26734' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26736' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26737' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-10-30T09:15:32+08:00 ] 127.0.0.1 GET /static/img/cars2.png
+[ info ] www.hr.com:8083/static/img/cars2.png [运行时间：0.020000s][吞吐率：50.00req/s] [内存消耗：1,128.26kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'cars2.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:15:32+08:00 ] 127.0.0.1 GET /static/img/cars1.png
+[ info ] www.hr.com:8083/static/img/cars1.png [运行时间：0.022000s][吞吐率：45.45req/s] [内存消耗：1,128.26kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'cars1.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:15:32+08:00 ] 127.0.0.1 GET /static/img/cars3.png
+[ info ] www.hr.com:8083/static/img/cars3.png [运行时间：0.029000s][吞吐率：34.48req/s] [内存消耗：1,128.26kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'cars3.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:15:32+08:00 ] 127.0.0.1 GET /static/img/nextBtnTop.png
+[ info ] www.hr.com:8083/static/img/nextBtnTop.png [运行时间：0.020000s][吞吐率：50.00req/s] [内存消耗：1,126.15kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'nextBtnTop.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/static/css/other.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:15:32+08:00 ] 127.0.0.1 GET /static/img/prevBtnTop.png
+[ info ] www.hr.com:8083/static/img/prevBtnTop.png [运行时间：0.031000s][吞吐率：32.26req/s] [内存消耗：1,126.15kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'prevBtnTop.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/static/css/other.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:15:32+08:00 ] 127.0.0.1 GET /index/newcar/templates/header.html
+[ info ] www.hr.com:8083/index/newcar/templates/header.html [运行时间：0.027000s][吞吐率：37.04req/s] [内存消耗：1,685.52kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:470]
+---------------------------------------------------------------
+[ 2018-10-30T09:16:40+08:00 ] 127.0.0.1 GET /index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58
+[ info ] www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58 [运行时间：0.131000s][吞吐率：7.63req/s] [内存消耗：2,862.56kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'newcardetails',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+  'brand_id' => '98',
+  'sys_id' => '1851',
+  'cartype_id' => '26758',
+  'id' => '49',
+  'name' => '启辰T90 2017款 2.0L CVT智尚版',
+  'img_url' => 'http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg',
+  'shoufu' => '1.36',
+  'ygong' => '3412.33',
+  'price' => '13.58',
+)
+[ info ] [ RUN ] app\index\controller\Newcar->newcardetails[ G:\xampp\htdocs\car\app\index\controller\Newcar.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\newcar\newcardetails.html [ array (
+  0 => 'brand',
+  1 => 'shop_discount',
+  2 => 'newcar_info',
+  3 => 'shop',
+  4 => 'carparam',
+  5 => 'sys_cars',
+  6 => 'telephone',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_liulan_history` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `car_liulan_history` WHERE  `userid` = 52  AND `cheid` = 49  AND `type` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=1851 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_ids`,`img_512`,`price`,`can_price`,`sale_num`,`pay10_s2`,`pay10_y2`,`pay10_n2`,`pay20_s2`,`pay20_y2`,`pay20_n2`,`pay30_s2`,`pay30_y2`,`pay30_n2`,`city_id` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=1851 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=26758 ) LIMIT 1 [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_phone`,`shop_address`,latitude as lat,longitude as log FROM `user_shop` `a` INNER JOIN `user` `b` ON `a`.`user_id`=`b`.`user_id` WHERE  `is_fenghao` = 2  AND `qid` = 1 OR `business_range` LIKE '%$firm_id%' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=37 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=38 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=39 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_phone`,`shop_address`,latitude as lat,longitude as log FROM `user_shop` `a` INNER JOIN `user` `b` ON `a`.`user_id`=`b`.`user_id` WHERE  `is_fenghao` = 2  AND `qid` = 1 OR `business_range` LIKE '%$firm_id%' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=37 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `can_price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=37 and is_discount=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=38 and is_discount=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `can_price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=38 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=39 and is_discount=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `can_price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=39 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_car` WHERE  (  id=49 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `a`.* FROM `param` `a` INNER JOIN `rele_param` `b` ON `b`.`param_id`=`a`.`id` WHERE  (  b.pu_id=49 and b.type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_car` WHERE  `sys_id` = 1851  AND `city_id` = 1 ORDER BY `id` DESC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26732' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26733' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26735' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26734' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26736' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26737' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.008000s ]
+---------------------------------------------------------------
+[ 2018-10-30T09:16:40+08:00 ] 127.0.0.1 GET /static/img/cars1.png
+[ info ] www.hr.com:8083/static/img/cars1.png [运行时间：0.018000s][吞吐率：55.56req/s] [内存消耗：1,128.26kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'cars1.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:16:40+08:00 ] 127.0.0.1 GET /static/img/cars2.png
+[ info ] www.hr.com:8083/static/img/cars2.png [运行时间：0.018000s][吞吐率：55.56req/s] [内存消耗：1,128.26kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'cars2.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:16:40+08:00 ] 127.0.0.1 GET /static/img/cars3.png
+[ info ] www.hr.com:8083/static/img/cars3.png [运行时间：0.018000s][吞吐率：55.56req/s] [内存消耗：1,128.26kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'cars3.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:16:40+08:00 ] 127.0.0.1 GET /static/img/prevBtnTop.png
+[ info ] www.hr.com:8083/static/img/prevBtnTop.png [运行时间：0.017000s][吞吐率：58.82req/s] [内存消耗：1,126.15kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'prevBtnTop.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/static/css/other.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:16:40+08:00 ] 127.0.0.1 GET /static/img/nextBtnTop.png
+[ info ] www.hr.com:8083/static/img/nextBtnTop.png [运行时间：0.020000s][吞吐率：50.00req/s] [内存消耗：1,126.15kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'nextBtnTop.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/static/css/other.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:16:40+08:00 ] 127.0.0.1 GET /index/newcar/templates/header.html
+[ info ] www.hr.com:8083/index/newcar/templates/header.html [运行时间：0.039000s][吞吐率：25.64req/s] [内存消耗：1,685.52kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:470]
+---------------------------------------------------------------
+[ 2018-10-30T09:17:29+08:00 ] 127.0.0.1 GET /index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58
+[ info ] www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58 [运行时间：0.143000s][吞吐率：6.99req/s] [内存消耗：2,862.60kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'newcardetails',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+  'brand_id' => '98',
+  'sys_id' => '1851',
+  'cartype_id' => '26758',
+  'id' => '49',
+  'name' => '启辰T90 2017款 2.0L CVT智尚版',
+  'img_url' => 'http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg',
+  'shoufu' => '1.36',
+  'ygong' => '3412.33',
+  'price' => '13.58',
+)
+[ info ] [ RUN ] app\index\controller\Newcar->newcardetails[ G:\xampp\htdocs\car\app\index\controller\Newcar.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\newcar\newcardetails.html [ array (
+  0 => 'brand',
+  1 => 'shop_discount',
+  2 => 'newcar_info',
+  3 => 'shop',
+  4 => 'carparam',
+  5 => 'sys_cars',
+  6 => 'telephone',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_liulan_history` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `car_liulan_history` WHERE  `userid` = 52  AND `cheid` = 49  AND `type` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `upid` FROM `car_brand` WHERE  (  id=1851 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_ids`,`img_512`,`price`,`can_price`,`sale_num`,`pay10_s2`,`pay10_y2`,`pay10_n2`,`pay20_s2`,`pay20_y2`,`pay20_n2`,`pay30_s2`,`pay30_y2`,`pay30_n2`,`city_id` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=1851 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  (  id=26758 ) LIMIT 1 [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `city` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_phone`,`shop_address`,latitude as lat,longitude as log FROM `user_shop` `a` INNER JOIN `user` `b` ON `a`.`user_id`=`b`.`user_id` WHERE  `is_fenghao` = 2  AND `qid` = 1 OR `business_range` LIKE '%$firm_id%' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=37 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=38 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=39 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `shop_id`,`shop_name`,`shop_phone`,`shop_address`,latitude as lat,longitude as log FROM `user_shop` `a` INNER JOIN `user` `b` ON `a`.`user_id`=`b`.`user_id` WHERE  `is_fenghao` = 2  AND `qid` = 1 OR `business_range` LIKE '%$firm_id%' [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=37 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `can_price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=37 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=38 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `can_price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=38 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=39 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `can_price` FROM `new_car` WHERE  (  brand_id=98 and sys_id=1851 and cartype_id=26758 and shop_id=39 and is_discount=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_car` WHERE  (  id=49 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `a`.* FROM `param` `a` INNER JOIN `rele_param` `b` ON `b`.`param_id`=`a`.`id` WHERE  (  b.pu_id=49 and b.type=1 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_car` WHERE  `sys_id` = 1851  AND `city_id` = 1 ORDER BY `id` DESC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26732' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26733' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26735' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26734' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26736' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26737' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-10-30T09:17:29+08:00 ] 127.0.0.1 GET /static/img/cars1.png
+[ info ] www.hr.com:8083/static/img/cars1.png [运行时间：0.018000s][吞吐率：55.56req/s] [内存消耗：1,128.26kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'cars1.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:17:29+08:00 ] 127.0.0.1 GET /static/img/cars2.png
+[ info ] www.hr.com:8083/static/img/cars2.png [运行时间：0.018000s][吞吐率：55.56req/s] [内存消耗：1,128.26kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'cars2.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:17:29+08:00 ] 127.0.0.1 GET /static/img/cars3.png
+[ info ] www.hr.com:8083/static/img/cars3.png [运行时间：0.016000s][吞吐率：62.50req/s] [内存消耗：1,128.26kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'cars3.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:17:29+08:00 ] 127.0.0.1 GET /static/img/prevBtnTop.png
+[ info ] www.hr.com:8083/static/img/prevBtnTop.png [运行时间：0.017000s][吞吐率：58.82req/s] [内存消耗：1,126.15kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'prevBtnTop.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/static/css/other.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:17:29+08:00 ] 127.0.0.1 GET /static/img/nextBtnTop.png
+[ info ] www.hr.com:8083/static/img/nextBtnTop.png [运行时间：0.020000s][吞吐率：50.00req/s] [内存消耗：1,126.15kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'img',
+    2 => 'nextBtnTop.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/static/css/other.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-10-30T09:17:29+08:00 ] 127.0.0.1 GET /index/newcar/templates/header.html
+[ info ] www.hr.com:8083/index/newcar/templates/header.html [运行时间：0.026000s][吞吐率：38.46req/s] [内存消耗：1,685.52kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:470]
+---------------------------------------------------------------
+[ 2018-10-30T09:17:53+08:00 ] 127.0.0.1 GET /index/index/sell.html
+[ info ] www.hr.com:8083/index/index/sell.html [运行时间：0.455000s][吞吐率：2.20req/s] [内存消耗：3,085.73kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sell',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/newcardetails.html?brand_id=98&sys_id=1851&cartype_id=26758&id=49&name=%E5%90%AF%E8%BE%B0T90%202017%E6%AC%BE%202.0L%20CVT%E6%99%BA%E5%B0%9A%E7%89%88&img_url=http://39.106.67.47/butler_car/Uploads/newcar//2018-04-27/20180427093015UWJ7Dxxd.jpg&shoufu=1.36&ygong=3412.33&price=13.58',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->sell[ G:\xampp\htdocs\car\app\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\index\sell.html [ array (
+  0 => 'res',
+  1 => 'er_car',
+  2 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '65'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '65'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '66'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '67'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '68'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '69'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '70'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '71'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '72'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '73'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '74'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '75'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '76'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '77'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '78'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '79'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '80'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '81'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '82'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '83'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '84'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '85'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '86'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '87'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '88'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '89'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '90'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`img_300` FROM `rele_car` WHERE  (  status=1 and up_under=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 20 [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2652' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '436' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9541 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6151' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '596' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9538 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2970' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '445' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9535 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6403' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9516 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6339' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '606' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9515 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9514 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6092' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '584' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9513 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6492' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '613' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9511 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '3015' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '424' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9510 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9508 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9507 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6415' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '607' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9506 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9505 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6406' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9504 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2726' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9503 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2720' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9502 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6402' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9501 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6597' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '623' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9500 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6519' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '605' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9499 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9498 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.008000s ]
+---------------------------------------------------------------
+[ 2018-10-30T09:17:53+08:00 ] 127.0.0.1 GET /index/index/js/model/allCity.js
+[ info ] www.hr.com:8083/index/index/js/model/allCity.js [运行时间：0.030000s][吞吐率：33.33req/s] [内存消耗：1,762.52kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'js',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/index/sell.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+  'model' => 'allCity.js',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: js[G:\xampp\htdocs\car\app\index\controller\Common.php:470]
+---------------------------------------------------------------
+[ 2018-10-30T09:17:56+08:00 ] 127.0.0.1 GET /index/change/index.html
+[ info ] www.hr.com:8083/index/change/index.html [运行时间：0.277000s][吞吐率：3.61req/s] [内存消耗：2,726.41kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'change',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/index/sell.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Change->index[ G:\xampp\htdocs\car\app\index\controller\Change.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\change\index.html [ array (
+  0 => 'er_car',
+  1 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%%' ) LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`img_300` FROM `rele_car` WHERE  (  status=1 and up_under=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 20 [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2652' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '436' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9541 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6151' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '596' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9538 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2970' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '445' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9535 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6403' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9516 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6339' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '606' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9515 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9514 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6092' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '584' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9513 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6492' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '613' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9511 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '3015' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '424' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9510 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9508 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9507 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6415' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '607' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9506 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9505 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6406' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9504 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2726' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9503 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2720' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9502 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6402' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9501 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6597' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '623' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9500 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6519' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '605' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9499 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9498 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.011000s ]
+---------------------------------------------------------------
+[ 2018-10-30T09:18:01+08:00 ] 127.0.0.1 GET /index/twocar/index.html
+[ info ] www.hr.com:8083/index/twocar/index.html [运行时间：0.495000s][吞吐率：2.02req/s] [内存消耗：3,085.63kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'twocar',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/change/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Twocar->index[ G:\xampp\htdocs\car\app\index\controller\Twocar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\twocar\index.html [ array (
+  0 => 'brand',
+  1 => 'price',
+  2 => 'subface',
+  3 => 'er_car',
+  4 => 'ABC',
+  5 => 'age',
+  6 => 'licheng',
+  7 => 'output',
+  8 => 'gearbox',
+  9 => 'fuel',
+  10 => 'blowdown',
+  11 => 'car_drive',
+  12 => 'car_body',
+  13 => 'color',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%%' ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `price_range` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT price_id as id,`name` FROM `price_range` ORDER BY `level` ASC LIMIT 4 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `subface` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT face_id as id,`name`,`img` FROM `subface` ORDER BY `level` ASC LIMIT 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cheling` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `cheling` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_color1` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `car_color1` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`img_300` FROM `rele_car` WHERE  (  status=1 and up_under=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 20 [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2652' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '436' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9541 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6151' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '596' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9538 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2970' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '445' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9535 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6403' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9516 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6339' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '606' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9515 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9514 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6092' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '584' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9513 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6492' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '613' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9511 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '3015' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '424' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9510 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9508 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9507 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6415' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '607' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9506 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9505 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6406' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9504 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2726' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9503 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2720' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9502 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6402' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9501 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6597' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '623' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9500 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6519' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '605' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9499 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '23863' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1633' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9498 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '65'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '65'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '66'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '67'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '68'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '69'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '70'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '71'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '72'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '73'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '74'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '75'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '76'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '77'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '78'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '79'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '80'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '81'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '82'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '83'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '84'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '85'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '86'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '87'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '88'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '89'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '90'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+---------------------------------------------------------------
+[ 2018-10-30T09:18:04+08:00 ] 127.0.0.1 GET /index/newcar/index.html
+[ info ] www.hr.com:8083/index/newcar/index.html [运行时间：0.266000s][吞吐率：3.76req/s] [内存消耗：2,687.05kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/twocar/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Newcar->index[ G:\xampp\htdocs\car\app\index\controller\Newcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html [ array (
+  0 => 'brand',
+  1 => 'price',
+  2 => 'subface',
+  3 => 'new_car',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `price_range` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT price_id as id,`name` FROM `price_range` ORDER BY `level` ASC LIMIT 4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `subface` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT face_id as id,`name`,`img` FROM `subface` ORDER BY `level` ASC LIMIT 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`brand_id`,`sys_id`,`cartype_id`,`price`,`img_300`,`pay10_s2`,`pay10_y2`,`pay10_n2` FROM `new_car` WHERE  (  is_tj=1 and status=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26748' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1853' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16298' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1211' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2658' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '427' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2720' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '8071' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '689' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15625' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1169' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15613' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1164' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15554' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1170' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15667' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1171' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '5781' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '582' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '5704' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '576' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12217' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '949' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12214' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '948' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16339' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1206' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12207' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '947' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16349' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1214' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16323' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1208' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '12198' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '946' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-30T09:18:04+08:00 ] 127.0.0.1 GET /index/newcar/favicon.png
+[ info ] www.hr.com:8083/index/newcar/favicon.png [运行时间：0.024000s][吞吐率：41.67req/s] [内存消耗：1,683.23kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'favicon.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: favicon.png[G:\xampp\htdocs\car\app\index\controller\Common.php:470]
+---------------------------------------------------------------
+[ 2018-10-30T09:22:02+08:00 ] 127.0.0.1 GET /index/newcar/index.html
+[ info ] www.hr.com:8083/index/newcar/index.html [运行时间：0.229000s][吞吐率：4.37req/s] [内存消耗：2,444.36kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/twocar/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Newcar->index[ G:\xampp\htdocs\car\app\index\controller\Newcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html [ array (
+  0 => 'brand',
+  1 => 'price',
+  2 => 'subface',
+  3 => 'new_car',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `price_range` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT price_id as id,`name` FROM `price_range` ORDER BY `level` ASC LIMIT 4 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `subface` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT face_id as id,`name`,`img` FROM `subface` ORDER BY `level` ASC LIMIT 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`brand_id`,`sys_id`,`cartype_id`,`price`,`img_300`,`pay10_s2`,`pay10_y2`,`pay10_n2` FROM `new_car` WHERE  (  is_tj=1 and status=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 4 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26748' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1853' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16298' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1211' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2658' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '427' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-10-30T09:22:02+08:00 ] 127.0.0.1 GET /index/newcar/favicon.png
+[ info ] www.hr.com:8083/index/newcar/favicon.png [运行时间：0.026000s][吞吐率：38.46req/s] [内存消耗：1,683.95kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'favicon.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: favicon.png[G:\xampp\htdocs\car\app\index\controller\Common.php:470]
+---------------------------------------------------------------
+[ 2018-10-30T09:22:34+08:00 ] 127.0.0.1 GET /index/newcar/index.html
+[ info ] www.hr.com:8083/index/newcar/index.html [运行时间：0.188000s][吞吐率：5.32req/s] [内存消耗：2,598.99kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/twocar/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Newcar->index[ G:\xampp\htdocs\car\app\index\controller\Newcar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html [ array (
+  0 => 'brand',
+  1 => 'price',
+  2 => 'subface',
+  3 => 'new_car',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `city` WHERE  (  name like '%郑州%' ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `price_range` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT price_id as id,`name` FROM `price_range` ORDER BY `level` ASC LIMIT 4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `subface` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT face_id as id,`name`,`img` FROM `subface` ORDER BY `level` ASC LIMIT 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`brand_id`,`sys_id`,`cartype_id`,`price`,`img_300`,`pay10_s2`,`pay10_y2`,`pay10_n2` FROM `new_car` WHERE  (  is_tj=1 and status=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 4 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26748' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1853' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16298' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1211' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2658' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '427' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-10-30T09:22:34+08:00 ] 127.0.0.1 GET /index/newcar/favicon.png
+[ info ] www.hr.com:8083/index/newcar/favicon.png [运行时间：0.024000s][吞吐率：41.67req/s] [内存消耗：1,683.95kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'favicon.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/newcar/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=5qhn8fv6n7cei1e706c17n6umo',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: favicon.png[G:\xampp\htdocs\car\app\index\controller\Common.php:470]
