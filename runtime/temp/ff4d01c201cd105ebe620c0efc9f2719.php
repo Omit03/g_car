@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_history.html";i:1540280662;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540793843;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_history.html";i:1540871329;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,8 +23,8 @@
 		<div class="fright">
 			<ul class="site_nav_menu">
 				<li><a href="<?php echo url('index/index'); ?>"><img src="/static/img/shouye.png" alt="" />首页</a></li>
-				<li class="sec_li"><a href=""><img src="/static/img/maic.png" alt="" />我要买车</a></li>
-				<li><a href=""><img src="/static/img/maic.png" alt="" />我要卖车</a></li>
+				<li class="sec_li"><a href="<?php echo url('twocar/index'); ?>"><img src="/static/img/maic.png" alt="" />我要买车</a></li>
+				<li><a href="<?php echo url('index/sell'); ?>"><img src="/static/img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href="<?php echo url('index/appdownload'); ?>"><img src="/static/img/xiazai.png" alt="" />APP下载</a></li>
 				<li><a href=""><img src="/static/img/wangahn.png" alt="" />网站导航</a></li>
 				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/person_history'); ?>"><img src="/static/img/wangahn.png" alt="" />会员中心</a></li><?php endif; if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="/static/img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
@@ -35,7 +35,7 @@
 <div class="fn_show gj_clear header_show">
 	<div class="wrap gj_clear marginbt">
 		<div class="logo">
-	 		  <h1> <a href="http://www.gj2car.com">二手车交易市场</a></h1>
+	 		  <h1> <a href="/index/index/index.html">二手车交易市场</a></h1>
 		</div>
 		<div class="city_current">
 			<div class="address"><span>郑州</span><b class="icon1"></b></div>
@@ -72,7 +72,7 @@
 	</div>
 	<div class="nav gj_clear">
 		<ul class="wrap">
-			<li class="active"><a href="<?php echo url('index/index'); ?>">首页</a></li>
+			<li><a href="<?php echo url('index/index'); ?>">首页</a></li>
 			<li ><a href="<?php echo url('newcar/index'); ?>" class="sec_li">新车</a></li>
 			<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -90,7 +90,7 @@
 	<div class="wrap" >
 		<div class="logo" >
 		   <h1 style=""> 
-		   <a href="http://www.gj2car.com">二手车交易市场</a>
+		   <a href="/index/index/index.html"></a>
 		   </h1>
 		</div>
 		<div class="city_current">
@@ -107,7 +107,7 @@
 		</div>
 		<div class="nav">
 			<ul>
-				<li class="active"><a href="<?php echo url('index/index'); ?>">首页</a></li>
+				<li><a href="<?php echo url('index/index'); ?>">首页</a></li>
 				<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
 				<li><a href="<?php echo url('newcar/index'); ?>">新车</a></li>
 				<!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -115,7 +115,7 @@
 				<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 				<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 				<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-				<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
+				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>
@@ -192,15 +192,43 @@ $(window).on('scroll',function(){
 						</h1>
 						<h2 class="step"></h2>
 						 <ul class="list browse_car">
-                           <?php if(!(empty($res) || (($res instanceof \think\Collection || $res instanceof \think\Paginator ) && $res->isEmpty()))): if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): $i = 0; $__LIST__ = $res;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
+
+							 <!--新车-->
+                           <?php if(!(empty($newcar) || (($newcar instanceof \think\Collection || $newcar instanceof \think\Paginator ) && $newcar->isEmpty()))): if(is_array($newcar) || $newcar instanceof \think\Collection || $newcar instanceof \think\Paginator): $i = 0; $__LIST__ = $newcar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="<?php echo $vol['img']; ?>" alt="" /></a>
+								<a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
 								<a href="" class="car_desc">
-									<h3><?php echo $vol['name']; ?></h3>
-									<p><span class="fisrt_pay">首付<b><?php echo $vol['shoufu']; ?></b>万</span><span class="padlt12">指导价<?php echo $vol['price']; ?>万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+									<h3><?php echo $val['name']; ?></h3>
+									<p><span class="fisrt_pay">首付<b><?php echo $val['shoufu']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									<div class="operate_user"><span class="see_user">查看</span><a href="<?php echo url('user/person_his_del'); ?>?id=<?php echo $val['id']; ?>"><span class="del_user">删除</span></a></div>
 								</a>
 							</li>
+							 <?php endforeach; endif; else: echo "" ;endif; endif; ?>
+
+						   <!--二手车-->
+
+							 <?php if(!(empty($newcar) || (($newcar instanceof \think\Collection || $newcar instanceof \think\Paginator ) && $newcar->isEmpty()))): if(is_array($oldcar) || $oldcar instanceof \think\Collection || $oldcar instanceof \think\Paginator): $i = 0; $__LIST__ = $oldcar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
+								 <a href="" class="car_desc">
+									 <h3><?php echo $val['name']; ?></h3>
+									 <p><span class="fisrt_pay">里程<b><?php echo $val['licheng']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><a href="<?php echo url('user/person_his_del'); ?>?id=<?php echo $val['id']; ?>"><span class="del_user">删除</span></a></div>
+								 </a>
+							 </li>
+							 <?php endforeach; endif; else: echo "" ;endif; endif; ?>
+
+							 <!--零首付-->
+
+							 <?php if(!(empty($newcar) || (($newcar instanceof \think\Collection || $newcar instanceof \think\Paginator ) && $newcar->isEmpty()))): if(is_array($zerocar) || $zerocar instanceof \think\Collection || $zerocar instanceof \think\Paginator): $i = 0; $__LIST__ = $zerocar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
+								 <a href="" class="car_desc">
+									 <h3><?php echo $val['name']; ?></h3>
+									 <p><span class="fisrt_pay">首付<b><?php echo $val['shoufu']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><a href="<?php echo url('user/person_his_del'); ?>?id=<?php echo $val['id']; ?>"><span class="del_user">删除</span></a></div>
+								 </a>
+							 </li>
 							 <?php endforeach; endif; else: echo "" ;endif; endif; ?>
 						</ul>
 					</div>

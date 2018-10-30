@@ -259,7 +259,7 @@ class User  extends Common {
 
         if(empty($phone)){
 
-           $this->success('请登录','user/car_login',1);
+            $this->success('请登录','user/car_login',1);
         }
 
         $newcar = $this->car_history(1);
@@ -277,6 +277,33 @@ class User  extends Common {
         $this->assign('brand',$brand);
 
         return $this->fetch();
+
+    }
+
+    /*
+     * 浏览记录删除
+     */
+    public function person_his_del(){
+
+        $id = input('id');
+
+        $phone = Session::get('phone');
+
+        if(empty($phone)){
+
+            $this->success('请登录','user/car_login',1);
+        }
+
+        $res = Db::table('car_liulan_history')->where('id',$id)->setField('is_del',1);
+
+        if ($res){
+
+            $this->success('删除成功','user/person_history',1);
+
+        }else{
+
+            $this->error('删除失败');
+        }
 
     }
     /*

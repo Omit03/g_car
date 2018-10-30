@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540866252;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540862246;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540870374;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -192,7 +192,7 @@
 				<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 				<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 				<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册1</a></li><?php endif; ?>
+				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>
@@ -351,7 +351,7 @@ $(window).on('scroll',function(){
 					<div id="new_car_panel_0" class="recom_new_con">
 						<ul class="recom_tit_img ">
 							<li class="car_left">
-								<a href=""><img class='lazy-load' data-original="/static/img/xinchel.png" alt="" titlt='' /></a>
+								<a href=""><img src="/static/img/xinchel.png" alt="" titlt='' /></a>
 							</li>
 							<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0; $__LIST__ = $new_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
 							<li>
@@ -373,7 +373,7 @@ $(window).on('scroll',function(){
 					<div id="new_car_panel_1" class="recom_new_con" style="display: none;">
 						<ul class="recom_tit_img ">
 							<li class="car_left">
-								<a href=""><img class='lazy-load' data-original="/static/img/xinchel.png" alt="" titlt='' /></a>
+								<a href=""><img src="/static/img/xinchel.png" alt="" titlt='' /></a>
 							</li>
 							<?php if(is_array($new_one) || $new_one instanceof \think\Collection || $new_one instanceof \think\Paginator): $i = 0; $__LIST__ = $new_one;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
 							<li>
@@ -395,7 +395,7 @@ $(window).on('scroll',function(){
 					<div id="new_car_panel_2" class="recom_new_con" style="display: none;">
 						<ul class="recom_tit_img ">
 							<li class="car_left">
-								<a href=""><img class='lazy-load' data-original="/static/img/xinchel.png" alt="" titlt='' /></a>
+								<a href=""><img src="/static/img/xinchel.png" alt="" titlt='' /></a>
 							</li>
 							<?php if(is_array($new_dyg) || $new_dyg instanceof \think\Collection || $new_dyg instanceof \think\Paginator): $i = 0; $__LIST__ = $new_dyg;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
 							<li>
@@ -417,9 +417,23 @@ $(window).on('scroll',function(){
 					<div id="new_car_panel_3" class="recom_new_con" style="display: none;">
 						<ul class="recom_tit_img ">
 							<li class="car_left">
-								<a href=""><img class='lazy-load' data-original="/static/img/xinchel.png" alt="" titlt='' /></a>
+								<a href=""><img src="/static/img/xinchel.png" alt="" titlt='' /></a>
 							</li>
-
+							<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0; $__LIST__ = $new_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
+							<li>
+								<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vl['brand_id']; ?>&sys_id=<?php echo $vl['sys_id']; ?>&cartype_id=<?php echo $vl['cartype_id']; ?>&id=<?php echo $vl['id']; ?>&name=<?php echo $vl['name']; ?>&img_url=<?php echo $vl['img_url']; ?>&shoufu=<?php echo $vl['pay10_s2']; ?>&ygong=<?php echo $vl['pay10_y2']; ?>&price=<?php echo $vl['price']; ?>" class="flex_around" target="_blank">
+									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='<?php echo $vl['img_url']; ?>'/>
+								</span>
+									<h3 class="text_overflow"><?php echo $vl['name']; ?></h3>
+									<p class="valign ptp15">
+										<span class="pay_first plt10">价格<?php echo $vl['price']; ?></span>
+										<span class="pay_first plt10">首付<b class=""><?php echo $vl['pay10_s2']; ?></b>万</span>
+										<span class="pay_month">月供<?php echo $vl['pay10_y2']; ?>元</span>
+										<span class="pay_month"><?php echo $vl['pay10_n2']; ?>期</span>
+									</p>
+								</a>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 					</div>
 				</div>
@@ -437,7 +451,7 @@ $(window).on('scroll',function(){
 					<div id="old_car_panel_0" class="recom_new_con">
 						<ul class="recom_tit_img">
 							<li class="car_left">
-								<a href=""><img class='lazy-load' data-original="/static/img/group1.png" alt="" titlt='' /></a>
+								<a href=""><img src="/static/img/group1.png" alt="" titlt='' /></a>
 							</li>
 							<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0; $__LIST__ = $er_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
@@ -459,7 +473,7 @@ $(window).on('scroll',function(){
 				<div id="old_car_panel_1" class="recom_new_con" style="display: none;">
 					<ul class="recom_tit_img">
 						<li class="car_left">
-							<a href=""><img class='lazy-load' data-original="/static/img/group1.png" alt="" titlt='' /></a>
+							<a href=""><img src="/static/img/group1.png" alt="" titlt='' /></a>
 						</li>
 						<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0; $__LIST__ = $er_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 						<li>
@@ -480,7 +494,7 @@ $(window).on('scroll',function(){
 			<div id="old_car_panel_2" class="recom_new_con" style="display: none;">
 				<ul class="recom_tit_img">
 					<li class="car_left">
-						<a href=""><img class='lazy-load' data-original="/static/img/group1.png" alt="" titlt='' /></a>
+						<a href=""><img src="/static/img/group1.png" alt="" titlt='' /></a>
 					</li>
 					<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0; $__LIST__ = $er_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 					<li>
@@ -501,7 +515,7 @@ $(window).on('scroll',function(){
 	<div id="old_car_panel_3" class="recom_new_con" style="display: none;">
 		<ul class="recom_tit_img">
 			<li class="car_left">
-				<a href=""><img class='lazy-load' data-original="/static/img/group1.png" alt="" titlt='' /></a>
+				<a href=""><img src="/static/img/group1.png" alt="" titlt='' /></a>
 			</li>
 			<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0; $__LIST__ = $er_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 			<li>
@@ -529,12 +543,12 @@ $(window).on('scroll',function(){
 					<div class="recom_new_con">
 						<ul class="recom_tit_img ">
 							<li class="car_left">
-								<a href=""><img class='lazy-load' data-original="/static/img/lingshouful.png" src="/static/img/lingshouful.png" alt="" titlt='' /></a>
+								<a href=""><img src="/static/img/lingshouful.png" src="/static/img/lingshouful.png" alt="" titlt='' /></a>
 							</li>
 							<?php if(is_array($car_zero) || $car_zero instanceof \think\Collection || $car_zero instanceof \think\Paginator): $i = 0; $__LIST__ = $car_zero;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
 								<a href="<?php echo url('zerocar/zerocardetails'); ?>?cheid=<?php echo $val['id']; ?>&price=<?php echo $val['price']; ?>&name=<?php echo $val['name']; ?>&sf=<?php echo $val['pay10_s2']; ?>&img=<?php echo $val['img_url']; ?>&yg=<?php echo $val['pay10_y2']; ?>" class="flex_around" target="_blank">
-									<span class="car_img"><img class='lazy-load' data-original="/static/img/car11.png" alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
+									<span class="car_img"><img src="/static/img/car11.png" alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
 								</span>
 									<h3 class="text_overflow"><?php echo $val['name']; ?></h3>
 									<p class="valign ptp15">
@@ -1086,10 +1100,10 @@ $(window).on('scroll',function(){
                     } else {
                         for (var i = 0; i < arr_old.length; i++){
                             $("#old_car_" + i).removeClass("active");
-                            $("#old_car_panel_" + i).css("display:none");
+                            $("#old_car_panel_" + i).css("display", 'none');
                         }
                         $("#old_car_" + idx).addClass("active");
-                        $("#old_car_panel_" + idx).css("display:block")
+                        $("#old_car_panel_" + idx).css("display", 'block')
 
                     }
                 }
@@ -1103,10 +1117,10 @@ $(window).on('scroll',function(){
                     } else {
                         for (var i = 0; i < arr_new.length; i++){
                             $("#new_car_" + i).removeClass("active");
-                            $("#new_car_panel_" + i).css("display:none");
+                            $("#new_car_panel_" + i).css("display", 'none');
                         }
                         $("#new_car_" + idx).addClass("active");
-                        $("#new_car_panel_" + idx).css("display:block")
+                        $("#new_car_panel_" + idx).css("display", 'block')
 
                     }
                 }
