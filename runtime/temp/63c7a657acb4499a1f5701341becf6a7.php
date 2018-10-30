@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540885126;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540894415;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -543,12 +543,12 @@ $(window).on('scroll',function(){
 					<div class="recom_new_con">
 						<ul class="recom_tit_img ">
 							<li class="car_left">
-								<a href=""><img src="/static/img/lingshouful.png" src="/static/img/lingshouful.png" alt="" titlt='' /></a>
+								<a href=""><img src="/static/img/lingshouful.png" src="/static/img/lingshouful.png" alt="" title='' /></a>
 							</li>
 							<?php if(is_array($car_zero) || $car_zero instanceof \think\Collection || $car_zero instanceof \think\Paginator): $i = 0; $__LIST__ = $car_zero;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
 								<a href="<?php echo url('zerocar/zerocardetails'); ?>?cheid=<?php echo $val['id']; ?>&price=<?php echo $val['price']; ?>&name=<?php echo $val['name']; ?>&sf=<?php echo $val['pay10_s2']; ?>&img=<?php echo $val['img_url']; ?>&yg=<?php echo $val['pay10_y2']; ?>" class="flex_around" target="_blank">
-									<span class="car_img"><img src="/static/img/car11.png" alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
+									<span class="car_img"><img src="<?php echo $val['img_url']; ?>" alt=""/>
 								</span>
 									<h3 class="text_overflow"><?php echo $val['name']; ?></h3>
 									<p class="valign ptp15">
