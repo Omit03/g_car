@@ -271,19 +271,19 @@ class Common extends Controller{
 
             ),
             'business_entry' => array(
-                'user_id' =>['require','number'],//两种方式 有正则就用数组形式，没有就用下面也行
-                'phone'  =>['require'],
-                'name'  =>['require'],
-                'shop_name'  =>['require'],
-                'business_range'  =>['require'],
-                'type'  =>['require'],
-                'address'  =>['require'],
-                'address' =>['require'],
-                'lat' =>['require'],
-                'lng' =>['require'],
-                'door_photo' =>['require'],
-                'shop_licence' =>['require'],
-                'city' =>['require'],
+                'user_id' =>'number',//两种方式 有正则就用数组形式，没有就用下面也行
+//                'phone'  =>'number',
+//                'name'  =>'',
+//                'shop_name'  =>'',
+//                'business_range'  =>'',
+//                'type'  =>'',
+//                'address'  =>'',
+//                'address' =>'',
+//                'lat' =>'',
+//                'lng' =>'',
+//                'door_photo' =>'',
+//                'shop_licence' =>'',
+//                'city' =>'',
                 //'create_time' =>['require'],
 
             ),

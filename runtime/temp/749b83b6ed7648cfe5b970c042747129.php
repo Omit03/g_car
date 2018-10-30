@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"G:\xampp\htdocs\car\public/../app/index\view\user\person_info.html";i:1540280148;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"G:\xampp\htdocs\car\public/../app/index\view\user\person_info.html";i:1540901995;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -218,7 +218,7 @@ $(window).on('scroll',function(){
 								<li><span class="my_form_tit">验证码：</span>
 									<div class="fleft myform_ipt"><input type="text" placeholder="请输入您的验证码"/><span class="getcode">获取验证码</span></div>
 								</li>
-							</ul>								
+							</ul>
 							<p class="sub_btn pwd_submit">提交</p>
 						</div>
 							</div>

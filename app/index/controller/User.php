@@ -31,7 +31,7 @@ class User  extends Common {
     }
 
     /*
-     * 展示登录
+     * 店铺装修
      */
     public function person_manage(){
 
@@ -41,6 +41,20 @@ class User  extends Common {
         return $this->fetch();
 
     }
+
+    /*
+     * 店铺装修接收数据
+     */
+    public function person_manage_ok(){
+
+        /*接收参数*/
+        $data =  $this->params;
+
+
+
+
+    }
+
     /*
      * 展示登录
      */
@@ -61,8 +75,9 @@ class User  extends Common {
         $this->assign('brand',$brand);
         return $this->fetch();
 
-    }    /*
-     * 展示登录
+    }
+    /*
+     * 商家入驻
      */
     public function person_busenter(){
 
@@ -71,7 +86,77 @@ class User  extends Common {
         $this->assign('brand',$brand);
         return $this->fetch();
 
-    }    /*
+    }
+    /*
+ * 商家入驻
+ * http://39.106.67.47/new_api/User/newapi/business_entry
+ */
+    public function business_entry(){
+
+        /*接收参数*/
+        $data =  $this->params;
+
+        /* 检查验证码*/
+
+        // $this->check_code($data['user_phone'],$data['code']);
+
+        //dump($data);die;
+
+        $door_photo=$this->upload_file($data['door_photo'],'door_photo');
+
+        $shop_licence=$this->upload_file($data['shop_licence'],'shop_licence');
+
+        $data['door_photo'] = $door_photo;
+
+        $data['shop_licence'] = $shop_licence;
+
+
+        //$city=$lng=$data['city'];
+        //城市
+        //$data['city_id']=$this->city_id();
+        $data['city_id']=1;
+        $data['user_id'] = Session::get('user_id');
+
+        //dump($data['user_id']);die;
+
+        $info = Db::table('company_apply_list')->insert([
+            'user_id' =>$data['user_id'],
+            'name' =>$data['name'],
+            'phone' =>$data['phone'],
+            'shop_name' =>$data['shop_name'],
+            'business_range' =>$data['business_range'],
+            'type' =>$data['type'],
+            'address' =>$data['address'],
+//            'lat' =>$data['lat'],
+//            'lng' =>$data['lng'],
+            'door_photo' =>$data['door_photo'],
+            'shop_licence' =>$data['shop_licence'],
+            'city_id' =>$data['city_id'],
+            'create_time' =>date('Y-m-d H:i:s',time()),
+
+        ]);
+
+        if ($info ){
+
+            $this->success('添加成功 待审核','user/person_busenter',1);
+
+        }else{
+
+            $this->error('失败');
+        }
+
+
+//        $city=$lng=$data['city'];
+//        //城市
+//        $info['city_id']=$this->get_city($city);
+        // 此处需要注意 框架途径不一致
+//        $info['door_photo']=str_replace("http://www.gj2car.com/Uploads/relecar/","",$door_photo);
+//        $info['shop_licence']=str_replace("http://www.gj2car.com/Uploads/relecar/","",$shop_licence);
+//        $info['create_time']=time();
+
+    }
+
+    /*
      * 展示登录
      */
     public function person_opportunity(){
@@ -938,62 +1023,6 @@ class User  extends Common {
 
     }
 
-    /*
-     * 商家入驻
-     * http://39.106.67.47/new_api/User/newapi/business_entry
-     */
-    public function business_entry(){
-
-        /*接收参数*/
-        $data =  $this->params;
-
-        /* 检查验证码*/
-
-       // $this->check_code($data['user_phone'],$data['code']);
-
-        $door_photo=$this->upload_file($data['door_photo'],'door_photo');
-
-        $shop_licence=$this->upload_file($data['shop_licence'],'shop_licence');
-
-        $data['door_photo'] = $door_photo;
-
-        $data['shop_licence'] = $shop_licence;
-
-        $city=$lng=$data['city'];
-        //城市
-        $data['city_id']=$this->get_city($city);
-
-        //dump($data['user_id']);die;
-
-        $info = Db::table('company_apply_list')->insert([
-            'user_id' =>$data['user_id'],
-            'name' =>$data['name'],
-            'phone' =>$data['phone'],
-            'shop_name' =>$data['shop_name'],
-            'business_range' =>$data['business_range'],
-            'type' =>$data['type'],
-            'address' =>$data['address'],
-            'lat' =>$data['lat'],
-            'lng' =>$data['lng'],
-            'door_photo' =>$data['door_photo'],
-            'shop_licence' =>$data['shop_licence'],
-            'city_id' =>$data['city_id'],
-            'create_time' =>time(),
-
-        ]);
-
-          dump($info);
-
-
-//        $city=$lng=$data['city'];
-//        //城市
-//        $info['city_id']=$this->get_city($city);
-        // 此处需要注意 框架途径不一致
-//        $info['door_photo']=str_replace("http://www.gj2car.com/Uploads/relecar/","",$door_photo);
-//        $info['shop_licence']=str_replace("http://www.gj2car.com/Uploads/relecar/","",$shop_licence);
-//        $info['create_time']=time();
-
-    }
 
     /*
      * 二手车详情页

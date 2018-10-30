@@ -116,7 +116,18 @@ class Code extends Common
         $message = "您的手机验证码是：{$code}，请勿向任何单位或个人透漏。【管家车易站】";
         $msg = base64_encode(mb_convert_encoding($message, "gb2312", "utf-8"));
         $gateway = "http://api.shumi365.com:8090/sms/send.do?userid={$uid}&pwd={$passwd}&timespan={$ts}&mobile={$num}&content={$msg}";
+       // echo $gateway;die;
+       // ini_set('max_execution_time', 300);
         $result = file_get_contents($gateway);
+//        $ch = curl_init();
+//        $timeout = 10; // set to zero for no timeout
+//        curl_setopt ($ch, CURLOPT_URL,$gateway);
+//        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+//        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+//        $url = curl_exec($ch);
+
+
+        //$result = $this->https_request($gateway);
         // var_dump($msg);
         // var_dump($passwd);
         // var_dump(base64_decode($msg));
@@ -124,7 +135,7 @@ class Code extends Common
         $time = date("Y-m-d H:i:s");
 
         if(  $result > 0 ){
-            //$ls = M("register_emporary");
+
             $reg = array(
                 'is_phone'=>$num,
                 'code'=>$code,
