@@ -1851,7 +1851,11 @@ class Common extends Controller{
      */
     public function car_history($type){
 
-        $res = Db::table('car_liulan_history')->where('type', $type)->limit(8)->select();
+        $where['type'] = $type;
+
+        $where['is_del'] = 0;
+
+        $res = Db::table('car_liulan_history')->where($where)->limit(8)->select();
 
         return $res;
     }
@@ -2184,7 +2188,7 @@ class Common extends Controller{
 
         }
 
-    public function search_news_carlist($chx=0,$px = 0){
+    public function search_news_carlist($chx,$px){
 
         //接受参数
         $data = $this->params;
@@ -2192,6 +2196,8 @@ class Common extends Controller{
         $data['chs'] = $chx;//五万以下
 
         $data['px'] = $px;//低月供
+
+        //echo 1;
 
         $where="1=1  ";
         //模糊查找 如 大众 奥迪 朗逸
@@ -2436,14 +2442,12 @@ class Common extends Controller{
 
         }else{
 
-            $where.=" order by create_time desc";//首付由高到低
+            $where.=" order by id desc ";//首付由高到低
         }
 
 
-        //dump($where);die;
+        $ss =  Db::query("select * from new_car where  $where limit 5");
 
-        $ss =  Db::query("select * from new_car where  '$where' limit 5");
-       // dump($ss);die;
         foreach ($ss as $key => $val) {
             $ss[$key]['img_url']=$this->get_carimg($val['img_300'],2);
             $ss[$key]['name']=$this->get_carname($val['cartype_id']);

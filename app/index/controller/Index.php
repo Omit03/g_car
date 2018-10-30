@@ -26,19 +26,25 @@ class Index  extends Common
 
         $new_car = $this->new_car($city_id); //新车
 
-        $new_one = $this->search_news_carlist(); //一成购新
 
-        $new_dyg = $this->search_news_carlist($chx=0,$px = 4); //低月供
+        $new_one_car = $this->search_news_carlist(0,0); //一成购新
 
-        $new_five_car = $this->search_news_carlist($chx=1); //五万以下
+       // dump($new_one_car);die;
+        $new_dyg = $this->search_news_carlist(0, 4); //低月供
+        //dump($new_dyg);die;
+        $new_five_car = $this->search_news_carlist($chx=1,0); //五万以下
+
+        //dump($new_five_car);die;
 
        // dump($new_one);die;
         //关于二手车
         $er_car = $this->er_car($city_id);//
 
-        $min_time = $this->lots_two_cars(7);//二手车 时间最新（默认）
+       // $min_time = $this->lots_two_cars(7);//二手车 时间最新（默认）
 
         $min_price = $this->lots_two_cars(1);//二手 价格最低
+
+        //dump($min_price);die;
 
         $min_age = $this->lots_two_cars(3);//二手 车龄最短
 
@@ -62,12 +68,12 @@ class Index  extends Common
         $this->assign('subface',$subface);
 
         $this->assign('new_car',$new_car);
-        $this->assign('new_one',$new_one);
+        $this->assign('new_one_car',$new_one_car);
         $this->assign('new_dyg',$new_dyg);
         $this->assign('new_five_car',$new_five_car);
 
         $this->assign('er_car',$er_car);
-        $this->assign('min_time',$min_time);
+        //$this->assign('min_time',$min_time);
         $this->assign('min_price',$min_price);
         $this->assign('min_age',$min_age);
         $this->assign('min_licheng',$min_licheng);
