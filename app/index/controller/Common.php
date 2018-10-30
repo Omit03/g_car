@@ -203,6 +203,9 @@ class Common extends Controller{
             'person_history'=>array(
                 'user_id' =>'number',
             ),
+            'person_his_del'=>array(
+                'user_id' =>'number',
+            ),
             'person_feedback'=>array(
                 'user_id' =>'number',
             ),
@@ -1344,7 +1347,7 @@ class Common extends Controller{
      */
     public function er_car($city_id){
 
-        $er_car=Db::table("rele_car")->field("pu_id,cartype_id,price,car_cardtime,car_mileage,img_300")->where("status=1 and up_under=1 and city_id=$city_id")->order("create_time desc")->limit(20)->select();
+        $er_car=Db::table("rele_car")->field("pu_id,cartype_id,price,car_cardtime,car_mileage,img_300")->where("status=1 and up_under=1 and city_id=$city_id")->order("create_time desc")->limit(8)->select();
         foreach ($er_car as $k => $val) {
             $er_car[$k]['name']=$this->get_carname($val['cartype_id']);
             $er_car[$k]['img_url']=$this->get_carimg($val['img_300'],1);

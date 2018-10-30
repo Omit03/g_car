@@ -50,16 +50,48 @@
 						</h1>
 						<h2 class="step"></h2>
 						 <ul class="list browse_car">
-                           {notempty name = "res"}
-							{volist name="res" id="vol"}
+
+							 <!--新车-->
+                           {notempty name = "newcar"}
+							{volist name="newcar" id="val"}
 							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="{$vol.img}" alt="" /></a>
+								<a href="" class="car_img flex_center"><img src="{$val.img}" alt="" /></a>
 								<a href="" class="car_desc">
-									<h3>{$vol.name}</h3>
-									<p><span class="fisrt_pay">首付<b>{$vol.shoufu}</b>万</span><span class="padlt12">指导价{$vol.price}万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+									<h3>{$val.name}</h3>
+									<p><span class="fisrt_pay">首付<b>{$val.shoufu}</b>万</span><span class="padlt12">指导价{$val.price}万</span></p>
+									<div class="operate_user"><span class="see_user">查看</span><a href="{:url('user/person_his_del')}?id={$val.id}"><span class="del_user">删除</span></a></div>
 								</a>
 							</li>
+							 {/volist}
+							 {/notempty}
+
+						   <!--二手车-->
+
+							 {notempty name = "oldcar"}
+							 {volist name="oldcar" id="val"}
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="{$val.img}" alt="" /></a>
+								 <a href="" class="car_desc">
+									 <h3>{$val.name}</h3>
+									 <p><span class="fisrt_pay">里程<b>{$val.licheng}</b>万</span><span class="padlt12">指导价{$val.price}万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><a href="{:url('user/person_his_del')}?id={$val.id}"><span class="del_user">删除</span></a></div>
+								 </a>
+							 </li>
+							 {/volist}
+							 {/notempty}
+
+							 <!--零首付-->
+
+							 {notempty name = "zerocar"}
+							 {volist name="zerocar" id="val"}
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="{$val.img}" alt="" /></a>
+								 <a href="" class="car_desc">
+									 <h3>{$val.name}</h3>
+									 <p><span class="fisrt_pay">首付<b>{$val.shoufu}</b>万</span><span class="padlt12">指导价{$val.price}万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><a href="{:url('user/person_his_del')}?id={$val.id}"><span class="del_user">删除</span></a></div>
+								 </a>
+							 </li>
 							 {/volist}
 							 {/notempty}
 						</ul>
