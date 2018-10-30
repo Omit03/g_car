@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="107a576e-849f-426b-9ad2-69819e34de0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Common.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/view/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/index/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index/view/user/person_history.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/user/person_history.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/log/201810/30.log" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/log/201810/30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/0390d3a6873668ddecd1f1f829edfdcb.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/0390d3a6873668ddecd1f1f829edfdcb.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/0525aa3b9ab8f723bff094d12ee743ad.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/0525aa3b9ab8f723bff094d12ee743ad.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/2cebd87490b4439cee026aaccbe60fc1.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/2cebd87490b4439cee026aaccbe60fc1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/48d83177d6abd8a6424e1868aa437a89.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/48d83177d6abd8a6424e1868aa437a89.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/63c7a657acb4499a1f5701341becf6a7.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/63c7a657acb4499a1f5701341becf6a7.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/a7b58d1e8fc45673bfc94ff9546cd0b5.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/a7b58d1e8fc45673bfc94ff9546cd0b5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/b1f5d053e34ff83319161cbc8d763efc.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/b1f5d053e34ff83319161cbc8d763efc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/dc9119951f2c822b14c16e808c616807.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/dc9119951f2c822b14c16e808c616807.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/de74958f3479665872d1ef9802b8447e.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/de74958f3479665872d1ef9802b8447e.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/ff4d01c201cd105ebe620c0efc9f2719.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/ff4d01c201cd105ebe620c0efc9f2719.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/ff85a17f0445d54006f9e22bbe2d8b24.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/ff85a17f0445d54006f9e22bbe2d8b24.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,8 +103,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index/view/user/person_history.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="80" column="40" lean-forward="true" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+            <state relative-caret-position="372">
+              <caret line="69" column="53" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -254,7 +239,7 @@
       <path value="$PROJECT_DIR$/vendor/topthink/think-queue" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="13" />
     <option name="y" value="31" />
     <option name="width" value="1814" />
@@ -377,15 +362,15 @@
       <workItem from="1540448881191" duration="31069000" />
       <workItem from="1540600918472" duration="679000" />
       <workItem from="1540610659694" duration="7088000" />
-      <workItem from="1540771469541" duration="39692000" />
+      <workItem from="1540771469541" duration="39708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320140000" />
+    <option name="totallyTimeSpent" value="320156000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="13" y="31" width="1814" height="1002" extended-state="1" />
+    <frame x="13" y="31" width="1814" height="1002" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -768,8 +753,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index/view/user/person_history.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="80" column="40" lean-forward="true" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+        <state relative-caret-position="372">
+          <caret line="69" column="53" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
         </state>
       </provider>
     </entry>
