@@ -904,10 +904,10 @@
                     } else {
                         for (var i = 0; i < arr_old.length; i++){
                             $("#old_car_" + i).removeClass("active");
-                            $("#old_car_panel_" + i).css("display:none");
+                            $("#old_car_panel_" + i).css("display", 'none');
                         }
                         $("#old_car_" + idx).addClass("active");
-                        $("#old_car_panel_" + idx).css("display:block")
+                        $("#old_car_panel_" + idx).css("display", 'block')
 
                     }
                 }
@@ -921,10 +921,10 @@
                     } else {
                         for (var i = 0; i < arr_new.length; i++){
                             $("#new_car_" + i).removeClass("active");
-                            $("#new_car_panel_" + i).css("display:none");
+                            $("#new_car_panel_" + i).css("display", 'none');
                         }
                         $("#new_car_" + idx).addClass("active");
-                        $("#new_car_panel_" + idx).css("display:block")
+                        $("#new_car_panel_" + idx).css("display", 'block')
 
                     }
                 }
