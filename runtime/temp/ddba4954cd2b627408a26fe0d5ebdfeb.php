@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html";i:1540862551;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540862246;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\newcar\index.html";i:1540864458;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540862246;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -172,17 +172,16 @@ $(window).on('scroll',function(){
    			 	</ul>
    			 </div>
    			 <div class="price_new fleft oh">
-   			 	<h2>首付</h2>
+   			 	<h2>价格</h2>
    			 	<ul>
    			 		<li><a href="">分期购</a></li>
    			 		<li><a href="" class="coloryel">一成购新车</a></li>
 					<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-   			 		<li><a href=""><?php echo $val['name']; ?></a></li>
+   			 		<li><a href="<?php echo url('index/search_newcar'); ?>?price=<?php echo $val['id']; ?>"><?php echo $val['name']; ?></a></li>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 
    			 	</ul>
 
-   			 	
    			 </div>
    			 <div class="type_new fleft oh">
    			 	<h2>车型</h2>

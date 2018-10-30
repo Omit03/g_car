@@ -26,7 +26,7 @@ class Index  extends Common
 
         $new_car = $this->new_car($city_id); //新车
 
-        //$new_one = $this->search_news_carlist(); //一成购新
+        $new_one = $this->search_news_carlist(); //一成购新
 
         $new_dyg = $this->search_news_carlist($chx=0,$px = 4); //低月供
 
@@ -60,7 +60,12 @@ class Index  extends Common
         $this->assign('brand',$brand);
         $this->assign('price',$price);
         $this->assign('subface',$subface);
+
         $this->assign('new_car',$new_car);
+        $this->assign('new_one',$new_one);
+        $this->assign('new_dyg',$new_dyg);
+        $this->assign('new_five_car',$new_five_car);
+
         $this->assign('er_car',$er_car);
         $this->assign('min_time',$min_time);
         $this->assign('min_price',$min_price);
@@ -276,8 +281,35 @@ class Index  extends Common
             }
 
             //价格级别
-            if (!empty($data['chs'])){
-                switch($data['chs']){
+            if (!empty($data['price'])){
+                switch($data['price']){
+                    case 2;
+                        $where.=" and price <3";
+                        break;
+                    case 3;
+                        $where.=" and price between 3 and 5 ";
+                        break;
+                    case 4;
+                        $where.=" and price between 5 and 8 ";
+                        break;
+                    case 5;
+                        $where.=" and price between 8 and 12 ";
+                        break;
+                    case 6;
+                        $where.=" and price between 18 and 25";
+                        break;
+                    case 7;
+                        $where.=" and price between 25 and 40";
+                        break;
+                    case 8;
+                        $where.=" and price>40";
+                        break;
+
+                }
+            }
+            //月供级别
+            if (!empty($data['yueg'])){
+                switch($data['yueg']){
                     case 1;
                         $where.=" and price <5";
                         break;
@@ -333,14 +365,15 @@ class Index  extends Common
 
         $ss = Db::table('new_car')->where($where)->limit(20)->select();
 
-//            foreach ($ss as $k =>$val){
-//
-//
-//            }
+        foreach ($ss as $key => $val) {
+            $ss[$key]['img_url']=$this->get_carimg($val['img_300'],2);
+            $ss[$key]['name']=$this->get_carname($val['cartype_id']);
+            $ss[$key]['pay10_s2']=$val['pay10_s2'];
+            $ss[$key]['pay10_y2']=$val['pay10_y2'];
+            unset($ss[$key]['img_300']);
+        }
 
-           // dump($ss['0']['img_300']);
-
-        dump($ss);
+        dump($ss);die;
 
     }
 

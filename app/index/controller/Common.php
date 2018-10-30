@@ -730,6 +730,7 @@ class Common extends Controller{
         }elseif($type==4){
             $url="http://39.106.67.47/butler_car/assets/computer/images/";
         }
+
         $data=explode(",",$img);
         if(count($data)>1){
             $img=$url.$data[0];
@@ -2430,22 +2431,25 @@ class Common extends Controller{
 
             }
 
+        }else{
+
+            $where.=" order by create_time desc";//首付由高到低
         }
 
 
-        $ss =  Db::query("select * from new_car where  '$where'");
+        //dump($where);die;
+
+        $ss =  Db::query("select * from new_car where  '$where' limit 5");
+       // dump($ss);die;
+        foreach ($ss as $key => $val) {
+            $ss[$key]['img_url']=$this->get_carimg($val['img_300'],2);
+            $ss[$key]['name']=$this->get_carname($val['cartype_id']);
+            $ss[$key]['pay10_s2']=$val['pay10_s2'];
+            $ss[$key]['pay10_y2']=$val['pay10_y2'];
+            unset($ss[$key]['img_300']);
+        }
 
 
-      //  $ss = Db::table('new_car')->where($where)->limit(20)->select();
-
-//            foreach ($ss as $k =>$val){
-//
-//
-//            }
-
-
-
-       // dump($ss['0']['img_300']);
         return $ss;
 
     }

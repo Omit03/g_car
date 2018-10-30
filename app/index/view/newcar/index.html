@@ -30,17 +30,16 @@
    			 	</ul>
    			 </div>
    			 <div class="price_new fleft oh">
-   			 	<h2>首付</h2>
+   			 	<h2>价格</h2>
    			 	<ul>
    			 		<li><a href="">分期购</a></li>
    			 		<li><a href="" class="coloryel">一成购新车</a></li>
 					{volist name="price" id="val"}
-   			 		<li><a href="">{$val.name}</a></li>
+   			 		<li><a href="{:url('index/search_newcar')}?price={$val.id}">{$val.name}</a></li>
 					{/volist}
 
    			 	</ul>
 
-   			 	
    			 </div>
    			 <div class="type_new fleft oh">
    			 	<h2>车型</h2>
