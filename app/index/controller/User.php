@@ -249,11 +249,15 @@ class User  extends Common {
 
         if ($res){
 
-            $this->return_msg(200,'删除成功');
+            $this->error('删除成功');
+
+            //$this->return_msg(200,'删除成功');
 
         }else{
 
-            $this->return_msg(400,'失败');
+            $this->error('删除成功');
+
+            //$this->return_msg(400,'失败');
         }
 
     }

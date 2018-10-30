@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_collect.html";i:1540260559;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_collect.html";i:1540900468;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -193,38 +193,45 @@ $(window).on('scroll',function(){
 						</h1>
 						<h2 class="step"></h2>
 						 <ul class="list browse_car">
+
+							 <!--新车-->
+
+							 <?php if(is_array($newcar) || $newcar instanceof \think\Collection || $newcar instanceof \think\Paginator): $i = 0; $__LIST__ = $newcar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+								<a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
 								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+									<h3><?php echo $val['name']; ?></h3>
+									<p><span class="fisrt_pay">首付<b><?php echo $val['shoufu']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									<div class="operate_user"><span class="see_user">查看</span><a href="<?php echo url('user/collect_del'); ?>?id=<?php echo $val['id']; ?>"> <span class="del_user">删除</span></a></div>
 								</a>
 							</li>
-							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
-								</a>
-							</li>
-							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
-								</a>
-							</li>
-							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
-								</a>
-							</li>
+							 <?php endforeach; endif; else: echo "" ;endif; ?>
+
+							 <!--二手车-->
+							 <?php if(is_array($twocar) || $twocar instanceof \think\Collection || $twocar instanceof \think\Paginator): $i = 0; $__LIST__ = $twocar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
+								 <a href="javascript:;" class="car_desc">
+									 <h3><?php echo $val['name']; ?></h3>
+									 <p><span class="fisrt_pay">首付<b><?php echo $val['shoufu']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+								 </a>
+							 </li>
+							 <?php endforeach; endif; else: echo "" ;endif; ?>
+
+							 <!--零首付-->
+
+							 <?php if(is_array($zerocar) || $zerocar instanceof \think\Collection || $zerocar instanceof \think\Paginator): $i = 0; $__LIST__ = $zerocar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
+								 <a href="javascript:;" class="car_desc">
+									 <h3><?php echo $val['name']; ?></h3>
+									 <p><span class="fisrt_pay">首付<b><?php echo $val['shoufu']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+								 </a>
+							 </li>
+							 <?php endforeach; endif; else: echo "" ;endif; ?>
+
 						</ul>
 					</div>
 				</div>

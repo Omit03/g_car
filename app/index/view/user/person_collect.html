@@ -51,38 +51,45 @@
 						</h1>
 						<h2 class="step"></h2>
 						 <ul class="list browse_car">
+
+							 <!--新车-->
+
+							 {volist name="newcar" id="val"}
 							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
+								<a href="" class="car_img flex_center"><img src="{$val.img}" alt="" /></a>
 								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+									<h3>{$val.name}</h3>
+									<p><span class="fisrt_pay">首付<b>{$val.shoufu}</b>万</span><span class="padlt12">指导价{$val.price}万</span></p>
+									<div class="operate_user"><span class="see_user">查看</span><a href="{:url('user/collect_del')}?id={$val.id}"> <span class="del_user">删除</span></a></div>
 								</a>
 							</li>
-							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
-								</a>
-							</li>
-							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
-								</a>
-							</li>
-							<li class="items4">
-								<a href="" class="car_img flex_center"><img src="" alt="" /></a>
-								<a href="javascript:;" class="car_desc">
-									<h3>奔驰A4L 2017款 plus 40 TFSI 进取型</h3>
-									<p><span class="fisrt_pay">首付<b>2.99</b>万</span><span class="padlt12">指导价12.97万</span></p>
-									<div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
-								</a>
-							</li>
+							 {/volist}
+
+							 <!--二手车-->
+							 {volist name="twocar" id="val"}
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="{$val.img}" alt="" /></a>
+								 <a href="javascript:;" class="car_desc">
+									 <h3>{$val.name}</h3>
+									 <p><span class="fisrt_pay">首付<b>{$val.shoufu}</b>万</span><span class="padlt12">指导价{$val.price}万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+								 </a>
+							 </li>
+							 {/volist}
+
+							 <!--零首付-->
+
+							 {volist name="zerocar" id="val"}
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="{$val.img}" alt="" /></a>
+								 <a href="javascript:;" class="car_desc">
+									 <h3>{$val.name}</h3>
+									 <p><span class="fisrt_pay">首付<b>{$val.shoufu}</b>万</span><span class="padlt12">指导价{$val.price}万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+								 </a>
+							 </li>
+							 {/volist}
+
 						</ul>
 					</div>
 				</div>
