@@ -26,9 +26,24 @@ class Index  extends Common
 
         $new_car = $this->new_car($city_id); //新车
 
-        $er_car = $this->er_car($city_id);//二手
-//        dump($brand);
-//        dump($price);die;
+        $new_one = $this->search_news_carlist(); //一成购新
+
+        $new_dyg = $this->search_news_carlist($chx=0,$px = 4); //低月供
+
+        $new_five_car = $this->search_news_carlist($chx=1); //五万以下
+
+       // dump($new_one);die;
+        //关于二手车
+        $er_car = $this->er_car($city_id);//
+
+        $min_time = $this->lots_two_cars(7);//二手车 时间最新（默认）
+
+        $min_price = $this->lots_two_cars(1);//二手 价格最低
+
+        $min_age = $this->lots_two_cars(3);//二手 车龄最短
+
+        $min_licheng = $this->lots_two_cars(6);//二手 里程最短
+
 
         $car_zero = $this->car_zero($city_id);//零首付
 
@@ -38,16 +53,24 @@ class Index  extends Common
         $new4 = $this->new_list(4);//特色活动
         $new5 = $this->new_list(5);//新车资讯
 
-         //dump($new_car);die;
-        // dump($er_car);die;
-        // dump($car_zero);die;
+
+
 
         $this->assign('banner',$banner);
         $this->assign('brand',$brand);
         $this->assign('price',$price);
         $this->assign('subface',$subface);
+
         $this->assign('new_car',$new_car);
+        $this->assign('new_one',$new_one);
+        $this->assign('new_dyg',$new_dyg);
+        $this->assign('new_five_car',$new_five_car);
+
         $this->assign('er_car',$er_car);
+        $this->assign('min_time',$min_time);
+        $this->assign('min_price',$min_price);
+        $this->assign('min_age',$min_age);
+        $this->assign('min_licheng',$min_licheng);
         $this->assign('car_zero',$car_zero);
         $this->assign('new1',$new1);
         $this->assign('new2',$new2);
@@ -77,46 +100,6 @@ class Index  extends Common
                 $where.=" and name like '%".$data['key']."%'  ";
             }
 
-//            //价格区间
-//            if(!empty($data['jgid'])){
-//
-//                switch($data['jgid']){
-//
-//                    case 2;
-//                        $where.=" and price between 1 and 3";
-//                        break;
-//                    case 3;
-//                        $where.=" and  price between 3 and 5 ";
-//                        break;
-//                    case 4;
-//                        $where.=" and price between 5 and 8";
-//                        break;
-//                    case 5;
-//                        $where.=" and  price between 8 and 10";
-//                        break;
-//                    case 6;
-//                        $where.=" and price between 10 and 15";
-//                        break;
-//                    case 7;
-//                        $where.=" and price between 15 and 20";
-//                        break;
-//                    case 8;
-//                        $where.=" and price between 20 and 30";
-//                        break;
-//                    case 9;
-//                        $where.=" and price between 30 and 50";
-//                        break;
-//                    case 10;
-//                        $where.=" and price between 50 and 100";
-//                        break;
-//                    case 11;
-//                        $where.=" and price >100";
-//                        break;
-//                }
-//
-//            }
-
-           // dump($where);die;
             //级别suv
             if (!empty($data['subface'])){
                 $where.=" and subface=".$data['subface'];
@@ -298,8 +281,35 @@ class Index  extends Common
             }
 
             //价格级别
-            if (!empty($data['chs'])){
-                switch($data['chs']){
+            if (!empty($data['price'])){
+                switch($data['price']){
+                    case 2;
+                        $where.=" and price <3";
+                        break;
+                    case 3;
+                        $where.=" and price between 3 and 5 ";
+                        break;
+                    case 4;
+                        $where.=" and price between 5 and 8 ";
+                        break;
+                    case 5;
+                        $where.=" and price between 8 and 12 ";
+                        break;
+                    case 6;
+                        $where.=" and price between 18 and 25";
+                        break;
+                    case 7;
+                        $where.=" and price between 25 and 40";
+                        break;
+                    case 8;
+                        $where.=" and price>40";
+                        break;
+
+                }
+            }
+            //月供级别
+            if (!empty($data['yueg'])){
+                switch($data['yueg']){
                     case 1;
                         $where.=" and price <5";
                         break;
@@ -355,14 +365,15 @@ class Index  extends Common
 
         $ss = Db::table('new_car')->where($where)->limit(20)->select();
 
-//            foreach ($ss as $k =>$val){
-//
-//
-//            }
+        foreach ($ss as $key => $val) {
+            $ss[$key]['img_url']=$this->get_carimg($val['img_300'],2);
+            $ss[$key]['name']=$this->get_carname($val['cartype_id']);
+            $ss[$key]['pay10_s2']=$val['pay10_s2'];
+            $ss[$key]['pay10_y2']=$val['pay10_y2'];
+            unset($ss[$key]['img_300']);
+        }
 
-            dump($ss['0']['img_300']);
-
-        //dump($ss);
+        dump($ss);die;
 
     }
 

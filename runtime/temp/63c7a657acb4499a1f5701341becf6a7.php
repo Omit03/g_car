@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540292434;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540793843;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1540866252;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540862246;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -100,8 +100,8 @@
 		<div class="fright">
 			<ul class="site_nav_menu">
 				<li><a href="<?php echo url('index/index'); ?>"><img src="/static/img/shouye.png" alt="" />首页</a></li>
-				<li class="sec_li"><a href=""><img src="/static/img/maic.png" alt="" />我要买车</a></li>
-				<li><a href=""><img src="/static/img/maic.png" alt="" />我要卖车</a></li>
+				<li class="sec_li"><a href="<?php echo url('twocar/index'); ?>"><img src="/static/img/maic.png" alt="" />我要买车</a></li>
+				<li><a href="<?php echo url('index/sell'); ?>"><img src="/static/img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href="<?php echo url('index/appdownload'); ?>"><img src="/static/img/xiazai.png" alt="" />APP下载</a></li>
 				<li><a href=""><img src="/static/img/wangahn.png" alt="" />网站导航</a></li>
 				<?php if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/person_history'); ?>"><img src="/static/img/wangahn.png" alt="" />会员中心</a></li><?php endif; if(!(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty()))): ?><li><a href="<?php echo url('user/car_logout'); ?>"><img src="/static/img/wangahn.png" alt="" />安全退出</a></li><?php endif; ?>
@@ -112,7 +112,7 @@
 <div class="fn_show gj_clear header_show">
 	<div class="wrap gj_clear marginbt">
 		<div class="logo">
-	 		  <h1> <a href="http://www.gj2car.com">二手车交易市场</a></h1>
+	 		  <h1> <a href="/index/index/index.html">二手车交易市场</a></h1>
 		</div>
 		<div class="city_current">
 			<div class="address"><span>郑州</span><b class="icon1"></b></div>
@@ -149,7 +149,7 @@
 	</div>
 	<div class="nav gj_clear">
 		<ul class="wrap">
-			<li class="active"><a href="<?php echo url('index/index'); ?>">首页</a></li>
+			<li><a href="<?php echo url('index/index'); ?>">首页</a></li>
 			<li ><a href="<?php echo url('newcar/index'); ?>" class="sec_li">新车</a></li>
 			<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -167,7 +167,7 @@
 	<div class="wrap" >
 		<div class="logo" >
 		   <h1 style=""> 
-		   <a href="http://www.gj2car.com">二手车交易市场</a>
+		   <a href="/index/index/index.html"></a>
 		   </h1>
 		</div>
 		<div class="city_current">
@@ -184,7 +184,7 @@
 		</div>
 		<div class="nav">
 			<ul>
-				<li class="active"><a href="<?php echo url('index/index'); ?>">首页</a></li>
+				<li><a href="<?php echo url('index/index'); ?>">首页</a></li>
 				<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
 				<li><a href="<?php echo url('newcar/index'); ?>">新车</a></li>
 				<!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -192,7 +192,7 @@
 				<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
 				<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
 				<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-				<li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li>
+				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册1</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>
@@ -254,10 +254,44 @@ $(window).on('scroll',function(){
 			<div class="wrap home_sel">
 				<div class="home_left">
 					<ul class="home_sel_tit">
-						<li class="active"> 二手车</li>
-						<li>新车</li>
+						<li id="btn_new" class="active" onclick="btn_new()"> 二手车</li>
+						<li id="btn_old" onclick="btn_old()">新车</li>
 					</ul>
-					<div class="home_sel_con">
+					<div id="new_panel" class="home_sel_con">
+						<ul class="sel_newcar_brand oh ">
+							<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li>
+								<a href="<?php echo url('index/lots_cars'); ?>?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><img src="<?php echo $val['img_url']; ?>" alt="">
+									<p><?php echo $val['name']; ?></p>
+								</a>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+						</ul>
+						<ul class="sel_newcar_type oh mtp40">
+							<li class="active">
+								<a href=""> 分期购</a>
+							</li>
+							<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="active">
+								<a href="<?php echo url('index/lots_cars'); ?>?price_range=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?> </a>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+						</ul>
+						<ul class="sel_newcar_type oh mtp40">
+							<li class="active">
+								<a href=""> 车型</a>
+							</li>
+							<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="active">
+								<a href="<?php echo url('index/lots_cars'); ?>?car_age=<?php echo $val['id']; ?>&page=1&sort=1"> <?php echo $val['name']; ?></a>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+							<li class="active fright">
+								<a href="" class="moretype"><img src="/static/img/quanbu.png" alt="" width="23">更多车型</a>
+							</li>
+						</ul>
+					</div>
+					<div id="old_panel" class="home_sel_con" style="display: none;">
 						<ul class="sel_newcar_brand oh ">
 							<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
@@ -308,13 +342,13 @@ $(window).on('scroll',function(){
 					<div class="recom_new_tit oh marbt23">
 						<h2>推荐新车</h2>
 						<ul class="fleft">
-							<li class="active">分期购</li>
-							<li>一成购新</li>
-							<li>低月供</li>
-							<li>5万以下</li>
+							<li id="new_car_0" class="new_car_n active">分期购</li>
+							<li id="new_car_1" class="new_car_n">一成购新</li>
+							<li id="new_car_2" class="new_car_n">低月供</li>
+							<li id="new_car_3" class="new_car_n">5万以下</li>
 						</ul>
 					</div>
-					<div class="recom_new_con">
+					<div id="new_car_panel_0" class="recom_new_con">
 						<ul class="recom_tit_img ">
 							<li class="car_left">
 								<a href=""><img class='lazy-load' data-original="/static/img/xinchel.png" alt="" titlt='' /></a>
@@ -336,19 +370,71 @@ $(window).on('scroll',function(){
                             <?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 					</div>
+					<div id="new_car_panel_1" class="recom_new_con" style="display: none;">
+						<ul class="recom_tit_img ">
+							<li class="car_left">
+								<a href=""><img class='lazy-load' data-original="/static/img/xinchel.png" alt="" titlt='' /></a>
+							</li>
+							<?php if(is_array($new_one) || $new_one instanceof \think\Collection || $new_one instanceof \think\Paginator): $i = 0; $__LIST__ = $new_one;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
+							<li>
+								<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vl['brand_id']; ?>&sys_id=<?php echo $vl['sys_id']; ?>&cartype_id=<?php echo $vl['cartype_id']; ?>&id=<?php echo $vl['id']; ?>&name=<?php echo $vl['name']; ?>&img_url=<?php echo $vl['img_url']; ?>&shoufu=<?php echo $vl['pay10_s2']; ?>&ygong=<?php echo $vl['pay10_y2']; ?>&price=<?php echo $vl['price']; ?>" class="flex_around" target="_blank">
+									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='<?php echo $vl['img_url']; ?>'/>
+								</span>
+									<h3 class="text_overflow"><?php echo $vl['name']; ?></h3>
+									<p class="valign ptp15">
+										<span class="pay_first plt10">价格<?php echo $vl['price']; ?></span>
+										<span class="pay_first plt10">首付<b class=""><?php echo $vl['pay10_s2']; ?></b>万</span>
+										<span class="pay_month">月供<?php echo $vl['pay10_y2']; ?>元</span>
+										<span class="pay_month"><?php echo $vl['pay10_n2']; ?>期</span>
+									</p>
+								</a>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+						</ul>
+					</div>
+					<div id="new_car_panel_2" class="recom_new_con" style="display: none;">
+						<ul class="recom_tit_img ">
+							<li class="car_left">
+								<a href=""><img class='lazy-load' data-original="/static/img/xinchel.png" alt="" titlt='' /></a>
+							</li>
+							<?php if(is_array($new_dyg) || $new_dyg instanceof \think\Collection || $new_dyg instanceof \think\Paginator): $i = 0; $__LIST__ = $new_dyg;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
+							<li>
+								<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vl['brand_id']; ?>&sys_id=<?php echo $vl['sys_id']; ?>&cartype_id=<?php echo $vl['cartype_id']; ?>&id=<?php echo $vl['id']; ?>&name=<?php echo $vl['name']; ?>&img_url=<?php echo $vl['img_url']; ?>&shoufu=<?php echo $vl['pay10_s2']; ?>&ygong=<?php echo $vl['pay10_y2']; ?>&price=<?php echo $vl['price']; ?>" class="flex_around" target="_blank">
+									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='<?php echo $vl['img_url']; ?>'/>
+								</span>
+									<h3 class="text_overflow"><?php echo $vl['name']; ?></h3>
+									<p class="valign ptp15">
+										<span class="pay_first plt10">价格<?php echo $vl['price']; ?></span>
+										<span class="pay_first plt10">首付<b class=""><?php echo $vl['pay10_s2']; ?></b>万</span>
+										<span class="pay_month">月供<?php echo $vl['pay10_y2']; ?>元</span>
+										<span class="pay_month"><?php echo $vl['pay10_n2']; ?>期</span>
+									</p>
+								</a>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+						</ul>
+					</div>
+					<div id="new_car_panel_3" class="recom_new_con" style="display: none;">
+						<ul class="recom_tit_img ">
+							<li class="car_left">
+								<a href=""><img class='lazy-load' data-original="/static/img/xinchel.png" alt="" titlt='' /></a>
+							</li>
+
+						</ul>
+					</div>
 				</div>
 				<!--推荐二手车-->
 				<div class="home_recom_car">
 					<div class="recom_new_tit oh marbt23">
 						<h2>推荐二手车</h2>
 						<ul class="fleft">
-							<li class="active">最近发布</li>
-							<li>价格最低</li>
-							<li>车龄最短</li>
-							<li>里程最短</li>
+							<li id="old_car_0" class="old_car_n active">最近发布</li>
+							<li id="old_car_1" class="old_car_n">价格最低</li>
+							<li id="old_car_2" class="old_car_n">车龄最短</li>
+							<li id="old_car_3" class="old_car_n">里程最短</li>
 						</ul>
 					</div>
-					<div class="recom_new_con">
+					<div id="old_car_panel_0" class="recom_new_con">
 						<ul class="recom_tit_img">
 							<li class="car_left">
 								<a href=""><img class='lazy-load' data-original="/static/img/group1.png" alt="" titlt='' /></a>
@@ -370,6 +456,70 @@ $(window).on('scroll',function(){
 						</ul>
 					</div>
 				</div>
+				<div id="old_car_panel_1" class="recom_new_con" style="display: none;">
+					<ul class="recom_tit_img">
+						<li class="car_left">
+							<a href=""><img class='lazy-load' data-original="/static/img/group1.png" alt="" titlt='' /></a>
+						</li>
+						<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0; $__LIST__ = $er_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+						<li>
+							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>" class="flex_around">
+									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
+								</span>
+								<h3 class="text_overflow"><?php echo $val['name']; ?></h3>
+								<p class="mile"><?php echo $val['car_cardtime']; ?> | <?php echo $val['car_mileage']; ?>万公里</p>
+								<p class="valign">
+									<span class="pay_first plt10"><b class=""><?php echo $val['price']; ?></b></span>
+									<span class="sure"><img src="/static/img/pinpairz.png" alt=""/></span>
+								</p>
+							</a>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
+				</div>
+			<div id="old_car_panel_2" class="recom_new_con" style="display: none;">
+				<ul class="recom_tit_img">
+					<li class="car_left">
+						<a href=""><img class='lazy-load' data-original="/static/img/group1.png" alt="" titlt='' /></a>
+					</li>
+					<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0; $__LIST__ = $er_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+					<li>
+						<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>" class="flex_around">
+									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
+								</span>
+							<h3 class="text_overflow"><?php echo $val['name']; ?></h3>
+							<p class="mile"><?php echo $val['car_cardtime']; ?> | <?php echo $val['car_mileage']; ?>万公里</p>
+							<p class="valign">
+								<span class="pay_first plt10"><b class=""><?php echo $val['price']; ?></b></span>
+								<span class="sure"><img src="/static/img/pinpairz.png" alt=""/></span>
+							</p>
+						</a>
+					</li>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
+				</ul>
+			</div>
+	<div id="old_car_panel_3" class="recom_new_con" style="display: none;">
+		<ul class="recom_tit_img">
+			<li class="car_left">
+				<a href=""><img class='lazy-load' data-original="/static/img/group1.png" alt="" titlt='' /></a>
+			</li>
+			<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0; $__LIST__ = $er_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+			<li>
+				<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>" class="flex_around">
+												<span class="car_img"><img class='lazy-load' alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
+											</span>
+					<h3 class="text_overflow"><?php echo $val['name']; ?></h3>
+					<p class="mile"><?php echo $val['car_cardtime']; ?> | <?php echo $val['car_mileage']; ?>万公里</p>
+					<p class="valign">
+						<span class="pay_first plt10"><b class=""><?php echo $val['price']; ?></b></span>
+						<span class="sure"><img src="/static/img/pinpairz.png" alt=""/></span>
+					</p>
+				</a>
+			</li>
+			<?php endforeach; endif; else: echo "" ;endif; ?>
+		</ul>
+	</div>
+
 				<!--推荐零首付新车-->
 				<div class="home_recom_car">
 					<div class="recom_new_tit oh marbt23">
@@ -785,8 +935,32 @@ $(window).on('scroll',function(){
 		</div>
 		<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	</body>
+	<script type="text/javascript">
+		function btn_new() {
+            if ($('#btn_new').hasClass('active')){
+                return;
+            } else {
+                $('#btn_new').addClass('active');
+                $('#btn_old').removeClass();
+                $('#new_panel').css("display", 'block')
+                $('#old_panel').css("display", 'none')
+			}
+
+        }
+        function btn_old() {
+            if ($('#btn_old').hasClass('active')){
+                return;
+            } else {
+                $('#btn_old').addClass('active');
+                $('#btn_new').removeClass();
+                $('#new_panel').css("display", 'none')
+                $('#old_panel').css("display", 'block')
+            }
+        }
+	</script>
 	<script>
 		$(function() {
+            $($(".wrap li")[0]).addClass("active").siblings().removeClass("active");
 			//			新闻导航切换
 			$(".home_new_nav li").click(function() {
 				$(this).addClass("active").siblings().removeClass("active")
@@ -902,6 +1076,41 @@ $(window).on('scroll',function(){
 			})
 			// $(".header").load("templates/header.html");
 			// $(".footer").load("templates/footer.html");
+
+            var arr_old = new Array();
+			$(".old_car_n").each(function (idx, e) {
+                arr_old.push(e);
+				e.onclick = function () {
+                    if ($("#old_car_" + idx).hasClass("active")){
+                        return;
+                    } else {
+                        for (var i = 0; i < arr_old.length; i++){
+                            $("#old_car_" + i).removeClass("active");
+                            $("#old_car_panel_" + i).css("display:none");
+                        }
+                        $("#old_car_" + idx).addClass("active");
+                        $("#old_car_panel_" + idx).css("display:block")
+
+                    }
+                }
+            });
+            var arr_new = new Array();
+            $(".new_car_n").each(function (idx, e) {
+                arr_new.push(e);
+                e.onclick = function () {
+                    if ($("#new_car_" + idx).hasClass("active")){
+                        return;
+                    } else {
+                        for (var i = 0; i < arr_new.length; i++){
+                            $("#new_car_" + i).removeClass("active");
+                            $("#new_car_panel_" + i).css("display:none");
+                        }
+                        $("#new_car_" + idx).addClass("active");
+                        $("#new_car_panel_" + idx).css("display:block")
+
+                    }
+                }
+            })
 
 		})
 	</script>
