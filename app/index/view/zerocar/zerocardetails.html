@@ -72,22 +72,6 @@
 					           		</ul>
 					           	
 					           	</div>
-					           	<!--<div class="first_s">-->
-					           		<!--<ul class="">-->
-					           			<!--<li><div><p>首付2</p><h2>5.5万</h2></div></li>-->
-					           			<!--<li><div><p>月供2</p><h2>5555元</h2></div></li>-->
-					           			<!--<li><div><p>期数2</p><h2>12期</h2></div></li>-->
-					           		<!--</ul>-->
-					           	<!---->
-					           	<!--</div>-->
-					           	<!--<div class="first_s">-->
-					           		<!--<ul class="">-->
-					           			<!--<li><div><p>首付3</p><h2>5.5万</h2></div></li>-->
-					           			<!--<li><div><p>月供3</p><h2>5555元</h2></div></li>-->
-					           			<!--<li><div><p>期数3</p><h2>12期</h2></div></li>-->
-					           		<!--</ul>-->
-					           		<!---->
-					           	<!--</div>-->
 				           	</div>
 				           	<div class="test">根据信用评估测一测你能<a href="">贷多少钱>></a></div>
 		        		<div class="car_results">
@@ -96,7 +80,7 @@
 		        				<p class="sub_phone">询问低价</p>
 		        			</div>
 		        			<ul class="btn_box">
-			        			<li><img src="__STATIC__/img/collect.png" alt="" /><p>收藏</p></li>
+			        			<a href="{:url('user/collect_car')}?brand_id={$carinfo.brand_id}&sys_id={$carinfo.sys_id}&type=3&cartype_id={$carinfo.cartype_id}&cheid={$carinfo.id}&name={$carinfo.car_name}&img_url={$carinfo['img_512']['0']}&shoufu={$carinfo.pay0_s2}&ygong={$carinfo.pay0_y2}&price={$carinfo.price}"><li><img src="__STATIC__/img/collect.png" alt="" /><p>收藏</p></li></a>
 			        			<li><img src="__STATIC__/img/PK.png" alt="" /><p>加入PK</p></li>
 			        			<li><img src="__STATIC__/img/share.png" alt="" /><p>分享</p></li>
 			        		</ul>

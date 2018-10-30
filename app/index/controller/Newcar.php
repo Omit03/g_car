@@ -71,6 +71,8 @@ class Newcar extends Common
 
             $res = Db::table('car_liulan_history')->where($wherehis)->find();
 
+         //   dump($data);die;
+
             if (empty($res)){
 
                 Db::table('car_liulan_history')->insert(['userid'=>$userid,'brand_id'=>$brand_id,'type'=>1,'cheid'=>$cheid,'sys_id'=>$sys_id,'cartype_id'=>$cartype_id,'name'=>$data['name'],'price'=>$data['price'],'img'=>$data['img_url'],'shoufu'=>$data['shoufu'],'yuegong'=>$data['ygong']]);
@@ -83,7 +85,7 @@ class Newcar extends Common
 
         $firm_id=$this->get_firm($sys_id);
         //获取车辆的信息
-        $newcar_info=Db::table("new_car")->field("id,img_ids,img_512,price,can_price,sale_num,pay10_s2,pay10_y2,pay10_n2,pay20_s2,pay20_y2,pay20_n2,pay30_s2,pay30_y2,pay30_n2,city_id")->where("brand_id=$brand_id and sys_id=$sys_id and cartype_id=$cartype_id")->find();
+        $newcar_info=Db::table("new_car")->field("id,img_ids,img_512,price,can_price,sale_num,brand_id,sys_id,cartype_id,pay10_s2,pay10_y2,pay10_n2,pay20_s2,pay20_y2,pay20_n2,pay30_s2,pay30_y2,pay30_n2,city_id")->where("brand_id=$brand_id and sys_id=$sys_id and cartype_id=$cartype_id")->find();
         if(!$newcar_info){
             echo '信息错误';
         }
@@ -163,7 +165,7 @@ class Newcar extends Common
                 $sys_cars[$key]['name'] = $this->get_carname($val['cartype_id']);
                 $sys_cars[$key]['img_url'] = $this->get_carimg(explode(',',$val['img_300'])[0],2);
                 //unset($sys_cars[$key]['img_300']);
-               // unset($sys_cars[$key]['cartype_id']);
+                //unset($sys_cars[$key]['cartype_id']);
 
             }
         }
@@ -176,6 +178,8 @@ class Newcar extends Common
 //
 //        dump($shop);die;
         $brand = $this->brand();//品牌
+
+       // dump($newcar_info);die;
 
         $this->assign('brand',$brand);
         $this->assign('shop_discount',$shop_discount);

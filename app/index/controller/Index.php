@@ -1290,6 +1290,8 @@ class Index  extends Common
 
         $sys_cars=$sys_cars ? $sys_cars : array();
 
+       // dump($carinfo);die;
+
         $carinfo = $carinfo?$carinfo:array();
 
         $shopinfo = $shopinfo?$shopinfo:array();

@@ -160,7 +160,8 @@ class User  extends Common {
 
             if ($info){
 
-                $this->return_msg(400,'已收藏');
+               // $this->return_msg(400,'已收藏');
+                $this->error('已收藏');
             }
 
             if (empty($data['type'])){
@@ -206,21 +207,27 @@ class User  extends Common {
             $res = Db::table('car_collect')->insert([
                 'userid'=>$userid,
                 'type'=>$data['type'],
-                'type'=>$data['type'],
                 'cheid'=>$data['cheid'],
                 'brand_id'=>$data['brand_id'],
                 'sys_id'=>$data['sys_id'],
                 'cartype_id'=>$data['cartype_id'],
-                'img'=>$data['img'],
+                'img'=>$data['img_url'],
                 'name'=>$data['name'],
                 'price'=>$data['price'],
                 'paitime'=>$data['paitime'],
                 'licheng'=>$data['licheng'],
                 'shoufu'=>$data['shoufu'],
-                'yuegong'=>$data['yuegong'],
+                'yuegong'=>$data['ygong'],
                 ]);
 
-        $this->return_msg(200,'收藏成功');
+            if ($res){
+
+                $this->error('收藏成功');
+            }
+
+
+
+        //$this->return_msg(200,'收藏成功');
 
     }
 

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"G:\xampp\htdocs\car\public/../app/index\view\newcar\newcardetails.html";i:1539942972;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"G:\xampp\htdocs\car\public/../app/index\view\newcar\newcardetails.html";i:1540897462;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -238,7 +238,7 @@ $(window).on('scroll',function(){
 		        				<p class="sub_phone">询问低价</p>
 		        			</div>
 		        			<ul class="btn_box">
-			        			<li><img src="/static/img/collect.png" alt="" /><p>收藏</p></li>
+			        			<a href="<?php echo url('user/collect_car'); ?>?brand_id=<?php echo $newcar_info['brand_id']; ?>&sys_id=<?php echo $newcar_info['sys_id']; ?>&type=1&cartype_id=<?php echo $newcar_info['cartype_id']; ?>&cheid=<?php echo $newcar_info['id']; ?>&name=<?php echo $newcar_info['name']; ?>&img_url=<?php echo $newcar_info['img_512']['0']; ?>&shoufu=<?php echo $newcar_info['pay10_s2']; ?>&ygong=<?php echo $newcar_info['pay10_y2']; ?>&price=<?php echo $newcar_info['price']; ?>"> <li><img src="/static/img/collect.png" alt="" /><p>收藏</p></li></a>
 			        			<li><img src="/static/img/PK.png" alt="" /><p>加入PK</p></li>
 			        			<li><img src="/static/img/share.png" alt="" /><p>分享</p></li>
 			        		</ul>

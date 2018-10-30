@@ -79,8 +79,8 @@
 		        		<div class="car_results">
 		        			<p class="lowerPrice">询问底价</p>
 		        			<ul class="btn_box">
-			        			<li><img src="__STATIC__/img/collect.png" alt="" /><p>收藏</p></li>
-			        			<li><img src="__STATIC__/img/PK.png" alt="" /><p>加入PK</p></li>
+			        			<a href="{:url('user/collect_car')}?brand_id={$carinfo.brand_id}&sys_id={$carinfo.sys_id}&type=2&cartype_id={$carinfo.cartype_id}&cheid={$carinfo.pu_id}&name={$carinfo.car_name}&img_url={$carinfo['img_512']['0']}&shoufu={$carinfo.pay20_s2}&ygong={$carinfo.pay20_y2}&price={$carinfo.price}"><li><img src="__STATIC__/img/collect.png" alt="" /><p>收藏</p></li></a>
+								<li><img src="__STATIC__/img/PK.png" alt="" /><p>加入PK</p></li>
 			        			<li><img src="__STATIC__/img/share.png" alt="" /><p>分享</p></li>
 			        		</ul>
 	        		</div>
@@ -164,7 +164,7 @@
 				<div class="car_list">
 					<ul class="list">
 						<a href="">
-						{volist name="sys_cars" id="val" offset="1" length="8"}
+						{volist name="sys_cars" id="val" offset="1" legth="8"}
 						<li class="items5">
 							<a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
 							<a href="{:url('index/details')}?cheid={$val.pu_id}&price={$val.price}&mileage={$val.car_mileage}&name={$val.name}&img={$val.img_url}&time={$val.car_cardtime}" class="car_desc">
@@ -248,7 +248,7 @@
 			</div>
 			<ul class="btn_box oh">
     			<li><img src="__STATIC__/img/collect.png" alt="" /><p>收藏</p></li>
-    			<li><img src="__STATIC__/img/PK.png" alt="" /><p>加入PK</p></li>
+    			<li><img src="__STATIC__/img/PK.png" alt="" /><p>加入</p></li>
     			<li><img src="__STATIC__/img/share.png" alt="" /><p>分享</p></li>
     		</ul>
     		<div class="del"><img src="__STATIC__/img/del1.png" alt="" height="16"/></div>
