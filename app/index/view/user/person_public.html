@@ -52,108 +52,52 @@
 							</ul>
 						</h1>
 						<ul id="che_fb0" class="p_list">
+							{notempty name="all_car"}
+							{volist name="all_car" id="val"}
 							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								<div class="car_img"><img src="{$val.img_url}" alt="" /></div>
+								<div class="car_desc"><h3>{$val.name}</h3>
+									<p>{$val.car_mileage}万公里 | {$val.create_time}| 郑州</p>
+									<div><span class="cprice"><b>{$val.price}</b>万</span>
+										<!--<span class="nprice">13.22万</span>-->
+									</div>
 								</div>
-								<div class="car_status"><img src="__STATIC__/img/shenhez .png" alt="" /></div>
-								
+								<div class="car_status">
+									<!--<img src="__STATIC__/img/shenhez .png" alt="" />-->
+								</div>
+
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/xiajia.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">编辑</p>
-									<p class="bgorg">上架</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/fabushibai.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">查看原因</p>
-									<p class="bgorg">编辑</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/fabuchengg.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg martp20">下架</p>
-									<p class="bgbor">商家推荐</p>
-									
-								</div>
-							</li>
+							{/volist}
+							{/notempty}
+
 						</ul>
 						<ul id="che_fb1" class="p_list" style="display: none;">
+							{notempty name="dai_audit"}
+							{volist name="dai_audit" id="val"}
 							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								<div class="car_img"><img src="{$val.img_url}" alt="" /></div>
+								<div class="car_desc"><h3>{$val.name}</h3>
+									<p>{$val.car_mileage}万公里 | {$val.create_time} | {$val.name}郑州</p>
+									<div><span class="cprice"><b>{$val.price}</b>万</span>
+										<!--<span class="nprice">{$val.price}万</span>-->
+									</div>
 								</div>
 								<div class="car_status"><img src="__STATIC__/img/shenhez .png" alt="" /></div>
 
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/shenhez .png" alt="" /></div>
+							{/volist}
+							{/notempty}
 
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/shenhez .png" alt="" /></div>
-
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/shenhez .png" alt="" /></div>
-
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/shenhez .png" alt="" /></div>
-
-							</li>
 						</ul>
 						<ul id="che_fb2" class="p_list" style="display: none;">
+							{notempty name="fabu_car"}
+							{volist name="fabu_car" id="val"}
 							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								<div class="car_img"><img src="{$val.img_url}" alt="" /></div>
+								<div class="car_desc"><h3>789{$val.name}</h3>
+									<p>{$val.car_mileage}万公里 | {$val.create_time}  | 郑州</p>
+									<div><span class="cprice"><b>{$val.price}</b>万</span>
+										<!--<span class="nprice">13.22万</span></div>-->
 								</div>
 								<div class="car_status"><img src="__STATIC__/img/fabuchengg.png" alt="" /></div>
 								<div class="car_res">
@@ -162,52 +106,18 @@
 
 								</div>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/fabuchengg.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg martp20">下架</p>
-									<p class="bgbor">商家推荐</p>
-
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/fabuchengg.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg martp20">下架</p>
-									<p class="bgbor">商家推荐</p>
-
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/fabuchengg.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg martp20">下架</p>
-									<p class="bgbor">商家推荐</p>
-
-								</div>
-							</li>
+							{/volist}
+							{/notempty}
 						</ul>
 						<ul id="che_fb3" class="p_list" style="display: none;">
+							{notempty name="no_audit"}
+							{volist name="no_audit" id="val"}
 							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								<div class="car_img"><img src="{$val.img_url}" alt="" /></div>
+								<div class="car_desc"><h3>456{$val.name}</h3>
+									<p>{$val.car_mileage}万公里 | {$val.create_time}  | 郑州</p>
+									<div><span class="cprice"><b>{$val.price}</b>万</span>
+										<!--<span class="nprice">13.22万</span></div>-->
 								</div>
 								<div class="car_status"><img src="__STATIC__/img/fabushibai.png" alt="" /></div>
 								<div class="car_res">
@@ -216,50 +126,34 @@
 									<p class="bgred">删除</p>
 								</div>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/fabushibai.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">查看原因</p>
-									<p class="bgorg">编辑</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/fabushibai.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">查看原因</p>
-									<p class="bgorg">编辑</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/fabushibai.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">查看原因</p>
-									<p class="bgorg">编辑</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
+							{/volist}
+							{/notempty}
 						</ul>
 						<ul id="che_fb4" class="p_list" style="display: none;">
+							{notempty name="del_audit"}
+							{volist name="del_audit" id="val"}
+							<li class="item">
+								<div class="car_img"><img src="{$val.img_url}" alt="" /></div>
+								<div class="car_desc"><h3>123{$val.name}</h3>
+									<p>{$val.car_mileage}万公里 | {$val.create_time} | 郑州</p>
+									<div><span class="cprice"><b>{$val.price}</b>万</span>
+										<!--<span class="nprice">13.22万</span></div>-->
+								</div>
+								<div class="car_status"><img src="__STATIC__/img/fabushibai.png" alt="" /></div>
+								<div class="car_res">
+									<p class="bgorg">查看原因</p>
+									<p class="bgorg">编辑</p>
+									<p class="bgred">删除</p>
+								</div>
+							</li>
+							{/volist}
+							{/notempty}
+
+						</ul>
+						<ul id="che_fb5" class="p_list" style="display: none;">
 							<li class="item">
 								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
+								<div class="car_desc"><h3>123123卡罗拉 2011款 1.8L CVT GL-i</h3>
 									<p>8.1万公里 | 2012-03 | 郑州</p>
 									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
 								</div>
@@ -270,45 +164,7 @@
 									<p class="bgred">删除</p>
 								</div>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/xiajia.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">编辑</p>
-									<p class="bgorg">上架</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/xiajia.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">编辑</p>
-									<p class="bgorg">上架</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="__STATIC__/img/xiajia.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">编辑</p>
-									<p class="bgorg">上架</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
+
 							<li class="item">
 								<div class="car_img"><img src="__STATIC__/img/s.png" alt="" /></div>
 								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
@@ -343,7 +199,7 @@
 					if(!$(this).hasClass("active")){
                         $(this).addClass("active").siblings().removeClass("active");
                         var index = $(this).attr("data-status");
-                        for (var i = 0; i< 5; i++){
+                        for (var i = 0; i< 6; i++){
                             $("#che_fb" + i).css("display", 'none')
 						}
 						$("#che_fb" + index).css("display", 'block')

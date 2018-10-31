@@ -51,12 +51,10 @@ class User  extends Common {
         $data =  $this->params;
 
 
-
-
     }
 
     /*
-     * 展示登录
+     * 发布车辆信息
      */
     public function person_release(){
 
@@ -65,14 +63,178 @@ class User  extends Common {
         $this->assign('brand',$brand);
         return $this->fetch();
 
-    }    /*
+    }
+    /**
+     * [pulish_add 发布]
+     * @return [type] [description]
+     */
+    public function pulish_adds(){
+
+        $data = $this->params;
+
+        $user_id = Session::get('user_id');
+
+        $add['user_id'] = $user_id;
+        $add['brand_id'] = $brand_id = $data['brand_id'];
+        $add['sys_id'] = $sys_id = $data['sys_id'];
+        $add['cartype_id'] = $cartype_id = $data['cartype_id'];
+
+        $brand=Db::table("car_brand")->field("name")->where("id",$brand_id)->find();
+        $sys=Db::table("car_brand")->field("name")->where("id",$sys_id)->find();
+        $cartype=Db::table("car_brand")->field("name")->where("id",$cartype_id)->find();
+        //获取配置信息
+        $param=Db::table("param")->where("brand='".$brand['name']."' and sys='".$sys['name']."' and cartype='".$cartype['name']."'")->find();
+        $add['price'] = $price = $data['price'];
+        $add['news_price'] = $news_price = $data['news_price'] ? $data['news_price'] : 0;
+        $add['car_mileage'] = $car_mileage = $data['car_mileage'];
+        // $add['year_inspect'] = $year_inspect = $_POST['year_inspect'];
+        //$add['safe'] = $safe = $_POST['safe'];
+
+        $add['car_body'] = $car_body = $data['car_body'];
+        //$add['car_age'] = $car_age = $_POST['car_age'];
+        $add['car_drive'] = $car_drive = $data['car_drive'];
+        $add['fuel'] = $fuel = $data['fuel'];
+        $add['output'] = $output = $data['output'];
+        $add['gearbox'] = $gearbox = $data['gearbox'];
+        $add['subface'] = $subface = $data['subface'];
+        $add['color'] = $color = $data['color'];
+        $add['car_cardtime'] = $car_cardtime = $data['car_cardtime'];
+        $add['car_age'] = $car_age=$this->get_car_age($car_cardtime);
+        $add['blowdown'] = $blowdown = $data['blowdown'];
+        $add['contact'] = $contact = $data['contact'];
+        $add['phone'] = $phone = $data['phone'];
+        $subface_img = $data['subface_img'];
+        $add['car_desc'] = $car_desc = $data['car_desc'];
+        // $this->ajaxReturn($add);
+        if(!$brand_id || !$sys_id || !$cartype_id || !$price || !$car_mileage || !$car_age
+            || !$gearbox || !$subface || !$color || !$car_cardtime
+            || !$contact || !$phone || !$subface_img ){
+
+            $this->return_msg('204','参数错误，请检查');
+
+        }
+        $add['year_inspect'] = $year_inspect = $this->get_year_inspect($car_cardtime);
+        if(!$year_inspect){
+
+            $this->return_msg('204','参数错误，请检查');
+        }
+        $add['safe'] = $safe = $this->safe($car_cardtime);
+        if(!$safe){
+
+            $this->return_msg('204','参数错误，请检查');
+        }
+        //获取图片
+        $add['subface_img'] = $this->get_uplodes_imgs($subface_img);
+        $add['img_512'] = $this->get_uplodes_imgs_512($subface_img);
+        $add['img_300'] = $this->get_uplodes_imgs_300($subface_img);
+        //分期
+//        if($car_age<6 and $price>=3){
+//            $add['pay20_s2']=number_format($val['price']*0.2,2);
+//            $add['pay20_y2']=number_format($val['price']*0.8/36*10000,2);
+//        }
+        //获取城市
+        $add['city_id'] = $city_id=Db::table("user_shop")->where("user_id=$user_id")->value("city_id");
+        $b = $this->get_brand_firm_sysname($cartype_id,5);
+        $add['name_li'] = $b['brand'].$b['sysname'].$b['carname'];
+        $add['status'] = 2;
+        $add['up_under'] = 1;
+        $add['create_time'] = $add['update_time'] = time();
+
+        $res = Db::table('rele_car')->insert($add);
+        if($res){
+            if($param){
+                $arr1=array(
+                    "pu_id"=>$res,
+                    "years"=>$param['years']
+                );
+                Db::table("rele_car")->insert($arr1);
+                $data=array(
+                    "pu_id"=>$res,
+                    "param_id"=>$param['id'],
+                    "create_time"=>time(),
+                    "type"=>2
+                );
+                //添加
+                Db::table("rele_param")->insert($data);
+            }
+            $this->return_msg('200','成功');
+        }else{
+            $this->return_msg('400','失败');
+        }
+
+    }
+    /*
      * 展示登录
      */
     public function person_public(){
 
+
+        $data = $this->params;
+        //获取user_id
+        $user_id = Session::get('user_id');
+
+        $user_id = 22;
+        $shop_info=Db::table("user_shop")->field("shop_id,qid,mimg")->where("user_id",$user_id)->find();
+
+        if($shop_info['qid']!=2){
+
+            $this->return_msg('200','用户参数错误');
+        }
+        //分页
+        if (empty($data['page'])){
+
+            $page = 1;
+        }else{
+
+            $page = $data['page'];
+        }
+        if (empty($data['page_size'])){
+
+            $page_size = 10;
+        }else{
+
+            $page_size = $data['page_size'];
+        }
+
+        $min_num=($page-1)*$page_size;
+
+        $status = 0;
+        $up_under = 0;
+
+        $all_car =$this->my_shop_fabu($user_id,$min_num,$page_size,$status,$up_under);//审核通过
+
+        $status = 1;
+        $fabu_car =$this->my_shop_fabu($user_id,$min_num,$page_size,$status);//审核通过
+
+        $status = 2;
+        $dai_audit =$this->my_shop_fabu($user_id,$min_num,$page_size,$status);//待审核
+
+        $status = 3;
+        $no_audit =$this->my_shop_fabu($user_id,$min_num,$page_size,$status);//审核未通过
+
+       // dump($no_audit);die;
+        $up_under = 2;
+        $status = 4;
+        $del_audit =$this->my_shop_fabu($user_id,$min_num,$page_size,$status,$up_under);//删除
+       // dump($del_audit);die;
+
+        $all_car = $all_car?$all_car:array();
+        $fabu_car = $fabu_car?$fabu_car:array();
+        $dai_audit = $dai_audit?$dai_audit:array();
+        $no_audit = $no_audit?$no_audit:array();
+        $del_audit = $del_audit?$del_audit:array();
+
         $brand = $this->brand();//品牌
 
         $this->assign('brand',$brand);
+
+
+        $this->assign('all_car',$all_car);
+        $this->assign('fabu_car',$fabu_car);
+        $this->assign('dai_audit',$dai_audit);
+        $this->assign('no_audit',$no_audit);
+        $this->assign('del_audit',$del_audit);
+
         return $this->fetch();
 
     }
@@ -88,9 +250,9 @@ class User  extends Common {
 
     }
     /*
- * 商家入驻
- * http://39.106.67.47/new_api/User/newapi/business_entry
- */
+     * 商家入驻
+     * http://39.106.67.47/new_api/User/newapi/business_entry
+     */
     public function business_entry(){
 
         /*接收参数*/
@@ -157,15 +319,148 @@ class User  extends Common {
     }
 
     /*
-     * 展示登录
+     * 展示商机
      */
     public function person_opportunity(){
+
+        //获取店铺的userID
+        $user_id = Session::get('user_id');
+
+        $user_id = 19;
+
+        $data =  $this->params;
+
+        if(empty($data['page'])){
+            $page=1;
+
+        }else{
+            $page= $data['page'];
+        }
+
+      //  $page=$_POST['page']?$_POST['page']:1;
+
+
+        //查找预约信息
+        $num1=($page-1)*10;
+        $infos=Db::table("bespeak_car")->field("bespeak_id as id,pu_id,phone,create_time,status,user_id,car_name,type")->where("shop_id=".$user_id." and phone !=''")->order('status asc,create_time desc')->select();
+        $infos2=Db::table("phone_list")->field("id,pu_id,create_time,status,user_id,userid,type")->where("user_id=".$user_id." and userid !=0")->select();
+
+
+        foreach($infos2 as $k=>$v){
+            //获取用户的phone
+            $userinfo=Db::table("user")->field("user_id,phone")->where("user_id=".$v['userid'])->find();
+            $infos2[$k]['phone']=$userinfo['phone'];
+            $infos2[$k]['car_name']="";
+            unset($infos2[$k]['userid']);
+        }
+        $infos=$infos?$infos:array();
+        $infos2=$infos2?$infos2:array();
+
+        $list=array_merge($infos,$infos2);
+
+        $infos=array_slice($list,$num1,10);
+
+        if($infos){
+            //获取车辆信息
+            foreach ($infos as $k => $val) {
+
+                $data=Db::table("rele_car")->field('name_li,img_512')->where("pu_id",$val['pu_id'])->find();
+
+                $infos[$k]['name']=$data['name_li']?$data['name_li']:$val['car_name'];
+
+                $url = $this->get_carimgs($data['img_512']);
+
+                //dump($url['0']);die;
+                if (!empty($url['0'])){
+
+                    $infos[$k]['img_url']=$url['0'];
+                }
+
+                unset($infos[$k]['pu_id']);
+                unset($infos[$k]['user_id']);
+                if($infos[$k]['car_name']==""){
+                    $infos[$k]['car_name']="";
+                }
+                if($infos[$k]['name']==""){
+                    $infos[$k]['name']="";
+                }
+            }
+
+            $infos = $infos?$infos:array();
+
+        }else{
+
+            $this->return_msg('205','暂时没有数据');
+
+        }
+
+        //dump($infos);die;
 
         $brand = $this->brand();//品牌
 
         $this->assign('brand',$brand);
+
+        $this->assign('infos',$infos);
         return $this->fetch();
 
+    }
+
+    //店铺预约列表
+    public function bespeak_car(){
+        //获取店铺的userID
+        $user_id=$_POST['user_id'];
+        $page=$_POST['page']?$_POST['page']:1;
+        //验证
+        $is_exit=M("user")->where("user_id=".$user_id)->find();
+        if(!$is_exit){
+            $data = array (
+                'code'   => 204,
+                'result' => '参数错误，请检查'
+            );
+            $this->ajaxReturn($data);
+        }
+        //查找预约信息
+        $num1=($page-1)*10;
+        $infos=M("bespeak_car")->field("bespeak_id as id,pu_id,phone,create_time,status,user_id,car_name,type")->where("shop_id=".$user_id." and phone !=''")->order('status asc,create_time desc')->select();
+        $infos2=M("phone_list")->field("id,pu_id,create_time,status,user_id,userid,type")->where("user_id=".$user_id." and userid !=0")->select();
+        //echo M("phone_list")->getlastsql();die;
+        foreach($infos2 as $k=>$v){
+            //获取用户的phone
+            $userinfo=M("user")->field("user_id,phone")->where("user_id=".$v['userid'])->find();
+            $infos2[$k]['phone']=$userinfo['phone'];
+            $infos2[$k]['car_name']="";
+            unset($infos2[$k]['userid']);
+        }
+        $infos=$infos?$infos:array();
+        $infos2=$infos2?$infos2:array();
+        $list=array_merge($infos,$infos2);
+        $infos=array_slice($list,$num1,10);
+        if($infos){
+            //获取车辆信息
+            foreach ($infos as $k => $val) {
+                $data=M("rele_car")->field('name_li')->where("pu_id=".$val['pu_id'])->find();
+                $infos[$k]['name']=$data['name_li']?$data['name_li']:$val['car_name'];
+                unset($infos[$k]['pu_id']);
+                unset($infos[$k]['user_id']);
+                if($infos[$k]['car_name']==""){
+                    $infos[$k]['car_name']="";
+                }
+                if($infos[$k]['name']==""){
+                    $infos[$k]['name']="";
+                }
+            }
+            // echo M("bespeak_car")->getlastsql();
+            $data = array (
+                'code'   => 200,
+                'body' => $infos?$infos:array()
+            );
+        }else{
+            $data = array (
+                'code'   => 205,
+                'result' => '暂时没有数据'
+            );
+        }
+        $this->ajaxReturn($data);
     }
     /*
      * 展示个人信息
@@ -1406,6 +1701,58 @@ class User  extends Common {
 
         dump($sys_info);
         dump($years);die;
+    }
+
+    /**
+     *  我的店铺
+     */
+    public function my_shop(){
+
+        //获取user_id
+        $user_id = Session::get('user_id');
+
+        $user_id = 40;
+        $shop_info=Db::table("user_shop")->field("shop_id,qid,mimg")->where('user_id',$user_id)->find();
+
+       // dump($shop_info);die;
+//        if($shop_info['qid']!=2){
+//            $result = array (
+//                'code'   => 204,
+//                'result' => '用户参数错误',
+//                'body' =>$user_id
+//            );
+//            echo json_encode($result);exit();
+//        }
+        $list['door_photo']=$this->get_carimg($shop_info['mimg']);
+        $list['shop_id']=$shop_info['shop_id'];
+        //获取商家推荐车辆
+        $recommend_car=Db::table("rele_car")->field("pu_id,cartype_id,price,car_cardtime,car_mileage,img_300,create_time")->where("user_id = $user_id and up_under=1 and is_show = 1 and status = 1")->select();
+
+        foreach ($recommend_car as $key => $val) {
+            $recommend_car[$key]['name']=$this->get_carname($val['cartype_id']);
+            $recommend_car[$key]['img_url']=$this->get_carimg($val['img_300'],1);
+            $recommend_car[$key]['car_mileage']=$val['car_mileage'];
+            $recommend_car[$key]['create_time']=substr($val['create_time'], 0, 10);
+            unset($recommend_car[$key]['cartype_id']);
+            unset($recommend_car[$key]['img_300']);
+            $list['recommend_car']=$recommend_car;
+        }
+        //获取发布的车辆
+        $fabu_car=Db::table("rele_car")->field("pu_id,cartype_id,price,car_cardtime,car_mileage,img_300,create_time")->where("user_id = $user_id and up_under=1 and is_show != 1 and status = 1")->order("pu_id desc")->limit(10)->select();
+        foreach ($fabu_car as $key => $val) {
+            $fabu_car[$key]['name']=$this->get_carname($val['cartype_id']);
+            $fabu_car[$key]['img_url']=$this->get_carimg($val['img_300'],1);
+            $fabu_car[$key]['car_mileage']=$val['car_mileage'];
+            $fabu_car[$key]['create_time']=substr($val['create_time'], 0, 10);
+            unset($fabu_car[$key]['cartype_id']);
+            unset($fabu_car[$key]['img_300']);
+            $list['fabu_car']=$fabu_car;
+        }
+
+            $list = $list?$list:array();
+
+            dump($list);
+
     }
 
 

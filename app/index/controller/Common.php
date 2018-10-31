@@ -176,6 +176,9 @@ class Common extends Controller{
             'person_manage'=>array(
                 'user_id' =>'number',
             ),
+            'my_shop'=>array(
+                'user_id' =>'number',
+            ),
             'person_release'=>array(
                 'user_id' =>'number',
             ),
@@ -183,6 +186,9 @@ class Common extends Controller{
                 'user_id' =>'number',
             ),
             'person_busenter'=>array(
+                'user_id' =>'number',
+            ),
+            'pulish_adds'=>array(
                 'user_id' =>'number',
             ),
             'person_opportunity'=>array(
@@ -2459,6 +2465,311 @@ class Common extends Controller{
 
         return $ss;
 
+    }
+    
+    /*
+     * 获取发布车辆
+     */
+
+    public function my_shop_fabu($user_id,$min_num,$page_size,$status,$up_under=1){
+
+
+       // user_id = $user_id and up_under=1 and is_show!=1 and status = 1
+
+        $where['user_id'] = $user_id;
+        if (!empty($up_under)){
+
+            $where['up_under'] = $up_under;
+        }
+        if (!empty($status)){
+
+            $where['status'] = $status;
+        }
+
+        $where['is_show'] = 2;
+
+
+       //dump($where);die;
+
+        //获取发布的车辆
+        $fabu_car=Db::table("rele_car")->field("pu_id,cartype_id,price,car_cardtime,car_mileage,img_300,create_time")->where($where)->order("pu_id desc")->limit($min_num,$page_size)->select();
+
+
+        foreach ($fabu_car as $key => $val) {
+            $fabu_car[$key]['name']=$this->get_carname($val['cartype_id']);
+            $fabu_car[$key]['img_url']=$this->get_carimg($val['img_300'],1);
+            $fabu_car[$key]['car_mileage']=$val['car_mileage'];
+            $fabu_car[$key]['create_time']=substr($val['create_time'], 0, 10);
+            unset($fabu_car[$key]['cartype_id']);
+            unset($fabu_car[$key]['img_300']);
+        }
+      //  dump($fabu_car);die;
+
+        return $fabu_car;
+    }
+
+    //年检
+    public function get_year_inspect($car_cardtime){
+        //上牌照时间
+        $aa1=explode('年', $car_cardtime);
+        $year1=$aa1[0];
+        $aaa1=explode('月', $aa1['1']);
+        $month1=$aaa1[0];
+        $aaaa1=explode('日', $aaa1['1']);
+        $day1=$aaaa1[0];
+        // $zero1=$year1[0]."-".$month1[0]."-".$day1[0];
+        // $res=mktime(0,0,0,$month[0],$day[0],$year[0]);
+        // $zero2=date("y-m-d");
+        //当前时间
+        $year2=date("Y");
+        $month2=date("m");
+        $day2=date("d");
+        //年份对比
+        $data=$year2-$year1;
+        if($data>15){
+            //每年审两次,6个月一次
+            if($month1<$month2){
+                $month3=$month1+6;
+                if($month3>12){
+                    $year=$year1+1;
+                    $month=$month3-12;
+                    $year_inspect=$year."年".$month."月".$day1."日";
+                }else{
+                    $year_inspect=$year2."年".$month3."月".$day1."日";
+                }
+            }elseif ($month1>$month2) {
+                $year_inspect=$year2."年".$month1."月".$day1."日";
+            }elseif($month1==$month2){
+                if($day1<$day2){
+                    $month3=$month1+6;
+                    if($month3>12){
+                        $year=$year1+1;
+                        $month=$month3-12;
+                        $year_inspect=$year."年".$month."月".$day1."日";
+                    }else{
+                        $year_inspect=$year2."年".$month3."月".$day1."日";
+                    }
+                }elseif($day1>$day2){
+                    $year_inspect=$year2."年".$month1."月".$day1."日";
+                }elseif($day1==$day2){
+                    $year_inspect=$year2."年".$month1."月".$day1."日";
+                }
+            }
+        }elseif($data>6 && $data<=15){
+            //一年一审
+            //判断月份
+            if($month1<$month2){
+                $year=$year2+1;
+                $year_inspect=$year."年".$month1."月".$day1."日";
+            }elseif($month1>$month2){
+                $year_inspect=$year2."年".$month1."月".$day1."日";
+            }elseif($month1==$month2){
+                if($day1<$day2){
+                    $year=$year2+1;
+                    $year_inspect=$year."年".$month1."月".$day1."日";
+                }else{
+                    $year_inspect=$year2."年".$month1."月".$day1."日";
+                }
+            }
+        }elseif($data<=6){
+            //两年一审
+            if($data==0){
+                $year=$year2+2;
+                $year_inspect=$year."年".$month1."月".$day1."日";
+            }elseif($data==1){
+                $year=$year2+1;
+                $year_inspect=$year."年".$month1."月".$day1."日";
+            }elseif($data==2){
+                if($month1<$month2){
+                    $year=$year2+2;
+                    $year_inspect=$year."年".$month1."月".$day1."日";
+                }elseif($month1>$month2){
+                    $year_inspect=$year2."年".$month1."月".$day1."日";
+                }elseif($month1==$month2){
+                    if($day1<$day2){
+                        $year=$year2+2;
+                        $year_inspect=$year."年".$month1."月".$day1."日";
+                    }elseif($day1>=$day2){
+                        $year_inspect=$year2."年".$month1."月".$day1."日";
+                    }
+                }
+            }elseif($data==3){
+                $year=$year2+1;
+                $year_inspect=$year."年".$month1."月".$day1."日";
+            }elseif($data==4){
+                if($month1<$month2){
+                    $year=$year2+2;
+                    $year_inspect=$year."年".$month1."月".$day1."日";
+                }elseif($month1>$month2){
+                    $year_inspect=$year2."年".$month1."月".$day1."日";
+                }elseif($month1==$month2){
+                    if($day1<$day2){
+                        $year=$year2+2;
+                        $year_inspect=$year."年".$month1."月".$day1."日";
+                    }elseif($day1>=$day2){
+                        $year_inspect=$year2."年".$month1."月".$day1."日";
+                    }
+                }
+            }elseif($data==5){
+                $year=$year2+1;
+                $year_inspect=$year."年".$month1."月".$day1."日";
+            }elseif($data==6){
+                if($month1<$month2){
+                    $year=$year2+1;
+                    $year_inspect=$year."年".$month1."月".$day1."日";
+                }elseif($month1>$month2){
+                    $year_inspect=$year2."年".$month1."月".$day1."日";
+                }elseif($month1==$month2){
+                    if($day1<$day2){
+                        $year=$year2+1;
+                        $year_inspect=$year."年".$month1."月".$day1."日";
+                    }elseif($day1>=$day2){
+                        $year_inspect=$year2."年".$month1."月".$day1."日";
+                    }
+                }
+            }
+        }
+        return $year_inspect;
+    }
+
+    //保险
+    public function safe($car_cardtime){
+        //上牌照时间
+        $aa1=explode('年', $car_cardtime);
+        $year1=$aa1[0];
+        $aaa1=explode('月', $aa1['1']);
+        $month1=$aaa1[0];
+        $aaaa1=explode('日', $aaa1['1']);
+        $day1=$aaaa1[0];
+        // $zero1=$year1[0]."-".$month1[0]."-".$day1[0];
+        // $res=mktime(0,0,0,$month[0],$day[0],$year[0]);
+        // $zero2=date("y-m-d");
+        //当前时间
+        $year2=date("Y");
+        $month2=date("m");
+        $day2=date("d");
+        if($month1>$month2){
+            $safe=$year2."年".$month1."月".$day1."日";
+        }elseif($month1==$month2){
+            if($day1>$day2){
+                $safe=$year2."年".$month1."月".$day1."日";
+            }elseif($day1<$day2){
+                $year=$year2+1;
+                $safe=$year."年".$month1."月".$day1."日";
+            }elseif($day1==$day2){
+                $safe=$year2."年".$month1."月".$day1."日";
+            }
+        }elseif($month1<$month2){
+            $year=$year2+1;
+            $safe=$year."年".$month1."月".$day1."日";
+        }
+        return $safe;
+    }
+    //获取图片路径
+   public function get_uplodes_imgs($imgs){
+        $data=explode(",",$imgs);
+        foreach($data as $k => $v){
+            if(strpos($v,'www.gj2car.com') !==false){
+                $list[]=str_replace("http://www.gj2car.com/Uploads/relecar","",$v);
+            }else{
+                $list[]=str_replace("http://39.106.67.47/butler_car/Uploads/relecar/","",$v);
+            }
+        }
+        $arr=implode(",",$list);
+        return $arr;
+    }
+    //获取图片路径
+   public function get_uplodes_imgs_512($imgs){
+        $data=explode(",",$imgs);
+        foreach($data as $k => $v){
+            $url=array();
+            $name=substr($v,0,-4);
+            //$end=substr($v,-4);
+            $url=$name."xb".".jpg";
+            if(strpos($url,'www.gj2car.com') !==false){
+                $list[]=str_replace("http://www.gj2car.com/Uploads/relecar","",$url);
+            }else{
+                $list[]=str_replace("http://39.106.67.47/butler_car/Uploads/relecar/","",$url);
+            }
+            //$list[]=str_replace("http://www.gj2car.com/Uploads/relecar","",$url);
+        }
+        $arr=implode(",",$list);
+        return $arr;
+    }
+    //获取图片路径
+    public function get_uplodes_imgs_300($imgs){
+        $data=explode(",",$imgs);
+        foreach($data as $k => $v){
+            $url=array();
+            $name=substr($v,0,-4);
+            //$end=substr($v,-4);
+            $url=$name."xd".".jpg";
+            if(strpos($url,'www.gj2car.com') !==false){
+                $list[]=str_replace("http://www.gj2car.com/Uploads/relecar","",$url);
+            }else{
+                $list[]=str_replace("http://39.106.67.47/butler_car/Uploads/relecar/","",$url);
+            }
+            //$list[]=str_replace("http://www.gj2car.com/Uploads/relecar","",$url);
+        }
+        $arr=implode(",",$list);
+        return $arr;
+    }
+
+    /**
+     * [get_brand_firm_sysname 查找品牌，车系厂商，车系名称]
+     * @param  [type] $id    [父级upid]
+     * @param  [type] $level [当前级别]
+     * @return [type]        [description]
+     */
+   public function get_brand_firm_sysname($id,$level){
+        if($level == 2){
+            $br = Db::table('car_brand')->field('name,id,pin')->where("id = $id")->find();
+            // 查找品牌
+            $brand = $br['name'];
+            $pin = $br['pin'];
+        }elseif($level == 3){
+            // 查找品牌，车系厂商
+            $fi = Db::table('car_brand')->field('name,id,upid')->where("id = $id")->find();
+            $firm = $fi['name'];
+            $br = Db::table('car_brand')->field('name,id,upid,pin')->where("id = ".$fi['upid'])->find();
+            $brand = $br['name'];
+            $pin = $br['pin'];
+        }elseif($level == 4){
+            // 查找品牌，车系厂商，车系名称
+            $sys = Db::table('car_brand')->field('name,id,upid')->where("id = $id")->find();
+            $sysname = $sys['name'];
+            $fi = Db::table('car_brand')->field('name,id,upid')->where("id = ".$sys['upid'])->find();
+            $firm = $fi['name'];
+            $br = Db::table('car_brand')->field('name,id,upid,pin')->where("id = ".$fi['upid'])->find();
+            $brand = $br['name'];
+            $pin = $br['pin'];
+        }elseif($level == 5){
+            // 查找品牌，车系厂商，车系名称,车型名称
+            $ct = Db::table('car_brand')->field('name,id,upid')->where("id = $id")->find();
+            // $y_n = explode(' ',$ct['name']);
+            // foreach ($y_n as $k => $v) {
+            // 	$ct_name .= $v;
+            // }
+            // $carname = $ct_name;
+            $carname = $ct['name'];
+            $sys = Db::table('car_brand')->field('name,id,upid')->where("id = ".$ct['upid'])->find();
+            $sysname = $sys['name'];
+            $fi = Db::table('car_brand')->field('name,id,upid')->where("id = ".$sys['upid'])->find();
+            $firm = $fi['name'];
+            $br = Db::table('car_brand')->field('name,id,upid,pin')->where("id = ".$fi['upid'])->find();
+            $brand = $br['name'];
+            $pin = $br['pin'];
+        }
+
+        $data = array(
+            'brand' => $brand ? $brand : '',
+            'firm' => $firm ? $firm : '',
+            'sysname' => $sysname ? $sysname : '',
+            'carname' => $carname ? $carname : '',
+            'pin' => $pin ? $pin : '',
+        );
+        // var_dump($data);exit;
+        return $data;
     }
 
 

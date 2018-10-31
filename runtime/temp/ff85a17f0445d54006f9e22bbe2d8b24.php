@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\user\person_public.html";i:1540880118;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\user\person_public.html";i:1540965087;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -194,108 +194,47 @@ $(window).on('scroll',function(){
 							</ul>
 						</h1>
 						<ul id="che_fb0" class="p_list">
+							<?php if(!(empty($all_car) || (($all_car instanceof \think\Collection || $all_car instanceof \think\Paginator ) && $all_car->isEmpty()))): if(is_array($all_car) || $all_car instanceof \think\Collection || $all_car instanceof \think\Paginator): $i = 0; $__LIST__ = $all_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3><?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['create_time']; ?>| 郑州</p>
+									<div><span class="cprice"><b><?php echo $val['price']; ?></b>万</span>
+										<!--<span class="nprice">13.22万</span>-->
+									</div>
 								</div>
-								<div class="car_status"><img src="/static/img/shenhez .png" alt="" /></div>
-								
+								<div class="car_status">
+									<!--<img src="/static/img/shenhez .png" alt="" />-->
+								</div>
+
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/xiajia.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">编辑</p>
-									<p class="bgorg">上架</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/fabushibai.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">查看原因</p>
-									<p class="bgorg">编辑</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/fabuchengg.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg martp20">下架</p>
-									<p class="bgbor">商家推荐</p>
-									
-								</div>
-							</li>
+							<?php endforeach; endif; else: echo "" ;endif; endif; ?>
+
 						</ul>
 						<ul id="che_fb1" class="p_list" style="display: none;">
+							<?php if(!(empty($dai_audit) || (($dai_audit instanceof \think\Collection || $dai_audit instanceof \think\Paginator ) && $dai_audit->isEmpty()))): if(is_array($dai_audit) || $dai_audit instanceof \think\Collection || $dai_audit instanceof \think\Paginator): $i = 0; $__LIST__ = $dai_audit;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3><?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['create_time']; ?> | <?php echo $val['name']; ?>郑州</p>
+									<div><span class="cprice"><b><?php echo $val['price']; ?></b>万</span>
+										<!--<span class="nprice"><?php echo $val['price']; ?>万</span>-->
+									</div>
 								</div>
 								<div class="car_status"><img src="/static/img/shenhez .png" alt="" /></div>
 
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/shenhez .png" alt="" /></div>
+							<?php endforeach; endif; else: echo "" ;endif; endif; ?>
 
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/shenhez .png" alt="" /></div>
-
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/shenhez .png" alt="" /></div>
-
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/shenhez .png" alt="" /></div>
-
-							</li>
 						</ul>
 						<ul id="che_fb2" class="p_list" style="display: none;">
+							<?php if(!(empty($fabu_car) || (($fabu_car instanceof \think\Collection || $fabu_car instanceof \think\Paginator ) && $fabu_car->isEmpty()))): if(is_array($fabu_car) || $fabu_car instanceof \think\Collection || $fabu_car instanceof \think\Paginator): $i = 0; $__LIST__ = $fabu_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3>789<?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['create_time']; ?>  | 郑州</p>
+									<div><span class="cprice"><b><?php echo $val['price']; ?></b>万</span>
+										<!--<span class="nprice">13.22万</span></div>-->
 								</div>
 								<div class="car_status"><img src="/static/img/fabuchengg.png" alt="" /></div>
 								<div class="car_res">
@@ -304,52 +243,16 @@ $(window).on('scroll',function(){
 
 								</div>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/fabuchengg.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg martp20">下架</p>
-									<p class="bgbor">商家推荐</p>
-
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/fabuchengg.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg martp20">下架</p>
-									<p class="bgbor">商家推荐</p>
-
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/fabuchengg.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg martp20">下架</p>
-									<p class="bgbor">商家推荐</p>
-
-								</div>
-							</li>
+							<?php endforeach; endif; else: echo "" ;endif; endif; ?>
 						</ul>
 						<ul id="che_fb3" class="p_list" style="display: none;">
+							<?php if(!(empty($no_audit) || (($no_audit instanceof \think\Collection || $no_audit instanceof \think\Paginator ) && $no_audit->isEmpty()))): if(is_array($no_audit) || $no_audit instanceof \think\Collection || $no_audit instanceof \think\Paginator): $i = 0; $__LIST__ = $no_audit;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3>456<?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['create_time']; ?>  | 郑州</p>
+									<div><span class="cprice"><b><?php echo $val['price']; ?></b>万</span>
+										<!--<span class="nprice">13.22万</span></div>-->
 								</div>
 								<div class="car_status"><img src="/static/img/fabushibai.png" alt="" /></div>
 								<div class="car_res">
@@ -358,50 +261,31 @@ $(window).on('scroll',function(){
 									<p class="bgred">删除</p>
 								</div>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/fabushibai.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">查看原因</p>
-									<p class="bgorg">编辑</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/fabushibai.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">查看原因</p>
-									<p class="bgorg">编辑</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/fabushibai.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">查看原因</p>
-									<p class="bgorg">编辑</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
+							<?php endforeach; endif; else: echo "" ;endif; endif; ?>
 						</ul>
 						<ul id="che_fb4" class="p_list" style="display: none;">
+							<?php if(!(empty($del_audit) || (($del_audit instanceof \think\Collection || $del_audit instanceof \think\Paginator ) && $del_audit->isEmpty()))): if(is_array($del_audit) || $del_audit instanceof \think\Collection || $del_audit instanceof \think\Paginator): $i = 0; $__LIST__ = $del_audit;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="item">
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3>123<?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['create_time']; ?> | 郑州</p>
+									<div><span class="cprice"><b><?php echo $val['price']; ?></b>万</span>
+										<!--<span class="nprice">13.22万</span></div>-->
+								</div>
+								<div class="car_status"><img src="/static/img/fabushibai.png" alt="" /></div>
+								<div class="car_res">
+									<p class="bgorg">查看原因</p>
+									<p class="bgorg">编辑</p>
+									<p class="bgred">删除</p>
+								</div>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; endif; ?>
+
+						</ul>
+						<ul id="che_fb5" class="p_list" style="display: none;">
 							<li class="item">
 								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
+								<div class="car_desc"><h3>123123卡罗拉 2011款 1.8L CVT GL-i</h3>
 									<p>8.1万公里 | 2012-03 | 郑州</p>
 									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
 								</div>
@@ -412,45 +296,7 @@ $(window).on('scroll',function(){
 									<p class="bgred">删除</p>
 								</div>
 							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/xiajia.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">编辑</p>
-									<p class="bgorg">上架</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/xiajia.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">编辑</p>
-									<p class="bgorg">上架</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
-							<li class="item">
-								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
-								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
-									<p>8.1万公里 | 2012-03 | 郑州</p>
-									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
-								</div>
-								<div class="car_status"><img src="/static/img/xiajia.png" alt="" /></div>
-								<div class="car_res">
-									<p class="bgorg">编辑</p>
-									<p class="bgorg">上架</p>
-									<p class="bgred">删除</p>
-								</div>
-							</li>
+
 							<li class="item">
 								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
 								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
@@ -539,7 +385,7 @@ $(window).on('scroll',function(){
 					if(!$(this).hasClass("active")){
                         $(this).addClass("active").siblings().removeClass("active");
                         var index = $(this).attr("data-status");
-                        for (var i = 0; i< 5; i++){
+                        for (var i = 0; i< 6; i++){
                             $("#che_fb" + i).css("display", 'none')
 						}
 						$("#che_fb" + index).css("display", 'block')
