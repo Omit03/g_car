@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 	<head>
 		<meta charset="utf-8"/>
 		<title></title>
@@ -43,23 +43,24 @@
 						<h1 class="borbt"><span class="release">店铺装修</span></h1>
 						<!--<h2 class="step">店铺装修</h2>-->
 						<div class="upLoad_form">
+							<form action="{:url('user/change_shopinfo')}" enctype="multipart/form-data" method="post">
 							<ul class="storeInfo_ipt motify_ipt">
 								
 								<li><span class="my_form_tit">店铺名称：</span>
-									<div class="fleft myform_ipt"><input type="text" placeholder="请填写您的店铺名称"/></div>
+									<div class="fleft myform_ipt"><input type="text" name="shop_name" value="{$shop_info.shop_name}" placeholder="请填写您的店铺名称"/></div>
 								</li>
 								<li><span class="my_form_tit">联系电话：</span>
-									<div class="fleft myform_ipt"><input type="text" placeholder="请填写您的联系电话" /></div>
+									<div class="fleft myform_ipt"><input type="text" name="shop_phone" value="{$shop_info.shop_phone}" placeholder="请填写您的联系电话" /></div>
 								</li>
 								<li><span class="my_form_tit">店铺地址：</span>
-									<div class="fleft myform_ipt"><input type="text" placeholder="请填写您店铺的详细地址"/></div>
+									<div class="fleft myform_ipt"><input type="text" name="shop_address" value="{$shop_info.shop_address}" placeholder="请填写您店铺的详细地址"/></div>
 								</li>
 								<li><span class="my_form_tit">营业时间：</span>
-									<div class="fleft "><input type="text" placeholder="" class="startTiem"/>-<input type="text" placeholder="" class="endTiem"/></div>
+									<div class="fleft "><input type="text" placeholder="9:00" name="startTiem" value="{$shop_info.startTiem}"  class="startTiem"/>-<input type="text" name="endTiem" value="{$shop_info.endTiem}" placeholder="18:00" class="endTiem"/></div>
 								</li>
 								<li><span class="my_form_tit">店铺描述：</span>
 									<div class="fleft ">
-										<textarea name="" rows="" cols="" class="store_desc" placeholder="请简要介绍您的店铺"></textarea>
+										<textarea name="shop_desc" rows="" cols="" class="store_desc" value="{$shop_info.shop_desc}" placeholder="{$shop_info.shop_desc}"></textarea>
 										
 									</div>
 								</li>
@@ -71,19 +72,22 @@
 										       <b class="delete"><img src="/assets/computer/images/fancy_close.png" alt=""></b>
 										       </div>  -->
 										</div>
-								        <form id= "uploadForm" method='post' enctype='multipart/form-data'>
-								            <input id="file_inp" type="file" name="file" />						
+
+								            <input type="file" name="door_photo" />
 								            <div class="upLoad_pic">
 									            <img class="img_up" id="" src="__STATIC__/img/addimg.png" > 
 									            <span>点击上传图片</span>
 									        </div>
-								        </form>									        
+
 								    </div>
 
 								</li>
 							</ul>								
-							<p class="sub_btn pwd_submit">提交</p>
+							<p class="sub_btn pwd_submit"><input type="submit" value="提交"></p>
+
+							</form>
 						</div>
+
 					</div>
 				</div>
 				

@@ -35,9 +35,15 @@ class User  extends Common {
      */
     public function person_manage(){
 
+        $user_id = Session::get('user_id');
+
+        //获取店铺的数据
+        $shop_info=Db::table("user_shop")->where("user_id",$user_id)->find();
+
         $brand = $this->brand();//品牌
 
         $this->assign('brand',$brand);
+        $this->assign('shop_info',$shop_info);
         return $this->fetch();
 
     }
@@ -50,40 +56,110 @@ class User  extends Common {
         /*接收参数*/
         $data =  $this->params;
 
-//获取数据
-        $data=$_POST;
+        $user_id = Session::get('user_id');
 
-        $data['shop_id'] = 50;
+        //获取店铺的数据
+        $shop_info=Db::table("user_shop")->where("user_id",$user_id)->find();
+       // dump($shop_info);die;
+        if ($shop_info){
 
-        $info['shop_id']=$shop_id=$data['shop_id'];
-        $name=$data['name'];
-        $door_photo=$data['door_photo'];
-        $info['shop_name']=$shop_name=$data['shop_name'];
-        $info['shop_address']=$shop_address=$data['shop_address'];
-        $info['shop_phone']=$shop_phone=$data['shop_phone'];
-        $info['open_time']=$open_time=$data['open_time'];
-        $info['shop_desc']=$shop_desc=$data['shop_desc'];
-        $info['latitude']=$latitude=$data['lat'];
-        $info['longitude']=$longitude=$data['lng'];
-        if(!$shop_id || !$name || !$door_photo || !$shop_name || !$shop_address || !$shop_phone || !$open_time || !$shop_desc){
 
-            $this->return_msg('204','参数不能为空');
-        }
+            $info['shop_name']=$shop_name=$data['shop_name'];
+            $info['shop_address']=$shop_address=$data['shop_address'];
+            $info['shop_phone']=$shop_phone=$data['shop_phone'];
+
+            $data['open_time'] = $data['startTiem'] ."-".$data['endTiem'];
+            $info['open_time']=$open_time=$data['open_time'];
+            $info['shop_desc']=$shop_desc=$data['shop_desc'];
+//        $info['latitude']=$latitude=$data['lat'];
+//        $info['longitude']=$longitude=$data['lng'];
+            if( !$shop_name || !$shop_address || !$shop_phone || !$open_time || !$shop_desc){
+
+                $this->return_msg('204','参数不能为空');
+            }
+
+            if (empty($data['door_photo'])){
+
+                $info['mimg'] = $shop_info['mimg'];
+
+            }else{
+
+                $info['mimg'] = $this->upload_file($data['door_photo'],'door_photo');
+            }
+
+
 //        $info['mimg']=str_replace("http://www.gj2car.com/Uploads/relecar/","",$door_photo);
 //        if($info['mimg']==$door_photo){
 //            $info['mimg']=str_replace("http://39.106.67.47/butler_car/Uploads/relecar/","",$door_photo);
 //        }
-        //获取店铺的数据
-        $shop_info=Db::table("user_shop")->where("shop_id",$shop_id)->find();
-        if(!$shop_info){
 
-            $this->return_msg('204','店铺的参数错误');
+
+            //修改真实的姓名
+            //$res1=M("user")->save(array("user_id"=>$shop_info['user_id'],"username"=>$name));
+            //修改店铺的信息
+
+            //  dump($info);die;
+            $res=Db::table("user_shop")->where('shop_id',$shop_info['shop_id'])->update([
+                "shop_name" =>$info['shop_name'],
+                "shop_address" =>$info['shop_address'],
+                "shop_phone" =>$info['shop_phone'],
+                "open_time" =>$info['open_time'],
+                "shop_desc" =>$info['shop_desc'],
+                "mimg" =>$info['mimg'],
+                "startTiem" =>$data['startTiem'],
+                "endTiem" =>$data['endTiem'],
+
+            ]);
+
+        }else{
+
+            // $data['shop_id'] = 50;
+
+            //$info['shop_id']=$shop_id=$data['shop_id'];
+            // $name=$data['name'];
+            $door_photo=$data['door_photo'];
+            $info['shop_name']=$shop_name=$data['shop_name'];
+            $info['shop_address']=$shop_address=$data['shop_address'];
+            $info['shop_phone']=$shop_phone=$data['shop_phone'];
+
+            $data['open_time'] = $data['startTiem'] ."-".$data['endTiem'];
+            $info['open_time']=$open_time=$data['open_time'];
+            $info['shop_desc']=$shop_desc=$data['shop_desc'];
+//        $info['latitude']=$latitude=$data['lat'];
+//        $info['longitude']=$longitude=$data['lng'];
+            if(!$door_photo || !$shop_name || !$shop_address || !$shop_phone || !$open_time || !$shop_desc){
+
+                $this->return_msg('204','参数不能为空');
+            }
+
+            $info['mimg'] = $this->upload_file($data['door_photo'],'door_photo');
+//        $info['mimg']=str_replace("http://www.gj2car.com/Uploads/relecar/","",$door_photo);
+//        if($info['mimg']==$door_photo){
+//            $info['mimg']=str_replace("http://39.106.67.47/butler_car/Uploads/relecar/","",$door_photo);
+//        }
+
+
+            //修改真实的姓名
+            //$res1=M("user")->save(array("user_id"=>$shop_info['user_id'],"username"=>$name));
+            //修改店铺的信息
+
+            //  dump($info);die;
+            $res=Db::table("user_shop")->insert([
+                "user_id" =>$user_id,
+                "shop_name" =>$info['shop_name'],
+                "shop_address" =>$info['shop_address'],
+                "shop_phone" =>$info['shop_phone'],
+                "open_time" =>$info['open_time'],
+                "shop_desc" =>$info['shop_desc'],
+                "mimg" =>$info['mimg'],
+                "startTiem" =>$data['startTiem'],
+                "endTiem" =>$data['endTiem'],
+
+            ]);
         }
-        //修改真实的姓名
-        //$res1=M("user")->save(array("user_id"=>$shop_info['user_id'],"username"=>$name));
-        //修改店铺的信息
-        $res2=M("user_shop")->save($info);
-        if($res2){
+
+
+        if($res){
 
             $this->success('成功','user/person_manage');
         }else{

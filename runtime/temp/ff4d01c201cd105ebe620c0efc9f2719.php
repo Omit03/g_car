@@ -1,6 +1,6 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\user\person_manage.html";i:1541061813;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_history.html";i:1540878978;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 	<head>
 		<meta charset="utf-8"/>
 		<title></title>
@@ -8,9 +8,8 @@
 	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css" />
 	<style>
-
+	
 	</style>
 	<body>
 	<div class="header">
@@ -157,6 +156,7 @@ $(window).on('scroll',function(){
 </script>
 
 	</div>
+
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
@@ -168,68 +168,69 @@ $(window).on('scroll',function(){
 						</div>
 						<div class="tab_choose">
 							<ul>
-								<li class="active"><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class="active"><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_feedback.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_order.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">店铺装修</span></h1>
-						<!--<h2 class="step">店铺装修</h2>-->
-						<div class="upLoad_form">
-							<form action="<?php echo url('user/change_shopinfo'); ?>" enctype="multipart/form-data" method="post">
-							<ul class="storeInfo_ipt motify_ipt">
-								
-								<li><span class="my_form_tit">店铺名称：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_name" value="<?php echo $shop_info['shop_name']; ?>" placeholder="请填写您的店铺名称"/></div>
-								</li>
-								<li><span class="my_form_tit">联系电话：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_phone" value="<?php echo $shop_info['shop_phone']; ?>" placeholder="请填写您的联系电话" /></div>
-								</li>
-								<li><span class="my_form_tit">店铺地址：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_address" value="<?php echo $shop_info['shop_address']; ?>" placeholder="请填写您店铺的详细地址"/></div>
-								</li>
-								<li><span class="my_form_tit">营业时间：</span>
-									<div class="fleft "><input type="text" placeholder="9:00" name="startTiem" value="<?php echo $shop_info['startTiem']; ?>"  class="startTiem"/>-<input type="text" name="endTiem" value="<?php echo $shop_info['endTiem']; ?>" placeholder="18:00" class="endTiem"/></div>
-								</li>
-								<li><span class="my_form_tit">店铺描述：</span>
-									<div class="fleft ">
-										<textarea name="shop_desc" rows="" cols="" class="store_desc" value="<?php echo $shop_info['shop_desc']; ?>" placeholder="<?php echo $shop_info['shop_desc']; ?>"></textarea>
-										
-									</div>
-								</li>
-								<li><span class="my_form_tit">上传门头：</span>
-									<div class="picture">
-										<div class='upload'>
-									      <!--  <div class="upLoadImg">
-										          <span class="center_img"><img class="imgg" id="" src="/assets/computer/images/img_406.png"></span>
-										       <b class="delete"><img src="/assets/computer/images/fancy_close.png" alt=""></b>
-										       </div>  -->
-										</div>
+						<h1 class="borbt"><span class="release">浏览记录</span>
+							<ul class="fright sel_status">
+								<!--<li class="active" data-status='1'><b></b><span>全部</span></li>-->
+								<li class="active" data-status='1'><b></b><span>新车</span></li>
+								<li data-status='0'><b></b><span>二手车</span></li>
+								<li data-status='0'><b></b><span>0首付</span></li>
+							</ul>
+						</h1>
+						<h2 class="step"></h2>
+						 <ul class="list browse_car">
 
-								            <input type="file" name="door_photo" />
-								            <div class="upLoad_pic">
-									            <img class="img_up" id="" src="/static/img/addimg.png" > 
-									            <span>点击上传图片</span>
-									        </div>
+							 <!--新车-->
+                           <?php if(!(empty($newcar) || (($newcar instanceof \think\Collection || $newcar instanceof \think\Paginator ) && $newcar->isEmpty()))): if(is_array($newcar) || $newcar instanceof \think\Collection || $newcar instanceof \think\Paginator): $i = 0; $__LIST__ = $newcar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="items4">
+								<a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
+								<a href="" class="car_desc">
+									<h3><?php echo $val['name']; ?></h3>
+									<p><span class="fisrt_pay">首付<b><?php echo $val['shoufu']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									<div class="operate_user"><span class="see_user">查看</span><a href="<?php echo url('user/person_his_del'); ?>?id=<?php echo $val['id']; ?>"><span class="del_user">删除</span></a></div>
+								</a>
+							</li>
+							 <?php endforeach; endif; else: echo "" ;endif; endif; ?>
 
-								    </div>
+						   <!--二手车-->
 
-								</li>
-							</ul>								
-							<p class="sub_btn pwd_submit"><input type="submit" value="提交"></p>
+							 <?php if(!(empty($oldcar) || (($oldcar instanceof \think\Collection || $oldcar instanceof \think\Paginator ) && $oldcar->isEmpty()))): if(is_array($oldcar) || $oldcar instanceof \think\Collection || $oldcar instanceof \think\Paginator): $i = 0; $__LIST__ = $oldcar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
+								 <a href="" class="car_desc">
+									 <h3><?php echo $val['name']; ?></h3>
+									 <p><span class="fisrt_pay">里程<b><?php echo $val['licheng']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><a href="<?php echo url('user/person_his_del'); ?>?id=<?php echo $val['id']; ?>"><span class="del_user">删除</span></a></div>
+								 </a>
+							 </li>
+							 <?php endforeach; endif; else: echo "" ;endif; endif; ?>
 
-							</form>
-						</div>
+							 <!--零首付-->
 
+							 <?php if(!(empty($zerocar) || (($zerocar instanceof \think\Collection || $zerocar instanceof \think\Paginator ) && $zerocar->isEmpty()))): if(is_array($zerocar) || $zerocar instanceof \think\Collection || $zerocar instanceof \think\Paginator): $i = 0; $__LIST__ = $zerocar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
+								 <a href="" class="car_desc">
+									 <h3><?php echo $val['name']; ?></h3>
+									 <p><span class="fisrt_pay">首付<b><?php echo $val['shoufu']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><a href="<?php echo url('user/person_his_del'); ?>?id=<?php echo $val['id']; ?>"><span class="del_user">删除</span></a></div>
+								 </a>
+							 </li>
+							 <?php endforeach; endif; else: echo "" ;endif; endif; ?>
+						</ul>
 					</div>
 				</div>
 				
@@ -292,12 +293,32 @@ $(window).on('scroll',function(){
 	})
 </script>
 	</div>
+		
 		<div class="mask1"></div>
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
 	<script>		
 		$(function(){			
 
+//			手机号隐藏中间4位
+			$(".uphone").text($(".uphone").text().substring(0, 3) + "****" + $(".uphone").text().substring(7, 11));
+			//加载公用头部和底部
+
+			$(".sel_status li").each(function(){
+				var that=$(this);
+				$(that).click(function(){
+				var status=$(this).attr("data-status");
+					if(status==1){
+						$(this).attr("data-status",0);
+						$(this).removeClass("active")
+					}else{
+						$(this).attr("data-status",1);
+						$(this).addClass("active").siblings().removeClass("active")
+					}
+				
+				})
+			})
+			
 			//加载公用头部和底部
 		    $(".header").load("templates/header.html");
 //		    $(".footer").load("templates/footer.html");
