@@ -230,6 +230,10 @@ class Common extends Controller{
                 'user_phone' =>'number',//两种方式 有正则就用数组形式，没有就用下面也行
                 'user_pwd'  =>'number',
             ),
+            'login_sms' => array(
+                'user_phone' =>'number',//两种方式 有正则就用数组形式，没有就用下面也行
+                'code'  =>'number',
+            ),
 
             'upload_head_img' => array(
                 'user_id' =>['require','number'],//两种方式 有正则就用数组形式，没有就用下面也行
@@ -237,9 +241,7 @@ class Common extends Controller{
             ),
 
             'change_pwd' => array(
-                'user_phone' =>['require','number'],//两种方式 有正则就用数组形式，没有就用下面也行
-                'user_ini_pwd'  =>'require|length:32',
-                'user_pwd'  =>'require|length:32',
+                'user_phone' =>'',//两种方式 有正则就用数组形式，没有就用下面也行
             ),
             'find_pwd' => array(
                 'user_phone' =>['require','number'],//两种方式 有正则就用数组形式，没有就用下面也行
@@ -247,9 +249,8 @@ class Common extends Controller{
                 'user_pwd'  =>'require|length:32',
             ),
             'bind_phone' => array(
-                'user_id' =>['require','number'],//两种方式 有正则就用数组形式，没有就用下面也行
-                'code'  =>'require|length:6',
-                'phone'  =>['require','regex'=>'/^[1][3,4,5,7,8][0-9]{9}$/'],
+                'code'  =>'length:6',
+                'phone'  =>'number'
             ),
             'bind_email' => array(
                 'user_id' =>['require','number'],//两种方式 有正则就用数组形式，没有就用下面也行

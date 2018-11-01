@@ -1091,7 +1091,7 @@ class User  extends Common {
 
     }
     /*
-     * 登录
+     * 密码登录
      */
 
     public function login(){
@@ -1144,6 +1144,38 @@ class User  extends Common {
 
     }
 
+    /*
+     * 验证码登录
+     */
+    public function login_sms(){
+
+
+        $data = $this->params;
+
+        /* 检查验证码*/
+
+        $this->check_code($data['user_phone'],$data['code']);
+
+        $where['phone'] = $data['user_phone'];
+
+        $db_res = Db::table('user')->field('user_id,token,salt,phone,password,nickname,header_pic,sex,birthday,qq_token,weixin_token')->where($where)->find();
+
+        $log = new newLog('booklog');
+
+        $log ->reclog(" 验证码登录时间: ".date('Y-m-d H:i:s',time()));
+
+        $log ->reclog("登录者 : ".$db_res['phone']);
+
+        Session::set('user_id',$db_res['user_id']);
+
+        Session::set('phone',$db_res['phone']);
+
+        unset($db_res['login_password']); //密码永不返回
+
+        $this->redirect('user/person_manage');
+
+
+    }
     /*
      * @time
      * @user_name
@@ -1244,7 +1276,7 @@ class User  extends Common {
 
         $data = $this->params;
 
-
+        $data['user_phone'] = Session::get('phone');
         /*检查用户名并取出密码*/
 
         $user_name_type = $this->check_username($data['user_phone']);
@@ -1257,18 +1289,15 @@ class User  extends Common {
                 $where['phone'] = $data['user_phone'];
 
                 break;
-            case 'email':
-
-                $this->check_exist($data['user_name'],'email',1);
-
-                $where['email'] = $data['user_name'];
-                break;
         }
+
+        $this->check_code($data['user_phone'],$data['code']);
+
         /*判断原始密码是否正确*/
 
         $db_ini_pwd = Db::name('user')->where($where)->find();
 
-        if($db_ini_pwd['password'] !== $data['user_ini_pwd']){
+        if($db_ini_pwd['password'] !== md5($data['user_ini_pwd'].$db_ini_pwd['salt'])){
 
             $this->return_msg(400,'原始密码错误');
         }
@@ -1343,15 +1372,22 @@ class User  extends Common {
 
           /*修改数据库*/
 
-          $res = Db::name('user')->where('user_id',$data['user_id'])->setField('phone',$data['phone']);
+          $user_id = Session::get('user_id');
+
+          $res = Db::name('user')->where('user_id',$user_id)->setField('phone',$data['phone']);
 
           if ($res !== false){
 
-              $this->return_msg(200,'绑定成功');
+
+              Session::set('phone',$data['phone']);
+              $this->success('绑定成功','person_info');
+
+              //$this->return_msg(200,'绑定成功');
 
           }else{
+              $this->error('绑定失败');
 
-              $this->return_msg(400,'绑定失败');
+              //$this->return_msg(400,'绑定失败');
           }
       }
 

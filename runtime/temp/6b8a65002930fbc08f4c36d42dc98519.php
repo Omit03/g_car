@@ -1,88 +1,17 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"G:\xampp\htdocs\car\public/../app/index\view\user\person_info.html";i:1541071878;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"G:\xampp\htdocs\car\public/../app/index\view\user\person_order.html";i:1540630516;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
 		<title></title>
 	</head>
-		<link rel="icon" type="image/x-icon" href="favicon.png">
+	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css" />
-	<link rel="stylesheet" href="/static/js/theme/default/laydate.css" />
-	<script src="/static/js/jquery-1.11.0.min.js"></script>
 
-	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<style>
-		.tab_info li{float: left;margin-left: 60px;font-size: 20px;margin-top: 40px;cursor: pointer;}
-		.tab_info .active{color: #FF802C;}
-		.editCont{margin-top: 44px;margin-left: 50px;}
-		.info_base .ipt{width:400px;height: 50px;line-height: 50px ;}
-		.info_base .ipt input{background: #fcfcfc;width: 275px;height: 35px;line-height: 35px;border: 1px solid #ababab;}
-		.info_base .ipt input[type='radio']{width: 18px;height:18px;margin-right:5px;}
-		.info_base span{display: block;float: left;width:125px;text-align: right;padding-right: 20px;font-size: 18px;}
-		.avatar span{margin-top: 50px;}
-		.editCont .sub_btn{margin-left:120px;width: 275px;}
+	
 	</style>
-	<script>
-        var itime = 59; //定义一个变量，倒计时初始化，从59秒开始
-        function getTime() {
-            if (itime >= 0) {
-                if (itime == 0) {
-                    //倒计时变成0时，
-                    //要清除计时器
-                    clearTimeout(act);
-                    //设置按钮为初始状态
-                    $("#getCodeBtn").val('免费获取手机验证码').attr('disabled', false);
-                    itime = 59;
-                } else {
-                    //延迟一秒中执行该函数。
-                    var act = setTimeout('getTime()', 1000);
-                    //把倒计时的秒显示到按钮中
-                    $("#getCodeBtn").val('还剩' + itime + '秒');
-                    itime = itime - 1;
-                }
-            }
-        }
-        $(function() {
-            //定义一个函数,用于完成倒计时效果
-            $("#getCodeBtn").click(function() {
-                //获取输入的手机号码
-                var telphone = $("#telphone").val();
-
-                if(telphone) {
-                    //ajax请求文件，调用短信发送的接口
-                    $.ajax({
-                        type: 'get',
-                        url: '<?php echo url("code/get_code"); ?>',
-                        data:{
-
-                            user_phone:telphone,
-                            is_exist:0
-
-                        },
-                        success: function(msg) {
-                            //判断调用短信发送接口是否成功，
-                            if (msg == 1) {
-                                //调用接口已经成功
-                                alert('发送失败');
-                                $("#getCodeBtn").attr('disabled', true); //要禁用该按钮
-                                //调用一个函数，完成倒计时效果。
-                                getTime();
-                            } else{
-                                alert('短信验证码已经发送成功');
-                                $("#getCodeBtn").attr('disabled', true);
-                                getTime();
-                            }
-                        }
-                    });
-                } else{
-                    alert('请输入手机号');
-                }
-
-            });
-        });
-	</script>
 	<body>
 	<div class="header">
 		<div class="site_nav">
@@ -228,6 +157,7 @@ $(window).on('scroll',function(){
 </script>
 
 	</div>
+
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
@@ -244,76 +174,46 @@ $(window).on('scroll',function(){
 								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class="active"><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_collect.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_history.html"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_feedback.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_order.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class="active"><a href="person_order.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">个人资料</span></h1>
-						<ul class="tab_info gj_clear">
-							<li class="active">基本信息</li>
-							<li>绑定设置</li>
-							<li>修改密码</li>
-						</ul>
-						<div class="editCont">
-							<div class="info_base info_ipt">
-								<form action="<?php echo url('user/set_userinfo'); ?>" enctype="multipart/form-data"  method="post">
-								<!--<div class="avatar"><span>头像: </span><img src="/static/img/yhtx.png" alt="" /><input type="file" name="header_pic"> </div>-->
-								<div class="ipt"><span>昵称：</span><input type="nickname"  name="nickname" placeholder="<?php echo $res['nickname']; ?>"/></div>
-								<div  class="ipt"><span>所在地：</span><input type="address" name="address" placeholder="<?php echo $res['address']; ?>"/></div>
-								<div class="ipt"><span>性别：</span><input type="radio1" placeholder="<?php echo $res['sex']; ?>" name="sex"/></div>
-								<div class="ipt"><span>出生年月：</span><input type="text" name="birthday" placeholder="<?php echo $res['birthday']; ?>" id="year"/></div>
-								<p class="sub_btn submit">修改<input type="submit" value="提交" /></p>
-								</form>
-							</div>
-							<div style="display: none;" class="info_ipt">
-								<div class="upLoad_form">
-									<form action="<?php echo url('user/bind_phone'); ?>" enctype="multipart/form-data"  method="post">
-							<ul class="motify_ipt">
-								<li><span class="my_form_tit">手机号：</span><p class="uphone" ><?php echo \think\Session::get('phone'); ?></p></li>
-								<li><span class="my_form_tit">新手机号：</span>
-									<div class="fleft myform_ipt"><input type="text" name="phone" id="telphone" placeholder="请输入您新绑定的手机号"/></div>
-								</li>
-								<li><span class="my_form_tit">验证码：</span>
-									<div class="fleft myform_ipt"><input type="text" name="code" placeholder="请输入您的验证码"/><span class="getcode"><input type="button" value="获取手机验证码" id="getCodeBtn" style="width: 105px;height: 40px;font-size:12px; padding-left:1px;color:#333; " /></span></div>
-								</li>
+						<h1 class="borbt"><span class="release">我的预约 </span>
+							<ul class="fright sel_status">
+								<li class="active" data-status='1'><b></b><span>全部</span></li>
+								<li data-status='0'><b></b><span>新车</span></li>
+								<li data-status='0'><b></b><span>二手车</span></li>
+								<li data-status='0'><b></b><span>零首付</span></li>
 							</ul>
-										<p class="sub_btn pwd_submit"><input type="submit" /></p>
-									</form>
-
-						</div>
-							</div>
-							<div style="display: none;" class="motifypwd info_ipt">
-								<div class="upLoad_form">
-									<form action="<?php echo url('user/change_pwd'); ?>" enctype="multipart/form-data"  method="post">
-									<ul class="motify_ipt">
-										<li><span class="my_form_tit">手机号：</span><p class="uphone" ><span id="phones"><?php echo \think\Session::get('phone'); ?></span></p></li>
-										
-										<li><span class="my_form_tit">原密码：</span>
-											<div class="fleft myform_ipt"><input type="password" name="user_ini_pwd" placeholder="请输入您的验证码"/></div>
-										</li>
-										<li><span class="my_form_tit">新密码：</span>
-											<div class="fleft myform_ipt"><input type="password"  name="user_pwd" placeholder="请输入您新绑定的手机号"/><span class="getcode"><input type="button" value="获取手机验证码" id="getCodeBtns" style="width: 105px;height: 40px;font-size:12px; padding-left:1px;color:#333; " /></span></div>
-										</li>
-										<li><span class="my_form_tit">验证码：</span>
-											<div class="fleft myform_ipt"><input type="text" name="code" placeholder="请输入您的验证码" /></div>
-										</li>
-									</ul>
-									<p class="sub_btn pwd_submit"><input type="submit"/></p>
-									</form>
+						</h1>
+						<ul class="p_list">
+							<?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="item">
+								<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>">
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3><?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['car_cardtime']; ?> | <?php echo $val['shop_name']; ?></p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice"><?php echo $val['price']; ?>万</span></div>
 								</div>
-							</div>
-						</div>
+								<div class="order_res">
+									<p>预约时间：2018-07-27  15:00</p>
+									<span class="order_des">详 情</span>
+								</div>
+								</a>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+						</ul>
 					</div>	
 				</div>
 			</div>
 		</div>
-	<div class="footer">
-		
+		<div class="footer">
+			
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="/static/img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -368,79 +268,34 @@ $(window).on('scroll',function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
 </script>
-	</div>
+		</div>
 		
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
 	<script src="/static/js/laydate.js"></script>
+	<script src="/static/js/imgUp.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
-	<script>
-        var itime = 59; //定义一个变量，倒计时初始化，从59秒开始
-        function getTime() {
-            if (itime >= 0) {
-                if (itime == 0) {
-                    //倒计时变成0时，
-                    //要清除计时器
-                    clearTimeout(act);
-                    //设置按钮为初始状态
-                    $("#getCodeBtns").val('免费获取手机验证码').attr('disabled', false);
-                    itime = 59;
-                } else {
-                    //延迟一秒中执行该函数。
-                    var act = setTimeout('getTime()', 1000);
-                    //把倒计时的秒显示到按钮中
-                    $("#getCodeBtns").val('还剩' + itime + '秒');
-                    itime = itime - 1;
-                }
-            }
-        }
-        $(function() {
-            //定义一个函数,用于完成倒计时效果
-            $("#getCodeBtns").click(function() {
-                //获取输入的手机号码
-                var phones = '<?php echo \think\Session::get('phone'); ?>';
-
-                if(phones) {
-                    //ajax请求文件，调用短信发送的接口
-                    $.ajax({
-                        type: 'get',
-                        url: '<?php echo url("code/get_code"); ?>',
-                        data:{
-
-                            user_phone:phones,
-                            is_exist:0
-
-                        },
-                        success: function(msg) {
-                            //判断调用短信发送接口是否成功，
-                            if (msg == 1) {
-                                //调用接口已经成功
-                                alert('发送失败');
-                                $("#getCodeBtns").attr('disabled', true); //要禁用该按钮
-                                //调用一个函数，完成倒计时效果。
-                                getTime();
-                            } else{
-                                alert('短信验证码已经发送成功');
-                                $("#getCodeBtns").attr('disabled', true);
-                                getTime();
-                            }
-                        }
-                    });
-                } else{
-                    alert('请输入手机号');
-                }
-
-            });
-        });
-	</script>
 	<script>		
-		$(function(){			
-		$(".uphone").text($(".uphone").text().substring(0, 3) + "****" + $(".uphone").text().substring(7, 11));
-		$(".tab_info li").click(function(){
-			$(this).addClass('active').siblings().removeClass('active');
-			var i=$(this).index();
-			$(".info_ipt").eq(i).show().siblings().hide()
-		})
+		$(function(){		
+			$(".sel_status li").each(function(){
+				var that=$(this);
+				$(that).click(function(){
+				var status=$(this).attr("data-status");
+					if(status==1){
+						$(this).attr("data-status",0);
+						$(this).removeClass("active")
+					}else{
+						$(this).attr("data-status",1);
+						$(this).addClass("active").siblings().removeClass("active")
+					}
+				
+			})
+			})
+			
+			//加载公用头部和底部
+		   // $(".header").load("templates/header.html");
+//		    $(".footer").load("templates/footer.html");
+
 			
 	})
 </script>

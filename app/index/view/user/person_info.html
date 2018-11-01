@@ -8,7 +8,10 @@
 	<link rel="stylesheet" href="__STATIC__/css/style.css" />
 	<link rel="stylesheet" href="__STATIC__/css/other.css" />
 	<link rel="stylesheet" href="__STATIC__/css/iconfont.css" />
-	<link rel="stylesheet" href="__STATIC__/js/theme/default/laydate.css" />	
+	<link rel="stylesheet" href="__STATIC__/js/theme/default/laydate.css" />
+	<script src="__STATIC__/js/jquery-1.11.0.min.js"></script>
+
+	<script src="__STATIC__/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<style>
 		.tab_info li{float: left;margin-left: 60px;font-size: 20px;margin-top: 40px;cursor: pointer;}
 		.tab_info .active{color: #FF802C;}
@@ -20,10 +23,69 @@
 		.avatar span{margin-top: 50px;}
 		.editCont .sub_btn{margin-left:120px;width: 275px;}
 	</style>
+	<script>
+        var itime = 59; //定义一个变量，倒计时初始化，从59秒开始
+        function getTime() {
+            if (itime >= 0) {
+                if (itime == 0) {
+                    //倒计时变成0时，
+                    //要清除计时器
+                    clearTimeout(act);
+                    //设置按钮为初始状态
+                    $("#getCodeBtn").val('免费获取手机验证码').attr('disabled', false);
+                    itime = 59;
+                } else {
+                    //延迟一秒中执行该函数。
+                    var act = setTimeout('getTime()', 1000);
+                    //把倒计时的秒显示到按钮中
+                    $("#getCodeBtn").val('还剩' + itime + '秒');
+                    itime = itime - 1;
+                }
+            }
+        }
+        $(function() {
+            //定义一个函数,用于完成倒计时效果
+            $("#getCodeBtn").click(function() {
+                //获取输入的手机号码
+                var telphone = $("#telphone").val();
+
+                if(telphone) {
+                    //ajax请求文件，调用短信发送的接口
+                    $.ajax({
+                        type: 'get',
+                        url: '{:url("code/get_code")}',
+                        data:{
+
+                            user_phone:telphone,
+                            is_exist:0
+
+                        },
+                        success: function(msg) {
+                            //判断调用短信发送接口是否成功，
+                            if (msg == 1) {
+                                //调用接口已经成功
+                                alert('发送失败');
+                                $("#getCodeBtn").attr('disabled', true); //要禁用该按钮
+                                //调用一个函数，完成倒计时效果。
+                                getTime();
+                            } else{
+                                alert('短信验证码已经发送成功');
+                                $("#getCodeBtn").attr('disabled', true);
+                                getTime();
+                            }
+                        }
+                    });
+                } else{
+                    alert('请输入手机号');
+                }
+
+            });
+        });
+	</script>
 	<body>
 	<div class="header">
 		{include file="public/header"}
-	</
+	</div>
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
@@ -68,34 +130,39 @@
 							</div>
 							<div style="display: none;" class="info_ipt">
 								<div class="upLoad_form">
+									<form action="{:url('user/bind_phone')}" enctype="multipart/form-data"  method="post">
 							<ul class="motify_ipt">
-								<li><span class="my_form_tit">手机号：</span><p class="uphone">1536232514</p></li>
+								<li><span class="my_form_tit">手机号：</span><p class="uphone" >{$Think.session.phone}</p></li>
 								<li><span class="my_form_tit">新手机号：</span>
-									<div class="fleft myform_ipt"><input type="password" placeholder="请输入您新绑定的手机号"/></div>
+									<div class="fleft myform_ipt"><input type="text" name="phone" id="telphone" placeholder="请输入您新绑定的手机号"/></div>
 								</li>
 								<li><span class="my_form_tit">验证码：</span>
-									<div class="fleft myform_ipt"><input type="text" placeholder="请输入您的验证码"/><span class="getcode">获取验证码</span></div>
+									<div class="fleft myform_ipt"><input type="text" name="code" placeholder="请输入您的验证码"/><span class="getcode"><input type="button" value="获取手机验证码" id="getCodeBtn" style="width: 105px;height: 40px;font-size:12px; padding-left:1px;color:#333; " /></span></div>
 								</li>
 							</ul>
-							<p class="sub_btn pwd_submit">提交</p>
+										<p class="sub_btn pwd_submit"><input type="submit" /></p>
+									</form>
+
 						</div>
 							</div>
 							<div style="display: none;" class="motifypwd info_ipt">
 								<div class="upLoad_form">
+									<form action="{:url('user/change_pwd')}" enctype="multipart/form-data"  method="post">
 									<ul class="motify_ipt">
-										<li><span class="my_form_tit">手机号：</span><p class="uphone">1536232514</p></li>
+										<li><span class="my_form_tit">手机号：</span><p class="uphone" ><span id="phones">{$Think.session.phone}</span></p></li>
 										
 										<li><span class="my_form_tit">原密码：</span>
-											<div class="fleft myform_ipt"><input type="password" placeholder="请输入您的验证码"/></div>
+											<div class="fleft myform_ipt"><input type="password" name="user_ini_pwd" placeholder="请输入您的验证码"/></div>
 										</li>
 										<li><span class="my_form_tit">新密码：</span>
-											<div class="fleft myform_ipt"><input type="password"  placeholder="请输入您新绑定的手机号"/><span class="getcode">获取验证码</span></div>
+											<div class="fleft myform_ipt"><input type="password"  name="user_pwd" placeholder="请输入您新绑定的手机号"/><span class="getcode"><input type="button" value="获取手机验证码" id="getCodeBtns" style="width: 105px;height: 40px;font-size:12px; padding-left:1px;color:#333; " /></span></div>
 										</li>
-										<li><span class="my_form_tit">确认密码：</span>
-											<div class="fleft myform_ipt"><input type="password" placeholder="请输入您的验证码" /></div>
+										<li><span class="my_form_tit">验证码：</span>
+											<div class="fleft myform_ipt"><input type="text" name="code" placeholder="请输入您的验证码" /></div>
 										</li>
-									</ul>								
-									<p class="sub_btn pwd_submit">提交</p>
+									</ul>
+									<p class="sub_btn pwd_submit"><input type="submit"/></p>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -111,6 +178,65 @@
 	<script src="__STATIC__/js/jquery-1.11.0.min.js"></script>
 	<script src="__STATIC__/js/laydate.js"></script>
 	<script src="__STATIC__/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+        var itime = 59; //定义一个变量，倒计时初始化，从59秒开始
+        function getTime() {
+            if (itime >= 0) {
+                if (itime == 0) {
+                    //倒计时变成0时，
+                    //要清除计时器
+                    clearTimeout(act);
+                    //设置按钮为初始状态
+                    $("#getCodeBtns").val('免费获取手机验证码').attr('disabled', false);
+                    itime = 59;
+                } else {
+                    //延迟一秒中执行该函数。
+                    var act = setTimeout('getTime()', 1000);
+                    //把倒计时的秒显示到按钮中
+                    $("#getCodeBtns").val('还剩' + itime + '秒');
+                    itime = itime - 1;
+                }
+            }
+        }
+        $(function() {
+            //定义一个函数,用于完成倒计时效果
+            $("#getCodeBtns").click(function() {
+                //获取输入的手机号码
+                var phones = '{$Think.session.phone}';
+
+                if(phones) {
+                    //ajax请求文件，调用短信发送的接口
+                    $.ajax({
+                        type: 'get',
+                        url: '{:url("code/get_code")}',
+                        data:{
+
+                            user_phone:phones,
+                            is_exist:0
+
+                        },
+                        success: function(msg) {
+                            //判断调用短信发送接口是否成功，
+                            if (msg == 1) {
+                                //调用接口已经成功
+                                alert('发送失败');
+                                $("#getCodeBtns").attr('disabled', true); //要禁用该按钮
+                                //调用一个函数，完成倒计时效果。
+                                getTime();
+                            } else{
+                                alert('短信验证码已经发送成功');
+                                $("#getCodeBtns").attr('disabled', true);
+                                getTime();
+                            }
+                        }
+                    });
+                } else{
+                    alert('请输入手机号');
+                }
+
+            });
+        });
+	</script>
 	<script>		
 		$(function(){			
 		$(".uphone").text($(".uphone").text().substring(0, 3) + "****" + $(".uphone").text().substring(7, 11));

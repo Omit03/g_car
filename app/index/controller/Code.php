@@ -47,7 +47,7 @@ class Code extends Common
 
 
         /* 检测手机号是否存在*/
-        $this->check_exist($phone,$type,$exist);
+        //$this->check_exist($phone,$type,$exist);
 
 
         /* 检查验证码评率 30秒一次  ? 代表session 是否存在*/
