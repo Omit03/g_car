@@ -72,7 +72,7 @@
 								 <a href="javascript:;" class="car_desc">
 									 <h3>{$val.name}</h3>
 									 <p><span class="fisrt_pay">首付<b>{$val.shoufu}</b>万</span><span class="padlt12">指导价{$val.price}万</span></p>
-									 <div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+									 <div class="operate_user"><span class="see_user">查看</span><a href="{:url('user/collect_del')}?id={$val.id}"><span class="del_user">删除</span></a></div>
 								 </a>
 							 </li>
 							 {/volist}
@@ -85,7 +85,7 @@
 								 <a href="javascript:;" class="car_desc">
 									 <h3>{$val.name}</h3>
 									 <p><span class="fisrt_pay">首付<b>{$val.shoufu}</b>万</span><span class="padlt12">指导价{$val.price}万</span></p>
-									 <div class="operate_user"><span class="see_user">查看</span><span class="del_user">删除</span></div>
+									 <div class="operate_user"><span class="see_user">查看</span><a href="{:url('user/collect_del')}?id={$val.id}"><span class="del_user">删除</span></a></div>
 								 </a>
 							 </li>
 							 {/volist}

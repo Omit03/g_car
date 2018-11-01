@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-10-23 10:11:37
+Date: 2018-11-01 17:09:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,5 +34,6 @@ CREATE TABLE `car_collect` (
   `licheng` varchar(200) NOT NULL DEFAULT '0' COMMENT '二手车里程',
   `shoufu` varchar(100) NOT NULL DEFAULT '0' COMMENT '首付',
   `yuegong` varchar(250) NOT NULL DEFAULT '0' COMMENT '月供',
+  `is_del` tinyint(3) NOT NULL DEFAULT '0' COMMENT '0代表正常 1代表删除',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;

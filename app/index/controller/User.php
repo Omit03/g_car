@@ -853,7 +853,7 @@ class User  extends Common {
 
         $data = $this->params;
 
-       $res = Db::table('car_collect')->where('id',$data['id'])->delete();
+       $res = Db::table('car_collect')->where('id',$data['id'])->setField('is_del',1);
 
         if ($res){
 

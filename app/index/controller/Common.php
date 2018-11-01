@@ -1932,12 +1932,16 @@ class Common extends Controller{
      */
     public function car_collect_list($type){
 
-        $res = Db::table('car_collect')->where('type', $type)->limit(8)->select();
+        $where['type'] = $type;
+
+        $where['is_del'] = 0;
+
+        $res = Db::table('car_collect')->where($where)->limit(8)->select();
 
         return $res;
     }
 
-    /**
+    /*
      * 二手车筛选
      * [lots_car 筛选列表页面]
      * @return [type] [description]
