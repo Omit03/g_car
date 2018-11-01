@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-10-22 19:23:14
+Date: 2018-11-01 14:57:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,10 +29,11 @@ CREATE TABLE `car_liulan_history` (
   `cartype_id` int(11) NOT NULL DEFAULT '0' COMMENT 'cartype_id',
   `img` varchar(255) NOT NULL DEFAULT '0' COMMENT '图片链接',
   `name` varchar(200) NOT NULL DEFAULT '0' COMMENT '车名',
-  `price` tinyint(200) NOT NULL DEFAULT '0' COMMENT '车总价',
+  `price` varchar(200) NOT NULL DEFAULT '0' COMMENT '车总价',
   `paitime` varchar(100) NOT NULL DEFAULT '0' COMMENT '上牌时间',
   `licheng` varchar(200) NOT NULL DEFAULT '0' COMMENT '二手车里程',
   `shoufu` varchar(100) NOT NULL DEFAULT '0' COMMENT '首付',
   `yuegong` varchar(250) NOT NULL DEFAULT '0' COMMENT '月供',
+  `is_del` tinyint(3) NOT NULL DEFAULT '0' COMMENT '0 正常 1 删除',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;

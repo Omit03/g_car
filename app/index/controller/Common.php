@@ -176,6 +176,9 @@ class Common extends Controller{
             'person_manage'=>array(
                 'user_id' =>'number',
             ),
+            'change_shopinfo'=>array(
+                'user_id' =>'number',
+            ),
             'my_shop'=>array(
                 'user_id' =>'number',
             ),
@@ -612,6 +615,29 @@ class Common extends Controller{
 
     }
 
+    /*
+     * 多张图片上传
+     */
+
+    public function upload(){
+        // 获取表单上传文件
+        $files = request()->file('image');
+        foreach($files as $file){
+            // 移动到框架应用根目录/public/uploads/ 目录下
+            $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+            if($info){
+                // 成功上传后 获取上传信息
+                // 输出 jpg
+                echo $info->getExtension();
+                // 输出 42a79759f284b767dfcb2a0197904287.jpg
+                echo $info->getFilename();
+            }else{
+                // 上传失败获取错误信息
+                echo $file->getError();
+            }
+        }
+    }
+
  /*
   * 图文压缩
   */
@@ -636,6 +662,10 @@ class Common extends Controller{
                 case 'shop_licence':
 
                 $image->thumb(200,200,Image::THUMB_CENTER)->save(ROOT_PATH.'public'.$path);
+                break;
+                case 'car_img':
+
+                $image->thumb(400,400,Image::THUMB_CENTER)->save(ROOT_PATH.'public'.$path);
                 break;
 
 
@@ -942,12 +972,43 @@ class Common extends Controller{
     }
     //获取车龄
     public function get_car_age($id){
-        $car_age=Db::table('cheling')->where("id=$id")->find();
+
+        $car_age=Db::table('cheling')->where("id",$id)->find();
         if($car_age){
             return $car_age['cheling'];
         }else{
             return "参数错误";
         }
+    }
+    //计算车龄
+    public function get_car_agess($data2){
+        $aa1=explode('年', $data2);
+        $year1=$aa1[0];
+        $aaa1=explode('月', $aa1['1']);
+        $month1=$aaa1[0];
+        $aaaa1=explode('日', $aaa1['1']);
+        $day1=$aaaa1[0];
+        $zero1=$year1."-".$month1."-".$day1;
+
+
+        //return $zero1;
+        //差
+        $data=(time()-strtotime($data2))/60/60/24/365;
+        if($data<=1){
+            $res=1;
+        }elseif($data<=2){
+            $res=2;
+        }elseif($data<=3){
+            $res=3;
+        }elseif(3<$data && $data<=5){
+            $res=4;
+        }elseif(5<$data && $data<=8){
+            $res=5;
+        }else{
+            $res=6;
+        }
+       // dump($res);die;
+        return $res;
     }
     // 里程
     function car_mileage(){
@@ -2521,6 +2582,7 @@ class Common extends Controller{
         // $res=mktime(0,0,0,$month[0],$day[0],$year[0]);
         // $zero2=date("y-m-d");
         //当前时间
+
         $year2=date("Y");
         $month2=date("m");
         $day2=date("d");
@@ -2629,6 +2691,8 @@ class Common extends Controller{
                 }
             }
         }
+
+
         return $year_inspect;
     }
 
@@ -2752,11 +2816,11 @@ class Common extends Controller{
             // }
             // $carname = $ct_name;
             $carname = $ct['name'];
-            $sys = Db::table('car_brand')->field('name,id,upid')->where("id = ".$ct['upid'])->find();
+            $sys = Db::table('car_brand')->field('name,id,upid')->where("id",$ct['upid'])->find();
             $sysname = $sys['name'];
-            $fi = Db::table('car_brand')->field('name,id,upid')->where("id = ".$sys['upid'])->find();
+            $fi = Db::table('car_brand')->field('name,id,upid')->where("id",$sys['upid'])->find();
             $firm = $fi['name'];
-            $br = Db::table('car_brand')->field('name,id,upid,pin')->where("id = ".$fi['upid'])->find();
+            $br = Db::table('car_brand')->field('name,id,upid,pin')->where("id",$fi['upid'])->find();
             $brand = $br['name'];
             $pin = $br['pin'];
         }

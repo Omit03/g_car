@@ -42,15 +42,54 @@ class User  extends Common {
 
     }
 
-    /*
-     * 店铺装修接收数据
-     */
-    public function person_manage_ok(){
 
+    /**
+     * 店铺装修
+     */
+    public function change_shopinfo(){
         /*接收参数*/
         $data =  $this->params;
 
+//获取数据
+        $data=$_POST;
 
+        $data['shop_id'] = 50;
+
+        $info['shop_id']=$shop_id=$data['shop_id'];
+        $name=$data['name'];
+        $door_photo=$data['door_photo'];
+        $info['shop_name']=$shop_name=$data['shop_name'];
+        $info['shop_address']=$shop_address=$data['shop_address'];
+        $info['shop_phone']=$shop_phone=$data['shop_phone'];
+        $info['open_time']=$open_time=$data['open_time'];
+        $info['shop_desc']=$shop_desc=$data['shop_desc'];
+        $info['latitude']=$latitude=$data['lat'];
+        $info['longitude']=$longitude=$data['lng'];
+        if(!$shop_id || !$name || !$door_photo || !$shop_name || !$shop_address || !$shop_phone || !$open_time || !$shop_desc){
+
+            $this->return_msg('204','参数不能为空');
+        }
+//        $info['mimg']=str_replace("http://www.gj2car.com/Uploads/relecar/","",$door_photo);
+//        if($info['mimg']==$door_photo){
+//            $info['mimg']=str_replace("http://39.106.67.47/butler_car/Uploads/relecar/","",$door_photo);
+//        }
+        //获取店铺的数据
+        $shop_info=Db::table("user_shop")->where("shop_id",$shop_id)->find();
+        if(!$shop_info){
+
+            $this->return_msg('204','店铺的参数错误');
+        }
+        //修改真实的姓名
+        //$res1=M("user")->save(array("user_id"=>$shop_info['user_id'],"username"=>$name));
+        //修改店铺的信息
+        $res2=M("user_shop")->save($info);
+        if($res2){
+
+            $this->success('成功','user/person_manage');
+        }else{
+
+            $this->error('失败');
+        }
     }
 
     /*
@@ -58,9 +97,46 @@ class User  extends Common {
      */
     public function person_release(){
 
+        $price=$this->price(); //价格
+
+        $subface=$this->subface();//级别
+
+      //  dump($subface);die;
+
+        $age=$this->get_car_allage();//车龄
+
+        $licheng=$this->car_mileage();//里程
+
+        $output=$this->output('');//排量
+
+        $gearbox=$this->gearbox('');//变速箱
+
+        $blowdown=$this->blowdown('');//排放标准
+
+        $fuel=$this->fuel('');//燃料
+
+        $car_body=$this->car_body('');//车身
+
+        $car_drive=$this->car_drive('');//燃气
+
+        $color =$this->color('');//颜色
         $brand = $this->brand();//品牌
 
+        $ABC = $this->app_brand_ios();//A b c  按车型排序
+
         $this->assign('brand',$brand);
+        $this->assign('price',$price);
+        $this->assign('subface',$subface);
+        $this->assign('ABC',$ABC);
+        $this->assign('age',$age);
+        $this->assign('licheng',$licheng);
+        $this->assign('output',$output);
+        $this->assign('gearbox',$gearbox);
+        $this->assign('fuel',$fuel);
+        $this->assign('blowdown',$blowdown);
+        $this->assign('car_drive',$car_drive);
+        $this->assign('car_body',$car_body);
+        $this->assign('color',$color);
         return $this->fetch();
 
     }
@@ -72,11 +148,17 @@ class User  extends Common {
 
         $data = $this->params;
 
-        $user_id = Session::get('user_id');
 
+       // dump($data);die;
+
+        $user_id = Session::get('user_id');
+        $user_id = 45;
         $add['user_id'] = $user_id;
+        $data['brand_id'] = 19;
         $add['brand_id'] = $brand_id = $data['brand_id'];
+        $data['sys_id'] = 850;
         $add['sys_id'] = $sys_id = $data['sys_id'];
+        $data['cartype_id'] = 50;
         $add['cartype_id'] = $cartype_id = $data['cartype_id'];
 
         $brand=Db::table("car_brand")->field("name")->where("id",$brand_id)->find();
@@ -84,8 +166,14 @@ class User  extends Common {
         $cartype=Db::table("car_brand")->field("name")->where("id",$cartype_id)->find();
         //获取配置信息
         $param=Db::table("param")->where("brand='".$brand['name']."' and sys='".$sys['name']."' and cartype='".$cartype['name']."'")->find();
+
         $add['price'] = $price = $data['price'];
-        $add['news_price'] = $news_price = $data['news_price'] ? $data['news_price'] : 0;
+        if (!empty($data['news_price'])){
+            $add['news_price'] = $news_price = $data['news_price'];
+        }else{
+            $add['news_price'] = $news_price =0;
+        }
+       // $add['news_price'] = $news_price = $data['news_price'] ? $data['news_price'] : 0;
         $add['car_mileage'] = $car_mileage = $data['car_mileage'];
         // $add['year_inspect'] = $year_inspect = $_POST['year_inspect'];
         //$add['safe'] = $safe = $_POST['safe'];
@@ -99,11 +187,16 @@ class User  extends Common {
         $add['subface'] = $subface = $data['subface'];
         $add['color'] = $color = $data['color'];
         $add['car_cardtime'] = $car_cardtime = $data['car_cardtime'];
-        $add['car_age'] = $car_age=$this->get_car_age($car_cardtime);
+
+       // $car_cardtime = "2018年-10月-01日";
+
+        $add['car_age'] = $car_age=$this->get_car_agess($car_cardtime);
+
         $add['blowdown'] = $blowdown = $data['blowdown'];
         $add['contact'] = $contact = $data['contact'];
         $add['phone'] = $phone = $data['phone'];
         $subface_img = $data['subface_img'];
+        $data['car_desc'] = "无重大事故";
         $add['car_desc'] = $car_desc = $data['car_desc'];
         // $this->ajaxReturn($add);
         if(!$brand_id || !$sys_id || !$cartype_id || !$price || !$car_mileage || !$car_age
@@ -113,6 +206,8 @@ class User  extends Common {
             $this->return_msg('204','参数错误，请检查');
 
         }
+
+
         $add['year_inspect'] = $year_inspect = $this->get_year_inspect($car_cardtime);
         if(!$year_inspect){
 
@@ -123,43 +218,100 @@ class User  extends Common {
 
             $this->return_msg('204','参数错误，请检查');
         }
+
         //获取图片
-        $add['subface_img'] = $this->get_uplodes_imgs($subface_img);
-        $add['img_512'] = $this->get_uplodes_imgs_512($subface_img);
-        $add['img_300'] = $this->get_uplodes_imgs_300($subface_img);
-        //分期
+        //$head_img_path = $this->upload_file($subface_img);
+
+       $add['subface_img'] = $this->upload_file($subface_img,'door_photosA');
+
+//        dump($add);die;
+//        $add['img_512'] = $this->upload_file($subface_img,'door_photosB');
+//
+//        $add['img_300'] = $this->upload_file($subface_img,'door_photoss');
+
+        //dump($add['subface_img'] );
+
+       // dump($head_img_path);die;
+//        $add['subface_img'] = $this->get_uplodes_imgs($subface_img);
+//        $add['img_512'] = $this->get_uplodes_imgs_512($subface_img);
+//        $add['img_300'] = $this->get_uplodes_imgs_300($subface_img);
+       // dump($add);die;
+     //   分期
 //        if($car_age<6 and $price>=3){
 //            $add['pay20_s2']=number_format($val['price']*0.2,2);
 //            $add['pay20_y2']=number_format($val['price']*0.8/36*10000,2);
 //        }
+
+
         //获取城市
-        $add['city_id'] = $city_id=Db::table("user_shop")->where("user_id=$user_id")->value("city_id");
+        $add['city_id'] = $city_id=Db::table("user_shop")->where("user_id",$user_id)->value("city_id");
+
+        //dump($add['city_id']);
         $b = $this->get_brand_firm_sysname($cartype_id,5);
         $add['name_li'] = $b['brand'].$b['sysname'].$b['carname'];
         $add['status'] = 2;
         $add['up_under'] = 1;
         $add['create_time'] = $add['update_time'] = time();
 
-        $res = Db::table('rele_car')->insert($add);
+        //dump($add);
+
+        $res = Db::table('rele_car')->insertGetId([
+
+                                      "user_id" => $user_id,
+                                      "brand_id" => $brand_id,
+                                      "sys_id" => $sys_id,
+                                      "cartype_id" => $cartype_id,
+                                      "price" =>  $add['price'],
+                                      "news_price" => $add['news_price'],
+                                      "car_mileage" => $add['car_mileage'],
+                                      "car_body" => $add['car_body'],
+                                      "car_drive" =>  $add['car_drive'],
+                                      "fuel" =>  $add['fuel'],
+                                      "output" =>  $add['output'],
+                                      "gearbox" =>  $add['gearbox'],
+                                      "subface" => $add['subface'],
+                                      "color" => $add['color'],
+                                      "car_cardtime" => $add['car_cardtime'],
+                                      "car_age" => $add['car_age'],
+                                      "blowdown" =>  $add['blowdown'],
+                                      "contact"=>  $add['contact'],
+                                      "phone" => $add['phone'],
+                                      "car_desc" =>  $data['car_desc'],
+                                      "year_inspect" =>  $add['year_inspect'],
+                                      "safe" => $add['safe'],
+                                      "subface_img" => $add['subface_img'],
+                                      "city_id"=> $add['city_id'],
+                                      "name_li" =>$add['name_li'],
+                                      "status"=> $add['status'],
+                                      "up_under" => $add['up_under'],
+                                      "update_time"=> $add['create_time'],
+                                      "create_time" => $add['update_time'],
+
+                                      ]);
+
+       // dump($res);die;
         if($res){
+            //dump($param);die;
             if($param){
-                $arr1=array(
-                    "pu_id"=>$res,
-                    "years"=>$param['years']
-                );
-                Db::table("rele_car")->insert($arr1);
-                $data=array(
-                    "pu_id"=>$res,
-                    "param_id"=>$param['id'],
-                    "create_time"=>time(),
-                    "type"=>2
-                );
+
+                Db::table("rele_car")->insert(['pu_id'=>$res,'years'=>$param['years']]);
+
+
                 //添加
-                Db::table("rele_param")->insert($data);
+                Db::table("rele_param")->insert([
+
+                                    "pu_id"=>$res,
+                                    "param_id"=>$param['id'],
+                                    "create_time"=>time(),
+                                    "type"=>2
+                               ]);
             }
-            $this->return_msg('200','成功');
+            $this->success('添加成功,可继续发布','user/person_release');
         }else{
-            $this->return_msg('400','失败');
+
+            $this->error('失败');
+
+           // $this->return_msg('400','失败');
         }
 
     }

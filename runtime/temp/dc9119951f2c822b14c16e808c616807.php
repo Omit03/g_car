@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_release.html";i:1540198163;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_release.html";i:1541042998;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -187,6 +187,7 @@ $(window).on('scroll',function(){
 					<div class="person_right">
 						<h1 class="borbt"><span class="release">发布车辆信息</span></h1>
 						<h2 class="step"><!--上传资料--></h2>
+						<form action="<?php echo url('user/pulish_adds'); ?>" enctype="multipart/form-data" method="post">
 						<div class="upLoad_form">
 							<ul class="sel_box_info">
 								<li class="gj_clear">
@@ -227,34 +228,17 @@ $(window).on('scroll',function(){
 			                                                </div>
 			                                                <div class="brand_content ">
 			                                                	<ul class="letter_box">
+																	<?php if(is_array($ABC) || $ABC instanceof \think\Collection || $ABC instanceof \think\Paginator): $i = 0; $__LIST__ = $ABC;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 			                                                		<li class="oh">
-			                                                			<span class="brand_letter">A</span>
+			                                                			<span class="brand_letter"><?php echo $vol['initial']; ?></span>
 			                                                			<p>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
+																			<?php if(is_array($vol['list']) || $vol['list'] instanceof \think\Collection || $vol['list'] instanceof \think\Paginator): $i = 0; $__LIST__ = $vol['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+			                                                				<a href="javascript:;"><?php echo $vo['name']; ?></a>
+																			<?php endforeach; endif; else: echo "" ;endif; ?>
+
 			                                                			</p>
 			                                                		</li>
-			                                                		<li class="oh">
-			                                                			<span class="brand_letter">A</span>
-			                                                			<p>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                			</p>
-			                                                		</li>
+			                                                	   <?php endforeach; endif; else: echo "" ;endif; ?>
 			                                                	</ul>
 			                                                </div>
 			                                            </div>
@@ -265,24 +249,7 @@ $(window).on('scroll',function(){
 			                                                	<a href="javascript:;">奥迪A3  </a><a href="javascript:;">奥迪A3  </a>
 			                                                	<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
                                                 				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪A3  </a><a href="javascript:;">奥迪A3  </a><a href="javascript:;">奥迪A3  </a>
-			                                                	<a href="javascript:;">奥迪A3  </a><a href="javascript:;">奥迪A3  </a>
-			                                                	<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
+
 			                                                </div>
 			                                            </div>
 			                                            <!--选择车款-->
@@ -296,19 +263,9 @@ $(window).on('scroll',function(){
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 			                                                    	</div>
 			                                                    	<p class="year_tit">2018款</p>
 			                                                    	<div class="year_car">
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
@@ -321,21 +278,26 @@ $(window).on('scroll',function(){
 	                                    	</div>
 										</div>													 
 									</div>
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>价格：</p><input type="text" class="" placeholder="请输入价格"/>万</div>
+									<div class="demo_inputype"><p class="form_litit"><b>*</b>价格：</p><input type="text" name="price" class="" placeholder="请输入价格"/>万</div>
 								</li>
 								<li class="gj_clear">
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>里程：</p><input type="text" class=""  placeholder=""/>万公里</div>
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>上牌时间：</p><input type="text" id="year" class="upload_info"/></div>
+									<div class="demo_inputype"><p class="form_litit"><b>*</b>里程：</p><input type="text" name="car_mileage" class=""  placeholder=""/>万公里</div>
+									<div class="demo_inputype"><p class="form_litit"><b>*</b>上牌时间：</p>
+										<!--<input type="text" name="car_cardtime" id="year" class="upload_info"/></div>-->
+										<input type="text" name="car_cardtime"  placeholder="例如 2018年1月12日" class=""/></div>
 								</li>
 								<li class="gj_clear">
 									<div class="selected_ipt demo_inputype"><p class="form_litit"><b>*</b>车身：</p><input type="text" class="upload_info" readonly placeholder="请选择车身"/>
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class=" list_slt">
-													<li class="active">旅行车</li>
-													<li>旅行车</li>
-													<li>旅行车</li>
-													<li>旅行车</li>
+													<!--<li class="active">旅行车</li>-->
+													<select name="car_body" >
+													<?php if(is_array($car_body) || $car_body instanceof \think\Collection || $car_body instanceof \think\Paginator): $i = 0; $__LIST__ = $car_body;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+													<li><option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option></li>
+													<?php endforeach; endif; else: echo "" ;endif; ?>
+													</select>
+
 												</ul>
 											</div>
 										</div>
@@ -344,10 +306,13 @@ $(window).on('scroll',function(){
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class=" list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="fuel" >
+													<?php if(is_array($fuel) || $fuel instanceof \think\Collection || $fuel instanceof \think\Paginator): $i = 0; $__LIST__ = $fuel;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+
+													<li><option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option></li>
+
+													<?php endforeach; endif; else: echo "" ;endif; ?>
+													</select>
 												</ul>
 											</div>
 										</div>
@@ -358,10 +323,12 @@ $(window).on('scroll',function(){
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="car_drive" >
+													<?php if(is_array($car_drive) || $car_drive instanceof \think\Collection || $car_drive instanceof \think\Paginator): $i = 0; $__LIST__ = $car_drive;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+
+													<li><option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option></li>
+													<?php endforeach; endif; else: echo "" ;endif; ?>
+													</select>
 												</ul>
 											</div>
 										</div>
@@ -370,10 +337,13 @@ $(window).on('scroll',function(){
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="output" >
+													<?php if(is_array($output) || $output instanceof \think\Collection || $output instanceof \think\Paginator): $i = 0; $__LIST__ = $output;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+
+													<li><option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option></li>
+
+													<?php endforeach; endif; else: echo "" ;endif; ?>
+													</select>
 												</ul>
 											</div>
 										</div>
@@ -384,10 +354,12 @@ $(window).on('scroll',function(){
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="gearbox" >
+													<?php if(is_array($gearbox) || $gearbox instanceof \think\Collection || $gearbox instanceof \think\Paginator): $i = 0; $__LIST__ = $gearbox;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+
+													<li><option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option></li>
+													<?php endforeach; endif; else: echo "" ;endif; ?>
+													</select>
 												</ul>
 											</div>
 										</div>
@@ -396,10 +368,11 @@ $(window).on('scroll',function(){
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="subface" >
+													<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+													<li><option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option></li>
+													<?php endforeach; endif; else: echo "" ;endif; ?>
+													</select>
 												</ul>
 											</div>
 										</div>
@@ -410,70 +383,38 @@ $(window).on('scroll',function(){
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="blowdown" >
+													<?php if(is_array($blowdown) || $blowdown instanceof \think\Collection || $blowdown instanceof \think\Paginator): $i = 0; $__LIST__ = $blowdown;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+
+													<li><option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option></li>
+
+													<?php endforeach; endif; else: echo "" ;endif; ?>
+													</select>
+
 												</ul>
 											</div>
 										</div>
 									</div>
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>电话：</p><input type="text" class="" placeholder="请输入电话" /></div>
+									<div class="demo_inputype"><p class="form_litit"><b>*</b>电话：</p><input type="text" name="phone" class="" placeholder="请输入电话" /></div>
 								</li>
 								<li class="gj_clear">
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>联系人：</p><input type="text" class="" placeholder="请输入手机号" /></div>
+									<div class="demo_inputype"><p class="form_litit"><b>*</b>联系人：</p><input type="text" name="contact" class="" placeholder="请输入手机号" /></div>
 								</li>
 								<li class="gj_clear">
 									<div class="oh"><p class="form_litit"><b>*</b>车身颜色：</p></div>
 									<div class="car_color">
-										<p class="slt_color active">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
+										<select name="color" >
+										<?php if(is_array($color) || $color instanceof \think\Collection || $color instanceof \think\Paginator): $i = 0; $__LIST__ = $color;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 										<p class="slt_color">
 											<a  href="javascript:;">
 	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
+	                                            <!--<span class="text"><?php echo $val['name']; ?></span>-->
+												<option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option>
 	                                        </a>
 										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
+										<?php endforeach; endif; else: echo "" ;endif; ?>
+										</select>
+
 										<p class="slt_color">
 											<a  href="javascript:;">
 	                                            <span  class="eq">
@@ -503,7 +444,7 @@ $(window).on('scroll',function(){
 											</section>-->
 												<section class="z_file fl">
 													<img src="img/upimg.png" class="add-img">
-													<input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+													<input type="file" name="subface_img" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
 													    
 												</section>
 											</div>
@@ -534,8 +475,9 @@ $(window).on('scroll',function(){
 									</div>
 								</li>
 							</ul>
-							<p class="sub_btn submit">提交</p>
+							<p class="sub_btn submit"><input type="submit" value="提交"></p>
 						</div>
+						</form>
 					</div>
 				</div>
 				

@@ -45,6 +45,7 @@
 					<div class="person_right">
 						<h1 class="borbt"><span class="release">发布车辆信息</span></h1>
 						<h2 class="step"><!--上传资料--></h2>
+						<form action="{:url('user/pulish_adds')}" enctype="multipart/form-data" method="post">
 						<div class="upLoad_form">
 							<ul class="sel_box_info">
 								<li class="gj_clear">
@@ -85,34 +86,17 @@
 			                                                </div>
 			                                                <div class="brand_content ">
 			                                                	<ul class="letter_box">
+																	{volist name="ABC" id="vol"}
 			                                                		<li class="oh">
-			                                                			<span class="brand_letter">A</span>
+			                                                			<span class="brand_letter">{$vol.initial}</span>
 			                                                			<p>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
+																			{volist name="vol['list']" id="vo"}
+			                                                				<a href="javascript:;">{$vo.name}</a>
+																			{/volist}
+
 			                                                			</p>
 			                                                		</li>
-			                                                		<li class="oh">
-			                                                			<span class="brand_letter">A</span>
-			                                                			<p>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-			                                                			</p>
-			                                                		</li>
+			                                                	   {/volist}
 			                                                	</ul>
 			                                                </div>
 			                                            </div>
@@ -123,24 +107,7 @@
 			                                                	<a href="javascript:;">奥迪A3  </a><a href="javascript:;">奥迪A3  </a>
 			                                                	<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
                                                 				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪A3  </a><a href="javascript:;">奥迪A3  </a><a href="javascript:;">奥迪A3  </a>
-			                                                	<a href="javascript:;">奥迪A3  </a><a href="javascript:;">奥迪A3  </a>
-			                                                	<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
-                                                				<a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a>
+
 			                                                </div>
 			                                            </div>
 			                                            <!--选择车款-->
@@ -154,19 +121,9 @@
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 			                                                    	</div>
 			                                                    	<p class="year_tit">2018款</p>
 			                                                    	<div class="year_car">
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
@@ -179,21 +136,26 @@
 	                                    	</div>
 										</div>													 
 									</div>
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>价格：</p><input type="text" class="" placeholder="请输入价格"/>万</div>
+									<div class="demo_inputype"><p class="form_litit"><b>*</b>价格：</p><input type="text" name="price" class="" placeholder="请输入价格"/>万</div>
 								</li>
 								<li class="gj_clear">
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>里程：</p><input type="text" class=""  placeholder=""/>万公里</div>
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>上牌时间：</p><input type="text" id="year" class="upload_info"/></div>
+									<div class="demo_inputype"><p class="form_litit"><b>*</b>里程：</p><input type="text" name="car_mileage" class=""  placeholder=""/>万公里</div>
+									<div class="demo_inputype"><p class="form_litit"><b>*</b>上牌时间：</p>
+										<!--<input type="text" name="car_cardtime" id="year" class="upload_info"/></div>-->
+										<input type="text" name="car_cardtime"  placeholder="例如 2018年1月12日" class=""/></div>
 								</li>
 								<li class="gj_clear">
 									<div class="selected_ipt demo_inputype"><p class="form_litit"><b>*</b>车身：</p><input type="text" class="upload_info" readonly placeholder="请选择车身"/>
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class=" list_slt">
-													<li class="active">旅行车</li>
-													<li>旅行车</li>
-													<li>旅行车</li>
-													<li>旅行车</li>
+													<!--<li class="active">旅行车</li>-->
+													<select name="car_body" >
+													{volist name="car_body" id="val"}
+													<li><option value="{$val.id}">{$val.name}</option></li>
+													{/volist}
+													</select>
+
 												</ul>
 											</div>
 										</div>
@@ -202,10 +164,13 @@
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class=" list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="fuel" >
+													{volist name="fuel" id="val"}
+
+													<li><option value="{$val.id}">{$val.name}</option></li>
+
+													{/volist}
+													</select>
 												</ul>
 											</div>
 										</div>
@@ -216,10 +181,12 @@
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="car_drive" >
+													{volist name="car_drive" id="val"}
+
+													<li><option value="{$val.id}">{$val.name}</option></li>
+													{/volist}
+													</select>
 												</ul>
 											</div>
 										</div>
@@ -228,10 +195,13 @@
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="output" >
+													{volist name="output" id="val"}
+
+													<li><option value="{$val.id}">{$val.name}</option></li>
+
+													{/volist}
+													</select>
 												</ul>
 											</div>
 										</div>
@@ -242,10 +212,12 @@
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="gearbox" >
+													{volist name="gearbox" id="val"}
+
+													<li><option value="{$val.id}">{$val.name}</option></li>
+													{/volist}
+													</select>
 												</ul>
 											</div>
 										</div>
@@ -254,10 +226,11 @@
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="subface" >
+													{volist name="subface" id="val"}
+													<li><option value="{$val.id}">{$val.name}</option></li>
+													{/volist}
+													</select>
 												</ul>
 											</div>
 										</div>
@@ -268,70 +241,38 @@
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<li class="active">汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
-													<li>汽油</li>
+													<select name="blowdown" >
+													{volist name="blowdown" id="val"}
+
+													<li><option value="{$val.id}">{$val.name}</option></li>
+
+													{/volist}
+													</select>
+
 												</ul>
 											</div>
 										</div>
 									</div>
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>电话：</p><input type="text" class="" placeholder="请输入电话" /></div>
+									<div class="demo_inputype"><p class="form_litit"><b>*</b>电话：</p><input type="text" name="phone" class="" placeholder="请输入电话" /></div>
 								</li>
 								<li class="gj_clear">
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>联系人：</p><input type="text" class="" placeholder="请输入手机号" /></div>
+									<div class="demo_inputype"><p class="form_litit"><b>*</b>联系人：</p><input type="text" name="contact" class="" placeholder="请输入手机号" /></div>
 								</li>
 								<li class="gj_clear">
 									<div class="oh"><p class="form_litit"><b>*</b>车身颜色：</p></div>
 									<div class="car_color">
-										<p class="slt_color active">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
+										<select name="color" >
+										{volist name="color" id="val"}
 										<p class="slt_color">
 											<a  href="javascript:;">
 	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
+	                                            <!--<span class="text">{$val.name}</span>-->
+												<option value="{$val.id}">{$val.name}</option>
 	                                        </a>
 										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
-										<p class="slt_color">
-											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <span class="text">黑色</span>
-	                                        </a>
-										</p>
+										{/volist}
+										</select>
+
 										<p class="slt_color">
 											<a  href="javascript:;">
 	                                            <span  class="eq">
@@ -361,7 +302,7 @@
 											</section>-->
 												<section class="z_file fl">
 													<img src="img/upimg.png" class="add-img">
-													<input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+													<input type="file" name="subface_img" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
 													    
 												</section>
 											</div>
@@ -392,8 +333,9 @@
 									</div>
 								</li>
 							</ul>
-							<p class="sub_btn submit">提交</p>
+							<p class="sub_btn submit"><input type="submit" value="提交"></p>
 						</div>
+						</form>
 					</div>
 				</div>
 				
