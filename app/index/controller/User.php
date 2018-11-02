@@ -1194,9 +1194,23 @@ class User  extends Common {
 
     public function register(){
 
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+        return $this->fetch();
+
+    }
+
+    public function register_ok(){
+
+        if ($this->request->isPost()){
+
+
         $data = $this->params;
 
         /* 检查验证码*/
+
 
         $this->check_code($data['user_phone'],$data['code']);
 
@@ -1222,21 +1236,34 @@ class User  extends Common {
 
         /* 将用户信息写入数据库*/
 
+        $data['create_time'] = date('Y-m-d H:i:s',time());
 
-        $data['create_time'] = time();
+        $salt = $this->randStr();
+
+        $password = md5($data['user_pwd'].$salt);
+
+        $sos = 888888;
+
+        $token = md5($sos.$salt);
 
         //$data['reg_device'] = $this->request->ip();
 
-        $res = Db::table('user')->insert(['phone'=>$data['user_phone'],'password'=>$data['user_pwd'],'create_time'=>$data['create_time']]);
+        $res = Db::table('user')->insert(['token'=>$token,'salt'=>$salt,'phone'=>$data['user_phone'],'password'=>$password,'create_time'=>$data['create_time'],'sos'=>$sos,'login_type'=>1]);
 
         if (!$res){
+
+
 
             $this->return_msg(400,'用户注册失败');
 
         }else{
 
-            $this->return_msg(200,'用户注册成功');
+            $this->success('注册成功请登录','user/car_login');
+
+            //$this->return_msg(200,'用户注册成功');
         }
+
+            }
 
     }
     

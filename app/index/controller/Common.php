@@ -228,8 +228,11 @@ class Common extends Controller{
                 'user_id' =>'number',
             ),
             'register'=>array(
-                'user_phone'  =>'require|number',
-                'user_pwd'  =>'require|length:32',
+                'user_phone'  =>'number',
+            ),
+            'register_ok'=>array(
+                'user_phone'  =>'number',
+                'user_pwd'  =>'require',
                 'code'  =>'require|length:6',
             ),
             'login' => array(
@@ -1526,7 +1529,7 @@ class Common extends Controller{
                 $chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
                 break;
         }
-        mt_srand((double)microtime()*1000000*getmypid());
+        //mt_srand((double)microtime()*1000000*getmypid());
         $password="";
         while(strlen($password)<$len)
             $password.=substr($chars,(mt_rand()%strlen($chars)),1);
