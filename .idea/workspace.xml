@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="107a576e-849f-426b-9ad2-69819e34de0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Common.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/view/user/car_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/user/car_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/view/user/forgetPwd.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/user/forgetpwd.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/log/201811/02.log" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/log/201811/02.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/2cebd87490b4439cee026aaccbe60fc1.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/2cebd87490b4439cee026aaccbe60fc1.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,76 +66,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="549" column="7" selection-start-line="549" selection-start-column="7" selection-end-line="549" selection-end-column="72" />
-              <folding>
-                <element signature="e#553#2994#1#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/view/user/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="95" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#span#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/index/view/user/forgetpwd.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="89" column="68" selection-start-line="89" selection-start-column="68" selection-end-line="89" selection-end-column="68" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/controller/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="1398" column="79" lean-forward="true" selection-start-line="1398" selection-start-column="79" selection-end-line="1398" selection-end-column="79" />
-              <folding>
-                <element signature="e#152#296#0#PHP" />
-                <element signature="e#463#800#0#PHP" />
-                <element signature="e#835#4974#0#PHP" />
-                <element signature="e#5009#6192#0#PHP" />
-                <element signature="e#6272#13307#0#PHP" />
-                <element signature="e#13339#15258#0#PHP" />
-                <element signature="e#15290#15440#0#PHP" />
-                <element signature="e#15534#17359#0#PHP" />
-                <element signature="e#17392#19744#0#PHP" />
-                <element signature="e#19763#22022#0#PHP" />
-                <element signature="e#22056#22458#0#PHP" />
-                <element signature="e#22490#23038#0#PHP" />
-                <element signature="e#23070#25504#0#PHP" />
-                <element signature="e#25537#26034#0#PHP" />
-                <element signature="e#26066#26603#0#PHP" />
-                <element signature="e#26638#27070#0#PHP" />
-                <element signature="e#27102#27760#0#PHP" />
-                <element signature="e#27980#32988#0#PHP" />
-                <element signature="e#33021#34158#0#PHP" />
-                <element signature="e#34192#34909#0#PHP" />
-                <element signature="e#36830#37343#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -271,7 +196,7 @@
       <path value="$PROJECT_DIR$/vendor/topthink/think-queue" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="76" />
     <option name="y" value="4" />
     <option name="width" value="1680" />
@@ -302,47 +227,6 @@
               <item name="car" type="47feb1d3:ProjectViewModuleNode" />
               <item name="car" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -397,16 +281,15 @@
       <workItem from="1540771469541" duration="61242000" />
       <workItem from="1540946009239" duration="33803000" />
       <workItem from="1541050722256" duration="19221000" />
-      <workItem from="1541117060885" duration="20717000" />
+      <workItem from="1541117060885" duration="21482000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="415431000" />
+    <option name="totallyTimeSpent" value="416196000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="76" y="4" width="1680" height="969" extended-state="0" />
-    <editor active="true" />
+    <frame x="76" y="4" width="1680" height="969" extended-state="1" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16975309" />
@@ -754,26 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/view/user/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="95" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#span#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="549" column="7" selection-start-line="549" selection-start-column="7" selection-end-line="549" selection-end-column="72" />
-          <folding>
-            <element signature="e#553#2994#1#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index/controller/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -806,10 +669,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index/view/user/forgetpwd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="282">
           <caret line="89" column="68" selection-start-line="89" selection-start-column="68" selection-end-line="89" selection-end-column="68" />
           <folding>
             <element signature="n#style#0;n#input#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/view/user/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="95" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#span#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="549" column="7" selection-start-line="549" selection-start-column="7" selection-end-line="549" selection-end-column="72" />
+          <folding>
+            <element signature="e#553#2994#1#PHP" />
           </folding>
         </state>
       </provider>
