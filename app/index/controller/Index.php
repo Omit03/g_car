@@ -1227,17 +1227,64 @@ class Index  extends Common
             $remark['content']="";
             $remark['all_score']="0";
 
-            $remark['create_time']=substr($remark['create_time'], 0, 10)?substr($remark['create_time'], 0, 10):"";
+            if (empty($remark['create_time'])){
+
+                $remark['create_time'] = "";
+            }else{
+
+                $remark['create_time'] = substr($remark['create_time'], 0, 10);
+            }
+
+           // $remark['create_time']=substr($remark['create_time'], 0, 10)?substr($remark['create_time'], 0, 10):"";
             //获取用户的信息
-            $userinfo=Db::table("user")->field("user_id,nickname,header_pic,phone")->where("user_id=".$remark['user_id'])->find();
-            if($userinfo['header_pic']){
+            if (empty($remark['user_id'])){
+
+                $remark['user_id'] = "";
+
+            }else{
+
+                $remark['user_id'] = $remark['user_id'];
+            }
+            $userinfo=Db::table("user")->field("user_id,nickname,header_pic,phone")->where("user_id",$remark['user_id'])->find();
+
+            if(!empty($userinfo['header_pic'])){
                 $header_pic=$this->get_carimg($userinfo['header_pic']);
             }else{
                 $header_pic="";
             }
-            $remark['header_pic']=$header_pic?$header_pic:"";
-            $remark['nickname']=$userinfo['nickname']?$userinfo['nickname']:($userinfo['phone']?$userinfo['phone']:"");
-            $remark['user_id']=$userinfo['user_id']?$userinfo['user_id']:"";
+            if (empty($header_pic)){
+                $remark['header_pic'] = "";
+            }else{
+                $remark['header_pic'] = $header_pic;
+            }
+           // $remark['header_pic']=$header_pic?$header_pic:"";
+
+            // $remark['nickname']=$userinfo['nickname']?$userinfo['nickname']:($userinfo['phone']?$userinfo['phone']:"");
+
+            if (empty($userinfo['nickname'])){
+
+                    if (empty($userinfo['phone'])){
+
+                        $userinfo['phone'] = "";
+                    }else{
+
+                        $userinfo['phone'] = $userinfo['phone'];
+                    }
+
+                    $remark['nickname'] = $userinfo['phone'];
+            }else{
+
+                    $remark['nickname'] = $userinfo['nickname'];
+            }
+
+            // $remark['user_id']=$userinfo['user_id']?$userinfo['user_id']:"";
+
+            if (empty($userinfo['user_id'])){
+                $remark['user_id'] = "";
+            }else{
+                $remark['user_id'] = $userinfo['user_id'];
+            }
+
             unset($carinfo['subface_img']);
             unset($carinfo['user_id']);
         }
@@ -1411,6 +1458,53 @@ class Index  extends Common
        $asd = $this->new_list(1);
 
         dump($asd);
+    }
+
+    /*
+     * [Sale 卖车]
+     */
+    public function sale(){
+
+        $data = $this->params;
+
+        $name = $data['name'];	//  姓名
+        $phone = $data['phone']; //手机号码
+        $code = $data['code']; //验证码
+        $img_id = $data['img_id']; //图片文件
+        if(!$name || !$phone || !$code || !$img_id){
+
+            $this->return_msg('204','参数错误，请检查');
+        }
+
+        $this->check_username($phone);
+
+        $this->check_code($data['phone'],$data['code']);
+
+        $add['name'] = $name;
+        $add['phone'] = $phone;
+
+        $add['img_id'] = get_uplodes_imgs($img_id);
+
+        $add['status'] = 1;
+        $add['create_time'] = NewTime();
+
+
+        $res = 	Db::table('sale_car')->insert([
+
+                                   "name"=>$name,
+                                   "phone"=>$phone,
+                                   "img_id"=>$img_id,
+                                   "status"=>1,
+                                   "name"=>date("Y-m-d H:i:s",time()),
+        ]);
+        if($res){
+
+            $this->return_msg('200','提交成功');
+        }else{
+
+            $this->return_msg('400','提交失败，请重新上传');
+        }
+
     }
 
 

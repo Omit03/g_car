@@ -109,6 +109,9 @@ class Common extends Controller{
             'asd'=>array(
                 'user_id' =>'number',
             ),
+            'sale'=>array(
+                'user_id' =>'number',
+            ),
         ),
         'Newcar' => array(
             'index'=>array(

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\index\sell.html";i:1540815190;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:60:"G:\xampp\htdocs\car\public/../app/index\view\index\sell.html";i:1541129186;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -346,7 +346,7 @@ $(window).on('scroll',function(){
 				</li>
 				<li><p class="sell_lit">手机号</p> <input type="text" class="inputype" id="phone" placeholder="请输入手机号"/></li>
 				<li><p class="sell_lit">验证码</p> <input type="text" class="inputype" id="code" placeholder="请输入验证码"/><span class="getcode"/>获取验证码</span></li>
-				<li class="upLoad"><p class="sell_lit">上传图片</p>
+				<li class="upLoad"><p class="sell_lit"><input type="file" name="img_id" /></p>
 					<div class="loadImg"><img src="/static/img/photo11.png" alt="" /></div>
 				</li>
 				<li><p class="sure_sell">提交</p></li>
