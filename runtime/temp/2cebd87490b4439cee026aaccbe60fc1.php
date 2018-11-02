@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html";i:1541068034;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html";i:1541068947;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -231,7 +231,7 @@ $(window).on('scroll',function(){
 						<form class="login_phone" id="conbd01" action="<?php echo url('user/login'); ?>" method="post">
 								<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="user_phone" name="user_phone" placeholder="请输入用户名"/></div>
 								<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="user_pwd" name="user_pwd" placeholder="请输入密码"/></div>
-								<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
+								<p class="ptp15"><input type="checkbox" name=""  value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
 								<input class="login_btn btn_login_n" type="submit" value="立即登录" />
 								<p class="regist_btn" style="margin: 0px;">免费注册</p>
 						</form>

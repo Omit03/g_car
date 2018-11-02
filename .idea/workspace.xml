@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="107a576e-849f-426b-9ad2-69819e34de0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/index/controller/Code.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Code.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Common.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/view/user/car_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/user/car_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/view/user/person_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/user/person_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extend/logscache/booklog/booklog20181101.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extend/logscache/booklog/booklog20181101.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/log/201811/01.log" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/log/201811/01.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/749b83b6ed7648cfe5b970c042747129.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/749b83b6ed7648cfe5b970c042747129.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2cebd87490b4439cee026aaccbe60fc1.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/2cebd87490b4439cee026aaccbe60fc1.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +21,7 @@
     <session id="1634748753">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
@@ -32,8 +30,8 @@
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="4" />
-          <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -41,7 +39,7 @@
           <entry key="css" value="6" />
           <entry key="html" value="252" />
           <entry key="js" value="2" />
-          <entry key="php" value="215" />
+          <entry key="php" value="218" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -49,19 +47,19 @@
           <entry key="CSS" value="6" />
           <entry key="HTML" value="252" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="215" />
+          <entry key="PHP" value="218" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="6549" />
-          <entry key="php" value="14093" />
+          <entry key="html" value="6553" />
+          <entry key="php" value="14097" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="6549" />
-          <entry key="PHP" value="14093" />
+          <entry key="HTML" value="6553" />
+          <entry key="PHP" value="14097" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -73,11 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index/controller/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="1302" column="9" selection-start-line="1302" selection-start-column="9" selection-end-line="1302" selection-end-column="9" />
+            <state relative-caret-position="-3084">
+              <caret line="1305" column="110" selection-start-line="1305" selection-start-column="110" selection-end-line="1305" selection-end-column="110" />
               <folding>
                 <element signature="e#463#800#0#PHP" />
                 <element signature="e#835#4974#0#PHP" />
@@ -91,43 +89,6 @@
                 <element signature="e#22490#23038#0#PHP" />
                 <element signature="e#23070#25504#0#PHP" />
                 <element signature="e#27980#32988#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/view/user/car_login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="96" column="104" selection-start-line="96" selection-start-column="104" selection-end-line="96" selection-end-column="182" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#span#0;n#div#1;n#form#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/index/view/user/person_info.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="159" column="73" selection-start-line="159" selection-start-column="73" selection-end-line="159" selection-end-column="73" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="235" column="14" selection-start-line="235" selection-start-column="14" selection-end-line="235" selection-end-column="14" />
-              <folding>
-                <element signature="e#553#2914#1#PHP" />
               </folding>
             </state>
           </provider>
@@ -172,8 +133,8 @@
       <find>upload_file</find>
       <find>上牌</find>
       <find>$this-&gt;upload_file</find>
-      <find>telphone</find>
       <find>getCodeBtn</find>
+      <find>telphone</find>
     </findStrings>
     <replaceStrings>
       <replace>__STATIC__/img/</replace>
@@ -237,8 +198,8 @@
         <option value="$PROJECT_DIR$/app/index/controller/Code.php" />
         <option value="$PROJECT_DIR$/app/index/view/user/car_login.html" />
         <option value="$PROJECT_DIR$/app/index/controller/Common.php" />
-        <option value="$PROJECT_DIR$/app/index/controller/User.php" />
         <option value="$PROJECT_DIR$/app/index/view/user/person_info.html" />
+        <option value="$PROJECT_DIR$/app/index/controller/User.php" />
       </list>
     </option>
   </component>
@@ -263,9 +224,9 @@
       <path value="$PROJECT_DIR$/vendor/topthink/think-queue" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="78" />
-    <option name="y" value="5" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="157" />
+    <option name="y" value="11" />
     <option name="width" value="1680" />
     <option name="height" value="969" />
   </component>
@@ -379,19 +340,20 @@
       <workItem from="1540610659694" duration="7088000" />
       <workItem from="1540771469541" duration="61242000" />
       <workItem from="1540946009239" duration="33803000" />
-      <workItem from="1541050722256" duration="17974000" />
+      <workItem from="1541050722256" duration="19221000" />
+      <workItem from="1541117060885" duration="726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="393467000" />
+    <option name="totallyTimeSpent" value="395440000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="157" y="11" width="1680" height="969" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15085287" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1765432" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
@@ -569,13 +531,6 @@
     <entry file="file://$PROJECT_DIR$/app/database.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/controller/Shop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="894">
-          <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -643,13 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1235">
           <caret line="70" column="57" selection-start-line="70" selection-start-column="57" selection-end-line="70" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/controller/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="1340" column="46" lean-forward="true" selection-start-line="1340" selection-start-column="46" selection-end-line="1340" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -732,7 +680,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index/view/user/car_login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
+        <state relative-caret-position="1824">
           <caret line="96" column="104" selection-start-line="96" selection-start-column="104" selection-end-line="96" selection-end-column="182" />
           <folding>
             <element signature="n#style#0;n#input#0;n#span#0;n#div#1;n#form#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -740,20 +688,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/view/user/person_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3192">
+          <caret line="168" column="28" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="235" column="14" selection-start-line="235" selection-start-column="14" selection-end-line="235" selection-end-column="14" />
+        <state relative-caret-position="9500">
+          <caret line="594" column="6" selection-start-line="594" selection-start-column="6" selection-end-line="594" selection-end-column="6" />
           <folding>
             <element signature="e#553#2914#1#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/controller/Shop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1121">
+          <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25099">
+          <caret line="1325" column="56" selection-start-line="1325" selection-start-column="56" selection-end-line="1325" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/index/controller/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="1302" column="9" selection-start-line="1302" selection-start-column="9" selection-end-line="1302" selection-end-column="9" />
+        <state relative-caret-position="-3084">
+          <caret line="1305" column="110" selection-start-line="1305" selection-start-column="110" selection-end-line="1305" selection-end-column="110" />
           <folding>
             <element signature="e#463#800#0#PHP" />
             <element signature="e#835#4974#0#PHP" />
@@ -767,17 +740,6 @@
             <element signature="e#22490#23038#0#PHP" />
             <element signature="e#23070#25504#0#PHP" />
             <element signature="e#27980#32988#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/view/user/person_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="159" column="73" selection-start-line="159" selection-start-column="73" selection-end-line="159" selection-end-column="73" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

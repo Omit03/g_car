@@ -863,7 +863,7 @@ class User  extends Common {
 
         }else{
 
-            $this->error('删除成功');
+            $this->error('删除失败');
 
             //$this->return_msg(400,'失败');
         }
@@ -1303,7 +1303,7 @@ class User  extends Common {
         }
         /*把新的密码存入数据库*/
 
-        $res = Db::name('user')->where($where)->setField('password',$data['user_pwd']);
+        $res = Db::name('user')->where($where)->setField('password',md5($data['user_pwd'].$db_ini_pwd['salt']));
 
         /*注意 密码相同 返回0 强制转换为false 失败也是false*/
         if ($res !== false){
