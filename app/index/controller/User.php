@@ -1293,6 +1293,8 @@ class User  extends Common {
         }
      }
 
+
+
      /*
       * 修改密码
       */
@@ -1344,6 +1346,21 @@ class User  extends Common {
 
         
      }
+
+    /*
+     * 找回密码
+     */
+
+    public function forgetpwd(){
+
+
+        $brand = $this->brand();//品牌
+
+        $this->assign('brand',$brand);
+
+        return $this->fetch();
+
+    }
      
      /*
       * 找回密码
@@ -1375,7 +1392,11 @@ class User  extends Common {
         }
         /*修改数据库*/
 
-        $res = Db::name('user')->where($where)->setField('password',$data['user_pwd']);
+        $user_info = Db::name('user') ->where('phone',$data['user_phone'])->find();
+
+        $password = md5($data['user_pwd'].$user_info['salt']);
+
+        $res = Db::name('user')->where($where)->setField('password',$password);
 
 
         if ($res !== false){

@@ -240,7 +240,7 @@ class Common extends Controller{
                 'user_pwd'  =>'number',
             ),
             'login_sms' => array(
-                'user_phone' =>'number',//两种方式 有正则就用数组形式，没有就用下面也行
+                'user_phone' =>'number',//短信登录
                 'code'  =>'number',
             ),
 
@@ -252,10 +252,14 @@ class Common extends Controller{
             'change_pwd' => array(
                 'user_phone' =>'',//两种方式 有正则就用数组形式，没有就用下面也行
             ),
+            'forgetpwd' => array(
+                'user_phone' =>'',//两种方式 有正则就用数组形式，没有就用下面也行
+            ),
+
             'find_pwd' => array(
                 'user_phone' =>['require','number'],//两种方式 有正则就用数组形式，没有就用下面也行
                 'code'  =>'require|length:6',
-                'user_pwd'  =>'require|length:32',
+                'user_pwd'  =>'require',
             ),
             'bind_phone' => array(
                 'code'  =>'length:6',

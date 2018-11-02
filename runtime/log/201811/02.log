@@ -13665,3 +13665,1849 @@
 [ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
 [ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.009000s ]
 [ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:27:57+08:00 ] 127.0.0.1 GET /index/user/car_login.html
+[ info ] www.hr.com:8083/index/user/car_login.html [运行时间：0.105000s][吞吐率：9.52req/s] [内存消耗：2,780.34kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'car_login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->car_login[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:27:59+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.058000s][吞吐率：17.24req/s] [内存消耗：1,913.09kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: forgetpwd[G:\xampp\htdocs\car\app\index\controller\Common.php:493]
+---------------------------------------------------------------
+[ 2018-11-02T16:29:02+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.055000s][吞吐率：18.18req/s] [内存消耗：1,996.26kb] [文件加载：45]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-02T16:29:03+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.030000s][吞吐率：33.33req/s] [内存消耗：1,913.33kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:29:03+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.035000s][吞吐率：28.57req/s] [内存消耗：1,913.33kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:30:08+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.049000s][吞吐率：20.41req/s] [内存消耗：1,996.26kb] [文件加载：45]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-02T16:30:08+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.028000s][吞吐率：35.71req/s] [内存消耗：1,913.33kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:30:08+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.029000s][吞吐率：34.48req/s] [内存消耗：1,913.33kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:31:00+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.058000s][吞吐率：17.24req/s] [内存消耗：2,102.47kb] [文件加载：50]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: brand[G:\xampp\htdocs\car\runtime\temp\5c0a11cced66cd681f9c67cd55db1da7.php:224]
+---------------------------------------------------------------
+[ 2018-11-02T16:31:35+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.082000s][吞吐率：12.20req/s] [内存消耗：2,622.27kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:31:35+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.028000s][吞吐率：35.71req/s] [内存消耗：1,913.62kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:31:35+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.032000s][吞吐率：31.25req/s] [内存消耗：1,913.62kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:32:19+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.098000s][吞吐率：10.20req/s] [内存消耗：2,747.14kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.012000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:32:19+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.030000s][吞吐率：33.33req/s] [内存消耗：1,913.62kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:32:19+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.030000s][吞吐率：33.33req/s] [内存消耗：1,913.62kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:33:27+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.105000s][吞吐率：9.52req/s] [内存消耗：2,758.80kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.010000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:33:27+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.029000s][吞吐率：34.48req/s] [内存消耗：1,913.62kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:33:27+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.029000s][吞吐率：34.48req/s] [内存消耗：1,913.62kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:38:11+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.077000s][吞吐率：12.99req/s] [内存消耗：2,759.06kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.008000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:38:12+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.028000s][吞吐率：35.71req/s] [内存消耗：1,913.60kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:38:12+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.035000s][吞吐率：28.57req/s] [内存消耗：1,913.60kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:38:44+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.089000s][吞吐率：11.24req/s] [内存消耗：2,759.06kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.008000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:38:44+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.028000s][吞吐率：35.71req/s] [内存消耗：1,913.60kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:38:44+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.029000s][吞吐率：34.48req/s] [内存消耗：1,913.60kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:38:47+08:00 ] 127.0.0.1 POST /index/user/find_pwd.html
+[ info ] www.hr.com:8083/index/user/find_pwd.html [运行时间：0.061000s][吞吐率：16.39req/s] [内存消耗：1,822.63kb] [文件加载：40]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'find_pwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'content-length' => '37',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.hr.com:8083',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+  'user_phone' => 'test',
+  'code' => '',
+  'user_pwd' => '123456',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-02T16:39:00+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.081000s][吞吐率：12.35req/s] [内存消耗：2,624.74kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:42:57+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.107000s][吞吐率：9.35req/s] [内存消耗：2,626.22kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.014000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:42:57+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.029000s][吞吐率：34.48req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:42:57+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.035000s][吞吐率：28.57req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:09+08:00 ] 127.0.0.1 GET /index/code/get_code.html?user_phone=15010295998&is_exist=0
+[ info ] www.hr.com:8083/index/code/get_code.html?user_phone=15010295998&is_exist=0 [运行时间：0.207000s][吞吐率：4.83req/s] [内存消耗：2,327.86kb] [文件加载：49]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'code',
+    2 => 'get_code',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+  'user_phone' => '15010295998',
+  'is_exist' => '0',
+)
+[ info ] [ RUN ] app\index\controller\Code->get_code[ G:\xampp\htdocs\car\app\index\controller\Code.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `register_emporary` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] INSERT INTO `register_emporary` (`is_phone` , `code` , `type` , `create_time`) VALUES ('15010295998' , '607973' , 1 , '2018-11-02 16:43:09') [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:36+08:00 ] 127.0.0.1 POST /index/user/find_pwd.html
+[ info ] www.hr.com:8083/index/user/find_pwd.html [运行时间：0.112000s][吞吐率：8.93req/s] [内存消耗：2,518.30kb] [文件加载：48]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'find_pwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'content-length' => '50',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.hr.com:8083',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+  'user_phone' => '15010295998',
+  'code' => '607973',
+  'user_pwd' => '000000',
+)
+[ info ] [ RUN ] app\index\controller\User->find_pwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `phone` = '15010295998' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `phone` = '15010295998' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `password`='48cfa6bfca46b1ab1f8938d3d2111f5b'  WHERE  `phone` = '15010295998' [ RunTime:0.044000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:39+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.092000s][吞吐率：10.87req/s] [内存消耗：2,625.77kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.011000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:41+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.084000s][吞吐率：11.90req/s] [内存消耗：2,625.77kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:41+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.029000s][吞吐率：34.48req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:41+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.030000s][吞吐率：33.33req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:52+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.126000s][吞吐率：7.94req/s] [内存消耗：2,625.77kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.020000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:52+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.031000s][吞吐率：32.26req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:52+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.031000s][吞吐率：32.26req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:53+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.079000s][吞吐率：12.66req/s] [内存消耗：2,625.77kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:53+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.028000s][吞吐率：35.71req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:53+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.032000s][吞吐率：31.25req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:54+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.101000s][吞吐率：9.90req/s] [内存消耗：2,625.77kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.015000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:54+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.032000s][吞吐率：31.25req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:43:54+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.029000s][吞吐率：34.48req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:44:29+08:00 ] 127.0.0.1 GET /index/user/forgetpwd.html
+[ info ] www.hr.com:8083/index/user/forgetpwd.html [运行时间：0.080000s][吞吐率：12.50req/s] [内存消耗：2,760.30kb] [文件加载：54]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'forgetpwd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->forgetpwd[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\forgetpwd.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:44:29+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.028000s][吞吐率：35.71req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:44:29+08:00 ] 127.0.0.1 GET /index/user/templates/footer.html
+[ info ] www.hr.com:8083/index/user/templates/footer.html [运行时间：0.028000s][吞吐率：35.71req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:44:30+08:00 ] 127.0.0.1 GET /index/user/car_login.html
+[ info ] www.hr.com:8083/index/user/car_login.html [运行时间：0.104000s][吞吐率：9.62req/s] [内存消耗：2,643.67kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'car_login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->car_login[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.017000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:44:33+08:00 ] 127.0.0.1 POST /index/user/login.html
+[ info ] www.hr.com:8083/index/user/login.html [运行时间：0.094000s][吞吐率：10.64req/s] [内存消耗：2,516.48kb] [文件加载：47]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'content-length' => '38',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.hr.com:8083',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+  'user_phone' => '15010295998',
+  'user_pwd' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `phone` = '15010295998' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `user_id`,`token`,`salt`,`phone`,`password`,`nickname`,`header_pic`,`sex`,`birthday`,`qq_token`,`weixin_token` FROM `user` WHERE  `phone` = '15010295998' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:44:43+08:00 ] 127.0.0.1 GET /index/user/car_login.html
+[ info ] www.hr.com:8083/index/user/car_login.html [运行时间：0.107000s][吞吐率：9.35req/s] [内存消耗：2,643.67kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'car_login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/forgetpwd.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->car_login[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html [ array (
+  0 => 'brand',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.017000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:44:48+08:00 ] 127.0.0.1 POST /index/user/login.html
+[ info ] www.hr.com:8083/index/user/login.html [运行时间：0.091000s][吞吐率：10.99req/s] [内存消耗：2,633.02kb] [文件加载：53]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'content-length' => '38',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.hr.com:8083',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+  'user_phone' => '15010295998',
+  'user_pwd' => '000000',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `phone` = '15010295998' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `user_id`,`token`,`salt`,`phone`,`password`,`nickname`,`header_pic`,`sex`,`birthday`,`qq_token`,`weixin_token` FROM `user` WHERE  `phone` = '15010295998' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:44:48+08:00 ] 127.0.0.1 GET /index/user/person_manage.html
+[ info ] www.hr.com:8083/index/user/person_manage.html [运行时间：0.098000s][吞吐率：10.20req/s] [内存消耗：2,632.91kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'person_manage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/car_login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->person_manage[ G:\xampp\htdocs\car\app\index\controller\User.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\user\person_manage.html [ array (
+  0 => 'brand',
+  1 => 'shop_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_shop` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT * FROM `user_shop` WHERE  `user_id` = 54 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.012000s ]
+---------------------------------------------------------------
+[ 2018-11-02T16:44:48+08:00 ] 127.0.0.1 GET /index/user/templates/header.html
+[ info ] www.hr.com:8083/index/user/templates/header.html [运行时间：0.030000s][吞吐率：33.33req/s] [内存消耗：1,914.63kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'templates',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/index/user/person_manage.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: templates[G:\xampp\htdocs\car\app\index\controller\Common.php:496]
+---------------------------------------------------------------
+[ 2018-11-02T16:44:48+08:00 ] 127.0.0.1 GET /index/user/favicon.png
+[ info ] www.hr.com:8083/index/user/favicon.png [运行时间：0.029000s][吞吐率：34.48req/s] [内存消耗：1,913.86kb] [文件加载：46]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'favicon.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/index/user/person_manage.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=6revbctme3a5ajidk77m75k8eq',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义数组索引: favicon.png[G:\xampp\htdocs\car\app\index\controller\Common.php:496]

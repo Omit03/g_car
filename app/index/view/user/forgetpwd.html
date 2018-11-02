@@ -10,8 +10,12 @@
 	
 	<script src="__STATIC__/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<style>
+.free_regist{background: #F28F1B;color: #fff;cursor: pointer;}
+.login_phone .agree{margin: 20px 0;text-align: left;color: #666;}
+.login_phone .agree a{color: #333;font-size: 18px;}
+.login_phone>div>img.showPwd{width: 27px;height:19px;}
+#inputId{width: 300px;}
 	</style>
-
 	<script>
         var itime = 59; //定义一个变量，倒计时初始化，从59秒开始
         function getTime() {
@@ -46,9 +50,9 @@
                         data:{
 
                             user_phone:telphone,
-							is_exist:0
+                            is_exist:0
 
-						},
+                        },
                         success: function(msg) {
                             //判断调用短信发送接口是否成功，
                             if (msg == 1) {
@@ -71,36 +75,32 @@
             });
         });
 	</script>
-
-	<body>
-	<div class="header">
-	{include file="public/header"}
-	</div>
+	<body>	
 		<div class="full_wid">
-
+			<div class="header">
+				{include file="public/header"}
+			</div>
 			<div class="login_bg">
-				<div class="login_tab" >
+				<div class="login_tab">
+					<form class="login_phone"  action="{:url('user/find_pwd')}" method="post">
 					<div class="login_sure">
 						<ul class="login_type">
-							<li class="active" onclick="set('bd0',1,2)">账号密码登录</li>
+							<li class="active">找回密码</li>
 							<b>|</b>
-							<li onclick="set('bd0',2,2)">手机号快捷登录</li>
+							<li>已注册可直接<a href="{:url('user/car_login')}" class="coloryel ft16">登录</a></li>
 						</ul>
-						<form class="login_phone" id="conbd01" action="{:url('user/login')}" method="post">
-								<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="user_phone" name="user_phone" placeholder="请输入用户名"/></div>
-								<div class="border"><img src="__STATIC__/img/mm.png" alt="" height="35" /><input type="user_pwd" name="user_pwd" placeholder="请输入密码"/></div>
-								<p class="ptp15"><input type="checkbox" name=""  value="" />自动登录 <span class="forgetPwd"><a href="{:url('user/forgetpwd')}" class="color9">忘记密码</a></span></p>
-								<input class="login_btn btn_login_n" type="submit" value="立即登录" />
-							<a href="{:url('user/register')}"><p class="regist_btn" style="margin: 0px;">免费注册</p></a>
-						</form>
-						<form class="login_phone" id="conbd02" style="display: none;" action="{:url('user/login_sms')}" method="post" >
-							<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="text" name="user_phone" id="telphone" placeholder="请输入个人或商家手机号"/></div>
+						<div class="login_phone">
+							<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="text" id="telphone"  name="user_phone" placeholder="请输入个人或商家手机号"/></div>
 							<div class="border login_ver"><img src="__STATIC__/img/yzm.png" alt="" height="35"/><input type="text" name="code" placeholder="请输入验证码" /><span class="getcode"><input type="button" value="免费获取手机验证码" id="getCodeBtn" style="width: 120px;height: 40px;font-size:12px; padding-left:1px;color:#333; " /></span></div>
-							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="{:url('user/forgetpwd')}" class="color9">忘记密码</a></span></p>
-							<input class="login_btn btn_login_n" type="submit" value="立即登录" />
-							<a href="{:url('user/register')}"> <p class="regist_btn" style="margin:0px">免费注册</p></a>
-						</form>
+							<div class="border"><img src="__STATIC__/img/mm.png" alt="" height="35" /><input type="password" name="user_pwd" placeholder="请输入密码" id="inputId"/><img src="__STATIC__/img/buxians.png" width="27" height="19" class="showPwd"/></div>
+							<p class="ptp15 agree"><input type="checkbox" name="" id="" value="" />我已经阅读并同意<a href="">《管家车易站条款》</a></p>
+						
+							<!--<p class="regist_btn free_regist">找回密码</p>-->
+							<input class="regist_btn free_regist" type="submit" value="找回密码" />
+						</div>
+						
 					</div>
+					</form>
 					
 					<div class="login_other">
 						<img src="__STATIC__/img/ewm.png" alt="" class="app_down" width="225"/>
@@ -111,48 +111,27 @@
 				</div>
 			</div>
 		</div>
-		<div class="footer"></div>
-		<div class="fixedRight">
-			<ul class="right_sider">
-				<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
-					<div class="gj_sidecon_desc "></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
-				<div class="gj_sidecon_desc"></div></li>
-				<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
-				<div class="gj_sidecon_desc"></div></li>
-				<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				
-			</ul>
-		</div>
 		<div class="footer">
 			{include file="public/footer"}
 		</div>
+		
 	</body>
-	<!--{include file="public/footer"}-->
-	<script>
-		$(function(){
-            $($(".wrap li")[7]).addClass("active").siblings().removeClass("active");
-			$(".login_type li").click(function(){
-			   $(this).addClass('active').siblings('li').removeClass('active')
+	<script>		
+		$(function(){	
+			var input=document.getElementById("inputId");
+			$(".showPwd").click(function(){
+				 if($(".showPwd").attr("src")=='__STATIC__/img/buxians.png'){ 
+				 	$(".showPwd").attr("src",'__STATIC__/img/xians.png');	 	
+			       	input.type='text';
+			     }else{
+			     	$(".showPwd").attr("src",'__STATIC__/img/buxians.png');
+			      input.type='password';
+			     }
 			})
+		     
+			 
+		      $(".header").load("templates/header.html");
+		      $(".footer").load("templates/footer.html")
 		})
 </script>
 </html>
