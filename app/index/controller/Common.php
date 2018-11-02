@@ -141,6 +141,9 @@ class Common extends Controller{
             'index'=>array(
                 'user_id' =>'number',
             ),
+            'displace'=>array(
+                'user_id' =>'number',
+            ),
         ),
         'News' => array(
             'index'=>array(

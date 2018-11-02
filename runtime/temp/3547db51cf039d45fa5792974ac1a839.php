@@ -1,79 +1,20 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"G:\xampp\htdocs\car\public/../app/index\view\change\index.html";i:1541124403;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\shop\shop_info.html";i:1539944351;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
 	</head>
+	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="/static/css/iconfont.css">
+	<link rel="stylesheet" href="/static/css/swiper.min.css" />
 	<style>
-
-
+	
 	</style>
-	<script>
-        var itime = 59; //定义一个变量，倒计时初始化，从59秒开始
-        function getTime() {
-            if (itime >= 0) {
-                if (itime == 0) {
-                    //倒计时变成0时，
-                    //要清除计时器
-                    clearTimeout(act);
-                    //设置按钮为初始状态
-                    $("#getCodeBtn").val('免费获取手机验证码').attr('disabled', false);
-                    itime = 59;
-                } else {
-                    //延迟一秒中执行该函数。
-                    var act = setTimeout('getTime()', 1000);
-                    //把倒计时的秒显示到按钮中
-                    $("#getCodeBtn").val('还剩' + itime + '秒');
-                    itime = itime - 1;
-                }
-            }
-        }
-        $(function() {
-            //定义一个函数,用于完成倒计时效果
-            $("#getCodeBtn").click(function() {
-                //获取输入的手机号码
-                var telphone = $("#telphone").val();
-
-                if(telphone) {
-                    //ajax请求文件，调用短信发送的接口
-                    $.ajax({
-                        type: 'get',
-                        url: '<?php echo url("code/get_code"); ?>',
-                        data:{
-
-                            user_phone:telphone,
-                            is_exist:0
-
-                        },
-                        success: function(msg) {
-                            //判断调用短信发送接口是否成功，
-                            if (msg == 1) {
-                                //调用接口已经成功
-                                alert('发送失败');
-                                $("#getCodeBtn").attr('disabled', true); //要禁用该按钮
-                                //调用一个函数，完成倒计时效果。
-                                getTime();
-                            } else{
-                                alert('短信验证码已经发送成功');
-                                $("#getCodeBtn").attr('disabled', true);
-                                getTime();
-                            }
-                        }
-                    });
-                } else{
-                    alert('请输入手机号');
-                }
-
-            });
-        });
-	</script>
-	<body>
-		<div class="header"><div class="site_nav">
+	<body style="background:#f8f8f8">
+	<div class="header"><div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
@@ -215,79 +156,58 @@ $(window).on('scroll',function(){
 
 </script>
 </div>
-		<div class="full_wid">			
-			<div class="banner chang_ban">
-				<div class="wrap">
-					<div class="change_user">
-						<span class="change_address">郑州<img src="/static/img/jtdown.png" alt="" /></span>
-						<div class="change_ipt"><input type="text" placeholder="请输入手机号"/>
-						<span class="chang_btn">我要置换</span>						
-						</div>	
-						<span class="sellcar_btn"><a href="">我要卖车</a></span>
-					</div>
-					<div class="tip"><p class="agree">提交代表我同意<a href="">《个人信息保护声明》</a>，并接受合作商的来电服务</p></div>
-				</div>				
-			</div>
-			<div class="wrap">
-				<div class="breadnav">你的位置:<a href="">首页</a>>><a href="">置换</a></div>
-				<div class="flex_center title_er"><h2 class="tit_erjie">置换</h2><p class="small_tit">用旧车换新车，优惠开新车</p></div>
-				<div class="change_flow"><img src="/static/img/change_flow.png" alt="" /></div>
-				<div class="flex_center title_er"><h2 class="tit_erjie">选定意向新车</h2></div>
-				<form action="<?php echo url('change/displace'); ?>" enctype="multipart/form-data"  method="post">
-				<div class="change_sel flex_center">
-					<span class="change_form_name">品牌车型</span>
-					<div class="selectcarnam flex_center">
-						<input type="text" name="cartype_id" placeholder="请选择您喜欢的车辆"/><span class="change_form_arrow"><img src="/static/img/jtdown1.png" alt="" /></span>
-					</div>									
-				</div>
-				<div class="change_recom">
-					<p class="tip">精品车辆推荐</p>
-					<ul class="flex_around">
-						<li>
-							<img src="/static/img/tuijian1.png" alt="" />
-							<p>奥迪系列</p>
-						</li>
-						<li>
-							<img src="/static/img/tuijian1.png" alt="" />
-							<p>奥迪系列</p>
-						</li>
-						<li>
-							<img src="/static/img/tuijian1.png" alt="" />
-							<p>奥迪系列</p>
-						</li>
-					</ul>
-				</div>
-				<div class="flex_center title_er"><h2 class="tit_erjie">旧车信息提交</h2></div>
-
-				<div class="change_form">
-					<div class="ipt"><label for="">旧车信息：</label><input type="text" name="old_brand" placeholder="请选择您车辆的品牌"/></div>
-					<div class="ipt"><label for="">姓名：</label><input type="text"  name="name" placeholder="请输入您的姓名"/></div>
-					<div class="ipt"><label for="">手机号：</label><input type="text" id="telphone" name="phone" placeholder="请输入您的手机号"/></div>
-					<div class="ipt_code"><label for="">验证码:</label><input type="text" name="code" placeholder="请输入您获取到的验证码"/><span class="getcode"><input type="button" value="获取手机验证码" id="getCodeBtn" style="width: 105px;height: 40px;font-size:12px; padding-left:1px;color:#333; " /></span></div>
-					<div class="sub"><input type="submit"/></div>
-				</div>
-
-				</form>
-				<div class="flex_center title_er"><h2 class="tit_erjie">新车推荐</h2></div>
-				<div class="car_list">
-					<ul class="list">
-                         <?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,1,8, true) : $er_car->slice(1,8, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-						<li class="items">
-							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
-							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>" class="car_desc">
-								<h3> <?php echo $val['name']; ?></h3>
-								<p><span class="car_price"><b><?php echo $val['new_car_price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $val['price']; ?>万</span></p>
-								<p><span><?php echo $val['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $val['car_mileage']; ?>万公里</span> </p>
-								<div class="che_ordered">立即预约</div>
-							</a>
-						</li>
-						<?php endforeach; endif; else: echo "" ;endif; ?>
-					</ul>
-				</div>
+	<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">向阳二手车 >></a><a href=""> 店铺首页</a></div>
+	<div class="storeH">
+		<div class="wrap">
+			<h1 class="textCenter"><span>郑州管家二手车<b>优选商家</b></span></h1>
+			<p class="fright phone">
+				  <i class="icon iconfont icon-msnui-telephone"></i>  15638886114
+			</p>
+			<div class="gj_clear"></div>
+			<ul class="shop_nav gj_clear">
+				<li><a href="<?php echo url('shop/index'); ?>">店铺首页</a></li>
+				<li><a href="<?php echo url('shop/shop_list'); ?>">在售车源</a></li>
+				<li ><a href="<?php echo url('shop/shop_info'); ?>">公司信息</a></li>
+			</ul>
+		</div>
+		
+	</div>
+	<div class="wrap">
+		<div class="store_info">
+			<h1><span>郑州管家二手车</span></h1>
+			<p class="store_on">营业时间： 9：00-18：00 <i>|</i>联系电话： 15638886114 <i>|</i>在售车辆： <b>1735辆</b></p>
+			<h2>服务内容</h2>
+			<div class="store_service">				
+				<p><img src="/static/img/sda.png" alt="" />车辆置换</p><p><img src="/static/img/sda.png" alt="" />价格评估</p><p><img src="/static/img/sda.png" alt="" />代办过户</p>
+				<p><img src="/static/img/sda.png" alt="" />代办验车</p><p><img src="/static/img/sda.png" alt="" />代办上牌</p><p><img src="/static/img/sda.png" alt="" />代办转籍</p>
+				<p><img src="/static/img/sda.png" alt="" />代办保险</p><p><img src="/static/img/sda.png" alt="" />补办手续</p><p><img src="/static/img/sda.png" alt="" />代办转籍</p>
+				<p><img src="/static/img/sda.png" alt="" />分期贷款</p>
 			</div>
 		</div>
-		<div class="footer">
-			
+		<h2 class="tit_line"><b></b>公司简介</h2>
+		<div class="store_intro">
+			河南管家二手名车是中原一家以二手车收售、评估、售后服务、客户服务、为一体的二手车综合服务公司，并为购车客户提供过户，检测、上牌、保险、私人专属定制等一站式服务。向阳二手名车现营业，中高端车型全面涵盖，其主营品牌有：奔驰、宝马、奥迪、保时捷、、大众、丰田等，5万-300万各种品牌名车。向阳二手名车广场所有在售车辆需经过134项精益化检测由国家注册评估师鉴定，质量保证领先于二手车行业；我们秉承“客户至上、服务至上”的企业经营理念，保证所销售的车辆非泡水车、火烧车、事故车等，并都是法律上合法车辆，给每位来向阳二手车购车的客户提供一个“放心买，安心用”的购车环境。
+		</div>
+		<h2 class="tit_line"><b></b>公司位置</h2>
+		<div class="store_map">
+		<div class="map" style="display: block">
+            <a style="height: 0px; line-height: 0px; width: 0px; overflow: hidden;" name="map"></a>
+            <div style="border: 0pt none; overflow: hidden; position: relative; top: 0pt; left: 0pt; width: 1200px; height: 580px; z-index: 0; background-color: rgb(235, 234, 232); cursor: default; margin: 0 auto" id="allmap">
+            </div>
+        </div>
+
+
+		</div>
+	</div>
+	
+	<div class="adv_img">
+		<h2>想开什么车 ？管家车易站应有尽有.</h2>
+		<div class="buy_ipt">
+			<input type="text" placeholder="请输入手机号"/>
+			<div class="btn_buy">我要买车</div>
+		</div>
+	</div>		
+	<div class="footer">
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="/static/img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -341,14 +261,41 @@ $(window).on('scroll',function(){
 	$(".more_dwon").click(function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script>
-		</div>
+</script></div>
+	
 	</body>
-	<script>		
-	$(function(){
-        $($(".wrap li")[4]).addClass("active").siblings().removeClass("active");
-		// $(".header").load("templates/header.html");
-		// $(".footer").load("templates/footer.html")
-	})
+	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/gjsilde.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type='text/javascript' src='//api.map.baidu.com/api?v=2.0&ak=bfUXDs4Q9hypXBR1yN0A4fGPbxMrhriF'></script>
+	<script type='text/javascript'>
+		var map = new BMap.Map('allmap');
+	    var point = new BMap.Point(113.689018,34.824333);
+		map.centerAndZoom(point, 15);
+		map.enableScrollWheelZoom(true);//可拖拽
+		var marker = new BMap.Marker(point);//标记
+		map.addOverlay(marker);        
+		marker.setLabel(new BMap.Label('向阳二手车', { offset: new BMap.Size(-20, -20) }));
+		var mapType = new BMap.MapTypeControl()
+		map.addControl(mapType);
+		var overViewOpen = new BMap.OverviewMapControl({isOpen:true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
+		map.addControl(overViewOpen);
+		map.addControl(new BMap.NavigationControl());
+
 	</script>
+
+	<script>
+	   // $(".header").load("templates/header.html");
+	   // $(".footer").load("templates/footer.html");
+	   //	显示分
+	   function showStar(elem){
+	   	var score=$(elem).find("em").attr("data_value");
+		var f_score=score*20;
+		$(elem).find("em").css('width',f_score+'%');
+	   }
+	   showStar(".value1");showStar(".value2");showStar(".value3");
+	   showStar(".user_markscore");
+
+	</script>
+	
 </html>
+ 
