@@ -1401,7 +1401,23 @@ class User  extends Common {
 
         if ($res !== false){
 
-            $this->return_msg(200,'找回成功');
+            $log = new newLog('booklog');
+
+            $log ->reclog(" 登录时间: ".date('Y-m-d H:i:s',time()));
+
+            $log ->reclog("登录者 : ".$user_info['phone']);
+
+            Session::set('user_id',$user_info['user_id']);
+
+            Session::set('phone',$user_info['phone']);
+
+            unset($user_info['login_password']); //密码永不返回
+
+           // $this->redirect('user/person_manage');
+
+            $this->success('密码已找回，登录中','user/person_manage');
+
+            //$this->return_msg(200,'找回成功');
 
         }else{
 

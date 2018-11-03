@@ -170,6 +170,19 @@ class Common extends Controller{
             'add_comment'=>array(
                 'user_id' =>'number',
             ),
+            'remark'=>array(
+                'user_id' =>'number',
+                'shop_id' =>'require|number',
+                'all_score' =>'require|number',
+                'car_score' =>'require|number',
+                'serve_score' =>'require|number',
+                'seller_score' =>'require|number',
+                'content' =>'require|number',
+                'have_ls' =>'require|number',
+                'have_shop' =>'require|number',
+                'have_buy' =>'require|number',
+                'lable' =>'require|number',
+            ),
         ),
 
         'User' => array(

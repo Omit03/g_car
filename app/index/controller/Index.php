@@ -23,20 +23,16 @@ class Index  extends Common
 
         $subface=$this->subface();//级别
 
-
         $new_car = $this->new_car($city_id); //新车
-
 
         $new_one_car = $this->search_news_carlist(0,0); //一成购新
 
        // dump($new_one_car);die;
         $new_dyg = $this->search_news_carlist(0, 4); //低月供
+
         //dump($new_dyg);die;
         $new_five_car = $this->search_news_carlist($chx=1,0); //五万以下
 
-        //dump($new_five_car);die;
-
-       // dump($new_one);die;
         //关于二手车
         $er_car = $this->er_car($city_id);//
 

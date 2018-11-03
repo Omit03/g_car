@@ -19,9 +19,15 @@
 <body>
 
 <div class="header">{include file="public/header"}</div>
+
+
 <div class="full_wid">
 	<div class="wrap">
 		<div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">郑州二手车 >></a><a href=""> 发表店铺评论 </a></div>
+
+		<form action="{:url('shop/remark')}" enctype="multipart/form-data"  method="post">
+
+			<input type="hidden" name="shop_id" value="<?php echo $_GET['shop_id']; ?>" />
 		<div class="add_com">
 			<div class="fright store_score">
 				<h2>向阳二手车金水区店</h2>
@@ -93,16 +99,20 @@
 				</div>
 				<!--多选-->
 				<div class="tag_list">
-					<span class="active" tag_check='1' tag_value="1"> 服务热情</span>
-					<span tag_check='0'  tag_value="2">店面干净</span>
-					<span tag_check='0'  tag_value="3">价格给力</span>
-					<span tag_check='0'  tag_value="4">服务耐心</span>
+					<!--<span class="active" tag_check='1' tag_value="1"> 服务热情</span>-->
+					{volist name="lables" id="val"}
+
+					<input type="text" name="lable" >
+					<span tag_check='0'  tag_value="{$val.id}">{$val.lable}</span>
+					<!--<input type="text" name="lable[]" value="">-->
+					{/volist}
+
 				</div>
 			</div>
 	      
 	     	<h2>评价</h2>
 	        <div class="textareabox p_r">
-	        	<textarea class="form_textarea" data-length="500" id="information"  data-toggle="textarea" 
+	        	<textarea class="form_textarea" data-length="500" id="information" name="content"  data-toggle="textarea"
 	        		placeholder="服务是否专业、价格是否合理，写下您的意见吧~"></textarea>
 	        		<span class="limit_num">
 	        			至少10字
@@ -110,27 +120,30 @@
 	        </div>
 	        <h2>购车阶段</h2>
 	        <ul class="buy_step oh">
-	        	<li><input type="checkbox" class="checked"/><b></b><span>未联系</span></li>
+	        	<li><input type="checkbox" class="checked" name="have_ls"/><b></b><span>未联系</span></li>
 	        	<li><input type="checkbox" /><b></b><span>未购车</span></li>
 	        	<li><input type="checkbox" /><b></b><span>未到店</span></li>
 	        </ul>
-			<div class="add_btn">发表评论</div>
+			<div class="add_btn"><input type="submit" value="发表评论"/></div>
 			<p>
 				欢迎您为商家进行点评和打分，与万千买家分享您的购车体验！<br />
 				您的点评和打分将成为其他买家的参考依据，并影响该商家评价。<br />
 				请您根据真实的购车体验，客观地发布本人的评价。如您发布的点评并非本人的真实体验，则将被视为违规。
 			</p>
-		</div>			
-	</div>	
+		</div>
+		</form>
+
+	</div>
 </div>
+
 
 <div class="footer">{include file="public/footer"}</div>
 
 </body>
 <script>
 	$(function(){
-     $(".header").load("templates/header.html");
-     $(".footer").load("templates/footer.html");
+     // $(".header").load("templates/header.html");
+     // $(".footer").load("templates/footer.html");
 //	显示分
 	var score=$(".score_value em").attr("data_value");
 	var f_score=score*20;
