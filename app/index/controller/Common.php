@@ -1912,6 +1912,13 @@ class Common extends Controller{
                 'blhsjing' => $blhsjing,
                 'ktbxiang' => $ktbxiang,
             );
+
+        }else{
+
+            $rr = '';
+
+            return $rr;
+
         }
         return $rr;
     }

@@ -91,26 +91,31 @@
 	        		<li>
 	        			<h3>基本配置</h3>
 	        			<div>
+							{notempty name="carparam"}
 	        				<p>{$carparam.info['0']['name']}</p><span>{$carparam.info['0']['content']}</span>
 	        				<p>{$carparam.info['3']['name']}</p><span>{$carparam.info['3']['content']}</span>
 	        				<p>{$carparam.info['4']['name']}</p><span>{$carparam.info['4']['content']}</span>
+							{/notempty}
 
 	        			</div>
 	        		</li>
 	        		<li><h3>外观参数</h3>
 	        			<div>
+							{notempty name="carparam"}
 							<p>{$carparam.car_body['0']['name']}</p><span>{$carparam.car_body['0']['content']}</span>
 							<p>{$carparam.car_body['1']['name']}</p><span>{$carparam.car_body['1']['content']}</span>
 							<p>{$carparam.car_body['2']['name']}</p><span>{$carparam.car_body['2']['content']}</span>
-
+							{/notempty}
 	        			</div>
 	        		</li>
 	        		<li><h3>发动机参数</h3>
 	        			<div>
+							{notempty name="carparam"}
 							<p>{$carparam.base['0']['name']}</p><span>{$carparam.base['0']['content']}</span>
 							<p>{$carparam.base['1']['name']}</p><span>{$carparam.base['1']['content']}</span>
 							<p>{$carparam.base['2']['name']}</p><span>{$carparam.base['2']['content']}</span>
-	        			</div>
+							{/notempty}
+						</div>
 	        		</li>
 	        	</ul>
 	        	<p class="more_config">查看更多配置</p>
@@ -273,37 +278,44 @@
   				<li class="con10"><b></b><span>车身配置</span></li>
   			</ul>
   			<div class="configCont">
+				{notempty name="carparam"}
   				<div class="config_f con1">
   					<div class="config_tit2"><b></b><span>基本配置</span></div>
   					<ul class="">
+
 						{volist name="carparam['info']" id="vol"}
   						<li>
   							<p>{$vol.name}</p>
   							<span>{$vol.content}</span>
   						</li>
   						{/volist}
+
   					</ul>
   				</div>
   				<div class="config_f con2">
   					<div class="config_tit2"><b></b><span>操控配置</span></div>
   					<ul class="">
+						{notempty name="carparam"}
 						{volist name="carparam['nbbase']" id="vol"}
   						<li>
 							<p>{$vol.name}</p>
 							<span>{$vol.content}</span>
   						</li>
 						{/volist}
+						{/notempty}
   					</ul>
   				</div>
   				<div class="config_f con3">
   					<div class="config_tit2"><b></b><span>外部配置</span></div>
   					<ul class="">
+						{notempty name="carparam"}
 						{volist name="carparam['wbfdpzhi']" id="vol"}
   						<li>
 							<p>{$vol.name}</p>
 							<span>{$vol.content}</span>
   						</li>
 						{/volist}
+						{/notempty}
   					</ul>
   				</div>
   				<div class="config_f con4">
@@ -387,7 +399,7 @@
 						{/volist}
   					</ul>
   				</div>
-  				
+				{/notempty}
   			</div>
   		</div>
   	</div>

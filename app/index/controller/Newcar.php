@@ -59,29 +59,6 @@ class Newcar extends Common
         $cartype_id = $data['cartype_id'];
         $cheid = $data['id'];
 
-        //获取新车浏览记录
-       $userid = Session::get('user_id');
-        if ($userid){
-
-            $wherehis['userid'] = $userid;
-            $wherehis['cheid'] = $cheid;
-            $wherehis['type'] = 1;
-
-            //dump($data['name']);die;
-
-            $res = Db::table('car_liulan_history')->where($wherehis)->find();
-
-         //   dump($data);die;
-
-            if (empty($res)){
-
-                Db::table('car_liulan_history')->insert(['userid'=>$userid,'brand_id'=>$brand_id,'type'=>1,'cheid'=>$cheid,'sys_id'=>$sys_id,'cartype_id'=>$cartype_id,'name'=>$data['name'],'price'=>$data['price'],'img'=>$data['img_url'],'shoufu'=>$data['shoufu'],'yuegong'=>$data['ygong']]);
-            }
-
-
-        }
-
-
 
         $firm_id=$this->get_firm($sys_id);
         //获取车辆的信息
@@ -173,6 +150,29 @@ class Newcar extends Common
 
         $shop_discount = $shop_discount?$shop_discount:array();
         $newcar_info = $newcar_info?$newcar_info:array();
+
+       // dump($newcar_info);die;
+        //获取新车浏览记录
+        $userid = Session::get('user_id');
+        if ($userid){
+
+            $wherehis['userid'] = $userid;
+            $wherehis['cheid'] = $cheid;
+            $wherehis['type'] = 1;
+
+            //dump($data['name']);die;
+
+            $res = Db::table('car_liulan_history')->where($wherehis)->find();
+
+            //   dump($data);die;
+
+            if (empty($res)){
+
+                Db::table('car_liulan_history')->insert(['userid'=>$userid,'brand_id'=>$brand_id,'type'=>1,'cheid'=>$cheid,'sys_id'=>$sys_id,'cartype_id'=>$cartype_id,'name'=>$newcar_info['name'],'price'=>$newcar_info['price'],'img'=>$newcar_info['img_ids']['0'],'shoufu'=>$newcar_info['pay10_s2'],'yuegong'=>$newcar_info['pay10_y2']]);
+            }
+
+
+        }
         $shop = $shop?$shop:array();
 //        dump($shop_discount);
 //

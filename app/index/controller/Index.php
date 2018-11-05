@@ -1135,23 +1135,6 @@ class Index  extends Common
 
         $cheid=$data['cheid'];
 
-
-        //获取新车浏览记录
-        $userid = Session::get('user_id');
-        if ($userid){
-
-            $wherehis['userid'] = $userid;
-            $wherehis['cheid'] = $cheid;
-            $wherehis['type'] = 2;
-
-            $res = Db::table('car_liulan_history')->where($wherehis)->find();
-
-            if (empty($res)){
-
-                Db::table('car_liulan_history')->insert(['userid'=>$userid,'type'=>2,'cheid'=>$cheid,'price'=>$data['price'],'img'=>$data['img'],'paitime'=>$data['time'],'name'=>$data['name'],'licheng'=>$data['mileage']]);
-            }
-
-        }
         //获取车辆信息
         $carinfo=Db::table("rele_car")->field("pu_id,user_id,brand_id,sys_id,cartype_id,price,car_mileage,car_age,output,gearbox,car_cardtime,blowdown,subface_img,img_512,car_desc,pay20_s2,pay20_y2,pay20_n2,city_id")->where("pu_id=$cheid")->find();
         //echo M("rele_car")->getlastsql();
@@ -1164,10 +1147,12 @@ class Index  extends Common
         $carinfo['output']=$this->get_output($carinfo['output']);
         $carinfo['car_age']=$this->get_car_age($carinfo['car_age']);
         //$carinfo['color']=get_color($carinfo['color']);
-        $carinfo['blowdown']=$this->get_blowdown($carinfo['blowdown']);
+        $carinfo['blowdown']=$this->get_blowdown($carinfo['blowdown']);//暂时注销
         $pay20_s2=$carinfo['pay20_s2']?$carinfo['pay20_s2']:"--";
         $pay20_y2=$carinfo['pay20_y2']?$carinfo['pay20_y2']:"--";
         $carinfo['pay20_n2']=$carinfo['pay20_n2']?$carinfo['pay20_n2']:"36";
+
+
         if($carinfo['pay20_s2']!=0){
             $carinfo['pay20_s2']=$carinfo['pay20_s2'];
         }else{
@@ -1195,6 +1180,7 @@ class Index  extends Common
         $remark_info=Db::table("remark")->field("id,all_score")->where("shop_id",$shopinfo['shop_id'])->select();
         $all_score="";
 
+
         foreach ($remark_info as $k => $v) {
             $all_score.=$v['all_score'];
            // $all_score+=$v['all_score'];
@@ -1215,9 +1201,10 @@ class Index  extends Common
         $shopinfo['user_num']=$user_num?$user_num:0;
         $shopinfo['img_url']=$this->get_carimg($shopinfo['mimg']);
 
+
         //点评
         $remark=Db::table("remark")->field("id,user_id,content,create_time,all_score")->where("shop_id",$shopinfo['shop_id'])->order("create_time desc")->find();
-       // dump($remark);die;
+
         if (empty($remark)){
             $remark['id']="";
             $remark['content']="";
@@ -1322,9 +1309,30 @@ class Index  extends Common
                 unset($sys_cars[$key]['cartype_id']);
                 //获取汽车的首付
                 $pay=$this->get_rele_car_fenqi($val['pu_id']);
-                $sys_cars[$key]['pay_20s']=$pay['pay_20s']?$pay['pay_20s']:'';
-                $sys_cars[$key]['pay_20y']=$pay['pay_20y']?$pay['pay_20y']:'';
-                $sys_cars[$key]['pay_20n']=$pay['pay_20n']?$pay['pay_20n']:'';
+                if(empty($pay['pay_20s'])){
+
+                    $sys_cars[$key]['pay_20s'] = '';
+                }else{
+
+                    $sys_cars[$key]['pay_20s'] = $pay['pay_20s'];
+                }
+                if(empty($pay['pay_20y'])){
+
+                    $sys_cars[$key]['pay_20y'] = '';
+
+                }else{
+
+                    $sys_cars[$key]['pay_20y'] = $pay['pay_20y'];
+                }
+                if(empty($pay['pay_20n'])){
+
+                    $sys_cars[$key]['pay_20n'] = '';
+                }else{
+                    $sys_cars[$key]['pay_20n'] = $pay['pay_20n'];
+                }
+               // $sys_cars[$key]['pay_20s']=$pay['pay_20s']?$pay['pay_20s']:'';
+               // $sys_cars[$key]['pay_20y']=$pay['pay_20y']?$pay['pay_20y']:'';
+                //$sys_cars[$key]['pay_20n']=$pay['pay_20n']?$pay['pay_20n']:'';
             }
         }
 
@@ -1334,6 +1342,23 @@ class Index  extends Common
         $sys_cars=$sys_cars ? $sys_cars : array();
 
        // dump($carinfo);die;
+
+        //获取新车浏览记录
+        $userid = Session::get('user_id');
+        if ($userid){
+
+            $wherehis['userid'] = $userid;
+            $wherehis['cheid'] = $cheid;
+            $wherehis['type'] = 2;
+
+            $res = Db::table('car_liulan_history')->where($wherehis)->find();
+
+            if (empty($res)){
+
+                Db::table('car_liulan_history')->insert(['userid'=>$userid,'type'=>2,'cheid'=>$cheid,'price'=>$carinfo['price'],'img'=>$carinfo['img_url']['0'],'paitime'=>$carinfo['car_cardtime'],'name'=>$carinfo['car_name'],'licheng'=>$carinfo['car_mileage']]);
+            }
+
+        }
 
         $carinfo = $carinfo?$carinfo:array();
 

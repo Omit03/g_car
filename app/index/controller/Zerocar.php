@@ -35,24 +35,6 @@ class Zerocar  extends Common
 
         $cheid=$data['cheid'];
 
-        //获取新车浏览记录
-        $userid = Session::get('user_id');
-        if ($userid){
-
-            $wherehis['userid'] = $userid;
-            $wherehis['cheid'] = $cheid;
-            $wherehis['type'] = 3;
-
-
-            $res = Db::table('car_liulan_history')->where($wherehis)->find();
-
-            if (empty($res)){
-
-                Db::table('car_liulan_history')->insert(['userid'=>$userid,'type'=>3,'cheid'=>$cheid,'price'=>$data['price'],'img'=>$data['img'],'name'=>$data['name'],'shoufu'=>$data['sf'],'yuegong'=>$data['yg']]);
-            }
-
-
-        }
         //获取车辆信息
         $carinfo=Db::table("l_car")->field("id,brand_id,firm_id,sys_id,cartype_id,price,can_price,sale_num,img_ids,img_512,gearbox,inlet_air,fuel,output,pay0_s2,pay0_y2,pay0_n2,subface,city_id")->where("id=$cheid")->find();
         $carinfo['img_url']=$this->get_carimgs($carinfo['img_ids'],2);
@@ -89,12 +71,29 @@ class Zerocar  extends Common
         }
         $carparam = $this->get_carparam($cheid,3);
 
+        //获取新车浏览记录
+        $userid = Session::get('user_id');
+        if ($userid){
+
+            $wherehis['userid'] = $userid;
+            $wherehis['cheid'] = $cheid;
+            $wherehis['type'] = 3;
+
+
+            $res = Db::table('car_liulan_history')->where($wherehis)->find();
+
+            if (empty($res)){
+
+                Db::table('car_liulan_history')->insert(['userid'=>$userid,'type'=>3,'cheid'=>$cheid,'price'=>$carinfo['price'],'img'=>$carinfo['img_512']['0'],'name'=>$carinfo['car_name'],'shoufu'=>$carinfo['pay0_s2'],'yuegong'=>$carinfo['pay0_y2']]);
+            }
+
+
+        }
+
         //dump($carparam);die;
         $carinfo['carlist']=$carlist?$carlist:array();
 
         $carinfo['platform_phone']="0371-53375515";
-
-       /// dump($carinfo);die;
 
         $brand = $this->brand();//品牌
         $this->assign('brand',$brand);

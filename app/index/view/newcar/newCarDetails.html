@@ -104,34 +104,43 @@
 	        	</div>
 				</div>
 	        	<div class="flex_center marbt30"><h2 class="tit_erjie">基本配置</h2></div>
+
+
 	        	<ul class="detail_information">
 	        		<li>
 	        			<h3>基本配置</h3>
+
+						{notempty name="carparam.info"}
 	        			<div>
 							<p>{$carparam.info['2']['name']}</p><span>{$carparam.info['2']['content']}</span>
 							<p>{$carparam.info['3']['name']}</p><span>{$carparam.info['3']['content']}</span>
 							<p>{$carparam.info['4']['name']}</p><span>{$carparam.info['4']['content']}</span>
 
 	        			</div>
+						{/notempty}
 	        		</li>
 	        		<li><h3>外观参数</h3>
+						{notempty name="carparam.info"}
 	        			<div>
 							<p>{$carparam.car_body['0']['name']}</p><span>{$carparam.car_body['0']['content']}</span>
 							<p>{$carparam.car_body['1']['name']}</p><span>{$carparam.car_body['1']['content']}</span>
 							<p>{$carparam.car_body['2']['name']}</p><span>{$carparam.car_body['2']['content']}</span>
 
 	        			</div>
+						{/notempty}
 	        		</li>
 	        		<li><h3>发动机参数</h3>
+						{notempty name="carparam.info"}
 	        			<div>
 							<p>{$carparam.base['0']['name']}</p><span>{$carparam.base['0']['content']}</span>
 							<p>{$carparam.base['1']['name']}</p><span>{$carparam.base['1']['content']}</span>
 							<p>{$carparam.base['2']['name']}</p><span>{$carparam.base['2']['content']}</span>
-
 	        			</div>
+						{/notempty}
 	        		</li>
 	        	</ul>
-	        	<p class="more_config">查看更多配置</p>
+				{notempty name="carparam.info"}<p class="more_config">查看更多配置</p>{/notempty}
+
 	        	<div class="flex_center marbt30"><h2 class="tit_erjie">车辆优势</h2></div>
 	        	<ul class="cardec_img">
 		    		<li>
@@ -329,6 +338,7 @@
   				<li class="con9"><b></b><span>安全配资</span></li>
   				<li class="con10"><b></b><span>车身配置</span></li>
   			</ul>
+			{notempty name="carparam.info"}
   			<div class="configCont">
   				<div class="config_f con1">
   					<div class="config_tit2"><b></b><span>基本配置</span></div>
@@ -443,6 +453,7 @@
   				</div>
   				
   			</div>
+			{/notempty}
   		</div>
   	</div>
 		<div class="footer">{include file="public/footer"}</div>
