@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1541383173;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1541417274;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1540866327;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -355,7 +355,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0; $__LIST__ = $new_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vl['brand_id']; ?>&sys_id=<?php echo $vl['sys_id']; ?>&cartype_id=<?php echo $vl['cartype_id']; ?>&id=<?php echo $vl['id']; ?>" class="flex_around" target="_blank">
+								<a href="zz/detail/<?php echo $vl['id']; ?>" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='<?php echo $vl['img_url']; ?>'/>
 								</span>
 									<h3 class="text_overflow"><?php echo $vl['name']; ?></h3>
@@ -377,7 +377,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($new_one_car) || $new_one_car instanceof \think\Collection || $new_one_car instanceof \think\Paginator): $i = 0; $__LIST__ = $new_one_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vl['brand_id']; ?>&sys_id=<?php echo $vl['sys_id']; ?>&cartype_id=<?php echo $vl['cartype_id']; ?>&id=<?php echo $vl['id']; ?>" class="flex_around" target="_blank">
+								<a href="zz/detail/<?php echo $vl['id']; ?>" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='<?php echo $vl['img_url']; ?>'/>
 								</span>
 									<h3 class="text_overflow"><?php echo $vl['name']; ?></h3>
@@ -399,7 +399,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($new_dyg) || $new_dyg instanceof \think\Collection || $new_dyg instanceof \think\Paginator): $i = 0; $__LIST__ = $new_dyg;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vl['brand_id']; ?>&sys_id=<?php echo $vl['sys_id']; ?>&cartype_id=<?php echo $vl['cartype_id']; ?>&id=<?php echo $vl['id']; ?>" class="flex_around" target="_blank">
+								<a href="zz/detail/<?php echo $vl['id']; ?>" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" title='' src='<?php echo $vl['img_url']; ?>'/>
 								</span>
 									<h3 class="text_overflow"><?php echo $vl['name']; ?></h3>
@@ -421,7 +421,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($new_five_car) || $new_five_car instanceof \think\Collection || $new_five_car instanceof \think\Paginator): $i = 0; $__LIST__ = $new_five_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href="<?php echo url('newcar/newcardetails'); ?>?brand_id=<?php echo $vl['brand_id']; ?>&sys_id=<?php echo $vl['sys_id']; ?>&cartype_id=<?php echo $vl['cartype_id']; ?>&id=<?php echo $vl['id']; ?>" class="flex_around" target="_blank">
+								<a href="zz/detail/<?php echo $vl['id']; ?>" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='<?php echo $vl['img_url']; ?>'/>
 								</span>
 									<h3 class="text_overflow"><?php echo $vl['name']; ?></h3>
@@ -455,7 +455,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0; $__LIST__ = $er_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>" class="flex_around">
+								<a href="zz/details/<?php echo $val['pu_id']; ?>" class="flex_around">
 									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
 								</span>
 									<h3 class="text_overflow"><?php echo $val['name']; ?></h3>
@@ -477,7 +477,7 @@ $(window).on('scroll',function(){
 						</li>
 						<?php if(is_array($min_price) || $min_price instanceof \think\Collection || $min_price instanceof \think\Paginator): $i = 0; $__LIST__ = $min_price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 						<li>
-							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>" class="flex_around">
+							<a href="zz/details/<?php echo $val['pu_id']; ?>" class="flex_around">
 									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
 								</span>
 								<h3 class="text_overflow"><?php echo $val['name_li']; ?></h3>
@@ -498,7 +498,7 @@ $(window).on('scroll',function(){
 					</li>
 					<?php if(is_array($min_age) || $min_age instanceof \think\Collection || $min_age instanceof \think\Paginator): $i = 0; $__LIST__ = $min_age;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 					<li>
-						<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>" class="flex_around">
+						<a href="zz/details/<?php echo $val['pu_id']; ?>" class="flex_around">
 									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
 								</span>
 							<h3 class="text_overflow"><?php echo $val['name_li']; ?></h3>
@@ -519,7 +519,7 @@ $(window).on('scroll',function(){
 			</li>
 			<?php if(is_array($min_licheng) || $min_licheng instanceof \think\Collection || $min_licheng instanceof \think\Paginator): $i = 0; $__LIST__ = $min_licheng;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 			<li>
-				<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>" class="flex_around">
+				<a href="zz/details/<?php echo $val['pu_id']; ?>" class="flex_around">
 												<span class="car_img"><img class='lazy-load' alt="" titlt='' src='<?php echo $val['img_url']; ?>'/>
 											</span>
 					<h3 class="text_overflow"><?php echo $val['name_li']; ?></h3>
@@ -547,7 +547,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($car_zero) || $car_zero instanceof \think\Collection || $car_zero instanceof \think\Paginator): $i = 0; $__LIST__ = $car_zero;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href="<?php echo url('zerocar/zerocardetails'); ?>?cheid=<?php echo $val['id']; ?>" class="flex_around" target="_blank">
+								<a href="zz/detai/<?php echo $val['id']; ?>" class="flex_around" target="_blank">
 									<span class="car_img"><img src="<?php echo $val['img_url']; ?>" alt=""/>
 								</span>
 									<h3 class="text_overflow"><?php echo $val['name']; ?></h3>

@@ -112,6 +112,9 @@ class Common extends Controller{
             'sale'=>array(
                 'user_id' =>'number',
             ),
+            'zhang'=>array(
+                'user_id' =>'number',
+            ),
         ),
         'Newcar' => array(
             'index'=>array(
@@ -121,7 +124,7 @@ class Common extends Controller{
                 'brand_id' =>'number',
                 'sys_id' =>'number',
                 'cartype_id' =>'number',
-                'id' =>'number',
+                //'id' =>'number',
             ),
         ),
         'Twocar' => array(
@@ -1319,24 +1322,24 @@ class Common extends Controller{
     }
 
 
-    public function https_request($url,$data = null){
-        $curl = curl_init();
-
-        curl_setopt($curl,CURLOPT_URL,$url);
-        curl_setopt($curl,CURLOPT_SSL_VERIFYPEER,false);
-        curl_setopt($curl,CURLOPT_SSL_VERIFYHOST,false);
-
-        if(!empty($data)){//如果有数据传入数据
-            curl_setopt($curl,CURLOPT_POST,1);//CURLOPT_POST 模拟post请求
-            curl_setopt($curl,CURLOPT_POSTFIELDS,$data);//传入数据
-        }
-
-        curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
-        $output = curl_exec($curl);
-        curl_close($curl);
-
-        return $output;
-    }
+//    public function https_request($url,$data = null){
+//        $curl = curl_init();
+//
+//        curl_setopt($curl,CURLOPT_URL,$url);
+//        curl_setopt($curl,CURLOPT_SSL_VERIFYPEER,false);
+//        curl_setopt($curl,CURLOPT_SSL_VERIFYHOST,false);
+//
+//        if(!empty($data)){//如果有数据传入数据
+//            curl_setopt($curl,CURLOPT_POST,1);//CURLOPT_POST 模拟post请求
+//            curl_setopt($curl,CURLOPT_POSTFIELDS,$data);//传入数据
+//        }
+//
+//        curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
+//        $output = curl_exec($curl);
+//        curl_close($curl);
+//
+//        return $output;
+//    }
 
     public function app_brand_ios(){
 
@@ -1426,16 +1429,16 @@ class Common extends Controller{
      * 获取city_id
      */
 
-    public function city_id(){
-
-        $ip = $this->request->ip();
-
-        $city = $this->get_area('61.163.128.204');//暂时写死
-
-        $city_id = $this->get_city($city['data']['city']);
-
-        return $city_id;
-    }
+//    public function city_id(){
+//
+//        $ip = $this->request->ip();
+//
+//        $city = $this->get_area('61.163.128.204');//暂时写死
+//
+//        $city_id = $this->get_city($city['data']['city']);
+//
+//        return $city_id;
+//    }
     /*
      * 获取二手车推荐
      */
@@ -2137,7 +2140,8 @@ class Common extends Controller{
 
             //获取城市id
 
-            $city_id = $this->city_id();
+            //$city_id = $this->city_id();
+            $city_id = 1;
 
             $WhereStr = "  and rele_car.status = 1 and rele_car.up_under = 1 and user.is_fenghao = 2 and rele_car.city_id=".$city_id;
             if(!empty($data['user_id'])){

@@ -9,9 +9,13 @@ class Index  extends Common
 {
     public function index(){
 
-       $city_id = $this->city_id();
+      //$city_id = $this->city_id();
+
+
+      $city_id = 1;
+       // $city_id = $this->city_id('zz');
         //banner
-        $banner=Db::table("home_car_app")->where("city_id=".$city_id)->order("sort asc")->select();
+        $banner=Db::table("home_car_app")->where("city_id",$city_id)->order("sort asc")->select();
 
         foreach ($banner as $key => $val) {
             $banner[$key]['img_url']=$this->get_carimg($val['img'],1);
@@ -57,7 +61,7 @@ class Index  extends Common
 
 
 
-
+        //$this->assign('city',$city);
         $this->assign('banner',$banner);
         $this->assign('brand',$brand);
         $this->assign('price',$price);
@@ -1526,6 +1530,12 @@ class Index  extends Common
             $this->return_msg('400','提交失败，请重新上传');
         }
 
+    }
+
+    public function zhang()
+    {
+        $id = input('id');
+        echo $id;
     }
 
 

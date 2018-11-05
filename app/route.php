@@ -18,7 +18,13 @@ use think\Route;
 //Route::rule('user/:id','user/index');
 
 //Route::rule('/','api/index/index');
-//Route::rule('admin/asd','admin/admin/organ_chart');
+//Route::rule(':city','index/index/index');
+//Route::rule(':city/detail/:brand_id/:sys_id','index/Newcar/newcardetails');
+Route::rule(':city/details/:cheid','index/index/details');
+Route::rule(':city/detail/:id','index/newcar/newcardetails');
+Route::rule(':city/detai/:cheid','index/zerocar/zerocardetails');
+//Route::rule(':city/detail/:id','index/newcar/newcardetails');
+//Route::rule('zhang/:id','index/index/zhang');
 //Route::rule('db','index/index/index');
 //Route::rule('test/:id','api/gongneng/test');//一旦设置参数必须填写
 

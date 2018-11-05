@@ -54,18 +54,23 @@ class Newcar extends Common
         $data=$this->params;
 
        // dump($data);die;
-        $brand_id = $data['brand_id'];
-        $sys_id = $data['sys_id'];
-        $cartype_id = $data['cartype_id'];
+
         $cheid = $data['id'];
 
 
-        $firm_id=$this->get_firm($sys_id);
         //获取车辆的信息
-        $newcar_info=Db::table("new_car")->field("id,img_ids,img_512,price,can_price,sale_num,brand_id,sys_id,cartype_id,pay10_s2,pay10_y2,pay10_n2,pay20_s2,pay20_y2,pay20_n2,pay30_s2,pay30_y2,pay30_n2,city_id")->where("brand_id=$brand_id and sys_id=$sys_id and cartype_id=$cartype_id")->find();
+        $newcar_info=Db::table("new_car")->field("id,img_ids,img_512,price,can_price,sale_num,brand_id,sys_id,cartype_id,pay10_s2,pay10_y2,pay10_n2,pay20_s2,pay20_y2,pay20_n2,pay30_s2,pay30_y2,pay30_n2,city_id")->where("id",$cheid)->find();
         if(!$newcar_info){
             echo '信息错误';
         }
+
+        $brand_id = $newcar_info['brand_id'];
+        $sys_id = $newcar_info['sys_id'];
+        $cartype_id = $newcar_info['cartype_id'];
+
+        $firm_id=$this->get_firm($sys_id);
+
+        //dump($newcar_info);die;
         //图片
 
         $newcar_info['img_ids']=$this->get_carimgs($newcar_info['img_ids'],2);
