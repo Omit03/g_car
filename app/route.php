@@ -17,9 +17,7 @@ use think\Route;
 //// api.tp.com  ===> www.tp.com/index.php/api/user/index/id/2
 //Route::rule('user/:id','user/index');
 
-//Route::rule('/:city','api/index/index');
-
-//Route::rule(':city','index/index/index');
+Route::rule(':city$','index/index/index');
 //Route::rule('zhengzhou','index/index/index');
 //Route::rule(':city/detail/:brand_id/:sys_id','index/Newcar/newcardetails');
 //Route::rule(':city','index/index/index');

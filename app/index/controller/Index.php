@@ -9,27 +9,29 @@ class Index  extends Common
 {
     public function index(){
 
-        //处理城市问题
+           //处理城市问题
+            //$name =  Session::get('cityurl');
 
-        $city_pin = input('city');
+            $city_pin = input('city');
 
-        $city_info = $this->set_session_url($city_pin);
+            $city_info = $this->set_session_url($city_pin);
 
-        if (empty($city_info)){
+            if (empty($city_info )){
 
-            $city_id = 1;
+                $city_id = 1;
 
-            $cityurl = 'zhengzhou';
-        }else{
+                $cityurl = 'zhengzhou';
+            }else{
 
-            $cityurl = $city_info['pin'];
+                $cityurl = $city_info['pin'];
 
-            $city_id = $city_info['id'];
-        }
+                $city_id = $city_info['id'];
+            }
 
-        Session::set('cityurl',$cityurl);
+            Session::set('cityurl',$cityurl);
 
-        $domain = $this->request->domain();
+            $domain = $this->request->domain();
+
 
 
         //banner
@@ -122,23 +124,33 @@ class Index  extends Common
 
         $city_pin = input('city');
 
+
+
         $city_info = $this->set_session_url($city_pin);
 
-        if (empty($city_info)){
+       // dump($city_info);die;
 
-            $city_id = 1;
-
-            $cityurl = 'zhengzhou';
-        }else{
+        if ($city_info){
 
             $cityurl = $city_info['pin'];
 
             $city_id = $city_info['id'];
+
+
+        }else{
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
         }
 
         Session::set('cityurl',$cityurl);
 
+
         $domain = $this->request->domain();
+
+
+        //$this->redirect("$domain/$cityurl");
 
     }
 
