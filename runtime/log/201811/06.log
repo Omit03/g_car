@@ -27647,3 +27647,755 @@
 )
 [ info ] [ RUN ] app\index\controller\Newcar->index[ G:\xampp\htdocs\car\app\index\controller\Newcar.php ]
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-06T19:27:44+08:00 ] 127.0.0.1 GET /
+[ info ] www.hr.com:8083/ [运行时间：0.199000s][吞吐率：5.03req/s] [内存消耗：3,124.03kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=a9r701v1tfmlaud5udjphmk2n7',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ G:\xampp\htdocs\car\app\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\index\index.html [ array (
+  0 => 'city',
+  1 => 'domain',
+  2 => 'banner',
+  3 => 'brand',
+  4 => 'price',
+  5 => 'subface',
+  6 => 'new_car',
+  7 => 'new_one_car',
+  8 => 'new_dyg',
+  9 => 'new_five_car',
+  10 => 'er_car',
+  11 => 'min_price',
+  12 => 'min_age',
+  13 => 'min_licheng',
+  14 => 'car_zero',
+  15 => 'new1',
+  16 => 'new2',
+  17 => 'new3',
+  18 => 'new4',
+  19 => 'new5',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`initial`,`initial_num`,`name`,`pin` FROM `city` WHERE  `pin` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `home_car_app` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `home_car_app` WHERE  `city_id` = 1 ORDER BY `sort` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `price_range` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT price_id as id,`name` FROM `price_range` ORDER BY `level` ASC LIMIT 4 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `subface` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT face_id as id,`name`,`img` FROM `subface` ORDER BY `level` ASC LIMIT 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`brand_id`,`sys_id`,`cartype_id`,`price`,`img_300`,`pay10_s2`,`pay10_y2`,`pay10_n2` FROM `new_car` WHERE  (  is_tj=1 and status=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 4 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26748' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1853' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16298' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1211' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2658' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '427' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select * from new_car where  1=1   order by id desc  limit 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16253' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1205' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15099' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1113' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15099' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1113' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15093' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1115' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15096' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1114' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select * from new_car where  1=1   order by pay30_y2  asc  limit 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '25396' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1723' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '8808' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '755' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2517' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '442' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '22196' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1535' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2487' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '442' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select * from new_car where  1=1   and price <5 order by id desc  limit 5 [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2517' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '442' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`img_300` FROM `rele_car` WHERE  (  status=1 and up_under=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 8 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2652' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '436' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9541 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6151' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '596' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9538 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2970' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '445' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9535 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6403' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9516 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6339' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '606' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9515 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9514 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6092' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '584' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9513 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6492' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '613' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9511 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT
+		rele_car.pu_id,rele_car.user_id,rele_car.cartype_id,rele_car.price,rele_car.name_li,rele_car.news_price,rele_car.car_mileage,rele_car.car_cardtime,rele_car.img_300
+			FROM
+				rele_car
+			join user on user.user_id = rele_car.user_id
+			WHERE
+			pu_id IN (SELECT
+			pu_id
+		FROM
+			(SELECT
+			pu_id
+		FROM
+			rele_car
+		join user on user.user_id = rele_car.user_id
+		WHERE
+			( 1=1    and rele_car.status = 1 and rele_car.up_under = 1 and user.is_fenghao = 2 and rele_car.city_id=1
+			)  	ORDER BY
+				rele_car.price asc  LIMIT 0,10) as t)   ORDER BY rele_car.price  asc [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3282 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=4075 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3864 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3425 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3443 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=2261 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=2262 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=5482 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3097 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3186 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT
+		rele_car.pu_id,rele_car.user_id,rele_car.cartype_id,rele_car.price,rele_car.name_li,rele_car.news_price,rele_car.car_mileage,rele_car.car_cardtime,rele_car.img_300
+			FROM
+				rele_car
+			join user on user.user_id = rele_car.user_id
+			WHERE
+			pu_id IN (SELECT
+			pu_id
+		FROM
+			(SELECT
+			pu_id
+		FROM
+			rele_car
+		join user on user.user_id = rele_car.user_id
+		WHERE
+			( 1=1    and rele_car.status = 1 and rele_car.up_under = 1 and user.is_fenghao = 2 and rele_car.city_id=1
+			)  	ORDER BY
+				rele_car.car_age desc  LIMIT 0,10) as t)   ORDER BY rele_car.car_age  desc [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=86 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=248 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=95 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=258 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=164 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=261 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=209 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=266 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=235 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=237 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT
+		rele_car.pu_id,rele_car.user_id,rele_car.cartype_id,rele_car.price,rele_car.name_li,rele_car.news_price,rele_car.car_mileage,rele_car.car_cardtime,rele_car.img_300
+			FROM
+				rele_car
+			join user on user.user_id = rele_car.user_id
+			WHERE
+			pu_id IN (SELECT
+			pu_id
+		FROM
+			(SELECT
+			pu_id
+		FROM
+			rele_car
+		join user on user.user_id = rele_car.user_id
+		WHERE
+			( 1=1    and rele_car.status = 1 and rele_car.up_under = 1 and user.is_fenghao = 2 and rele_car.city_id=1
+			)  	ORDER BY
+				rele_car.car_mileage asc  LIMIT 0,10) as t)   ORDER BY rele_car.car_mileage  asc [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=446 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=270 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=456 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=277 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=1121 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=337 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=1122 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=390 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=429 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=442 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `l_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype_id`,`price`,`img_300`,`pay0_s2`,`pay0_y2`,`pay0_n2` FROM `l_car` WHERE  (  is_tj=1 and status=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26748' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1853' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16298' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1211' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2658' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '427' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2720' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `news` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '1'  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '2'  AND `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '3'  AND `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '4'  AND `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '5'  AND `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `city` WHERE  `status` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-11-06T19:28:17+08:00 ] 127.0.0.1 GET /
+[ info ] www.hr.com:8083/ [运行时间：0.194000s][吞吐率：5.15req/s] [内存消耗：3,124.03kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=a9r701v1tfmlaud5udjphmk2n7',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ G:\xampp\htdocs\car\app\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\index\index.html [ array (
+  0 => 'city',
+  1 => 'domain',
+  2 => 'banner',
+  3 => 'brand',
+  4 => 'price',
+  5 => 'subface',
+  6 => 'new_car',
+  7 => 'new_one_car',
+  8 => 'new_dyg',
+  9 => 'new_five_car',
+  10 => 'er_car',
+  11 => 'min_price',
+  12 => 'min_age',
+  13 => 'min_licheng',
+  14 => 'car_zero',
+  15 => 'new1',
+  16 => 'new2',
+  17 => 'new3',
+  18 => 'new4',
+  19 => 'new5',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`initial`,`initial_num`,`name`,`pin` FROM `city` WHERE  `pin` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `home_car_app` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `home_car_app` WHERE  `city_id` = 1 ORDER BY `sort` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `price_range` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT price_id as id,`name` FROM `price_range` ORDER BY `level` ASC LIMIT 4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `subface` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT face_id as id,`name`,`img` FROM `subface` ORDER BY `level` ASC LIMIT 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`brand_id`,`sys_id`,`cartype_id`,`price`,`img_300`,`pay10_s2`,`pay10_y2`,`pay10_n2` FROM `new_car` WHERE  (  is_tj=1 and status=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 4 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26748' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1853' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16298' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1211' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2658' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '427' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select * from new_car where  1=1   order by id desc  limit 5 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16253' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1205' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15099' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1113' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15099' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1113' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15093' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1115' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '15096' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1114' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select * from new_car where  1=1   order by pay30_y2  asc  limit 5 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '25396' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1723' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '8808' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '755' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2517' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '442' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '22196' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1535' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2487' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '442' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] select * from new_car where  1=1   and price <5 order by id desc  limit 5 [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2517' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '442' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`img_300` FROM `rele_car` WHERE  (  status=1 and up_under=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 8 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2652' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '436' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9541 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6151' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '596' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9538 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2970' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '445' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9535 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6403' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9516 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6339' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '606' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9515 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9514 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6092' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '584' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9513 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6492' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '613' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9511 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT
+		rele_car.pu_id,rele_car.user_id,rele_car.cartype_id,rele_car.price,rele_car.name_li,rele_car.news_price,rele_car.car_mileage,rele_car.car_cardtime,rele_car.img_300
+			FROM
+				rele_car
+			join user on user.user_id = rele_car.user_id
+			WHERE
+			pu_id IN (SELECT
+			pu_id
+		FROM
+			(SELECT
+			pu_id
+		FROM
+			rele_car
+		join user on user.user_id = rele_car.user_id
+		WHERE
+			( 1=1    and rele_car.status = 1 and rele_car.up_under = 1 and user.is_fenghao = 2 and rele_car.city_id=1
+			)  	ORDER BY
+				rele_car.price asc  LIMIT 0,10) as t)   ORDER BY rele_car.price  asc [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3282 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=4075 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3864 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3425 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3443 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=2261 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=2262 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=5482 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3097 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=3186 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT
+		rele_car.pu_id,rele_car.user_id,rele_car.cartype_id,rele_car.price,rele_car.name_li,rele_car.news_price,rele_car.car_mileage,rele_car.car_cardtime,rele_car.img_300
+			FROM
+				rele_car
+			join user on user.user_id = rele_car.user_id
+			WHERE
+			pu_id IN (SELECT
+			pu_id
+		FROM
+			(SELECT
+			pu_id
+		FROM
+			rele_car
+		join user on user.user_id = rele_car.user_id
+		WHERE
+			( 1=1    and rele_car.status = 1 and rele_car.up_under = 1 and user.is_fenghao = 2 and rele_car.city_id=1
+			)  	ORDER BY
+				rele_car.car_age desc  LIMIT 0,10) as t)   ORDER BY rele_car.car_age  desc [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=86 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=248 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=95 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=258 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=164 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=261 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=209 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=266 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=235 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=237 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT
+		rele_car.pu_id,rele_car.user_id,rele_car.cartype_id,rele_car.price,rele_car.name_li,rele_car.news_price,rele_car.car_mileage,rele_car.car_cardtime,rele_car.img_300
+			FROM
+				rele_car
+			join user on user.user_id = rele_car.user_id
+			WHERE
+			pu_id IN (SELECT
+			pu_id
+		FROM
+			(SELECT
+			pu_id
+		FROM
+			rele_car
+		join user on user.user_id = rele_car.user_id
+		WHERE
+			( 1=1    and rele_car.status = 1 and rele_car.up_under = 1 and user.is_fenghao = 2 and rele_car.city_id=1
+			)  	ORDER BY
+				rele_car.car_mileage asc  LIMIT 0,10) as t)   ORDER BY rele_car.car_mileage  asc [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=446 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=270 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=456 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=277 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=1121 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=337 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=1122 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=390 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=429 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`car_cardtime`,`price` FROM `rele_car` WHERE  (  pu_id=442 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `l_car` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`cartype_id`,`price`,`img_300`,`pay0_s2`,`pay0_y2`,`pay0_n2` FROM `l_car` WHERE  (  is_tj=1 and status=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26748' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1853' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '26758' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1851' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '16298' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1211' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2658' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '427' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2720' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '453' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `news` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '1'  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '2'  AND `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '3'  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '4'  AND `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`time`,`miaoshu`,`news_column` FROM `news` WHERE  `news_column` = '5'  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `city` WHERE  `status` = 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-11-06T19:28:19+08:00 ] 127.0.0.1 GET /zhengzhou/twocar
+[ info ] www.hr.com:8083/zhengzhou/twocar [运行时间：0.351000s][吞吐率：2.85req/s] [内存消耗：2,882.81kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'twocar',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=a9r701v1tfmlaud5udjphmk2n7',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'city' => 'zhengzhou',
+)
+[ info ] [ RUN ] app\index\controller\Twocar->index[ G:\xampp\htdocs\car\app\index\controller\Twocar.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\twocar\index.html [ array (
+  0 => 'city',
+  1 => 'domain',
+  2 => 'brand',
+  3 => 'price',
+  4 => 'subface',
+  5 => 'er_car',
+  6 => 'ABC',
+  7 => 'age',
+  8 => 'licheng',
+  9 => 'output',
+  10 => 'gearbox',
+  11 => 'fuel',
+  12 => 'blowdown',
+  13 => 'car_drive',
+  14 => 'car_body',
+  15 => 'color',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`initial`,`initial_num`,`name`,`pin` FROM `city` WHERE  `pin` = 'zhengzhou' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `city` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `price_range` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT price_id as id,`name` FROM `price_range` ORDER BY `level` ASC LIMIT 4 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `subface` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT face_id as id,`name`,`img` FROM `subface` ORDER BY `level` ASC LIMIT 5 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cheling` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `cheling` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_color1` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `car_color1` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`img_300` FROM `rele_car` WHERE  (  status=1 and up_under=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 8 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2652' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '436' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9541 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6151' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '596' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9538 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2970' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '445' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9535 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6403' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9516 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6339' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '606' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9515 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9514 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6092' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '584' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9513 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6492' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '613' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9511 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '65'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '65'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '66'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '67'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '68'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '69'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '70'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '71'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '72'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '73'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '74'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '75'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '76'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '77'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '78'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '79'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '80'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '81'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '82'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '83'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '84'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '85'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '86'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '87'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '88'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '89'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '90'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+---------------------------------------------------------------
+[ 2018-11-06T19:28:20+08:00 ] 127.0.0.1 GET /zhengzhou/sell
+[ info ] www.hr.com:8083/zhengzhou/sell [运行时间：0.337000s][吞吐率：2.97req/s] [内存消耗：2,939.55kb] [文件加载：52]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sell',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/zhengzhou/twocar',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=a9r701v1tfmlaud5udjphmk2n7',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'city' => 'zhengzhou',
+)
+[ info ] [ RUN ] app\index\controller\Index->sell[ G:\xampp\htdocs\car\app\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\xampp\htdocs\car\public/../app/index\view\index\sell.html [ array (
+  0 => 'city',
+  1 => 'domain',
+  2 => 'res',
+  3 => 'er_car',
+  4 => 'brand',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=g_car4;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `car_brand` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '65'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '65'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '66'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '67'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '68'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '69'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '70'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '71'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '72'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '73'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '74'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '75'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '76'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '77'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '78'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '79'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '80'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '81'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '82'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '83'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '84'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '85'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '86'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '87'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '88'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '89'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`initial`,`name` FROM `car_brand` WHERE  `initial_num` = '90'  AND `status` = '1'  AND `level` = '1' ORDER BY `sort` DESC [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `city` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `id`,`initial`,`initial_num`,`name`,`pin` FROM `city` WHERE  `pin` = 'zhengzhou' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `city` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `rele_car` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT `pu_id`,`cartype_id`,`price`,`car_cardtime`,`car_mileage`,`img_300` FROM `rele_car` WHERE  (  status=1 and up_under=1 and city_id=1 ) ORDER BY `create_time` DESC LIMIT 8 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2652' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '436' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `param` [ RunTime:0.007000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9541 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6151' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '596' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9538 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '2970' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '445' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9535 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6403' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '604' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9516 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6339' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '606' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9515 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '27332' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '1921' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9514 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6092' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '584' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9513 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`upid` FROM `car_brand` WHERE  `id` = '6492' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `car_brand` WHERE  `id` = '613' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`price` FROM `param` WHERE  (  id=9511 ) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`img_id`,`name` FROM `car_brand` WHERE  (  id in (1,9,10,19,20,22) ) [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2018-11-06T19:28:20+08:00 ] 127.0.0.1 GET /zhengzhou/js/model/allCity.js
+[ info ] www.hr.com:8083/zhengzhou/js/model/allCity.js [运行时间：0.020000s][吞吐率：50.00req/s] [内存消耗：1,158.66kb] [文件加载：37]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'zhengzhou',
+    1 => 'js',
+    2 => 'model',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'referer' => 'http://www.hr.com:8083/zhengzhou/sell',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=a9r701v1tfmlaud5udjphmk2n7',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-06T19:28:22+08:00 ] 127.0.0.1 GET /zhengzhou/newcar
+[ info ] www.hr.com:8083/zhengzhou/newcar [运行时间：0.044000s][吞吐率：22.73req/s] [内存消耗：1,696.82kb] [文件加载：41]
+[ info ] [ LANG ] G:\xampp\htdocs\car\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'newcar',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.hr.com:8083',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.hr.com:8083/zhengzhou/sell',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'UM_distinctid=1665c3bd0250-02ed131810e0ca-5b163f13-1fa400-1665c3bd0272b9; CNZZDATA1273108608=1157751406-1539143650-%7C1539422485; Hm_lvt_922a7d20740f0600062b403710662cb1=1539145716,1539422460; Hm_lvt_080836300300be57b7f34f4b3e97d911=1539154281,1540172232; PHPSESSID=a9r701v1tfmlaud5udjphmk2n7',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'city' => 'zhengzhou',
+)
+[ info ] [ RUN ] app\index\controller\Newcar->index[ G:\xampp\htdocs\car\app\index\controller\Newcar.php ]
+[ info ] [ LOG ] INIT File

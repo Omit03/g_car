@@ -19,7 +19,7 @@ use think\Route;
 
 //Route::rule('/:city','api/index/index');
 
-//Route::rule(':city/index','index/index/index');
+//Route::rule(':city/','index/index/index');
 //Route::rule('zhengzhou','index/index/index');
 //Route::rule(':city/detail/:brand_id/:sys_id','index/Newcar/newcardetails');
 //Route::rule(':city','index/index/index');

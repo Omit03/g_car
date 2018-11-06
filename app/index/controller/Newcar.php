@@ -29,7 +29,7 @@ class Newcar extends Common
         //处理城市问题
 
         $city_pin = input('city');
-        dump($city_pin);die;
+       // dump($city_pin);die;
 
         $city_info = $this->set_session_url($city_pin);
 
