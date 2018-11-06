@@ -13,8 +13,6 @@ class Index  extends Common
 
         $city_pin = input('city');
 
-
-
         $city_info = $this->set_session_url($city_pin);
 
         if (empty($city_info)){

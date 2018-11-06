@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\user\person_manage.html";i:1541505145;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"G:\xampp\htdocs\car\public/../app/index\view\user\person_busenter.html";i:1541505145;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;}*/ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 	<head>
@@ -7,8 +7,7 @@
 	</head>
 	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
-	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css" />
+	<link rel="stylesheet" href="/static/css/other.css" />	
 	<style>
 
 	</style>
@@ -163,6 +162,7 @@ $(window).on('scroll',function(){
 </script>
 
 	</div>
+
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
@@ -188,127 +188,90 @@ $(window).on('scroll',function(){
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">店铺装修</span></h1>
-						<!--<h2 class="step">店铺装修</h2>-->
-						<div class="upLoad_form">
-							<form action="<?php echo url('user/change_shopinfo'); ?>" enctype="multipart/form-data" method="post">
-							<ul class="storeInfo_ipt motify_ipt">
-								
-								<li><span class="my_form_tit">店铺名称：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_name" value="<?php echo $shop_info['shop_name']; ?>" placeholder="请填写您的店铺名称"/></div>
-								</li>
-								<li><span class="my_form_tit">联系电话：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_phone" value="<?php echo $shop_info['shop_phone']; ?>" placeholder="请填写您的联系电话" /></div>
-								</li>
-								<li><span class="my_form_tit">店铺地址：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_address" value="<?php echo $shop_info['shop_address']; ?>" placeholder="请填写您店铺的详细地址"/></div>
-								</li>
-								<li><span class="my_form_tit">营业时间：</span>
-									<div class="fleft "><input type="text" placeholder="9:00" name="startTiem" value="<?php echo $shop_info['startTiem']; ?>"  class="startTiem"/>-<input type="text" name="endTiem" value="<?php echo $shop_info['endTiem']; ?>" placeholder="18:00" class="endTiem"/></div>
-								</li>
-								<li><span class="my_form_tit">店铺描述：</span>
-									<div class="fleft ">
-										<textarea name="shop_desc" rows="" cols="" class="store_desc" value="<?php echo $shop_info['shop_desc']; ?>" placeholder="<?php echo $shop_info['shop_desc']; ?>"></textarea>
-										
-									</div>
-								</li>
-								<li><span class="my_form_tit">上传门头：</span>
-									<div class="picture">
-										<div class='upload'>
-									      <!--  <div class="upLoadImg">
-										          <span class="center_img"><img class="imgg" id="" src="/assets/computer/images/img_406.png"></span>
-										       <b class="delete"><img src="/assets/computer/images/fancy_close.png" alt=""></b>
-										       </div>  -->
-										</div>
+						<h1 class="borbt"><span class="release">商家入驻</span></h1>
+						<h2 class="step"></h2>
+						<form  action="<?php echo url('user/business_entry'); ?>" method='post' enctype='multipart/form-data'>
+						<div class="business_enter">
+							<div>
+								<h3>选择类型 <span>请选择您的入驻类型</span></h3>
+								<div class="sel_type gj_clear">
+									<input type="text" readonly placeholder="新车商户" class="businesType"/>
+									<div class="position_r">
+										<select name="type">
+											<option value="1">新车商户</option>
+											<option value="2">二手车商户</option>
+											<option value="3">零首付商户</option>
+											<option value="4">新能源商户</option>
 
-								            <input type="file" name="door_photo" />
+										</select>
+
+									</div>
+								</div>								
+							</div>
+							<div>
+								<h3>上传资料  </h3>
+								<div class="bform_ipt">
+									<div class="sel_type"><span>法人姓名</span><input type="text" name = "name" placeholder="请输入公司法人姓名" /></div>
+									<div class="sel_type"><span>法人手机号</span><input type="text" name="phone" placeholder="请输入公司法人手机号"/></div>
+									<div class="sel_type"><span>验证码</span><input type="text" placeholder="请输入验证码" class="verfity"/><span class="getcode">获取验证码</span></div>
+									<div class="sel_type"><span>店铺名称</span><input type="text" name="shop_name" placeholder="请输入公司店铺名称"/></div>
+									<div class="sel_type"><span>经营范围</span><input type="text" name="business_range" placeholder="请输入公司经营范围" class="slt_type" readonly/></div>
+									<div class="sel_type"><span>公司地址</span><input type="text" name="address" placeholder="请输入公司经营地址"/></div>
+								
+								</div>
+							</div>
+							<div class="img_l gj_clear">
+								<div class="fleft">
+									<h3>上传营业执照  </h3>
+									<div class="imgCont">
+										 <!--<form id= "uploadForm" method='post' enctype='multipart/form-data'>-->
+								            <input  type="file" name="door_photo" />
 								            <div class="upLoad_pic">
-									            <img class="img_up" id="" src="/static/img/addimg.png" > 
-									            <span>点击上传图片</span>
+									            <img class="img_up"  src="/static/img/addlo.png" >
+									          
+									        </div>
+								        <!--</form>	-->
+									</div>
+								</div>
+								<div class="fleft">
+									<h3>店铺logo  </h3>
+									<div class="imgCont">
+
+										<input  type="file" name="shop_licence" />
+								            <div class="upLoad_pic">
+									            <img class="img_up" id="" src="/static/img/addlo.png" > 
+									          
 									        </div>
 
-								    </div>
-
-								</li>
-							</ul>								
-							<p class="sub_btn pwd_submit"><input type="submit" value="提交"></p>
-
-							</form>
+									</div>
+									
+								</div>
+							</div>
+							<div class="submit sub_btn"><input type="submit" value="提交" /></div>
 						</div>
-
+						</form>
 					</div>
+
 				</div>
 				
 			</div>
-		</div>
-	<div class="footer">
-		
-	<div class="wrap">
-		<div class="company_info gj_clear">
-			<div class="footer_logo"><img src="/static/img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
-			<div class="basic_info">
-				<div>
-					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
-					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
-					<a href="<?php echo url('index/service'); ?>">服务保障</a>
-					<a href="<?php echo url('index/website'); ?>">网站地图</a>
-				</div>
-				<p>
-					版权所有：河南管家车销售有限公司 <br /> 
-				 工信备案：豫ICP备17046554号 <br /> 
-				  CopyRight © 2015-2018 ww
-				</p>
-			</div>
-			<div class="QRcode"><img src="/static/img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
-			<div class="QRcode"><img src="/static/img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
-			<div class="contact_way">
-				<p>免费咨询、建议、投诉 <br />
-				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
-				 每天9：00-21：00(法定节假日除外)
-				</p>		
-			</div>
 		</div>	
-		<div class="optimize_link">
-			<p class="link_tit">热门品牌：</p>
-			<span class="more_dwon"></span>
-			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-			<a href="<?php echo url('index/lots_cars'); ?>?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?></a>
-			<?php endforeach; endif; else: echo "" ;endif; ?>
-
-		</div>
-		<div class="optimize_link">
-			<p class="link_tit ">热门车系123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-			<a href="">大众</a>
-
-		</div>
-		<div class="optimize_link gj_clear">
-			<p class="link_tit">友情链接123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-
-
-
-		</div>
-	</div>
-<script>
-	$(".more_dwon").click(function(){
-		$(this).parents(".optimize_link").addClass("link_active")
-	})
-</script>
-	</div>
+		<div class="footer"></div>
+		
 		<div class="mask1"></div>
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
 	<script>		
-		$(function(){			
-
-			//加载公用头部和底部
-		    $(".header").load("templates/header.html");
-//		    $(".footer").load("templates/footer.html");
-
-			
+		$(function(){	
+			$(".businesType").click(function(){
+				$(this).parents('.sel_type').addClass('active');				
+			})
+			$(".selList li").click(function(){
+					var result=$(this).text();
+					$(".businesType").val(result);
+					$(this).parents('.sel_type').removeClass('active');
+				})
+   			$(".header").load("templates/header.html");
 	})
 </script>
 </html>

@@ -19,7 +19,7 @@ use think\Route;
 
 //Route::rule('/:city','api/index/index');
 
-//Route::rule(':city/','index/index/index');
+//Route::rule(':city/index','index/index/index');
 //Route::rule('zhengzhou','index/index/index');
 //Route::rule(':city/detail/:brand_id/:sys_id','index/Newcar/newcardetails');
 //Route::rule(':city','index/index/index');
@@ -39,6 +39,15 @@ Route::rule(':city/login','index/user/car_login');
 Route::rule(':city/logout','index/user/car_logout');
 Route::rule(':city/register','index/user/register');
 Route::rule(':city/per_his','index/user/person_history');
+Route::rule(':city/per_man','index/user/person_manage');
+Route::rule(':city/per_ord','index/user/person_order');
+Route::rule(':city/per_rele','index/user/person_release');
+Route::rule(':city/per_pub','index/user/person_public');
+Route::rule(':city/per_buse','index/user/person_busenter');
+Route::rule(':city/per_oppo','index/user/person_opportunity');
+Route::rule(':city/per_info','index/user/person_info');
+Route::rule(':city/per_coll','index/user/person_collect');
+Route::rule(':city/per_feed','index/user/person_feedback');
 Route::rule(':city/lots_cars','index/index/lots_cars');
 
 Route::rule(':city/details/:cheid','index/index/details');//二手车详情

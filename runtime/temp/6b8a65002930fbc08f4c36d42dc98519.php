@@ -1,6 +1,6 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\user\person_manage.html";i:1541505145;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"G:\xampp\htdocs\car\public/../app/index\view\user\person_order.html";i:1541505145;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 	<head>
 		<meta charset="utf-8"/>
 		<title></title>
@@ -8,9 +8,9 @@
 	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css" />
-	<style>
 
+	<style>
+	
 	</style>
 	<body>
 	<div class="header">
@@ -163,6 +163,7 @@ $(window).on('scroll',function(){
 </script>
 
 	</div>
+
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
@@ -188,61 +189,37 @@ $(window).on('scroll',function(){
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">店铺装修</span></h1>
-						<!--<h2 class="step">店铺装修</h2>-->
-						<div class="upLoad_form">
-							<form action="<?php echo url('user/change_shopinfo'); ?>" enctype="multipart/form-data" method="post">
-							<ul class="storeInfo_ipt motify_ipt">
-								
-								<li><span class="my_form_tit">店铺名称：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_name" value="<?php echo $shop_info['shop_name']; ?>" placeholder="请填写您的店铺名称"/></div>
-								</li>
-								<li><span class="my_form_tit">联系电话：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_phone" value="<?php echo $shop_info['shop_phone']; ?>" placeholder="请填写您的联系电话" /></div>
-								</li>
-								<li><span class="my_form_tit">店铺地址：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_address" value="<?php echo $shop_info['shop_address']; ?>" placeholder="请填写您店铺的详细地址"/></div>
-								</li>
-								<li><span class="my_form_tit">营业时间：</span>
-									<div class="fleft "><input type="text" placeholder="9:00" name="startTiem" value="<?php echo $shop_info['startTiem']; ?>"  class="startTiem"/>-<input type="text" name="endTiem" value="<?php echo $shop_info['endTiem']; ?>" placeholder="18:00" class="endTiem"/></div>
-								</li>
-								<li><span class="my_form_tit">店铺描述：</span>
-									<div class="fleft ">
-										<textarea name="shop_desc" rows="" cols="" class="store_desc" value="<?php echo $shop_info['shop_desc']; ?>" placeholder="<?php echo $shop_info['shop_desc']; ?>"></textarea>
-										
-									</div>
-								</li>
-								<li><span class="my_form_tit">上传门头：</span>
-									<div class="picture">
-										<div class='upload'>
-									      <!--  <div class="upLoadImg">
-										          <span class="center_img"><img class="imgg" id="" src="/assets/computer/images/img_406.png"></span>
-										       <b class="delete"><img src="/assets/computer/images/fancy_close.png" alt=""></b>
-										       </div>  -->
-										</div>
-
-								            <input type="file" name="door_photo" />
-								            <div class="upLoad_pic">
-									            <img class="img_up" id="" src="/static/img/addimg.png" > 
-									            <span>点击上传图片</span>
-									        </div>
-
-								    </div>
-
-								</li>
-							</ul>								
-							<p class="sub_btn pwd_submit"><input type="submit" value="提交"></p>
-
-							</form>
-						</div>
-
-					</div>
+						<h1 class="borbt"><span class="release">我的预约 </span>
+							<ul class="fright sel_status">
+								<li class="active" data-status='1'><b></b><span>全部</span></li>
+								<li data-status='0'><b></b><span>新车</span></li>
+								<li data-status='0'><b></b><span>二手车</span></li>
+								<li data-status='0'><b></b><span>零首付</span></li>
+							</ul>
+						</h1>
+						<ul class="p_list">
+							<?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="item">
+								<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>">
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3><?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['car_cardtime']; ?> | <?php echo $val['shop_name']; ?></p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice"><?php echo $val['price']; ?>万</span></div>
+								</div>
+								<div class="order_res">
+									<p>预约时间：2018-07-27  15:00</p>
+									<span class="order_des">详 情</span>
+								</div>
+								</a>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+						</ul>
+					</div>	
 				</div>
-				
 			</div>
 		</div>
-	<div class="footer">
-		
+		<div class="footer">
+			
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="/static/img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -297,15 +274,32 @@ $(window).on('scroll',function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
 </script>
-	</div>
-		<div class="mask1"></div>
+		</div>
+		
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/laydate.js"></script>
+	<script src="/static/js/imgUp.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<script>		
-		$(function(){			
-
+		$(function(){		
+			$(".sel_status li").each(function(){
+				var that=$(this);
+				$(that).click(function(){
+				var status=$(this).attr("data-status");
+					if(status==1){
+						$(this).attr("data-status",0);
+						$(this).removeClass("active")
+					}else{
+						$(this).attr("data-status",1);
+						$(this).addClass("active").siblings().removeClass("active")
+					}
+				
+			})
+			})
+			
 			//加载公用头部和底部
-		    $(".header").load("templates/header.html");
+		   // $(".header").load("templates/header.html");
 //		    $(".footer").load("templates/footer.html");
 
 			

@@ -531,6 +531,30 @@ class User  extends Common {
     public function person_public(){
 
 
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
         $data = $this->params;
         //获取user_id
         $user_id = Session::get('user_id');
@@ -733,6 +757,30 @@ class User  extends Common {
      * 展示商机
      */
     public function person_opportunity(){
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         //获取店铺的userID
         $user_id = Session::get('user_id');
@@ -877,6 +925,32 @@ class User  extends Common {
      * 展示个人信息
      */
     public function person_info(){
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
+
 
 
         $phone = Session::get('phone');
@@ -1163,6 +1237,31 @@ class User  extends Common {
      */
     public function person_feedback(){
 
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
+
         /*接收参数*/
        if($this->request->isPost()){
 
@@ -1203,6 +1302,30 @@ class User  extends Common {
      */
 
     public function person_order(){
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         /*接收参数*/
         $user_id   = input('param.user_id');

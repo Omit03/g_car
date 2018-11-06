@@ -1,6 +1,6 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\user\person_manage.html";i:1541505145;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"G:\xampp\htdocs\car\public/../app/index\view\user\person_feedback.html";i:1541505145;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 	<head>
 		<meta charset="utf-8"/>
 		<title></title>
@@ -8,9 +8,8 @@
 	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
-	<link rel="stylesheet" href="/static/css/iconfont.css" />
 	<style>
-
+	
 	</style>
 	<body>
 	<div class="header">
@@ -163,6 +162,7 @@ $(window).on('scroll',function(){
 </script>
 
 	</div>
+
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
@@ -188,54 +188,22 @@ $(window).on('scroll',function(){
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">店铺装修</span></h1>
-						<!--<h2 class="step">店铺装修</h2>-->
+						<h1 class="borbt"><span class="release">意见反馈</span></h1>
+						<h2 class="step"></h2>
 						<div class="upLoad_form">
-							<form action="<?php echo url('user/change_shopinfo'); ?>" enctype="multipart/form-data" method="post">
-							<ul class="storeInfo_ipt motify_ipt">
-								
-								<li><span class="my_form_tit">店铺名称：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_name" value="<?php echo $shop_info['shop_name']; ?>" placeholder="请填写您的店铺名称"/></div>
-								</li>
-								<li><span class="my_form_tit">联系电话：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_phone" value="<?php echo $shop_info['shop_phone']; ?>" placeholder="请填写您的联系电话" /></div>
-								</li>
-								<li><span class="my_form_tit">店铺地址：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_address" value="<?php echo $shop_info['shop_address']; ?>" placeholder="请填写您店铺的详细地址"/></div>
-								</li>
-								<li><span class="my_form_tit">营业时间：</span>
-									<div class="fleft "><input type="text" placeholder="9:00" name="startTiem" value="<?php echo $shop_info['startTiem']; ?>"  class="startTiem"/>-<input type="text" name="endTiem" value="<?php echo $shop_info['endTiem']; ?>" placeholder="18:00" class="endTiem"/></div>
-								</li>
-								<li><span class="my_form_tit">店铺描述：</span>
-									<div class="fleft ">
-										<textarea name="shop_desc" rows="" cols="" class="store_desc" value="<?php echo $shop_info['shop_desc']; ?>" placeholder="<?php echo $shop_info['shop_desc']; ?>"></textarea>
-										
-									</div>
-								</li>
-								<li><span class="my_form_tit">上传门头：</span>
-									<div class="picture">
-										<div class='upload'>
-									      <!--  <div class="upLoadImg">
-										          <span class="center_img"><img class="imgg" id="" src="/assets/computer/images/img_406.png"></span>
-										       <b class="delete"><img src="/assets/computer/images/fancy_close.png" alt=""></b>
-										       </div>  -->
-										</div>
 
-								            <input type="file" name="door_photo" />
-								            <div class="upLoad_pic">
-									            <img class="img_up" id="" src="/static/img/addimg.png" > 
-									            <span>点击上传图片</span>
-									        </div>
-
-								    </div>
-
-								</li>
-							</ul>								
-							<p class="sub_btn pwd_submit"><input type="submit" value="提交"></p>
-
+							<form action="<?php echo url('user/person_feedback'); ?>" method="post">
+								<ul class="motify_ipt">
+									<li><span class="my_form_tit">姓名：</span><div class="fleft myform_ipt"><input type="name" name="name" placeholder="请输入您的姓名"/></div></li>
+									<li><span class="my_form_tit">手机号：</span>
+										<div class="fleft myform_ipt"><input type="phone" name="phone" placeholder="请输入您的手机号" /></div>
+									</li>
+									<li><span class="my_form_tit">详细描述：</span>
+										<div class="fleft "><textarea name="con" rows="" cols="" class="store_desc" placeholder="请用10-400字以内描述您所遇到的问题"></textarea></div>
+									</li>
+									<p class="sub_btn pwd_submit"><input type="submit" value="提交" /></p>
+									</ul>
 							</form>
-						</div>
-
 					</div>
 				</div>
 				
@@ -298,17 +266,21 @@ $(window).on('scroll',function(){
 	})
 </script>
 	</div>
+		
 		<div class="mask1"></div>
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
 	<script>		
 		$(function(){			
 
+//			手机号隐藏中间4位
+			$(".uphone").text($(".uphone").text().substring(0, 3) + "****" + $(".uphone").text().substring(7, 11));
 			//加载公用头部和底部
 		    $(".header").load("templates/header.html");
 //		    $(".footer").load("templates/footer.html");
 
 			
 	})
+
 </script>
 </html>
