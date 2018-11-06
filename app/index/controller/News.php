@@ -82,7 +82,30 @@ class News extends Common
         $id = input('param.id');
        // $news_column = input('param.column');//处理分类 暂时废弃
 
-        $city_id = $this->city_id();
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         $er_car = $this->er_car($city_id);
 

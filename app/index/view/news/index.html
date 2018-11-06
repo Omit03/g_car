@@ -29,7 +29,7 @@
 				<div class="news_conlist">
 					<ul id="conbd01">
 						{volist name="new1" id="val"}
-						<li><a href="{:url('news/newsdetails')}?id={$val.id}">
+						<li><a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$val.id}">
 							<span class="news_listImg"><img src="__STATIC__/img/gds1.png" alt="" title="" height="167"/></span>
 							<div class="news_text_desc ">
 								<h2 class="hid">{$val.title}</h2>
@@ -41,7 +41,7 @@
 					</ul>
 					<ul id="conbd02" style="display: none;">
 						{volist name="new2" id="val"}
-						<li><a href="{:url('news/newsdetails')}?id={$val.id}">
+						<li><a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$val.id}">
 							<span class="news_listImg"><img src="__STATIC__/img/gds1.png" alt="" title="" height="167"/></span>
 							<div class="news_text_desc ">
 								<h2 class="hid">{$val.title}</h2>
@@ -53,7 +53,7 @@
 					</ul>
 					<ul id="conbd03" style="display: none;">
 						{volist name="new3" id="val"}
-						<li><a href="{:url('news/newsdetails')}?id={$val.id}">
+						<li><a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$val.id}">
 							<span class="news_listImg"><img src="__STATIC__/img/gds1.png" alt="" title="" height="167"/></span>
 							<div class="news_text_desc ">
 								<h2 class="hid">{$val.title}</h2>
@@ -65,7 +65,7 @@
 					</ul>
 					<ul id="conbd04" style="display: none;">
 						{volist name="new4" id="val"}
-						<li><a href="{:url('news/newsdetails')}?id={$val.id}">
+						<li><a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$val.id}">
 							<span class="news_listImg"><img src="__STATIC__/img/gds1.png" alt="" title="" height="167"/></span>
 							<div class="news_text_desc ">
 								<h2 class="hid">{$val.title}</h2>
@@ -77,7 +77,7 @@
 					</ul>
 					<ul id="conbd05" style="display: none;">
 						{volist name="new5" id="val"}
-						<li><a href="{:url('news/newsdetails')}?id={$val.id}">
+						<li><a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$val.id}">
 							<span class="news_listImg"><img src="__STATIC__/img/gds1.png" alt="" title="" height="167"/></span>
 							<div class="news_text_desc ">
 								<h2 class="hid">{$val.title}</h2>
@@ -99,8 +99,8 @@
 				    <ul class="list">
 						{volist name="er_car" id="val" offset="1" length="10"}
 						<li class="items5">
-							<a href="{:url('index/details')}?cheid={$val.pu_id}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
-							<a href="{:url('index/details')}?cheid={$val.pu_id}" class="car_desc">
+							<a href="{$domain}/{$Think.session.cityurl}/details/{$val.pu_id}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
+							<a href="{$domain}/{$Think.session.cityurl}/details/{$val.pu_id}" class="car_desc">
 								<h3>{$val.name}</h3>
 								<p><span class="car_price"><b>{$val.new_car_price}</b>万</span><span class="car_sui">新车含税{$val.price}万</span></p>
 								<p><span>{$val.car_cardtime}上牌</span> <span class="padlt20">{$val.car_mileage}万公里</span> </p>
@@ -119,9 +119,9 @@
 				   <ul class="list">
 					   {volist name="new_car" id="val" offset="1" length="10"}
 						<li class="items5">
-							<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}" class="flex_around" target="_blank">
-							<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
-							<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}" class="car_desc">
+							<a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" class="flex_around" target="_blank">
+							<a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
+							<a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" class="car_desc">
 								<h3>{$val.name}</h3>
 								<p class="valign ptp15">
 									<span class="pay_first plt10">首付<b class="">{$val.pay10_s2}</b>万</span>

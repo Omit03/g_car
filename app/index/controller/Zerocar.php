@@ -31,7 +31,6 @@ class Zerocar  extends Common
     */
     public function zerocardetails(){
 
-
         //处理城市问题
 
         $city_pin = input('city');

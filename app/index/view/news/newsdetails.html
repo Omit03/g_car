@@ -27,9 +27,9 @@
 
 					<p class="textRight">-----责任编辑：管家车易站08</p>
 					<div class="page_news">
-				    	<a href="{:url('news/newsdetails')}?id={$next.id}"><div class="news_t">{$next.id}{$next.title}</div> </a>
-				    	<a href="{:url('news/newsdetails')}?id={$next.id}" >上一篇</a><a href="{:url('news/newsdetails')}?id={$up.id}">下一篇</a>
-				    	<a href="{:url('news/newsdetails')}?id={$up.id}"><div class="news_t">{$up.title} </div></a>
+				    	<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$next.id}"><div class="news_t">{$next.id}{$next.title}</div> </a>
+				    	<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$next.id}" >上一篇</a><a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$up.id}">下一篇</a>
+				    	<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$up.id}"><div class="news_t">{$up.title} </div></a>
 					</div>
 				</div>
 				
@@ -43,7 +43,7 @@
 				    <ul class="list">
 						{volist name="er_car" id="val" offset="1" length="10"}
 						<li class="items5">
-							<a href="" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
+							<a href="{$domain}/{$Think.session.cityurl}/details/{$val.pu_id}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
 							<a href="" class="car_desc">
 								<h3>{$val.name}</h3>
 								<p><span class="car_price"><b>{$val.new_car_price}</b>万</span><span class="car_sui">新车含税{$val.price}万</span></p>
@@ -62,9 +62,9 @@
 				   <ul class="list">
 					   {volist name="new_car" id="val" offset="1" length="10"}
 					   <li class="items5">
-						   <a href="zeroCar.html" class="flex_around" target="_blank">
-							   <a href="" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
-							   <a href="" class="car_desc">
+						   <a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" class="flex_around" target="_blank">
+							   <a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
+							   <a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" class="car_desc">
 								   <h3>{$val.name}</h3>
 								   <p class="valign ptp15">
 									   <span class="pay_first plt10">首付<b class="">{$val.pay10_s2}</b>万</span>

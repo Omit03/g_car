@@ -17,9 +17,10 @@ use think\Route;
 //// api.tp.com  ===> www.tp.com/index.php/api/user/index/id/2
 //Route::rule('user/:id','user/index');
 
-//Route::rule('/','api/index/index');
+//Route::rule('/:city','api/index/index');
 
-Route::rule('/','index/index/index');
+//Route::rule(':city/index','index/index/index');
+//Route::rule('zhengzhou','index/index/index');
 //Route::rule(':city/detail/:brand_id/:sys_id','index/Newcar/newcardetails');
 //Route::rule(':city','index/index/index');
 Route::rule(':city/newcar','index/newcar/index');
@@ -27,15 +28,22 @@ Route::rule(':city/twocar','index/twocar/index');
 Route::rule(':city/sell','index/index/sell');
 Route::rule(':city/change','index/change/index');
 Route::rule(':city/news','index/news/index');
+Route::rule(':city/newsdetails/:id','index/news/newsdetails');
 Route::rule(':city/appdownload','index/index/appdownload');
-//Route::rule(':city/login','index/user/car_login');
-//Route::rule(':city/logout','index/user/car_logout');
-//Route::rule(':city/register','index/user/register');
-//Route::rule(':city/per_his','index/user/person_history');
+Route::rule(':city/join_us','index/index/join_us');
+Route::rule(':city/link_us','index/index/link_us');
+Route::rule(':city/service','index/index/service');
+Route::rule(':city/website','index/index/website');
+Route::rule(':city/shop','index/shop/index');
+Route::rule(':city/login','index/user/car_login');
+Route::rule(':city/logout','index/user/car_logout');
+Route::rule(':city/register','index/user/register');
+Route::rule(':city/per_his','index/user/person_history');
+Route::rule(':city/lots_cars','index/index/lots_cars');
 
-Route::rule(':city/details/:cheid','index/index/details');
-Route::rule(':city/detail/:id','index/newcar/newcardetails');
-Route::rule(':city/detai/:cheid','index/zerocar/zerocardetails');
+Route::rule(':city/details/:cheid','index/index/details');//二手车详情
+Route::rule(':city/detail/:id','index/newcar/newcardetails');//新车详情
+Route::rule(':city/detai/:cheid','index/zerocar/zerocardetails');//零首付详情
 //Route::rule(':city/detail/:id','index/newcar/newcardetails');
 //Route::rule('zhang/:id','index/index/zhang');
 //Route::rule('db','index/index/index');

@@ -1,16 +1,17 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\user\person_manage.html";i:1541061813;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:68:"G:\xampp\htdocs\car\public/../app/index\view\user\person_public.html";i:1540965087;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 	<head>
 		<meta charset="utf-8"/>
 		<title></title>
+		<script src="/static/js/jquery-1.11.0.min.js"></script>
 	</head>
-	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
 	<link rel="stylesheet" href="/static/css/iconfont.css" />
+	<link rel="stylesheet" href="/static/js/theme/default/laydate.css" />	
 	<style>
-
+	
 	</style>
 	<body>
 	<div class="header">
@@ -163,6 +164,7 @@ $(window).on('scroll',function(){
 </script>
 
 	</div>
+
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
@@ -174,9 +176,9 @@ $(window).on('scroll',function(){
 						</div>
 						<div class="tab_choose">
 							<ul>
-								<li class="active"><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="person_manage.html"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_release.html"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
-								<li class=""><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class="active"><a href="person_public.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_busenter.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_opportunity.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
 								<li class=""><a href="person_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
@@ -188,57 +190,135 @@ $(window).on('scroll',function(){
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">店铺装修</span></h1>
-						<!--<h2 class="step">店铺装修</h2>-->
-						<div class="upLoad_form">
-							<form action="<?php echo url('user/change_shopinfo'); ?>" enctype="multipart/form-data" method="post">
-							<ul class="storeInfo_ipt motify_ipt">
-								
-								<li><span class="my_form_tit">店铺名称：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_name" value="<?php echo $shop_info['shop_name']; ?>" placeholder="请填写您的店铺名称"/></div>
-								</li>
-								<li><span class="my_form_tit">联系电话：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_phone" value="<?php echo $shop_info['shop_phone']; ?>" placeholder="请填写您的联系电话" /></div>
-								</li>
-								<li><span class="my_form_tit">店铺地址：</span>
-									<div class="fleft myform_ipt"><input type="text" name="shop_address" value="<?php echo $shop_info['shop_address']; ?>" placeholder="请填写您店铺的详细地址"/></div>
-								</li>
-								<li><span class="my_form_tit">营业时间：</span>
-									<div class="fleft "><input type="text" placeholder="9:00" name="startTiem" value="<?php echo $shop_info['startTiem']; ?>"  class="startTiem"/>-<input type="text" name="endTiem" value="<?php echo $shop_info['endTiem']; ?>" placeholder="18:00" class="endTiem"/></div>
-								</li>
-								<li><span class="my_form_tit">店铺描述：</span>
-									<div class="fleft ">
-										<textarea name="shop_desc" rows="" cols="" class="store_desc" value="<?php echo $shop_info['shop_desc']; ?>" placeholder="<?php echo $shop_info['shop_desc']; ?>"></textarea>
-										
+						<h1 class="borbt"><span class="release">发布过的</span>
+							<ul class="fright sel_status">
+								<li class="active" data-status='0'><b></b><span>全部</span></li>
+								<li data-status='1'><b></b><span>审核中</span></li>
+								<li data-status='2'><b></b><span>发布成功</span></li>
+								<li data-status='3'><b></b><span>发布失败</span></li>
+								<li data-status='4'><b></b><span>已下架</span></li>
+							</ul>
+						</h1>
+						<ul id="che_fb0" class="p_list">
+							<?php if(!(empty($all_car) || (($all_car instanceof \think\Collection || $all_car instanceof \think\Paginator ) && $all_car->isEmpty()))): if(is_array($all_car) || $all_car instanceof \think\Collection || $all_car instanceof \think\Paginator): $i = 0; $__LIST__ = $all_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="item">
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3><?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['create_time']; ?>| 郑州</p>
+									<div><span class="cprice"><b><?php echo $val['price']; ?></b>万</span>
+										<!--<span class="nprice">13.22万</span>-->
 									</div>
-								</li>
-								<li><span class="my_form_tit">上传门头：</span>
-									<div class="picture">
-										<div class='upload'>
-									      <!--  <div class="upLoadImg">
-										          <span class="center_img"><img class="imgg" id="" src="/assets/computer/images/img_406.png"></span>
-										       <b class="delete"><img src="/assets/computer/images/fancy_close.png" alt=""></b>
-										       </div>  -->
-										</div>
+								</div>
+								<div class="car_status">
+									<!--<img src="/static/img/shenhez .png" alt="" />-->
+								</div>
 
-								            <input type="file" name="door_photo" />
-								            <div class="upLoad_pic">
-									            <img class="img_up" id="" src="/static/img/addimg.png" > 
-									            <span>点击上传图片</span>
-									        </div>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; endif; ?>
 
-								    </div>
+						</ul>
+						<ul id="che_fb1" class="p_list" style="display: none;">
+							<?php if(!(empty($dai_audit) || (($dai_audit instanceof \think\Collection || $dai_audit instanceof \think\Paginator ) && $dai_audit->isEmpty()))): if(is_array($dai_audit) || $dai_audit instanceof \think\Collection || $dai_audit instanceof \think\Paginator): $i = 0; $__LIST__ = $dai_audit;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="item">
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3><?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['create_time']; ?> | <?php echo $val['name']; ?>郑州</p>
+									<div><span class="cprice"><b><?php echo $val['price']; ?></b>万</span>
+										<!--<span class="nprice"><?php echo $val['price']; ?>万</span>-->
+									</div>
+								</div>
+								<div class="car_status"><img src="/static/img/shenhez .png" alt="" /></div>
 
-								</li>
-							</ul>								
-							<p class="sub_btn pwd_submit"><input type="submit" value="提交"></p>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; endif; ?>
 
-							</form>
-						</div>
+						</ul>
+						<ul id="che_fb2" class="p_list" style="display: none;">
+							<?php if(!(empty($fabu_car) || (($fabu_car instanceof \think\Collection || $fabu_car instanceof \think\Paginator ) && $fabu_car->isEmpty()))): if(is_array($fabu_car) || $fabu_car instanceof \think\Collection || $fabu_car instanceof \think\Paginator): $i = 0; $__LIST__ = $fabu_car;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="item">
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3>789<?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['create_time']; ?>  | 郑州</p>
+									<div><span class="cprice"><b><?php echo $val['price']; ?></b>万</span>
+										<!--<span class="nprice">13.22万</span></div>-->
+								</div>
+								<div class="car_status"><img src="/static/img/fabuchengg.png" alt="" /></div>
+								<div class="car_res">
+									<p class="bgorg martp20">下架</p>
+									<p class="bgbor">商家推荐</p>
 
-					</div>
+								</div>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; endif; ?>
+						</ul>
+						<ul id="che_fb3" class="p_list" style="display: none;">
+							<?php if(!(empty($no_audit) || (($no_audit instanceof \think\Collection || $no_audit instanceof \think\Paginator ) && $no_audit->isEmpty()))): if(is_array($no_audit) || $no_audit instanceof \think\Collection || $no_audit instanceof \think\Paginator): $i = 0; $__LIST__ = $no_audit;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="item">
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3>456<?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['create_time']; ?>  | 郑州</p>
+									<div><span class="cprice"><b><?php echo $val['price']; ?></b>万</span>
+										<!--<span class="nprice">13.22万</span></div>-->
+								</div>
+								<div class="car_status"><img src="/static/img/fabushibai.png" alt="" /></div>
+								<div class="car_res">
+									<p class="bgorg">查看原因</p>
+									<p class="bgorg">编辑</p>
+									<p class="bgred">删除</p>
+								</div>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; endif; ?>
+						</ul>
+						<ul id="che_fb4" class="p_list" style="display: none;">
+							<?php if(!(empty($del_audit) || (($del_audit instanceof \think\Collection || $del_audit instanceof \think\Paginator ) && $del_audit->isEmpty()))): if(is_array($del_audit) || $del_audit instanceof \think\Collection || $del_audit instanceof \think\Paginator): $i = 0; $__LIST__ = $del_audit;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="item">
+								<div class="car_img"><img src="<?php echo $val['img_url']; ?>" alt="" /></div>
+								<div class="car_desc"><h3>123<?php echo $val['name']; ?></h3>
+									<p><?php echo $val['car_mileage']; ?>万公里 | <?php echo $val['create_time']; ?> | 郑州</p>
+									<div><span class="cprice"><b><?php echo $val['price']; ?></b>万</span>
+										<!--<span class="nprice">13.22万</span></div>-->
+								</div>
+								<div class="car_status"><img src="/static/img/fabushibai.png" alt="" /></div>
+								<div class="car_res">
+									<p class="bgorg">查看原因</p>
+									<p class="bgorg">编辑</p>
+									<p class="bgred">删除</p>
+								</div>
+							</li>
+							<?php endforeach; endif; else: echo "" ;endif; endif; ?>
+
+						</ul>
+						<ul id="che_fb5" class="p_list" style="display: none;">
+							<li class="item">
+								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
+								<div class="car_desc"><h3>123123卡罗拉 2011款 1.8L CVT GL-i</h3>
+									<p>8.1万公里 | 2012-03 | 郑州</p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								</div>
+								<div class="car_status"><img src="/static/img/xiajia.png" alt="" /></div>
+								<div class="car_res">
+									<p class="bgorg">编辑</p>
+									<p class="bgorg">上架</p>
+									<p class="bgred">删除</p>
+								</div>
+							</li>
+
+							<li class="item">
+								<div class="car_img"><img src="/static/img/s.png" alt="" /></div>
+								<div class="car_desc"><h3>卡罗拉 2011款 1.8L CVT GL-i</h3>
+									<p>8.1万公里 | 2012-03 | 郑州</p>
+									<div><span class="cprice"><b>78</b>万</span><span class="nprice">13.22万</span></div>
+								</div>
+								<div class="car_status"><img src="/static/img/xiajia.png" alt="" /></div>
+								<div class="car_res">
+									<p class="bgorg">编辑</p>
+									<p class="bgorg">上架</p>
+									<p class="bgred">删除</p>
+								</div>
+							</li>
+						</ul>
+					</div>	
 				</div>
-				
 			</div>
 		</div>
 	<div class="footer">
@@ -298,14 +378,30 @@ $(window).on('scroll',function(){
 	})
 </script>
 	</div>
-		<div class="mask1"></div>
+		
 	</body>
-	<script src="/static/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/js/laydate.js"></script>
+	<script src="/static/js/imgUp.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
 	<script>		
-		$(function(){			
-
+		$(function(){		
+			$(".sel_status li").each(function(){
+				var that=$(this);
+				that.click(function(){
+					if(!$(this).hasClass("active")){
+                        $(this).addClass("active").siblings().removeClass("active");
+                        var index = $(this).attr("data-status");
+                        for (var i = 0; i< 6; i++){
+                            $("#che_fb" + i).css("display", 'none')
+						}
+						$("#che_fb" + index).css("display", 'block')
+					}
+				
+			})
+			})
+			
 			//加载公用头部和底部
-		    $(".header").load("templates/header.html");
+		    //$(".header").load("templates/header.html");
 //		    $(".footer").load("templates/footer.html");
 
 			

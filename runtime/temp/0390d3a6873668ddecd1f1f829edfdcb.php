@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1541384159;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541484408;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\details.html";i:1541496246;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -27,7 +27,7 @@
 			<?php echo \think\Session::get('phone'); endif; ?></div>
 		<div class="fright">
 			<ul class="site_nav_menu">
-				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>"><img src="/static/img/shouye.png" alt="" />首页</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/"><img src="/static/img/shouye.png" alt="" />首页</a></li>
 				<li class="sec_li"><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/twocar"><img src="/static/img/maic.png" alt="" />我要买车</a></li>
 				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/sell"><img src="/static/img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/appdownload"><img src="/static/img/xiazai.png" alt="" />APP下载</a></li>
@@ -48,7 +48,7 @@
 			<div class="city"  style="display: none;" >
 				<ol>
 					<?php if(is_array($city) || $city instanceof \think\Collection || $city instanceof \think\Paginator): $i = 0; $__LIST__ = $city;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-						<a href="/<?php echo $val['pin']; ?>"> <li><?php echo $val['name']; ?></li></a>
+						<a href="<?php echo $domain; ?>/<?php echo $val['pin']; ?>"> <li><?php echo $val['name']; ?></li></a>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 
 				</ol>
@@ -81,7 +81,7 @@
 	</div>
 	<div class="nav gj_clear">
 		<ul class="wrap">
-			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>">首页</a></li>
+			<li><a href="<?php echo $domain; ?>">首页</a></li>
 			<li ><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newcar" class="sec_li">新车</a></li>
 			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/twocar">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -90,8 +90,8 @@
 			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/news">新闻资讯</a></li>
 			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/appdownload">APP下载</a></li>
 			<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/login">登录/注册</a></li><?php endif; ?>
-			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
-			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
+			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/join_us">关于我们</a></li>
+			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/shop">优选商家</a></li>
 		</ul>
 	</div>
 </div>
@@ -118,15 +118,15 @@
 		</div>
 		<div class="nav">
 			<ul>
-				<li><a href="<?php echo url('index/index'); ?>">首页</a></li>
-				<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
-				<li><a href="<?php echo url('newcar/index'); ?>">新车</a></li>
+				<li><a href="<?php echo $domain; ?>">首页</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/twocar">二手车</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newcar">新车</a></li>
 				<!--<li><a href="zeroCar.html">零首付</a></li>-->
-				<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
-				<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
-				<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
-				<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li><?php endif; ?>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/sell">卖车</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/change">置换</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/news">新闻资讯</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/appdownload">APP下载</a></li>
+				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/login">登录/注册</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>
@@ -312,15 +312,15 @@ $(window).on('scroll',function(){
 				</ul>
 				<div class="tit_er">
 			        <div class="line_tit"></div>			        
-			        <h2 class="color tit_con">同系推荐</h2>	       
+			        <h2 class="color tit_con">同系推荐</h2>
 			    </div>
 				<div class="car_list">
 					<ul class="list">
 						<a href="">
 						<?php if(is_array($sys_cars) || $sys_cars instanceof \think\Collection || $sys_cars instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($sys_cars) ? array_slice($sys_cars,1,null, true) : $sys_cars->slice(1,null, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 						<li class="items5">
-							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
-							<a href="<?php echo url('index/details'); ?>?cheid=<?php echo $val['pu_id']; ?>&price=<?php echo $val['price']; ?>&mileage=<?php echo $val['car_mileage']; ?>&name=<?php echo $val['name']; ?>&img=<?php echo $val['img_url']; ?>&time=<?php echo $val['car_cardtime']; ?>" class="car_desc">
+							<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/details/<?php echo $val['pu_id']; ?>" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
+							<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/details/<?php echo $val['pu_id']; ?>" class="car_desc">
 								<h3><?php echo $val['name']; ?></h3>
 								<p><span class="car_price"><b><?php echo $val['price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $val['news_price']; ?>万</span></p>
 								<p><span><?php echo $val['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $val['car_mileage']; ?>万公里</span> </p>

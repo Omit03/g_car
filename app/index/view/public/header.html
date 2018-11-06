@@ -8,7 +8,7 @@
 			{/empty}</div>
 		<div class="fright">
 			<ul class="site_nav_menu">
-				<li><a href="{$domain}/{$Think.session.cityurl}"><img src="__STATIC__/img/shouye.png" alt="" />首页</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}/"><img src="__STATIC__/img/shouye.png" alt="" />首页</a></li>
 				<li class="sec_li"><a href="{$domain}/{$Think.session.cityurl}/twocar"><img src="__STATIC__/img/maic.png" alt="" />我要买车</a></li>
 				<li><a href="{$domain}/{$Think.session.cityurl}/sell"><img src="__STATIC__/img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href="{$domain}/{$Think.session.cityurl}/appdownload"><img src="__STATIC__/img/xiazai.png" alt="" />APP下载</a></li>
@@ -30,7 +30,7 @@
 			<div class="city"  style="display: none;" >
 				<ol>
 					{volist name="city" id="val"}
-						<a href="/{$val.pin}"> <li>{$val.name}</li></a>
+						<a href="{$domain}/{$val.pin}"> <li>{$val.name}</li></a>
 					{/volist}
 
 				</ol>
@@ -63,7 +63,7 @@
 	</div>
 	<div class="nav gj_clear">
 		<ul class="wrap">
-			<li><a href="{$domain}/{$Think.session.cityurl}">首页</a></li>
+			<li><a href="{$domain}">首页</a></li>
 			<li ><a href="{$domain}/{$Think.session.cityurl}/newcar" class="sec_li">新车</a></li>
 			<li><a href="{$domain}/{$Think.session.cityurl}/twocar">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -72,8 +72,8 @@
 			<li><a href="{$domain}/{$Think.session.cityurl}/news">新闻资讯</a></li>
 			<li><a href="{$domain}/{$Think.session.cityurl}/appdownload">APP下载</a></li>
 			{empty name="Think.session.phone"}<li><a href="{$domain}/{$Think.session.cityurl}/login">登录/注册</a></li>{/empty}
-			<li><a href="{:url('index/join_us')}">关于我们</a></li>
-			<li><a href="{:url('shop/index')}">优选商家</a></li>
+			<li><a href="{$domain}/{$Think.session.cityurl}/join_us">关于我们</a></li>
+			<li><a href="{$domain}/{$Think.session.cityurl}/shop">优选商家</a></li>
 		</ul>
 	</div>
 </div>
@@ -100,15 +100,15 @@
 		</div>
 		<div class="nav">
 			<ul>
-				<li><a href="{:url('index/index')}">首页</a></li>
-				<li><a href="{:url('twocar/index')}">二手车</a></li>
-				<li><a href="{:url('newcar/index')}">新车</a></li>
+				<li><a href="{$domain}">首页</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}/twocar">二手车</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}/newcar">新车</a></li>
 				<!--<li><a href="zeroCar.html">零首付</a></li>-->
-				<li><a href="{:url('index/sell')}">卖车</a></li>
-				<li><a href="{:url('change/index')}">置换</a></li>
-				<li><a href="{:url('news/index')}">新闻资讯</a></li>
-				<li><a href="{:url('index/appdownload')}">APP下载</a></li>
-				{empty name="Think.session.phone"}<li><a href="{:url('user/car_login')}">登录/注册</a></li>{/empty}
+				<li><a href="{$domain}/{$Think.session.cityurl}/sell">卖车</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}/change">置换</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}/news">新闻资讯</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}/appdownload">APP下载</a></li>
+				{empty name="Think.session.phone"}<li><a href="{$domain}/{$Think.session.cityurl}/login">登录/注册</a></li>{/empty}
 			</ul>
 		</div>
 	</div>

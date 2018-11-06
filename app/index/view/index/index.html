@@ -119,7 +119,8 @@
 						<ul class="sel_newcar_brand oh ">
 							{volist name="brand" id = "val"}
 							<li>
-								<a href="{:url('index/lots_cars')}?brand_id={$val.id}&page=1&sort=1"><img src="{$val.img_url}" alt="">
+								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?brand_id={$val.id}&page=1&sort=1"><img src="{$val.img_url}" alt="">
+								<!--<a href="{$domain}/{$Think.session.cityurl}/lots_cars/{$val.id}"><img src="{$val.img_url}" alt="">-->
 									<p>{$val.name}</p>
 								</a>
 							</li>
@@ -131,7 +132,7 @@
 							</li>
 							{volist name="price" id = "val"}
 							<li class="active">
-								<a href="{:url('index/lots_cars')}?price_range={$val.id}&page=1&sort=1">{$val.name} </a>
+								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?price_range={$val.id}&page=1&sort=1">{$val.name} </a>
 							</li>
 							{/volist}
 						</ul>
@@ -141,7 +142,7 @@
 							</li>
 							{volist name="subface" id = "val"}
 							<li class="active">
-								<a href="{:url('index/lots_cars')}?car_age={$val.id}&page=1&sort=1"> {$val.name}</a>
+								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?car_age={$val.id}&page=1&sort=1"> {$val.name}</a>
 							</li>
 							{/volist}
 							<li class="active fright">
@@ -153,7 +154,7 @@
 						<ul class="sel_newcar_brand oh ">
 							{volist name="brand" id = "val"}
 							<li>
-								<a href="{:url('index/lots_cars')}?brand_id={$val.id}&page=1&sort=1"><img src="{$val.img_url}" alt="">
+								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?brand_id={$val.id}&page=1&sort=1"><img src="{$val.img_url}" alt="">
 									<p>{$val.name}</p>
 								</a>
 							</li>
@@ -165,7 +166,7 @@
 							</li>
 							{volist name="price" id = "val"}
 							<li class="active">
-								<a href="{:url('index/lots_cars')}?price_range={$val.id}&page=1&sort=1">{$val.name} </a>
+								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?price_range={$val.id}&page=1&sort=1">{$val.name} </a>
 							</li>
 							{/volist}
 						</ul>
@@ -175,7 +176,7 @@
 							</li>
 							{volist name="subface" id = "val"}
 							<li class="active">
-								<a href="{:url('index/lots_cars')}?car_age={$val.id}&page=1&sort=1"> {$val.name}</a>
+								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?car_age={$val.id}&page=1&sort=1"> {$val.name}</a>
 							</li>
 							{/volist}
 							<li class="active fright">
@@ -437,17 +438,17 @@
 					<div class="home_news_cont" id="conbd01">
 
 						<div class="left_big new_imgs">
-							<a href="{:url('news/newsdetails')}?id={$new1['0']['id']}&column={$new1['0']['news_column']}"> <img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new1['0']['id']}"> <img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid">{$new1['0']['title']}</p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<a href="{:url('news/newsdetails')}?id={$new1['1']['id']}">
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new1['1']['id']}">
 								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
 								<p class="hid">{$new1['1']['title']}</p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<a href="{:url('news/newsdetails')}?id={$new1['2']['id']}">
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new1['2']['id']}">
 								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
 								<p class="hid">{$new1['2']['title']}</p></a>
 							</div>
@@ -455,7 +456,7 @@
 						<ul class="news_txt_desc">
 							{volist name="new1" id="vol"}
 							<li><span class="fright">{$vol.time}</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="{:url('news/newsdetails')}?id={$vol.id}">{$vol.title}</a>
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$vol.id}">{$vol.title}</a>
 							</li>
 							{/volist}
 
@@ -463,18 +464,18 @@
 					</div>
 					<div class="home_news_cont" id="conbd02" style="display: none;">
 						<div class="left_big new_imgs">
-							<a href="{:url('news/newsdetails')}?id={$new2['0']['id']}">
+							<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new2['0']['id']}">
 							<img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
 								<p class="hid">{$new2['0']['title']}</p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<a href="{:url('news/newsdetails')}?id={$new2['1']['id']}">
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new2['1']['id']}">
 								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
 								<p class="hid">{$new2['1']['title']}</p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<a href="{:url('news/newsdetails')}?id={$new2['2']['id']}">
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new2['2']['id']}">
 								<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
 								<p class="hid">{$new2['2']['title']}</p></a>
 							</div>
@@ -483,7 +484,7 @@
 
 							{volist name="new2" id="vol"}
 							<li><span class="fright">{$vol.time}</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="{:url('news/newsdetails')}?id={$vol.id}">{$vol.title}</a>
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$vol.id}">{$vol.title}</a>
 							</li>
 							{/volist}
 
@@ -492,16 +493,16 @@
 					</div>
 					<div class="home_news_cont" id="conbd03" style="display: none;">
 						<div class="left_big new_imgs">
-							<a href="{:url('news/newsdetails')}?id={$new3['0']['id']}"><img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new3['0']['id']}"><img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid">{$new3['0']['title']}</p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<a href="{:url('news/newsdetails')}?id={$new3['1']['id']}"><img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new3['1']['id']}"><img src="__STATIC__/img/ccbt.png" alt="" height="135" />
 								<p class="hid">{$new3['1']['title']}</p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<a href="{:url('news/newsdetails')}?id={$new3['2']['id']}">	<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new3['2']['id']}">	<img src="__STATIC__/img/ccbt.png" alt="" height="135" />
 								<p class="hid">{$new3['2']['title']}</p></a>
 							</div>
 						</div>
@@ -509,7 +510,7 @@
 
 							{volist name="new3" id="vol"}
 							<li><span class="fright">{$vol.time}</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="{:url('news/newsdetails')}?id={$vol.id}">{$vol.title}</a>
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$vol.id}">{$vol.title}</a>
 							</li>
 							{/volist}
 
@@ -517,16 +518,16 @@
 					</div>
 					<div class="home_news_cont" id="conbd04" style="display: none;">
 						<div class="left_big new_imgs">
-							<a href="{:url('news/newsdetails')}?id={$new4['0']['id']}"><img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new4['0']['id']}"><img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
 								<p class="hid">{$new4['0']['title']}</p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<a href="{:url('news/newsdetails')}?id={$new4['1']['id']}"><img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new4['1']['id']}"><img src="__STATIC__/img/ccbt.png" alt="" height="135" />
 								<p class="hid">{$new4['1']['title']}</p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<a href="{:url('news/newsdetails')}?id={$new4['2']['id']}"></a> <img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new4['2']['id']}"></a> <img src="__STATIC__/img/ccbt.png" alt="" height="135" />
 								<p class="hid">{$new4['2']['title']}</p></a>
 							</div>
 						</div>
@@ -534,7 +535,7 @@
 
 							{volist name="new4" id="vol"}
 							<li><span class="fright">{$vol.time}</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="{:url('news/newsdetails')}?id={$vol.id}">{$vol.title}</a>
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$vol.id}">{$vol.title}</a>
 							</li>
 							{/volist}
 
@@ -542,16 +543,16 @@
 					</div>
 					<div class="home_news_cont" id="conbd05" style="display: none;">
 						<div class="left_big new_imgs">
-							<a href="{:url('news/newsdetails')}?id={$new5['0']['id']}"> <img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
+							<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new5['0']['id']}"> <img src="__STATIC__/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid">{$new5['0']['title']}</p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<a href="{:url('news/newsdetails')}?id={$new5['1']['id']}" > <img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new5['1']['id']}" > <img src="__STATIC__/img/ccbt.png" alt="" height="135" />
 								<p class="hid">{$new5['1']['title']}</p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<a href="{:url('news/newsdetails')}?id={$new5['2']['id']}"> <img src="__STATIC__/img/ccbt.png" alt="" height="135" />
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$new5['2']['id']}"> <img src="__STATIC__/img/ccbt.png" alt="" height="135" />
 								<p class="hid">{$new5['2']['title']}</p></a>
 							</div>
 						</div>
@@ -559,7 +560,7 @@
 
 							{volist name="new5" id="vol"}
 							<li><span class="fright">{$vol.time}</span><img src="__STATIC__/img/zhixina.png" alt="" height="12" />
-								<a href="{:url('news/newsdetails')}?id={$vol.id}">{$vol.title}</a>
+								<a href="{$domain}/{$Think.session.cityurl}/newsdetails/{$vol.id}">{$vol.title}</a>
 							</li>
 							{/volist}
 

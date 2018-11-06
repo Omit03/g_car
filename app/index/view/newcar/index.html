@@ -75,7 +75,7 @@
 		    	<ul class="md50">
 					{volist name="new_car" id="val"}
 		    		<li>
-						<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}">
+						<a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}">
 
 						<h3>{$val.name}</h3>
 							<div class="fleft car_img"><img src="{$val.img_url}" alt="" /></div>
@@ -98,13 +98,13 @@
 	    	<ul class="list ptp15 new_list">
 				{volist name="new_car" id="val" offset="2" length="7"}
 				<li class="items5">
-					<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}&name={$val.name}&img_url={$val.img_url}&shoufu={$val.pay10_s2}&ygong={$val.pay10_y2}&price={$val.price}" class="car_img flex_center"><img src="" alt="" /></a>
-					<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}&name={$val.name}&img_url={$val.img_url}&shoufu={$val.pay10_s2}&ygong={$val.pay10_y2}&price={$val.price}" class="car_desc">
+					<a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" class="car_img flex_center"><img src="" alt="" /></a>
+					<a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" class="car_desc">
 						<h3>{$val.name}</h3>
 						<p><span class="pay_first">首付<b>{$val.pay10_s2}</b>万</span> <span class="padlt20">月供{$val.pay10_y2}元</span> </p>
 				
 					</a>
-					<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}&name={$val.name}&img_url={$val.img_url}&shoufu={$val.pay10_s2}&ygong={$val.pay10_y2}&price={$val.price}" > <img src="{$val.img_url}" alt="" class="hot" /></a>
+					<a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" > <img src="{$val.img_url}" alt="" class="hot" /></a>
 				</li>
 				{/volist}
 			</ul>

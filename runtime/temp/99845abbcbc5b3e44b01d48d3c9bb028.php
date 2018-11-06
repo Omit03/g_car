@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"G:\xampp\htdocs\car\public/../app/index\view\user\car_login.html";i:1541147274;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"G:\xampp\htdocs\car\public/../app/index\view\news\newsdetails.html";i:1541499824;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541494130;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,74 +8,14 @@
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
-	
-	<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
+
 	<style>
+
 	</style>
-
-	<script>
-        var itime = 59; //定义一个变量，倒计时初始化，从59秒开始
-        function getTime() {
-            if (itime >= 0) {
-                if (itime == 0) {
-                    //倒计时变成0时，
-                    //要清除计时器
-                    clearTimeout(act);
-                    //设置按钮为初始状态
-                    $("#getCodeBtn").val('免费获取手机验证码').attr('disabled', false);
-                    itime = 59;
-                } else {
-                    //延迟一秒中执行该函数。
-                    var act = setTimeout('getTime()', 1000);
-                    //把倒计时的秒显示到按钮中
-                    $("#getCodeBtn").val('还剩' + itime + '秒');
-                    itime = itime - 1;
-                }
-            }
-        }
-        $(function() {
-            //定义一个函数,用于完成倒计时效果
-            $("#getCodeBtn").click(function() {
-                //获取输入的手机号码
-                var telphone = $("#telphone").val();
-
-                if(telphone) {
-                    //ajax请求文件，调用短信发送的接口
-                    $.ajax({
-                        type: 'get',
-                        url: '<?php echo url("code/get_code"); ?>',
-                        data:{
-
-                            user_phone:telphone,
-							is_exist:0
-
-						},
-                        success: function(msg) {
-                            //判断调用短信发送接口是否成功，
-                            if (msg == 1) {
-                                //调用接口已经成功
-                                alert('发送失败');
-                                $("#getCodeBtn").attr('disabled', true); //要禁用该按钮
-                                //调用一个函数，完成倒计时效果。
-                                getTime();
-                            } else{
-                                alert('短信验证码已经发送成功');
-                                $("#getCodeBtn").attr('disabled', true);
-                                getTime();
-                            }
-                        }
-                    });
-                } else{
-                    alert('请输入手机号');
-                }
-
-            });
-        });
-	</script>
-
 	<body>
-	<div class="header">
-	<div class="site_nav">
+        <div class="full_wid">
+			<div class="header">
+				<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?>
@@ -105,7 +45,7 @@
 			<div class="city"  style="display: none;" >
 				<ol>
 					<?php if(is_array($city) || $city instanceof \think\Collection || $city instanceof \think\Paginator): $i = 0; $__LIST__ = $city;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-						<a href="<?php echo $domain; ?>/<?php echo $val['pin']; ?>"> <li><?php echo $val['name']; ?></li></a>
+						<a href="/<?php echo $val['pin']; ?>"> <li><?php echo $val['name']; ?></li></a>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 
 				</ol>
@@ -223,75 +163,105 @@ $(window).on('scroll',function(){
 
 </script>
 
-	</div>
-		<div class="full_wid">
+			</div>			
+			<div class="news_bg"></div>
+			<div class="wrap oh">
+				 <div class="breadnav">您的位置：<a href="#">郑州二手交易市场</a>>><a href="#">二手车新闻资讯 >></a><a href=""> 公司新闻</a></div>
+				<div class=" news_con">
+					<h1><?php echo $list['title']; ?></h1>
+					<p class="new_time">时间：<?php echo $list['time']; ?>  来源：<?php echo $list['stem_from']; ?> </p>
 
-			<div class="login_bg">
-				<div class="login_tab" >
-					<div class="login_sure">
-						<ul class="login_type">
-							<li class="active" onclick="set('bd0',1,2)">账号密码登录</li>
-							<b>|</b>
-							<li onclick="set('bd0',2,2)">手机号快捷登录</li>
-						</ul>
-						<form class="login_phone" id="conbd01" action="<?php echo url('user/login'); ?>" method="post">
-								<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="user_phone" name="user_phone" placeholder="请输入用户名"/></div>
-								<div class="border"><img src="/static/img/mm.png" alt="" height="35" /><input type="user_pwd" name="user_pwd" placeholder="请输入密码"/></div>
-								<p class="ptp15"><input type="checkbox" name=""  value="" />自动登录 <span class="forgetPwd"><a href="<?php echo url('user/forgetpwd'); ?>" class="color9">忘记密码</a></span></p>
-								<input class="login_btn btn_login_n" type="submit" value="立即登录" />
-							<a href="<?php echo url('user/register'); ?>"><p class="regist_btn" style="margin: 0px;">免费注册</p></a>
-						</form>
-						<form class="login_phone" id="conbd02" style="display: none;" action="<?php echo url('user/login_sms'); ?>" method="post" >
-							<div class="border"><img src="/static/img/phone.png" alt="" height="35"/><input type="text" name="user_phone" id="telphone" placeholder="请输入个人或商家手机号"/></div>
-							<div class="border login_ver"><img src="/static/img/yzm.png" alt="" height="35"/><input type="text" name="code" placeholder="请输入验证码" /><span class="getcode"><input type="button" value="免费获取手机验证码" id="getCodeBtn" style="width: 120px;height: 40px;font-size:12px; padding-left:1px;color:#333; " /></span></div>
-							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="<?php echo url('user/forgetpwd'); ?>" class="color9">忘记密码</a></span></p>
-							<input class="login_btn btn_login_n" type="submit" value="立即登录" />
-							<a href="<?php echo url('user/register'); ?>"> <p class="regist_btn" style="margin:0px">免费注册</p></a>
-						</form>
-					</div>
-					
-					<div class="login_other">
-						<img src="/static/img/ewm.png" alt="" class="app_down" width="225"/>
-						<p class="textCenter">扫描下载</p>
-						<div><img src="/static/img/qq.png" alt="" />QQ登录</div>
-						<div><img src="/static/img/wx.png" alt="" />微信登录</div>
+					<p><?php echo $list['miaoshu']; ?></p>
+
+					<p class="textRight">-----责任编辑：管家车易站08</p>
+					<div class="page_news">
+				    	<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $next['id']; ?>"><div class="news_t"><?php echo $next['id']; ?><?php echo $next['title']; ?></div> </a>
+				    	<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $next['id']; ?>" >上一篇</a><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $up['id']; ?>">下一篇</a>
+				    	<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $up['id']; ?>"><div class="news_t"><?php echo $up['title']; ?> </div></a>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="footer"></div>
-		<div class="fixedRight">
-			<ul class="right_sider">
-				<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
-					<div class="gj_sidecon_desc "></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
-				<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
-				<div class="gj_sidecon_desc"></div></li>
-				<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
-				<div class="gj_sidecon_desc"></div></li>
-				<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
-					<div class="gj_sidecon_desc"></div>
-				</li>
 				
-			</ul>
+			</div>
+			<div class="wrap news_car_recom">
+				<div class="tit_er">
+			        <div class="line_tit"></div>			        
+			        <h2 class="color tit_con">热门二手车</h2>	       
+			    </div>
+			    <div class="car_list marbtp10 ">
+				    <ul class="list">
+						<?php if(is_array($er_car) || $er_car instanceof \think\Collection || $er_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($er_car) ? array_slice($er_car,1,10, true) : $er_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+						<li class="items5">
+							<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/details/<?php echo $val['pu_id']; ?>" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
+							<a href="" class="car_desc">
+								<h3><?php echo $val['name']; ?></h3>
+								<p><span class="car_price"><b><?php echo $val['new_car_price']; ?></b>万</span><span class="car_sui">新车含税<?php echo $val['price']; ?>万</span></p>
+								<p><span><?php echo $val['car_cardtime']; ?>上牌</span> <span class="padlt20"><?php echo $val['car_mileage']; ?>万公里</span> </p>
+								<div class="che_ordered">立即预约</div>
+							</a>
+						</li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
+			    </div>
+			    <div class="tit_er">
+			        <div class="line_tit"></div>			        
+			        <h2 class="color tit_con">热门新车</h2>	       
+			    </div>
+			    <div class="car_list marbtp10 ">
+				   <ul class="list">
+					   <?php if(is_array($new_car) || $new_car instanceof \think\Collection || $new_car instanceof \think\Paginator): $i = 0;$__LIST__ = is_array($new_car) ? array_slice($new_car,1,10, true) : $new_car->slice(1,10, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+					   <li class="items5">
+						   <a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/detail/<?php echo $val['id']; ?>" class="flex_around" target="_blank">
+							   <a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/detail/<?php echo $val['id']; ?>" class="car_img flex_center"><img src="<?php echo $val['img_url']; ?>" alt="" /></a>
+							   <a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/detail/<?php echo $val['id']; ?>" class="car_desc">
+								   <h3><?php echo $val['name']; ?></h3>
+								   <p class="valign ptp15">
+									   <span class="pay_first plt10">首付<b class=""><?php echo $val['pay10_s2']; ?></b>万</span>
+									   <span class="pay_month">月供<?php echo $val['pay10_y2']; ?>元</span>
+									   <span class="pay_month">月供<?php echo $val['pay10_n2']; ?>元</span>
+								   </p>
+								   <div class="che_ordered">立即预约</div>
+							   </a>
+
+						   </a>
+					   </li>
+					   <?php endforeach; endif; else: echo "" ;endif; ?>
+						
+					</ul>
+			    </div>
+			</div>
+		    <div class="footer mtp40"></div>
+		    <div class="fixedRight">
+				<ul class="right_sider">
+					<li><div class="gj_side_contnet iocn_s1"><p>pk</p></div>
+						<div class="gj_sidecon_desc "></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s2"><p>收藏</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s3"><p>浏览</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s4"><p>个人</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s5"><p>公众号</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s6"><p>APP下载</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					<li><div class="gj_side_contnet iocn_s7"><p>客服</p></div>
+					<div class="gj_sidecon_desc"></div></li>
+					<li><div class="gj_side_contnet iocn_s8"><p>反馈</p></div>
+					<div class="gj_sidecon_desc"></div></li>
+					<li><div class="gj_side_contnet iocn_s9"><p>顶部</p></div>
+						<div class="gj_sidecon_desc"></div>
+					</li>
+					
+				</ul>
 		</div>
-		<div class="footer">
-			
+			<div class="footer">
+				
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="/static/img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -346,69 +316,12 @@ $(window).on('scroll',function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
 </script>
-		</div>
+			</div>
 	</body>
-	<!--
-	<div class="wrap">
-		<div class="company_info gj_clear">
-			<div class="footer_logo"><img src="/static/img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
-			<div class="basic_info">
-				<div>
-					<a href="<?php echo url('index/join_us'); ?>">关于我们</a>
-					<a href="<?php echo url('index/link_us'); ?>">联系我们</a>
-					<a href="<?php echo url('index/service'); ?>">服务保障</a>
-					<a href="<?php echo url('index/website'); ?>">网站地图</a>
-				</div>
-				<p>
-					版权所有：河南管家车销售有限公司 <br /> 
-				 工信备案：豫ICP备17046554号 <br /> 
-				  CopyRight © 2015-2018 ww
-				</p>
-			</div>
-			<div class="QRcode"><img src="/static/img/ewmdown.png" alt="" width="86"/><p>下载APP</p></div>
-			<div class="QRcode"><img src="/static/img/ewm_guanzhu.png" alt="" width="86"/><p>关注公众号</p></div>
-			<div class="contact_way">
-				<p>免费咨询、建议、投诉 <br />
-				卖车热线（投诉建议）：<b>0371-53375515</b> <br />
-				 每天9：00-21：00(法定节假日除外)
-				</p>		
-			</div>
-		</div>	
-		<div class="optimize_link">
-			<p class="link_tit">热门品牌：</p>
-			<span class="more_dwon"></span>
-			<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-			<a href="<?php echo url('index/lots_cars'); ?>?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?></a>
-			<?php endforeach; endif; else: echo "" ;endif; ?>
-
-		</div>
-		<div class="optimize_link">
-			<p class="link_tit ">热门车系123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-			<a href="">大众</a>
-
-		</div>
-		<div class="optimize_link gj_clear">
-			<p class="link_tit">友情链接123：</p>
-			<span class="more_dwon"></span>
-			<a href="">大众</a>
-
-
-
-		</div>
-	</div>
-<script>
-	$(".more_dwon").click(function(){
-		$(this).parents(".optimize_link").addClass("link_active")
-	})
-</script>-->
-	<script>
-		$(function(){
-            $($(".wrap li")[7]).addClass("active").siblings().removeClass("active");
-			$(".login_type li").click(function(){
-			   $(this).addClass('active').siblings('li').removeClass('active')
-			})
+	<script>		
+		$(function(){			 
+		   // $(".header").load("templates/header.html");
+		   //  $(".footer").load("templates/footer.html")
 		})
 </script>
 </html>

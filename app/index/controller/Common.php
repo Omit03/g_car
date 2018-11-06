@@ -115,6 +115,9 @@ class Common extends Controller{
             'zhang'=>array(
                 'user_id' =>'number',
             ),
+            'city_name'=>array(
+                'user_id' =>'number',
+            ),
         ),
         'Newcar' => array(
             'index'=>array(
@@ -403,9 +406,6 @@ class Common extends Controller{
 
     }
 
-    /*
-     * 判断
-     */
 
     /*
      * 判断sessin是否为空

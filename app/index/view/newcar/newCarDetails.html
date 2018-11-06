@@ -211,7 +211,7 @@
 					<ul class="list">
 						{volist name="sys_cars" id="vol"}
 						<li class="items5">
-							<a href="{:url('newcar/newcardetails')}?brand_id={$vol.brand_id}&sys_id={$vol.sys_id}&cartype_id={$vol.cartype_id}&id={$vol.id}" class="car_img flex_center"><img src="{$vol.img_url}" alt="" /></a>
+							<a href="{$domain}/{$Think.session.cityurl}/detail/{$vol.id}" class="car_img flex_center"><img src="{$vol.img_url}" alt="" /></a>
 							<a href="" class="car_desc">
 								<h3>{$vol.name}</h3>
 								<p><span class="car_price">新车含税<b>{$vol.can_price}</b>万</span><span class="car_sui">指导价{$vol.price}万</span></p>

@@ -200,8 +200,8 @@
 					<ul class="list">
 						{volist name="carinfo['carlist']" id="vol"}
 						<li class="items5">
-							<a href="{:url('zerocar/zerocardetails')}?cheid={$vol.id}" class="car_img flex_center"><img src="{$vol.img_url}" alt="" /></a>
-							<a href="{:url('zerocar/zerocardetails')}?cheid={$vol.id}" class="car_desc">
+							<a href="{$domain}/{$Think.session.cityurl}/detai/{$vol.id}" class="car_img flex_center"><img src="{$vol.img_url}" alt="" /></a>
+							<a href="{$domain}/{$Think.session.cityurl}/detai/{$vol.id}" class="car_desc">
 								<h3>{$vol.name}</h3>
 								<p><span class="car_price"><b>{$vol.can_price}</b>万</span><span class="car_sui">新车含税{$vol.price}万</span></p>
 								<span>月供{$vol.pay10_s2}元</span><span>月供{$vol.pay10_y2}元</span>

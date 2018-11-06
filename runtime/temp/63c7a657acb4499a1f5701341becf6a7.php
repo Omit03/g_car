@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1541486052;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541484408;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1541500182;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -99,7 +99,7 @@
 			<?php echo \think\Session::get('phone'); endif; ?></div>
 		<div class="fright">
 			<ul class="site_nav_menu">
-				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>"><img src="/static/img/shouye.png" alt="" />首页</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/"><img src="/static/img/shouye.png" alt="" />首页</a></li>
 				<li class="sec_li"><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/twocar"><img src="/static/img/maic.png" alt="" />我要买车</a></li>
 				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/sell"><img src="/static/img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/appdownload"><img src="/static/img/xiazai.png" alt="" />APP下载</a></li>
@@ -120,7 +120,7 @@
 			<div class="city"  style="display: none;" >
 				<ol>
 					<?php if(is_array($city) || $city instanceof \think\Collection || $city instanceof \think\Paginator): $i = 0; $__LIST__ = $city;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-						<a href="/<?php echo $val['pin']; ?>"> <li><?php echo $val['name']; ?></li></a>
+						<a href="<?php echo $domain; ?>/<?php echo $val['pin']; ?>"> <li><?php echo $val['name']; ?></li></a>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 
 				</ol>
@@ -153,7 +153,7 @@
 	</div>
 	<div class="nav gj_clear">
 		<ul class="wrap">
-			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>">首页</a></li>
+			<li><a href="<?php echo $domain; ?>">首页</a></li>
 			<li ><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newcar" class="sec_li">新车</a></li>
 			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/twocar">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
@@ -162,8 +162,8 @@
 			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/news">新闻资讯</a></li>
 			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/appdownload">APP下载</a></li>
 			<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/login">登录/注册</a></li><?php endif; ?>
-			<li><a href="<?php echo url('index/join_us'); ?>">关于我们</a></li>
-			<li><a href="<?php echo url('shop/index'); ?>">优选商家</a></li>
+			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/join_us">关于我们</a></li>
+			<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/shop">优选商家</a></li>
 		</ul>
 	</div>
 </div>
@@ -190,15 +190,15 @@
 		</div>
 		<div class="nav">
 			<ul>
-				<li><a href="<?php echo url('index/index'); ?>">首页</a></li>
-				<li><a href="<?php echo url('twocar/index'); ?>">二手车</a></li>
-				<li><a href="<?php echo url('newcar/index'); ?>">新车</a></li>
+				<li><a href="<?php echo $domain; ?>">首页</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/twocar">二手车</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newcar">新车</a></li>
 				<!--<li><a href="zeroCar.html">零首付</a></li>-->
-				<li><a href="<?php echo url('index/sell'); ?>">卖车</a></li>
-				<li><a href="<?php echo url('change/index'); ?>">置换</a></li>
-				<li><a href="<?php echo url('news/index'); ?>">新闻资讯</a></li>
-				<li><a href="<?php echo url('index/appdownload'); ?>">APP下载</a></li>
-				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo url('user/car_login'); ?>">登录/注册</a></li><?php endif; ?>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/sell">卖车</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/change">置换</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/news">新闻资讯</a></li>
+				<li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/appdownload">APP下载</a></li>
+				<?php if(empty(\think\Session::get('phone')) || ((\think\Session::get('phone') instanceof \think\Collection || \think\Session::get('phone') instanceof \think\Paginator ) && \think\Session::get('phone')->isEmpty())): ?><li><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/login">登录/注册</a></li><?php endif; ?>
 			</ul>
 		</div>
 	</div>
@@ -267,7 +267,8 @@ $(window).on('scroll',function(){
 						<ul class="sel_newcar_brand oh ">
 							<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href="<?php echo url('index/lots_cars'); ?>?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><img src="<?php echo $val['img_url']; ?>" alt="">
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/lots_cars?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><img src="<?php echo $val['img_url']; ?>" alt="">
+								<!--<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/lots_cars/<?php echo $val['id']; ?>"><img src="<?php echo $val['img_url']; ?>" alt="">-->
 									<p><?php echo $val['name']; ?></p>
 								</a>
 							</li>
@@ -279,7 +280,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="active">
-								<a href="<?php echo url('index/lots_cars'); ?>?price_range=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?> </a>
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/lots_cars?price_range=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?> </a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
@@ -289,7 +290,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="active">
-								<a href="<?php echo url('index/lots_cars'); ?>?car_age=<?php echo $val['id']; ?>&page=1&sort=1"> <?php echo $val['name']; ?></a>
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/lots_cars?car_age=<?php echo $val['id']; ?>&page=1&sort=1"> <?php echo $val['name']; ?></a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 							<li class="active fright">
@@ -301,7 +302,7 @@ $(window).on('scroll',function(){
 						<ul class="sel_newcar_brand oh ">
 							<?php if(is_array($brand) || $brand instanceof \think\Collection || $brand instanceof \think\Paginator): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li>
-								<a href="<?php echo url('index/lots_cars'); ?>?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><img src="<?php echo $val['img_url']; ?>" alt="">
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/lots_cars?brand_id=<?php echo $val['id']; ?>&page=1&sort=1"><img src="<?php echo $val['img_url']; ?>" alt="">
 									<p><?php echo $val['name']; ?></p>
 								</a>
 							</li>
@@ -313,7 +314,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($price) || $price instanceof \think\Collection || $price instanceof \think\Paginator): $i = 0; $__LIST__ = $price;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="active">
-								<a href="<?php echo url('index/lots_cars'); ?>?price_range=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?> </a>
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/lots_cars?price_range=<?php echo $val['id']; ?>&page=1&sort=1"><?php echo $val['name']; ?> </a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
@@ -323,7 +324,7 @@ $(window).on('scroll',function(){
 							</li>
 							<?php if(is_array($subface) || $subface instanceof \think\Collection || $subface instanceof \think\Paginator): $i = 0; $__LIST__ = $subface;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
 							<li class="active">
-								<a href="<?php echo url('index/lots_cars'); ?>?car_age=<?php echo $val['id']; ?>&page=1&sort=1"> <?php echo $val['name']; ?></a>
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/lots_cars?car_age=<?php echo $val['id']; ?>&page=1&sort=1"> <?php echo $val['name']; ?></a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 							<li class="active fright">
@@ -585,17 +586,17 @@ $(window).on('scroll',function(){
 					<div class="home_news_cont" id="conbd01">
 
 						<div class="left_big new_imgs">
-							<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new1['0']['id']; ?>&column=<?php echo $new1['0']['news_column']; ?>"> <img src="/static/img/ttop.png" alt="" height="280" width="340px" />
+							<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new1['0']['id']; ?>"> <img src="/static/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid"><?php echo $new1['0']['title']; ?></p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new1['1']['id']; ?>">
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new1['1']['id']; ?>">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid"><?php echo $new1['1']['title']; ?></p>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new1['2']['id']; ?>">
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new1['2']['id']; ?>">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid"><?php echo $new1['2']['title']; ?></p></a>
 							</div>
@@ -603,7 +604,7 @@ $(window).on('scroll',function(){
 						<ul class="news_txt_desc">
 							<?php if(is_array($new1) || $new1 instanceof \think\Collection || $new1 instanceof \think\Paginator): $i = 0; $__LIST__ = $new1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 							<li><span class="fright"><?php echo $vol['time']; ?></span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 
@@ -611,18 +612,18 @@ $(window).on('scroll',function(){
 					</div>
 					<div class="home_news_cont" id="conbd02" style="display: none;">
 						<div class="left_big new_imgs">
-							<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new2['0']['id']; ?>">
+							<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new2['0']['id']; ?>">
 							<img src="/static/img/ttop.png" alt="" height="280" width="340px" />
 								<p class="hid"><?php echo $new2['0']['title']; ?></p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new2['1']['id']; ?>">
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new2['1']['id']; ?>">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid"><?php echo $new2['1']['title']; ?></p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new2['2']['id']; ?>">
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new2['2']['id']; ?>">
 								<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid"><?php echo $new2['2']['title']; ?></p></a>
 							</div>
@@ -631,7 +632,7 @@ $(window).on('scroll',function(){
 
 							<?php if(is_array($new2) || $new2 instanceof \think\Collection || $new2 instanceof \think\Paginator): $i = 0; $__LIST__ = $new2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 							<li><span class="fright"><?php echo $vol['time']; ?></span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 
@@ -640,16 +641,16 @@ $(window).on('scroll',function(){
 					</div>
 					<div class="home_news_cont" id="conbd03" style="display: none;">
 						<div class="left_big new_imgs">
-							<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new3['0']['id']; ?>"><img src="/static/img/ttop.png" alt="" height="280" width="340px" />
+							<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new3['0']['id']; ?>"><img src="/static/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid"><?php echo $new3['0']['title']; ?></p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new3['1']['id']; ?>"><img src="/static/img/ccbt.png" alt="" height="135" />
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new3['1']['id']; ?>"><img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid"><?php echo $new3['1']['title']; ?></p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new3['2']['id']; ?>">	<img src="/static/img/ccbt.png" alt="" height="135" />
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new3['2']['id']; ?>">	<img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid"><?php echo $new3['2']['title']; ?></p></a>
 							</div>
 						</div>
@@ -657,7 +658,7 @@ $(window).on('scroll',function(){
 
 							<?php if(is_array($new3) || $new3 instanceof \think\Collection || $new3 instanceof \think\Paginator): $i = 0; $__LIST__ = $new3;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 							<li><span class="fright"><?php echo $vol['time']; ?></span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 
@@ -665,16 +666,16 @@ $(window).on('scroll',function(){
 					</div>
 					<div class="home_news_cont" id="conbd04" style="display: none;">
 						<div class="left_big new_imgs">
-							<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new4['0']['id']; ?>"><img src="/static/img/ttop.png" alt="" height="280" width="340px" />
+							<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new4['0']['id']; ?>"><img src="/static/img/ttop.png" alt="" height="280" width="340px" />
 								<p class="hid"><?php echo $new4['0']['title']; ?></p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new4['1']['id']; ?>"><img src="/static/img/ccbt.png" alt="" height="135" />
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new4['1']['id']; ?>"><img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid"><?php echo $new4['1']['title']; ?></p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new4['2']['id']; ?>"></a> <img src="/static/img/ccbt.png" alt="" height="135" />
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new4['2']['id']; ?>"></a> <img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid"><?php echo $new4['2']['title']; ?></p></a>
 							</div>
 						</div>
@@ -682,7 +683,7 @@ $(window).on('scroll',function(){
 
 							<?php if(is_array($new4) || $new4 instanceof \think\Collection || $new4 instanceof \think\Paginator): $i = 0; $__LIST__ = $new4;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 							<li><span class="fright"><?php echo $vol['time']; ?></span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 
@@ -690,16 +691,16 @@ $(window).on('scroll',function(){
 					</div>
 					<div class="home_news_cont" id="conbd05" style="display: none;">
 						<div class="left_big new_imgs">
-							<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new5['0']['id']; ?>"> <img src="/static/img/ttop.png" alt="" height="280" width="340px" />
+							<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new5['0']['id']; ?>"> <img src="/static/img/ttop.png" alt="" height="280" width="340px" />
 							<p class="hid"><?php echo $new5['0']['title']; ?></p></a>
 						</div>
 						<div class="center_small">
 							<div class="small_top_img new_imgs">
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new5['1']['id']; ?>" > <img src="/static/img/ccbt.png" alt="" height="135" />
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new5['1']['id']; ?>" > <img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid"><?php echo $new5['1']['title']; ?></p></a>
 							</div>
 							<div class="small_bt_img new_imgs marbtp10">
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $new5['2']['id']; ?>"> <img src="/static/img/ccbt.png" alt="" height="135" />
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $new5['2']['id']; ?>"> <img src="/static/img/ccbt.png" alt="" height="135" />
 								<p class="hid"><?php echo $new5['2']['title']; ?></p></a>
 							</div>
 						</div>
@@ -707,7 +708,7 @@ $(window).on('scroll',function(){
 
 							<?php if(is_array($new5) || $new5 instanceof \think\Collection || $new5 instanceof \think\Paginator): $i = 0; $__LIST__ = $new5;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?>
 							<li><span class="fright"><?php echo $vol['time']; ?></span><img src="/static/img/zhixina.png" alt="" height="12" />
-								<a href="<?php echo url('news/newsdetails'); ?>?id=<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
+								<a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/newsdetails/<?php echo $vol['id']; ?>"><?php echo $vol['title']; ?></a>
 							</li>
 							<?php endforeach; endif; else: echo "" ;endif; ?>
 
