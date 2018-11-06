@@ -79,6 +79,8 @@ class Shop extends Common
 
     public function shop_info(){
 
+
+
         $brand = $this->brand();//品牌
 
         $price=$this->price(); //价格

@@ -9,6 +9,7 @@
 namespace app\index\controller;
 
 use Think\Db;
+use think\Session;
 
 class Twocar extends Common
 {
@@ -18,7 +19,32 @@ class Twocar extends Common
      */
     public function index(){
 
-        $city_id = $this->city_id();
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         $brand = $this->brand();//品牌
 

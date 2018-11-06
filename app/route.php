@@ -18,8 +18,21 @@ use think\Route;
 //Route::rule('user/:id','user/index');
 
 //Route::rule('/','api/index/index');
-//Route::rule(':city','index/index/index');
+
+Route::rule('/','index/index/index');
 //Route::rule(':city/detail/:brand_id/:sys_id','index/Newcar/newcardetails');
+//Route::rule(':city','index/index/index');
+Route::rule(':city/newcar','index/newcar/index');
+Route::rule(':city/twocar','index/twocar/index');
+Route::rule(':city/sell','index/index/sell');
+Route::rule(':city/change','index/change/index');
+Route::rule(':city/news','index/news/index');
+Route::rule(':city/appdownload','index/index/appdownload');
+//Route::rule(':city/login','index/user/car_login');
+//Route::rule(':city/logout','index/user/car_logout');
+//Route::rule(':city/register','index/user/register');
+//Route::rule(':city/per_his','index/user/person_history');
+
 Route::rule(':city/details/:cheid','index/index/details');
 Route::rule(':city/detail/:id','index/newcar/newcardetails');
 Route::rule(':city/detai/:cheid','index/zerocar/zerocardetails');

@@ -391,6 +391,8 @@ class Common extends Controller{
 
         $this->request = Request::instance();
 
+       // $this->set_session($this->request->except(['city']));
+
       //  $this->check_time($this->request->only(['atime']));//验证是否超时
 
       //  $this->check_token($this->request->param());//检查token值
@@ -398,6 +400,46 @@ class Common extends Controller{
       // $this->params = $this->check_params($this->request->except(['atime','token']));
 
        $this->params = $this->check_params($this->request->param(true));
+
+    }
+
+    /*
+     * 判断
+     */
+
+    /*
+     * 判断sessin是否为空
+     * 设置默认值
+     */
+
+    public function set_session_url($city_pin){
+
+
+
+        $city_all = Db::table('city')->field('id,initial,initial_num,name,pin')->where('pin', $city_pin)->find();
+
+        if ($city_all){
+
+            //$cityurl = $city_all['pin'];
+
+           // $city_id = $city_all['id'];
+
+            return $city_all;
+
+        }
+
+//        Session::set('cityurl',$cityurl);
+//
+//        $session_name = Session::has('cityurl');
+//
+//       // dump( $session_name);
+//
+//        if (empty($session_name)){
+//            $cityurl = 'zhengzhou';
+//
+//            Session::set('cityurl',$cityurl);
+//
+//        }
 
     }
 

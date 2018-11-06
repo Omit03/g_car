@@ -213,7 +213,8 @@
 							</li>
 							{volist name="new_car" id="vl"}
 							<li>
-								<a href="zz/detail/{$vl.id}" class="flex_around" target="_blank">
+								<!--//<a href="{$Think.session.cityurl}/detail/{$vl.id}" class="flex_around" target="_blank">-->
+								<a href="{$domain}/{$Think.session.cityurl}/detail/{$vl.id}" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='{$vl.img_url}'/>
 								</span>
 									<h3 class="text_overflow">{$vl.name}</h3>
@@ -235,7 +236,7 @@
 							</li>
 							{volist name="new_one_car" id="vl"}
 							<li>
-								<a href="zz/detail/{$vl.id}" class="flex_around" target="_blank">
+								<a href="{$domain}/{$Think.session.cityurl}/detail/{$vl.id}" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='{$vl.img_url}'/>
 								</span>
 									<h3 class="text_overflow">{$vl.name}</h3>
@@ -257,7 +258,7 @@
 							</li>
 							{volist name="new_dyg" id="vl"}
 							<li>
-								<a href="zz/detail/{$vl.id}" class="flex_around" target="_blank">
+								<a href="{$domain}/{$Think.session.cityurl}/detail/{$vl.id}" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" title='' src='{$vl.img_url}'/>
 								</span>
 									<h3 class="text_overflow">{$vl.name}</h3>
@@ -279,7 +280,7 @@
 							</li>
 							{volist name="new_five_car" id="vl"}
 							<li>
-								<a href="zz/detail/{$vl.id}" class="flex_around" target="_blank">
+								<a href="{$domain}/{$Think.session.cityurl}/detail/{$vl.id}" class="flex_around" target="_blank">
 									<span class="car_img"><img class='lazy-load'  alt="" titlt='' src='{$vl.img_url}'/>
 								</span>
 									<h3 class="text_overflow">{$vl.name}</h3>
@@ -313,7 +314,7 @@
 							</li>
 							{volist name="er_car" id="val"}
 							<li>
-								<a href="zz/details/{$val.pu_id}" class="flex_around">
+								<a href="{$domain}/{$Think.session.cityurl}/details/{$val.pu_id}" class="flex_around">
 									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='{$val.img_url}'/>
 								</span>
 									<h3 class="text_overflow">{$val.name}</h3>
@@ -335,7 +336,7 @@
 						</li>
 						{volist name="min_price" id="val"}
 						<li>
-							<a href="zz/details/{$val.pu_id}" class="flex_around">
+							<a href="{$domain}/{$Think.session.cityurl}/details/{$val.pu_id}" class="flex_around">
 									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='{$val.img_url}'/>
 								</span>
 								<h3 class="text_overflow">{$val.name_li}</h3>
@@ -356,7 +357,7 @@
 					</li>
 					{volist name="min_age" id="val"}
 					<li>
-						<a href="zz/details/{$val.pu_id}" class="flex_around">
+						<a href="{$domain}/{$Think.session.cityurl}/details/{$val.pu_id}" class="flex_around">
 									<span class="car_img"><img class='lazy-load' alt="" titlt='' src='{$val.img_url}'/>
 								</span>
 							<h3 class="text_overflow">{$val.name_li}</h3>
@@ -377,7 +378,7 @@
 			</li>
 			{volist name="min_licheng" id="val"}
 			<li>
-				<a href="zz/details/{$val.pu_id}" class="flex_around">
+				<a href="{$domain}/{$Think.session.cityurl}/details/{$val.pu_id}" class="flex_around">
 												<span class="car_img"><img class='lazy-load' alt="" titlt='' src='{$val.img_url}'/>
 											</span>
 					<h3 class="text_overflow">{$val.name_li}</h3>
@@ -405,7 +406,7 @@
 							</li>
 							{volist name="car_zero" id="val"}
 							<li>
-								<a href="zz/detai/{$val.id}" class="flex_around" target="_blank">
+								<a href="{$domain}/{$Think.session.cityurl}/detai/{$val.id}" class="flex_around" target="_blank">
 									<span class="car_img"><img src="{$val.img_url}" alt=""/>
 								</span>
 									<h3 class="text_overflow">{$val.name}</h3>

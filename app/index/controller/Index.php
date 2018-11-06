@@ -9,17 +9,36 @@ class Index  extends Common
 {
     public function index(){
 
-      //$city_id = $this->city_id();
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
 
 
-      $city_id = 1;
-       // $city_id = $this->city_id('zz');
         //banner
         $banner=Db::table("home_car_app")->where("city_id",$city_id)->order("sort asc")->select();
 
         foreach ($banner as $key => $val) {
             $banner[$key]['img_url']=$this->get_carimg($val['img'],1);
         }
+
 
         $brand=$this->brand();//获取筛选模块 推荐品牌
 
@@ -59,9 +78,10 @@ class Index  extends Common
         $new4 = $this->new_list(4);//特色活动
         $new5 = $this->new_list(5);//新车资讯
 
+        $city = Db::table('city')->where('status',1)->select();
 
-
-        //$this->assign('city',$city);
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
         $this->assign('banner',$banner);
         $this->assign('brand',$brand);
         $this->assign('price',$price);
@@ -1043,7 +1063,32 @@ class Index  extends Common
 
         $res = $this->app_brand_ios();//A b c  按车型排序
 
-        $city_id = $this->city_id();
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         $er_car = $this->er_car($city_id);
 
@@ -1060,6 +1105,55 @@ class Index  extends Common
      * 置换
      */
     public function change(){
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         return $this->fetch();
     }
@@ -1068,12 +1162,65 @@ class Index  extends Common
      */
     public function news(){
 
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
+
         return $this->fetch();
     }
     /*
      * app 下载
      */
     public function appdownload(){
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         $brand = $this->brand();//品牌
 
@@ -1086,6 +1233,32 @@ class Index  extends Common
      * 登录 展示
      */
     public function logincar(){
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         $brand = $this->brand();//品牌
         $this->assign('brand',$brand);
@@ -1096,6 +1269,32 @@ class Index  extends Common
      * 关于我们
      */
     public function join_us(){
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         $brand = $this->brand();//品牌
         $this->assign('brand',$brand);
@@ -1106,6 +1305,32 @@ class Index  extends Common
      * 关于联系
      */
     public function link_us(){
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         $brand = $this->brand();//品牌
         $this->assign('brand',$brand);
@@ -1115,6 +1340,32 @@ class Index  extends Common
      * 关于服务保障
      */
     public function service(){
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         $brand = $this->brand();//品牌
         $this->assign('brand',$brand);
@@ -1134,6 +1385,35 @@ class Index  extends Common
      * 二手车详情
      */
     public function details(){
+
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
+
+
 
         $data = $this->params;
 
@@ -1393,11 +1673,31 @@ class Index  extends Common
 
         //需要处理当前城市
 
-        $ip = $this->request->ip();
 
-        $city = $this->get_area('61.163.128.204');//暂时写死
+        $city_pin = input('city');
 
-        $city_id = $this->get_city($city['data']['city']);
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
 
         $car_zero=Db::table("l_car")->field("id,cartype_id,price,img_300,pay0_s2,pay0_y2,pay0_n2")->where("is_tj=1 and status=1 and city_id=$city_id")->order("create_time desc")->limit(5)->select();
         foreach ($car_zero as $key => $val) {

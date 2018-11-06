@@ -2,19 +2,19 @@
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户{empty name="Think.session.phone"}
-			<a href="{:url('user/car_login')}" class="coloryel">【登录】</a>,免费<a href="{:url('user/car_login')}" class="coloryel">【注册】</a>
+			<a href="{$domain}/{$Think.session.cityurl}/login" class="coloryel">【登录】</a>,免费<a href="{$domain}/{$Think.session.cityurl}/register" class="coloryel">【注册】</a>
 			{else /}
 			{$Think.session.phone}
 			{/empty}</div>
 		<div class="fright">
 			<ul class="site_nav_menu">
-				<li><a href="{:url('index/index')}"><img src="__STATIC__/img/shouye.png" alt="" />首页</a></li>
-				<li class="sec_li"><a href="{:url('twocar/index')}"><img src="__STATIC__/img/maic.png" alt="" />我要买车</a></li>
-				<li><a href="{:url('index/sell')}"><img src="__STATIC__/img/maic.png" alt="" />我要卖车</a></li>
-				<li><a href="{:url('index/appdownload')}"><img src="__STATIC__/img/xiazai.png" alt="" />APP下载</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}"><img src="__STATIC__/img/shouye.png" alt="" />首页</a></li>
+				<li class="sec_li"><a href="{$domain}/{$Think.session.cityurl}/twocar"><img src="__STATIC__/img/maic.png" alt="" />我要买车</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}/sell"><img src="__STATIC__/img/maic.png" alt="" />我要卖车</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}/appdownload"><img src="__STATIC__/img/xiazai.png" alt="" />APP下载</a></li>
 				<li><a href=""><img src="__STATIC__/img/wangahn.png" alt="" />网站导航</a></li>
-				{notempty name="Think.session.phone"}<li><a href="{:url('user/person_history')}"><img src="__STATIC__/img/wangahn.png" alt="" />会员中心</a></li>{/notempty}
-				{notempty name="Think.session.phone"}<li><a href="{:url('user/car_logout')}"><img src="__STATIC__/img/wangahn.png" alt="" />安全退出</a></li>{/notempty}
+				{notempty name="Think.session.phone"}<li><a href="{$domain}/{$Think.session.cityurl}/per_his"><img src="__STATIC__/img/wangahn.png" alt="" />会员中心</a></li>{/notempty}
+				{notempty name="Think.session.phone"}<li><a href="{$domain}/{$Think.session.cityurl}/logout"><img src="__STATIC__/img/wangahn.png" alt="" />安全退出</a></li>{/notempty}
 			</ul>
 		</div>
 	</div>
@@ -29,6 +29,10 @@
 			<div class="white-line"></div>
 			<div class="city"  style="display: none;" >
 				<ol>
+					{volist name="city" id="val"}
+						<a href="/{$val.pin}"> <li>{$val.name}</li></a>
+					{/volist}
+
 				</ol>
 			</div>
 		</div>
@@ -59,15 +63,15 @@
 	</div>
 	<div class="nav gj_clear">
 		<ul class="wrap">
-			<li><a href="{:url('index/index')}">首页</a></li>
-			<li ><a href="{:url('newcar/index')}" class="sec_li">新车</a></li>
-			<li><a href="{:url('twocar/index')}">二手车</a></li>
+			<li><a href="{$domain}/{$Think.session.cityurl}">首页</a></li>
+			<li ><a href="{$domain}/{$Think.session.cityurl}/newcar" class="sec_li">新车</a></li>
+			<li><a href="{$domain}/{$Think.session.cityurl}/twocar">二手车</a></li>
 		    <!--<li><a href="zeroCar.html">零首付</a></li>-->
-			<li><a href="{:url('index/sell')}">卖车</a></li>
-			<li><a href="{:url('change/index')}">置换</a></li>
-			<li><a href="{:url('news/index')}">新闻资讯</a></li>
-			<li><a href="{:url('index/appdownload')}">APP下载</a></li>
-			{empty name="Think.session.phone"}<li><a href="{:url('user/car_login')}">登录/注册</a></li>{/empty}
+			<li><a href="{$domain}/{$Think.session.cityurl}/sell">卖车</a></li>
+			<li><a href="{$domain}/{$Think.session.cityurl}/change">置换</a></li>
+			<li><a href="{$domain}/{$Think.session.cityurl}/news">新闻资讯</a></li>
+			<li><a href="{$domain}/{$Think.session.cityurl}/appdownload">APP下载</a></li>
+			{empty name="Think.session.phone"}<li><a href="{$domain}/{$Think.session.cityurl}/login">登录/注册</a></li>{/empty}
 			<li><a href="{:url('index/join_us')}">关于我们</a></li>
 			<li><a href="{:url('shop/index')}">优选商家</a></li>
 		</ul>
@@ -84,7 +88,9 @@
 			<div class="address"><span>郑州</span><b class="icon1"></b></div>
 			<div class="white-line"></div>
 			<div class="city"  style="display: none;" >
+
 				<ol>
+					<li></li>
 				</ol>
 			</div>
 		</div>
