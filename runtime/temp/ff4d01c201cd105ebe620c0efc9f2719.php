@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\join_us.html";i:1541496795;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541579441;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:69:"G:\xampp\htdocs\car\public/../app/index\view\user\person_history.html";i:1541505145;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541579441;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,12 +7,13 @@
 	</head>
 	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="/static/css/style.css" />
-	<link rel="stylesheet" href="/static/css/other.css" />	
+	<link rel="stylesheet" href="/static/css/other.css" />
 	<style>
-
+	
 	</style>
-	<body>	
-		<div class="header"><div class="site_nav">
+	<body>
+	<div class="header">
+		<div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Cookie::get('phone')) || ((\think\Cookie::get('phone') instanceof \think\Collection || \think\Cookie::get('phone') instanceof \think\Paginator ) && \think\Cookie::get('phone')->isEmpty())): ?>
@@ -159,36 +160,90 @@ $(window).on('scroll',function(){
 })
 
 </script>
-</div>
+
+	</div>
+
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
-					<div class="person_left user">					
+					<div class="person_left">
+						<div class="person_info">
+							<div class="user_avatar"><img src="/static/img/yhtx.png" alt="" /></div>
+							<p class="uphone"><?php echo \think\Session::get('phone'); ?></p>
+							<p>向阳二手车一号店</p>							
+						</div>
 						<div class="tab_choose">
-						<ul>
-								<h2 class="top_tit">管家车易站</h2>
-								<li class="active"><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/join_us"><img src="/static/img/jiaoru.png" alt="" /></b>加入我们</a></li>
-								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/link_us"><img src="/static/img/lainxi.png" alt="" /></b>联系我们</a></li>
-								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/service"><img src="/static/img/fuwu.png" alt="" /></b>服务保障</a></li>
-								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/website"><img src="/static/img/ditu.png" alt="" /></b>网站地图</a></li>
-								
+							<ul>
+								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/per_man"><b class="icon_xb1"> </b>管理店铺<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/per_rele"><b class="icon_xb2"></b>发布车辆信息<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/per_pub.html"><b class="icon_xb3"></b>发布过的<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/per_buse.html"><b class="icon_xb4"></b>商家入驻<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/per_oppo.html"><b class="icon_xb5"></b>商机<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/per_info.html"><b class="icon_xb6"></b>个人资料<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/per_coll.html"><b class="icon_xb7"></b>我的收藏<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class="active"><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/per_his"><b class="icon_xb8"></b>浏览记录<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/per_feed.html"><b class="icon_xb9"></b>意见反馈<i class="icon iconfont icon-jiantou"></i></a></li>
+								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/per_ord.html"><b class="icon_xb10"></b>我的预约<i class="icon iconfont icon-jiantou"></i></a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">加入我们</span></h1>
-						<h2 class="step">管家车易站平台</h2>
-						<p class="about">
-						  联系电话：0371-53375515 <br />
-工作地址：郑州市金水区花园路国基路 居易国际广场4号楼1122 （地铁2号线 沙门A口旁）
-							
-						</p>
+						<h1 class="borbt"><span class="release">浏览记录</span>
+							<ul class="fright sel_status">
+								<!--<li class="active" data-status='1'><b></b><span>全部</span></li>-->
+								<li class="active" data-status='1'><b></b><span>新车</span></li>
+								<li data-status='0'><b></b><span>二手车</span></li>
+								<li data-status='0'><b></b><span>0首付</span></li>
+							</ul>
+						</h1>
+						<h2 class="step"></h2>
+						 <ul class="list browse_car">
+
+							 <!--新车-->
+                           <?php if(!(empty($newcar) || (($newcar instanceof \think\Collection || $newcar instanceof \think\Paginator ) && $newcar->isEmpty()))): if(is_array($newcar) || $newcar instanceof \think\Collection || $newcar instanceof \think\Paginator): $i = 0; $__LIST__ = $newcar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							<li class="items4">
+								<a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
+								<a href="" class="car_desc">
+									<h3><?php echo $val['name']; ?></h3>
+									<p><span class="fisrt_pay">首付<b><?php echo $val['shoufu']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									<div class="operate_user"><span class="see_user">查看</span><a href="<?php echo url('user/person_his_del'); ?>?id=<?php echo $val['id']; ?>"><span class="del_user">删除</span></a></div>
+								</a>
+							</li>
+							 <?php endforeach; endif; else: echo "" ;endif; endif; ?>
+
+						   <!--二手车-->
+
+							 <?php if(!(empty($oldcar) || (($oldcar instanceof \think\Collection || $oldcar instanceof \think\Paginator ) && $oldcar->isEmpty()))): if(is_array($oldcar) || $oldcar instanceof \think\Collection || $oldcar instanceof \think\Paginator): $i = 0; $__LIST__ = $oldcar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
+								 <a href="" class="car_desc">
+									 <h3><?php echo $val['name']; ?></h3>
+									 <p><span class="fisrt_pay">里程<b><?php echo $val['licheng']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><a href="<?php echo url('user/person_his_del'); ?>?id=<?php echo $val['id']; ?>"><span class="del_user">删除</span></a></div>
+								 </a>
+							 </li>
+							 <?php endforeach; endif; else: echo "" ;endif; endif; ?>
+
+							 <!--零首付-->
+
+							 <?php if(!(empty($zerocar) || (($zerocar instanceof \think\Collection || $zerocar instanceof \think\Paginator ) && $zerocar->isEmpty()))): if(is_array($zerocar) || $zerocar instanceof \think\Collection || $zerocar instanceof \think\Paginator): $i = 0; $__LIST__ = $zerocar;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+							 <li class="items4">
+								 <a href="" class="car_img flex_center"><img src="<?php echo $val['img']; ?>" alt="" /></a>
+								 <a href="" class="car_desc">
+									 <h3><?php echo $val['name']; ?></h3>
+									 <p><span class="fisrt_pay">首付<b><?php echo $val['shoufu']; ?></b>万</span><span class="padlt12">指导价<?php echo $val['price']; ?>万</span></p>
+									 <div class="operate_user"><span class="see_user">查看</span><a href="<?php echo url('user/person_his_del'); ?>?id=<?php echo $val['id']; ?>"><span class="del_user">删除</span></a></div>
+								 </a>
+							 </li>
+							 <?php endforeach; endif; else: echo "" ;endif; endif; ?>
+						</ul>
 					</div>
 				</div>
 				
 			</div>
-		</div>	
-		<div class="footer">
+		</div>
+	<div class="footer">
+		
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="/static/img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -242,15 +297,39 @@ $(window).on('scroll',function(){
 	$(".more_dwon").click(function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script></div>
+</script>
+	</div>
 		
 		<div class="mask1"></div>
 	</body>
 	<script src="/static/js/jquery-1.11.0.min.js"></script>
 	<script>		
-		$(function(){	
-		   // $(".footer").load("templates/footer.html");
-   		//    $(".header").load("templates/header.html");
+		$(function(){			
+
+//			手机号隐藏中间4位
+			$(".uphone").text($(".uphone").text().substring(0, 3) + "****" + $(".uphone").text().substring(7, 11));
+			//加载公用头部和底部
+
+			$(".sel_status li").each(function(){
+				var that=$(this);
+				$(that).click(function(){
+				var status=$(this).attr("data-status");
+					if(status==1){
+						$(this).attr("data-status",0);
+						$(this).removeClass("active")
+					}else{
+						$(this).attr("data-status",1);
+						$(this).addClass("active").siblings().removeClass("active")
+					}
+				
+				})
+			})
+			
+			//加载公用头部和底部
+		    $(".header").load("templates/header.html");
+//		    $(".footer").load("templates/footer.html");
+
+			
 	})
 </script>
 </html>

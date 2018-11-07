@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\join_us.html";i:1541496795;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541579441;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\service.html";i:1539691489;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541579441;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,10 +9,10 @@
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />	
 	<style>
-
+	
 	</style>
-	<body>	
-		<div class="header"><div class="site_nav">
+	<body>
+	<div class="header"><div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
 			欢迎用户<?php if(empty(\think\Cookie::get('phone')) || ((\think\Cookie::get('phone') instanceof \think\Collection || \think\Cookie::get('phone') instanceof \think\Paginator ) && \think\Cookie::get('phone')->isEmpty())): ?>
@@ -160,35 +160,59 @@ $(window).on('scroll',function(){
 
 </script>
 </div>
+		<div class="site_nav">
+			<div class="site_nav_bd">
+				<div class="fleft">你好，欢迎来到管家车易站！请<a href="" class="coloryel">【登录】</a>,免费<a href="" class="coloryel">【注册】</a></div>
+				<div class="fright">
+					<ul class="site_nav_menu">
+						<li><a href=""><img src="/static/img/home1.png" alt="" />首页</a></li>
+						<li><a href=""><img src="/static/img/sell2.png" alt="" />我要买车</a></li>
+						<li><a href=""><img src="/static/img/sell1.png" alt="" />我要买车</a></li>
+						<li><a href=""><img src="" alt="" />网站导航</a></li>
+					</ul>					
+				</div>
+			</div>
+		</div>
+		<div class="borbt"><div class="header"></div></div>
 		<div class="full_wid">			
 			<div class="wrap ">	
 				<div class="person_center">
 					<div class="person_left user">					
 						<div class="tab_choose">
-						<ul>
+							<ul>
 								<h2 class="top_tit">管家车易站</h2>
-								<li class="active"><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/join_us"><img src="/static/img/jiaoru.png" alt="" /></b>加入我们</a></li>
-								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/link_us"><img src="/static/img/lainxi.png" alt="" /></b>联系我们</a></li>
-								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/service"><img src="/static/img/fuwu.png" alt="" /></b>服务保障</a></li>
-								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/website"><img src="/static/img/ditu.png" alt="" /></b>网站地图</a></li>
+								<li class=""><a href="join_us.html"><img src="/static/img/jiaoru.png" alt="" /></b>加入我们</a></li>
+								<li class=""><a href="link_us.html"><img src="/static/img/lainxi.png" alt="" /></b>联系我们</a></li>
+								<li class="active"><a href="service.html"><img src="/static/img/fuwu.png" alt="" /></b>服务保障</a></li>
+								<li class=""><a href="website.html"><img src="/static/img/ditu.png" alt="" /></b>网站地图</a></li>
 								
 							</ul>
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">加入我们</span></h1>
-						<h2 class="step">管家车易站平台</h2>
-						<p class="about">
-						  联系电话：0371-53375515 <br />
-工作地址：郑州市金水区花园路国基路 居易国际广场4号楼1122 （地铁2号线 沙门A口旁）
-							
-						</p>
+						<h1 class="borbt"><span class="release">服务保障</span></h1>
+						<h2 class="step">管家车易站</h2>
+						<ul class="service_info">
+							<li><b></b>在合同有效期内，用户通过管家车易站获取管家车易站商家的用户代码和管理账户，享受相应的管家车易站商家的服务。</li>
+							<li><b></b>管家车易站商家服务的内容、功能及所含信息的许可使用权、知识产权等全部权利均归管家车易站拥有，未经管家车易站书面许可不得以任何方式使用,用户许可河南兴友汽车销售有限公司有权利就任何主体侵权而单独提起诉讼，并获得全部赔偿。 </li>
+							<li><b></b>用户根据用户代码和密码，登陆“管家车易站”的管理账户，可以使用“发布车源”服务等服务和管家车易站陆续开通的其他服务。</li>
+							<li><b></b>用户应当遵守国家有关法律法规，不得损害公共利益和他人的合法权益，不得损害管家车易站的商誉。</li>
+							<li><b></b>用户应当提供真实、有效、合法、准确的公司注册信息和产品信息，以便用户及时与网友取得联系，获取购车意向，用户因产品信息不真实、不完整等，造成的所有损失由用户承担，因此给管家车易站造成的损害，由用户向管家车易站足额赔偿。</li>
+						<li><b></b>用户应当提供真实、有效、合法、准确的公司注册信息和产品信息，以便用户及时与网友取得联系，获取购车意向，用户因产品信息不真实、不完整等，造成的所有损失由用户承担，因此给管家车易站造成的损害，由用户向管家车易站足额赔偿。</li>
+					    <li><b></b>车辆信息在管家车易站站发布后，由用户独立承担车辆保管责任，并确保信息发布期间车辆不会因使用、保管发生车况非正常变化或导致车辆价值贬损的情形。如发生前述情形，用户应及时告知管家车易站，并配合管家车易站对该等车辆展示信息进行变更或删除。</li>
+					     <li><b></b>用户发布的车源，用户应严格审核相关手续、证明，并按国家规定办理车辆过户等手续，提供完整、规范的服务。
+如在车辆交易过程中出现任何问题，由车辆交易双方自行协商解决，并独自承担相关法律责任。</li>
+  						<li><b></b>    车辆线下交易意向和行为是用户与消费者双方关系，如发生汽车买卖纠纷、质量投诉、举报维权等情况，由用户直接
+负责与消费者解决，与管家车易站无关。如由此导致管家车易站遭受投诉举报、工商处罚、媒体曝光等负面影响，亦由
+用户直接负责处理，管家车易站将保留追究用户法律及经济赔偿的权利。</li>
+						</ul>
 					</div>
 				</div>
 				
 			</div>
-		</div>	
+		</div>
 		<div class="footer">
+			
 	<div class="wrap">
 		<div class="company_info gj_clear">
 			<div class="footer_logo"><img src="/static/img/1024.png" alt="" width="80"/><p>管家车易站</p></div>
@@ -242,7 +266,8 @@ $(window).on('scroll',function(){
 	$(".more_dwon").click(function(){
 		$(this).parents(".optimize_link").addClass("link_active")
 	})
-</script></div>
+</script>
+		</div>
 		
 		<div class="mask1"></div>
 	</body>

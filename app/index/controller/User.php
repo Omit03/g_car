@@ -170,6 +170,11 @@ class User  extends Common {
 
         $user_id = Session::get('user_id');
 
+        if (empty($user_id)){
+
+            $this->return_msg('400','请登录');
+        }
+
         //获取店铺的数据
         $shop_info=Db::table("user_shop")->where("user_id",$user_id)->find();
        // dump($shop_info);die;
@@ -273,9 +278,11 @@ class User  extends Common {
 
         if($res){
 
-            $this->success('成功','user/person_manage');
-        }else{
+            $this->return_msg('200','成功');
 
+            //$this->success('成功','user/person_manage');
+        }else{
+            $this->return_msg('400','成功');
             $this->error('失败');
         }
     }
@@ -521,10 +528,12 @@ class User  extends Common {
                                     "type"=>2
                                ]);
             }
-            $this->success('添加成功,可继续发布','user/person_release');
+
+            $this->return_msg('200','添加成功,可继续发布');
+            //$this->success('添加成功,可继续发布','user/person_release');
         }else{
 
-            $this->error('失败');
+            //$this->error('失败');
 
            // $this->return_msg('400','失败');
         }
@@ -740,11 +749,13 @@ class User  extends Common {
 
         if ($info ){
 
-            $this->success('添加成功 待审核','user/person_busenter',1);
+            $this->return_msg('200','添加成功 待审核');
+
+           // $this->success('添加成功 待审核','user/person_busenter',1);
 
         }else{
-
-            $this->error('失败');
+            $this->return_msg('400','失败');
+            //$this->error('失败');
         }
 
 
@@ -973,7 +984,9 @@ class User  extends Common {
 
         }else{
 
-            $this->redirect('car_login');
+            $this->return_msg('400','跳转');
+
+            //$this->redirect('car_login');
         }
 
 
@@ -1012,12 +1025,17 @@ class User  extends Common {
 
         if(empty($phone)){
 
-            $this->success('请登录','user/car_login',1);
-        }
+            $this->return_msg('200','请登录');
 
-        $newcar = $this->car_collect_list(1);
-        $twocar = $this->car_collect_list(2);
-        $zerocar = $this->car_collect_list(3);
+           // $this->success('请登录','user/car_login',1);
+        }
+        $userid = Session::get('user_id');
+
+        //dump($userid);die;
+
+        $newcar = $this->car_collect_list(1,$userid);
+        $twocar = $this->car_collect_list(2,$userid);
+        $zerocar = $this->car_collect_list(3,$userid);
 
         $brand = $this->brand();//品牌
 
@@ -1118,8 +1136,8 @@ class User  extends Common {
                 ]);
 
             if ($res){
-
-                $this->error('收藏成功');
+                $this->return_msg('200','收藏成功');
+               // $this->error('收藏成功');
             }
 
 
@@ -1146,15 +1164,15 @@ class User  extends Common {
 
         if ($res){
 
-            $this->error('删除成功');
+            //$this->error('删除成功');
 
-            //$this->return_msg(200,'删除成功');
+            $this->return_msg(200,'删除成功');
 
         }else{
 
-            $this->error('删除失败');
+            //$this->error('删除失败');
 
-            //$this->return_msg(400,'失败');
+            $this->return_msg(400,'失败');
         }
 
     }
@@ -1188,18 +1206,22 @@ class User  extends Common {
         $this->assign('city',$city);
         $this->assign('domain',$domain);
 
-        $phone = Session::get('phone');
+        $session_userid = Session::get('user_id');
+
+        $phone = Cookie::get('phone');
 
         if(empty($phone)){
 
-            $this->success('请登录','user/car_login',1);
+            $this->return_msg('400','请登录');
+
+            //$this->success('请登录','user/car_login',1);
         }
 
-        $newcar = $this->car_history(1);
+        $newcar = $this->car_history(1,$session_userid);
 
-        $oldcar = $this->car_history(2);
+        $oldcar = $this->car_history(2,$session_userid);
 
-        $zerocar = $this->car_history(3);
+        $zerocar = $this->car_history(3,$session_userid);
 
         $brand = $this->brand();//品牌
 
@@ -1224,18 +1246,20 @@ class User  extends Common {
 
         if(empty($phone)){
 
-            $this->success('请登录','user/car_login',1);
+            $this->return_msg('400','请登录');
         }
 
         $res = Db::table('car_liulan_history')->where('id',$id)->setField('is_del',1);
 
         if ($res){
 
-            $this->success('删除成功','user/person_history',1);
+            $this->return_msg('200','删除成功');
+
+           // $this->success('删除成功','user/person_history',1);
 
         }else{
-
-            $this->error('删除失败');
+            $this->return_msg('400','删除失败');
+            //$this->error('删除失败');
         }
 
     }
@@ -1278,15 +1302,15 @@ class User  extends Common {
 
            if ($res){
 
-               $this->success('意见反馈已收到','user/person_feedback');
+               //$this->success('意见反馈已收到','user/person_feedback');
 
-               //$this->return_msg(200,'意见反馈已收到 谢谢');
+               $this->return_msg(200,'意见反馈已收到 谢谢');
 
            }else{
 
-               $this->error('失败');
+              // $this->error('失败');
 
-               //$this->return_msg(400,'失败');
+               $this->return_msg(400,'失败');
            }
 
 
@@ -1887,14 +1911,14 @@ class User  extends Common {
 
 
               Session::set('phone',$data['phone']);
-              $this->success('绑定成功','person_info');
+              //$this->success('绑定成功','person_info');
 
-              //$this->return_msg(200,'绑定成功');
+              $this->return_msg(200,'绑定成功');
 
           }else{
-              $this->error('绑定失败');
+              //$this->error('绑定失败');
 
-              //$this->return_msg(400,'绑定失败');
+              $this->return_msg(400,'绑定失败');
           }
       }
 

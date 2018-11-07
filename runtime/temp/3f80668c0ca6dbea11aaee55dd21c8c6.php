@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\join_us.html";i:1541496795;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541579441;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"G:\xampp\htdocs\car\public/../app/index\view\index\link_us.html";i:1539691291;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541579441;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="/static/css/style.css" />
 	<link rel="stylesheet" href="/static/css/other.css" />	
 	<style>
-
+		
 	</style>
 	<body>	
 		<div class="header"><div class="site_nav">
@@ -165,22 +165,24 @@ $(window).on('scroll',function(){
 				<div class="person_center">
 					<div class="person_left user">					
 						<div class="tab_choose">
-						<ul>
+							<ul>
 								<h2 class="top_tit">管家车易站</h2>
-								<li class="active"><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/join_us"><img src="/static/img/jiaoru.png" alt="" /></b>加入我们</a></li>
-								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/link_us"><img src="/static/img/lainxi.png" alt="" /></b>联系我们</a></li>
-								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/service"><img src="/static/img/fuwu.png" alt="" /></b>服务保障</a></li>
-								<li class=""><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/website"><img src="/static/img/ditu.png" alt="" /></b>网站地图</a></li>
+								<li class=""><a href="join_us.html"><img src="/static/img/jiaoru.png" alt="" /></b>加入我们</a></li>
+								<li class="active"><a href="link_us.html"><img src="/static/img/lainxi.png" alt="" /></b>联系我们</a></li>
+								<li class=""><a href="service.html"><img src="/static/img/fuwu.png" alt="" /></b>服务保障</a></li>
+								<li class=""><a href="website.html"><img src="/static/img/ditu.png" alt="" /></b>网站地图</a></li>
 								
 							</ul>
 						</div>
 					</div>
 					<div class="person_right">
-						<h1 class="borbt"><span class="release">加入我们</span></h1>
-						<h2 class="step">管家车易站平台</h2>
-						<p class="about">
-						  联系电话：0371-53375515 <br />
-工作地址：郑州市金水区花园路国基路 居易国际广场4号楼1122 （地铁2号线 沙门A口旁）
+						<h1 class="borbt"><span class="release">联系我们</span></h1>
+						<p class="link">
+							<span>咨询电话</span>
+						  卖车电话：<b>0371-53375515 </b><br />
+						 
+						 建议电话：<b>0371-53375515</b> <br />
+						 每天9：00-21：00(法定节假日除外)
 							
 						</p>
 					</div>

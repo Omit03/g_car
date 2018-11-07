@@ -2053,11 +2053,13 @@ class Common extends Controller{
      * 获取车浏览记录
      * 1 新车 2 二手车 3 零首付
      */
-    public function car_history($type){
+    public function car_history($type,$session_userid){
 
         $where['type'] = $type;
 
         $where['is_del'] = 0;
+
+        $where['userid'] =$session_userid;
 
         $res = Db::table('car_liulan_history')->where($where)->limit(8)->select();
 
@@ -2067,11 +2069,13 @@ class Common extends Controller{
      * 获取收藏
      * 1 新车 2 二手车 3 零首付
      */
-    public function car_collect_list($type){
+    public function car_collect_list($type,$userid){
 
         $where['type'] = $type;
 
         $where['is_del'] = 0;
+
+        $where['userid'] = $userid;
 
         $res = Db::table('car_collect')->where($where)->limit(8)->select();
 

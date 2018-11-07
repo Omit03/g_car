@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="107a576e-849f-426b-9ad2-69819e34de0c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/index/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Common.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index/view/public/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/public/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index/view/user/car_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/user/car_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201811/07.log" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/log/201811/07.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2cebd87490b4439cee026aaccbe60fc1.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/2cebd87490b4439cee026aaccbe60fc1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/63c7a657acb4499a1f5701341becf6a7.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/63c7a657acb4499a1f5701341becf6a7.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/a7b58d1e8fc45673bfc94ff9546cd0b5.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/a7b58d1e8fc45673bfc94ff9546cd0b5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/dde8caf94bcb224db7901307cab714b1.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/dde8caf94bcb224db7901307cab714b1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/de74958f3479665872d1ef9802b8447e.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/de74958f3479665872d1ef9802b8447e.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,29 +41,29 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="6" />
-          <entry key="html" value="358" />
+          <entry key="html" value="359" />
           <entry key="js" value="2" />
-          <entry key="php" value="334" />
+          <entry key="php" value="336" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="6" />
-          <entry key="HTML" value="358" />
+          <entry key="HTML" value="359" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="334" />
+          <entry key="PHP" value="336" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="7400" />
-          <entry key="php" value="17801" />
+          <entry key="html" value="7406" />
+          <entry key="php" value="18137" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="7400" />
-          <entry key="PHP" value="17801" />
+          <entry key="HTML" value="7406" />
+          <entry key="PHP" value="18137" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -72,50 +78,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index/controller/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="84" column="31" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
+            <state relative-caret-position="451">
+              <caret line="1033" column="10" selection-start-line="1033" selection-start-column="10" selection-end-line="1033" selection-end-column="10" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
-                <element signature="e#21775#24658#0#PHP" />
-                <element signature="e#24677#26936#0#PHP" />
-                <element signature="e#26970#27905#0#PHP" />
-                <element signature="e#27937#29017#0#PHP" />
-                <element signature="e#29049#31501#0#PHP" />
-                <element signature="e#31534#32031#0#PHP" />
-                <element signature="e#32063#33132#0#PHP" />
-                <element signature="e#33167#33599#0#PHP" />
-                <element signature="e#33631#34821#0#PHP" />
-                <element signature="e#35041#40580#0#PHP" />
-                <element signature="e#41837#42604#0#PHP" />
-                <element signature="e#42959#43635#0#PHP" />
-                <element signature="e#43641#45017#0#PHP" />
-                <element signature="e#45609#46694#0#PHP" />
-                <element signature="e#47448#48973#0#PHP" />
-                <element signature="e#48995#49629#0#PHP" />
-                <element signature="e#50137#51000#0#PHP" />
-                <element signature="e#51057#51591#0#PHP" />
-                <element signature="e#51627#52170#0#PHP" />
-                <element signature="e#52247#53966#0#PHP" />
-                <element signature="e#54033#58313#0#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/view/user/car_login.html">
+        <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="105" column="95" lean-forward="true" selection-start-line="105" selection-start-column="95" selection-end-line="105" selection-end-column="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/view/public/header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="71" column="79" lean-forward="true" selection-start-line="71" selection-start-column="79" selection-end-line="71" selection-end-column="79" />
+            <state relative-caret-position="329">
+              <caret line="2077" column="35" selection-start-line="2077" selection-start-column="35" selection-end-line="2077" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -131,8 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>salt</find>
-      <find>person_history</find>
       <find>关于我们</find>
       <find>总体服务</find>
       <find>基本配置</find>
@@ -157,10 +131,12 @@
       <find>STA</find>
       <find>view_re</find>
       <find>set_u</find>
-      <find>login</find>
       <find>car_</find>
       <find>car_login</find>
       <find>out</find>
+      <find>login</find>
+      <find>person_his</find>
+      <find>person_c</find>
     </findStrings>
     <replaceStrings>
       <replace>__STATIC__/</replace>
@@ -221,10 +197,10 @@
         <option value="$PROJECT_DIR$/app/index/view/shop/shop_info.html" />
         <option value="$PROJECT_DIR$/app/index/view/shop/shop_list.html" />
         <option value="$PROJECT_DIR$/app/config.php" />
-        <option value="$PROJECT_DIR$/app/index/controller/Common.php" />
         <option value="$PROJECT_DIR$/app/index/view/user/person_info.html" />
         <option value="$PROJECT_DIR$/app/index/view/user/car_login.html" />
         <option value="$PROJECT_DIR$/app/index/view/public/header.html" />
+        <option value="$PROJECT_DIR$/app/index/controller/Common.php" />
         <option value="$PROJECT_DIR$/app/index/controller/User.php" />
       </list>
     </option>
@@ -251,10 +227,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-87" />
-    <option name="y" value="34" />
-    <option name="width" value="1855" />
-    <option name="height" value="1026" />
+    <option name="x" value="90" />
+    <option name="y" value="119" />
+    <option name="width" value="1568" />
+    <option name="height" value="830" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -295,7 +271,7 @@
               <item name="car" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="car" type="b2602c69:ProjectViewProjectNode" />
@@ -304,7 +280,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -361,19 +336,19 @@
       <workItem from="1541050722256" duration="19221000" />
       <workItem from="1541117060885" duration="22082000" />
       <workItem from="1541205265404" duration="17939000" />
-      <workItem from="1541377745676" duration="82424000" />
+      <workItem from="1541377745676" duration="85268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="517159000" />
+    <option name="totallyTimeSpent" value="520003000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-87" y="34" width="1855" height="1026" extended-state="0" />
+    <frame x="90" y="119" width="1568" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13481894" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16047746" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
@@ -728,13 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="668" column="63" selection-start-line="668" selection-start-column="63" selection-end-line="668" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/route.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -775,44 +743,30 @@
     <entry file="file://$PROJECT_DIR$/app/index/view/user/car_login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
-          <caret line="105" column="95" lean-forward="true" selection-start-line="105" selection-start-column="95" selection-end-line="105" selection-end-column="95" />
+          <caret line="105" column="95" selection-start-line="105" selection-start-column="95" selection-end-line="105" selection-end-column="95" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index/view/public/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="71" column="79" lean-forward="true" selection-start-line="71" selection-start-column="79" selection-end-line="71" selection-end-column="79" />
+        <state relative-caret-position="304">
+          <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="2077" column="35" selection-start-line="2077" selection-start-column="35" selection-end-line="2077" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index/controller/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="84" column="31" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
+        <state relative-caret-position="451">
+          <caret line="1033" column="10" selection-start-line="1033" selection-start-column="10" selection-end-line="1033" selection-end-column="10" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
-            <element signature="e#21775#24658#0#PHP" />
-            <element signature="e#24677#26936#0#PHP" />
-            <element signature="e#26970#27905#0#PHP" />
-            <element signature="e#27937#29017#0#PHP" />
-            <element signature="e#29049#31501#0#PHP" />
-            <element signature="e#31534#32031#0#PHP" />
-            <element signature="e#32063#33132#0#PHP" />
-            <element signature="e#33167#33599#0#PHP" />
-            <element signature="e#33631#34821#0#PHP" />
-            <element signature="e#35041#40580#0#PHP" />
-            <element signature="e#41837#42604#0#PHP" />
-            <element signature="e#42959#43635#0#PHP" />
-            <element signature="e#43641#45017#0#PHP" />
-            <element signature="e#45609#46694#0#PHP" />
-            <element signature="e#47448#48973#0#PHP" />
-            <element signature="e#48995#49629#0#PHP" />
-            <element signature="e#50137#51000#0#PHP" />
-            <element signature="e#51057#51591#0#PHP" />
-            <element signature="e#51627#52170#0#PHP" />
-            <element signature="e#52247#53966#0#PHP" />
-            <element signature="e#54033#58313#0#PHP" />
           </folding>
         </state>
       </provider>
