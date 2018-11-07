@@ -25,9 +25,9 @@
 			</p>
 			<div class="gj_clear"></div>
 			<ul class="shop_nav gj_clear">
-				<li class="active"><a href="{:url('shop/index')}">店铺首页</a></li>
-				<li><a href="{:url('shop/shop_list')}">在售车源</a></li>
-				<li><a href="{:url('shop/shop_info')}">公司信息</a></li>
+				<li class="active"><a href="{$domain}/{$Think.session.cityurl}/shop">店铺首页</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}/shop_list">在售车源</a></li>
+				<li><a href="{$domain}/{$Think.session.cityurl}/shop_info">公司信息</a></li>
 			</ul>
 		</div>
 		
@@ -86,8 +86,8 @@
 
 					<li class="items5">
 
-						<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
-						<a href="{:url('newcar/newcardetails')}?brand_id={$val.brand_id}&sys_id={$val.sys_id}&cartype_id={$val.cartype_id}&id={$val.id}" class="car_desc">
+						<a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" class="car_img flex_center"><img src="{$val.img_url}" alt="" /></a>
+						<a href="{$domain}/{$Think.session.cityurl}/detail/{$val.id}" class="car_desc">
 							<h3>{$val.name}</h3>
 							<p><span class="pay_first">首付<b>{$val.pay10_s2}</b>万</span> <span class="padlt20">月供{$val.pay10_y2}元</span> </p>
 					

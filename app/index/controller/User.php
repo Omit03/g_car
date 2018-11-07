@@ -81,7 +81,9 @@ class User  extends Common {
 
         Session::clear();
 
-        $this->redirect('index/index');
+       // $this->return_msg('200','退出成功');
+
+        $this->redirect("$domain");
     }
 
     /*
@@ -1034,9 +1036,11 @@ class User  extends Common {
 
         $phone = Session::get('phone');
 
+       // dump($data);die;
+
         if(empty($phone)){
 
-            $this->success('请登录','user/car_login',1);
+            $this->return_msg('400','未登录');
         }
 
             $where['type'] = $data['type'];
@@ -1495,7 +1499,8 @@ class User  extends Common {
 
             unset($db_res['login_password']); //密码永不返回
 
-            $this->redirect('user/person_manage');
+           // $this->return_msg('200','登录成功');
+            $this->redirect('index/user/person_manage');
         }
 
     }
@@ -1528,7 +1533,9 @@ class User  extends Common {
 
         unset($db_res['login_password']); //密码永不返回
 
-        $this->redirect('user/person_manage');
+        $this->return_msg('200','登录成功');
+
+       // $this->redirect('index/user/person_manage');
 
 
     }
@@ -1639,9 +1646,9 @@ class User  extends Common {
 
         }else{
 
-            $this->success('注册成功请登录','user/car_login');
+            //$this->success('注册成功请登录','user/car_login');
 
-            //$this->return_msg(200,'用户注册成功');
+            $this->return_msg(200,'用户注册成功');
         }
 
             }
@@ -1821,9 +1828,9 @@ class User  extends Common {
 
            // $this->redirect('user/person_manage');
 
-            $this->success('密码已找回，登录中','user/person_manage');
+            //$this->success('密码已找回，登录中','user/person_manage');
 
-            //$this->return_msg(200,'找回成功');
+            $this->return_msg(200,'找回成功');
 
         }else{
 

@@ -33,6 +33,8 @@ Route::rule(':city/link_us','index/index/link_us');
 Route::rule(':city/service','index/index/service');
 Route::rule(':city/website','index/index/website');
 Route::rule(':city/shop','index/shop/index');
+Route::rule(':city/shop_list','index/shop/shop_list');
+Route::rule(':city/shop_info','index/shop/shop_info');
 Route::rule(':city/login','index/user/car_login');
 Route::rule(':city/logout','index/user/car_logout');
 Route::rule(':city/register','index/user/register');
