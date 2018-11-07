@@ -1499,8 +1499,8 @@ class User  extends Common {
 
             unset($db_res['login_password']); //密码永不返回
 
-           // $this->return_msg('200','登录成功');
-            $this->redirect('index/user/person_manage');
+            $this->return_msg('200','登录成功');
+            //$this->redirect('index/user/person_manage');
         }
 
     }
