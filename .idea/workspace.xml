@@ -226,7 +226,7 @@
       <path value="$PROJECT_DIR$/vendor/topthink/think-queue" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="90" />
     <option name="y" value="119" />
     <option name="width" value="1568" />
