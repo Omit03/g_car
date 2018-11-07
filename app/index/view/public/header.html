@@ -1,10 +1,10 @@
 <div class="site_nav">
 	<div class="site_nav_bd">
 		<div class="fleft">你好，欢迎来到管家车易站！
-			欢迎用户{empty name="Think.session.phone"}
+			欢迎用户{empty name="Think.cookie.phone"}
 			<a href="{$domain}/{$Think.session.cityurl}/login" class="coloryel">【登录】</a>,免费<a href="{$domain}/{$Think.session.cityurl}/register" class="coloryel">【注册】</a>
 			{else /}
-			{$Think.session.phone}
+			{$Think.cookie.phone}
 			{/empty}</div>
 		<div class="fright">
 			<ul class="site_nav_menu">
@@ -13,8 +13,8 @@
 				<li><a href="{$domain}/{$Think.session.cityurl}/sell"><img src="__STATIC__/img/maic.png" alt="" />我要卖车</a></li>
 				<li><a href="{$domain}/{$Think.session.cityurl}/appdownload"><img src="__STATIC__/img/xiazai.png" alt="" />APP下载</a></li>
 				<li><a href=""><img src="__STATIC__/img/wangahn.png" alt="" />网站导航</a></li>
-				{notempty name="Think.session.phone"}<li><a href="{$domain}/{$Think.session.cityurl}/per_his"><img src="__STATIC__/img/wangahn.png" alt="" />会员中心</a></li>{/notempty}
-				{notempty name="Think.session.phone"}<li><a href="{$domain}/{$Think.session.cityurl}/logout"><img src="__STATIC__/img/wangahn.png" alt="" />安全退出</a></li>{/notempty}
+				{notempty name="Think.cookie.phone"}<li><a href="{$domain}/{$Think.session.cityurl}/per_his"><img src="__STATIC__/img/wangahn.png" alt="" />会员中心</a></li>{/notempty}
+				{notempty name="Think.cookie.phone"}<li><a href="{$domain}/{$Think.session.cityurl}/logout"><img src="__STATIC__/img/wangahn.png" alt="" />安全退出</a></li>{/notempty}
 			</ul>
 		</div>
 	</div>

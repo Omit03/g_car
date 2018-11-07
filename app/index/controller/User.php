@@ -5,6 +5,7 @@ namespace app\index\controller;
 use think\Db;
 use logs\newLog;
 use think\Session;
+use think\Cookie;
 
 class User  extends Common {
 
@@ -80,6 +81,8 @@ class User  extends Common {
         $this->assign('domain',$domain);
 
         Session::clear();
+        Cookie::delete('phone');
+        Cookie::delete('user_id');
 
        // $this->return_msg('200','退出成功');
 
@@ -1487,11 +1490,26 @@ class User  extends Common {
 
         }else{
 
-            $log = new newLog('booklog');
 
-            $log ->reclog(" 登录时间: ".date('Y-m-d H:i:s',time()));
 
-            $log ->reclog("登录者 : ".$db_res['phone']);
+//            $log = new newLog('booklog');
+//
+//            $log ->reclog(" 登录时间: ".date('Y-m-d H:i:s',time()));
+//
+//            $log ->reclog("登录者 : ".$db_res['phone']);
+
+            if (!empty($data['zidong'])){
+
+                Cookie::set('user_id',$db_res['user_id'],604800);
+                Cookie::set('phone',$db_res['phone'],604800);
+
+            }else{
+
+                Cookie::set('user_id',$db_res['user_id']);
+                Cookie::set('phone',$db_res['phone']);
+
+            }
+
 
             Session::set('user_id',$db_res['user_id']);
 
@@ -1526,6 +1544,18 @@ class User  extends Common {
         $log ->reclog(" 验证码登录时间: ".date('Y-m-d H:i:s',time()));
 
         $log ->reclog("登录者 : ".$db_res['phone']);
+
+        if (!empty($data['zidong'])){
+
+            Cookie::set('user_id',$db_res['user_id'],604800);
+            Cookie::set('phone',$db_res['phone'],604800);
+
+        }else{
+
+            Cookie::set('user_id',$db_res['user_id']);
+            Cookie::set('phone',$db_res['phone']);
+
+        }
 
         Session::set('user_id',$db_res['user_id']);
 
