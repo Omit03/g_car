@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"G:\xampp\htdocs\car\public/../app/index\view\index\appdownload.html";i:1540815190;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541500432;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"G:\xampp\htdocs\car\public/../app/index\view\index\appdownload.html";i:1540815190;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541508632;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -43,7 +43,7 @@
 			<div class="city"  style="display: none;" >
 				<ol>
 					<?php if(is_array($city) || $city instanceof \think\Collection || $city instanceof \think\Paginator): $i = 0; $__LIST__ = $city;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-						<a href="<?php echo $domain; ?>/<?php echo $val['pin']; ?>"> <li><?php echo $val['name']; ?></li></a>
+						<a href="/<?php echo $val['pin']; ?>"> <li><?php echo $val['name']; ?></li></a>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 
 				</ol>
