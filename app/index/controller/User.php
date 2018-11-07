@@ -442,19 +442,25 @@ class User  extends Common {
         }
 
         //获取图片
-        //$head_img_path = $this->upload_file($subface_img);
 
-       $add['subface_img'] = $this->upload_file($subface_img,'door_photosA');
+        //处理多张图片
+
+        $head_img_path = $this->upload($subface_img,'door_photosA');
+
+        $add['subface_img'] = implode(",", $head_img_path);
+
+//        $domain = $this->request->domain();
+//
+//        $add['subface_img'] = $domain.$head_img_path;
+
+    //   $add['subface_img'] = $this->upload_file($subface_img,'door_photosA');
 
 //        dump($add);die;
 //        $add['img_512'] = $this->upload_file($subface_img,'door_photosB');
 //
 //        $add['img_300'] = $this->upload_file($subface_img,'door_photoss');
 
-        //dump($add['subface_img'] );
-
-       // dump($head_img_path);die;
-//        $add['subface_img'] = $this->get_uplodes_imgs($subface_img);
+    //    $add['subface_img'] = $this->get_uplodes_imgs($subface_img);
 //        $add['img_512'] = $this->get_uplodes_imgs_512($subface_img);
 //        $add['img_300'] = $this->get_uplodes_imgs_300($subface_img);
        // dump($add);die;
