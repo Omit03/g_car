@@ -2,8 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="107a576e-849f-426b-9ad2-69819e34de0c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Common.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index/view/user/person_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/view/user/person_info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extend/logscache/booklog/booklog20181107.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extend/logscache/booklog/booklog20181107.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181011/458ce602c1d98ffd6d4a4df92dbb4191.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181011/e4e0aa3844c04014aab48e54768bd437.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/1499fcd5396aef1d1b68a94c7e1445ac.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/1cd8ae487258aa6eebfd7c63253be2d3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/1d77b0f7cdc748485f2e6dd3d6a31c5d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/2549706e508d64c67511616a1b714ee0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/2d162d204519dca9b5e5a840c846dc9a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/41c6f144f94ca195d44bd21370219d5e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/5b89b6074bcccfee227c32ae34984a3a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/5da2b81fcfd720e76d626a9c0a79b100.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/7908d8e21cc8546fc9827fbd7cbfd013.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/8768d621c4c60750bd97f8ab2dfaa40a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/973e746a53661d4a8475e5297b0c192a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/9f3ae6aedf4c0d8241b39865298a0698.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/b5b9009fec64182ed3dd37be7560e3a8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/cc6a1f4e7f73896c4951437c9da725b2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/e2bd734c230a92e2595fc788dd838ae5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181012/f4f52a4defce4ebbc4b3390d073fba40.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181023/31ef13514c6b5f162b8a3c02d4f67fed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181023/3807eda3b5fe6d6849ee433761f2bd57.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181023/601d4bad88a2f10a7380698e9e271caf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181023/653f53c3368f482f639d99ba4ed25bcf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181023/7a85e49dd79cc94ceaaf8a784e7c64ab.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181023/7f6fd8aada981d5f04a9b48655364409.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181023/b7afc59e4469e34b56262585a2c6eb0a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/13cdb635938c4977a4305d08ab947fe4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/14e91c8040ce1fb45cb5fb9cf10eb9b9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/1ad1d738c576f0a83cf5c8b7ba567cf8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/1b63216f8feeb39a6906c979e939f4df.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/38246e4d277733e36002bacf538a2010.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/3c0af0b51ffb8d7dc3fa89cead99bd63.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/4bdb1c62c494b48d57b941fe967e9dbc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/4d0194749b4e76b285b5ffc6f7cde820.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/55d60b2dcb424fb746ecfd34377caeb8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/5aacc849dc2295d3a4b093cb1b897d35.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/6101cb3c9b3e548073424ca048673fd1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/73f774c2c0c8e6f2487e3bd8fa133b6d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/78a715dc9be070e2e11522fbec55d076.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/7e9d4b5b819ab0d9e5b3efb1273d4be5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/932f83104de5071aecfb451f24374c36.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/937daa546834a93dd177719e81df0f0f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/a8c8826d8d9145c8f198e620ff5226e9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/c79cd567b41669410c0224d22fd5ee2b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/c8f347ea65b205e5b6cb9e51bf8288ce.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/d0f1d26c5612e19c416d56a4a27cb810.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/e0a9274c829e7989f3fa307087bfe01e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/e0da8c543d948068c506729dc87c06c0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/e549a19fc87ed7ffa1fffe60699e1613.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/e5901ceb03d3f6449a3e11da565e9237.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/eec3db56d9d938f3c87b1dc12aadbfd9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/f680c7947894ffe8158b5a59d47fe860.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181030/fbdce4ee2fd2f13c78d69f1c3b4705a9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181031/498b6f17d755f8d599454b477866c585.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181031/f33eae3ac156f8f1ed0416b883c53f50.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/04ed68f5db4fdbeec8ed319f68759612.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/0775e77644b96511e868bdeb04e75e44.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/07cdf99f4a5e3cf2c13d2d135146c30f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/0a046124c163f0dc19c898de6f32bebf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/0ac52ee91736f784d7269c766f9bd54e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/0c426c7b77adc5b138467e66b13d3710.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/0d2ea25c810be3b27a284edfbb111967.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/15aec442588603e5b4c0dfa0ad0cf979.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/180c600ee4ce6540ef64989e55471007.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/1fdac26e0fa6c8e5fb39ad53a755f147.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/26687891ee4d612d6181870a6d9954a2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/2e2bcebeee00ca67d067220f42c44e45.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/30ebb27cb83579c31065282a81f5d5ed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/31daf2724d98026006cd0debaceda214.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/32715552b4dd709a590e1d52c2940481.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/3c98fa796ef6aab6a580f04f00f8c194.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/46c895ee6f8fd548a29ecdbb3cb6536c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/4a9dd80c5285cc1201539ddbde2e96e8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/4b5d8bb104b5e448556c5d30e7487447.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/4c010f318577baac3bf5c7dad92c49b2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/4ea0f7c965a55593cad27784d4515414.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/4f40f4c20e513e791ccf25736c453aa8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/51b96066b0147a95898cd0b46129164a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/57e8d07ddc263ad6dfd690f2dd5ef5a9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/5914a66e0cbf07bb8dfedb7d70480e78.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/5b13a1dcb99c8f468d0e5bfc0295d27d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/625739b8159d90f86b7d151aa86aa5d2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/677ce37aee4b0f37777294d840416a1b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/68590b53207113acdf445c560f43b977.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/6b521159718fbd8ed754a9e4784ff459.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/708a9c4e0f6c34ed9865145cfed71262.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/70d155fb7958eb5146fe59fae842683e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/7d95ff2c592a67a593a57f01188f981c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/7f531202c6009b1d30c2c93dede8d8ce.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/80d30e5596221076515176187307802c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/9304ecf7bd25dd80bc08b703ba33c671.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/9b044bb4cc309f5f4c44f0ddf8d10496.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/9c19640f8902349584be070a74f92a66.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/a9579e151b1b7eb22825a9b42c339ca9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/b15dcabf86c04d1d420ed8232b149e6a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/b5048a0e3705f04d264181aedf8d4fcf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/ba0c9c839e6507d656c04f75647a4242.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/c755f209b316ee6394352e964b089c02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/cd6996e58623ed77a61be9f67d9b21b0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/ce2770fa34d461d896ffe7d99c11fce1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/d711db4e1c96c52ba05d565110342820.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/d737d7b246aa1d0a2f5786c0781758fe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/df601dbb8f73d713043327e80ee2e0fd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/ec0b071a5c7e16b56837ae43a632b2ee.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/f289c5551af26f04b1c6a691e3f9dda3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/f2a1683cdd9083854a07ec8ed27f95c5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20181101/fbf4bf22fd219a919ccd4128d1fc8c03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201811/07.log" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/log/201811/07.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,29 +144,29 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="6" />
-          <entry key="html" value="354" />
+          <entry key="html" value="356" />
           <entry key="js" value="2" />
-          <entry key="php" value="323" />
+          <entry key="php" value="332" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="6" />
-          <entry key="HTML" value="354" />
+          <entry key="HTML" value="356" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="323" />
+          <entry key="PHP" value="332" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="7375" />
-          <entry key="php" value="17228" />
+          <entry key="html" value="7383" />
+          <entry key="php" value="17719" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="7375" />
-          <entry key="PHP" value="17228" />
+          <entry key="HTML" value="7383" />
+          <entry key="PHP" value="17719" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -69,31 +179,62 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
+        <entry file="file://$PROJECT_DIR$/app/route.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2337">
-              <caret line="132" column="26" lean-forward="true" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+            <state relative-caret-position="611">
+              <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/route.php">
+        <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="49" />
+            <state relative-caret-position="318">
+              <caret line="668" column="63" selection-start-line="668" selection-start-column="63" selection-end-line="668" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index/controller/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="2054" column="81" selection-start-line="2054" selection-start-column="81" selection-end-line="2054" selection-end-column="81" />
+              <folding>
+                <element signature="e#40#53#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/index/controller/Index.php">
+        <entry file="file://$PROJECT_DIR$/app/index/view/user/person_info.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="117" column="41" lean-forward="true" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="144" column="36" selection-start-line="144" selection-start-column="36" selection-end-line="144" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index/controller/Newcar.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-              <folding>
-                <element signature="e#38#56#0#PHP" expanded="true" />
-              </folding>
+              <caret line="201" column="15" selection-start-line="201" selection-start-column="15" selection-end-line="201" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -109,11 +250,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>上牌</find>
-      <find>$this-&gt;upload_file</find>
-      <find>telphone</find>
-      <find>getCodeBtns</find>
-      <find>getCodeBtn</find>
       <find>deta</find>
       <find>img/</find>
       <find>salt</find>
@@ -126,7 +262,6 @@
       <find>carparam</find>
       <find>newcardetails</find>
       <find>get_area</find>
-      <find>sell</find>
       <find>city_id</find>
       <find>website</find>
       <find>public</find>
@@ -139,6 +274,12 @@
       <find>car_login</find>
       <find>car_logout</find>
       <find>login</find>
+      <find>sell</find>
+      <find>status</find>
+      <find>STAT</find>
+      <find>STA</find>
+      <find>view_re</find>
+      <find>set_u</find>
     </findStrings>
     <replaceStrings>
       <replace>__STATIC__/</replace>
@@ -168,7 +309,6 @@
         <option value="$PROJECT_DIR$/app/index/view/user/car_login.html" />
         <option value="$PROJECT_DIR$/app/index/view/user/forgetpwd.html" />
         <option value="$PROJECT_DIR$/app/index/view/shop/add_comment.html" />
-        <option value="$PROJECT_DIR$/app/config.php" />
         <option value="$PROJECT_DIR$/app/index/controller/Change.php" />
         <option value="$PROJECT_DIR$/app/index/controller/News.php" />
         <option value="$PROJECT_DIR$/app/index/controller/Twocar.php" />
@@ -190,20 +330,21 @@
         <option value="$PROJECT_DIR$/app/index/view/user/person_busenter.html" />
         <option value="$PROJECT_DIR$/app/index/view/user/person_collect.html" />
         <option value="$PROJECT_DIR$/app/index/view/user/person_feedback.html" />
-        <option value="$PROJECT_DIR$/app/index/view/user/person_info.html" />
         <option value="$PROJECT_DIR$/app/index/view/user/person_manage.html" />
         <option value="$PROJECT_DIR$/app/index/view/user/person_opportunity.html" />
         <option value="$PROJECT_DIR$/app/index/view/user/person_public.html" />
         <option value="$PROJECT_DIR$/app/index/view/user/person_release.html" />
         <option value="$PROJECT_DIR$/app/index/controller/Index.php" />
         <option value="$PROJECT_DIR$/app/index/view/public/header.html" />
-        <option value="$PROJECT_DIR$/app/index/controller/Common.php" />
         <option value="$PROJECT_DIR$/app/route.php" />
         <option value="$PROJECT_DIR$/app/index/view/shop/index.html" />
         <option value="$PROJECT_DIR$/app/index/controller/Shop.php" />
         <option value="$PROJECT_DIR$/app/index/view/shop/shop_info.html" />
         <option value="$PROJECT_DIR$/app/index/view/shop/shop_list.html" />
+        <option value="$PROJECT_DIR$/app/config.php" />
+        <option value="$PROJECT_DIR$/app/index/controller/Common.php" />
         <option value="$PROJECT_DIR$/app/index/controller/User.php" />
+        <option value="$PROJECT_DIR$/app/index/view/user/person_info.html" />
       </list>
     </option>
   </component>
@@ -229,8 +370,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
-    <option name="y" value="32" />
+    <option name="x" value="113" />
+    <option name="y" value="35" />
     <option name="width" value="1696" />
     <option name="height" value="1026" />
   </component>
@@ -274,77 +415,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="change" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="twocar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="car" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -401,15 +471,15 @@
       <workItem from="1541050722256" duration="19221000" />
       <workItem from="1541117060885" duration="22082000" />
       <workItem from="1541205265404" duration="17939000" />
-      <workItem from="1541377745676" duration="69478000" />
+      <workItem from="1541377745676" duration="79179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="504213000" />
+    <option name="totallyTimeSpent" value="513914000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="32" width="1696" height="1026" extended-state="0" />
+    <frame x="113" y="35" width="1696" height="1026" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -513,13 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index/controller/Twocar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="804">
@@ -564,13 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="129" column="38" lean-forward="true" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/view/index/sell.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="59" column="22" lean-forward="true" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -636,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/controller/Newcar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index/view/user/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -695,17 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="37" column="89" selection-start-line="37" selection-start-column="89" selection-end-line="37" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/view/user/person_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="108" column="89" selection-start-line="108" selection-start-column="89" selection-end-line="108" selection-end-column="89" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -782,58 +820,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/controller/User.php">
+    <entry file="file://$PROJECT_DIR$/app/index/view/index/sell.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="1917" column="34" lean-forward="true" selection-start-line="1917" selection-start-column="34" selection-end-line="1917" selection-end-column="34" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-            <element signature="e#2484#7173#0#PHP" />
-            <element signature="e#7208#8941#0#PHP" />
-            <element signature="e#9021#16056#0#PHP" />
-            <element signature="e#16088#18538#0#PHP" />
-            <element signature="e#18570#19252#0#PHP" />
-            <element signature="e#19346#21702#0#PHP" />
-            <element signature="e#21735#24618#0#PHP" />
-            <element signature="e#24637#26896#0#PHP" />
-            <element signature="e#26930#27865#0#PHP" />
-            <element signature="e#27897#28977#0#PHP" />
-            <element signature="e#29009#31461#0#PHP" />
-            <element signature="e#31494#31991#0#PHP" />
-            <element signature="e#32023#33092#0#PHP" />
-            <element signature="e#33127#33559#0#PHP" />
-            <element signature="e#33591#34781#0#PHP" />
-            <element signature="e#41797#42564#0#PHP" />
-            <element signature="e#45017#45530#0#PHP" />
-            <element signature="e#47408#48933#0#PHP" />
-            <element signature="e#48955#49589#0#PHP" />
-            <element signature="e#49608#50057#0#PHP" />
-            <element signature="e#51017#51551#0#PHP" />
-            <element signature="e#51587#52130#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/route.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2337">
-          <caret line="132" column="26" lean-forward="true" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+        <state relative-caret-position="3591">
+          <caret line="210" column="52" lean-forward="true" selection-start-line="210" selection-start-column="52" selection-end-line="210" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index/controller/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="27" column="44" lean-forward="true" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        <state relative-caret-position="-16">
+          <caret line="1195" column="24" selection-start-line="1195" selection-start-column="20" selection-end-line="1195" selection-end-column="24" />
           <folding>
             <element signature="e#38#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="144" column="36" selection-start-line="144" selection-start-column="36" selection-end-line="144" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/controller/Newcar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="201" column="15" selection-start-line="201" selection-start-column="15" selection-end-line="201" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/controller/Common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="668" column="63" selection-start-line="668" selection-start-column="63" selection-end-line="668" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="2054" column="81" selection-start-line="2054" selection-start-column="81" selection-end-line="2054" selection-end-column="81" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/view/user/person_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="117" column="41" lean-forward="true" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

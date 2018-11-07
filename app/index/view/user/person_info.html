@@ -120,7 +120,7 @@
 						<div class="editCont">
 							<div class="info_base info_ipt">
 								<form action="{:url('user/set_userinfo')}" enctype="multipart/form-data"  method="post">
-								<!--<div class="avatar"><span>头像: </span><img src="__STATIC__/img/yhtx.png" alt="" /><input type="file" name="header_pic"> </div>-->
+								<div class="avatar"><span>头像: </span><img src="{$res.header_pic}" alt="" /><input type="file" name="header_pic"> </div>
 								<div class="ipt"><span>昵称：</span><input type="nickname"  name="nickname" placeholder="{$res.nickname}"/></div>
 								<div  class="ipt"><span>所在地：</span><input type="address" name="address" placeholder="{$res.address}"/></div>
 								<div class="ipt"><span>性别：</span><input type="radio1" placeholder="{$res.sex}" name="sex"/></div>

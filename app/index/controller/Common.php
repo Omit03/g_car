@@ -691,23 +691,31 @@ class Common extends Controller{
      * 多张图片上传
      */
 
-    public function upload(){
+    public function upload($files){
         // 获取表单上传文件
-        $files = request()->file('image');
-        foreach($files as $file){
+        //$files = $filename->file('image');
+
+        foreach($files  as $key =>$file){
             // 移动到框架应用根目录/public/uploads/ 目录下
             $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
             if($info){
                 // 成功上传后 获取上传信息
-                // 输出 jpg
-                echo $info->getExtension();
-                // 输出 42a79759f284b767dfcb2a0197904287.jpg
-                echo $info->getFilename();
+
+                $name = '/uploads/'.$info->getSaveName();
+
+                $name = str_replace('\\','/',$name);
+
+                $path[$key] = $name;
+
             }else{
                 // 上传失败获取错误信息
                 echo $file->getError();
             }
+
+
         }
+
+        return str_replace('\\','/',$path);
     }
 
  /*

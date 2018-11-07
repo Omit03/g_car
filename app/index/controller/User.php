@@ -2016,49 +2016,61 @@ class User  extends Common {
 
             $data =  $this->params;
 
-            //dump($data['nickname']);die;
-
-            //$this->check_exist($data['user_phone'],'phone',1); //检测用户是否存在
+            //dump($data);die;
 
             $phone = Session::get('phone');
 
+            $this->check_exist($phone,'phone',1); //检测用户是否存在
+
+            if (empty($phone)){
+
+                $this->return_msg('400','未登录');
+            }
 
             if ($data['nickname']){
 
-                $res = Db::table('user')->where('phone',$phone)->setField(['nickname'=>$data['nickname']]);
+                $nickname = Db::table('user')->where('phone',$phone)->setField(['nickname'=>$data['nickname']]);
             }
             if ($data['address']){
 
-                $res = Db::table('user')->where('phone',$phone)->setField(['address'=>$data['address']]);
+                $address = Db::table('user')->where('phone',$phone)->setField(['address'=>$data['address']]);
+
             }
             if ($data['sex']){
 
-                $res = Db::table('user')->where('phone',$phone)->setField(['sex'=>$data['sex']]);
+                $sex = Db::table('user')->where('phone',$phone)->setField(['sex'=>$data['sex']]);
             }
             if ($data['birthday']){
 
-                $res = Db::table('user')->where('phone',$phone)->setField(['birthday'=>$data['birthday']]);
+                $birthday = Db::table('user')->where('phone',$phone)->setField(['birthday'=>$data['birthday']]);
 
             }
 
+            if (!empty($data['header_pic'])){
 
-//        $head_img_path = $this->upload_file($data['header_pic'],'head_img');
+                $head_img_path = $this->upload_file($data['header_pic'],'head_img');
+
+                //处理多张图片
+
+//                $head_img_path = $this->upload($data['header_pic'],'head_img');
+//
+//                $head_img_path = implode(",", $head_img_path);
+//                dump($head_img_path);die;
+                $domain = $this->request->domain();
+//
+                $head_img_path = $domain.$head_img_path;
 
 
-            if ($res){
+                $header_pic = Db::table('user')->where('phone',$phone)->setField(['header_pic'=>$head_img_path]);
 
-                $this->success('修改成功','person_info');
-
-            }else{
-
-                $this->error('失败');
             }
-        //}
 
+                $this->return_msg('200','修改成功');
+
+                //$this->success('修改成功','person_info');
 
 
     }
-
 
     /*
      * 二手车详情页
