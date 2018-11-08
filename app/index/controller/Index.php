@@ -1703,13 +1703,16 @@ class Index  extends Common
         //获取品牌，厂商，名字
         $carinfo['car_name']=$this->get_carname($carinfo['cartype_id']);
 
+
+
         //获取店铺的详情
         $shopinfo=Db::table("user_shop")->field("shop_id,shop_name,mimg,shop_address,shop_phone,qid,latitude as lat,longitude as lng")->where("user_id=".$carinfo['user_id'])->find();
+
 
         //获取店铺de平均评分
         $remark_info=Db::table("remark")->field("id,all_score")->where("shop_id",$shopinfo['shop_id'])->select();
         $all_score="";
-
+       // dump($remark_info);die;
 
         foreach ($remark_info as $k => $v) {
             $all_score.=$v['all_score'];

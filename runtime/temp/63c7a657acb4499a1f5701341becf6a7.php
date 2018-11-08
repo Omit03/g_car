@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1541660474;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541579441;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:61:"G:\xampp\htdocs\car\public/../app/index\view\index\index.html";i:1541673841;s:53:"G:\xampp\htdocs\car\app\index\view\public\header.html";i:1541579441;s:53:"G:\xampp\htdocs\car\app\index\view\public\footer.html";i:1540793843;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -338,7 +338,7 @@ $(window).on('scroll',function(){
 					<div class="sell_ping">
 						<p>免费上门评估 最快一天卖出</p>
 						<input type="text" placeholder="请输入手机号" />
-						<div class="btn_sell_ping"><span class="sell_car">我要卖车</span><span class="free_ping">免费评估</span></div>
+						<div class="btn_sell_ping"><a href="<?php echo $domain; ?>/<?php echo \think\Session::get('cityurl'); ?>/sell"> <span class="sell_car">我要卖车</span><span class="free_ping">免费评估</span></a></div>
 					</div>
 				</div>
 
