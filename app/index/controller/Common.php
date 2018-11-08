@@ -112,7 +112,7 @@ class Common extends Controller{
             'sale'=>array(
                 'user_id' =>'number',
             ),
-            'zhang'=>array(
+            'car_screen'=>array(
                 'user_id' =>'number',
             ),
             'city_name'=>array(

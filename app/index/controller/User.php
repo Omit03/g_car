@@ -447,7 +447,11 @@ class User  extends Common {
 
         $head_img_path = $this->upload($subface_img,'door_photosA');
 
+      //  dump($head_img_path);
+
         $add['subface_img'] = implode(",", $head_img_path);
+
+       // dump($add['subface_img']);die;
 
 //        $domain = $this->request->domain();
 //

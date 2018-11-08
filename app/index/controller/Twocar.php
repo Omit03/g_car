@@ -70,7 +70,19 @@ class Twocar extends Common
 
         $color =$this->color('');//颜色
 
-        $er_car = $this->er_car($city_id);
+
+        //关于二手车
+        $er_car = $this->er_car($city_id);//
+
+        // $min_time = $this->lots_two_cars(7);//二手车 时间最新（默认）
+
+        $min_price = $this->lots_two_cars(1);//二手 价格最低
+
+        //dump($min_price);die;
+
+        $min_age = $this->lots_two_cars(3);//二手 车龄最短
+
+        $min_licheng = $this->lots_two_cars(6);//二手 里程最短
 
         $ABC = $this->app_brand_ios();//A b c  按车型排序
 
@@ -128,4 +140,5 @@ class Twocar extends Common
         $this->assign('brand',$brand);
         return $this->fetch();
     }
+
 }

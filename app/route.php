@@ -48,7 +48,9 @@ Route::rule(':city/per_oppo','index/user/person_opportunity');
 Route::rule(':city/per_info','index/user/person_info');
 Route::rule(':city/per_coll','index/user/person_collect');
 Route::rule(':city/per_feed','index/user/person_feedback');
-Route::rule(':city/lots_cars','index/index/lots_cars');
+Route::rule(':city/lots_cars','index/index/lots_cars');//二手车筛选
+Route::rule(':city/search_newcar','index/index/search_newcar');//新车筛选
+Route::rule(':city/car_screen','index/index/car_screen');//筛选页面
 
 Route::rule(':city/details/:cheid','index/index/details');//二手车详情
 Route::rule(':city/detail/:id','index/newcar/newcardetails');//新车详情
