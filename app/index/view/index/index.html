@@ -119,7 +119,7 @@
 						<ul class="sel_newcar_brand oh ">
 							{volist name="brand" id = "val"}
 							<li>
-								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?brand_id={$val.id}&page=1&sort=1"><img src="{$val.img_url}" alt="">
+								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?brand_id={$val.id}"><img src="{$val.img_url}" alt="">
 								<!--<a href="{$domain}/{$Think.session.cityurl}/lots_cars/{$val.id}"><img src="{$val.img_url}" alt="">-->
 									<p>{$val.name}</p>
 								</a>
@@ -132,7 +132,7 @@
 							</li>
 							{volist name="price" id = "val"}
 							<li class="active">
-								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?price_range={$val.id}&page=1&sort=1">{$val.name} </a>
+								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?price_range={$val.id}">{$val.name} </a>
 							</li>
 							{/volist}
 						</ul>
@@ -142,7 +142,7 @@
 							</li>
 							{volist name="subface" id = "val"}
 							<li class="active">
-								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?car_age={$val.id}&page=1&sort=1"> {$val.name}</a>
+								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?car_age={$val.id}"> {$val.name}</a>
 							</li>
 							{/volist}
 							<li class="active fright">
@@ -154,7 +154,7 @@
 						<ul class="sel_newcar_brand oh ">
 							{volist name="brand" id = "val"}
 							<li>
-								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?brand_id={$val.id}&page=1&sort=1"><img src="{$val.img_url}" alt="">
+								<a href="{$domain}/{$Think.session.cityurl}/lots_cars?brand_id={$val.id}"><img src="{$val.img_url}" alt="">
 									<p>{$val.name}</p>
 								</a>
 							</li>
