@@ -1321,6 +1321,144 @@ class Index  extends Common
     }
 
     /*
+     * 卖车接受提交信息
+     */
+    public function sell_ok(){
+
+        $data = $this->params;
+
+
+        // dump($data);die;
+        //$this->check_code($data['phone'],$data['code']);
+
+        $user_id = Session::get('user_id');
+
+        if (empty($user_id)){
+
+            $this->return_msg(400,'请登录');
+
+        }
+        $user_id = 45;
+        $add['user_id'] = $user_id;
+        $data['brand_id'] = 19;
+        $add['brand_id'] = $brand_id = $data['brand_id'];
+        $data['sys_id'] = 850;
+        $add['sys_id'] = $sys_id = $data['sys_id'];
+        $data['cartype_id'] = 50;
+        $add['cartype_id'] = $cartype_id = $data['cartype_id'];
+
+        $brand=Db::table("car_brand")->field("name")->where("id",$brand_id)->find();
+        $sys=Db::table("car_brand")->field("name")->where("id",$sys_id)->find();
+        $cartype=Db::table("car_brand")->field("name")->where("id",$cartype_id)->find();
+        //获取配置信息
+        $param=Db::table("param")->where("brand='".$brand['name']."' and sys='".$sys['name']."' and cartype='".$cartype['name']."'")->find();
+
+
+        $add['car_mileage'] = $car_mileage = $data['car_mileage'];
+
+
+        $add['car_cardtime'] = $car_cardtime = $data['car_cardtime'];
+
+        // $car_cardtime = "2018年-10月-01日";
+
+        $add['car_age'] = $car_age=$this->get_car_agess($car_cardtime);
+
+        $add['phone'] = $phone = $data['phone'];
+        $subface_img = $data['subface_img'];
+        $data['car_desc'] = "无重大事故";
+        $add['car_desc'] = $car_desc = $data['car_desc'];
+
+        if(!$brand_id || !$sys_id || !$cartype_id || !$car_mileage || !$car_age || !$car_cardtime || !$phone || !$subface_img ){
+
+            $this->return_msg('204','参数错误，请检查');
+
+        }
+
+        $add['year_inspect'] = $year_inspect = $this->get_year_inspect($car_cardtime);
+        if(!$year_inspect){
+
+            $this->return_msg('204','参数错误，请检查');
+        }
+        $add['safe'] = $safe = $this->safe($car_cardtime);
+        if(!$safe){
+
+            $this->return_msg('204','参数错误，请检查');
+        }
+
+        //获取图片
+
+        //处理多张图片
+
+        $head_img_path = $this->upload($subface_img,'door_photosA');
+
+
+        $add['subface_img'] = implode(",", $head_img_path);
+
+        //获取城市
+        $add['city_id'] = $city_id=Db::table("user_shop")->where("user_id",$user_id)->value("city_id");
+
+        //dump($add['city_id']);
+        $b = $this->get_brand_firm_sysname($cartype_id,5);
+        $add['name_li'] = $b['brand'].$b['sysname'].$b['carname'];
+        $add['status'] = 2;
+        $add['up_under'] = 1;
+        $add['create_time'] = $add['update_time'] = date("Y-m-d H:i:s",time());
+
+        //dump($add);
+
+        $res = Db::table('rele_car')->insertGetId([
+
+            "user_id" => $user_id,
+            "brand_id" => $brand_id,
+            "sys_id" => $sys_id,
+            "cartype_id" => $cartype_id,
+            "car_mileage" => $add['car_mileage'],
+            "car_cardtime" => $add['car_cardtime'],
+            "car_age" => $add['car_age'],
+            "phone" => $add['phone'],
+            "car_desc" =>  $data['car_desc'],
+            "year_inspect" =>  $add['year_inspect'],
+            "safe" => $add['safe'],
+            "subface_img" => $add['subface_img'],
+            "city_id"=> $add['city_id'],
+            "name_li" =>$add['name_li'],
+            "status"=> $add['status'],
+            "up_under" => $add['up_under'],
+            "update_time"=> $add['create_time'],
+            "create_time" => $add['update_time'],
+
+        ]);
+
+        // dump($res);die;
+        if($res){
+            //dump($param);die;
+            if($param){
+
+                Db::table("rele_car")->insert(['pu_id'=>$res,'years'=>$param['years']]);
+
+
+                //添加
+                Db::table("rele_param")->insert([
+
+                    "pu_id"=>$res,
+                    "param_id"=>$param['id'],
+                    "create_time"=>time(),
+                    "type"=>2
+                ]);
+            }
+
+            $this->return_msg('200','添加成功,可继续发布');
+            //$this->success('添加成功,可继续发布','user/person_release');
+        }else{
+
+            //$this->error('失败');
+
+            // $this->return_msg('400','失败');
+        }
+
+    }
+
+    /*
      * 置换
      */
     public function change(){
