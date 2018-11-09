@@ -156,10 +156,56 @@ class Index  extends Common
 
     public function search_newcar(){
 
+        //处理城市问题
+
+        $city_pin = input('city');
+
+        $city_info = $this->set_session_url($city_pin);
+
+        if (empty($city_info)){
+
+            $city_id = 1;
+
+            $cityurl = 'zhengzhou';
+        }else{
+
+            $cityurl = $city_info['pin'];
+
+            $city_id = $city_info['id'];
+        }
+
+        Session::set('cityurl',$cityurl);
+
+        $domain = $this->request->domain();
+
+        $city = Db::table('city')->where('status',1)->select();
+
+        $brand = $this->brand();//品牌
+
+        $price=$this->price(); //价格
+
+        $subface=$this->subface();//级别
+
+        $output=$this->output('');//排量
+
+        $gearbox=$this->gearbox('');//变速箱
+
+        $blowdown=$this->blowdown('');//排放标准
+
+        $fuel=$this->fuel('');//燃料
+
+        $car_body=$this->car_body('');//车身
+
+        $car_drive=$this->car_drive('');//燃气
+
+        $color =$this->color('');//颜色
+
+        $ABC = $this->app_brand_ios();//A b c  按车型排序
+
         //接受参数
         $data = $this->params;
 
-        $where="1=1  ";
+        $where="1=1  and city_id =".$city_id;
             //模糊查找 如 大众 奥迪 朗逸
         if(!empty($data['key'])){
                 $where.=" and name like '%".$data['key']."%'  ";
@@ -273,20 +319,20 @@ class Index  extends Common
             if (!empty($data['bsx'])){
                 $where.=" and gearbox= ".$data['bsx'];
             }
-            //排放标准 OBD 京V 欧V 国V
-            if (!empty($data['pfbz'])){
-                $where.=" and blowdown= ".$data['pfbz'];
-            }
+//            //排放标准 OBD 京V 欧V 国V  暂时废弃  表里没有改字段
+//            if (!empty($data['pfbz'])){
+//                $where.=" and blowdown= ".$data['pfbz'];
+//            }
 
-            //驱动 前驱 后驱
+            //驱动 前驱 后驱 暂时废弃  表里没有改字段
 
-            if (!empty($data['qd'])){
-                $where.=" and car_drive=".$data['qd'];
-            }
-            //两厢 三箱 皮卡 旅行车
-            if (!empty($data['cs'])){
-                $where.=" and car_body=".$data['cs'];
-            }
+//            if (!empty($data['qd'])){
+//                $where.=" and car_drive=".$data['qd'];
+//            }
+//            //两厢 三箱 皮卡 旅行车
+//            if (!empty($data['cs'])){
+//                $where.=" and car_body=".$data['cs'];
+//            }
             //汽油 柴油 油漆混合
             if (!empty($data['ny'])){
                 $where.=" and fuel= ".$data['ny'];
@@ -428,6 +474,7 @@ class Index  extends Common
 
         }
 
+
         $ss = Db::table('new_car')->where($where)->limit(20)->select();
 
         foreach ($ss as $key => $val) {
@@ -438,7 +485,24 @@ class Index  extends Common
             unset($ss[$key]['img_300']);
         }
 
-        dump($ss);die;
+        //dump($ss);die;
+
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
+        $this->assign('brand',$brand);
+        $this->assign('price',$price);
+        $this->assign('subface',$subface);
+        $this->assign('ABC',$ABC);
+        $this->assign('output',$output);
+        $this->assign('gearbox',$gearbox);
+        $this->assign('fuel',$fuel);
+        $this->assign('blowdown',$blowdown);
+        $this->assign('car_drive',$car_drive);
+        $this->assign('car_body',$car_body);
+        $this->assign('color',$color);
+        $this->assign('ss',$ss);
+
+        return $this->fetch();
 
     }
 
@@ -455,6 +519,55 @@ class Index  extends Common
 
     public function lots_cars(){
 
+            //处理城市问题
+
+            $city_pin = input('city');
+
+            $city_info = $this->set_session_url($city_pin);
+
+            if (empty($city_info)){
+
+                $city_id = 1;
+
+                $cityurl = 'zhengzhou';
+            }else{
+
+                $cityurl = $city_info['pin'];
+
+                $city_id = $city_info['id'];
+            }
+
+            Session::set('cityurl',$cityurl);
+
+            $domain = $this->request->domain();
+
+            $city = Db::table('city')->where('status',1)->select();
+
+            $brand = $this->brand();//品牌
+
+            $price=$this->price(); //价格
+
+            $subface=$this->subface();//级别
+
+            $age=$this->get_car_allage();//车龄
+
+            $licheng=$this->car_mileage();//里程
+
+            $output=$this->output('');//排量
+
+            $gearbox=$this->gearbox('');//变速箱
+
+            $blowdown=$this->blowdown('');//排放标准
+
+            $fuel=$this->fuel('');//燃料
+
+            $car_body=$this->car_body('');//车身
+
+            $car_drive=$this->car_drive('');//燃气
+
+            $color =$this->color('');//颜色
+
+
             //接受参数
             $data = $this->params;
 
@@ -463,10 +576,6 @@ class Index  extends Common
                 $user_id = $data['user_id'];
             }
 
-            if (!empty($data['page'])){
-
-                $page = $data['page'];
-            }
             if (empty($data['num'])){
                 $PageSize = 10;
             }else{
@@ -543,41 +652,15 @@ class Index  extends Common
 
                 $fuel = $data['fuel'];//燃料id
             }
-            if (!empty($data['sort'])){
+            if (empty($data['sort'])){
 
-                $sort = $data['sort'];//排序  1价格最低 2价格最高 3车龄最短 4车龄最长 5里程最多 6里程最少
+                $data['sort'] = 1;;//排序  1价格最低 2价格最高 3车龄最短 4车龄最长 5里程最多 6里程最少
             }
+
             if (!empty($data['search'])){
 
                 $search = $data['search'];
             }
-
-            //获取城市id
-
-            $city_pin = input('city');
-
-            $city_info = $this->set_session_url($city_pin);
-
-            if (empty($city_info)){
-
-                $city_id = 1;
-
-                $cityurl = 'zhengzhou';
-            }else{
-
-                $cityurl = $city_info['pin'];
-
-                $city_id = $city_info['id'];
-            }
-
-            Session::set('cityurl',$cityurl);
-
-            $domain = $this->request->domain();
-
-            $city = Db::table('city')->where('status',1)->select();
-
-            $this->assign('city',$city);
-            $this->assign('domain',$domain);
 
 
             $WhereStr = "  and rele_car.status = 1 and rele_car.up_under = 1 and user.is_fenghao = 2 and rele_car.city_id=".$city_id;
@@ -745,8 +828,6 @@ class Index  extends Common
             $joinid = "pu_id";
             $Coll="rele_car.pu_id,rele_car.user_id,rele_car.cartype_id,rele_car.price,rele_car.name_li,rele_car.news_price,rele_car.car_mileage,rele_car.car_cardtime,rele_car.img_300";
             $sql = $this->CreateSql($TableName="rele_car",$Coll,$WhereStr,$WhereStr,$PageIndex,$PageSize,$OrderKey,$OrderType,$join,$joinid);
-            //print_r($sql);
-//        $Model = M("rele_car");
 
             $res = Db::query($sql);
 
@@ -776,20 +857,28 @@ class Index  extends Common
                 }
             }
 
+        $ABC = $this->app_brand_ios();//A b c  按车型排序
 
+        $res = $res ? $res : array();
 
-            $res = $res ? $res : array();
+        $this->assign('city',$city);
+        $this->assign('domain',$domain);
+        $this->assign('brand',$brand);
+        $this->assign('price',$price);
+        $this->assign('subface',$subface);
+        $this->assign('ABC',$ABC);
+        $this->assign('age',$age);
+        $this->assign('licheng',$licheng);
+        $this->assign('output',$output);
+        $this->assign('gearbox',$gearbox);
+        $this->assign('fuel',$fuel);
+        $this->assign('blowdown',$blowdown);
+        $this->assign('car_drive',$car_drive);
+        $this->assign('car_body',$car_body);
+        $this->assign('color',$color);
+        $this->assign('res',$res);
 
-            dump($res);
-
-
-           // $this->assign('res',$res);
-
-//
-//        $brand=$this->brand();//获取筛选模块 推荐品牌
-//
-//        $this->assign('brand',$brand);
-//        return $this->fetch();
+        return $this->fetch();
 
     }
 
@@ -801,10 +890,6 @@ class Index  extends Common
 
         //接受参数
         $data = $this->params;
-        if ($data['page']){
-
-            $page = $data['page'];
-        }
 
         if (empty($data['num'])){
             $PageSize = 10;
@@ -1236,6 +1321,144 @@ class Index  extends Common
     }
 
     /*
+     * 卖车接受提交信息
+     */
+    public function sell_ok(){
+
+        $data = $this->params;
+
+
+        // dump($data);die;
+        //$this->check_code($data['phone'],$data['code']);
+
+        $user_id = Session::get('user_id');
+
+        if (empty($user_id)){
+
+            $this->return_msg(400,'请登录');
+
+        }
+        $user_id = 45;
+        $add['user_id'] = $user_id;
+        $data['brand_id'] = 19;
+        $add['brand_id'] = $brand_id = $data['brand_id'];
+        $data['sys_id'] = 850;
+        $add['sys_id'] = $sys_id = $data['sys_id'];
+        $data['cartype_id'] = 50;
+        $add['cartype_id'] = $cartype_id = $data['cartype_id'];
+
+        $brand=Db::table("car_brand")->field("name")->where("id",$brand_id)->find();
+        $sys=Db::table("car_brand")->field("name")->where("id",$sys_id)->find();
+        $cartype=Db::table("car_brand")->field("name")->where("id",$cartype_id)->find();
+        //获取配置信息
+        $param=Db::table("param")->where("brand='".$brand['name']."' and sys='".$sys['name']."' and cartype='".$cartype['name']."'")->find();
+
+
+        $add['car_mileage'] = $car_mileage = $data['car_mileage'];
+
+
+        $add['car_cardtime'] = $car_cardtime = $data['car_cardtime'];
+
+        // $car_cardtime = "2018年-10月-01日";
+
+        $add['car_age'] = $car_age=$this->get_car_agess($car_cardtime);
+
+        $add['phone'] = $phone = $data['phone'];
+        $subface_img = $data['subface_img'];
+        $data['car_desc'] = "无重大事故";
+        $add['car_desc'] = $car_desc = $data['car_desc'];
+
+        if(!$brand_id || !$sys_id || !$cartype_id || !$car_mileage || !$car_age || !$car_cardtime || !$phone || !$subface_img ){
+
+            $this->return_msg('204','参数错误，请检查');
+
+        }
+
+        $add['year_inspect'] = $year_inspect = $this->get_year_inspect($car_cardtime);
+        if(!$year_inspect){
+
+            $this->return_msg('204','参数错误，请检查');
+        }
+        $add['safe'] = $safe = $this->safe($car_cardtime);
+        if(!$safe){
+
+            $this->return_msg('204','参数错误，请检查');
+        }
+
+        //获取图片
+
+        //处理多张图片
+
+        $head_img_path = $this->upload($subface_img,'door_photosA');
+
+
+        $add['subface_img'] = implode(",", $head_img_path);
+
+        //获取城市
+        $add['city_id'] = $city_id=Db::table("user_shop")->where("user_id",$user_id)->value("city_id");
+
+        //dump($add['city_id']);
+        $b = $this->get_brand_firm_sysname($cartype_id,5);
+        $add['name_li'] = $b['brand'].$b['sysname'].$b['carname'];
+        $add['status'] = 2;
+        $add['up_under'] = 1;
+        $add['create_time'] = $add['update_time'] = date("Y-m-d H:i:s",time());
+
+        //dump($add);
+
+        $res = Db::table('rele_car')->insertGetId([
+
+            "user_id" => $user_id,
+            "brand_id" => $brand_id,
+            "sys_id" => $sys_id,
+            "cartype_id" => $cartype_id,
+            "car_mileage" => $add['car_mileage'],
+            "car_cardtime" => $add['car_cardtime'],
+            "car_age" => $add['car_age'],
+            "phone" => $add['phone'],
+            "car_desc" =>  $data['car_desc'],
+            "year_inspect" =>  $add['year_inspect'],
+            "safe" => $add['safe'],
+            "subface_img" => $add['subface_img'],
+            "city_id"=> $add['city_id'],
+            "name_li" =>$add['name_li'],
+            "status"=> $add['status'],
+            "up_under" => $add['up_under'],
+            "update_time"=> $add['create_time'],
+            "create_time" => $add['update_time'],
+
+        ]);
+
+        // dump($res);die;
+        if($res){
+            //dump($param);die;
+            if($param){
+
+                Db::table("rele_car")->insert(['pu_id'=>$res,'years'=>$param['years']]);
+
+
+                //添加
+                Db::table("rele_param")->insert([
+
+                    "pu_id"=>$res,
+                    "param_id"=>$param['id'],
+                    "create_time"=>time(),
+                    "type"=>2
+                ]);
+            }
+
+            $this->return_msg('200','添加成功,可继续发布');
+            //$this->success('添加成功,可继续发布','user/person_release');
+        }else{
+
+            //$this->error('失败');
+
+            // $this->return_msg('400','失败');
+        }
+
+    }
+
+    /*
      * 置换
      */
     public function change(){
@@ -1618,13 +1841,16 @@ class Index  extends Common
         //获取品牌，厂商，名字
         $carinfo['car_name']=$this->get_carname($carinfo['cartype_id']);
 
+
+
         //获取店铺的详情
         $shopinfo=Db::table("user_shop")->field("shop_id,shop_name,mimg,shop_address,shop_phone,qid,latitude as lat,longitude as lng")->where("user_id=".$carinfo['user_id'])->find();
+
 
         //获取店铺de平均评分
         $remark_info=Db::table("remark")->field("id,all_score")->where("shop_id",$shopinfo['shop_id'])->select();
         $all_score="";
-
+       // dump($remark_info);die;
 
         foreach ($remark_info as $k => $v) {
             $all_score.=$v['all_score'];
@@ -1938,14 +2164,6 @@ class Index  extends Common
     }
 
 
-    public function asd(){
-
-
-       $asd = $this->new_list(1);
-
-        dump($asd);
-    }
-
     /*
      * [Sale 卖车]
      */
@@ -1992,7 +2210,6 @@ class Index  extends Common
         }
 
     }
-
 
     /*
      * 筛选页面
@@ -2058,15 +2275,11 @@ class Index  extends Common
 
         $min_price = $this->lots_two_cars(1);//二手 价格最低
 
-        //dump($min_price);die;
-
         $min_age = $this->lots_two_cars(3);//二手 车龄最短
 
         $min_licheng = $this->lots_two_cars(6);//二手 里程最短
 
         $ABC = $this->app_brand_ios();//A b c  按车型排序
-
-        //dump($er_car);die;
 
         $this->assign('brand',$brand);
         $this->assign('price',$price);

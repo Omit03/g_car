@@ -483,7 +483,7 @@ class User  extends Common {
         $add['name_li'] = $b['brand'].$b['sysname'].$b['carname'];
         $add['status'] = 2;
         $add['up_under'] = 1;
-        $add['create_time'] = $add['update_time'] = time();
+        $add['create_time'] = $add['update_time'] = date("Y-m-d H:i:s",time());
 
         //dump($add);
 

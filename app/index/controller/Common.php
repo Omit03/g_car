@@ -73,6 +73,9 @@ class Common extends Controller{
             'sell'=>array(
                 'user_id' =>'number',
             ),
+            'sell_ok'=>array(
+                'user_id' =>'number',
+            ),
             'newcar'=>array(
                 'user_id' =>'number',
             ),
