@@ -210,9 +210,10 @@ background-color:#686868;background-image: url(../img/newcebian.png);background-
 .login_phone .border{width: 394px;height: 55px;display: flex;align-items: center;margin-top: 40px;color: #999;}
 .login_phone .border img{height: 35px;margin: 0 10px;}
 .login_phone .border input{width:200px;height: 53px;}
-.login_phone .login_ver .getcode{border-left:2px solid #E7E7E7;padding-left: 20px;font-size: 14px;margin-left: 30px;cursor: pointer;}
+.login_phone .login_ver .getcode{border-left:2px solid #E7E7E7;padding-left: 10px;font-size: 14px;cursor: pointer;}
 .login_phone>p{width: 386px;height: 56px;line-height: 56px;text-align: center;font-size: 18px;margin:0 auto; }
-.btn_login_n{width: 386px;height: 56px;line-height: 56px;text-align: center;font-size: 18px;margin:0 auto;margin-top: 40px;text-indent: 0px}
+.btn_login_n{width: 386px;height: 56px;line-height: 56px;text-align: center;font-size: 18px;margin:0 auto;margin-top: 10px;text-indent: 0px}
+.result-pannel{color: red;margin:0 auto;margin-top: 30px;padding-left: 5px;height: 20px}
 .login_btn{background: #F7BD01;border-radius: 3px;color: #fff}
 .forgetPwd{margin-left: 220px;}
 .login_other{width:225px;float: left;margin-top: 20px;}
@@ -665,7 +666,7 @@ display: block;color: #fff;text-align: center;line-height: 40px;cursor: pointer;
 .upLoad_form li .submit{width: 500px;height: 50px;line-height: 50px;font-size: 20px;}
 
 /*------------------------------修改密码/修改手机号------------------------------*/
-.motify_ipt{width: 600px;}
+.motify_ipt{width: 800px;}
 .upLoad_form .motify_ipt li{overflow: hidden;margin-top:20px;}
 .upLoad_form li .my_form_tit{width: 100px;display: inline-block;height: 40px;line-height: 40px;text-align: center;margin-right: 10px;font-size: 18px;float: left;}
 .upLoad_form .motify_ipt .uphone{display: inline-block;color:#999;font-size: 18px;    line-height: 40px;}
@@ -716,7 +717,9 @@ display: block;color: #fff;text-align: center;line-height: 40px;cursor: pointer;
 .store_desc{width:412px;height:209px;background:#fff;border-radius:5px;padding: 10px;font-size: 14px;}
 .picture{float: left;}
 #uploadForm {position: relative;width: 200px; height:40px;background: #F28F1B;text-align: center;}
-#file_inp{ position: absolute;top: 0;left: 0;background-color: transparent;width: 200px; height:35px;line-height:35px;opacity: 0;}
+#uploadForm1 {position: relative;width: 200px; height:40px;background: #F28F1B;text-align: center;}
+#file_inp{ position: absolute;top: 0;left: 0;background-color: transparent;width: 130px; height:130px;opacity: 0;}
+#file_inp1{ position: absolute;top: 0;left: 0;background-color: transparent;width: 130px; height:130px;opacity: 0;}
 .upLoad_pic{vertical-align: middle;line-height: 35px;height: 35px;color: #fff;font-size: 16px;}
 .upLoad_pic img{width: 39px;height: 32px;vertical-align: middle;}
 .picture .upLoad_pic {width: 180px; height: 180px; margin-top: 20px;font-size: 16px;}
@@ -746,8 +749,11 @@ display: block;float: right;text-align: center;cursor: pointer;}
 .business_enter .bform_ipt .slt_type{width: 480px;background: url(../img/jtdown1.png) no-repeat center right;cursor: pointer;}
 .img_l .fleft{width: 50%;}
 .img_l .fleft .imgCont{width:274px;height:195px;background:rgba(255,255,255,1);border: 1px solid #EAEAEA;margin-left:130px}
+.up-progress{position: relative;top: 40%; text-align: center;font-size: 26px;color: #ffa546;}
 .img_l #uploadForm{background: #fff;width: 130px;height: 130px;margin: 30px auto;}
 .img_l #uploadForm .upLoad_pic img{width: 130px;height: 130px;}
+.img_l #uploadForm1{background: #fff;width: 130px;height: 130px;margin: 30px auto;}
+.img_l #uploadForm1 .upLoad_pic img{width: 130px;height: 130px;}
 /*--------------------------------------------------------新车页面-------------------*/
 /*新车首页*/
 .banner1{width: 100%;}

@@ -35,41 +35,46 @@
         $(function() {
             //定义一个函数,用于完成倒计时效果
             $("#getCodeBtn").click(function() {
+
+
                 //获取输入的手机号码
                 var telphone = $("#telphone").val();
-
-                if(telphone) {
-                    //ajax请求文件，调用短信发送的接口
+                if (!isPoneAvailable(telphone)){
+                    $("#ret1_pannel").text("请输入正确的手机号码");
+				} else {
                     $.ajax({
                         type: 'get',
                         url: '{:url("code/get_code")}',
                         data:{
-
                             user_phone:telphone,
-							is_exist:0
-
-						},
+                            is_exist:0
+                        },
                         success: function(msg) {
                             //判断调用短信发送接口是否成功，
                             if (msg == 1) {
-                                //调用接口已经成功
-                                alert('发送失败');
-                                $("#getCodeBtn").attr('disabled', true); //要禁用该按钮
+                                $("#ret1_pannel").text("发送失败，请稍后重试");
                                 //调用一个函数，完成倒计时效果。
                                 getTime();
                             } else{
-                                alert('短信验证码已经发送成功');
+                                $("#ret1_pannel").text("");
                                 $("#getCodeBtn").attr('disabled', true);
                                 getTime();
                             }
                         }
                     });
-                } else{
-                    alert('请输入手机号');
-                }
+				}
 
             });
         });
+
+        function isPoneAvailable(str) {
+            var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+            if (!myreg.test(str)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
 	</script>
 
 	<body>
@@ -86,19 +91,22 @@
 							<b>|</b>
 							<li onclick="set('bd0',2,2)">手机号快捷登录</li>
 						</ul>
-						<form class="login_phone" id="conbd01" action="{:url('user/login')}" method="post">
-								<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="user_phone" name="user_phone" placeholder="请输入用户名"/></div>
-								<div class="border"><img src="__STATIC__/img/mm.png" alt="" height="35" /><input type="user_pwd" name="user_pwd" placeholder="请输入密码"/></div>
-								<p class="ptp15"><input type="checkbox" name="zidong" value="1" />自动登录 <span class="forgetPwd"><a href="{:url('user/forgetpwd')}" class="color9">忘记密码</a></span></p>
-								<input class="login_btn btn_login_n" type="submit" value="立即登录" />
-							<a href="{:url('user/register')}"><p class="regist_btn" style="margin: 0px;">免费注册</p></a>
+						<!--action="{:url('user/login')}" method="post"-->
+						<form class="login_phone" id="conbd01">
+								<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input id="user_name" type="user_phone" name="user_phone" placeholder="请输入用户名"/></div>
+								<div class="border"><img src="__STATIC__/img/mm.png" alt="" height="35" /><input id="user_pwd" type="password" name="user_pwd" placeholder="请输入密码"/></div>
+								<p class="ptp15"><input type="checkbox" name=""  value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
+								<div id="ret_pannel" class="result-pannel"></div>
+								<input id="btn_user_name" class="login_btn btn_login_n" type="button" value="立即登录" />
+								<p class="regist_btn" style="margin: 0px;">免费注册</p>
 						</form>
-						<form class="login_phone" id="conbd02" style="display: none;" action="{:url('user/login_sms')}" method="post" >
+						<form class="login_phone" id="conbd02" style="display: none;" >
 							<div class="border"><img src="__STATIC__/img/phone.png" alt="" height="35"/><input type="text" name="user_phone" id="telphone" placeholder="请输入个人或商家手机号"/></div>
-							<div class="border login_ver"><img src="__STATIC__/img/yzm.png" alt="" height="35"/><input type="text" name="code" placeholder="请输入验证码" /><span class="getcode"><input type="button" value="免费获取手机验证码" id="getCodeBtn" style="width: 120px;height: 40px;font-size:12px; padding-left:1px;color:#333; " /></span></div>
-							<p class="ptp15"><input type="checkbox" name="zidong" id="" value="1" />自动登录 <span class="forgetPwd"><a href="{:url('user/forgetpwd')}" class="color9">忘记密码</a></span></p>
-							<input class="login_btn btn_login_n" type="submit" value="立即登录" />
-							<a href="{:url('user/register')}"> <p class="regist_btn" style="margin:0px">免费注册</p></a>
+							<div class="border login_ver"><img src="__STATIC__/img/yzm.png" alt="" height="35"/><input type="text" name="code" placeholder="请输入验证码" /><span class="getcode"><input type="button" value="免费获取手机验证码" id="getCodeBtn" style="width: 120px;height: 40px;font-size:12px; padding-left:1px;color:#333; text-indent: 0px;" /></span></div>
+							<p class="ptp15"><input type="checkbox" name="" id="" value="" />自动登录 <span class="forgetPwd"><a href="" class="color9">忘记密码</a></span></p>
+							<div id="ret1_pannel" class="result-pannel"></div>
+							<input id="btn_user_pwd" class="login_btn btn_login_n" type="button" value="立即登录" />
+							<p class="regist_btn" style="margin:0px">免费注册</p>
 						</form>
 					</div>
 					
@@ -152,7 +160,84 @@
             $($(".wrap li")[7]).addClass("active").siblings().removeClass("active");
 			$(".login_type li").click(function(){
 			   $(this).addClass('active').siblings('li').removeClass('active')
-			})
-		})
+			});
+            $("#btn_user_name").on("click",function(){
+                $("#ret_pannel").text("");
+                if ($("input[name='user_phone']").val() == "") {
+                    $("#ret_pannel").text("用户名不能为空");
+                    return;
+				}
+                if ($("input[name='user_pwd']").val() == "") {
+                    $("#ret_pannel").text("密码不能为空");
+                    return;
+                }
+                $.ajax({
+                    type: 'post',
+                    data: $('#conbd01').serialize(),
+                    url: "{:url('user/login')}",
+                    cache:false,
+                    success: function (data) {
+                        var result = JSON.parse(data);
+                        if (result.code == 400) {
+                            $("#ret_pannel").text(result.msg);
+						} else {
+                            $("#ret_pannel").text("");
+                            window.location.href = "per_man";
+						}
+                    }
+                })
+			});
+            $("#conbd01").on("focus", "input", function(){
+                if ($("#ret_pannel").text() != ""){
+                    if ($("#ret_pannel").text() == "用户名不能为空" && $(this).attr("name") == "user_phone"){
+                        $("#ret_pannel").text("");
+					}
+				}
+                if ($("#ret_pannel").text() != ""){
+                    if ($("#ret_pannel").text() == "密码不能为空" && $(this).attr("name") == "user_pwd"){
+                        $("#ret_pannel").text("");
+                    }
+                }
+            });
+
+            $("#btn_user_pwd").on("click",function(){
+                $("#ret1_pannel").text("");
+                if ($($("input[name='user_phone']")[1]).val() == "") {
+                    $("#ret1_pannel").text("手机号不能为空");
+                    return;
+                }
+                if ($("input[name='code']").val() == "") {
+                    $("#ret1_pannel").text("验证码不能为空");
+                    return;
+                }
+                $.ajax({
+                    type: 'post',
+                    data: $('#conbd02').serialize(),
+                    url: "{:url('user/login_sms')}",
+                    cache:false,
+                    success: function (data) {
+                        var result = JSON.parse(data);
+                        if (result.code == 400) {
+                            $("#ret1_pannel").text(result.msg);
+                        } else {
+                            $("#ret1_pannel").text("");
+                            window.location.href = "per_man";
+                        }
+                    }
+                })
+            });
+            $("#conbd02").on("focus", "input", function(){
+                if ($("#ret1_pannel").text() != ""){
+                    if ($("#ret1_pannel").text() == "手机号不能为空" && $(this).attr("name") == "user_phone"){
+                        $("#ret1_pannel").text("");
+                    }
+                }
+                if ($("#ret1_pannel").text() != ""){
+                    if ($("#ret1_pannel").text() == "验证码不能为空" && $(this).attr("name") == "code"){
+                        $("#ret1_pannel").text("");
+                    }
+                }
+            });
+        })
 </script>
 </html>
