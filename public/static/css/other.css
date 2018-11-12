@@ -384,7 +384,6 @@ background: #fff;z-index: 90;}
 .car_descInfo p{font-size: 18px;color: #333;height: 16px;line-height: 16px;}
 .car_descInfo p b{display: inline-block;width: 25px;height:16px ;text-align: center;font-size: 16px;color: #DADADA;}
 .car_descPri{font-size:20px ;width: 190px;margin-right: 40px;}
-.car_descPri b{font-weight:;font-size: 38px;color: #FF3838;display: block;}
 .car_descOrder input{border: 1px solid #ddd;width: 180px;height: 45px;line-height:45px ;}
 .wrap_bt .lowerPrice{width: 136px;font-size: 18px;height: 45px;line-height:45px;margin-left: 20px;}
 
@@ -579,7 +578,7 @@ text-align:center;background: url(../img/btn_orange.png) ;font-size: 16px;color:
 .person_right .release{height:50px;line-height: 50px;font-size: 24px;color: #FF802C;}
 .person_right h1>span{border-bottom: 2px solid #F28F1B;display: inline-block;height: 50px;}
 .person_right .step{color: #F28F1B;font-size: 22px;margin: 20px 0;}
-.person_right .upLoad_form .sel_box_info .demo_inputype{width: 50%;float: left;height: 40px;line-height: 40px;}
+.person_right .upLoad_form .sel_box_info .demo_inputype{width: 50%;float: left;}
 .upLoad_form .sel_box_info li .form_litit{text-align:justify; text-justify:distribute-all-lines; text-align-last:justify; text-indent:10px; width:140px;float: left;font-size: 16px;}
 .upLoad_form .sel_box_info li .form_litit b{padding: 0 10px;color: #ff0101;}
 .upLoad_form .sel_box_info .demo_inputype input{width: 200px;height: 30px;line-height: 30px;border:1px solid #e3e3e3 ;margin-right: 10px; cursor: pointer;padding-right: 10px;background: #fcfcfc;}
@@ -588,10 +587,12 @@ text-align:center;background: url(../img/btn_orange.png) ;font-size: 16px;color:
 /*品牌弹框*/
 .pop_modelt{position: relative;display: none;font-size: 0;}
 .upLoad_form .selected_ipt.active .position_r{display: block;}
-.gjcar_box{ position: absolute; top: -6px;left:140px;border: 1px solid #F28F1B;background: #fff; z-index: 1;font-size: 14px;}
+.gjcar_box{ position: absolute;top: -6px;left:140px;border: 1px solid #F28F1B;background: #fff; z-index: 1;font-size: 14px;}
 .gjcar_select_car{width: 630px;height: 230px;padding: 0 15px 15px 15px;}
 .bread_subnav{height: 25px;line-height:25px;margin-top: 10px;}
 .bread_subnav a {font-size: 14px;}
+.gap{margin-bottom: 10px;}
+.input_inline{height: 40px;line-height: 40px}
 .choose_car_t{border-bottom: 1px solid #ddd;height: 31px;line-height: 31px;box-sizing: border-box;}
 .choose_car_t .active{color: #F28F1B;border-bottom: 2px solid #F28F1B;}
 .choose_car_t a{display: block;float: left;margin-right: 30px;height: 30px;line-height: 30px;}
@@ -617,7 +618,7 @@ text-align:center;background: url(../img/btn_orange.png) ;font-size: 16px;color:
 .upLoad_form .sel_box_info .car_color{overflow: hidden;padding: 15px;}
 .upLoad_form .sel_box_info .slt_color{width:100px ;float: left;margin-left: 20px;margin-bottom: 15px;}
 .upLoad_form .sel_box_info .slt_color span{height: 30px;line-height: 30px;display: block;float: left;}
-.upLoad_form .sel_box_info .slt_color .eq{width: 29px;height:29px ;} 
+.upLoad_form .sel_box_info .slt_color .eq{width: 29px;height:29px ;}
 .upLoad_form .sel_box_info .slt_color .eq .mini_color{display: block;float: left;width: 50%;height: 50%;} 
 .upLoad_form .sel_box_info .slt_color .text{width:69px;height:30px ;text-align: center;border: 1px solid #ddd;box-sizing: border-box;}
 .upLoad_form .sel_box_info .slt_color.active .text{background: url(../img/active_c.png) no-repeat;border: none;}
@@ -632,6 +633,7 @@ text-align:center;background: url(../img/btn_orange.png) ;font-size: 16px;color:
 .z_photo .z_file{position: relative;}
 .z_file  .file{   width: 100%;height: 100%;opacity: 0;position: absolute;top: 0px;left: 0px;z-index: 100;}
 .z_photo .up-section{position: relative;margin-right: 20px;margin-bottom: 20px;}
+.fl{float: left;}
 .up-section .close-upimg{position: absolute;top: 6px;right: 8px;display: none;z-index: 10;}
 .up-section .up-span{display: block;width: 100%;height: 100%;visibility: hidden;position: absolute;top: 0px;left: 0px;z-index: 9;background: rgba(0,0,0,.2);}
 .up-section:hover{border: 1px solid #f5f5f5;}
@@ -786,7 +788,7 @@ display: block;float: right;text-align: center;cursor: pointer;}
 .img_fac{width: 410px;height: 450px;background: url(../img/500539887.png);overflow: hidden;float: left;}
 .img_fac .more_slt{width:388px;height: 150px;background: #4A4847;margin: 287px auto 0;padding:20px 20px 0;}
 .img_fac .more_slt div>a{padding: 2px 10px ;margin-left: 10px;display: block;float: left;font-size: 12px;color:#333;background: #fff;margin-bottom: 10px;margin-right:20px;}
-.img_fac .more_slt p a{display: block;color: #fff;text-align: center;margin-left: 10px 0;}
+.img_fac .more_slt p a{display: block;color: #fff;text-align: center;margin-left: 10px;}
 .first_public{float: right;width: 790px;}
 .first_public li{float: left;height: 204px;border-radius:10px;
 box-shadow:2px 0px 12px rgba(243,243,243,1);padding: 17px;    width: 374px;margin-right: 20px;margin-bottom: 20px;}
