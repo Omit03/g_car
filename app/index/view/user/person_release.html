@@ -8,9 +8,30 @@
 	<link rel="stylesheet" href="__STATIC__/css/other.css" />
 	<link rel="stylesheet" href="__STATIC__/css/iconfont.css" />
 	<link rel="stylesheet" href="__STATIC__/js/theme/default/laydate.css" />
+	<script src="__STATIC__/js/jquery-1.11.0.min.js"></script>
+	<script src="__STATIC__/js/jquery.form.js"></script>
+	<script src="__STATIC__/js/jquery.validate.min.js"></script>
+	<script src="__STATIC__/layer/layer.js"></script>
 	
 	<style>
-
+		.mblack
+		{
+			float: left;
+			vertical-align: top;
+			white-space: nowrap;
+		}
+		.validate-result{
+			height: 40px; text-align: center;color: red;font-size: 18px;margin-top: 15px;
+		}
+		.error {
+			background:url("__STATIC__/img/false.png") no-repeat 0px 4px;
+			font-weight: bold;
+			padding-left:20px;
+			color: #EA5200;
+		}
+		.checked {
+			background:url("__STATIC__/img/true.png") no-repeat center center;
+		}
 	</style>
 	<body>
 	<div class="header">
@@ -23,9 +44,9 @@
 				<div class="person_center">
 					<div class="person_left">
 						<div class="person_info">
-							<div class="user_avatar"><img src="img/yhtx.png" alt="" /></div>
+							<div class="user_avatar"><img src="__STATIC__/img/yhtx.png" alt="" /></div>
 							<p class="uphone">{$Think.session.phone}</p>
-							<p>向阳二手车一号店</p>							
+							<p>向阳二手车一号店</p>
 						</div>
 						<div class="tab_choose">
 							<ul>
@@ -45,12 +66,17 @@
 					<div class="person_right">
 						<h1 class="borbt"><span class="release">发布车辆信息</span></h1>
 						<h2 class="step"><!--上传资料--></h2>
-						<form action="{:url('user/pulish_adds')}" enctype="multipart/form-data" method="post">
+						<form id="release_form" action="{:url('user/pulish_adds')}" enctype="multipart/form-data" method="post">
 						<div class="upLoad_form">
 							<ul class="sel_box_info">
 								<li class="gj_clear">
 									<div class="demo_inputype selected_ipt ">
-										<p class="form_litit"><b>*</b>品牌：</p><input type="text" class="upload_info hid" readonly id="sltCar_name" placeholder="请选择品牌"/>
+									<div class="input_inline">
+										<p class="form_litit"><b>*</b>品牌：</p>
+										<input type="hidden" id="car_brand_id" name="car_brand_id"/>
+										<input type="hidden" id="car_sys_id" name="car_brand_id"/>
+										<input type="hidden" id="car_type_id" name="car_brand_id"/>
+										<input type="text" name="sltCar_name" class="upload_info hid" readonly id="sltCar_name" placeholder="请选择品牌"/>
 										<div class="position_r">
 											<div class="gjcar_box">
 		                                       <div class="gjcar_select_car">
@@ -84,14 +110,14 @@
 			                                                    <a href="javascript:;"><span>W</span><span>X</span></a>
 			                                                    <a href="javascript:;"><span>Y</span><span>Z</span></a>
 			                                                </div>
-			                                                <div class="brand_content ">
+			                                                <div id="brand_content" class="brand_content ">
 			                                                	<ul class="letter_box">
 																	{volist name="ABC" id="vol"}
-			                                                		<li class="oh">
+			                                                		<li id="brand_letter_{$vol.initial}" class="oh">
 			                                                			<span class="brand_letter">{$vol.initial}</span>
 			                                                			<p>
 																			{volist name="vol['list']" id="vo"}
-			                                                				<a href="javascript:;">{$vo.name}</a>
+			                                                				<a onclick="btn_car_brand('{$vo.id}')" href="javascript:;">{$vo.name}</a>
 																			{/volist}
 
 			                                                			</p>
@@ -114,7 +140,7 @@
 			                                            <div class=" choose_cartab3 gj_clear" style="display: none;" id="conbd03">
 			                                                <div class="choose_caryear gj_clear">
 			                                                    <div class="year_content gj_clear">
-			                                                    	<p class="year_tit">2018款</p>
+			                                                    	<!--<p class="year_tit">2018款</p>-->
 			                                                    	<div class="year_car oh">
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
@@ -122,12 +148,12 @@
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
 			                                                    	</div>
-			                                                    	<p class="year_tit">2018款</p>
-			                                                    	<div class="year_car">
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-				                                                    	<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>
-			                                                    	</div>
+			                                                    	<!--<p class="year_tit">2018款</p>-->
+			                                                    	<!--<div class="year_car">-->
+				                                                    	<!--<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>-->
+				                                                    	<!--<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>-->
+				                                                    	<!--<a href="javascript:;">2018款 30周年年型 30 TFSI 进取型</a>-->
+			                                                    	<!--</div>-->
 			                                                    </div>
 			                                                </div>
 			                                            </div>
@@ -136,142 +162,172 @@
 	                                    	</div>
 										</div>													 
 									</div>
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>价格：</p><input type="text" name="price" class="" placeholder="请输入价格"/>万</div>
+									<div class="mblack"> </div>
+									</div>
+										<div class="demo_inputype">
+											<div class="input_inline"><p class="form_litit"><b>*</b>价格：</p><input type="text" name="price" class="" placeholder="请输入价格"/>万</div>
+											<div class="mblack"> </div>
+										</div>
 								</li>
 								<li class="gj_clear">
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>里程：</p><input type="text" name="car_mileage" class=""  placeholder=""/>万公里</div>
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>上牌时间：</p>
-										<!--<input type="text" name="car_cardtime" id="year" class="upload_info"/></div>-->
-										<input type="text" name="car_cardtime"  placeholder="例如 2018年1月12日" class=""/></div>
+									<div class="demo_inputype">
+										<div class="input_inline"><p class="form_litit"><b>*</b>里程：</p><input type="text" name="car_mileage" class=""  placeholder=""/>万公里</div>
+										<div class="mblack"> </div>
+									</div>
+
+
+									<div class="demo_inputype">
+										<div class="input_inline"><p class="form_litit"><b>*</b>上牌时间：</p>
+											<!--<input type="text" name="car_cardtime" id="year" class="upload_info"/></div>-->
+											<input type="text" name="car_cardtime"  placeholder="例如 2018年1月" class=""/></div>
+										<div class="mblack"> </div>
+									</div>
 								</li>
 								<li class="gj_clear">
-									<div class="selected_ipt demo_inputype"><p class="form_litit"><b>*</b>车身：</p><input type="text" class="upload_info" readonly placeholder="请选择车身"/>
+									<div class="selected_ipt demo_inputype">
+									<div class="input_inline"><p class="form_litit"><b>*</b>车身：</p><input type="text" name="carbody" class="upload_info" readonly placeholder="请选择车身"/>
 										<div class="position_r">
 											<div class="gjcar_box">
-												<ul class=" list_slt">
-													<!--<li class="active">旅行车</li>-->
-													<select name="car_body" >
+												<input id="car_body" type="hidden" name="car_body" />
+												<ul class="list_slt">
+													<!--<select name="car_body" >-->
 													{volist name="car_body" id="val"}
-													<li><option value="{$val.id}">{$val.name}</option></li>
+													<li id="{$val.id}">{$val.name}</li>
+													<!--<li><option value="{$val.id}">{$val.name}</option></li>-->
 													{/volist}
-													</select>
+													<!--</select>-->
 
 												</ul>
 											</div>
 										</div>
 									</div>
-									<div class="selected_ipt demo_inputype"><p class="form_litit"><b>*</b>燃料：</p><input type="text" class="upload_info" readonly />
+									<div class="mblack"> </div>
+									</div>
+									<div class="selected_ipt demo_inputype">
+									<div class="input_inline"><p class="form_litit"><b>*</b>燃料：</p><input type="text" name="fuel1" class="upload_info" readonly />
 										<div class="position_r">
 											<div class="gjcar_box">
+												<input id="fuel" type="hidden" name="fuel" />
 												<ul class=" list_slt">
-													<select name="fuel" >
 													{volist name="fuel" id="val"}
-
-													<li><option value="{$val.id}">{$val.name}</option></li>
-
+													<li id="{$val.id}">{$val.name}</li>
 													{/volist}
-													</select>
 												</ul>
 											</div>
 										</div>
 									</div>
+										<div class="mblack"> </div>
+									</div>
 								</li>
 								<li class="gj_clear">
-									<div class="selected_ipt demo_inputype"><p class="form_litit"><b>*</b>驱动：</p><input type="text" class="upload_info" readonly />
+									<div class="selected_ipt demo_inputype">
+									<div class="input_inline"><p class="form_litit"><b>*</b>驱动：</p><input type="text" name="cardrive" class="upload_info" readonly />
 										<div class="position_r">
 											<div class="gjcar_box">
+												<input id="car_drive" type="hidden" name="car_drive" />
 												<ul class="list_slt">
-													<select name="car_drive" >
+													<!--<select name="car_drive" >-->
 													{volist name="car_drive" id="val"}
-
-													<li><option value="{$val.id}">{$val.name}</option></li>
+													<li id="{$val.id}">{$val.name}</li>
+													<!--<li><option value="{$val.id}">{$val.name}</option></li>-->
 													{/volist}
-													</select>
+													<!--</select>-->
 												</ul>
 											</div>
 										</div>
 									</div>
-									<div class="selected_ipt demo_inputype"><p class="form_litit"><b>*</b>排量：</p><input type="text" class="upload_info" readonly />
+										<div class="mblack"> </div>
+									</div>
+									<div class="selected_ipt demo_inputype">
+									<div class="input_inline"><p class="form_litit"><b>*</b>排量：</p><input type="text" name="output1" class="upload_info" readonly />
 										<div class="position_r">
 											<div class="gjcar_box">
+												<input id="output" type="hidden" name="output" />
 												<ul class="list_slt">
-													<select name="output" >
 													{volist name="output" id="val"}
-
-													<li><option value="{$val.id}">{$val.name}</option></li>
-
+													<li id="{$val.id}">{$val.name}</li>
 													{/volist}
-													</select>
 												</ul>
 											</div>
 										</div>
 									</div>
+										<div class="mblack"> </div>
+									</div>
 								</li>
 								<li class="gj_clear">
-									<div class="selected_ipt demo_inputype"><p class="form_litit"><b>*</b>变速箱：</p><input type="text" class="upload_info" readonly />
+									<div class="selected_ipt demo_inputype">
+									<div class="input_inline"><p class="form_litit"><b>*</b>变速箱：</p><input name="gearbox1" type="text" class="upload_info" readonly />
 										<div class="position_r">
 											<div class="gjcar_box">
 												<ul class="list_slt">
-													<select name="gearbox" >
+													<input id="gearbox" type="hidden" name="gearbox" />
 													{volist name="gearbox" id="val"}
-
-													<li><option value="{$val.id}">{$val.name}</option></li>
+													<li id="{$val.id}">{$val.name}</li>
 													{/volist}
-													</select>
 												</ul>
 											</div>
 										</div>
 									</div>
-									<div class="selected_ipt demo_inputype"><p class="form_litit"><b>*</b>级别：</p><input type="text" class="upload_info" readonly />
+										<div class="mblack"> </div>
+									</div>
+									<div class="selected_ipt demo_inputype">
+									<div class="input_inline"><p class="form_litit"><b>*</b>级别：</p><input type="text" name="subface1" class="upload_info" readonly />
 										<div class="position_r">
 											<div class="gjcar_box">
+												<input id="subface" type="hidden" name="subface" />
 												<ul class="list_slt">
-													<select name="subface" >
 													{volist name="subface" id="val"}
-													<li><option value="{$val.id}">{$val.name}</option></li>
+													<li id="{$val.id}">{$val.name}</li>
 													{/volist}
-													</select>
 												</ul>
 											</div>
 										</div>
 									</div>
+										<div class="mblack"> </div>
+									</div>
 								</li>
 								<li class="gj_clear">
-									<div class="selected_ipt demo_inputype"><p class="form_litit"><b>*</b>排放标准：</p><input type="text" class="upload_info" readonly />
+									<div class="selected_ipt demo_inputype">
+									<div class="input_inline"><p class="form_litit"><b>*</b>排放标准：</p><input type="text" name="blowdown1" class="upload_info" readonly />
 										<div class="position_r">
 											<div class="gjcar_box">
+												<input id="blowdown" type="hidden" name="blowdown" />
 												<ul class="list_slt">
-													<select name="blowdown" >
 													{volist name="blowdown" id="val"}
-
-													<li><option value="{$val.id}">{$val.name}</option></li>
-
+													<li id="{$val.id}">{$val.name}</li>
 													{/volist}
-													</select>
 
 												</ul>
 											</div>
 										</div>
 									</div>
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>电话：</p><input type="text" name="phone" class="" placeholder="请输入电话" /></div>
+										<div class="mblack"> </div>
+									</div>
+									<div class="demo_inputype">
+									<div class="input_inline"><p class="form_litit"><b>*</b>电话：</p><input type="text" name="phone" class="" placeholder="请输入电话" /></div>
+										<div class="mblack"> </div>
+									</div>
 								</li>
 								<li class="gj_clear">
-									<div class="demo_inputype"><p class="form_litit"><b>*</b>联系人：</p><input type="text" name="contact" class="" placeholder="请输入手机号" /></div>
+									<div class="demo_inputype">
+									<div class="input_inline"><p class="form_litit"><b>*</b>联系人：</p><input type="text" name="contact" class="" placeholder="请输入手机号" /></div>
+										<div class="mblack"> </div>
+									</div>
 								</li>
 								<li class="gj_clear">
 									<div class="oh"><p class="form_litit"><b>*</b>车身颜色：</p></div>
 									<div class="car_color">
-										<select name="color" >
+										<input id="color"  name="color" style="height: 1px;width: 1px;" />
 										{volist name="color" id="val"}
 										<p class="slt_color">
 											<a  href="javascript:;">
-	                                            <span style="background: #000000;" class="eq"></span>
-	                                            <!--<span class="text">{$val.name}</span>-->
-												<option value="{$val.id}">{$val.name}</option>
+												<img src="{$val.img_url}" class="eq"/>
+	                                            <!--<span style="background: #000000;" class="eq"></span>-->
+	                                            <span id="{$val.id}" class="text">{$val.name}</span>
+												<!--<option value="{$val.id}">{$val.name}</option>-->
 	                                        </a>
 										</p>
 										{/volist}
-										</select>
 
 										<p class="slt_color">
 											<a  href="javascript:;">
@@ -285,29 +341,26 @@
 	                                        </a>
 										</p>
 									</div>
+									<div style="margin-left: 20px;"  class="mblack"> </div>
 								</li>
 								<li class="gj_clear">
 									<div class="gj_clear"><p class="form_litit"><b>*</b>车辆照片：</p><span class="up_tip">最多可以上传10张图片，马上上传</span></div>
 									<div class="img-box full">
 										<section class="img-section">										
 											<div class="z_photo upimg-div oh" >
-											  <!--<section class="up-section fl">
-											<span class="up-span"></span>
-											<img src="img/buyerCenter/a7.png" class="close-upimg">
-											<img src="img/buyerCenter/3c.png" class="type-upimg" alt="添加标签">
-											<img src="img/test2.jpg" class="up-img">   //添加的图片预览区域
-											<p class="img-namep"></p>
-											<input id="taglocation" name="taglocation" value="" type="hidden">
-											<input id="tags" name="tags" value="" type="hidden">
-											</section>-->
-												<!--<section class="z_file fl">-->
-													<!--<img src="img/upimg.png" class="add-img">-->
+											  <!--<section class="up-section fl">-->
+											<!--<span class="up-span"></span>-->
+											<!--<img src="__STATIC__/img/buyerCenter/a7.png" class="close-upimg">-->
+											<!--<img src="__STATIC__/img/buyerCenter/3c.png" class="type-upimg" alt="添加标签">-->
+											<!--&lt;!&ndash;<img src="__STATIC__/img/test2.jpg" class="up-img">&ndash;&gt;-->
+											<!--<p class="img-namep"></p>-->
+											<!--&lt;!&ndash;<input id="taglocation" name="taglocation" value="" type="hidden">&ndash;&gt;-->
+											<!--&lt;!&ndash;<input id="tags" name="tags" value="" type="hidden">&ndash;&gt;-->
+											<!--</section>-->
+												<section class="z_file fl">
+													<img src="__STATIC__/img/upimg.png" class="add-img">
 													<input type="file" name="subface_img[]"  class="file"  />
-													<input type="file" name="subface_img[]"  class="file"  />
-													<input type="file" name="subface_img[]"  class="file"  />
-													<input type="file" name="subface_img[]"  class="file"  />
-
-												<!--</section>-->
+												</section>
 											</div>
 										</section>
 									</div>
@@ -331,9 +384,10 @@
 										</div>										
 									</div>
 									<div class="txt_made">
-										<textarea name="" rows="" cols="" id="textCon" placeholder="填写您的需求 比如需要什么样的车 什么价位的车什么样的车型..."></textarea>
+										<textarea name="textCon" rows="" cols="" id="textCon" placeholder="填写您的需求 比如需要什么样的车 什么价位的车什么样的车型..."></textarea>
 										<p class=" count_num">限制字数为0-1000字</p>
 									</div>
+									<div class="mblack"> </div>
 								</li>
 							</ul>
 							<p class="sub_btn submit"><input type="submit" value="提交"></p>
@@ -349,7 +403,7 @@
 	</div>
 		<div class="pop_modelt">			
 			<div class="model_cont">
-				<h3>标准模板<span class="del_m"><img src="img/del1.png" alt="" /></span></h3>
+				<h3>标准模板<span class="del_m"><img src="__STATIC__/img/del1.png" alt="" /></span></h3>
 				<p class="descript_car">外观：漆面保养良好，车身结构无修复，无重大事故。 内饰：干净整洁。安全指示灯正常，气囊等被动安全项正常，车辆内电子器件使用良好， 车内静态动态设备完善。 驾驶：车辆点火、起步、提速、过弯、减速、制动均无问题，加速迅猛，动力输出平稳舒 适,无怠速抖动。 整体：整体车况一般。
 					车体骨架结构无变形扭曲、无火烧泡水痕迹。车身有喷漆痕迹，整体漆面良好，排除大事故车辆。视野宽阔，练手最佳选择，空间宽敞明亮通风性好，适 合家庭代步车。使用模板</p>
 				<span class="use_model">使用模板</span>
@@ -357,14 +411,65 @@
 		</div>
 		<div class="mask1"></div>
 	</body>
-	<script src="__STATIC__/js/jquery-1.11.0.min.js"></script>
+
 	<script src="__STATIC__/js/laydate.js"></script>
 	<script src="__STATIC__/js/getBrand.js">	</script>
 	<script src="__STATIC__/js/imgUp.js" type="text/javascript" charset="utf-8"></script>
 	<script src="__STATIC__/js/common.js" type="text/javascript" charset="utf-8"></script>
-	<script>		
+	<script>
+        function btn_car_brand(id){
+            $("#car_brand_id").val(id);
+            $.ajax({
+                type: "POST",
+                async: false,
+                url: "http://39.106.67.47/new_api/user/newcar/getcar_brand_sys",
+                data:{brand_id:id},
+                success: function (data)
+                {
+                    var obj = JSON.parse(data);
+                    var brand_sys = obj.body;
+                    //先将元素对应清空
+
+                    $('.chooseSeries').empty();
+					var str = "";
+                    for(var i = 0; i<brand_sys.length;i++){
+                        var sys  = brand_sys[i];
+                        str += '<a onclick=btn_car_sys(' + sys.sys_id + ") " + 'href="javascript:;">' + sys.sys + '</a>'
+                    }
+                    //将html动态拼接到对应的div上面
+                    $('.chooseSeries').html(str);
+                }
+            });
+        }
+
+        function btn_car_sys(id){
+            $("#car_sys_id").val(id);
+            $.ajax({
+                type: "GET",
+                async: false,
+                url: "http://39.106.67.47//new_api/User/Index/get_cartype?id=" + id,
+                success: function (data)
+                {
+                    var obj = JSON.parse(data);
+                    var car_type = obj.body[0].list;
+                    //先将元素对应清空
+
+                    $('.year_car').empty();
+
+                    var str = "";
+                    for(var i = 0; i<car_type.length;i++){
+                        var type  = car_type[i];
+                        str += '<a id=' + type.id  + ' href="javascript:;">' + type.name + '</a>'
+                    }
+                    //将html动态拼接到对应的div上面
+                    $('.year_car').html(str);
+                }
+            });
+		}
+
 		$(function(){
-			$(".brand_letter a").wxlsChooseCarSeries;
+
+			// $(".brand_letter a").wxlsChooseCarSeries;
 			lay('#version').html('-v'+ laydate.v);
 		    laydate.render({
 		      elem: '#year' //指定元素
@@ -372,7 +477,7 @@
 //			手机号隐藏中间4位
 			$(".uphone").text($(".uphone").text().substring(0, 3) + "****" + $(".uphone").text().substring(7, 11));
 			//加载公用头部和底部
-		    $(".header").load("templates/header.html");
+//		    $(".header").load("templates/header.html");
 //		    $(".footer").load("templates/footer.html");
 //			选择品牌字母
 			$(".choose_car_t a").click(function(){
@@ -392,11 +497,18 @@
 //			选择品牌
 			$(".choosecar_letter a").click(function(){
 				$(this).addClass('active').siblings().removeClass('active');
+                var letter = $(this).children().first().text();
+
+                var top_o = $("#brand_letter_A").offset().top;
+                var top_n = $("#"+"brand_letter_"+letter).offset().top;
+                $("#brand_content").scrollTop(top_n - top_o);
 			})
 			//选择好颜色
 			$(".slt_color").click(function(){
 				$(this).addClass('active').siblings().removeClass('active');
-			})
+				$(this).prevAll("#color").val($(this).find("span").attr("id"));
+                $("#release_form").validate().element($(this).prevAll("#color"));
+            })
 			
 			$("#sltCar_name").click(function(){
 				$(".choose_cartab1").show();
@@ -420,7 +532,9 @@
 							$(".choose_cartab3").hide();
 							$(this).parents(".selected_ipt").removeClass('active');
 							$("#sltCar_name").val(sel_brand+sel_series+carname);
-							$(".bread_subnav").empty()
+							$("#car_type_id").val($(this).attr("id"));
+                            $("#release_form").validate().element($("#sltCar_name"))
+                            $(".bread_subnav").empty()
 						})
 					})
 				})
@@ -428,8 +542,10 @@
 			
 			$(".list_slt li").click(function(){
 				var txt=$(this).text();
-				$(this).parents(".selected_ipt").find(".upload_info").val(txt);
+                $(this).parents(".selected_ipt").find(".upload_info").val(txt);
 				$(this).parents(".selected_ipt").removeClass('active');
+                $(this).parent().prev().val($(this).attr("id"));
+                $("#release_form").validate().element($(this).parents(".selected_ipt").find(".upload_info"));
 			})
 //			车辆描述使用模板
 			$(".model_txt span").click(function(){
@@ -464,6 +580,78 @@
 					$(".count_num").html('<span style="color: #F21B1B;">最多输入1000字</span>');
 				}
 			})
+
+            $("#release_form").validate({
+                rules: {
+                    sltCar_name:"required",
+                    price:"required",
+                    car_mileage:"required",
+                    car_cardtime:"required",
+                    carbody:"required",
+                    cardrive:"required",
+                    fuel1:"required",
+                    output1:"required",
+                    gearbox1:"required",
+                    subface1:"required",
+                    blowdown1:"required",
+					phone:"required",
+                    contact:"required",
+                    color:"required",
+                    textCon:"required"
+
+
+                },
+                messages: {
+                    sltCar_name:"请选择车型",
+                    price: "价格不能为空",
+                    car_mileage:"里程不能为空",
+                    car_cardtime:"上牌时间不能为空",
+                    carbody:"请选择车身",
+                    fuel1:"请选择燃料",
+                    cardrive:"请选择驱动",
+                    output1:"请选择排量",
+                    gearbox1:"请选择变速箱",
+                    subface1:"请选择级别",
+                    blowdown1:"请选择排放标准",
+                    phone:"手机号码不能为空",
+                    contact:"联系人不能为空",
+                    color:"请选择车身颜色",
+                    textCon:"请填写车辆状况"
+                },
+                success:function(label){
+                    label.html("&nbsp;").addClass("checked");
+                },
+                // the errorPlacement has to take the table layout into account
+                errorPlacement: function(error, element) {
+
+                    if (element.is(":radio"))
+                        error.appendTo(element.parent().next());
+                    else if (element.is(":checkbox"))
+                        error.appendTo(element.next());
+                    else {
+                        error.appendTo(element.parent().next());
+                    }
+                },
+                // specifying a submitHandler prevents the default submit, good for the demo
+                submitHandler: function() {
+                    $("#release_form").ajaxSubmit({
+                        clearForm:true,
+                        success: function (data) {
+                            var ret = JSON.parse(data);
+                            if (ret.code == 200) {
+                                layer.msg('店铺信息修改成功!', {icon: 1, time: 2000});
+
+                            } else {
+                                $("#result").text(ret.msg);
+                            }
+                        }
+                    });
+                    return false;
+                },
+                highlight: function(element, errorClass) {
+                    $(element).parent().next().find("." + errorClass).removeClass("checked");
+                }
+            });
 			
 	})
 </script>
