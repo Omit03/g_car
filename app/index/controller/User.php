@@ -196,11 +196,8 @@ class User  extends Common {
             }
 
             if (empty($data['door_photo'])){
-
                 $info['mimg'] = $shop_info['mimg'];
-
             }else{
-
                 $info['mimg'] = $this->upload_file($data['door_photo'],'door_photo');
             }
 
@@ -222,10 +219,9 @@ class User  extends Common {
                 "shop_phone" =>$info['shop_phone'],
                 "open_time" =>$info['open_time'],
                 "shop_desc" =>$info['shop_desc'],
-                "mimg" =>$info['mimg'],
+//                "mimg" =>$info['mimg'],
                 "startTiem" =>$data['startTiem'],
                 "endTiem" =>$data['endTiem'],
-
             ]);
 
         }else{
@@ -244,12 +240,12 @@ class User  extends Common {
             $info['shop_desc']=$shop_desc=$data['shop_desc'];
 //        $info['latitude']=$latitude=$data['lat'];
 //        $info['longitude']=$longitude=$data['lng'];
-            if(!$door_photo || !$shop_name || !$shop_address || !$shop_phone || !$open_time || !$shop_desc){
+            if( !$shop_name || !$shop_address || !$shop_phone || !$open_time || !$shop_desc){
 
                 $this->return_msg('204','参数不能为空');
             }
 
-            $info['mimg'] = $this->upload_file($data['door_photo'],'door_photo');
+//            $info['mimg'] = $this->upload_file($data['door_photo'],'door_photo');
 //        $info['mimg']=str_replace("http://www.gj2car.com/Uploads/relecar/","",$door_photo);
 //        if($info['mimg']==$door_photo){
 //            $info['mimg']=str_replace("http://39.106.67.47/butler_car/Uploads/relecar/","",$door_photo);
@@ -263,28 +259,27 @@ class User  extends Common {
             //  dump($info);die;
             $res=Db::table("user_shop")->insert([
                 "user_id" =>$user_id,
-                "shop_name" =>$info['shop_name'],
+                "qid" =>0,
+                "mimg" =>'default',
+                "yimg" =>'default',
                 "shop_address" =>$info['shop_address'],
                 "shop_phone" =>$info['shop_phone'],
+                "latitude" =>'0',
+                "longitude" =>'0',
+                "frname" => 'default',
+                "frphone" => 'default',
+                "status" => 1,
                 "open_time" =>$info['open_time'],
                 "shop_desc" =>$info['shop_desc'],
-                "mimg" =>$info['mimg'],
+                "is_tj" => 0,
+                "is_yx" => 0,
+                //"mimg" =>$info['mimg'],
                 "startTiem" =>$data['startTiem'],
-                "endTiem" =>$data['endTiem'],
-
+                "endTiem" =>$data['endTiem']
             ]);
         }
 
-
-        if($res){
-
-            $this->return_msg('200','成功');
-
-            //$this->success('成功','user/person_manage');
-        }else{
-            $this->return_msg('400','成功');
-            $this->error('失败');
-        }
+        $this->return_msg('200','成功');
     }
 
     /*
@@ -1579,29 +1574,38 @@ class User  extends Common {
 
         $log ->reclog("登录者 : ".$db_res['phone']);
 
-        if (!empty($data['zidong'])){
+        $salt = $this->randStr();
+        $sos = 888888;
 
-            Cookie::set('user_id',$db_res['user_id'],604800);
-            Cookie::set('phone',$db_res['phone'],604800);
-
-        }else{
-
-            Cookie::set('user_id',$db_res['user_id']);
-            Cookie::set('phone',$db_res['phone']);
-
+        //modify by wangsibo  手机验证码登录 不存在当前用户，自动注册成为会员
+        if (empty($db_res)){
+            $user_id = Db::table('user')->insert(['token'=>md5($sos.$salt),
+                'salt'=>$salt,
+                'phone'=>$data['user_phone'],
+                'password'=>md5($sos.$salt),
+                'create_time'=>date('Y-m-d H:i:s',time()),
+                'sos'=>$sos,
+                'login_type'=>1], false, true);
+        } else {
+            $user_id = $db_res["user_id"];
         }
 
-        Session::set('user_id',$db_res['user_id']);
+        if (!empty($data['zidong'])){
+            Cookie::set('user_id',$db_res['user_id'],604800);
+            Cookie::set('phone',$db_res['phone'],604800);
+        }else{
+            Cookie::set('user_id',$db_res['user_id']);
+            Cookie::set('phone',$db_res['phone']);
+        }
 
-        Session::set('phone',$db_res['phone']);
-
-        unset($db_res['login_password']); //密码永不返回
-
-        $this->return_msg('200','登录成功');
-
-       // $this->redirect('index/user/person_manage');
-
-
+        if (empty($user_id)){
+            $this->return_msg(400,'登录失败');
+        }else{
+            Session::set('user_id',$user_id);
+            Session::set('phone',$data['user_phone']);
+            unset($db_res['login_password']); //密码永不返回
+            $this->return_msg(200,'登录成功');
+        }
     }
     /*
      * @time
