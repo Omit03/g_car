@@ -4,58 +4,68 @@ $(function(){
 		fileType         : ["jpg","png","bmp","jpeg"],   // 上传文件的类型
 		fileSize         : 1024 * 1024 * 5                 // 上传文件的大小 10M
 	};
-		/*点击图片的文本框*/
-	$(".file").change(function(){	 
-		var idFile = $(this).attr("id");
-		var file = document.getElementById(idFile);
-		var imgContainer = $(this).parents(".z_photo"); //存放图片的父亲元素
-		var fileList = file.files; //获取的图片文件
-		var input = $(this).parent();//文本框的父亲元素
-		var imgArr = [];
-		//遍历得到的图片文件
-		var numUp = imgContainer.find(".up-section").length;
-		var totalNum = numUp + fileList.length;  //总的数量
-		if(fileList.length > 10 || totalNum > 10 ){
-			alert("上传图片数目不可以超过5个，请重新选择");  //一次选择上传超过5个 或者是已经上传和这次上传的到的总数也不可以超过5个
-		}
-		else if(numUp < 10){
-			fileList = validateUp(fileList);
-			for(var i = 0;i<fileList.length;i++){
-			 var imgUrl = window.URL.createObjectURL(fileList[i]);
-			     imgArr.push(imgUrl);
-			 var $section = $("<section class='up-section  loading'>");
-			     imgContainer.append($section);
-			 var $span = $("<span class='up-span'>");
-			     $span.appendTo($section);
-			
-		     var $img0 = $("<img class='close-upimg'>").on("click",function(event){
-				    event.preventDefault();
-					event.stopPropagation();
-					$(".works-mask").show();
-					delParent = $(this).parent();
-				});   
-				$img0.attr("src","img/del1.png").appendTo($section);
-		     var $img = $("<img class='up-img up-opcity'>");
-		         $img.attr("src",imgArr[i]);
-		         $img.appendTo($section);
+
+    function fileChange(){
+        // var idFile = $(this).attr("id");
+        // var file = document.getElementById(idFile);
+        var imgContainer = $(this).parents(".z_photo"); //存放图片的父亲元素
+        var fileList = this.files; //获取的图片文件
+        var input = $(this).parent();//文本框的父亲元素
+        var imgArr = [];
+        //遍历得到的图片文件
+        var numUp = imgContainer.find(".up-section").length;
+        var totalNum = numUp + fileList.length;  //总的数量
+        if(fileList.length > 10 || totalNum > 10 ){
+            alert("上传图片数目不可以超过5个，请重新选择");  //一次选择上传超过5个 或者是已经上传和这次上传的到的总数也不可以超过5个
+        }
+        else if(numUp < 10){
+            fileList = validateUp(fileList);
+            for(var i = 0;i<fileList.length;i++){
+                var imgUrl = window.URL.createObjectURL(fileList[i]);
+                imgArr.push(imgUrl);
+                var $section = $("<section class='up-section  loading'>");
+                imgContainer.append($section);
+                var $span = $("<span class='up-span'>");
+                $span.appendTo($section);
+
+                var $img0 = $("<img class='close-upimg'>").on("click",function(event){
+                    event.preventDefault();
+                    event.stopPropagation();
+                    $(".works-mask").show();
+                    delParent = $(this).parent();
+                });
+                $img0.attr("src","img/del1.png").appendTo($section);
+                var $img = $("<img class='up-img up-opcity'>");
+                $img.attr("src",imgArr[i]);
+                $img.appendTo($section);
 //		     var $p = $("<p class='img-name-p'>");
 //		         $p.html(fileList[i].name).appendTo($section);
-		     var $input = $("<input id='taglocation' name='taglocation' value='' type='hidden'>");
-		         $input.appendTo($section);
-		     var $input2 = $("<input id='tags' name='tags' value='' type='hidden'/>");
-		         $input2.appendTo($section);
-		      
-		   }
-		}
-		setTimeout(function(){
-             $(".up-section").removeClass("loading");
-		 	 $(".up-img").removeClass("up-opcity");
-		 },450);
-		 numUp = imgContainer.find(".up-section").length;
-		if(numUp >=10){
-			$(this).parent().hide();
-		}
-	});
+                var $input = $("<input id='taglocation' name='taglocation' value='' type='hidden'>");
+                $input.appendTo($section);
+                var $input2 = $("<input id='tags' name='tags' value='' type='hidden'/>");
+                $input2.appendTo($section);
+
+                $(this).parent().css("display", "none");
+                var $sec_inp = $("<section class=\"z_file fl\">");
+                var $img_add = $("<img src=\"/static/img/upimg.png\" class=\"add-img\">");
+                var $file_inp = $("<input type=\"file\" name=\"subface_img[]\"  class=\"file\" />");
+                $img_add.appendTo($sec_inp);
+                $file_inp.appendTo($sec_inp);
+                $sec_inp.appendTo(imgContainer);
+                $file_inp.change(fileChange);
+            }
+        }
+        setTimeout(function(){
+            $(".up-section").removeClass("loading");
+            $(".up-img").removeClass("up-opcity");
+        },450);
+        numUp = imgContainer.find(".up-section").length;
+        if(numUp >=10){
+            $(this).parent().hide();
+        }
+    }
+		/*点击图片的文本框*/
+	$(".file").change(fileChange);
 	
 	
    
